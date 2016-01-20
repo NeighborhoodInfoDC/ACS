@@ -1,0 +1,545 @@
+TITLE2 "e20115dc0016000";
+DATA work.SFe0016dc;
+ 
+	LENGTH FILEID   $6
+		   FILETYPE $6
+		   STUSAB   $2
+		   CHARITER $3
+		   SEQUENCE $4
+		   LOGRECNO $7;
+ 
+INFILE "D:\DCData\Libraries\ACS\Raw\SF_2007_11\dc_Tracts_Block_Groups_Only\e20115dc0016000.txt" DSD TRUNCOVER DELIMITER =',' LRECL=3000;
+ 
+LABEL FILEID  ='File Identification'
+      FILETYPE='File Type'  
+ 	   STUSAB  ='State/U.S.-Abbreviation (USPS)'
+ 	   CHARITER='Character Iteration'
+ 	   SEQUENCE='Sequence Number'
+ 	   LOGRECNO='Logical Record Number'
+ 
+ 
+/*GEOGRAPHICAL MOBILITY IN THE PAST YEAR BY AGE FOR CURRENT RESIDENCE IN THE UNITED STATES */
+/*Universe:  Population 1 year and over in the United States */
+ 
+B07001e1='Total:'
+B07001e2='1 to 4 years'
+B07001e3='5 to 17 years'
+B07001e4='18 and 19 years'
+B07001e5='20 to 24 years'
+B07001e6='25 to 29 years'
+B07001e7='30 to 34 years'
+B07001e8='35 to 39 years'
+B07001e9='40 to 44 years'
+B07001e10='45 to 49 years'
+B07001e11='50 to 54 years'
+B07001e12='55 to 59 years'
+B07001e13='60 to 64 years'
+B07001e14='65 to 69 years'
+B07001e15='70 to 74 years'
+B07001e16='75 years and over'
+B07001e17='Same house 1 year ago:'
+B07001e18='1 to 4 years'
+B07001e19='5 to 17 years'
+B07001e20='18 and 19 years'
+B07001e21='20 to 24 years'
+B07001e22='25 to 29 years'
+B07001e23='30 to 34 years'
+B07001e24='35 to 39 years'
+B07001e25='40 to 44 years'
+B07001e26='45 to 49 years'
+B07001e27='50 to 54 years'
+B07001e28='55 to 59 years'
+B07001e29='60 to 64 years'
+B07001e30='65 to 69 years'
+B07001e31='70 to 74 years'
+B07001e32='75 years and over'
+B07001e33='Moved within same county:'
+B07001e34='1 to 4 years'
+B07001e35='5 to 17 years'
+B07001e36='18 and 19 years'
+B07001e37='20 to 24 years'
+B07001e38='25 to 29 years'
+B07001e39='30 to 34 years'
+B07001e40='35 to 39 years'
+B07001e41='40 to 44 years'
+B07001e42='45 to 49 years'
+B07001e43='50 to 54 years'
+B07001e44='55 to 59 years'
+B07001e45='60 to 64 years'
+B07001e46='65 to 69 years'
+B07001e47='70 to 74 years'
+B07001e48='75 years and over'
+B07001e49='Moved from different county within same state:'
+B07001e50='1 to 4 years'
+B07001e51='5 to 17 years'
+B07001e52='18 and 19 years'
+B07001e53='20 to 24 years'
+B07001e54='25 to 29 years'
+B07001e55='30 to 34 years'
+B07001e56='35 to 39 years'
+B07001e57='40 to 44 years'
+B07001e58='45 to 49 years'
+B07001e59='50 to 54 years'
+B07001e60='55 to 59 years'
+B07001e61='60 to 64 years'
+B07001e62='65 to 69 years'
+B07001e63='70 to 74 years'
+B07001e64='75 years and over'
+B07001e65='Moved from different state:'
+B07001e66='1 to 4 years'
+B07001e67='5 to 17 years'
+B07001e68='18 and 19 years'
+B07001e69='20 to 24 years'
+B07001e70='25 to 29 years'
+B07001e71='30 to 34 years'
+B07001e72='35 to 39 years'
+B07001e73='40 to 44 years'
+B07001e74='45 to 49 years'
+B07001e75='50 to 54 years'
+B07001e76='55 to 59 years'
+B07001e77='60 to 64 years'
+B07001e78='65 to 69 years'
+B07001e79='70 to 74 years'
+B07001e80='75 years and over'
+B07001e81='Moved from abroad:'
+B07001e82='1 to 4 years'
+B07001e83='5 to 17 years'
+B07001e84='18 and 19 years'
+B07001e85='20 to 24 years'
+B07001e86='25 to 29 years'
+B07001e87='30 to 34 years'
+B07001e88='35 to 39 years'
+B07001e89='40 to 44 years'
+B07001e90='45 to 49 years'
+B07001e91='50 to 54 years'
+B07001e92='55 to 59 years'
+B07001e93='60 to 64 years'
+B07001e94='65 to 69 years'
+B07001e95='70 to 74 years'
+B07001e96='75 years and over'
+ 
+/*GEOGRAPHICAL MOBILITY IN THE PAST YEAR BY AGE FOR CURRENT RESIDENCE IN PUERTO RICO */
+/*Universe:  Population 1 year and over in Puerto Rico */
+ 
+B07001PRe1='Total:'
+B07001PRe2='1 to 4 years'
+B07001PRe3='5 to 17 years'
+B07001PRe4='18 and 19 years'
+B07001PRe5='20 to 24 years'
+B07001PRe6='25 to 29 years'
+B07001PRe7='30 to 34 years'
+B07001PRe8='35 to 39 years'
+B07001PRe9='40 to 44 years'
+B07001PRe10='45 to 49 years'
+B07001PRe11='50 to 54 years'
+B07001PRe12='55 to 59 years'
+B07001PRe13='60 to 64 years'
+B07001PRe14='65 to 69 years'
+B07001PRe15='70 to 74 years'
+B07001PRe16='75 years and over'
+B07001PRe17='Same house 1 year ago:'
+B07001PRe18='1 to 4 years'
+B07001PRe19='5 to 17 years'
+B07001PRe20='18 and 19 years'
+B07001PRe21='20 to 24 years'
+B07001PRe22='25 to 29 years'
+B07001PRe23='30 to 34 years'
+B07001PRe24='35 to 39 years'
+B07001PRe25='40 to 44 years'
+B07001PRe26='45 to 49 years'
+B07001PRe27='50 to 54 years'
+B07001PRe28='55 to 59 years'
+B07001PRe29='60 to 64 years'
+B07001PRe30='65 to 69 years'
+B07001PRe31='70 to 74 years'
+B07001PRe32='75 years and over'
+B07001PRe33='Moved within same municipio:'
+B07001PRe34='1 to 4 years'
+B07001PRe35='5 to 17 years'
+B07001PRe36='18 and 19 years'
+B07001PRe37='20 to 24 years'
+B07001PRe38='25 to 29 years'
+B07001PRe39='30 to 34 years'
+B07001PRe40='35 to 39 years'
+B07001PRe41='40 to 44 years'
+B07001PRe42='45 to 49 years'
+B07001PRe43='50 to 54 years'
+B07001PRe44='55 to 59 years'
+B07001PRe45='60 to 64 years'
+B07001PRe46='65 to 69 years'
+B07001PRe47='70 to 74 years'
+B07001PRe48='75 years and over'
+B07001PRe49='Moved from different municipio:'
+B07001PRe50='1 to 4 years'
+B07001PRe51='5 to 17 years'
+B07001PRe52='18 and 19 years'
+B07001PRe53='20 to 24 years'
+B07001PRe54='25 to 29 years'
+B07001PRe55='30 to 34 years'
+B07001PRe56='35 to 39 years'
+B07001PRe57='40 to 44 years'
+B07001PRe58='45 to 49 years'
+B07001PRe59='50 to 54 years'
+B07001PRe60='55 to 59 years'
+B07001PRe61='60 to 64 years'
+B07001PRe62='65 to 69 years'
+B07001PRe63='70 to 74 years'
+B07001PRe64='75 years and over'
+B07001PRe65='Moved from the United States:'
+B07001PRe66='1 to 4 years'
+B07001PRe67='5 to 17 years'
+B07001PRe68='18 and 19 years'
+B07001PRe69='20 to 24 years'
+B07001PRe70='25 to 29 years'
+B07001PRe71='30 to 34 years'
+B07001PRe72='35 to 39 years'
+B07001PRe73='40 to 44 years'
+B07001PRe74='45 to 49 years'
+B07001PRe75='50 to 54 years'
+B07001PRe76='55 to 59 years'
+B07001PRe77='60 to 64 years'
+B07001PRe78='65 to 69 years'
+B07001PRe79='70 to 74 years'
+B07001PRe80='75 years and over'
+B07001PRe81='Moved from elsewhere:'
+B07001PRe82='1 to 4 years'
+B07001PRe83='5 to 17 years'
+B07001PRe84='18 and 19 years'
+B07001PRe85='20 to 24 years'
+B07001PRe86='25 to 29 years'
+B07001PRe87='30 to 34 years'
+B07001PRe88='35 to 39 years'
+B07001PRe89='40 to 44 years'
+B07001PRe90='45 to 49 years'
+B07001PRe91='50 to 54 years'
+B07001PRe92='55 to 59 years'
+B07001PRe93='60 to 64 years'
+B07001PRe94='65 to 69 years'
+B07001PRe95='70 to 74 years'
+B07001PRe96='75 years and over'
+ 
+/*MEDIAN AGE BY GEOGRAPHICAL MOBILITY IN THE PAST YEAR FOR CURRENT RESIDENCE IN THE UNITED STATES */
+/*Universe:  Population 1 year and over in the United States */
+/*Median age -- */
+ 
+B07002e1='Total:'
+B07002e2='Same house 1 year ago'
+B07002e3='Moved within same county'
+B07002e4='Moved from different county within same state'
+B07002e5='Moved from different state'
+B07002e6='Moved from abroad'
+ 
+/*MEDIAN AGE BY GEOGRAPHICAL MOBILITY IN THE PAST YEAR FOR CURRENT RESIDENCE IN PUERTO RICO */
+/*Universe:  Population 1 year and over in Puerto Rico */
+/*Median age -- */
+ 
+B07002PRe1='Total:'
+B07002PRe2='Same house 1 year ago'
+B07002PRe3='Moved within same municipio'
+B07002PRe4='Moved from different municipio'
+B07002PRe5='Moved from the United States'
+B07002PRe6='Moved from elsewhere'
+ 
+/*GEOGRAPHICAL MOBILITY IN THE PAST YEAR BY SEX FOR CURRENT RESIDENCE IN THE UNITED STATES */
+/*Universe:  Population 1 year and over in the United States */
+ 
+B07003e1='Total:'
+B07003e2='Male'
+B07003e3='Female'
+B07003e4='Same house 1 year ago:'
+B07003e5='Male'
+B07003e6='Female'
+B07003e7='Moved within same county:'
+B07003e8='Male'
+B07003e9='Female'
+B07003e10='Moved from different county within same state:'
+B07003e11='Male'
+B07003e12='Female'
+B07003e13='Moved from different state:'
+B07003e14='Male'
+B07003e15='Female'
+B07003e16='Moved from abroad:'
+B07003e17='Male'
+B07003e18='Female'
+ 
+/*GEOGRAPHICAL MOBILITY IN THE PAST YEAR BY SEX FOR CURRENT RESIDENCE IN PUERTO RICO */
+/*Universe:  Population 1 year and over in Puerto Rico */
+ 
+B07003PRe1='Total:'
+B07003PRe2='Male'
+B07003PRe3='Female'
+B07003PRe4='Same house 1 year ago:'
+B07003PRe5='Male'
+B07003PRe6='Female'
+B07003PRe7='Moved within same municipio:'
+B07003PRe8='Male'
+B07003PRe9='Female'
+B07003PRe10='Moved from different municipio:'
+B07003PRe11='Male'
+B07003PRe12='Female'
+B07003PRe13='Moved from the United States:'
+B07003PRe14='Male'
+B07003PRe15='Female'
+B07003PRe16='Moved from elsewhere:'
+B07003PRe17='Male'
+B07003PRe18='Female'
+;
+ 
+ 
+INPUT
+ 
+FILEID   $ 
+FILETYPE $ 
+STUSAB   $ 
+CHARITER $ 
+SEQUENCE $ 
+LOGRECNO $ 
+ 
+B07001e1
+B07001e2
+B07001e3
+B07001e4
+B07001e5
+B07001e6
+B07001e7
+B07001e8
+B07001e9
+B07001e10
+B07001e11
+B07001e12
+B07001e13
+B07001e14
+B07001e15
+B07001e16
+B07001e17
+B07001e18
+B07001e19
+B07001e20
+B07001e21
+B07001e22
+B07001e23
+B07001e24
+B07001e25
+B07001e26
+B07001e27
+B07001e28
+B07001e29
+B07001e30
+B07001e31
+B07001e32
+B07001e33
+B07001e34
+B07001e35
+B07001e36
+B07001e37
+B07001e38
+B07001e39
+B07001e40
+B07001e41
+B07001e42
+B07001e43
+B07001e44
+B07001e45
+B07001e46
+B07001e47
+B07001e48
+B07001e49
+B07001e50
+B07001e51
+B07001e52
+B07001e53
+B07001e54
+B07001e55
+B07001e56
+B07001e57
+B07001e58
+B07001e59
+B07001e60
+B07001e61
+B07001e62
+B07001e63
+B07001e64
+B07001e65
+B07001e66
+B07001e67
+B07001e68
+B07001e69
+B07001e70
+B07001e71
+B07001e72
+B07001e73
+B07001e74
+B07001e75
+B07001e76
+B07001e77
+B07001e78
+B07001e79
+B07001e80
+B07001e81
+B07001e82
+B07001e83
+B07001e84
+B07001e85
+B07001e86
+B07001e87
+B07001e88
+B07001e89
+B07001e90
+B07001e91
+B07001e92
+B07001e93
+B07001e94
+B07001e95
+B07001e96
+ 
+B07001PRe1
+B07001PRe2
+B07001PRe3
+B07001PRe4
+B07001PRe5
+B07001PRe6
+B07001PRe7
+B07001PRe8
+B07001PRe9
+B07001PRe10
+B07001PRe11
+B07001PRe12
+B07001PRe13
+B07001PRe14
+B07001PRe15
+B07001PRe16
+B07001PRe17
+B07001PRe18
+B07001PRe19
+B07001PRe20
+B07001PRe21
+B07001PRe22
+B07001PRe23
+B07001PRe24
+B07001PRe25
+B07001PRe26
+B07001PRe27
+B07001PRe28
+B07001PRe29
+B07001PRe30
+B07001PRe31
+B07001PRe32
+B07001PRe33
+B07001PRe34
+B07001PRe35
+B07001PRe36
+B07001PRe37
+B07001PRe38
+B07001PRe39
+B07001PRe40
+B07001PRe41
+B07001PRe42
+B07001PRe43
+B07001PRe44
+B07001PRe45
+B07001PRe46
+B07001PRe47
+B07001PRe48
+B07001PRe49
+B07001PRe50
+B07001PRe51
+B07001PRe52
+B07001PRe53
+B07001PRe54
+B07001PRe55
+B07001PRe56
+B07001PRe57
+B07001PRe58
+B07001PRe59
+B07001PRe60
+B07001PRe61
+B07001PRe62
+B07001PRe63
+B07001PRe64
+B07001PRe65
+B07001PRe66
+B07001PRe67
+B07001PRe68
+B07001PRe69
+B07001PRe70
+B07001PRe71
+B07001PRe72
+B07001PRe73
+B07001PRe74
+B07001PRe75
+B07001PRe76
+B07001PRe77
+B07001PRe78
+B07001PRe79
+B07001PRe80
+B07001PRe81
+B07001PRe82
+B07001PRe83
+B07001PRe84
+B07001PRe85
+B07001PRe86
+B07001PRe87
+B07001PRe88
+B07001PRe89
+B07001PRe90
+B07001PRe91
+B07001PRe92
+B07001PRe93
+B07001PRe94
+B07001PRe95
+B07001PRe96
+ 
+B07002e1
+B07002e2
+B07002e3
+B07002e4
+B07002e5
+B07002e6
+ 
+B07002PRe1
+B07002PRe2
+B07002PRe3
+B07002PRe4
+B07002PRe5
+B07002PRe6
+ 
+B07003e1
+B07003e2
+B07003e3
+B07003e4
+B07003e5
+B07003e6
+B07003e7
+B07003e8
+B07003e9
+B07003e10
+B07003e11
+B07003e12
+B07003e13
+B07003e14
+B07003e15
+B07003e16
+B07003e17
+B07003e18
+ 
+B07003PRe1
+B07003PRe2
+B07003PRe3
+B07003PRe4
+B07003PRe5
+B07003PRe6
+B07003PRe7
+B07003PRe8
+B07003PRe9
+B07003PRe10
+B07003PRe11
+B07003PRe12
+B07003PRe13
+B07003PRe14
+B07003PRe15
+B07003PRe16
+B07003PRe17
+B07003PRe18
+;
+RUN;
+TITLE2;

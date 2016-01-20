@@ -1,0 +1,461 @@
+TITLE2 "m20115dc0106000";
+DATA work.SFm0106dc;
+ 
+	LENGTH FILEID   $6
+		   FILETYPE $6
+		   STUSAB   $2
+		   CHARITER $3
+		   SEQUENCE $4
+		   LOGRECNO $7;
+ 
+INFILE "D:\DCData\Libraries\ACS\Raw\SF_2007_11\dc_Tracts_Block_Groups_Only\m20115dc0106000.txt" DSD TRUNCOVER DELIMITER =',' LRECL=3000;
+ 
+LABEL FILEID  ='File Identification'
+      FILETYPE='File Type'  
+ 	   STUSAB  ='State/U.S.-Abbreviation (USPS)'
+ 	   CHARITER='Character Iteration'
+ 	   SEQUENCE='Sequence Number'
+ 	   LOGRECNO='Logical Record Number'
+ 
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) BY GROSS RENT */
+/*Universe:  Renter-occupied housing units */
+ 
+B25122m1='Total:'
+/*Household income in the past 12 months (in 2011 inflation-adjusted dollars) -- */
+B25122m2='Less than $10,000:'
+B25122m3='With cash rent:'
+B25122m4='Less than $100'
+B25122m5='$100 to $199'
+B25122m6='$200 to $299'
+B25122m7='$300 to $399'
+B25122m8='$400 to $499'
+B25122m9='$500 to $599'
+B25122m10='$600 to $699'
+B25122m11='$700 to $799'
+B25122m12='$800 to $899'
+B25122m13='$900 to $999'
+B25122m14='$1,000 to $1,249'
+B25122m15='$1,250 to $1,499'
+B25122m16='$1,500 to $1,999'
+B25122m17='$2,000 or more'
+B25122m18='No cash rent'
+B25122m19='$10,000 to $19,999:'
+B25122m20='With cash rent:'
+B25122m21='Less than $100'
+B25122m22='$100 to $199'
+B25122m23='$200 to $299'
+B25122m24='$300 to $399'
+B25122m25='$400 to $499'
+B25122m26='$500 to $599'
+B25122m27='$600 to $699'
+B25122m28='$700 to $799'
+B25122m29='$800 to $899'
+B25122m30='$900 to $999'
+B25122m31='$1,000 to $1,249'
+B25122m32='$1,250 to $1,499'
+B25122m33='$1,500 to $1,999'
+B25122m34='$2,000 or more'
+B25122m35='No cash rent'
+B25122m36='$20,000 to $34,999:'
+B25122m37='With cash rent:'
+B25122m38='Less than $100'
+B25122m39='$100 to $199'
+B25122m40='$200 to $299'
+B25122m41='$300 to $399'
+B25122m42='$400 to $499'
+B25122m43='$500 to $599'
+B25122m44='$600 to $699'
+B25122m45='$700 to $799'
+B25122m46='$800 to $899'
+B25122m47='$900 to $999'
+B25122m48='$1,000 to $1,249'
+B25122m49='$1,250 to $1,499'
+B25122m50='$1,500 to $1,999'
+B25122m51='$2,000 or more'
+B25122m52='No cash rent'
+B25122m53='$35,000 to $49,999:'
+B25122m54='With cash rent:'
+B25122m55='Less than $100'
+B25122m56='$100 to $199'
+B25122m57='$200 to $299'
+B25122m58='$300 to $399'
+B25122m59='$400 to $499'
+B25122m60='$500 to $599'
+B25122m61='$600 to $699'
+B25122m62='$700 to $799'
+B25122m63='$800 to $899'
+B25122m64='$900 to $999'
+B25122m65='$1,000 to $1,249'
+B25122m66='$1,250 to $1,499'
+B25122m67='$1,500 to $1,999'
+B25122m68='$2,000 or more'
+B25122m69='No cash rent'
+B25122m70='$50,000 to $74,999:'
+B25122m71='With cash rent:'
+B25122m72='Less than $100'
+B25122m73='$100 to $199'
+B25122m74='$200 to $299'
+B25122m75='$300 to $399'
+B25122m76='$400 to $499'
+B25122m77='$500 to $599'
+B25122m78='$600 to $699'
+B25122m79='$700 to $799'
+B25122m80='$800 to $899'
+B25122m81='$900 to $999'
+B25122m82='$1,000 to $1,249'
+B25122m83='$1,250 to $1,499'
+B25122m84='$1,500 to $1,999'
+B25122m85='$2,000 or more'
+B25122m86='No cash rent'
+B25122m87='$75,000 to $99,999:'
+B25122m88='With cash rent:'
+B25122m89='Less than $100'
+B25122m90='$100 to $199'
+B25122m91='$200 to $299'
+B25122m92='$300 to $399'
+B25122m93='$400 to $499'
+B25122m94='$500 to $599'
+B25122m95='$600 to $699'
+B25122m96='$700 to $799'
+B25122m97='$800 to $899'
+B25122m98='$900 to $999'
+B25122m99='$1,000 to $1,249'
+B25122m100='$1,250 to $1,499'
+B25122m101='$1,500 to $1,999'
+B25122m102='$2,000 or more'
+B25122m103='No cash rent'
+B25122m104='$100,000 or more:'
+B25122m105='With cash rent:'
+B25122m106='Less than $100'
+B25122m107='$100 to $199'
+B25122m108='$200 to $299'
+B25122m109='$300 to $399'
+B25122m110='$400 to $499'
+B25122m111='$500 to $599'
+B25122m112='$600 to $699'
+B25122m113='$700 to $799'
+B25122m114='$800 to $899'
+B25122m115='$900 to $999'
+B25122m116='$1,000 to $1,249'
+B25122m117='$1,250 to $1,499'
+B25122m118='$1,500 to $1,999'
+B25122m119='$2,000 or more'
+B25122m120='No cash rent'
+ 
+/*TENURE BY SELECTED PHYSICAL AND FINANCIAL CONDITIONS */
+/*Universe:  Occupied housing units */
+ 
+B25123m1='Total:'
+B25123m2='Owner occupied:'
+B25123m3='With one selected condition'
+B25123m4='With two selected conditions'
+B25123m5='With three selected conditions'
+B25123m6='With four selected conditions'
+B25123m7='No selected conditions'
+B25123m8='Renter occupied:'
+B25123m9='With one selected condition'
+B25123m10='With two selected conditions'
+B25123m11='With three selected conditions'
+B25123m12='With four selected conditions'
+B25123m13='No selected conditions'
+ 
+/*TENURE BY HOUSEHOLD SIZE BY UNITS IN STRUCTURE */
+/*Universe:  Occupied housing units */
+ 
+B25124m1='Total:'
+B25124m2='Owner occupied:'
+B25124m3='1-person household:'
+B25124m4='1, detached  or attached'
+B25124m5='2 to 4'
+B25124m6='5 to 19'
+B25124m7='20 to 49'
+B25124m8='50 or more'
+B25124m9='Mobile home, boat, RV, van, etc.'
+B25124m10='2-person household:'
+B25124m11='1, detached  or attached'
+B25124m12='2 to 4'
+B25124m13='5 to 19'
+B25124m14='20 to 49'
+B25124m15='50 or more'
+B25124m16='Mobile home, boat, RV, van, etc.'
+B25124m17='3-person household:'
+B25124m18='1, detached  or attached'
+B25124m19='2 to 4'
+B25124m20='5 to 19'
+B25124m21='20 to 49'
+B25124m22='50 or more'
+B25124m23='Mobile home, boat, RV, van, etc.'
+B25124m24='4-person household:'
+B25124m25='1, detached  or attached'
+B25124m26='2 to 4'
+B25124m27='5 to 19'
+B25124m28='20 to 49'
+B25124m29='50 or more'
+B25124m30='Mobile home, boat, RV, van, etc.'
+B25124m31='5-or-more person household:'
+B25124m32='1, detached  or attached:'
+B25124m33='2 to 4'
+B25124m34='5 to 19'
+B25124m35='20 to 49'
+B25124m36='50 or more'
+B25124m37='Mobile home, boat, RV, van, etc.'
+B25124m38='Renter occupied:'
+B25124m39='1-person household:'
+B25124m40='1, detached  or attached'
+B25124m41='2 to 4'
+B25124m42='5 to 19'
+B25124m43='20 to 49'
+B25124m44='50 or more'
+B25124m45='Mobile home, boat, RV, van, etc.'
+B25124m46='2-person household:'
+B25124m47='1, detached  or attached'
+B25124m48='2 to 4'
+B25124m49='5 to 19'
+B25124m50='20 to 49'
+B25124m51='50 or more'
+B25124m52='Mobile home, boat, RV, van, etc.'
+B25124m53='3-person household:'
+B25124m54='1, detached  or attached'
+B25124m55='2 to 4'
+B25124m56='5 to 19'
+B25124m57='20 to 49'
+B25124m58='50 or more'
+B25124m59='Mobile home, boat, RV, van, etc.'
+B25124m60='4-person household:'
+B25124m61='1, detached  or attached'
+B25124m62='2 to 4'
+B25124m63='5 to 19'
+B25124m64='20 to 49'
+B25124m65='50 or more'
+B25124m66='Mobile home, boat, RV, van, etc.'
+B25124m67='5-or-more person household:'
+B25124m68='1, detached  or attached:'
+B25124m69='2 to 4'
+B25124m70='5 to 19'
+B25124m71='20 to 49'
+B25124m72='50 or more'
+B25124m73='Mobile home, boat, RV, van, etc.'
+;
+ 
+ 
+INPUT
+ 
+FILEID   $ 
+FILETYPE $ 
+STUSAB   $ 
+CHARITER $ 
+SEQUENCE $ 
+LOGRECNO $ 
+ 
+B25122m1
+B25122m2
+B25122m3
+B25122m4
+B25122m5
+B25122m6
+B25122m7
+B25122m8
+B25122m9
+B25122m10
+B25122m11
+B25122m12
+B25122m13
+B25122m14
+B25122m15
+B25122m16
+B25122m17
+B25122m18
+B25122m19
+B25122m20
+B25122m21
+B25122m22
+B25122m23
+B25122m24
+B25122m25
+B25122m26
+B25122m27
+B25122m28
+B25122m29
+B25122m30
+B25122m31
+B25122m32
+B25122m33
+B25122m34
+B25122m35
+B25122m36
+B25122m37
+B25122m38
+B25122m39
+B25122m40
+B25122m41
+B25122m42
+B25122m43
+B25122m44
+B25122m45
+B25122m46
+B25122m47
+B25122m48
+B25122m49
+B25122m50
+B25122m51
+B25122m52
+B25122m53
+B25122m54
+B25122m55
+B25122m56
+B25122m57
+B25122m58
+B25122m59
+B25122m60
+B25122m61
+B25122m62
+B25122m63
+B25122m64
+B25122m65
+B25122m66
+B25122m67
+B25122m68
+B25122m69
+B25122m70
+B25122m71
+B25122m72
+B25122m73
+B25122m74
+B25122m75
+B25122m76
+B25122m77
+B25122m78
+B25122m79
+B25122m80
+B25122m81
+B25122m82
+B25122m83
+B25122m84
+B25122m85
+B25122m86
+B25122m87
+B25122m88
+B25122m89
+B25122m90
+B25122m91
+B25122m92
+B25122m93
+B25122m94
+B25122m95
+B25122m96
+B25122m97
+B25122m98
+B25122m99
+B25122m100
+B25122m101
+B25122m102
+B25122m103
+B25122m104
+B25122m105
+B25122m106
+B25122m107
+B25122m108
+B25122m109
+B25122m110
+B25122m111
+B25122m112
+B25122m113
+B25122m114
+B25122m115
+B25122m116
+B25122m117
+B25122m118
+B25122m119
+B25122m120
+ 
+B25123m1
+B25123m2
+B25123m3
+B25123m4
+B25123m5
+B25123m6
+B25123m7
+B25123m8
+B25123m9
+B25123m10
+B25123m11
+B25123m12
+B25123m13
+ 
+B25124m1
+B25124m2
+B25124m3
+B25124m4
+B25124m5
+B25124m6
+B25124m7
+B25124m8
+B25124m9
+B25124m10
+B25124m11
+B25124m12
+B25124m13
+B25124m14
+B25124m15
+B25124m16
+B25124m17
+B25124m18
+B25124m19
+B25124m20
+B25124m21
+B25124m22
+B25124m23
+B25124m24
+B25124m25
+B25124m26
+B25124m27
+B25124m28
+B25124m29
+B25124m30
+B25124m31
+B25124m32
+B25124m33
+B25124m34
+B25124m35
+B25124m36
+B25124m37
+B25124m38
+B25124m39
+B25124m40
+B25124m41
+B25124m42
+B25124m43
+B25124m44
+B25124m45
+B25124m46
+B25124m47
+B25124m48
+B25124m49
+B25124m50
+B25124m51
+B25124m52
+B25124m53
+B25124m54
+B25124m55
+B25124m56
+B25124m57
+B25124m58
+B25124m59
+B25124m60
+B25124m61
+B25124m62
+B25124m63
+B25124m64
+B25124m65
+B25124m66
+B25124m67
+B25124m68
+B25124m69
+B25124m70
+B25124m71
+B25124m72
+B25124m73
+;
+RUN;
+TITLE2;

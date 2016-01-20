@@ -1,0 +1,584 @@
+TITLE2 "e20115dc0056000";
+DATA work.SFe0056dc;
+ 
+	LENGTH FILEID   $6
+		   FILETYPE $6
+		   STUSAB   $2
+		   CHARITER $3
+		   SEQUENCE $4
+		   LOGRECNO $7;
+ 
+INFILE "D:\DCData\Libraries\ACS\Raw\SF_2007_11\dc_Tracts_Block_Groups_Only\e20115dc0056000.txt" DSD TRUNCOVER DELIMITER =',' LRECL=3000;
+ 
+LABEL FILEID  ='File Identification'
+      FILETYPE='File Type'  
+ 	   STUSAB  ='State/U.S.-Abbreviation (USPS)'
+ 	   CHARITER='Character Iteration'
+ 	   SEQUENCE='Sequence Number'
+ 	   LOGRECNO='Logical Record Number'
+ 
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) */
+/*Universe:  Households */
+ 
+B19001e1='Total:'
+B19001e2='Less than $10,000'
+B19001e3='$10,000 to $14,999'
+B19001e4='$15,000 to $19,999'
+B19001e5='$20,000 to $24,999'
+B19001e6='$25,000 to $29,999'
+B19001e7='$30,000 to $34,999'
+B19001e8='$35,000 to $39,999'
+B19001e9='$40,000 to $44,999'
+B19001e10='$45,000 to $49,999'
+B19001e11='$50,000 to $59,999'
+B19001e12='$60,000 to $74,999'
+B19001e13='$75,000 to $99,999'
+B19001e14='$100,000 to $124,999'
+B19001e15='$125,000 to $149,999'
+B19001e16='$150,000 to $199,999'
+B19001e17='$200,000 or more'
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (WHITE ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is White alone */
+ 
+B19001Ae1='Total:'
+B19001Ae2='Less than $10,000'
+B19001Ae3='$10,000 to $14,999'
+B19001Ae4='$15,000 to $19,999'
+B19001Ae5='$20,000 to $24,999'
+B19001Ae6='$25,000 to $29,999'
+B19001Ae7='$30,000 to $34,999'
+B19001Ae8='$35,000 to $39,999'
+B19001Ae9='$40,000 to $44,999'
+B19001Ae10='$45,000 to $49,999'
+B19001Ae11='$50,000 to $59,999'
+B19001Ae12='$60,000 to $74,999'
+B19001Ae13='$75,000 to $99,999'
+B19001Ae14='$100,000 to $124,999'
+B19001Ae15='$125,000 to $149,999'
+B19001Ae16='$150,000 to $199,999'
+B19001Ae17='$200,000 or more'
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (BLACK OR AFRICAN AMERICAN ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Black or African American alone */
+ 
+B19001Be1='Total:'
+B19001Be2='Less than $10,000'
+B19001Be3='$10,000 to $14,999'
+B19001Be4='$15,000 to $19,999'
+B19001Be5='$20,000 to $24,999'
+B19001Be6='$25,000 to $29,999'
+B19001Be7='$30,000 to $34,999'
+B19001Be8='$35,000 to $39,999'
+B19001Be9='$40,000 to $44,999'
+B19001Be10='$45,000 to $49,999'
+B19001Be11='$50,000 to $59,999'
+B19001Be12='$60,000 to $74,999'
+B19001Be13='$75,000 to $99,999'
+B19001Be14='$100,000 to $124,999'
+B19001Be15='$125,000 to $149,999'
+B19001Be16='$150,000 to $199,999'
+B19001Be17='$200,000 or more'
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (AMERICAN INDIAN AND ALASKA NATIVE ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is American Indian and Alaska Native alone */
+ 
+B19001Ce1='Total:'
+B19001Ce2='Less than $10,000'
+B19001Ce3='$10,000 to $14,999'
+B19001Ce4='$15,000 to $19,999'
+B19001Ce5='$20,000 to $24,999'
+B19001Ce6='$25,000 to $29,999'
+B19001Ce7='$30,000 to $34,999'
+B19001Ce8='$35,000 to $39,999'
+B19001Ce9='$40,000 to $44,999'
+B19001Ce10='$45,000 to $49,999'
+B19001Ce11='$50,000 to $59,999'
+B19001Ce12='$60,000 to $74,999'
+B19001Ce13='$75,000 to $99,999'
+B19001Ce14='$100,000 to $124,999'
+B19001Ce15='$125,000 to $149,999'
+B19001Ce16='$150,000 to $199,999'
+B19001Ce17='$200,000 or more'
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (ASIAN ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Asian alone */
+ 
+B19001De1='Total:'
+B19001De2='Less than $10,000'
+B19001De3='$10,000 to $14,999'
+B19001De4='$15,000 to $19,999'
+B19001De5='$20,000 to $24,999'
+B19001De6='$25,000 to $29,999'
+B19001De7='$30,000 to $34,999'
+B19001De8='$35,000 to $39,999'
+B19001De9='$40,000 to $44,999'
+B19001De10='$45,000 to $49,999'
+B19001De11='$50,000 to $59,999'
+B19001De12='$60,000 to $74,999'
+B19001De13='$75,000 to $99,999'
+B19001De14='$100,000 to $124,999'
+B19001De15='$125,000 to $149,999'
+B19001De16='$150,000 to $199,999'
+B19001De17='$200,000 or more'
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Native Hawaiian and Other Pacific Islander alone */
+ 
+B19001Ee1='Total:'
+B19001Ee2='Less than $10,000'
+B19001Ee3='$10,000 to $14,999'
+B19001Ee4='$15,000 to $19,999'
+B19001Ee5='$20,000 to $24,999'
+B19001Ee6='$25,000 to $29,999'
+B19001Ee7='$30,000 to $34,999'
+B19001Ee8='$35,000 to $39,999'
+B19001Ee9='$40,000 to $44,999'
+B19001Ee10='$45,000 to $49,999'
+B19001Ee11='$50,000 to $59,999'
+B19001Ee12='$60,000 to $74,999'
+B19001Ee13='$75,000 to $99,999'
+B19001Ee14='$100,000 to $124,999'
+B19001Ee15='$125,000 to $149,999'
+B19001Ee16='$150,000 to $199,999'
+B19001Ee17='$200,000 or more'
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (SOME OTHER RACE ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Some other race alone */
+ 
+B19001Fe1='Total:'
+B19001Fe2='Less than $10,000'
+B19001Fe3='$10,000 to $14,999'
+B19001Fe4='$15,000 to $19,999'
+B19001Fe5='$20,000 to $24,999'
+B19001Fe6='$25,000 to $29,999'
+B19001Fe7='$30,000 to $34,999'
+B19001Fe8='$35,000 to $39,999'
+B19001Fe9='$40,000 to $44,999'
+B19001Fe10='$45,000 to $49,999'
+B19001Fe11='$50,000 to $59,999'
+B19001Fe12='$60,000 to $74,999'
+B19001Fe13='$75,000 to $99,999'
+B19001Fe14='$100,000 to $124,999'
+B19001Fe15='$125,000 to $149,999'
+B19001Fe16='$150,000 to $199,999'
+B19001Fe17='$200,000 or more'
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (TWO OR MORE RACES HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Two or more races */
+ 
+B19001Ge1='Total:'
+B19001Ge2='Less than $10,000'
+B19001Ge3='$10,000 to $14,999'
+B19001Ge4='$15,000 to $19,999'
+B19001Ge5='$20,000 to $24,999'
+B19001Ge6='$25,000 to $29,999'
+B19001Ge7='$30,000 to $34,999'
+B19001Ge8='$35,000 to $39,999'
+B19001Ge9='$40,000 to $44,999'
+B19001Ge10='$45,000 to $49,999'
+B19001Ge11='$50,000 to $59,999'
+B19001Ge12='$60,000 to $74,999'
+B19001Ge13='$75,000 to $99,999'
+B19001Ge14='$100,000 to $124,999'
+B19001Ge15='$125,000 to $149,999'
+B19001Ge16='$150,000 to $199,999'
+B19001Ge17='$200,000 or more'
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (WHITE ALONE, NOT HISPANIC OR LATINO HOUSEHOLDER) */
+/*Universe:  Households with a householder who is White alone, not Hispanic or Latino */
+ 
+B19001He1='Total:'
+B19001He2='Less than $10,000'
+B19001He3='$10,000 to $14,999'
+B19001He4='$15,000 to $19,999'
+B19001He5='$20,000 to $24,999'
+B19001He6='$25,000 to $29,999'
+B19001He7='$30,000 to $34,999'
+B19001He8='$35,000 to $39,999'
+B19001He9='$40,000 to $44,999'
+B19001He10='$45,000 to $49,999'
+B19001He11='$50,000 to $59,999'
+B19001He12='$60,000 to $74,999'
+B19001He13='$75,000 to $99,999'
+B19001He14='$100,000 to $124,999'
+B19001He15='$125,000 to $149,999'
+B19001He16='$150,000 to $199,999'
+B19001He17='$200,000 or more'
+ 
+/*HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (HISPANIC OR LATINO HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Hispanic or Latino */
+ 
+B19001Ie1='Total:'
+B19001Ie2='Less than $10,000'
+B19001Ie3='$10,000 to $14,999'
+B19001Ie4='$15,000 to $19,999'
+B19001Ie5='$20,000 to $24,999'
+B19001Ie6='$25,000 to $29,999'
+B19001Ie7='$30,000 to $34,999'
+B19001Ie8='$35,000 to $39,999'
+B19001Ie9='$40,000 to $44,999'
+B19001Ie10='$45,000 to $49,999'
+B19001Ie11='$50,000 to $59,999'
+B19001Ie12='$60,000 to $74,999'
+B19001Ie13='$75,000 to $99,999'
+B19001Ie14='$100,000 to $124,999'
+B19001Ie15='$125,000 to $149,999'
+B19001Ie16='$150,000 to $199,999'
+B19001Ie17='$200,000 or more'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) */
+/*Universe:  Households */
+ 
+B19013e1='Median household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (WHITE ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is White alone */
+ 
+B19013Ae1='Median household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (BLACK OR AFRICAN AMERICAN ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Black or African American alone */
+ 
+B19013Be1='Median household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (AMERICAN INDIAN AND ALASKA NATIVE ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is American Indian and Alaska Native alone */
+ 
+B19013Ce1='Median household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (ASIAN ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Asian alone */
+ 
+B19013De1='Median household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Native Hawaiian and Other Pacific Islander alone */
+ 
+B19013Ee1='Median household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (SOME OTHER RACE ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Some other race alone */
+ 
+B19013Fe1='Median household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (TWO OR MORE RACES HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Two or more races */
+ 
+B19013Ge1='Median household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (WHITE ALONE, NOT HISPANIC OR LATINO HOUSEHOLDER) */
+/*Universe:  Households with a householder who is White alone, not Hispanic or Latino */
+ 
+B19013He1='Median household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (HISPANIC OR LATINO HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Hispanic or Latino */
+ 
+B19013Ie1='Median household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) BY HOUSEHOLD SIZE */
+/*Universe:  Households */
+ 
+B19019e1='Total:'
+B19019e2='1-person households'
+B19019e3='2-person households'
+B19019e4='3-person households'
+B19019e5='4-person households'
+B19019e6='5-person households'
+B19019e7='6-person households'
+B19019e8='7-or-more-person households'
+ 
+/*AGGREGATE HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) */
+/*Universe:  Households */
+ 
+B19025e1='Aggregate household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*AGGREGATE HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (WHITE ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is White alone */
+ 
+B19025Ae1='Aggregate household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*AGGREGATE HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (BLACK OR AFRICAN AMERICAN ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Black or African American alone */
+ 
+B19025Be1='Aggregate household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*AGGREGATE HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (AMERICAN INDIAN AND ALASKA NATIVE ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is American Indian and Alaska Native alone */
+ 
+B19025Ce1='Aggregate household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*AGGREGATE HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (ASIAN ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Asian alone */
+ 
+B19025De1='Aggregate household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*AGGREGATE HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Native Hawaiian and Other Pacific Islander alone */
+ 
+B19025Ee1='Aggregate household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*AGGREGATE HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (SOME OTHER RACE ALONE HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Some other race alone */
+ 
+B19025Fe1='Aggregate household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*AGGREGATE HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (TWO OR MORE RACES HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Two or more races */
+ 
+B19025Ge1='Aggregate household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*AGGREGATE HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (WHITE ALONE, NOT HISPANIC OR LATINO HOUSEHOLDER) */
+/*Universe:  Households with a householder who is White alone, not Hispanic or Latino */
+ 
+B19025He1='Aggregate household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+ 
+/*AGGREGATE HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2011 INFLATION-ADJUSTED DOLLARS) (HISPANIC OR LATINO HOUSEHOLDER) */
+/*Universe:  Households with a householder who is Hispanic or Latino */
+ 
+B19025Ie1='Aggregate household income in the past 12 months (in 2011 inflation-adjusted dollars)'
+;
+ 
+ 
+INPUT
+ 
+FILEID   $ 
+FILETYPE $ 
+STUSAB   $ 
+CHARITER $ 
+SEQUENCE $ 
+LOGRECNO $ 
+ 
+B19001e1
+B19001e2
+B19001e3
+B19001e4
+B19001e5
+B19001e6
+B19001e7
+B19001e8
+B19001e9
+B19001e10
+B19001e11
+B19001e12
+B19001e13
+B19001e14
+B19001e15
+B19001e16
+B19001e17
+ 
+B19001Ae1
+B19001Ae2
+B19001Ae3
+B19001Ae4
+B19001Ae5
+B19001Ae6
+B19001Ae7
+B19001Ae8
+B19001Ae9
+B19001Ae10
+B19001Ae11
+B19001Ae12
+B19001Ae13
+B19001Ae14
+B19001Ae15
+B19001Ae16
+B19001Ae17
+ 
+B19001Be1
+B19001Be2
+B19001Be3
+B19001Be4
+B19001Be5
+B19001Be6
+B19001Be7
+B19001Be8
+B19001Be9
+B19001Be10
+B19001Be11
+B19001Be12
+B19001Be13
+B19001Be14
+B19001Be15
+B19001Be16
+B19001Be17
+ 
+B19001Ce1
+B19001Ce2
+B19001Ce3
+B19001Ce4
+B19001Ce5
+B19001Ce6
+B19001Ce7
+B19001Ce8
+B19001Ce9
+B19001Ce10
+B19001Ce11
+B19001Ce12
+B19001Ce13
+B19001Ce14
+B19001Ce15
+B19001Ce16
+B19001Ce17
+ 
+B19001De1
+B19001De2
+B19001De3
+B19001De4
+B19001De5
+B19001De6
+B19001De7
+B19001De8
+B19001De9
+B19001De10
+B19001De11
+B19001De12
+B19001De13
+B19001De14
+B19001De15
+B19001De16
+B19001De17
+ 
+B19001Ee1
+B19001Ee2
+B19001Ee3
+B19001Ee4
+B19001Ee5
+B19001Ee6
+B19001Ee7
+B19001Ee8
+B19001Ee9
+B19001Ee10
+B19001Ee11
+B19001Ee12
+B19001Ee13
+B19001Ee14
+B19001Ee15
+B19001Ee16
+B19001Ee17
+ 
+B19001Fe1
+B19001Fe2
+B19001Fe3
+B19001Fe4
+B19001Fe5
+B19001Fe6
+B19001Fe7
+B19001Fe8
+B19001Fe9
+B19001Fe10
+B19001Fe11
+B19001Fe12
+B19001Fe13
+B19001Fe14
+B19001Fe15
+B19001Fe16
+B19001Fe17
+ 
+B19001Ge1
+B19001Ge2
+B19001Ge3
+B19001Ge4
+B19001Ge5
+B19001Ge6
+B19001Ge7
+B19001Ge8
+B19001Ge9
+B19001Ge10
+B19001Ge11
+B19001Ge12
+B19001Ge13
+B19001Ge14
+B19001Ge15
+B19001Ge16
+B19001Ge17
+ 
+B19001He1
+B19001He2
+B19001He3
+B19001He4
+B19001He5
+B19001He6
+B19001He7
+B19001He8
+B19001He9
+B19001He10
+B19001He11
+B19001He12
+B19001He13
+B19001He14
+B19001He15
+B19001He16
+B19001He17
+ 
+B19001Ie1
+B19001Ie2
+B19001Ie3
+B19001Ie4
+B19001Ie5
+B19001Ie6
+B19001Ie7
+B19001Ie8
+B19001Ie9
+B19001Ie10
+B19001Ie11
+B19001Ie12
+B19001Ie13
+B19001Ie14
+B19001Ie15
+B19001Ie16
+B19001Ie17
+ 
+B19013e1
+ 
+B19013Ae1
+ 
+B19013Be1
+ 
+B19013Ce1
+ 
+B19013De1
+ 
+B19013Ee1
+ 
+B19013Fe1
+ 
+B19013Ge1
+ 
+B19013He1
+ 
+B19013Ie1
+ 
+B19019e1
+B19019e2
+B19019e3
+B19019e4
+B19019e5
+B19019e6
+B19019e7
+B19019e8
+ 
+B19025e1
+ 
+B19025Ae1
+ 
+B19025Be1
+ 
+B19025Ce1
+ 
+B19025De1
+ 
+B19025Ee1
+ 
+B19025Fe1
+ 
+B19025Ge1
+ 
+B19025He1
+ 
+B19025Ie1
+;
+RUN;
+TITLE2;

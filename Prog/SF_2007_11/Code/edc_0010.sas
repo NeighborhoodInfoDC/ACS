@@ -1,0 +1,540 @@
+TITLE2 "e20115dc0010000";
+DATA work.SFe0010dc;
+ 
+	LENGTH FILEID   $6
+		   FILETYPE $6
+		   STUSAB   $2
+		   CHARITER $3
+		   SEQUENCE $4
+		   LOGRECNO $7;
+ 
+INFILE "D:\DCData\Libraries\ACS\Raw\SF_2007_11\dc_Tracts_Block_Groups_Only\e20115dc0010000.txt" DSD TRUNCOVER DELIMITER =',' LRECL=3000;
+ 
+LABEL FILEID  ='File Identification'
+      FILETYPE='File Type'  
+ 	   STUSAB  ='State/U.S.-Abbreviation (USPS)'
+ 	   CHARITER='Character Iteration'
+ 	   SEQUENCE='Sequence Number'
+ 	   LOGRECNO='Logical Record Number'
+ 
+ 
+/*SEX BY AGE BY NATIVITY AND CITIZENSHIP STATUS (HISPANIC OR LATINO) */
+/*Universe:  Hispanic or Latino population */
+ 
+B05003Ie1='Total:'
+B05003Ie2='Male:'
+B05003Ie3='Under 18 years:'
+B05003Ie4='Native'
+B05003Ie5='Foreign born:'
+B05003Ie6='Naturalized U.S. citizen'
+B05003Ie7='Not a U.S. citizen'
+B05003Ie8='18 years and over:'
+B05003Ie9='Native'
+B05003Ie10='Foreign born:'
+B05003Ie11='Naturalized U.S. citizen'
+B05003Ie12='Not a U.S. citizen'
+B05003Ie13='Female:'
+B05003Ie14='Under 18 years:'
+B05003Ie15='Native'
+B05003Ie16='Foreign born:'
+B05003Ie17='Naturalized U.S. citizen'
+B05003Ie18='Not a U.S. citizen'
+B05003Ie19='18 years and over:'
+B05003Ie20='Native'
+B05003Ie21='Foreign born:'
+B05003Ie22='Naturalized U.S. citizen'
+B05003Ie23='Not a U.S. citizen'
+ 
+/*MEDIAN AGE BY NATIVITY AND CITIZENSHIP STATUS BY SEX */
+/*Universe:  Total population */
+ 
+B05004e1='Total:'
+B05004e2='Male'
+B05004e3='Female'
+B05004e4='Native:'
+B05004e5='Male'
+B05004e6='Female'
+B05004e7='Foreign born:'
+B05004e8='Male'
+B05004e9='Female'
+B05004e10='Naturalized U.S. citizen:'
+B05004e11='Male'
+B05004e12='Female'
+B05004e13='Not a U.S. citizen:'
+B05004e14='Male'
+B05004e15='Female'
+ 
+/*YEAR OF ENTRY BY NATIVITY AND CITIZENSHIP STATUS IN THE UNITED STATES */
+/*Universe:  Population born outside the United States */
+ 
+B05005e1='Total:'
+B05005e2='Entered 2000 or later:'
+B05005e3='Native'
+B05005e4='Foreign born:'
+B05005e5='Naturalized U.S. citizen'
+B05005e6='Not a U.S. citizen'
+B05005e7='Entered 1990 to 1999:'
+B05005e8='Native'
+B05005e9='Foreign born:'
+B05005e10='Naturalized U.S. citizen'
+B05005e11='Not a U.S. citizen'
+B05005e12='Entered 1980 to 1989:'
+B05005e13='Native'
+B05005e14='Foreign born:'
+B05005e15='Naturalized U.S. citizen'
+B05005e16='Not a U.S. citizen'
+B05005e17='Entered before 1980:'
+B05005e18='Native'
+B05005e19='Foreign born:'
+B05005e20='Naturalized U.S. citizen'
+B05005e21='Not a U.S. citizen'
+ 
+/*YEAR OF ENTRY BY NATIVITY AND CITIZENSHIP STATUS IN PUERTO RICO */
+/*Universe:  Population born outside Puerto Rico */
+ 
+B05005PRe1='Total:'
+B05005PRe2='Entered 2000 or later:'
+B05005PRe3='Native'
+B05005PRe4='Foreign born:'
+B05005PRe5='Naturalized U.S. citizen'
+B05005PRe6='Not a U.S. citizen'
+B05005PRe7='Entered 1990 to 1999:'
+B05005PRe8='Native'
+B05005PRe9='Foreign born:'
+B05005PRe10='Naturalized U.S. citizen'
+B05005PRe11='Not a U.S. citizen'
+B05005PRe12='Entered 1980 to 1989:'
+B05005PRe13='Native'
+B05005PRe14='Foreign born:'
+B05005PRe15='Naturalized U.S. citizen'
+B05005PRe16='Not a U.S. citizen'
+B05005PRe17='Entered before 1980:'
+B05005PRe18='Native'
+B05005PRe19='Foreign born:'
+B05005PRe20='Naturalized U.S. citizen'
+B05005PRe21='Not a U.S. citizen'
+ 
+/*PLACE OF BIRTH FOR THE FOREIGN-BORN POPULATION IN THE UNITED STATES */
+/*Universe:  Foreign-born population excluding population born at sea */
+ 
+B05006e1='Total:'
+B05006e2='Europe:'
+B05006e3='Northern Europe:'
+B05006e4='United Kingdom (inc. Crown Dependencies):'
+B05006e5='United Kingdom, excluding England and Scotland'
+B05006e6='England'
+B05006e7='Scotland'
+B05006e8='Ireland'
+B05006e9='Denmark'
+B05006e10='Norway'
+B05006e11='Sweden'
+B05006e12='Other Northern Europe'
+B05006e13='Western Europe:'
+B05006e14='Austria'
+B05006e15='Belgium'
+B05006e16='France'
+B05006e17='Germany'
+B05006e18='Netherlands'
+B05006e19='Switzerland'
+B05006e20='Other Western Europe'
+B05006e21='Southern Europe:'
+B05006e22='Greece'
+B05006e23='Italy'
+B05006e24='Portugal'
+B05006e25='Spain'
+B05006e26='Other Southern Europe'
+B05006e27='Eastern Europe:'
+B05006e28='Albania'
+B05006e29='Belarus'
+B05006e30='Bulgaria'
+B05006e31='Croatia'
+B05006e32='Czechoslovakia (includes Czech Republic and Slovakia)'
+B05006e33='Hungary'
+B05006e34='Latvia'
+B05006e35='Lithuania'
+B05006e36='Macedonia'
+B05006e37='Moldova'
+B05006e38='Poland'
+B05006e39='Romania'
+B05006e40='Russia'
+B05006e41='Ukraine'
+B05006e42='Bosnia and Herzegovina'
+B05006e43='Yugoslavia'
+B05006e44='Serbia'
+B05006e45='Other Eastern Europe'
+B05006e46='Europe, n.e.c.'
+B05006e47='Asia:'
+B05006e48='Eastern Asia:'
+B05006e49='China:'
+B05006e50='China, excluding Hong Kong and Taiwan'
+B05006e51='Hong Kong'
+B05006e52='Taiwan'
+B05006e53='Japan'
+B05006e54='Korea'
+B05006e55='Other Eastern Asia'
+B05006e56='South Central Asia:'
+B05006e57='Afghanistan'
+B05006e58='Bangladesh'
+B05006e59='India'
+B05006e60='Iran'
+B05006e61='Kazakhstan'
+B05006e62='Nepal'
+B05006e63='Pakistan'
+B05006e64='Sri Lanka'
+B05006e65='Uzbekistan'
+B05006e66='Other South Central Asia'
+B05006e67='South Eastern Asia:'
+B05006e68='Cambodia'
+B05006e69='Indonesia'
+B05006e70='Laos'
+B05006e71='Malaysia'
+B05006e72='Burma'
+B05006e73='Philippines'
+B05006e74='Singapore'
+B05006e75='Thailand'
+B05006e76='Vietnam'
+B05006e77='Other South Eastern Asia'
+B05006e78='Western Asia:'
+B05006e79='Iraq'
+B05006e80='Israel'
+B05006e81='Jordan'
+B05006e82='Kuwait'
+B05006e83='Lebanon'
+B05006e84='Saudi Arabia'
+B05006e85='Syria'
+B05006e86='Yemen'
+B05006e87='Turkey'
+B05006e88='Armenia'
+B05006e89='Other Western Asia'
+B05006e90='Asia,n.e.c.'
+B05006e91='Africa:'
+B05006e92='Eastern Africa:'
+B05006e93='Eritrea'
+B05006e94='Ethiopia'
+B05006e95='Kenya'
+B05006e96='Other Eastern Africa'
+B05006e97='Middle Africa:'
+B05006e98='Cameroon'
+B05006e99='Other Middle Africa'
+B05006e100='Northern Africa:'
+B05006e101='Egypt'
+B05006e102='Morocco'
+B05006e103='Sudan'
+B05006e104='Other Northern Africa'
+B05006e105='Southern Africa:'
+B05006e106='South Africa'
+B05006e107='Other Southern Africa'
+B05006e108='Western Africa:'
+B05006e109='Cape Verde'
+B05006e110='Ghana'
+B05006e111='Liberia'
+B05006e112='Nigeria'
+B05006e113='Sierra Leone'
+B05006e114='Other Western Africa'
+B05006e115='Africa, n.e.c.'
+B05006e116='Oceania:'
+B05006e117='Australia and New Zealand Subregion:'
+B05006e118='Australia'
+B05006e119='Other Australian and New Zealand Subregion'
+B05006e120='Fiji'
+B05006e121='Oceania, n.e.c.'
+B05006e122='Americas:'
+B05006e123='Latin America:'
+B05006e124='Caribbean:'
+B05006e125='Bahamas'
+B05006e126='Barbados'
+B05006e127='Cuba'
+B05006e128='Dominica'
+B05006e129='Dominican Republic'
+B05006e130='Grenada'
+B05006e131='Haiti'
+B05006e132='Jamaica'
+B05006e133='St. Vincent and the Grenadines'
+B05006e134='Trinidad and Tobago'
+B05006e135='West Indies'
+B05006e136='Other Caribbean'
+B05006e137='Central America:'
+B05006e138='Mexico'
+B05006e139='Belize'
+B05006e140='Costa Rica'
+B05006e141='El Salvador'
+B05006e142='Guatemala'
+B05006e143='Honduras'
+B05006e144='Nicaragua'
+B05006e145='Panama'
+B05006e146='Other Central America'
+B05006e147='South America:'
+B05006e148='Argentina'
+B05006e149='Bolivia'
+B05006e150='Brazil'
+B05006e151='Chile'
+B05006e152='Colombia'
+B05006e153='Ecuador'
+B05006e154='Guyana'
+B05006e155='Peru'
+B05006e156='Uruguay'
+B05006e157='Venezuela'
+B05006e158='Other South America'
+B05006e159='Northern America:'
+B05006e160='Canada'
+B05006e161='Other Northern America'
+;
+ 
+ 
+INPUT
+ 
+FILEID   $ 
+FILETYPE $ 
+STUSAB   $ 
+CHARITER $ 
+SEQUENCE $ 
+LOGRECNO $ 
+ 
+B05003Ie1
+B05003Ie2
+B05003Ie3
+B05003Ie4
+B05003Ie5
+B05003Ie6
+B05003Ie7
+B05003Ie8
+B05003Ie9
+B05003Ie10
+B05003Ie11
+B05003Ie12
+B05003Ie13
+B05003Ie14
+B05003Ie15
+B05003Ie16
+B05003Ie17
+B05003Ie18
+B05003Ie19
+B05003Ie20
+B05003Ie21
+B05003Ie22
+B05003Ie23
+ 
+B05004e1
+B05004e2
+B05004e3
+B05004e4
+B05004e5
+B05004e6
+B05004e7
+B05004e8
+B05004e9
+B05004e10
+B05004e11
+B05004e12
+B05004e13
+B05004e14
+B05004e15
+ 
+B05005e1
+B05005e2
+B05005e3
+B05005e4
+B05005e5
+B05005e6
+B05005e7
+B05005e8
+B05005e9
+B05005e10
+B05005e11
+B05005e12
+B05005e13
+B05005e14
+B05005e15
+B05005e16
+B05005e17
+B05005e18
+B05005e19
+B05005e20
+B05005e21
+ 
+B05005PRe1
+B05005PRe2
+B05005PRe3
+B05005PRe4
+B05005PRe5
+B05005PRe6
+B05005PRe7
+B05005PRe8
+B05005PRe9
+B05005PRe10
+B05005PRe11
+B05005PRe12
+B05005PRe13
+B05005PRe14
+B05005PRe15
+B05005PRe16
+B05005PRe17
+B05005PRe18
+B05005PRe19
+B05005PRe20
+B05005PRe21
+ 
+B05006e1
+B05006e2
+B05006e3
+B05006e4
+B05006e5
+B05006e6
+B05006e7
+B05006e8
+B05006e9
+B05006e10
+B05006e11
+B05006e12
+B05006e13
+B05006e14
+B05006e15
+B05006e16
+B05006e17
+B05006e18
+B05006e19
+B05006e20
+B05006e21
+B05006e22
+B05006e23
+B05006e24
+B05006e25
+B05006e26
+B05006e27
+B05006e28
+B05006e29
+B05006e30
+B05006e31
+B05006e32
+B05006e33
+B05006e34
+B05006e35
+B05006e36
+B05006e37
+B05006e38
+B05006e39
+B05006e40
+B05006e41
+B05006e42
+B05006e43
+B05006e44
+B05006e45
+B05006e46
+B05006e47
+B05006e48
+B05006e49
+B05006e50
+B05006e51
+B05006e52
+B05006e53
+B05006e54
+B05006e55
+B05006e56
+B05006e57
+B05006e58
+B05006e59
+B05006e60
+B05006e61
+B05006e62
+B05006e63
+B05006e64
+B05006e65
+B05006e66
+B05006e67
+B05006e68
+B05006e69
+B05006e70
+B05006e71
+B05006e72
+B05006e73
+B05006e74
+B05006e75
+B05006e76
+B05006e77
+B05006e78
+B05006e79
+B05006e80
+B05006e81
+B05006e82
+B05006e83
+B05006e84
+B05006e85
+B05006e86
+B05006e87
+B05006e88
+B05006e89
+B05006e90
+B05006e91
+B05006e92
+B05006e93
+B05006e94
+B05006e95
+B05006e96
+B05006e97
+B05006e98
+B05006e99
+B05006e100
+B05006e101
+B05006e102
+B05006e103
+B05006e104
+B05006e105
+B05006e106
+B05006e107
+B05006e108
+B05006e109
+B05006e110
+B05006e111
+B05006e112
+B05006e113
+B05006e114
+B05006e115
+B05006e116
+B05006e117
+B05006e118
+B05006e119
+B05006e120
+B05006e121
+B05006e122
+B05006e123
+B05006e124
+B05006e125
+B05006e126
+B05006e127
+B05006e128
+B05006e129
+B05006e130
+B05006e131
+B05006e132
+B05006e133
+B05006e134
+B05006e135
+B05006e136
+B05006e137
+B05006e138
+B05006e139
+B05006e140
+B05006e141
+B05006e142
+B05006e143
+B05006e144
+B05006e145
+B05006e146
+B05006e147
+B05006e148
+B05006e149
+B05006e150
+B05006e151
+B05006e152
+B05006e153
+B05006e154
+B05006e155
+B05006e156
+B05006e157
+B05006e158
+B05006e159
+B05006e160
+B05006e161
+;
+RUN;
+TITLE2;

@@ -1,0 +1,521 @@
+TITLE2 "e20125dc0048000";
+DATA work.SFe0048dc;
+ 
+	LENGTH FILEID   $6
+		   FILETYPE $6
+		   STUSAB   $2
+		   CHARITER $3
+		   SEQUENCE $4
+		   LOGRECNO $7;
+ 
+INFILE "L:\Libraries\ACS\Raw\SF_2008_12\dc_Tracts_Block_Groups_Only\e20125dc0048000.txt" DSD TRUNCOVER DELIMITER =',' LRECL=3000;
+ 
+LABEL FILEID  ='File Identification'
+      FILETYPE='File Type'  
+ 	   STUSAB  ='State/U.S.-Abbreviation (USPS)'
+ 	   CHARITER='Character Iteration'
+ 	   SEQUENCE='Sequence Number'
+ 	   LOGRECNO='Logical Record Number'
+ 
+/*POVERTY STATUS IN THE PAST 12 MONTHS BY SEX BY AGE (ASIAN ALONE) */
+/*Universe:  Asian alone population for whom poverty status is determined */
+ 
+B17001De1='Total:'
+B17001De2='Income in the past 12 months below poverty level:'
+B17001De3='Male:'
+B17001De4='Under 5 years'
+B17001De5='5 years'
+B17001De6='6 to 11 years'
+B17001De7='12 to 14 years'
+B17001De8='15 years'
+B17001De9='16 and 17 years'
+B17001De10='18 to 24 years'
+B17001De11='25 to 34 years'
+B17001De12='35 to 44 years'
+B17001De13='45 to 54 years'
+B17001De14='55 to 64 years'
+B17001De15='65 to 74 years'
+B17001De16='75 years and over'
+B17001De17='Female:'
+B17001De18='Under 5 years'
+B17001De19='5 years'
+B17001De20='6 to 11 years'
+B17001De21='12 to 14 years'
+B17001De22='15 years'
+B17001De23='16 and 17 years'
+B17001De24='18 to 24 years'
+B17001De25='25 to 34 years'
+B17001De26='35 to 44 years'
+B17001De27='45 to 54 years'
+B17001De28='55 to 64 years'
+B17001De29='65 to 74 years'
+B17001De30='75 years and over'
+B17001De31='Income in the past 12 months at or above poverty level:'
+B17001De32='Male:'
+B17001De33='Under 5 years'
+B17001De34='5 years'
+B17001De35='6 to 11 years'
+B17001De36='12 to 14 years'
+B17001De37='15 years'
+B17001De38='16 and 17 years'
+B17001De39='18 to 24 years'
+B17001De40='25 to 34 years'
+B17001De41='35 to 44 years'
+B17001De42='45 to 54 years'
+B17001De43='55 to 64 years'
+B17001De44='65 to 74 years'
+B17001De45='75 years and over'
+B17001De46='Female:'
+B17001De47='Under 5 years'
+B17001De48='5 years'
+B17001De49='6 to 11 years'
+B17001De50='12 to 14 years'
+B17001De51='15 years'
+B17001De52='16 and 17 years'
+B17001De53='18 to 24 years'
+B17001De54='25 to 34 years'
+B17001De55='35 to 44 years'
+B17001De56='45 to 54 years'
+B17001De57='55 to 64 years'
+B17001De58='65 to 74 years'
+B17001De59='75 years and over'
+/*POVERTY STATUS IN THE PAST 12 MONTHS BY SEX BY AGE (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) */
+/*Universe:  Native Hawaiian and Other Pacific Islander alone population for whom poverty status is determined */
+ 
+B17001Ee1='Total:'
+B17001Ee2='Income in the past 12 months below poverty level:'
+B17001Ee3='Male:'
+B17001Ee4='Under 5 years'
+B17001Ee5='5 years'
+B17001Ee6='6 to 11 years'
+B17001Ee7='12 to 14 years'
+B17001Ee8='15 years'
+B17001Ee9='16 and 17 years'
+B17001Ee10='18 to 24 years'
+B17001Ee11='25 to 34 years'
+B17001Ee12='35 to 44 years'
+B17001Ee13='45 to 54 years'
+B17001Ee14='55 to 64 years'
+B17001Ee15='65 to 74 years'
+B17001Ee16='75 years and over'
+B17001Ee17='Female:'
+B17001Ee18='Under 5 years'
+B17001Ee19='5 years'
+B17001Ee20='6 to 11 years'
+B17001Ee21='12 to 14 years'
+B17001Ee22='15 years'
+B17001Ee23='16 and 17 years'
+B17001Ee24='18 to 24 years'
+B17001Ee25='25 to 34 years'
+B17001Ee26='35 to 44 years'
+B17001Ee27='45 to 54 years'
+B17001Ee28='55 to 64 years'
+B17001Ee29='65 to 74 years'
+B17001Ee30='75 years and over'
+B17001Ee31='Income in the past 12 months at or above poverty level:'
+B17001Ee32='Male:'
+B17001Ee33='Under 5 years'
+B17001Ee34='5 years'
+B17001Ee35='6 to 11 years'
+B17001Ee36='12 to 14 years'
+B17001Ee37='15 years'
+B17001Ee38='16 and 17 years'
+B17001Ee39='18 to 24 years'
+B17001Ee40='25 to 34 years'
+B17001Ee41='35 to 44 years'
+B17001Ee42='45 to 54 years'
+B17001Ee43='55 to 64 years'
+B17001Ee44='65 to 74 years'
+B17001Ee45='75 years and over'
+B17001Ee46='Female:'
+B17001Ee47='Under 5 years'
+B17001Ee48='5 years'
+B17001Ee49='6 to 11 years'
+B17001Ee50='12 to 14 years'
+B17001Ee51='15 years'
+B17001Ee52='16 and 17 years'
+B17001Ee53='18 to 24 years'
+B17001Ee54='25 to 34 years'
+B17001Ee55='35 to 44 years'
+B17001Ee56='45 to 54 years'
+B17001Ee57='55 to 64 years'
+B17001Ee58='65 to 74 years'
+B17001Ee59='75 years and over'
+/*POVERTY STATUS IN THE PAST 12 MONTHS BY SEX BY AGE (SOME OTHER RACE ALONE) */
+/*Universe:  Some other race alone population for whom poverty status is determined */
+ 
+B17001Fe1='Total:'
+B17001Fe2='Income in the past 12 months below poverty level:'
+B17001Fe3='Male:'
+B17001Fe4='Under 5 years'
+B17001Fe5='5 years'
+B17001Fe6='6 to 11 years'
+B17001Fe7='12 to 14 years'
+B17001Fe8='15 years'
+B17001Fe9='16 and 17 years'
+B17001Fe10='18 to 24 years'
+B17001Fe11='25 to 34 years'
+B17001Fe12='35 to 44 years'
+B17001Fe13='45 to 54 years'
+B17001Fe14='55 to 64 years'
+B17001Fe15='65 to 74 years'
+B17001Fe16='75 years and over'
+B17001Fe17='Female:'
+B17001Fe18='Under 5 years'
+B17001Fe19='5 years'
+B17001Fe20='6 to 11 years'
+B17001Fe21='12 to 14 years'
+B17001Fe22='15 years'
+B17001Fe23='16 and 17 years'
+B17001Fe24='18 to 24 years'
+B17001Fe25='25 to 34 years'
+B17001Fe26='35 to 44 years'
+B17001Fe27='45 to 54 years'
+B17001Fe28='55 to 64 years'
+B17001Fe29='65 to 74 years'
+B17001Fe30='75 years and over'
+B17001Fe31='Income in the past 12 months at or above poverty level:'
+B17001Fe32='Male:'
+B17001Fe33='Under 5 years'
+B17001Fe34='5 years'
+B17001Fe35='6 to 11 years'
+B17001Fe36='12 to 14 years'
+B17001Fe37='15 years'
+B17001Fe38='16 and 17 years'
+B17001Fe39='18 to 24 years'
+B17001Fe40='25 to 34 years'
+B17001Fe41='35 to 44 years'
+B17001Fe42='45 to 54 years'
+B17001Fe43='55 to 64 years'
+B17001Fe44='65 to 74 years'
+B17001Fe45='75 years and over'
+B17001Fe46='Female:'
+B17001Fe47='Under 5 years'
+B17001Fe48='5 years'
+B17001Fe49='6 to 11 years'
+B17001Fe50='12 to 14 years'
+B17001Fe51='15 years'
+B17001Fe52='16 and 17 years'
+B17001Fe53='18 to 24 years'
+B17001Fe54='25 to 34 years'
+B17001Fe55='35 to 44 years'
+B17001Fe56='45 to 54 years'
+B17001Fe57='55 to 64 years'
+B17001Fe58='65 to 74 years'
+B17001Fe59='75 years and over'
+/*POVERTY STATUS IN THE PAST 12 MONTHS BY SEX BY AGE (TWO OR MORE RACES) */
+/*Universe:  Two or more races population for whom poverty status is determined */
+ 
+B17001Ge1='Total:'
+B17001Ge2='Income in the past 12 months below poverty level:'
+B17001Ge3='Male:'
+B17001Ge4='Under 5 years'
+B17001Ge5='5 years'
+B17001Ge6='6 to 11 years'
+B17001Ge7='12 to 14 years'
+B17001Ge8='15 years'
+B17001Ge9='16 and 17 years'
+B17001Ge10='18 to 24 years'
+B17001Ge11='25 to 34 years'
+B17001Ge12='35 to 44 years'
+B17001Ge13='45 to 54 years'
+B17001Ge14='55 to 64 years'
+B17001Ge15='65 to 74 years'
+B17001Ge16='75 years and over'
+B17001Ge17='Female:'
+B17001Ge18='Under 5 years'
+B17001Ge19='5 years'
+B17001Ge20='6 to 11 years'
+B17001Ge21='12 to 14 years'
+B17001Ge22='15 years'
+B17001Ge23='16 and 17 years'
+B17001Ge24='18 to 24 years'
+B17001Ge25='25 to 34 years'
+B17001Ge26='35 to 44 years'
+B17001Ge27='45 to 54 years'
+B17001Ge28='55 to 64 years'
+B17001Ge29='65 to 74 years'
+B17001Ge30='75 years and over'
+B17001Ge31='Income in the past 12 months at or above poverty level:'
+B17001Ge32='Male:'
+B17001Ge33='Under 5 years'
+B17001Ge34='5 years'
+B17001Ge35='6 to 11 years'
+B17001Ge36='12 to 14 years'
+B17001Ge37='15 years'
+B17001Ge38='16 and 17 years'
+B17001Ge39='18 to 24 years'
+B17001Ge40='25 to 34 years'
+B17001Ge41='35 to 44 years'
+B17001Ge42='45 to 54 years'
+B17001Ge43='55 to 64 years'
+B17001Ge44='65 to 74 years'
+B17001Ge45='75 years and over'
+B17001Ge46='Female:'
+B17001Ge47='Under 5 years'
+B17001Ge48='5 years'
+B17001Ge49='6 to 11 years'
+B17001Ge50='12 to 14 years'
+B17001Ge51='15 years'
+B17001Ge52='16 and 17 years'
+B17001Ge53='18 to 24 years'
+B17001Ge54='25 to 34 years'
+B17001Ge55='35 to 44 years'
+B17001Ge56='45 to 54 years'
+B17001Ge57='55 to 64 years'
+B17001Ge58='65 to 74 years'
+B17001Ge59='75 years and over'
+;
+ 
+ 
+INPUT
+ 
+FILEID   $ 
+FILETYPE $ 
+STUSAB   $ 
+CHARITER $ 
+SEQUENCE $ 
+LOGRECNO $ 
+ 
+B17001De1
+B17001De2
+B17001De3
+B17001De4
+B17001De5
+B17001De6
+B17001De7
+B17001De8
+B17001De9
+B17001De10
+B17001De11
+B17001De12
+B17001De13
+B17001De14
+B17001De15
+B17001De16
+B17001De17
+B17001De18
+B17001De19
+B17001De20
+B17001De21
+B17001De22
+B17001De23
+B17001De24
+B17001De25
+B17001De26
+B17001De27
+B17001De28
+B17001De29
+B17001De30
+B17001De31
+B17001De32
+B17001De33
+B17001De34
+B17001De35
+B17001De36
+B17001De37
+B17001De38
+B17001De39
+B17001De40
+B17001De41
+B17001De42
+B17001De43
+B17001De44
+B17001De45
+B17001De46
+B17001De47
+B17001De48
+B17001De49
+B17001De50
+B17001De51
+B17001De52
+B17001De53
+B17001De54
+B17001De55
+B17001De56
+B17001De57
+B17001De58
+B17001De59
+ 
+B17001Ee1
+B17001Ee2
+B17001Ee3
+B17001Ee4
+B17001Ee5
+B17001Ee6
+B17001Ee7
+B17001Ee8
+B17001Ee9
+B17001Ee10
+B17001Ee11
+B17001Ee12
+B17001Ee13
+B17001Ee14
+B17001Ee15
+B17001Ee16
+B17001Ee17
+B17001Ee18
+B17001Ee19
+B17001Ee20
+B17001Ee21
+B17001Ee22
+B17001Ee23
+B17001Ee24
+B17001Ee25
+B17001Ee26
+B17001Ee27
+B17001Ee28
+B17001Ee29
+B17001Ee30
+B17001Ee31
+B17001Ee32
+B17001Ee33
+B17001Ee34
+B17001Ee35
+B17001Ee36
+B17001Ee37
+B17001Ee38
+B17001Ee39
+B17001Ee40
+B17001Ee41
+B17001Ee42
+B17001Ee43
+B17001Ee44
+B17001Ee45
+B17001Ee46
+B17001Ee47
+B17001Ee48
+B17001Ee49
+B17001Ee50
+B17001Ee51
+B17001Ee52
+B17001Ee53
+B17001Ee54
+B17001Ee55
+B17001Ee56
+B17001Ee57
+B17001Ee58
+B17001Ee59
+ 
+B17001Fe1
+B17001Fe2
+B17001Fe3
+B17001Fe4
+B17001Fe5
+B17001Fe6
+B17001Fe7
+B17001Fe8
+B17001Fe9
+B17001Fe10
+B17001Fe11
+B17001Fe12
+B17001Fe13
+B17001Fe14
+B17001Fe15
+B17001Fe16
+B17001Fe17
+B17001Fe18
+B17001Fe19
+B17001Fe20
+B17001Fe21
+B17001Fe22
+B17001Fe23
+B17001Fe24
+B17001Fe25
+B17001Fe26
+B17001Fe27
+B17001Fe28
+B17001Fe29
+B17001Fe30
+B17001Fe31
+B17001Fe32
+B17001Fe33
+B17001Fe34
+B17001Fe35
+B17001Fe36
+B17001Fe37
+B17001Fe38
+B17001Fe39
+B17001Fe40
+B17001Fe41
+B17001Fe42
+B17001Fe43
+B17001Fe44
+B17001Fe45
+B17001Fe46
+B17001Fe47
+B17001Fe48
+B17001Fe49
+B17001Fe50
+B17001Fe51
+B17001Fe52
+B17001Fe53
+B17001Fe54
+B17001Fe55
+B17001Fe56
+B17001Fe57
+B17001Fe58
+B17001Fe59
+ 
+B17001Ge1
+B17001Ge2
+B17001Ge3
+B17001Ge4
+B17001Ge5
+B17001Ge6
+B17001Ge7
+B17001Ge8
+B17001Ge9
+B17001Ge10
+B17001Ge11
+B17001Ge12
+B17001Ge13
+B17001Ge14
+B17001Ge15
+B17001Ge16
+B17001Ge17
+B17001Ge18
+B17001Ge19
+B17001Ge20
+B17001Ge21
+B17001Ge22
+B17001Ge23
+B17001Ge24
+B17001Ge25
+B17001Ge26
+B17001Ge27
+B17001Ge28
+B17001Ge29
+B17001Ge30
+B17001Ge31
+B17001Ge32
+B17001Ge33
+B17001Ge34
+B17001Ge35
+B17001Ge36
+B17001Ge37
+B17001Ge38
+B17001Ge39
+B17001Ge40
+B17001Ge41
+B17001Ge42
+B17001Ge43
+B17001Ge44
+B17001Ge45
+B17001Ge46
+B17001Ge47
+B17001Ge48
+B17001Ge49
+B17001Ge50
+B17001Ge51
+B17001Ge52
+B17001Ge53
+B17001Ge54
+B17001Ge55
+B17001Ge56
+B17001Ge57
+B17001Ge58
+B17001Ge59
+;
+RUN;
+TITLE2;

@@ -1,0 +1,538 @@
+TITLE2 "m20115dc0002000";
+DATA work.SFm0002dc;
+ 
+	LENGTH FILEID   $6
+		   FILETYPE $6
+		   STUSAB   $2
+		   CHARITER $3
+		   SEQUENCE $4
+		   LOGRECNO $7;
+ 
+INFILE "D:\DCData\Libraries\ACS\Raw\SF_2007_11\dc_Tracts_Block_Groups_Only\m20115dc0002000.txt" DSD TRUNCOVER DELIMITER =',' LRECL=3000;
+ 
+LABEL FILEID  ='File Identification'
+      FILETYPE='File Type'  
+ 	   STUSAB  ='State/U.S.-Abbreviation (USPS)'
+ 	   CHARITER='Character Iteration'
+ 	   SEQUENCE='Sequence Number'
+ 	   LOGRECNO='Logical Record Number'
+ 
+ 
+/*SEX BY AGE */
+/*Universe:  Total population */
+ 
+B01001m1='Total:'
+B01001m2='Male:'
+B01001m3='Under 5 years'
+B01001m4='5 to 9 years'
+B01001m5='10 to 14 years'
+B01001m6='15 to 17 years'
+B01001m7='18 and 19 years'
+B01001m8='20 years'
+B01001m9='21 years'
+B01001m10='22 to 24 years'
+B01001m11='25 to 29 years'
+B01001m12='30 to 34 years'
+B01001m13='35 to 39 years'
+B01001m14='40 to 44 years'
+B01001m15='45 to 49 years'
+B01001m16='50 to 54 years'
+B01001m17='55 to 59 years'
+B01001m18='60 and 61 years'
+B01001m19='62 to 64 years'
+B01001m20='65 and 66 years'
+B01001m21='67 to 69 years'
+B01001m22='70 to 74 years'
+B01001m23='75 to 79 years'
+B01001m24='80 to 84 years'
+B01001m25='85 years and over'
+B01001m26='Female:'
+B01001m27='Under 5 years'
+B01001m28='5 to 9 years'
+B01001m29='10 to 14 years'
+B01001m30='15 to 17 years'
+B01001m31='18 and 19 years'
+B01001m32='20 years'
+B01001m33='21 years'
+B01001m34='22 to 24 years'
+B01001m35='25 to 29 years'
+B01001m36='30 to 34 years'
+B01001m37='35 to 39 years'
+B01001m38='40 to 44 years'
+B01001m39='45 to 49 years'
+B01001m40='50 to 54 years'
+B01001m41='55 to 59 years'
+B01001m42='60 and 61 years'
+B01001m43='62 to 64 years'
+B01001m44='65 and 66 years'
+B01001m45='67 to 69 years'
+B01001m46='70 to 74 years'
+B01001m47='75 to 79 years'
+B01001m48='80 to 84 years'
+B01001m49='85 years and over'
+ 
+/*SEX BY AGE (WHITE ALONE) */
+/*Universe:  People who are White alone */
+ 
+B01001Am1='Total:'
+B01001Am2='Male:'
+B01001Am3='Under 5 years'
+B01001Am4='5 to 9 years'
+B01001Am5='10 to 14 years'
+B01001Am6='15 to 17 years'
+B01001Am7='18 and 19 years'
+B01001Am8='20 to 24 years'
+B01001Am9='25 to 29 years'
+B01001Am10='30 to 34 years'
+B01001Am11='35 to 44 years'
+B01001Am12='45 to 54 years'
+B01001Am13='55 to 64 years'
+B01001Am14='65 to 74 years'
+B01001Am15='75 to 84 years'
+B01001Am16='85 years and over'
+B01001Am17='Female:'
+B01001Am18='Under 5 years'
+B01001Am19='5 to 9 years'
+B01001Am20='10 to 14 years'
+B01001Am21='15 to 17 years'
+B01001Am22='18 and 19 years'
+B01001Am23='20 to 24 years'
+B01001Am24='25 to 29 years'
+B01001Am25='30 to 34 years'
+B01001Am26='35 to 44 years'
+B01001Am27='45 to 54 years'
+B01001Am28='55 to 64 years'
+B01001Am29='65 to 74 years'
+B01001Am30='75 to 84 years'
+B01001Am31='85 years and over'
+ 
+/*SEX BY AGE (BLACK OR AFRICAN AMERICAN ALONE) */
+/*Universe:  Black or African American alone */
+ 
+B01001Bm1='Total:'
+B01001Bm2='Male:'
+B01001Bm3='Under 5 years'
+B01001Bm4='5 to 9 years'
+B01001Bm5='10 to 14 years'
+B01001Bm6='15 to 17 years'
+B01001Bm7='18 and 19 years'
+B01001Bm8='20 to 24 years'
+B01001Bm9='25 to 29 years'
+B01001Bm10='30 to 34 years'
+B01001Bm11='35 to 44 years'
+B01001Bm12='45 to 54 years'
+B01001Bm13='55 to 64 years'
+B01001Bm14='65 to 74 years'
+B01001Bm15='75 to 84 years'
+B01001Bm16='85 years and over'
+B01001Bm17='Female:'
+B01001Bm18='Under 5 years'
+B01001Bm19='5 to 9 years'
+B01001Bm20='10 to 14 years'
+B01001Bm21='15 to 17 years'
+B01001Bm22='18 and 19 years'
+B01001Bm23='20 to 24 years'
+B01001Bm24='25 to 29 years'
+B01001Bm25='30 to 34 years'
+B01001Bm26='35 to 44 years'
+B01001Bm27='45 to 54 years'
+B01001Bm28='55 to 64 years'
+B01001Bm29='65 to 74 years'
+B01001Bm30='75 to 84 years'
+B01001Bm31='85 years and over'
+ 
+/*SEX BY AGE (AMERICAN INDIAN AND ALASKA NATIVE ALONE) */
+/*Universe:  People who are American Indian and Alaska Native alone */
+ 
+B01001Cm1='Total:'
+B01001Cm2='Male:'
+B01001Cm3='Under 5 years'
+B01001Cm4='5 to 9 years'
+B01001Cm5='10 to 14 years'
+B01001Cm6='15 to 17 years'
+B01001Cm7='18 and 19 years'
+B01001Cm8='20 to 24 years'
+B01001Cm9='25 to 29 years'
+B01001Cm10='30 to 34 years'
+B01001Cm11='35 to 44 years'
+B01001Cm12='45 to 54 years'
+B01001Cm13='55 to 64 years'
+B01001Cm14='65 to 74 years'
+B01001Cm15='75 to 84 years'
+B01001Cm16='85 years and over'
+B01001Cm17='Female:'
+B01001Cm18='Under 5 years'
+B01001Cm19='5 to 9 years'
+B01001Cm20='10 to 14 years'
+B01001Cm21='15 to 17 years'
+B01001Cm22='18 and 19 years'
+B01001Cm23='20 to 24 years'
+B01001Cm24='25 to 29 years'
+B01001Cm25='30 to 34 years'
+B01001Cm26='35 to 44 years'
+B01001Cm27='45 to 54 years'
+B01001Cm28='55 to 64 years'
+B01001Cm29='65 to 74 years'
+B01001Cm30='75 to 84 years'
+B01001Cm31='85 years and over'
+ 
+/*SEX BY AGE (ASIAN ALONE) */
+/*Universe:  People who are Asian alone */
+ 
+B01001Dm1='Total:'
+B01001Dm2='Male:'
+B01001Dm3='Under 5 years'
+B01001Dm4='5 to 9 years'
+B01001Dm5='10 to 14 years'
+B01001Dm6='15 to 17 years'
+B01001Dm7='18 and 19 years'
+B01001Dm8='20 to 24 years'
+B01001Dm9='25 to 29 years'
+B01001Dm10='30 to 34 years'
+B01001Dm11='35 to 44 years'
+B01001Dm12='45 to 54 years'
+B01001Dm13='55 to 64 years'
+B01001Dm14='65 to 74 years'
+B01001Dm15='75 to 84 years'
+B01001Dm16='85 years and over'
+B01001Dm17='Female:'
+B01001Dm18='Under 5 years'
+B01001Dm19='5 to 9 years'
+B01001Dm20='10 to 14 years'
+B01001Dm21='15 to 17 years'
+B01001Dm22='18 and 19 years'
+B01001Dm23='20 to 24 years'
+B01001Dm24='25 to 29 years'
+B01001Dm25='30 to 34 years'
+B01001Dm26='35 to 44 years'
+B01001Dm27='45 to 54 years'
+B01001Dm28='55 to 64 years'
+B01001Dm29='65 to 74 years'
+B01001Dm30='75 to 84 years'
+B01001Dm31='85 years and over'
+ 
+/*SEX BY AGE (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) */
+/*Universe:  People who are Native Hawaiian and Other Pacific Islander alone */
+ 
+B01001Em1='Total:'
+B01001Em2='Male:'
+B01001Em3='Under 5 years'
+B01001Em4='5 to 9 years'
+B01001Em5='10 to 14 years'
+B01001Em6='15 to 17 years'
+B01001Em7='18 and 19 years'
+B01001Em8='20 to 24 years'
+B01001Em9='25 to 29 years'
+B01001Em10='30 to 34 years'
+B01001Em11='35 to 44 years'
+B01001Em12='45 to 54 years'
+B01001Em13='55 to 64 years'
+B01001Em14='65 to 74 years'
+B01001Em15='75 to 84 years'
+B01001Em16='85 years and over'
+B01001Em17='Female:'
+B01001Em18='Under 5 years'
+B01001Em19='5 to 9 years'
+B01001Em20='10 to 14 years'
+B01001Em21='15 to 17 years'
+B01001Em22='18 and 19 years'
+B01001Em23='20 to 24 years'
+B01001Em24='25 to 29 years'
+B01001Em25='30 to 34 years'
+B01001Em26='35 to 44 years'
+B01001Em27='45 to 54 years'
+B01001Em28='55 to 64 years'
+B01001Em29='65 to 74 years'
+B01001Em30='75 to 84 years'
+B01001Em31='85 years and over'
+ 
+/*SEX BY AGE (SOME OTHER RACE ALONE) */
+/*Universe:  People who are Some Other Race alone */
+ 
+B01001Fm1='Total:'
+B01001Fm2='Male:'
+B01001Fm3='Under 5 years'
+B01001Fm4='5 to 9 years'
+B01001Fm5='10 to 14 years'
+B01001Fm6='15 to 17 years'
+B01001Fm7='18 and 19 years'
+B01001Fm8='20 to 24 years'
+B01001Fm9='25 to 29 years'
+B01001Fm10='30 to 34 years'
+B01001Fm11='35 to 44 years'
+B01001Fm12='45 to 54 years'
+B01001Fm13='55 to 64 years'
+B01001Fm14='65 to 74 years'
+B01001Fm15='75 to 84 years'
+B01001Fm16='85 years and over'
+B01001Fm17='Female:'
+B01001Fm18='Under 5 years'
+B01001Fm19='5 to 9 years'
+B01001Fm20='10 to 14 years'
+B01001Fm21='15 to 17 years'
+B01001Fm22='18 and 19 years'
+B01001Fm23='20 to 24 years'
+B01001Fm24='25 to 29 years'
+B01001Fm25='30 to 34 years'
+B01001Fm26='35 to 44 years'
+B01001Fm27='45 to 54 years'
+B01001Fm28='55 to 64 years'
+B01001Fm29='65 to 74 years'
+B01001Fm30='75 to 84 years'
+B01001Fm31='85 years and over'
+;
+ 
+ 
+INPUT
+ 
+FILEID   $ 
+FILETYPE $ 
+STUSAB   $ 
+CHARITER $ 
+SEQUENCE $ 
+LOGRECNO $ 
+ 
+B01001m1
+B01001m2
+B01001m3
+B01001m4
+B01001m5
+B01001m6
+B01001m7
+B01001m8
+B01001m9
+B01001m10
+B01001m11
+B01001m12
+B01001m13
+B01001m14
+B01001m15
+B01001m16
+B01001m17
+B01001m18
+B01001m19
+B01001m20
+B01001m21
+B01001m22
+B01001m23
+B01001m24
+B01001m25
+B01001m26
+B01001m27
+B01001m28
+B01001m29
+B01001m30
+B01001m31
+B01001m32
+B01001m33
+B01001m34
+B01001m35
+B01001m36
+B01001m37
+B01001m38
+B01001m39
+B01001m40
+B01001m41
+B01001m42
+B01001m43
+B01001m44
+B01001m45
+B01001m46
+B01001m47
+B01001m48
+B01001m49
+ 
+B01001Am1
+B01001Am2
+B01001Am3
+B01001Am4
+B01001Am5
+B01001Am6
+B01001Am7
+B01001Am8
+B01001Am9
+B01001Am10
+B01001Am11
+B01001Am12
+B01001Am13
+B01001Am14
+B01001Am15
+B01001Am16
+B01001Am17
+B01001Am18
+B01001Am19
+B01001Am20
+B01001Am21
+B01001Am22
+B01001Am23
+B01001Am24
+B01001Am25
+B01001Am26
+B01001Am27
+B01001Am28
+B01001Am29
+B01001Am30
+B01001Am31
+ 
+B01001Bm1
+B01001Bm2
+B01001Bm3
+B01001Bm4
+B01001Bm5
+B01001Bm6
+B01001Bm7
+B01001Bm8
+B01001Bm9
+B01001Bm10
+B01001Bm11
+B01001Bm12
+B01001Bm13
+B01001Bm14
+B01001Bm15
+B01001Bm16
+B01001Bm17
+B01001Bm18
+B01001Bm19
+B01001Bm20
+B01001Bm21
+B01001Bm22
+B01001Bm23
+B01001Bm24
+B01001Bm25
+B01001Bm26
+B01001Bm27
+B01001Bm28
+B01001Bm29
+B01001Bm30
+B01001Bm31
+ 
+B01001Cm1
+B01001Cm2
+B01001Cm3
+B01001Cm4
+B01001Cm5
+B01001Cm6
+B01001Cm7
+B01001Cm8
+B01001Cm9
+B01001Cm10
+B01001Cm11
+B01001Cm12
+B01001Cm13
+B01001Cm14
+B01001Cm15
+B01001Cm16
+B01001Cm17
+B01001Cm18
+B01001Cm19
+B01001Cm20
+B01001Cm21
+B01001Cm22
+B01001Cm23
+B01001Cm24
+B01001Cm25
+B01001Cm26
+B01001Cm27
+B01001Cm28
+B01001Cm29
+B01001Cm30
+B01001Cm31
+ 
+B01001Dm1
+B01001Dm2
+B01001Dm3
+B01001Dm4
+B01001Dm5
+B01001Dm6
+B01001Dm7
+B01001Dm8
+B01001Dm9
+B01001Dm10
+B01001Dm11
+B01001Dm12
+B01001Dm13
+B01001Dm14
+B01001Dm15
+B01001Dm16
+B01001Dm17
+B01001Dm18
+B01001Dm19
+B01001Dm20
+B01001Dm21
+B01001Dm22
+B01001Dm23
+B01001Dm24
+B01001Dm25
+B01001Dm26
+B01001Dm27
+B01001Dm28
+B01001Dm29
+B01001Dm30
+B01001Dm31
+ 
+B01001Em1
+B01001Em2
+B01001Em3
+B01001Em4
+B01001Em5
+B01001Em6
+B01001Em7
+B01001Em8
+B01001Em9
+B01001Em10
+B01001Em11
+B01001Em12
+B01001Em13
+B01001Em14
+B01001Em15
+B01001Em16
+B01001Em17
+B01001Em18
+B01001Em19
+B01001Em20
+B01001Em21
+B01001Em22
+B01001Em23
+B01001Em24
+B01001Em25
+B01001Em26
+B01001Em27
+B01001Em28
+B01001Em29
+B01001Em30
+B01001Em31
+ 
+B01001Fm1
+B01001Fm2
+B01001Fm3
+B01001Fm4
+B01001Fm5
+B01001Fm6
+B01001Fm7
+B01001Fm8
+B01001Fm9
+B01001Fm10
+B01001Fm11
+B01001Fm12
+B01001Fm13
+B01001Fm14
+B01001Fm15
+B01001Fm16
+B01001Fm17
+B01001Fm18
+B01001Fm19
+B01001Fm20
+B01001Fm21
+B01001Fm22
+B01001Fm23
+B01001Fm24
+B01001Fm25
+B01001Fm26
+B01001Fm27
+B01001Fm28
+B01001Fm29
+B01001Fm30
+B01001Fm31
+;
+RUN;
+TITLE2;

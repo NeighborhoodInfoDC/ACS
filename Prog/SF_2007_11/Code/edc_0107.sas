@@ -1,0 +1,505 @@
+TITLE2 "e20115dc0107000";
+DATA work.SFe0107dc;
+ 
+	LENGTH FILEID   $6
+		   FILETYPE $6
+		   STUSAB   $2
+		   CHARITER $3
+		   SEQUENCE $4
+		   LOGRECNO $7;
+ 
+INFILE "D:\DCData\Libraries\ACS\Raw\SF_2007_11\dc_Tracts_Block_Groups_Only\e20115dc0107000.txt" DSD TRUNCOVER DELIMITER =',' LRECL=3000;
+ 
+LABEL FILEID  ='File Identification'
+      FILETYPE='File Type'  
+ 	   STUSAB  ='State/U.S.-Abbreviation (USPS)'
+ 	   CHARITER='Character Iteration'
+ 	   SEQUENCE='Sequence Number'
+ 	   LOGRECNO='Logical Record Number'
+ 
+ 
+/*TENURE BY AGE OF HOUSEHOLDER BY UNITS IN STRUCTURE */
+/*Universe:  Occupied housing units */
+ 
+B25125e1='Total:'
+B25125e2='Owner occupied:'
+B25125e3='Householder 15 to 34 years:'
+B25125e4='1, detached  or attached'
+B25125e5='2 to 4'
+B25125e6='5 to 19'
+B25125e7='20 to 49'
+B25125e8='50 or more'
+B25125e9='Mobile home, boat, RV, van, etc.'
+B25125e10='Householder 35 to 64 years:'
+B25125e11='1, detached  or attached'
+B25125e12='2 to 4'
+B25125e13='5 to 19'
+B25125e14='20 to 49'
+B25125e15='50 or more'
+B25125e16='Mobile home, boat, RV, van, etc.'
+B25125e17='Householder 65 years and over:'
+B25125e18='1, detached  or attached'
+B25125e19='2 to 4'
+B25125e20='5 to 19'
+B25125e21='20 to 49'
+B25125e22='50 or more'
+B25125e23='Mobile home, boat, RV, van, etc.'
+B25125e24='Renter occupied:'
+B25125e25='Householder 15 to 34 years:'
+B25125e26='1, detached  or attached'
+B25125e27='2 to 4'
+B25125e28='5 to 19'
+B25125e29='20 to 49'
+B25125e30='50 or more'
+B25125e31='Mobile home, boat, RV, van, etc.'
+B25125e32='Householder 35 to 64 years:'
+B25125e33='1, detached  or attached'
+B25125e34='2 to 4'
+B25125e35='5 to 19'
+B25125e36='20 to 49'
+B25125e37='50 or more'
+B25125e38='Mobile home, boat, RV, van, etc.'
+B25125e39='Householder 65 years and over:'
+B25125e40='1, detached  or attached'
+B25125e41='2 to 4'
+B25125e42='5 to 19'
+B25125e43='20 to 49'
+B25125e44='50 or more'
+B25125e45='Mobile home, boat, RV, van, etc.'
+ 
+/*TENURE BY AGE OF HOUSEHOLDER BY YEAR STRUCTURE BUILT */
+/*Universe:  Occupied housing units */
+ 
+B25126e1='Total:'
+B25126e2='Owner occupied:'
+B25126e3='Householder 15 to 34 years:'
+B25126e4='Built 2005 or later'
+B25126e5='Built 2000 to 2004'
+B25126e6='Built 1990 to 1999'
+B25126e7='Built 1980 to 1989'
+B25126e8='Built 1970 to 1979'
+B25126e9='Built 1960 to 1969'
+B25126e10='Built 1950 to 1959'
+B25126e11='Built 1940 to 1949'
+B25126e12='Built 1939 or earlier'
+B25126e13='Householder 35 to 64 years:'
+B25126e14='Built 2005 or later'
+B25126e15='Built 2000 to 2004'
+B25126e16='Built 1990 to 1999'
+B25126e17='Built 1980 to 1989'
+B25126e18='Built 1970 to 1979'
+B25126e19='Built 1960 to 1969'
+B25126e20='Built 1950 to 1959'
+B25126e21='Built 1940 to 1949'
+B25126e22='Built 1939 or earlier'
+B25126e23='Householder 65 years and over:'
+B25126e24='Built 2005 or later'
+B25126e25='Built 2000 to 2004'
+B25126e26='Built 1990 to 1999'
+B25126e27='Built 1980 to 1989'
+B25126e28='Built 1970 to 1979'
+B25126e29='Built 1960 to 1969'
+B25126e30='Built 1950 to 1959'
+B25126e31='Built 1940 to 1949'
+B25126e32='Built 1939 or earlier'
+B25126e33='Renter occupied:'
+B25126e34='Householder 15 to 34 years:'
+B25126e35='Built 2005 or later'
+B25126e36='Built 2000 to 2004'
+B25126e37='Built 1990 to 1999'
+B25126e38='Built 1980 to 1989'
+B25126e39='Built 1970 to 1979'
+B25126e40='Built 1960 to 1969'
+B25126e41='Built 1950 to 1959'
+B25126e42='Built 1940 to 1949'
+B25126e43='Built 1939 or earlier'
+B25126e44='Householder 35 to 64 years:'
+B25126e45='Built 2005 or later'
+B25126e46='Built 2000 to 2004'
+B25126e47='Built 1990 to 1999'
+B25126e48='Built 1980 to 1989'
+B25126e49='Built 1970 to 1979'
+B25126e50='Built 1960 to 1969'
+B25126e51='Built 1950 to 1959'
+B25126e52='Built 1940 to 1949'
+B25126e53='Built 1939 or earlier'
+B25126e54='Householder 65 years and over:'
+B25126e55='Built 2005 or later'
+B25126e56='Built 2000 to 2004'
+B25126e57='Built 1990 to 1999'
+B25126e58='Built 1980 to 1989'
+B25126e59='Built 1970 to 1979'
+B25126e60='Built 1960 to 1969'
+B25126e61='Built 1950 to 1959'
+B25126e62='Built 1940 to 1949'
+B25126e63='Built 1939 or earlier'
+ 
+/*TENURE BY YEAR STRUCTURE BUILT BY UNITS IN STRUCTURE */
+/*Universe:  Occupied housing units */
+ 
+B25127e1='Total:'
+B25127e2='Owner occupied:'
+B25127e3='Built 2000 or later:'
+B25127e4='1, detached  or attached'
+B25127e5='2 to 4'
+B25127e6='5 to 19'
+B25127e7='20 to 49'
+B25127e8='50 or more'
+B25127e9='Mobile home, boat, RV, van, etc.'
+B25127e10='Built 1980 to 1999:'
+B25127e11='1, detached  or attached'
+B25127e12='2 to 4'
+B25127e13='5 to 19'
+B25127e14='20 to 49'
+B25127e15='50 or more'
+B25127e16='Mobile home, boat, RV, van, etc.'
+B25127e17='Built 1960 to 1979:'
+B25127e18='1, detached  or attached'
+B25127e19='2 to 4'
+B25127e20='5 to 19'
+B25127e21='20 to 49'
+B25127e22='50 or more'
+B25127e23='Mobile home, boat, RV, van, etc.'
+B25127e24='Built 1940 to 1959:'
+B25127e25='1, detached  or attached'
+B25127e26='2 to 4'
+B25127e27='5 to 19'
+B25127e28='20 to 49'
+B25127e29='50 or more'
+B25127e30='Mobile home, boat, RV, van, etc.'
+B25127e31='Built 1939 or earlier:'
+B25127e32='1, detached  or attached'
+B25127e33='2 to 4'
+B25127e34='5 to 19'
+B25127e35='20 to 49'
+B25127e36='50 or more'
+B25127e37='Mobile home, boat, RV, van, etc.'
+B25127e38='Renter occupied:'
+B25127e39='Built 2000 or later:'
+B25127e40='1, detached  or attached'
+B25127e41='2 to 4'
+B25127e42='5 to 19'
+B25127e43='20 to 49'
+B25127e44='50 or more'
+B25127e45='Mobile home, boat, RV, van, etc.'
+B25127e46='Built 1980 to 1999:'
+B25127e47='1, detached  or attached'
+B25127e48='2 to 4'
+B25127e49='5 to 19'
+B25127e50='20 to 49'
+B25127e51='50 or more'
+B25127e52='Mobile home, boat, RV, van, etc.'
+B25127e53='Built 1960 to 1979:'
+B25127e54='1, detached  or attached'
+B25127e55='2 to 4'
+B25127e56='5 to 19'
+B25127e57='20 to 49'
+B25127e58='50 or more'
+B25127e59='Mobile home, boat, RV, van, etc.'
+B25127e60='Built 1940 to 1959:'
+B25127e61='1, detached  or attached'
+B25127e62='2 to 4'
+B25127e63='5 to 19'
+B25127e64='20 to 49'
+B25127e65='50 or more'
+B25127e66='Mobile home, boat, RV, van, etc.'
+B25127e67='Built 1939 or earlier:'
+B25127e68='1, detached  or attached'
+B25127e69='2 to 4'
+B25127e70='5 to 19'
+B25127e71='20 to 49'
+B25127e72='50 or more'
+B25127e73='Mobile home, boat, RV, van, etc.'
+ 
+/*TENURE BY AGE OF HOUSEHOLDER BY YEAR HOUSEHOLDER MOVED INTO UNIT */
+/*Universe:  Occupied housing units */
+ 
+B25128e1='Total:'
+B25128e2='Owner occupied:'
+B25128e3='Householder 15 to 34 years:'
+B25128e4='Moved in 2005 or later'
+B25128e5='Moved in 2000 to 2004'
+B25128e6='Moved in 1990 to 1999'
+B25128e7='Moved in 1980 to 1989'
+B25128e8='Moved in 1970 to 1979'
+B25128e9='Moved in 1969 or earlier'
+B25128e10='Householder 35 to 64 years:'
+B25128e11='Moved in 2005 or later'
+B25128e12='Moved in 2000 to 2004'
+B25128e13='Moved in 1990 to 1999'
+B25128e14='Moved in 1980 to 1989'
+B25128e15='Moved in 1970 to 1979'
+B25128e16='Moved in 1969 or earlier'
+B25128e17='Householder 65 years and over:'
+B25128e18='Moved in 2005 or later'
+B25128e19='Moved in 2000 to 2004'
+B25128e20='Moved in 1990 to 1999'
+B25128e21='Moved in 1980 to 1989'
+B25128e22='Moved in 1970 to 1979'
+B25128e23='Moved in 1969 or earlier'
+B25128e24='Renter occupied:'
+B25128e25='Householder 15 to 34 years:'
+B25128e26='Moved in 2005 or later'
+B25128e27='Moved in 2000 to 2004'
+B25128e28='Moved in 1990 to 1999'
+B25128e29='Moved in 1980 to 1989'
+B25128e30='Moved in 1970 to 1979'
+B25128e31='Moved in 1969 or earlier'
+B25128e32='Householder 35 to 64 years:'
+B25128e33='Moved in 2005 or later'
+B25128e34='Moved in 2000 to 2004'
+B25128e35='Moved in 1990 to 1999'
+B25128e36='Moved in 1980 to 1989'
+B25128e37='Moved in 1970 to 1979'
+B25128e38='Moved in 1969 or earlier'
+B25128e39='Householder 65 years and over:'
+B25128e40='Moved in 2005 or later'
+B25128e41='Moved in 2000 to 2004'
+B25128e42='Moved in 1990 to 1999'
+B25128e43='Moved in 1980 to 1989'
+B25128e44='Moved in 1970 to 1979'
+B25128e45='Moved in 1969 or earlier'
+;
+ 
+ 
+INPUT
+ 
+FILEID   $ 
+FILETYPE $ 
+STUSAB   $ 
+CHARITER $ 
+SEQUENCE $ 
+LOGRECNO $ 
+ 
+B25125e1
+B25125e2
+B25125e3
+B25125e4
+B25125e5
+B25125e6
+B25125e7
+B25125e8
+B25125e9
+B25125e10
+B25125e11
+B25125e12
+B25125e13
+B25125e14
+B25125e15
+B25125e16
+B25125e17
+B25125e18
+B25125e19
+B25125e20
+B25125e21
+B25125e22
+B25125e23
+B25125e24
+B25125e25
+B25125e26
+B25125e27
+B25125e28
+B25125e29
+B25125e30
+B25125e31
+B25125e32
+B25125e33
+B25125e34
+B25125e35
+B25125e36
+B25125e37
+B25125e38
+B25125e39
+B25125e40
+B25125e41
+B25125e42
+B25125e43
+B25125e44
+B25125e45
+ 
+B25126e1
+B25126e2
+B25126e3
+B25126e4
+B25126e5
+B25126e6
+B25126e7
+B25126e8
+B25126e9
+B25126e10
+B25126e11
+B25126e12
+B25126e13
+B25126e14
+B25126e15
+B25126e16
+B25126e17
+B25126e18
+B25126e19
+B25126e20
+B25126e21
+B25126e22
+B25126e23
+B25126e24
+B25126e25
+B25126e26
+B25126e27
+B25126e28
+B25126e29
+B25126e30
+B25126e31
+B25126e32
+B25126e33
+B25126e34
+B25126e35
+B25126e36
+B25126e37
+B25126e38
+B25126e39
+B25126e40
+B25126e41
+B25126e42
+B25126e43
+B25126e44
+B25126e45
+B25126e46
+B25126e47
+B25126e48
+B25126e49
+B25126e50
+B25126e51
+B25126e52
+B25126e53
+B25126e54
+B25126e55
+B25126e56
+B25126e57
+B25126e58
+B25126e59
+B25126e60
+B25126e61
+B25126e62
+B25126e63
+ 
+B25127e1
+B25127e2
+B25127e3
+B25127e4
+B25127e5
+B25127e6
+B25127e7
+B25127e8
+B25127e9
+B25127e10
+B25127e11
+B25127e12
+B25127e13
+B25127e14
+B25127e15
+B25127e16
+B25127e17
+B25127e18
+B25127e19
+B25127e20
+B25127e21
+B25127e22
+B25127e23
+B25127e24
+B25127e25
+B25127e26
+B25127e27
+B25127e28
+B25127e29
+B25127e30
+B25127e31
+B25127e32
+B25127e33
+B25127e34
+B25127e35
+B25127e36
+B25127e37
+B25127e38
+B25127e39
+B25127e40
+B25127e41
+B25127e42
+B25127e43
+B25127e44
+B25127e45
+B25127e46
+B25127e47
+B25127e48
+B25127e49
+B25127e50
+B25127e51
+B25127e52
+B25127e53
+B25127e54
+B25127e55
+B25127e56
+B25127e57
+B25127e58
+B25127e59
+B25127e60
+B25127e61
+B25127e62
+B25127e63
+B25127e64
+B25127e65
+B25127e66
+B25127e67
+B25127e68
+B25127e69
+B25127e70
+B25127e71
+B25127e72
+B25127e73
+ 
+B25128e1
+B25128e2
+B25128e3
+B25128e4
+B25128e5
+B25128e6
+B25128e7
+B25128e8
+B25128e9
+B25128e10
+B25128e11
+B25128e12
+B25128e13
+B25128e14
+B25128e15
+B25128e16
+B25128e17
+B25128e18
+B25128e19
+B25128e20
+B25128e21
+B25128e22
+B25128e23
+B25128e24
+B25128e25
+B25128e26
+B25128e27
+B25128e28
+B25128e29
+B25128e30
+B25128e31
+B25128e32
+B25128e33
+B25128e34
+B25128e35
+B25128e36
+B25128e37
+B25128e38
+B25128e39
+B25128e40
+B25128e41
+B25128e42
+B25128e43
+B25128e44
+B25128e45
+;
+RUN;
+TITLE2;

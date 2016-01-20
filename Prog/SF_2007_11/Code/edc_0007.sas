@@ -1,0 +1,475 @@
+TITLE2 "e20115dc0007000";
+DATA work.SFe0007dc;
+ 
+	LENGTH FILEID   $6
+		   FILETYPE $6
+		   STUSAB   $2
+		   CHARITER $3
+		   SEQUENCE $4
+		   LOGRECNO $7;
+ 
+INFILE "D:\DCData\Libraries\ACS\Raw\SF_2007_11\dc_Tracts_Block_Groups_Only\e20115dc0007000.txt" DSD TRUNCOVER DELIMITER =',' LRECL=3000;
+ 
+LABEL FILEID  ='File Identification'
+      FILETYPE='File Type'  
+ 	   STUSAB  ='State/U.S.-Abbreviation (USPS)'
+ 	   CHARITER='Character Iteration'
+ 	   SEQUENCE='Sequence Number'
+ 	   LOGRECNO='Logical Record Number'
+ 
+ 
+/*TOTAL ANCESTRY REPORTED */
+/*Universe:  Total ancestry categories tallied for people with one or more ancestry categories reported */
+ 
+B04003e1='Total:'
+B04003e2='Afghan'
+B04003e3='Albanian'
+B04003e4='Alsatian'
+B04003e5='American'
+B04003e6='Arab:'
+B04003e7='Egyptian'
+B04003e8='Iraqi'
+B04003e9='Jordanian'
+B04003e10='Lebanese'
+B04003e11='Moroccan'
+B04003e12='Palestinian'
+B04003e13='Syrian'
+B04003e14='Arab'
+B04003e15='Other Arab'
+B04003e16='Armenian'
+B04003e17='Assyrian/Chaldean/Syriac'
+B04003e18='Australian'
+B04003e19='Austrian'
+B04003e20='Basque'
+B04003e21='Belgian'
+B04003e22='Brazilian'
+B04003e23='British'
+B04003e24='Bulgarian'
+B04003e25='Cajun'
+B04003e26='Canadian'
+B04003e27='Carpatho Rusyn'
+B04003e28='Celtic'
+B04003e29='Croatian'
+B04003e30='Cypriot'
+B04003e31='Czech'
+B04003e32='Czechoslovakian'
+B04003e33='Danish'
+B04003e34='Dutch'
+B04003e35='Eastern European'
+B04003e36='English'
+B04003e37='Estonian'
+B04003e38='European'
+B04003e39='Finnish'
+B04003e40='French (except Basque)'
+B04003e41='French Canadian'
+B04003e42='German'
+B04003e43='German Russian'
+B04003e44='Greek'
+B04003e45='Guyanese'
+B04003e46='Hungarian'
+B04003e47='Icelander'
+B04003e48='Iranian'
+B04003e49='Irish'
+B04003e50='Israeli'
+B04003e51='Italian'
+B04003e52='Latvian'
+B04003e53='Lithuanian'
+B04003e54='Luxemburger'
+B04003e55='Macedonian'
+B04003e56='Maltese'
+B04003e57='New Zealander'
+B04003e58='Northern European'
+B04003e59='Norwegian'
+B04003e60='Pennsylvania German'
+B04003e61='Polish'
+B04003e62='Portuguese'
+B04003e63='Romanian'
+B04003e64='Russian'
+B04003e65='Scandinavian'
+B04003e66='Scotch-Irish'
+B04003e67='Scottish'
+B04003e68='Serbian'
+B04003e69='Slavic'
+B04003e70='Slovak'
+B04003e71='Slovene'
+B04003e72='Soviet Union'
+B04003e73='Subsaharan African:'
+B04003e74='Cape Verdean'
+B04003e75='Ethiopian'
+B04003e76='Ghanaian'
+B04003e77='Kenyan'
+B04003e78='Liberian'
+B04003e79='Nigerian'
+B04003e80='Senegalese'
+B04003e81='Sierra Leonean'
+B04003e82='Somalian'
+B04003e83='South African'
+B04003e84='Sudanese'
+B04003e85='Ugandan'
+B04003e86='Zimbabwean'
+B04003e87='African'
+B04003e88='Other Subsaharan African'
+B04003e89='Swedish'
+B04003e90='Swiss'
+B04003e91='Turkish'
+B04003e92='Ukrainian'
+B04003e93='Welsh'
+B04003e94='West Indian (except Hispanic groups):'
+B04003e95='Bahamian'
+B04003e96='Barbadian'
+B04003e97='Belizean'
+B04003e98='Bermudan'
+B04003e99='British West Indian'
+B04003e100='Dutch West Indian'
+B04003e101='Haitian'
+B04003e102='Jamaican'
+B04003e103='Trinidadian and Tobagonian'
+B04003e104='U.S. Virgin Islander'
+B04003e105='West Indian'
+B04003e106='Other West Indian'
+B04003e107='Yugoslavian'
+B04003e108='Other groups'
+ 
+/*PEOPLE REPORTING SINGLE ANCESTRY */
+/*Universe:  People reporting single ancestry */
+ 
+B04004e1='Total:'
+B04004e2='Afghan'
+B04004e3='Albanian'
+B04004e4='Alsatian'
+B04004e5='American'
+B04004e6='Arab:'
+B04004e7='Egyptian'
+B04004e8='Iraqi'
+B04004e9='Jordanian'
+B04004e10='Lebanese'
+B04004e11='Moroccan'
+B04004e12='Palestinian'
+B04004e13='Syrian'
+B04004e14='Arab'
+B04004e15='Other Arab'
+B04004e16='Armenian'
+B04004e17='Assyrian/Chaldean/Syriac'
+B04004e18='Australian'
+B04004e19='Austrian'
+B04004e20='Basque'
+B04004e21='Belgian'
+B04004e22='Brazilian'
+B04004e23='British'
+B04004e24='Bulgarian'
+B04004e25='Cajun'
+B04004e26='Canadian'
+B04004e27='Carpatho Rusyn'
+B04004e28='Celtic'
+B04004e29='Croatian'
+B04004e30='Cypriot'
+B04004e31='Czech'
+B04004e32='Czechoslovakian'
+B04004e33='Danish'
+B04004e34='Dutch'
+B04004e35='Eastern European'
+B04004e36='English'
+B04004e37='Estonian'
+B04004e38='European'
+B04004e39='Finnish'
+B04004e40='French (except Basque)'
+B04004e41='French Canadian'
+B04004e42='German'
+B04004e43='German Russian'
+B04004e44='Greek'
+B04004e45='Guyanese'
+B04004e46='Hungarian'
+B04004e47='Icelander'
+B04004e48='Iranian'
+B04004e49='Irish'
+B04004e50='Israeli'
+B04004e51='Italian'
+B04004e52='Latvian'
+B04004e53='Lithuanian'
+B04004e54='Luxemburger'
+B04004e55='Macedonian'
+B04004e56='Maltese'
+B04004e57='New Zealander'
+B04004e58='Northern European'
+B04004e59='Norwegian'
+B04004e60='Pennsylvania German'
+B04004e61='Polish'
+B04004e62='Portuguese'
+B04004e63='Romanian'
+B04004e64='Russian'
+B04004e65='Scandinavian'
+B04004e66='Scotch-Irish'
+B04004e67='Scottish'
+B04004e68='Serbian'
+B04004e69='Slavic'
+B04004e70='Slovak'
+B04004e71='Slovene'
+B04004e72='Soviet Union'
+B04004e73='Subsaharan African:'
+B04004e74='Cape Verdean'
+B04004e75='Ethiopian'
+B04004e76='Ghanaian'
+B04004e77='Kenyan'
+B04004e78='Liberian'
+B04004e79='Nigerian'
+B04004e80='Senegalese'
+B04004e81='Sierra Leonean'
+B04004e82='Somalian'
+B04004e83='South African'
+B04004e84='Sudanese'
+B04004e85='Ugandan'
+B04004e86='Zimbabwean'
+B04004e87='African'
+B04004e88='Other Subsaharan African'
+B04004e89='Swedish'
+B04004e90='Swiss'
+B04004e91='Turkish'
+B04004e92='Ukrainian'
+B04004e93='Welsh'
+B04004e94='West Indian (except Hispanic groups):'
+B04004e95='Bahamian'
+B04004e96='Barbadian'
+B04004e97='Belizean'
+B04004e98='Bermudan'
+B04004e99='British West Indian'
+B04004e100='Dutch West Indian'
+B04004e101='Haitian'
+B04004e102='Jamaican'
+B04004e103='Trinidadian and Tobagonian'
+B04004e104='U.S. Virgin Islander'
+B04004e105='West Indian'
+B04004e106='Other West Indian'
+B04004e107='Yugoslavian'
+B04004e108='Other groups'
+;
+ 
+ 
+INPUT
+ 
+FILEID   $ 
+FILETYPE $ 
+STUSAB   $ 
+CHARITER $ 
+SEQUENCE $ 
+LOGRECNO $ 
+ 
+B04003e1
+B04003e2
+B04003e3
+B04003e4
+B04003e5
+B04003e6
+B04003e7
+B04003e8
+B04003e9
+B04003e10
+B04003e11
+B04003e12
+B04003e13
+B04003e14
+B04003e15
+B04003e16
+B04003e17
+B04003e18
+B04003e19
+B04003e20
+B04003e21
+B04003e22
+B04003e23
+B04003e24
+B04003e25
+B04003e26
+B04003e27
+B04003e28
+B04003e29
+B04003e30
+B04003e31
+B04003e32
+B04003e33
+B04003e34
+B04003e35
+B04003e36
+B04003e37
+B04003e38
+B04003e39
+B04003e40
+B04003e41
+B04003e42
+B04003e43
+B04003e44
+B04003e45
+B04003e46
+B04003e47
+B04003e48
+B04003e49
+B04003e50
+B04003e51
+B04003e52
+B04003e53
+B04003e54
+B04003e55
+B04003e56
+B04003e57
+B04003e58
+B04003e59
+B04003e60
+B04003e61
+B04003e62
+B04003e63
+B04003e64
+B04003e65
+B04003e66
+B04003e67
+B04003e68
+B04003e69
+B04003e70
+B04003e71
+B04003e72
+B04003e73
+B04003e74
+B04003e75
+B04003e76
+B04003e77
+B04003e78
+B04003e79
+B04003e80
+B04003e81
+B04003e82
+B04003e83
+B04003e84
+B04003e85
+B04003e86
+B04003e87
+B04003e88
+B04003e89
+B04003e90
+B04003e91
+B04003e92
+B04003e93
+B04003e94
+B04003e95
+B04003e96
+B04003e97
+B04003e98
+B04003e99
+B04003e100
+B04003e101
+B04003e102
+B04003e103
+B04003e104
+B04003e105
+B04003e106
+B04003e107
+B04003e108
+ 
+B04004e1
+B04004e2
+B04004e3
+B04004e4
+B04004e5
+B04004e6
+B04004e7
+B04004e8
+B04004e9
+B04004e10
+B04004e11
+B04004e12
+B04004e13
+B04004e14
+B04004e15
+B04004e16
+B04004e17
+B04004e18
+B04004e19
+B04004e20
+B04004e21
+B04004e22
+B04004e23
+B04004e24
+B04004e25
+B04004e26
+B04004e27
+B04004e28
+B04004e29
+B04004e30
+B04004e31
+B04004e32
+B04004e33
+B04004e34
+B04004e35
+B04004e36
+B04004e37
+B04004e38
+B04004e39
+B04004e40
+B04004e41
+B04004e42
+B04004e43
+B04004e44
+B04004e45
+B04004e46
+B04004e47
+B04004e48
+B04004e49
+B04004e50
+B04004e51
+B04004e52
+B04004e53
+B04004e54
+B04004e55
+B04004e56
+B04004e57
+B04004e58
+B04004e59
+B04004e60
+B04004e61
+B04004e62
+B04004e63
+B04004e64
+B04004e65
+B04004e66
+B04004e67
+B04004e68
+B04004e69
+B04004e70
+B04004e71
+B04004e72
+B04004e73
+B04004e74
+B04004e75
+B04004e76
+B04004e77
+B04004e78
+B04004e79
+B04004e80
+B04004e81
+B04004e82
+B04004e83
+B04004e84
+B04004e85
+B04004e86
+B04004e87
+B04004e88
+B04004e89
+B04004e90
+B04004e91
+B04004e92
+B04004e93
+B04004e94
+B04004e95
+B04004e96
+B04004e97
+B04004e98
+B04004e99
+B04004e100
+B04004e101
+B04004e102
+B04004e103
+B04004e104
+B04004e105
+B04004e106
+B04004e107
+B04004e108
+;
+RUN;
+TITLE2;

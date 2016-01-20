@@ -1,0 +1,543 @@
+TITLE2 "e20125md0038000";
+DATA work.SFe0038md;
+ 
+	LENGTH FILEID   $6
+		   FILETYPE $6
+		   STUSAB   $2
+		   CHARITER $3
+		   SEQUENCE $4
+		   LOGRECNO $7;
+ 
+INFILE "L:\Libraries\ACS\Raw\SF_2008_12\md_Tracts_Block_Groups_Only\e20125md0038000.txt" DSD TRUNCOVER DELIMITER =',' LRECL=3000;
+ 
+LABEL FILEID  ='File Identification'
+      FILETYPE='File Type'  
+ 	   STUSAB  ='State/U.S.-Abbreviation (USPS)'
+ 	   CHARITER='Character Iteration'
+ 	   SEQUENCE='Sequence Number'
+ 	   LOGRECNO='Logical Record Number'
+ 
+/*SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER */
+/*Universe:  Population 15 years and over */
+ 
+B12001e1='Total:'
+B12001e2='Male:'
+B12001e3='Never married'
+B12001e4='Now married:'
+B12001e5='Married, spouse present'
+B12001e6='Married, spouse absent:'
+B12001e7='Separated'
+B12001e8='Other'
+B12001e9='Widowed'
+B12001e10='Divorced'
+B12001e11='Female:'
+B12001e12='Never married'
+B12001e13='Now married:'
+B12001e14='Married, spouse present'
+B12001e15='Married, spouse absent:'
+B12001e16='Separated'
+B12001e17='Other'
+B12001e18='Widowed'
+B12001e19='Divorced'
+/*SEX BY MARITAL STATUS BY AGE FOR THE POPULATION 15 YEARS AND OVER */
+/*Universe:  Population 15 years and over */
+ 
+B12002e1='Total:'
+B12002e2='Male:'
+B12002e3='Never married:'
+B12002e4='15 to 17 years'
+B12002e5='18 and 19 years'
+B12002e6='20 to 24 years'
+B12002e7='25 to 29 years'
+B12002e8='30 to 34 years'
+B12002e9='35 to 39 years'
+B12002e10='40 to 44 years'
+B12002e11='45 to 49 years'
+B12002e12='50 to 54 years'
+B12002e13='55 to 59 years'
+B12002e14='60 to 64 years'
+B12002e15='65 to 74 years'
+B12002e16='75 to 84 years'
+B12002e17='85 years and over'
+B12002e18='Now married:'
+B12002e19='Married, spouse present:'
+B12002e20='15 to 17 years'
+B12002e21='18 and 19 years'
+B12002e22='20 to 24 years'
+B12002e23='25 to 29 years'
+B12002e24='30 to 34 years'
+B12002e25='35 to 39 years'
+B12002e26='40 to 44 years'
+B12002e27='45 to 49 years'
+B12002e28='50 to 54 years'
+B12002e29='55 to 59 years'
+B12002e30='60 to 64 years'
+B12002e31='65 to 74 years'
+B12002e32='75 to 84 years'
+B12002e33='85 years and over'
+B12002e34='Married, spouse absent:'
+B12002e35='Separated:'
+B12002e36='15 to 17 years'
+B12002e37='18 and 19 years'
+B12002e38='20 to 24 years'
+B12002e39='25 to 29 years'
+B12002e40='30 to 34 years'
+B12002e41='35 to 39 years'
+B12002e42='40 to 44 years'
+B12002e43='45 to 49 years'
+B12002e44='50 to 54 years'
+B12002e45='55 to 59 years'
+B12002e46='60 to 64 years'
+B12002e47='65 to 74 years'
+B12002e48='75 to 84 years'
+B12002e49='85 years and over'
+B12002e50='Other:'
+B12002e51='15 to 17 years'
+B12002e52='18 and 19 years'
+B12002e53='20 to 24 years'
+B12002e54='25 to 29 years'
+B12002e55='30 to 34 years'
+B12002e56='35 to 39 years'
+B12002e57='40 to 44 years'
+B12002e58='45 to 49 years'
+B12002e59='50 to 54 years'
+B12002e60='55 to 59 years'
+B12002e61='60 to 64 years'
+B12002e62='65 to 74 years'
+B12002e63='75 to 84 years'
+B12002e64='85 years and over'
+B12002e65='Widowed:'
+B12002e66='15 to 17 years'
+B12002e67='18 and 19 years'
+B12002e68='20 to 24 years'
+B12002e69='25 to 29 years'
+B12002e70='30 to 34 years'
+B12002e71='35 to 39 years'
+B12002e72='40 to 44 years'
+B12002e73='45 to 49 years'
+B12002e74='50 to 54 years'
+B12002e75='55 to 59 years'
+B12002e76='60 to 64 years'
+B12002e77='65 to 74 years'
+B12002e78='75 to 84 years'
+B12002e79='85 years and over'
+B12002e80='Divorced:'
+B12002e81='15 to 17 years'
+B12002e82='18 and 19 years'
+B12002e83='20 to 24 years'
+B12002e84='25 to 29 years'
+B12002e85='30 to 34 years'
+B12002e86='35 to 39 years'
+B12002e87='40 to 44 years'
+B12002e88='45 to 49 years'
+B12002e89='50 to 54 years'
+B12002e90='55 to 59 years'
+B12002e91='60 to 64 years'
+B12002e92='65 to 74 years'
+B12002e93='75 to 84 years'
+B12002e94='85 years and over'
+B12002e95='Female:'
+B12002e96='Never married:'
+B12002e97='15 to 17 years'
+B12002e98='18 and 19 years'
+B12002e99='20 to 24 years'
+B12002e100='25 to 29 years'
+B12002e101='30 to 34 years'
+B12002e102='35 to 39 years'
+B12002e103='40 to 44 years'
+B12002e104='45 to 49 years'
+B12002e105='50 to 54 years'
+B12002e106='55 to 59 years'
+B12002e107='60 to 64 years'
+B12002e108='65 to 74 years'
+B12002e109='75 to 84 years'
+B12002e110='85 years and over'
+B12002e111='Now married:'
+B12002e112='Married, spouse present:'
+B12002e113='15 to 17 years'
+B12002e114='18 and 19 years'
+B12002e115='20 to 24 years'
+B12002e116='25 to 29 years'
+B12002e117='30 to 34 years'
+B12002e118='35 to 39 years'
+B12002e119='40 to 44 years'
+B12002e120='45 to 49 years'
+B12002e121='50 to 54 years'
+B12002e122='55 to 59 years'
+B12002e123='60 to 64 years'
+B12002e124='65 to 74 years'
+B12002e125='75 to 84 years'
+B12002e126='85 years and over'
+B12002e127='Married, spouse absent:'
+B12002e128='Separated:'
+B12002e129='15 to 17 years'
+B12002e130='18 and 19 years'
+B12002e131='20 to 24 years'
+B12002e132='25 to 29 years'
+B12002e133='30 to 34 years'
+B12002e134='35 to 39 years'
+B12002e135='40 to 44 years'
+B12002e136='45 to 49 years'
+B12002e137='50 to 54 years'
+B12002e138='55 to 59 years'
+B12002e139='60 to 64 years'
+B12002e140='65 to 74 years'
+B12002e141='75 to 84 years'
+B12002e142='85 years and over'
+B12002e143='Other:'
+B12002e144='15 to 17 years'
+B12002e145='18 and 19 years'
+B12002e146='20 to 24 years'
+B12002e147='25 to 29 years'
+B12002e148='30 to 34 years'
+B12002e149='35 to 39 years'
+B12002e150='40 to 44 years'
+B12002e151='45 to 49 years'
+B12002e152='50 to 54 years'
+B12002e153='55 to 59 years'
+B12002e154='60 to 64 years'
+B12002e155='65 to 74 years'
+B12002e156='75 to 84 years'
+B12002e157='85 years and over'
+B12002e158='Widowed:'
+B12002e159='15 to 17 years'
+B12002e160='18 and 19 years'
+B12002e161='20 to 24 years'
+B12002e162='25 to 29 years'
+B12002e163='30 to 34 years'
+B12002e164='35 to 39 years'
+B12002e165='40 to 44 years'
+B12002e166='45 to 49 years'
+B12002e167='50 to 54 years'
+B12002e168='55 to 59 years'
+B12002e169='60 to 64 years'
+B12002e170='65 to 74 years'
+B12002e171='75 to 84 years'
+B12002e172='85 years and over'
+B12002e173='Divorced:'
+B12002e174='15 to 17 years'
+B12002e175='18 and 19 years'
+B12002e176='20 to 24 years'
+B12002e177='25 to 29 years'
+B12002e178='30 to 34 years'
+B12002e179='35 to 39 years'
+B12002e180='40 to 44 years'
+B12002e181='45 to 49 years'
+B12002e182='50 to 54 years'
+B12002e183='55 to 59 years'
+B12002e184='60 to 64 years'
+B12002e185='65 to 74 years'
+B12002e186='75 to 84 years'
+B12002e187='85 years and over'
+/*SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER (WHITE ALONE) */
+/*Universe:  White alone population 15 years and over */
+ 
+B12002Ae1='Total:'
+B12002Ae2='Male:'
+B12002Ae3='Never married'
+B12002Ae4='Now married (except separated)'
+B12002Ae5='Separated'
+B12002Ae6='Widowed'
+B12002Ae7='Divorced'
+B12002Ae8='Female:'
+B12002Ae9='Never married'
+B12002Ae10='Now married (except separated)'
+B12002Ae11='Separated'
+B12002Ae12='Widowed'
+B12002Ae13='Divorced'
+/*SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER (BLACK OR AFRICAN AMERICAN ALONE) */
+/*Universe:  Black or African American alone population 15 years and over */
+ 
+B12002Be1='Total:'
+B12002Be2='Male:'
+B12002Be3='Never married'
+B12002Be4='Now married (except separated)'
+B12002Be5='Separated'
+B12002Be6='Widowed'
+B12002Be7='Divorced'
+B12002Be8='Female:'
+B12002Be9='Never married'
+B12002Be10='Now married (except separated)'
+B12002Be11='Separated'
+B12002Be12='Widowed'
+B12002Be13='Divorced'
+/*SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER (AMERICAN INDIAN AND ALASKA NATIVE ALONE) */
+/*Universe:  American Indian and Alaska Native alone population 15 years and over */
+ 
+B12002Ce1='Total:'
+B12002Ce2='Male:'
+B12002Ce3='Never married'
+B12002Ce4='Now married (except separated)'
+B12002Ce5='Separated'
+B12002Ce6='Widowed'
+B12002Ce7='Divorced'
+B12002Ce8='Female:'
+B12002Ce9='Never married'
+B12002Ce10='Now married (except separated)'
+B12002Ce11='Separated'
+B12002Ce12='Widowed'
+B12002Ce13='Divorced'
+;
+ 
+ 
+INPUT
+ 
+FILEID   $ 
+FILETYPE $ 
+STUSAB   $ 
+CHARITER $ 
+SEQUENCE $ 
+LOGRECNO $ 
+ 
+B12001e1
+B12001e2
+B12001e3
+B12001e4
+B12001e5
+B12001e6
+B12001e7
+B12001e8
+B12001e9
+B12001e10
+B12001e11
+B12001e12
+B12001e13
+B12001e14
+B12001e15
+B12001e16
+B12001e17
+B12001e18
+B12001e19
+ 
+B12002e1
+B12002e2
+B12002e3
+B12002e4
+B12002e5
+B12002e6
+B12002e7
+B12002e8
+B12002e9
+B12002e10
+B12002e11
+B12002e12
+B12002e13
+B12002e14
+B12002e15
+B12002e16
+B12002e17
+B12002e18
+B12002e19
+B12002e20
+B12002e21
+B12002e22
+B12002e23
+B12002e24
+B12002e25
+B12002e26
+B12002e27
+B12002e28
+B12002e29
+B12002e30
+B12002e31
+B12002e32
+B12002e33
+B12002e34
+B12002e35
+B12002e36
+B12002e37
+B12002e38
+B12002e39
+B12002e40
+B12002e41
+B12002e42
+B12002e43
+B12002e44
+B12002e45
+B12002e46
+B12002e47
+B12002e48
+B12002e49
+B12002e50
+B12002e51
+B12002e52
+B12002e53
+B12002e54
+B12002e55
+B12002e56
+B12002e57
+B12002e58
+B12002e59
+B12002e60
+B12002e61
+B12002e62
+B12002e63
+B12002e64
+B12002e65
+B12002e66
+B12002e67
+B12002e68
+B12002e69
+B12002e70
+B12002e71
+B12002e72
+B12002e73
+B12002e74
+B12002e75
+B12002e76
+B12002e77
+B12002e78
+B12002e79
+B12002e80
+B12002e81
+B12002e82
+B12002e83
+B12002e84
+B12002e85
+B12002e86
+B12002e87
+B12002e88
+B12002e89
+B12002e90
+B12002e91
+B12002e92
+B12002e93
+B12002e94
+B12002e95
+B12002e96
+B12002e97
+B12002e98
+B12002e99
+B12002e100
+B12002e101
+B12002e102
+B12002e103
+B12002e104
+B12002e105
+B12002e106
+B12002e107
+B12002e108
+B12002e109
+B12002e110
+B12002e111
+B12002e112
+B12002e113
+B12002e114
+B12002e115
+B12002e116
+B12002e117
+B12002e118
+B12002e119
+B12002e120
+B12002e121
+B12002e122
+B12002e123
+B12002e124
+B12002e125
+B12002e126
+B12002e127
+B12002e128
+B12002e129
+B12002e130
+B12002e131
+B12002e132
+B12002e133
+B12002e134
+B12002e135
+B12002e136
+B12002e137
+B12002e138
+B12002e139
+B12002e140
+B12002e141
+B12002e142
+B12002e143
+B12002e144
+B12002e145
+B12002e146
+B12002e147
+B12002e148
+B12002e149
+B12002e150
+B12002e151
+B12002e152
+B12002e153
+B12002e154
+B12002e155
+B12002e156
+B12002e157
+B12002e158
+B12002e159
+B12002e160
+B12002e161
+B12002e162
+B12002e163
+B12002e164
+B12002e165
+B12002e166
+B12002e167
+B12002e168
+B12002e169
+B12002e170
+B12002e171
+B12002e172
+B12002e173
+B12002e174
+B12002e175
+B12002e176
+B12002e177
+B12002e178
+B12002e179
+B12002e180
+B12002e181
+B12002e182
+B12002e183
+B12002e184
+B12002e185
+B12002e186
+B12002e187
+ 
+B12002Ae1
+B12002Ae2
+B12002Ae3
+B12002Ae4
+B12002Ae5
+B12002Ae6
+B12002Ae7
+B12002Ae8
+B12002Ae9
+B12002Ae10
+B12002Ae11
+B12002Ae12
+B12002Ae13
+ 
+B12002Be1
+B12002Be2
+B12002Be3
+B12002Be4
+B12002Be5
+B12002Be6
+B12002Be7
+B12002Be8
+B12002Be9
+B12002Be10
+B12002Be11
+B12002Be12
+B12002Be13
+ 
+B12002Ce1
+B12002Ce2
+B12002Ce3
+B12002Ce4
+B12002Ce5
+B12002Ce6
+B12002Ce7
+B12002Ce8
+B12002Ce9
+B12002Ce10
+B12002Ce11
+B12002Ce12
+B12002Ce13
+;
+RUN;
+TITLE2;
