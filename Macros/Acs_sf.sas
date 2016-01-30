@@ -132,7 +132,7 @@
   %global _acs_sf_raw_base_path _acs_sf_raw_path _state_fips _state_ab 
           _years _geo_file _census_geo_year _max_seqno _years_dash 
           _seq_list _table_list _drop_list _drop_bg_list
-          _out_ds_base _out_lib;
+          _sf_macro_file_path _out_ds_base _out_lib;
           
   %global rootdir;
 
@@ -151,18 +151,25 @@
   
   %let _out_ds_base = Acs_sf_&_years._&_state_ab;
 
-  %if &_remote_batch_submit %then 
+  %if &_remote_batch_submit %then %do;
     %let _out_lib = ACS;
-  %else
+    %let _sf_macro_file_path = &_dcdata_r_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;
+  %end;
+  %else %do;
     %let _out_lib = WORK;
+    /**FOR DEBUGGING***%let _sf_macro_file_path = &_dcdata_l_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;**/
+    %let _sf_macro_file_path = &_dcdata_l_path\ACS\Prog\Temp\SummaryFile_All_Macro.sas;
+  %end;
   
-  %** Global variable used in SummaryFile_All_Macro.sas **;
+  %** Rootdir global variable used in SummaryFile_All_Macro.sas (must end with \) **;
   
   %if &_remote_batch_submit %then 
     %let rootdir = &_dcdata_r_path\ACS\Raw\SF_&_years.\Code\;
   %else
     %let rootdir = &_dcdata_l_path\ACS\Raw\SF_&_years.\Code\;
-
+    
+  x "md &rootdir";
+  
   %** File sequence numbers to read **;
 
   %let _seq_list = &seq_list;

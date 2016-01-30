@@ -62,8 +62,10 @@
   %push_option( msglevel )
   
   options msglevel=n;
+  
+  x "del /q &rootdir.*.*";
 
-  %include "&_acs_sf_raw_base_path\SummaryFile_All_Macro.sas";
+  %include "&_sf_macro_file_path";
 
   **** Read tables ****;
   
