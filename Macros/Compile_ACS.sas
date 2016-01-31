@@ -90,7 +90,7 @@
   data _&_out_ds_base._&geo_suffix;
 
     merge
-      &_geo_file.&_state_ab 
+      &_geo_file 
         (keep=logrecno sumlevel state county tract blkgrp geoid
          where=(sumlevel="&sum_level") 
          in=inGeo)
