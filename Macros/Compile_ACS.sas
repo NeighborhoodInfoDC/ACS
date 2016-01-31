@@ -157,7 +157,7 @@
 
   ** Drop unneeded table cells **;
   
-  data &_out_lib.._&_out_ds_base._&geo_suffix (label="ACS SF 5-year tables, &_years_dash, %upcase(&_state_ab.), &geo_label");
+  data &_out_lib..&_out_ds_base._&geo_suffix (label="ACS SF 5-year tables, &_years_dash, %upcase(&_state_ab.), &geo_label");
 
     set _&_out_ds_base._&geo_suffix;
 
@@ -169,11 +169,11 @@
       
   run;
   
-  proc sort data=&_out_lib.._&_out_ds_base._&geo_suffix;
+  proc sort data=&_out_lib..&_out_ds_base._&geo_suffix;
     by &geo_var;
   run;
 
-  %File_info( data=&_out_lib.._&_out_ds_base._&geo_suffix, printobs=0, freqvars=sumlevel )
+  %File_info( data=&_out_lib..&_out_ds_base._&geo_suffix, printobs=0, freqvars=sumlevel )
   
   %exit_macro:
   

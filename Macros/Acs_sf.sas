@@ -168,6 +168,7 @@
   %else
     %let rootdir = &_dcdata_l_path\ACS\Raw\SF_&_years.\Code\;
     
+  options noxwait;
   x "md &rootdir";
   
   %** File sequence numbers to read **;
