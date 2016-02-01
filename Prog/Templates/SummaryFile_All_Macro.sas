@@ -77,7 +77,7 @@ data work.&geography;
 		GEOID     $ 179-218		NAME      $ 219-418 					      ;
 /***** END COPY & PASTE ***************************************************************************/
 run;
-%mend;
+%mend AnyGeo;
 
 %macro TableShell(tblid);
 /*The TableShell Marco is a basic SAS set statement that will get basic metadata 																			
@@ -93,7 +93,7 @@ set stubs.SequenceNumberTableNumberLookup;
    if index(order,".") then order = ".";
    if tblid=upcase("&tblid") then output;
 run;
-%mend;
+%mend TableShell;
 %macro TablesBySeq(Seq);
 /*The TablesBySeq Marco is a basic SAS set statement that will get basic metadata 																			
   information about ACS Detailed Tables	from the SequenceNumberTableNumberLookup dataset by sequence number
@@ -108,7 +108,7 @@ set stubs.SequenceNumberTableNumberLookup;
    if index(order,".") then order = ".";
    if seq=upcase("&seq") then output;
 run;
-%mend;
+%mend TablesBySeq;
 %macro ReadDataFile(type,geo,seq);
 /*The ReadDataFile is a macro that will generate SAS code for a specific estimate type,
   a specific geography, by sequence number.  The macro will run the code as well reading
@@ -188,7 +188,7 @@ data _null_;
 run;
 
 /*Run the generated code																		*/
-%mend;
+%mend ReadDataFile;
 
 %macro AllTableShells;
 /*The AllTableShells macro will divide up the SequenceNumberTableNumberLookup dataset into separate
@@ -206,7 +206,7 @@ data _null_;
 	call execute('%TableShells(' || compress(tblid) || ')');
 run;
 
-%mend;
+%mend AllTableShells;
 
 %macro AllSeqs(geo);
 /*The AllSeqs Macro serves as a control to read in data for a single geography 	
@@ -218,11 +218,18 @@ run;
 EDIT
 */;
 
-%AnyGeo (g&_last_year.5&geo);
+%AnyGeo (&_geo_file);
 /*The do loop will create a sequence number; valid values are 1 to 145 if you 
   only want a table in sequence 56 then set the do loop to be %do x=56 %to 56;   
   and that will be the only sequence number read in to SAS 						*/
-%do x=1 %to &_max_seqno;
+/** PT: Sequential do loop replaced by list loop **/
+%local i x;
+
+%let i = 1;
+%let x = %scan( &_seq_list, &i, %str( ) );
+
+%do %until ( &x = );
+
     %let var=000&x;
 	%let seq = %substr(&var,%length(&var)-3,4);
 	/*Note:  The Sequence number IS 0 filled									*/
@@ -241,13 +248,18 @@ EDIT
 EDIT COMMENT OUT
 	**/
 /*    data sas.SF&seq&geo;
-  	  merge  g&_last_year.5&geo(IN=g) SFe&seq&geo(IN=x) SFm&seq&geo(IN=y);
+  	  merge  &_geo_file(IN=g) SFe&seq&geo(IN=x) SFm&seq&geo(IN=y);
    		by logrecno;
  	run;
 */
+
+  %let i = %eval( &i + 1 );
+  %let x = %scan( &_seq_list, &i, %str( ) );
+
 %end;
 
-%mend;
+
+%mend AllSeqs;
 %macro CallSt;
 /*The CallSt macro is used to generate State 2 digit abbreviations see Appendix B
   of the technical documentation for a list of state codes							*/
@@ -273,7 +285,7 @@ EDIT COMMENT OUT
        	end;
 	run;
 %end;
-%mend;
+%mend CallSt;
 %macro GetData(seq,tblid,geo);
 /*The GetData macro will grab an individual tables estimates, margin of errors and
   standard errors once it is read into SAS through the ReadDataFile macro 	
@@ -293,6 +305,6 @@ quit;
 data work.test_&tblid (keep = &tblid.e1-&tblid.e&max &tblid.m1-&tblid.m&max);
  set work.SF&seq&geo;
 run;
-%mend;
+%mend GetData;
 *%GetData(0010,B01001,al);
 %CallSt;
