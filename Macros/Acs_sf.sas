@@ -100,6 +100,12 @@
   years = ,
   geo_file = ,
   max_seqno = ,
+  
+  finalize = Y,
+  
+  revisions = New file.,
+  
+  /** Year for census block group/tract defs. Should be 2010 for 2011 and later ACS releases. **/
   census_geo_year = 2010,
   
   /** Update these parameters to add new tabulations to data set **/
@@ -129,6 +135,11 @@
     B18101Em: B19058m: B19131m: B23001m: B25052m:
 );
 
+  %if %mparam_is_yes( &Finalize ) and not &_remote_batch_submit %then %do;
+    %warn_mput( macro=Acs_sf, msg=%str(Not a remote batch submit session. Finalize will be set to N.) )
+    %let Finalize = N;
+  %end;
+
   %** Global macro parameters **;
 
   %global _acs_sf_raw_base_path _acs_sf_raw_path _state_fips _state_ab 
@@ -153,16 +164,19 @@
   
   %let _out_ds_base = Acs_sf_&_years._&_state_ab;
 
-  %if &_remote_batch_submit %then %do;
+  %if %mparam_is_yes( &Finalize ) %then %do;
     %let _out_lib = ACS;
-    %let _sf_macro_file_path = &_dcdata_r_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;
   %end;
   %else %do;
     %let _out_lib = WORK;
-    /**FOR DEBUGGING***%let _sf_macro_file_path = &_dcdata_l_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;**/
-    %let _sf_macro_file_path = &_dcdata_l_path\ACS\Prog\Temp\SummaryFile_All_Macro.sas;
   %end;
   
+  %if &_remote_batch_submit %then 
+    %let _sf_macro_file_path = &_dcdata_r_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;
+  %else
+    /**FOR DEBUGGING***%let _sf_macro_file_path = &_dcdata_l_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;**/
+    %let _sf_macro_file_path = &_dcdata_l_path\ACS\Prog\Temp\SummaryFile_All_Macro.sas;
+
   %** Rootdir global variable used in SummaryFile_All_Macro.sas (must end with \) **;
   
   %if &_remote_batch_submit %then 
@@ -199,9 +213,9 @@
 
   **** Compile block group and tract files ****;
 
-  %Compile_ACS( geobg2010 )
+  %Compile_ACS( geo=geobg2010, finalize=&finalize, revisions=&revisions )
 
-  %Compile_ACS( geo2010 )
+  %Compile_ACS( geo=geo2010, finalize=&finalize, revisions=&revisions )
 
 
 %mend Acs_sf;

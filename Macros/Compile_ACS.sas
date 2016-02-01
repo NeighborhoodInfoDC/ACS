@@ -14,7 +14,7 @@
 
 /** Macro Compile_ACS - Start Definition **/
 
-%macro Compile_ACS( geo );
+%macro Compile_ACS( geo=, finalize=, revisions= );
 
   %local sum_level geo_suffix geo_var geo_label geo_length geo_format geo_vformat 
          i v;
@@ -174,6 +174,21 @@
   run;
 
   %File_info( data=&_out_lib..&_out_ds_base._&geo_suffix, printobs=0, freqvars=sumlevel )
+  
+  %if %mparam_is_yes( &Finalize ) %then %do;
+  
+    ** Register metadata **;
+    
+    %Dc_update_meta_file(
+      ds_lib=ACS,
+      ds_name=&_out_ds_base._&geosuffix,
+      creator_process=&_out_ds_base..sas,
+      restrictions=None,
+      revisions=%str(&revisions)
+    )
+
+  %end;
+
   
   %exit_macro:
   

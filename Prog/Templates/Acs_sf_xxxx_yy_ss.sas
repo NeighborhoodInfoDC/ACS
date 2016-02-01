@@ -10,7 +10,6 @@
  Description:  Read selected tables for ACS summary files.
  
  Modifications:
-
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -18,7 +17,6 @@
 ** Define libraries **;
 %DCData_lib( ACS )
 
-options mprint nosymbolgen nomlogic;
 
 %Acs_sf(
 
@@ -32,19 +30,7 @@ options mprint nosymbolgen nomlogic;
   geo_file = ,
 
   /** Maximum number of sequence files. Ex: 120 **/
-  max_seqno = ,
-
-  /** Year for census block group/tract defs. Should be 2010 for 2011 and later ACS releases. **/
-  census_geo_year = 2010
+  max_seqno = 
 
 )
-
-
-  /*** TEST ***********************
-
-  %let _seq_list = 0001 0002;
-
-  %let _table_list = B00001 B00002 B01001;
-
-  *********************************/
 
