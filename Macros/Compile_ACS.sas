@@ -173,7 +173,17 @@
     by &geo_var;
   run;
 
+
+  ** Cleanup temporary data sets **;
+  
+  proc datasets library=WORK memtype=(data) nolist;
+    delete _&_out_ds_base._&geo_suffix &_geo_file seq_: sfe: sfm: ;
+  quit;
+  run;
+
+  
   %File_info( data=&_out_lib..&_out_ds_base._&geo_suffix, printobs=0, freqvars=sumlevel )
+  
   
   %if %mparam_is_yes( &Finalize ) %then %do;
   
@@ -188,7 +198,7 @@
     )
 
   %end;
-
+  
   
   %exit_macro:
   

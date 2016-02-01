@@ -23,10 +23,6 @@ summary tabulations.
   %let table_file_e_list = &table_file_e_list SFe&seqno.&_state_ab.;
   %let table_file_m_list = &table_file_m_list SFm&seqno.&_state_ab.;
  
-  /***%File_info( data=SFe&seqno.dc, printobs=0 )***/
-  
-  /***%File_info( data=SFm&seqno.dc, printobs=0 )***/
-
 %mend Read_seq;
 
 /** End Macro Definition **/

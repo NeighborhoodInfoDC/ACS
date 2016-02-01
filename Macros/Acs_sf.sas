@@ -99,23 +99,15 @@
 %macro Acs_sf( 
   state_ab = ,
   years = ,
-  /*geo_file = ,*/
-  /*max_seqno = ,*/
-  
   finalize = Y,
-  
   revisions = New file.,
   
   /** Year for census block group/tract defs. Should be 2010 for 2011 and later ACS releases. **/
   census_geo_year = 2010,
   
-  /** Update these parameters to add new tabulations to data set **/
-  /*
-  seq_list = 
-    0001 0002 0003 0004 0005 0009 0013 0018 0034 0036 0037 0043 0044 0047 0056 0057 0058
-    0061 0062 0063 0064 0072 0075 0078 0079 0081 0099 0101 0102 0103 0104 0105 0106 0107  
-  ,
-  */
+  /** Update table_list=, drop_list=, and drop_bg_list= parameters to add new tabulations to data set **/
+  
+  /** List of tables to include in data sets **/
   table_list = 
     B00001 B00002 B01001 B01002 B01003 B02001 B03002 B05002 B06002 B07012 B09001
     B11001 B11003 B11004 B11005 B11007 B11010 B11013 B11016 B15002
@@ -125,18 +117,30 @@
     B25062 B25063 B25065 B25070 B25014 B25024 B25041 B25049 B25052 
     B25070 B25091 B25105 B25088 B25064 C24010 C24030
   ,
+  
+  /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from all data sets **/
   drop_list =
+    B00001m: B00002m:
     B01001Ee: B01002Ee: B11001Ee: B19001Ee: B19013Ee: B25003Ee: B25014Ee: C24010Ee:
     B01001Em: B01002Em: B11001Em: B19001Em: B19013Em: B25003Em: B25014Em: C24010Em:
+    B18101Ee: B19113Ee:
+    B18101Em: B19113Em:
   ,
+  
+  /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from BLOCK GROUP data sets only **/
   drop_bg_list = 
-    B00001e: B00002e: B05002e: B07012e: B11010e: B11013e: B17001e: 
-    B00001m: B00002m: B05002m: B07012m: B11010m: B11013m: B17001m:  
-    B18101e: B18102e: B18103e: B18104e: B18105e: B18106e: 
-    B18101m: B18102m: B18103m: B18104m: B18105m: B18106m: 
-    B18101Ee: B19058e: B19131e: B23001e: B25052e:
-    B18101Em: B19058m: B19131m: B23001m: B25052m:
+    B05002e: B07012e: B11010e: B11013e: B17001e: 
+    B05002m: B07012m: B11010m: B11013m: B17001m:  
+    B18102e: B18103e: B18104e: B18105e: B18106e: 
+    B18102m: B18103m: B18104m: B18105m: B18106m: 
+    B19058e: B19131e: B23001e: B25052e:
+    B19058m: B19131m: B23001m: B25052m:
+    B06002e: B09001e: B25105e:
+    B06002m: B09001m: B25105m: 
 );
+
+
+  %** Check if OK to run finalized data sets **;
 
   %if %mparam_is_yes( &Finalize ) and not &_remote_batch_submit %then %do;
     %warn_mput( macro=Acs_sf, msg=%str(Not a remote batch submit session. Finalize will be set to N.) )
@@ -164,7 +168,7 @@
   %let _acs_sf_raw_base_path = &_dcdata_r_path\ACS\Raw\SF_&_years.;
   %let _years_dash = %sysfunc( tranwrd( &_years, '_', '-' ) );
   %let _last_year = 20%scan( &_years, 2, _ );
-  %let _geo_file   = g&_last_year.5&geo;
+  %let _geo_file   = g&_last_year.5&_state_ab;
   
   %let _out_ds_base = Acs_sf_&_years._&_state_ab;
 
@@ -178,8 +182,7 @@
   %if &_remote_batch_submit %then 
     %let _sf_macro_file_path = &_dcdata_r_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;
   %else
-    /**FOR DEBUGGING***%let _sf_macro_file_path = &_dcdata_l_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;**/
-    %let _sf_macro_file_path = &_dcdata_l_path\ACS\Prog\Temp\SummaryFile_All_Macro.sas;
+    %let _sf_macro_file_path = &_dcdata_l_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;
 
   %** Rootdir global variable used in SummaryFile_All_Macro.sas (must end with \) **;
   
@@ -199,16 +202,20 @@
 
   %** Create list of file sequence numbers to read based on list of tables **;
   
+  %push_option( quotelenmax )
+  
+  options noquotelenmax;
+  
   proc sql noprint;
     select seq into :_seq_list separated by ' ' from stubs.SequenceNumberTableNumberLookup
       where cells ~= '' and indexw("%upcase(&table_list)", upcase( tblid ), ' ' )
       order by seq;
   quit;
   run;
+  
+  %pop_option( quotelenmax )
 
   %let _seq_list = %ListNoDup( &_seq_list );
-
-  /*%let _max_seqno = %scan( &_seq_list, -1 );*/
 
 
   %** Tables to read **;
