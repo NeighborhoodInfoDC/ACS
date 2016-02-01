@@ -100,7 +100,7 @@
   state_ab = ,
   years = ,
   geo_file = ,
-  max_seqno = ,
+  /*max_seqno = ,*/
   
   finalize = Y,
   
@@ -110,10 +110,12 @@
   census_geo_year = 2010,
   
   /** Update these parameters to add new tabulations to data set **/
+  /*
   seq_list = 
     0001 0002 0003 0004 0005 0009 0013 0018 0034 0036 0037 0043 0044 0047 0056 0057 0058
     0061 0062 0063 0064 0072 0075 0078 0079 0081 0099 0101 0102 0103 0104 0105 0106 0107  
   ,
+  */
   table_list = 
     B00001 B00002 B01001 B01002 B01003 B02001 B03002 B05002 B06002 B07012 B09001
     B11001 B11003 B11004 B11005 B11007 B11010 B11013 B11016 B15002
@@ -160,7 +162,6 @@
   %let _years      = &years;
   %let _geo_file   = &geo_file;
   %let _census_geo_year = &census_geo_year;
-  %let _max_seqno = %scan( &seq_list, -1 );
   %let _acs_sf_raw_base_path = &_dcdata_r_path\ACS\Raw\SF_&_years.;
   %let _years_dash = %sysfunc( tranwrd( &_years, '_', '-' ) );
   %let _last_year = 20%scan( &_years, 2, _ );
@@ -190,9 +191,25 @@
   options noxwait;
   x "md &rootdir";
   
-  %** File sequence numbers to read **;
+  
+  ** Location of table lookup file **;
 
-  %let _seq_list = &seq_list;
+  libname stubs "&_acs_sf_raw_base_path";
+
+
+  %** Create list of file sequence numbers to read based on list of tables **;
+  
+  proc sql noprint;
+    select seq into :_seq_list separated by ' ' from stubs.SequenceNumberTableNumberLookup
+      where cells ~= '' and indexw("%upcase(&table_list)", upcase( tblid ), ' ' )
+      order by seq;
+  quit;
+  run;
+
+  %let _seq_list = %ListNoDup( &_seq_list );
+
+  %let _max_seqno = %scan( &_seq_list, -1 );
+
 
   %** Tables to read **;
 
@@ -205,15 +222,11 @@
   %** Additional variables to drop from block group file **;
 
   %let _drop_bg_list = &drop_bg_list;
+  
 
   %put _user_;
   
   
-  ** Location of table lookup files **;
-
-  libname stubs "&_acs_sf_raw_base_path";
-
-
   **** Compile block group and tract files ****;
 
   %Compile_ACS( geo=geobg2010, finalize=&finalize, revisions=&revisions )
