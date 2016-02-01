@@ -150,7 +150,7 @@
   %** Global macro parameters **;
 
   %global _acs_sf_raw_base_path _acs_sf_raw_path _state_fips _state_ab _state_name
-          _years _last_year _geo_file _census_geo_year /*_max_seqno*/ _years_dash 
+          _years _last_year _geo_file _census_geo_year _years_dash 
           _seq_list _table_list _drop_list _drop_bg_list
           _sf_macro_file_path _out_ds_base _out_lib;
           
@@ -166,7 +166,7 @@
   %let _years      = &years;
   %let _census_geo_year = &census_geo_year;
   %let _acs_sf_raw_base_path = &_dcdata_r_path\ACS\Raw\SF_&_years.;
-  %let _years_dash = %sysfunc( tranwrd( &_years, '_', '-' ) );
+  %let _years_dash = %sysfunc( translate( &_years, '-', '_' ) );
   %let _last_year = 20%scan( &_years, 2, _ );
   %let _geo_file   = g&_last_year.5&_state_ab;
   

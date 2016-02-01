@@ -191,7 +191,7 @@
     
     %Dc_update_meta_file(
       ds_lib=ACS,
-      ds_name=&_out_ds_base._&geosuffix,
+      ds_name=&_out_ds_base._&geo_suffix,
       creator_process=&_out_ds_base..sas,
       restrictions=None,
       revisions=%str(&revisions)
