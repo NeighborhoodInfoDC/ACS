@@ -459,6 +459,7 @@
     %ACS_summary_geo( ward2002, &source_geo )
     %ACS_summary_geo( ward2012, &source_geo )
     %ACS_summary_geo( zip, &source_geo )
+	%ACS_summary_geo( cluster2000, &source_geo )
 
   %end;
   %else %do;
