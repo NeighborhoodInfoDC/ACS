@@ -189,6 +189,13 @@
              B17001e47, B17001e48, B17001e49, B17001e50, B17001e51, B17001e52
             );
 
+      ChildrenPovertyUnder5Defined_&_years. = 
+        sum( B17001e4, 
+             B17001e18,
+             B17001e33,
+             B17001e47,
+            );
+
       ElderlyPovertyDefined_&_years. = 
         sum( B17001e15, B17001e16, B17001e29, B17001e30,
              B17001e44, B17001e45, B17001e58, B17001e59
@@ -200,17 +207,29 @@
         sum( B17001e4, B17001e5, B17001e6, B17001e7, B17001e8, B17001e9, 
              B17001e18, B17001e19, B17001e20, B17001e21, B17001e22, B17001e23 );
 
+	  PopPoorChildUnder5_&_years. = 
+        sum( B17001e4,
+             B17001e18,);
+
       PopPoorElderly_&_years. = 
         sum( B17001e15, B17001e16, B17001e29, B17001e30 );
 
       PopPoorPersons_&_years. = B17001e2;
-      
+
       mChildrenPovertyDefined_&_years. = 
         %moe_sum( var=B17001m4 B17001m5 B17001m6 B17001m7 B17001m8 B17001m9 
              B17001m18 B17001m19 B17001m20 B17001m21 B17001m22 B17001m23
              B17001m33 B17001m34 B17001m35 B17001m36 B17001m37 B17001m38 
              B17001m47 B17001m48 B17001m49 B17001m50 B17001m51 B17001m52
             );
+ 
+      mChildrenPovertyUnder5Defined_&_years. = 
+        %moe_sum( var=B17001m4 
+             B17001m18
+             B17001m33 
+             B17001m47
+            );
+
 
       mElderlyPovertyDefined_&_years. = 
         %moe_sum( var=B17001m15 B17001m16 B17001m29 B17001m30
@@ -223,6 +242,10 @@
         %moe_sum( var=B17001m4 B17001m5 B17001m6 B17001m7 B17001m8 B17001m9 
              B17001m18 B17001m19 B17001m20 B17001m21 B17001m22 B17001m23 );
 
+       mPopPoorChildrenUnder5_&_years. = 
+        %moe_sum( var=B17001m4 
+             B17001m18 );
+
       mPopPoorElderly_&_years. = 
         %moe_sum( var=B17001m15 B17001m16 B17001m29 B17001m30 );
 
@@ -232,13 +255,17 @@
         PopPoorPersons_&_years. = "Persons below the poverty level last year, &_years_dash "
         PersonsPovertyDefined_&_years. = "Persons with poverty status determined, &_years_dash "
         PopPoorChildren_&_years. = "Children under 18 years old below the poverty level last year, &_years_dash "
+        PopPoorChildrenUnder5_&_years. = "Children under 5 years old below the poverty level last year, &_years_dash "
         ChildrenPovertyDefined_&_years. = "Children under 18 years old with poverty status determined, &_years_dash "
+        ChildrenPovertyUnder5Defined_&_years. = "Children under 5 years old with poverty status determined, &_years_dash "
         PopPoorElderly_&_years. = "Persons 65 years old and over below the poverty level last year, &_years_dash "
         ElderlyPovertyDefined_&_years. = "Persons 65 years old and over with poverty status determined, &_years_dash "
         mPopPoorPersons_&_years. = "Persons below the poverty level last year, MOE, &_years_dash "
         mPersonsPovertyDefined_&_years. = "Persons with poverty status determined, MOE, &_years_dash "
         mPopPoorChildren_&_years. = "Children under 18 years old below the poverty level last year, MOE, &_years_dash "
-        mChildrenPovertyDefined_&_years. = "Children under 18 years old with poverty status determined, MOE, &_years_dash "
+		mPopPoorChildrenUnder5_&_years. = "Children under 5 years old below the poverty level last year, MOE, &_years_dash "
+		mChildrenPovertyDefined_&_years. = "Children under 18 years old with poverty status determined, MOE, &_years_dash "
+		mChildrenPovertyUnder5Defined_&_years. = "Children under 5 years old with poverty status determined, MOE, &_years_dash "
         mPopPoorElderly_&_years. = "Persons 65 years old and over below the poverty level last year, MOE, &_years_dash "
         mElderlyPovertyDefined_&_years. = "Persons 65 years old and over with poverty status determined, MOE, &_years_dash "
       ;
