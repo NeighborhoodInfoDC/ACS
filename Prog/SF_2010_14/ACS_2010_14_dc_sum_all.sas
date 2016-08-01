@@ -26,7 +26,7 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2010_14,
 
-  revisions = Add children under 5 in poverty.
+  revisions = Restore var label for ChildrenPovertyDefined_2010_14.
 
 )
 

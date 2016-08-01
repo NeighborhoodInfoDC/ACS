@@ -255,6 +255,7 @@
         PopPoorPersons_&_years. = "Persons below the poverty level last year, &_years_dash "
         PersonsPovertyDefined_&_years. = "Persons with poverty status determined, &_years_dash "
         PopPoorChildren_&_years. = "Children under 18 years old below the poverty level last year, &_years_dash "
+        ChildrenPovertyDefined_&_years. = "Children under 18 years old with poverty status determined, &_years_dash "
         PopPoorChildrenUnder5_&_years. = "Children under 5 years old below the poverty level last year, &_years_dash "
         ChildPovertyUnder5Def_&_years. = "Children under 5 years old with poverty status determined, &_years_dash "
         PopPoorElderly_&_years. = "Persons 65 years old and over below the poverty level last year, &_years_dash "
