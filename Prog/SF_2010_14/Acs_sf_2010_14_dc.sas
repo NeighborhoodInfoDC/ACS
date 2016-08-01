@@ -20,6 +20,8 @@
 
 %Acs_sf(
 
+  revisions = %str(Add tables for racial equity project.),
+
   /** State abbreviation. Ex: DC **/
   state_ab = DC,
 

@@ -36,13 +36,13 @@
            Num: Agg: ;
            
     %let moe_vars =
-           mTotPop_&_years. mNumHshlds_&_years. mNumFamilies_&_years.
-           mPopUnder5Years_&_years. mPopUnder18Years_&_years. mPop65andOverYears_&_years.
-           mPopWithRace_&_years. mPopBlackNonHispBridge_&_years.
-           mPopWhiteNonHispBridge_&_years.
-           mPopAsianPINonHispBridge_&_years. mPopHisp_&_years.
-           mPopNativeAmNonHispBr_&_years.
-           mPopOtherNonHispBridge_&_years.
+           mTotPop_&_years. mNumHshlds_&_years. mNumFamilies_&_years.
+           mPopUnder5Years_&_years. mPopUnder18Years_&_years. mPop65andOverYears_&_years.
+           mPopWithRace_&_years. mPopBlackNonHispBridge_&_years.
+           mPopWhiteNonHispBridge_&_years.
+           mPopAsianPINonHispBridge_&_years. mPopHisp_&_years.
+           mPopNativeAmNonHispBr_&_years.
+           mPopOtherNonHispBridge_&_years.
            mPopMultiracialNonHisp_&_years.
            mPopOtherRaceNonHispBr_&_years.
            mPop25andOverWoutHS_&_years. mPop25andOverWCollege_&_years.
@@ -65,7 +65,7 @@
            Unwtd: TotPop: PopUnder: Pop16: Pop25: Pop65: PopForeignBorn: 
            PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopOther: PopMulti: 
            PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed:
-           Persons: Children: Elderly: Num: Agg: ;
+           Persons: Children: ChildPoverty: Elderly: Num: Agg: ;
            
     %let moe_vars =
            mTotPop_&_years. mNumHshlds_&_years. mNumFamilies_&_years.
@@ -80,6 +80,7 @@
            mPopOtherRaceNonHispBr_&_years. mPopPoorPersons_&_years.
            mPersonsPovertyDefined_&_years. mPopPoorChildren_&_years.
            mChildrenPovertyDefined_&_years. mPopPoorElderly_&_years.
+           mChildPovertyUnder5Def_&_years. mPopPoorChildrenUnder5_&_years.
            mElderlyPovertyDefined_&_years. mPopCivilianEmployed_&_years.
            mPopUnemployed_&_years. mPopInCivLaborForce_&_years.
            mPop16andOverEmployed_&_years. mPop16andOverYears_&_years.
