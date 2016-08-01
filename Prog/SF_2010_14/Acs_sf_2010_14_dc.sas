@@ -9,6 +9,7 @@
  
  Description:  Read selected tables for ACS summary files.
  
+ Modifications:
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -82,7 +83,5 @@
 	B20005m: B20005Bm: B20005Cm: B20005Dm: B20005Em: B20005Fm: B20005Gm: B20005Hm: B20005Im:
 	C23002Be: C23002Ce: C23002De: C23002Ee: C23002Fe: C23002Ge: C23002He: C23002Ie:
 	C23002Bm: C23002Cm: C23002Dm: C23002Em: C23002Fm: C23002Gm: C23002Hm: C23002Im:
-      
 
-
-);
+)
