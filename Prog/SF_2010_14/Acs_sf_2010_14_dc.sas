@@ -9,8 +9,8 @@
  
  Description:  Read selected tables for ACS summary files.
  
- Modifications: SD added tables for Equity 8.15.16
-				SD added tables for State of Latinos 9.22.16
+ Modifications: SD added tables for Equity 8/15/2016
+			    SD added tables for State of Latinos 9/23/2016
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
