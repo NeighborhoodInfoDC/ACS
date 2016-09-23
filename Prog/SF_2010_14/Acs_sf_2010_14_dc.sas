@@ -10,6 +10,7 @@
  Description:  Read selected tables for ACS summary files.
  
  Modifications: SD added tables for Equity 8.15.16
+				SD added tables for State of Latinos 9.22.16
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -20,7 +21,7 @@
 
 %Acs_sf(
 
-  revisions = %str(Add tables for racial equity project.),
+  revisions = %str(Add tables for State of Latinos project.),
 
   /** State abbreviation. Ex: DC **/
   state_ab = DC,
@@ -35,7 +36,7 @@
   	B00001 B00002 B01002 B01003 
 	B01001 B01001B B01001C B01001D B01001E B01001F B01001G B01001H B01001I
 	B02001 B03001 B03002 B05002 B05003I B06002 B06007 B06009 B07012 B09001
-    B06004 B06004B B06004C B06004D B06004E B06004F B06004G B06004H B06004I
+    B06004B B06004C B06004D B06004E B06004F B06004G B06004H B06004I
 	B11001 B11003 B11004 B11005 B11007 B11010 B11013 B11016 
 	B15002 C15002B C15002C C15002D C15002E C15002F C15002G C15002H C15002I
 	B15003 B16004 B16006
