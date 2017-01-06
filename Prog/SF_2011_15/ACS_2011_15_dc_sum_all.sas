@@ -1,9 +1,9 @@
 /**************************************************************************
- Program:  ACS_xxxx_yy_ss_sum_all.sas
+ Program:  ACS_2011_15_dc_sum_all.sas
  Library:  ACS
  Project:  NeighborhoodInfo DC
- Author:   
- Created:  
+ Author:   Carl Hedman
+ Created:  1/5/17
  Version:  SAS 9.2
  Environment:  Local Windows session (desktop)
  
@@ -21,10 +21,10 @@
 %ACS_summary_all( 
 
   /** State abbreviation. Ex: DC **/
-  state_ab = ,
+  state_ab = DC,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
-  years = 
+  years = 2011_15
 
 )
 
