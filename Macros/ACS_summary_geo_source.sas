@@ -10,7 +10,7 @@
  Description:  Create source data for generating summary geogarphy
  data sets.
 
- Modifications:
+ Modifications: Added bridge park geography.
 **************************************************************************/
 
 %macro ACS_summary_geo_source( source_geo );
@@ -475,6 +475,7 @@
     
     %ACS_summary_geo( anc2002, &source_geo )
     %ACS_summary_geo( anc2012, &source_geo )
+	%ACS_summary_geo( bridgepk, &source_geo )
     %ACS_summary_geo( city, &source_geo )
     %ACS_summary_geo( cluster_tr2000, &source_geo )
     %ACS_summary_geo( eor, &source_geo )
