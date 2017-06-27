@@ -92,6 +92,7 @@
   02/28/14 PAT Corrected _years_dash value. 
   03/04/14 MSW Added sequence numbers 0063, 0064 and 0075. Added  B01002Ee/m, B25014Ee/m, and B19013Ee/m to drop list. 
   11/05/14 SXZ Added Table B19113 B09001
+  06826/17 LP and RP Added Tables for racial equity work.
 **************************************************************************/
 
 /** Macro Acs_sf - Start Definition **/
@@ -134,6 +135,7 @@
 	B25003 B25003B B25003C B25003D B25003E B25003F B25003G B25003H B25003I
 	B25043 B25044 B25049 B25052 B25061 B25062 B25063 B25065 B25070    
     B25070 B25091 B25105 B25088 B25064 
+	B07004A B07004B B07004C B07004D B07004E B07004 B07004G B07004H B07004I
   ,
   
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from all data sets **/
