@@ -49,6 +49,20 @@
     %let geo_suffix = tr00;
     %let geo_var = Geo2000;
   %end;
+  %else %if &geo = CITY %then %do;
+    %** city level **;
+    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._All_Geographies_Not_Tracts_Block_Groups;
+    %let sum_level = 050;
+    %let geo_suffix = city;
+    %let geo_var = city;
+  %end;
+  %else %if &geo = COUNTY %then %do;
+    %** city level **;
+    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._All_Geographies_Not_Tracts_Block_Groups;
+    %let sum_level = 040;
+    %let geo_suffix = regcnt;
+    %let geo_var = county;
+  %end;
   %else %do;
     %err_mput( macro=Compile_ACS, msg=Geography &geo not supported. )
     %goto exit_macro;
@@ -125,7 +139,19 @@
     if inGeo;
     
     ** Create standard geography variable **;
-    
+
+	%if &geo = CITY %then %do;
+    length &geo_var $ 1;
+  
+    &geo_var = "1";
+  
+    label &geo_var = "&geo_label";
+  
+    format &geo_var &geo_format;
+	%end;
+
+
+    %else %do;
     length &geo_var $ &geo_length;
   
     &geo_var = substr( left( geoid ), 8 );
@@ -133,11 +159,12 @@
     label &geo_var = "&geo_label";
   
     format &geo_var &geo_format;
+	%end;
     
     ** Check for invalid geo variable values **;
     
-    if put( &geo_var, &geo_vformat ) = '' then do;
-      %err_put( macro=Compile_ACS, msg="Invalid geography value: " _n_= geoid= &geo_var= )
+    if put( &geo_var, &geo_format ) = '' then do;
+      %err_put( macro=Compile_ACS, msg="Invalid geography value: " _n_= geoid= &geo_var= );
     end;
     
     ** Recode margin of error = -1 to .N (not available) **;
@@ -179,7 +206,7 @@
   proc datasets library=WORK memtype=(data) nolist;
     delete _&_out_ds_base._&geo_suffix &_geo_file seq_: sfe: sfm: ;
   quit;
-  run;
+  run; 
 
   
   %File_info( data=&_out_lib..&_out_ds_base._&geo_suffix, printobs=0, freqvars=sumlevel )
