@@ -135,11 +135,10 @@
 	B25003 B25003B B25003C B25003D B25003E B25003F B25003G B25003H B25003I
 	B25043 B25044 B25049 B25052 B25061 B25062 B25063 B25065 B25070    
     B25070 B25091 B25105 B25088 B25064 
-	B07004A B07004B B07004C B07004D B07004E B07004 B07004G B07004H B07004I
+	B07004A B07004B B07004C B07004D B07004E B07004F B07004G B07004H B07004I
     B06004EPRe: 
-    B06004EPRm: 
-	B07004m:
-  ,
+    B06004EPRm:
+,
   
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from all data sets **/
   drop_list =
@@ -148,9 +147,7 @@
     B01001Em: B01002Em: B11001Em: B19001Em: B19013Em: B25003Em: B25014Em: C24010Em:
     B18101Ee: B19113Ee:
     B18101Em: B19113Em:
-
-     
-  ,
+,
   
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from BLOCK GROUP data sets only **/
   drop_bg_list = 

@@ -2,9 +2,9 @@
  Program:  Acs_sf_2011_15_wv.sas
  Library:  ACS
  Project:  NeighborhoodInfo DC
- Author:   Carl Hedman
- Created:  12/23/16
- Version:  SAS 9.2
+ Author:   Lily Posey
+ Created:  06/29/16
+ Version:  SAS 9.4
  Environment:  Local Windows session (desktop)
  
  Description:  Read selected tables for ACS summary files.
