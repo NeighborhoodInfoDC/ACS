@@ -241,9 +241,9 @@
   %Compile_ACS( geo=geo2010, finalize=&finalize, revisions=&revisions )
 
   %Compile_ACS( geo=county, finalize=&finalize, revisions=&revisions )
-
+/*
   %Compile_ACS( geo=place, finalize=&finalize, revisions=&revisions )
-
+*/
 
 %mend Acs_sf;
 
