@@ -62,6 +62,9 @@
 
   %ACS_summary_geo_source( tr10 )
 
+  **** Create summary files from regional county source ****;
+
+  %ACS_summary_geo_source( regcounty )
 
 %mend ACS_summary_all;
 
