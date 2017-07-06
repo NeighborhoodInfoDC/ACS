@@ -20,6 +20,7 @@
          i v;
   
   %let geo = %upcase( &geo );
+  %let state_ab = %upcase (&state_ab );
   
   %if &geo = GEOBG2010 %then %do;
     %** Block group level **;
@@ -48,6 +49,27 @@
     %let sum_level = 140;
     %let geo_suffix = tr00;
     %let geo_var = Geo2000;
+  %end;
+  %else %if &geo = CITY %then %do;
+    %** city level - use only for DC **;
+    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._All_Geographies_Not_Tracts_Block_Groups;
+    %let sum_level = 040;
+    %let geo_suffix = city;
+    %let geo_var = city;
+  %end;
+  %else %if &geo = COUNTY %then %do;
+    %** county level **;
+    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._All_Geographies_Not_Tracts_Block_Groups;
+    %let sum_level = 050;
+    %let geo_suffix = regcnt;
+    %let geo_var = RegCounty;
+  %end;
+  %else %if &geo = PLACE %then %do;
+    %** place level **;
+    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._All_Geographies_Not_Tracts_Block_Groups;
+    %let sum_level = 160;
+    %let geo_suffix = regpl;
+    %let geo_var = RegPlace;
   %end;
   %else %do;
     %err_mput( macro=Compile_ACS, msg=Geography &geo not supported. )
@@ -91,7 +113,7 @@
 
     merge
       &_geo_file 
-        (keep=logrecno sumlevel state county tract blkgrp geoid
+        (keep=logrecno sumlevel state county place tract blkgrp geoid
          where=(sumlevel="&sum_level") 
          in=inGeo)
 
@@ -125,7 +147,40 @@
     if inGeo;
     
     ** Create standard geography variable **;
-    
+
+	%if &geo = CITY %then %do;
+    length &geo_var $ 1;
+  
+    &geo_var = "1";
+  
+    label &geo_var = "&geo_label";
+  
+    format &geo_var &geo_format;
+	%end;
+
+
+	%if &geo = COUNTY %then %do;
+    length &geo_var $ 5;
+  
+    &geo_var = state || county ;
+  
+    label &geo_var = "&geo_label";
+  
+    format &geo_var &geo_format;
+	%end;
+
+	%if &geo = PLACE %then %do;
+    length &geo_var $ 7;
+  
+    &geo_var = state || place ;
+  
+    label &geo_var = "Regional places";
+  
+    format &geo_var &geo_format;
+	%end;
+
+
+    %else %do;
     length &geo_var $ &geo_length;
   
     &geo_var = substr( left( geoid ), 8 );
@@ -133,12 +188,18 @@
     label &geo_var = "&geo_label";
   
     format &geo_var &geo_format;
+	%end;
     
     ** Check for invalid geo variable values **;
+	** RP edited to only check for DC geographies **;
+
+	%if &state_ab = DC %then %do;
     
     if put( &geo_var, &geo_vformat ) = '' then do;
-      %err_put( macro=Compile_ACS, msg="Invalid geography value: " _n_= geoid= &geo_var= )
+      %err_put( macro=Compile_ACS, msg="Invalid geography value: " _n_= geoid= &geo_var= );
     end;
+
+	%end;
     
     ** Recode margin of error = -1 to .N (not available) **;
     
@@ -179,7 +240,7 @@
   proc datasets library=WORK memtype=(data) nolist;
     delete _&_out_ds_base._&geo_suffix &_geo_file seq_: sfe: sfm: ;
   quit;
-  run;
+  run; 
 
   
   %File_info( data=&_out_lib..&_out_ds_base._&geo_suffix, printobs=0, freqvars=sumlevel )
