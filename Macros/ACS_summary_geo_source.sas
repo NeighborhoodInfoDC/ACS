@@ -46,7 +46,7 @@
      %let source_ds = Acs_sf_&_years._&_state_ab._tr10;
      %let source_geo_label = Census tract;
   %end;
-  %else %if %upcase( &source_geo ) = RegCounty %then %do;
+  %else %if %upcase( &source_geo ) = REGCOUNTY %then %do;
      %let source_geo_var = RegCounty;
      %let source_geo_suffix = _ regcnt;
      %let source_geo_wt_file_fmt = $geotw1f.;
