@@ -48,9 +48,9 @@
   %end;
   %else %if %upcase( &source_geo ) = REGCOUNTY %then %do;
      %let source_geo_var = RegCounty;
-     %let source_geo_suffix = _ regcnt;
+     %let source_geo_suffix = _regcnt;
      %let source_geo_wt_file_fmt = $geotw1f.;
-     %let source_ds = Acs_sf_&_years._&_state_ab._ regcnt;
+     %let source_ds = Acs_sf_&_years._&_state_ab._regcnt;
      %let source_geo_label = Regional county;
   %end;
   %else %do;
