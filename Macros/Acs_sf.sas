@@ -109,7 +109,7 @@
   /** Update table_list=, drop_list=, and drop_bg_list= parameters to add new tabulations to data set **/
   
   /** List of tables to include in data sets **/
-  table_list = 
+ table_list = 
   	B00001 B00002 B01002 B01003 
 	B01001 B01001B B01001C B01001D B01001E B01001F B01001G B01001H B01001I
 	B02001 B03001 B03002 B05002 B05003I B06002 B06007 B06009 B07012 B09001
@@ -136,6 +136,8 @@
 	B25043 B25044 B25049 B25052 B25061 B25062 B25063 B25065 B25070    
     B25070 B25091 B25105 B25088 B25064 
 	B07004A B07004B B07004C B07004D B07004E B07004F B07004G B07004H B07004I
+	B25079 B25080 B25082
+	B25077
     B06004EPRe: 
     B06004EPRm:
 ,
@@ -143,10 +145,10 @@
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from all data sets **/
   drop_list =
     B00001m: B00002m:
-    B01001Ee: B01002Ee: B11001Ee: B19001Ee: B19013Ee: B25003Ee: B25014Ee: C24010Ee:
-    B01001Em: B01002Em: B11001Em: B19001Em: B19013Em: B25003Em: B25014Em: C24010Em:
-    B18101Ee: B19113Ee:
-    B18101Em: B19113Em:
+    B01002Ee: B11001Ee: B19013Ee: B25014Ee: 
+    B01002Em: B11001Em: B19013Em: B25014Em: 
+    B18101Ee: 
+    B18101Em: 
 ,
   
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from BLOCK GROUP data sets only **/
@@ -272,11 +274,15 @@
   
   **** Compile block group, tract and county files ****;
 
-  %Compile_ACS( geo=geobg2010, finalize=&finalize, revisions=&revisions )
+  %Compile_ACS( geo=geobg2010, finalize=&finalize, revisions=&revisions ) 
 
   %Compile_ACS( geo=geo2010, finalize=&finalize, revisions=&revisions )
 
   %Compile_ACS( geo=county, finalize=&finalize, revisions=&revisions )
+
+/*
+  %Compile_ACS( geo=place, finalize=&finalize, revisions=&revisions )
+*/
 
 
 %mend Acs_sf;
