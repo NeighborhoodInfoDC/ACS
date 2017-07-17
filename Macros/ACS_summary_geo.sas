@@ -392,15 +392,27 @@
   %put _local_;
   
   %if ( &geo_name = GEO2000 and %upcase( &source_geo_var ) = GEO2000 ) or 
-      ( &geo_name = GEO2010 and %upcase( &source_geo_var ) = GEO2010 ) %then %do;
+      ( &geo_name = GEO2010 and %upcase( &source_geo_var ) = GEO2010 ) or
+	  ( &geo_name = COUNTY and %upcase( &source_geo_var ) = REGCOUNTY )%then %do;
 
     ** Census tracts from census tract source (same year): just recopy selected vars **;
     
-    data &_out_lib..&out_ds (label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label");
+    data &out_ds (label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label");
     
       set &source_ds_work (keep=&geo_var &count_vars &moe_vars);
 
     run;
+
+	%Finalize_data_set( 
+	data=&out_ds.,
+	out=&out_ds.,
+	outlib=&_out_lib.,
+	label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
+	sortby=&geo_name.,
+	restrictions=None,
+	revisions=
+	)
+
 
   %end;
   %else %do;
@@ -418,7 +430,7 @@
       wgt_new_geo=&geo_var,
       wgt_id_vars=,
       wgt_wgt_var=popwt,
-      out_ds_name=&_out_lib..&out_ds,
+      out_ds_name=&out_ds,
       out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
       calc_vars=,
       calc_vars_labels=,
@@ -427,6 +439,16 @@
       print_diag=Y,
       full_diag=N
     )
+
+	%Finalize_data_set( 
+	data=&out_ds.,
+	out=&out_ds.,
+	outlib=&_out_lib.,
+	label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
+	sortby=&geo_name.,
+	restrictions=None,
+	revisions=
+	)
     
   %end;  
 
@@ -438,22 +460,9 @@
   quit;
 
 
-  %File_info( data=&_out_lib..&out_ds, printobs=0 )
+  %File_info( data=&out_ds, printobs=0 )
 
   
-  %if %mparam_is_yes( &_finalize ) %then %do;
-  
-    ** Register metadata **;
-    
-    %Dc_update_meta_file(
-      ds_lib=&_out_lib,
-      ds_name=&out_ds,
-      creator_process=ACS_&_years._&state_ab._sum_all.sas,
-      restrictions=None,
-      revisions=%str(&_revisions)
-    )
-
-  %end;
 
 
 

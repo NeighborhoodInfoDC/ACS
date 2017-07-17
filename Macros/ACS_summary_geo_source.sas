@@ -66,7 +66,14 @@
 
   data &source_ds_work;
 
-    set ACS.&source_ds;
+  %if %upcase( &source_geo ) = REGCOUNTY %then %do;
+	 set ACS.&source_ds (drop=county);
+	 county = RegCounty;
+	 label county = "Regional county (2017)";
+  %end;
+  %else %do;
+     set ACS.&source_ds;
+  %end;
     
     ** Unweighted sample counts **;
     
@@ -151,7 +158,9 @@
 
     ** Demographics - Non block group (tract,county) variables **;
 
-	%if %upcase( &source_geo ) ne BG00 or %upcase( &source_geo ) ne BG10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
 
 	NumFamiliesB_&_years. = B19101Be1;
 	NumFamiliesW_&_years. = B19101He1;
@@ -511,7 +520,9 @@
     
 	%end;
 
-    %if %upcase( &source_geo ) ne BG00 or %upcase( &source_geo ) ne BG10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
     
       ** Foreign born **;
 
@@ -650,7 +661,9 @@
 	  mPopAloneAIOM_&_years. = "All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
 	  ;
 
-	%if %upcase( &source_geo ) ne BG00 or %upcase( &source_geo ) ne BG10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
 
       ** Poverty **;
 
@@ -1019,7 +1032,9 @@
    
       ** Employment **;
 
-	%if %upcase( &source_geo ) ne BG00 or %upcase( &source_geo ) ne BG10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
  
 	** Employment - Non block group (tract,county) variables **;
 
@@ -2122,7 +2137,9 @@
 	  ;
 
 
-	%if %upcase( &source_geo ) ne BG00 or %upcase( &source_geo ) ne BG10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
 
     ** Education - Non block group (tract,county) variables **;
 
@@ -2328,7 +2345,9 @@
 
 	%end;
 
-	%if %upcase( &source_geo ) ne BG00 or %upcase( &source_geo ) ne BG10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
 
 	** Household type **;
 
@@ -2374,7 +2393,9 @@
   
     ** Income **;
 
-	 %if %upcase( &source_geo ) ne BG00 or %upcase( &source_geo ) ne BG10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
 
 	** Income - non block group (tract,county) variables **;
     
@@ -2734,25 +2755,28 @@
 
 
   %end;
+
   %else %do;
-  
-    %** For non-DC, only do census tract summary file **;
+    %** For non-DC, only do census tract and county summary file **;
     
-    %if &source_geo = TR10 %then %do;
+    %if %upcase( &source_geo ) = TR10 %then %do; 
       %ACS_summary_geo( geo2010, &source_geo )
     %end;
-    %else %if &source_geo = TR00 %then %do;
+    %else %if %upcase( &source_geo ) = TR00 %then %do;
       %ACS_summary_geo( geo2000, &source_geo )
+    %end;
+	%else %if %upcase( &source_geo ) = REGCOUNTY %then %do;
+      %ACS_summary_geo( County, &source_geo )
     %end;
 
   %end;
   
   ** Cleanup temporary data sets **;
-  
+  /*
   proc datasets library=work nolist;
     delete &source_ds_work /memtype=data;
   quit;
-  
+  */
   %macro_exit:
 
 %mend ACS_summary_geo_source;
