@@ -46,6 +46,13 @@
      %let source_ds = Acs_sf_&_years._&_state_ab._tr10;
      %let source_geo_label = Census tract;
   %end;
+  %else %if %upcase( &source_geo ) = REGCOUNTY %then %do;
+     %let source_geo_var = RegCounty;
+     %let source_geo_suffix = _regcnt;
+     %let source_geo_wt_file_fmt = $geotw1f.;
+     %let source_ds = Acs_sf_&_years._&_state_ab._regcnt;
+     %let source_geo_label = Regional county;
+  %end;
   %else %do;
     %err_mput( macro= ACS_summary_geo_source, msg=Geograpy &source_geo is not supported. )
     %goto macro_exit;
@@ -59,7 +66,14 @@
 
   data &source_ds_work;
 
-    set ACS.&source_ds;
+  %if %upcase( &source_geo ) = REGCOUNTY %then %do;
+	 set ACS.&source_ds (drop=county);
+	 county = RegCounty;
+	 label county = "Regional county (2017)";
+  %end;
+  %else %do;
+     set ACS.&source_ds;
+  %end;
     
     ** Unweighted sample counts **;
     
@@ -142,9 +156,11 @@
 	  mPop65andOverYears_&_years. = "Persons 65 years old and over, MOE, &_years_dash "
 	  ;
 
-    ** Demographics - Tract-level variables **;
+    ** Demographics - Non block group (tract,county) variables **;
 
-	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
 
 	NumFamiliesB_&_years. = B19101Be1;
 	NumFamiliesW_&_years. = B19101He1;
@@ -504,7 +520,9 @@
     
 	%end;
 
-    %if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
     
       ** Foreign born **;
 
@@ -643,7 +661,9 @@
 	  mPopAloneAIOM_&_years. = "All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
 	  ;
 
-	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
 
       ** Poverty **;
 
@@ -1012,9 +1032,11 @@
    
       ** Employment **;
 
-	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
  
-	** Employment - Tract-level variables **;
+	** Employment - Non block group (tract,county) variables **;
 
 	  PopCivilianEmployed_&_years. = 
         sum( B23001e7, B23001e14, B23001e21, B23001e28, B23001e35, B23001e42, B23001e49, 
@@ -2115,9 +2137,11 @@
 	  ;
 
 
-	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
 
-    ** Education - Tract-level variables **;
+    ** Education - Non block group (tract,county) variables **;
 
     
 	Pop25andOverYearsB_&_years.	= C15002Be1;
@@ -2321,7 +2345,9 @@
 
 	%end;
 
-	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
 
 	** Household type **;
 
@@ -2367,9 +2393,11 @@
   
     ** Income **;
 
-	 %if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 %then %do;
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
 
-	** Income - tract-level variables **;
+	** Income - non block group (tract,county) variables **;
     
 
 		FamIncomeLT75kB_&_years. = 
@@ -2652,6 +2680,10 @@
     mNumVacantHUForSale_&_years. = B25004m4;
     
     mNumRenterHsgUnits_&_years. = %moe_sum( var=mNumRenterOccupiedHU_&_years. mNumVacantHUForRent_&_years. );
+	
+
+	medianhomevalue_&_years. = B25077e1;
+	mmedianhomevalue_&_years. = B25077m1;
 
     label
 	  NumOccupiedHsgUnits_&_years. = "Occupied housing units, &_years_dash "
@@ -2694,11 +2726,19 @@
       mNumVacantHUForRent_&_years. = "Vacant housing units for rent, MOE, &_years_dash "
       mNumVacantHUForSale_&_years. = "Vacant housing units for sale, MOE, &_years_dash "
       mNumRenterHsgUnits_&_years. = "Total rental housing units, MOE, &_years_dash "
+
+	medianhomevalue_&_years. = "Median value of owner-occupied housing units ($),&_years_dash"
+	mmedianhomevalue_&_years.="Median value of owner-occupied housing units ($), MOE, &_years_dash"
+
       ;
 
   run;
 
-  %if &_state_ab = dc %then %do;
+  %if &_state_ab = dc and (
+ 	%upcase( &source_geo ) = BG00 or
+	%upcase( &source_geo ) = BG10 or 
+	%upcase( &source_geo ) = TR00 or
+	%upcase( &source_geo ) = TR10 ) %then %do; 
 
     %** For DC, do full set of geographies **;
     
@@ -2717,17 +2757,23 @@
     %ACS_summary_geo( zip, &source_geo )
 	%ACS_summary_geo( cluster2000, &source_geo )
 
-
   %end;
+
+  %else	%if &_state_ab = dc and %upcase( &source_geo ) = REGCOUNTY %then %do;
+	%ACS_summary_geo( County, &source_geo )
+  %end;
+
   %else %do;
-  
-    %** For non-DC, only do census tract summary file **;
+    %** For non-DC, only do census tract and county summary file **;
     
-    %if &source_geo = TR10 %then %do;
+    %if %upcase( &source_geo ) = TR10 %then %do; 
       %ACS_summary_geo( geo2010, &source_geo )
     %end;
-    %else %if &source_geo = TR00 %then %do;
+    %else %if %upcase( &source_geo ) = TR00 %then %do;
       %ACS_summary_geo( geo2000, &source_geo )
+    %end;
+	%else %if %upcase( &source_geo ) = REGCOUNTY %then %do;
+      %ACS_summary_geo( County, &source_geo )
     %end;
 
   %end;

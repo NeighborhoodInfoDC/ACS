@@ -272,16 +272,18 @@
   %put _user_;
   
   
-  **** Compile block group and tract files ****;
+  **** Compile block group, tract and county files ****;
 
   %Compile_ACS( geo=geobg2010, finalize=&finalize, revisions=&revisions ) 
 
   %Compile_ACS( geo=geo2010, finalize=&finalize, revisions=&revisions )
 
   %Compile_ACS( geo=county, finalize=&finalize, revisions=&revisions )
+
 /*
   %Compile_ACS( geo=place, finalize=&finalize, revisions=&revisions )
 */
+
 
 %mend Acs_sf;
 
