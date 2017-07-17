@@ -2734,7 +2734,11 @@
 
   run;
 
-  %if &_state_ab = dc %then %do;
+  %if &_state_ab = dc and (
+ 	%upcase( &source_geo ) = BG00 or
+	%upcase( &source_geo ) = BG10 or 
+	%upcase( &source_geo ) = TR00 or
+	%upcase( &source_geo ) = TR10 ) %then %do; 
 
     %** For DC, do full set of geographies **;
     
@@ -2753,7 +2757,10 @@
     %ACS_summary_geo( zip, &source_geo )
 	%ACS_summary_geo( cluster2000, &source_geo )
 
+  %end;
 
+  %else	%if &_state_ab = dc and %upcase( &source_geo ) = REGCOUNTY %then %do;
+	%ACS_summary_geo( County, &source_geo )
   %end;
 
   %else %do;
@@ -2772,11 +2779,11 @@
   %end;
   
   ** Cleanup temporary data sets **;
-  /*
+  
   proc datasets library=work nolist;
     delete &source_ds_work /memtype=data;
   quit;
-  */
+  
   %macro_exit:
 
 %mend ACS_summary_geo_source;
