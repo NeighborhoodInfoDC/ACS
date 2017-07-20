@@ -2764,10 +2764,11 @@
   %end;
 
   %else %do;
-    %** For non-DC, only do census tract and county summary file **;
+    %** For non-DC, do census tract, council district and county summary file **;
     
     %if %upcase( &source_geo ) = TR10 %then %do; 
       %ACS_summary_geo( geo2010, &source_geo )
+	  %ACS_summary_geo( councildist, &source_geo )
     %end;
     %else %if %upcase( &source_geo ) = TR00 %then %do;
       %ACS_summary_geo( geo2000, &source_geo )

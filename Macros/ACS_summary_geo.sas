@@ -415,6 +415,7 @@
 
 
   %end;
+
   %else %do;
   
     ** Transform data from source geography (&source_geo_var) to target geography (&geo_var) **;
@@ -430,7 +431,7 @@
       wgt_new_geo=&geo_var,
       wgt_id_vars=,
       wgt_wgt_var=popwt,
-      out_ds_name=&out_ds,
+      out_ds_name=&out_ds._,
       out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
       calc_vars=,
       calc_vars_labels=,
@@ -439,6 +440,11 @@
       print_diag=Y,
       full_diag=N
     )
+
+	data &out_ds;
+		set &out_ds._;
+		if TotPop_&_years. >0;
+	run;
 
 	%Finalize_data_set( 
 	data=&out_ds.,
@@ -458,13 +464,6 @@
   proc datasets library=&_out_lib memtype=(data) nolist;
     modify &out_ds (sortedby=&geo_var);
   quit;
-
-
-  %File_info( data=&out_ds, printobs=0 )
-
-  
-
-
 
 %mend ACS_summary_geo;
 
