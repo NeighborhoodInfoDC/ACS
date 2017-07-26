@@ -1888,6 +1888,21 @@
     
 	   **Employment - Block group-level variables**;
 
+		PopEmployedByInd_&_years. = C24030e1;
+			PopEmployedAgric_&_years. = sum(C24030e3, C24030e30 );
+			PopEmployedConstr_&_years. = sum(C24030e6, C24030e33 );
+			PopEmployedManuf_&_years. = sum(C24030e7, C24030e34 );
+			PopEmployedWhlsale_&_years. = sum(C24030e8, C24030e35 );
+			PopEmployedRetail_&_years. = sum(C24030e9, C24030e36 );
+			PopEmployedTransprt_&_years. = sum(C24030e10, C24030e37 );
+			PopEmployedInfo_&_years. = sum(C24030e13, C24030e40 );
+			PopEmployedFinance_&_years. = sum(C24030e14, C24030e41 );
+			PopEmployedProfServ_&_years. = sum(C24030e17, C24030e44 )
+			PopEmployedEduction_&_years. = sum(C24030e21, C24030e48 )
+			PopEmployedArts_&_years. = sum(C24030e24, C24030e51 )
+			PopEmployedOther_&_years. = sum(C24030e27, C24030e54 )
+			PopEmployedPubAdmin_&_years. = sum(C24030e28, C24030e55 )
+
  	  PopEmployedByOcc_&_years. = C24010e1;
 			PopEmployedMngmt_&_years. = sum(C24010e3, C24010e39 );
 			PopEmployedServ_&_years. = sum(C24010e19, C24010e55 );
@@ -1946,6 +1961,22 @@
 				PopEmployedProdAIOM_&_years. = 
 					sum(C24010Ce7, C24010Ce13, C24010De7, C24010De13, C24010Ee7, C24010Ee13, 
 						C24010Fe7, C24010Fe13, C24010Ge7, C24010Ge13 );
+
+
+		mPopEmployedByInd_&_years. = C24030m1;
+			mPopEmployedAgric_&_years. = sum(C24030m3, C24030m30 );
+			mPopEmployedConstr_&_years. = sum(C24030m6, C24030m33 );
+			mPopEmployedManuf_&_years. = sum(C24030m7, C24030m34 );
+			mPopEmployedWhlsale_&_years. = sum(C24030m8, C24030m35 );
+			mPopEmployedRetail_&_years. = sum(C24030m9, C24030m36 );
+			mPopEmployedTransprt_&_years. = sum(C24030m10, C24030m37 );
+			mPopEmployedInfo_&_years. = sum(C24030m13, C24030m40 );
+			mPopEmployedFinance_&_years. = sum(C24030m14, C24030m41 );
+			mPopEmployedProfServ_&_years. = sum(C24030m17, C24030m44 )
+			mPopEmployedEduction_&_years. = sum(C24030m21, C24030m48 )
+			mPopEmployedArts_&_years. = sum(C24030m24, C24030m51 )
+			mPopEmployedOther_&_years. = sum(C24030m27, C24030m54 )
+			mPopEmployedPubAdmin_&_years. = sum(C24030m28, C24030m55 )
 
 	   mPopEmployedByOcc_&_years. = C24010m1;
 			mPopEmployedMngmt_&_years. = %moe_sum( var=C24010m3 C24010m39);
