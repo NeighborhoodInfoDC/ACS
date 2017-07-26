@@ -1903,7 +1903,7 @@
 			PopEmployedOther_&_years. = sum(C24030e27, C24030e54 )
 			PopEmployedPubAdmin_&_years. = sum(C24030e28, C24030e55 )
 
- 	  PopEmployedByOcc_&_years. = C24010e1;
+ 	  	PopEmployedByOcc_&_years. = C24010e1;
 			PopEmployedMngmt_&_years. = sum(C24010e3, C24010e39 );
 			PopEmployedServ_&_years. = sum(C24010e19, C24010e55 );
 			PopEmployedSales_&_years. = sum(C24010e27, C24010e63 );
@@ -2716,6 +2716,23 @@
     
     NumRenterHsgUnits_&_years. = NumRenterOccupiedHU_&_years. + NumVacantHsgUnitsForRent_&_years.;
 
+	NumRenterCostBurden_&_years. = sum(B25070e7, B25070e8, B25070e9, B25070e10)
+	NumRentSevereCostBurden_&_years. = B25070e10
+	NumOwnerCostBurden_&_years. = sum(B25091e8, B25091e9, B25091e10, B25091e11, B25091e19, B25091e20, B25091e21, B25091e22)
+	NumOwnSevereCostBurden_&_years. = sum(B25091e11, B25091e22)
+
+	GrossRentLT100_499_&_years. = sum(B25063e3, B25063e4, B25063e5, B25063e6, B25063e7, B25063e8, B25063e9, B25063e10, B25063e11)
+	GrossRent500_799_&_years. = sum(B25063e12, B25063e13, B2506314, B25063e15, B25063e16, B25063e17)
+	GrossRent800_899_&_years. = B25063e18
+	GrossRent900_999&_years. = B25063e19
+	GrossRent1000_1249_&_years. = B25063e20
+	GrossRent1250_1499_&_years. = B25063e21
+	GrossRent1500_1999_&_years. = B25063e22
+	GrossRent2000_2499_&_years. = B25063e23
+	GrossRent2500_2999_&_years. = B25063e24
+	GrossRent3000_3499_&_years. = B25063e25
+	GrossRentGT3500_&_years. = = B25063e26
+
     mNumOccupiedHsgUnits_&_years. = B25003m1;
 		mNumOccupiedHsgUnitsB_&_years. = B25003Bm1;
 		mNumOccupiedHsgUnitsW_&_years. = B25003Hm1;
@@ -2740,9 +2757,26 @@
     
     mNumRenterHsgUnits_&_years. = %moe_sum( var=mNumRenterOccupiedHU_&_years. mNumVacantHUForRent_&_years. );
 	
+	mNumRenterCostBurden_&_years. = %moe_sum( var=B25070m7, B25070m8, B25070m9, B25070m10)
+	mNumRentSevereCostBurden_&_years. = B25070m10
+	mNumOwnerCostBurden_&_years. = %moe_sum( var=B25091m8, B25091m9, B25091m10, B25091m11, B25091m19, B25091m20, B25091m21, B25091m22)
+	mNumOwnSevereCostBurden_&_years. = %moe_sum( var=B25091m11, B25091m22)
+
+	mGrossRentLT100_499_&_years. = %moe_sum( var=B25063m3, B25063m4, B25063m5, B25063m6, B25063m7, B25063m8, B25063m9, B25063m10, B25063m11)
+	mGrossRent500_799_&_years. = %moe_sum( var=B25063m12, B25063m13, B2506314, B25063m15, B25063m16, B25063m17)
+	mGrossRent800_899_&_years. = B25063m18
+	mGrossRent900_999&_years. = B25063m19
+	mGrossRent1000_1249_&_years. = B25063m20
+	mGrossRent1250_1499_&_years. = B25063m21
+	mGrossRent1500_1999_&_years. = B25063m22
+	mGrossRent2000_2499_&_years. = B25063m23
+	mGrossRent2500_2999_&_years. = B25063m24
+	mGrossRent3000_3499_&_years. = B25063m25
+	mGrossRentGT3500_&_years. = B25063m26
 
 	medianhomevalue_&_years. = B25077e1;
 	mmedianhomevalue_&_years. = B25077m1;
+
 
     label
 	  NumOccupiedHsgUnits_&_years. = "Occupied housing units, &_years_dash "
@@ -2766,6 +2800,21 @@
       NumVacantHsgUnitsForRent_&_years. = "Vacant housing units for rent, &_years_dash "
       NumVacantHsgUnitsForSale_&_years. = "Vacant housing units for sale, &_years_dash "
       NumRenterHsgUnits_&_years. = "Total rental housing units, &_years_dash "
+	  NumRenterCostBurden_&_years. = "Renter-occupied housing units with housing cost burden (housing costs are or exceed 30% of household income), &_years_dash "
+	  NumRentSevereCostBurden_&_years. = "Renter-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), &_years_dash "
+	  NumOwnerCostBurden_&_years. = "Owner-occupied housing units with and without a mortgage with housing cost burden (owner costs are or exceed 30% of household income), &_years_dash "
+	  NumOwnSevereCostBurden_&_years. = "Owner-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), &_years_dash "
+	  GrossRentLT100_499_&_years. = "Renter-occupied housing units where gross rent is less than $100 to $499, &_years_dash "
+			GrossRent500_799_&_years. = "Renter-occupied housing units where gross rent is $500 to $799, &_years_dash "
+			GrossRent800_899_&_years. = "Renter-occupied housing units where gross rent is $800 to $899, &_years_dash "
+			GrossRent900_999&_years. = "Renter-occupied housing units where gross rent is $900 to $999, &_years_dash "
+			GrossRent1000_1249_&_years. = "Renter-occupied housing units where gross rent is $1000 to $1249, &_years_dash "
+			GrossRent1250_1499_&_years. = "Renter-occupied housing units where gross rent is $1250 to $1499, &_years_dash "
+			GrossRent1500_1999_&_years. = "Renter-occupied housing units where gross rent is $1500 to $1999, &_years_dash "
+			GrossRent2000_2499_&_years. = "Renter-occupied housing units where gross rent is $2000 to $2499, &_years_dash "
+			GrossRent2500_2999_&_years. = "Renter-occupied housing units where gross rent is $2500 to $2999, &_years_dash "
+			GrossRent3000_3499_&_years. = "Renter-occupied housing units where gross rent is $3000 to $3499, &_years_dash "
+			GrossRentGT3500_&_years. = = "Renter-occupied housing units where gross rent is greater than $3500, &_years_dash "
 	  mNumOccupiedHsgUnits_&_years. = "Occupied housing units, MOE, &_years_dash "
 		    mNumOccupiedHsgUnitsB_&_years. = "Occupied housing units, Black/African American, &_years_dash "
 			mNumOccupiedHsgUnitsW_&_years. = "Occupied housing units, Non-Hispanic White, &_years_dash "
@@ -2785,7 +2834,21 @@
       mNumVacantHUForRent_&_years. = "Vacant housing units for rent, MOE, &_years_dash "
       mNumVacantHUForSale_&_years. = "Vacant housing units for sale, MOE, &_years_dash "
       mNumRenterHsgUnits_&_years. = "Total rental housing units, MOE, &_years_dash "
-
+	  mNumRenterCostBurden_&_years. = "Renter-occupied housing units with housing cost burden (housing costs are or exceed 30% of household income), MOE, &_years_dash "
+	  mNumRentSevereCostBurden_&_years. = "Renter-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), MOE, &_years_dash "
+	  mNumOwnerCostBurden_&_years. = "Owner-occupied housing units with and without a mortgage with housing cost burden (owner costs are or exceed 30% of household income), MOE, &_years_dash "
+	  mNumOwnSevereCostBurden_&_years. = "Owner-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), MOE, &_years_dash "
+	  mGrossRentLT100_499_&_years. = "Renter-occupied housing units where gross rent is less than $100 to $499, MOE, &_years_dash "
+			mGrossRent500_799_&_years. = "Renter-occupied housing units where gross rent is $500 to $799, MOE, &_years_dash "
+			mGrossRent800_899_&_years. = "Renter-occupied housing units where gross rent is $800 to $899, MOE, &_years_dash "
+			mGrossRent900_999&_years. = "Renter-occupied housing units where gross rent is $900 to $999, MOE, &_years_dash "
+			mGrossRent1000_1249_&_years. = "Renter-occupied housing units where gross rent is $1000 to $1249, MOE, &_years_dash "
+			mGrossRent1250_1499_&_years. = "Renter-occupied housing units where gross rent is $1250 to $1499, MOE, &_years_dash "
+			mGrossRent1500_1999_&_years. = "Renter-occupied housing units where gross rent is $1500 to $1999, MOE, &_years_dash "
+			mGrossRent2000_2499_&_years. = "Renter-occupied housing units where gross rent is $2000 to $2499, MOE, &_years_dash "
+			mGrossRent2500_2999_&_years. = "Renter-occupied housing units where gross rent is $2500 to $2999, MOE, &_years_dash "
+			mGrossRent3000_3499_&_years. = "Renter-occupied housing units where gross rent is $3000 to $3499, MOE, &_years_dash "
+			mGrossRentGT3500_&_years. = "Renter-occupied housing units where gross rent is greater than $3500, MOE, &_years_dash "
 	medianhomevalue_&_years. = "Median value of owner-occupied housing units ($),&_years_dash"
 	mmedianhomevalue_&_years.="Median value of owner-occupied housing units ($), MOE, &_years_dash"
 

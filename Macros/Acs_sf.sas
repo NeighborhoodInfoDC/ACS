@@ -93,6 +93,7 @@
   03/04/14 MSW Added sequence numbers 0063, 0064 and 0075. Added  B01002Ee/m, B25014Ee/m, and B19013Ee/m to drop list. 
   11/05/14 SXZ Added Table B19113 B09001
   06826/17 LP and RP Added Tables for racial equity work.
+  07/26/17 Somala Diby added B25106 for Bridge Park tabulations.
 **************************************************************************/
 
 /** Macro Acs_sf - Start Definition **/
