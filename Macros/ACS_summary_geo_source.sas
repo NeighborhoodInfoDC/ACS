@@ -1964,19 +1964,19 @@
 
 
 		mPopEmployedByInd_&_years. = C24030m1;
-			mPopEmployedAgric_&_years. = sum(C24030m3, C24030m30 );
-			mPopEmployedConstr_&_years. = sum(C24030m6, C24030m33 );
-			mPopEmployedManuf_&_years. = sum(C24030m7, C24030m34 );
-			mPopEmployedWhlsale_&_years. = sum(C24030m8, C24030m35 );
-			mPopEmployedRetail_&_years. = sum(C24030m9, C24030m36 );
-			mPopEmployedTransprt_&_years. = sum(C24030m10, C24030m37 );
-			mPopEmployedInfo_&_years. = sum(C24030m13, C24030m40 );
-			mPopEmployedFinance_&_years. = sum(C24030m14, C24030m41 );
-			mPopEmployedProfServ_&_years. = sum(C24030m17, C24030m44 )
-			mPopEmployedEduction_&_years. = sum(C24030m21, C24030m48 )
-			mPopEmployedArts_&_years. = sum(C24030m24, C24030m51 )
-			mPopEmployedOther_&_years. = sum(C24030m27, C24030m54 )
-			mPopEmployedPubAdmin_&_years. = sum(C24030m28, C24030m55 )
+			mPopEmployedAgric_&_years. = %moe_sum( var=C24030m3, C24030m30 );
+			mPopEmployedConstr_&_years. = %moe_sum( var=C24030m6, C24030m33 );
+			mPopEmployedManuf_&_years. = %moe_sum( var=C24030m7, C24030m34 );
+			mPopEmployedWhlsale_&_years. = %moe_sum( var=C24030m8, C24030m35 );
+			mPopEmployedRetail_&_years. = %moe_sum( var=C24030m9, C24030m36 );
+			mPopEmployedTransprt_&_years. = %moe_sum( var=C24030m10, C24030m37 );
+			mPopEmployedInfo_&_years. = %moe_sum( var=C24030m13, C24030m40 );
+			mPopEmployedFinance_&_years. = %moe_sum( var=C24030m14, C24030m41 );
+			mPopEmployedProfServ_&_years. = %moe_sum( var=C24030m17, C24030m44 )
+			mPopEmployedEduction_&_years. = %moe_sum( var=C24030m21, C24030m48 )
+			mPopEmployedArts_&_years. = %moe_sum( var=C24030m24, C24030m51 )
+			mPopEmployedOther_&_years. = %moe_sum( var=C24030m27, C24030m54 )
+			mPopEmployedPubAdmin_&_years. = %moe_sum( var=C24030m28, C24030m55 )
 
 	   mPopEmployedByOcc_&_years. = C24010m1;
 			mPopEmployedMngmt_&_years. = %moe_sum( var=C24010m3 C24010m39);
@@ -2028,6 +2028,20 @@
 				mPopEmployedProdAIOM_&_years. = %moe_sum( var=C24010Cm7 C24010Cm13 C24010Dm7 C24010Dm13 C24010Em7 C24010Em13 C24010Fm7 C24010Fm13 C24010Gm7 C24010Gm13);
 
 	label
+		PopEmployedByInd_&_years. = "Persons 16+ years old employed in civilian industries, &_years_dash "
+			PopEmployedAgric_&_years. = "Persons 16+ years old employed in agriculture, forestry, fishing and hunting, and mining, &_years_dash "
+			PopEmployedConstr_&_years. = "Persons 16+ years old employed in construction, &_years_dash "
+			PopEmployedManuf_&_years. = "Persons 16+ years old employed in manufacturing, &_years_dash "
+			PopEmployedWhlsale_&_years. = "Persons 16+ years old employed in wholesale trade, &_years_dash "
+			PopEmployedRetail_&_years. = "Persons 16+ years old employed in retail trade, &_years_dash "
+			PopEmployedTransprt_&_years. = "Persons 16+ years old employed in transportation and warehousing, and utilities, &_years_dash "
+			PopEmployedInfo_&_years. = "Persons 16+ years old employed in information, &_years_dash "
+			PopEmployedFinance_&_years. = "Persons 16+ years old employed in finance and insurance, and real estate and rental and leasing, &_years_dash "
+			PopEmployedProfServ_&_years. = "Persons 16+ years old employed in professional, scientific, and management, and administrative and waste management services, &_years_dash "
+			PopEmployedEduction_&_years. = "Persons 16+ years old employed in educational services, and health care and social assistance, &_years_dash "
+			PopEmployedArts_&_years. = "Persons 16+ years old employed in arts, entertainment, and recreation, and accommodation and food services, &_years_dash "
+			PopEmployedOther_&_years. = "Persons 16+ years old employed in other services, except public administration, &_years_dash "
+			PopEmployedPubAdmin_&_years. = "Persons 16+ years old employed in public administration, &_years_dash "
 		PopEmployedByOcc_&_years. = "Persons 16+ years old employed in civilian occupations, &_years_dash "
 			PopEmployedMngmt_&_years. = "Persons 16+ years old employed in management, business, science and arts occupations, &_years_dash "
 			PopEmployedServ_&_years. = "Persons 16+ years old employed in service occupations, &_years_dash "
@@ -2070,6 +2084,20 @@
 			PopEmployedSalesAIOM_&_years. = "Persons 16+ years old employed in sales and office occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
 			PopEmployedNatResAIOM_&_years. = "Persons 16+ years old employed in natural resources, construction, and maintenance occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
 			PopEmployedProdAIOM_&_years. = "Persons 16+ years old employed in production, transportation, and material moving occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+		mPopEmployedByInd_&_years. = "Persons 16+ years old employed in civilian industries, MOE, &_years_dash "
+			mPopEmployedAgric_&_years. = "Persons 16+ years old employed in agriculture, forestry, fishing and hunting, and mining, MOE, &_years_dash "
+			mPopEmployedConstr_&_years. = "Persons 16+ years old employed in construction, MOE, &_years_dash "
+			mPopEmployedManuf_&_years. = "Persons 16+ years old employed in manufacturing, MOE, &_years_dash "
+			mPopEmployedWhlsale_&_years. = "Persons 16+ years old employed in wholesale trade, MOE, &_years_dash "
+			mPopEmployedRetail_&_years. = "Persons 16+ years old employed in retail trade, MOE, &_years_dash "
+			mPopEmployedTransprt_&_years. = "Persons 16+ years old employed in transportation and warehousing, and utilities, MOE, &_years_dash "
+			mPopEmployedInfo_&_years. = "Persons 16+ years old employed in information, MOE, &_years_dash "
+			mPopEmployedFinance_&_years. = "Persons 16+ years old employed in finance and insurance, and real estate and rental and leasing, MOE, &_years_dash "
+			mPopEmployedProfServ_&_years. = "Persons 16+ years old employed in professional, scientific, and management, and administrative and waste management services, MOE, &_years_dash "
+			mPopEmployedEduction_&_years. = "Persons 16+ years old employed in educational services, and health care and social assistance, MOE, &_years_dash "
+			mPopEmployedArts_&_years. = "Persons 16+ years old employed in arts, entertainment, and recreation, and accommodation and food services, MOE, &_years_dash "
+			mPopEmployedOther_&_years. = "Persons 16+ years old employed in other services, except public administration, MOE, &_years_dash "
+			mPopEmployedPubAdmin_&_years. = "Persons 16+ years old employed in public administration, MOE, &_years_dash "
 		mPopEmployedByOcc_&_years. = "Persons 16+ years old employed in civilian occupations, MOE, &_years_dash "
 			mPopEmployedMngmt_&_years. = "Persons 16+ years old employed in management, business, science and arts occupations, MOE, &_years_dash "
 			mPopEmployedServ_&_years. = "Persons 16+ years old employed in service occupations, MOE, &_years_dash "
