@@ -147,7 +147,7 @@
            Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
            PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
            PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
-           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Med:;
+           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Med: PopMoved: ;
            
     %let moe_vars =
            mTotPop_&_years. 
@@ -384,7 +384,18 @@
 
            mNumRenterOccupiedHU_&_years. mNumVacantHsgUnits_&_years.
            mNumVacantHUForRent_&_years. mNumVacantHUForSale_&_years. 
-		   mNumRenterHsgUnits_&_years.           
+		   mNumRenterHsgUnits_&_years. 
+
+		   mPopMovedLastYear_&_years.  mPopMovedLastYearB_&_years.
+		   mPopMovedLastYearW_&_years.  mPopMovedLastYearH_&_years.
+		   mPopMovedLastYearA_&_years.  mPopMovedLastYearIOM_&_years.
+		   mPopMovedLastYearAIOM_&_years.
+
+		   mPopMovedDiffCnty_&_years.  mPopMovedDiffCntyB_&_years.
+		   mPopMovedDiffCntyW_&_years.  mPopMovedDiffCntyH_&_years.
+		   mPopMovedDiffCntyA_&_years.  mPopMovedDiffCntyIOM_&_years.
+		   mPopMovedDiffCntyAIOM_&_years.
+ 
            ;
                
   %end;
