@@ -1964,19 +1964,19 @@
 
 
 		mPopEmployedByInd_&_years. = C24030m1;
-			mPopEmployedAgric_&_years. = %moe_sum( var=C24030m3, C24030m30 );
-			mPopEmployedConstr_&_years. = %moe_sum( var=C24030m6, C24030m33 );
-			mPopEmployedManuf_&_years. = %moe_sum( var=C24030m7, C24030m34 );
-			mPopEmployedWhlsale_&_years. = %moe_sum( var=C24030m8, C24030m35 );
-			mPopEmployedRetail_&_years. = %moe_sum( var=C24030m9, C24030m36 );
-			mPopEmployedTransprt_&_years. = %moe_sum( var=C24030m10, C24030m37 );
-			mPopEmployedInfo_&_years. = %moe_sum( var=C24030m13, C24030m40 );
-			mPopEmployedFinance_&_years. = %moe_sum( var=C24030m14, C24030m41 );
-			mPopEmployedProfServ_&_years. = %moe_sum( var=C24030m17, C24030m44 )
-			mPopEmployedEduction_&_years. = %moe_sum( var=C24030m21, C24030m48 )
-			mPopEmployedArts_&_years. = %moe_sum( var=C24030m24, C24030m51 )
-			mPopEmployedOther_&_years. = %moe_sum( var=C24030m27, C24030m54 )
-			mPopEmployedPubAdmin_&_years. = %moe_sum( var=C24030m28, C24030m55 )
+			mPopEmployedAgric_&_years. = %moe_sum( var=C24030m3 C24030m30 );
+			mPopEmployedConstr_&_years. = %moe_sum( var=C24030m6 C24030m33 );
+			mPopEmployedManuf_&_years. = %moe_sum( var=C24030m7 C24030m34 );
+			mPopEmployedWhlsale_&_years. = %moe_sum( var=C24030m8 C24030m35 );
+			mPopEmployedRetail_&_years. = %moe_sum( var=C24030m9 C24030m36 );
+			mPopEmployedTransprt_&_years. = %moe_sum( var=C24030m10 C24030m37 );
+			mPopEmployedInfo_&_years. = %moe_sum( var=C24030m13 C24030m40 );
+			mPopEmployedFinance_&_years. = %moe_sum( var=C24030m14 C24030m41 );
+			mPopEmployedProfServ_&_years. = %moe_sum( var=C24030m17 C24030m44 )
+			mPopEmployedEduction_&_years. = %moe_sum( var=C24030m21 C24030m48 )
+			mPopEmployedArts_&_years. = %moe_sum( var=C24030m24 C24030m51 )
+			mPopEmployedOther_&_years. = %moe_sum( var=C24030m27 C24030m54 )
+			mPopEmployedPubAdmin_&_years. = %moe_sum( var=C24030m28 C24030m55 )
 
 	   mPopEmployedByOcc_&_years. = C24010m1;
 			mPopEmployedMngmt_&_years. = %moe_sum( var=C24010m3 C24010m39);
@@ -2721,6 +2721,9 @@
 	NumOwnerCostBurden_&_years. = sum(B25091e8, B25091e9, B25091e10, B25091e11, B25091e19, B25091e20, B25091e21, B25091e22)
 	NumOwnSevereCostBurden_&_years. = sum(B25091e11, B25091e22)
 
+	RentCostBurdenDenom_&_years. = NumRenterOccupiedHU_&_years. - B25070e11;
+	OwnerCostBurdenDenom_&_years. = NumOwnerOccupiedHU_&_years. - sum(B25091e12, B25091e23)
+
 	GrossRentLT100_499_&_years. = sum(B25063e3, B25063e4, B25063e5, B25063e6, B25063e7, B25063e8, B25063e9, B25063e10, B25063e11)
 	GrossRent500_799_&_years. = sum(B25063e12, B25063e13, B2506314, B25063e15, B25063e16, B25063e17)
 	GrossRent800_899_&_years. = B25063e18
@@ -2757,13 +2760,16 @@
     
     mNumRenterHsgUnits_&_years. = %moe_sum( var=mNumRenterOccupiedHU_&_years. mNumVacantHUForRent_&_years. );
 	
-	mNumRenterCostBurden_&_years. = %moe_sum( var=B25070m7, B25070m8, B25070m9, B25070m10)
+	mNumRenterCostBurden_&_years. = %moe_sum( var=B25070m7 B25070m8 B25070m9 B25070m10)
 	mNumRentSevereCostBurden_&_years. = B25070m10
-	mNumOwnerCostBurden_&_years. = %moe_sum( var=B25091m8, B25091m9, B25091m10, B25091m11, B25091m19, B25091m20, B25091m21, B25091m22)
-	mNumOwnSevereCostBurden_&_years. = %moe_sum( var=B25091m11, B25091m22)
+	mNumOwnerCostBurden_&_years. = %moe_sum( var=B25091m8 B25091m9 B25091m10 B25091m11 B25091m19 B25091m20 B25091m21 B25091m22)
+	mNumOwnSevereCostBurden_&_years. = %moe_sum( var=B25091m11 B25091m22)
 
-	mGrossRentLT100_499_&_years. = %moe_sum( var=B25063m3, B25063m4, B25063m5, B25063m6, B25063m7, B25063m8, B25063m9, B25063m10, B25063m11)
-	mGrossRent500_799_&_years. = %moe_sum( var=B25063m12, B25063m13, B2506314, B25063m15, B25063m16, B25063m17)
+	mRentCostBurdenDenom_&_years. = %moe_sum( var=NumRenterOccupiedHU_&_years. -B25070e11);
+	mOwnerCostBurdenDenom_&_years. =  %moe_sum( var=NumOwnerOccupiedHU_&_years. -B25091e12 -B25091e23)
+
+	mGrossRentLT100_499_&_years. = %moe_sum( var=B25063m3 B25063m4 B25063m5 B25063m6 B25063m7 B25063m8 B25063m9 B25063m10 B25063m11)
+	mGrossRent500_799_&_years. = %moe_sum( var=B25063m12 B25063m13 B2506314 B25063m15 B25063m16 B25063m17)
 	mGrossRent800_899_&_years. = B25063m18
 	mGrossRent900_999&_years. = B25063m19
 	mGrossRent1000_1249_&_years. = B25063m20
@@ -2804,6 +2810,8 @@
 	  NumRentSevereCostBurden_&_years. = "Renter-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), &_years_dash "
 	  NumOwnerCostBurden_&_years. = "Owner-occupied housing units with and without a mortgage with housing cost burden (owner costs are or exceed 30% of household income), &_years_dash "
 	  NumOwnSevereCostBurden_&_years. = "Owner-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), &_years_dash "
+	  RentCostBurdenDenom_&_years. = "Renter-occupied housing units, excluding units where renter cost burden is not computed "
+	  OwnerCostBurdenDenom_&_years. = "Owner-occupied housing units, excluding units where owner cost burden is not computed "
 	  GrossRentLT100_499_&_years. = "Renter-occupied housing units where gross rent is less than $100 to $499, &_years_dash "
 			GrossRent500_799_&_years. = "Renter-occupied housing units where gross rent is $500 to $799, &_years_dash "
 			GrossRent800_899_&_years. = "Renter-occupied housing units where gross rent is $800 to $899, &_years_dash "
@@ -2838,6 +2846,8 @@
 	  mNumRentSevereCostBurden_&_years. = "Renter-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), MOE, &_years_dash "
 	  mNumOwnerCostBurden_&_years. = "Owner-occupied housing units with and without a mortgage with housing cost burden (owner costs are or exceed 30% of household income), MOE, &_years_dash "
 	  mNumOwnSevereCostBurden_&_years. = "Owner-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), MOE, &_years_dash "
+	  mRentCostBurdenDenom_&_years. = "Renter-occupied housing units, excluding units where renter cost burden is not computed, MOE, &_years_dash  "
+	  mOwnerCostBurdenDenom_&_years. = "Owner-occupied housing units, excluding units where owner cost burden is not computed, MOE, &_years_dash  "
 	  mGrossRentLT100_499_&_years. = "Renter-occupied housing units where gross rent is less than $100 to $499, MOE, &_years_dash "
 			mGrossRent500_799_&_years. = "Renter-occupied housing units where gross rent is $500 to $799, MOE, &_years_dash "
 			mGrossRent800_899_&_years. = "Renter-occupied housing units where gross rent is $800 to $899, MOE, &_years_dash "
