@@ -154,7 +154,7 @@
 		   mOwnerCostBurdenDenom_&_years.
 
 		   mGrossRentLT100_499_&_years. mGrossRent500_799_&_years.  mGrossRent800_899_&_years. 
-		   mGrossRent900_999&_years. mGrossRent1000_1249_&_years. mGrossRent1250_1499_&_years. 
+		   mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. mGrossRent1250_1499_&_years. 
 		   mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. mGrossRent2500_2999_&_years. 
 		   mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
            ;
