@@ -1897,11 +1897,11 @@
 			PopEmployedTransprt_&_years. = sum(C24030e10, C24030e37 );
 			PopEmployedInfo_&_years. = sum(C24030e13, C24030e40 );
 			PopEmployedFinance_&_years. = sum(C24030e14, C24030e41 );
-			PopEmployedProfServ_&_years. = sum(C24030e17, C24030e44 )
-			PopEmployedEduction_&_years. = sum(C24030e21, C24030e48 )
-			PopEmployedArts_&_years. = sum(C24030e24, C24030e51 )
-			PopEmployedOther_&_years. = sum(C24030e27, C24030e54 )
-			PopEmployedPubAdmin_&_years. = sum(C24030e28, C24030e55 )
+			PopEmployedProfServ_&_years. = sum(C24030e17, C24030e44 );
+			PopEmployedEduction_&_years. = sum(C24030e21, C24030e48 );
+			PopEmployedArts_&_years. = sum(C24030e24, C24030e51 );
+			PopEmployedOther_&_years. = sum(C24030e27, C24030e54 );
+			PopEmployedPubAdmin_&_years. = sum(C24030e28, C24030e55 );
 
  	  	PopEmployedByOcc_&_years. = C24010e1;
 			PopEmployedMngmt_&_years. = sum(C24010e3, C24010e39 );
@@ -1972,11 +1972,11 @@
 			mPopEmployedTransprt_&_years. = %moe_sum( var=C24030m10 C24030m37 );
 			mPopEmployedInfo_&_years. = %moe_sum( var=C24030m13 C24030m40 );
 			mPopEmployedFinance_&_years. = %moe_sum( var=C24030m14 C24030m41 );
-			mPopEmployedProfServ_&_years. = %moe_sum( var=C24030m17 C24030m44 )
-			mPopEmployedEduction_&_years. = %moe_sum( var=C24030m21 C24030m48 )
-			mPopEmployedArts_&_years. = %moe_sum( var=C24030m24 C24030m51 )
-			mPopEmployedOther_&_years. = %moe_sum( var=C24030m27 C24030m54 )
-			mPopEmployedPubAdmin_&_years. = %moe_sum( var=C24030m28 C24030m55 )
+			mPopEmployedProfServ_&_years. = %moe_sum( var=C24030m17 C24030m44 );
+			mPopEmployedEduction_&_years. = %moe_sum( var=C24030m21 C24030m48 );
+			mPopEmployedArts_&_years. = %moe_sum( var=C24030m24 C24030m51 );
+			mPopEmployedOther_&_years. = %moe_sum( var=C24030m27 C24030m54 );
+			mPopEmployedPubAdmin_&_years. = %moe_sum( var=C24030m28 C24030m55 );
 
 	   mPopEmployedByOcc_&_years. = C24010m1;
 			mPopEmployedMngmt_&_years. = %moe_sum( var=C24010m3 C24010m39);
@@ -2716,25 +2716,25 @@
     
     NumRenterHsgUnits_&_years. = NumRenterOccupiedHU_&_years. + NumVacantHsgUnitsForRent_&_years.;
 
-	NumRenterCostBurden_&_years. = sum(B25070e7, B25070e8, B25070e9, B25070e10)
-	NumRentSevereCostBurden_&_years. = B25070e10
-	NumOwnerCostBurden_&_years. = sum(B25091e8, B25091e9, B25091e10, B25091e11, B25091e19, B25091e20, B25091e21, B25091e22)
-	NumOwnSevereCostBurden_&_years. = sum(B25091e11, B25091e22)
+	NumRenterCostBurden_&_years. = sum(B25070e7, B25070e8, B25070e9, B25070e10);
+	NumRentSevereCostBurden_&_years. = B25070e10;
+	NumOwnerCostBurden_&_years. = sum(B25091e8, B25091e9, B25091e10, B25091e11, B25091e19, B25091e20, B25091e21, B25091e22);
+	NumOwnSevereCostBurden_&_years. = sum(B25091e11, B25091e22);
 
 	RentCostBurdenDenom_&_years. = NumRenterOccupiedHU_&_years. - B25070e11;
-	OwnerCostBurdenDenom_&_years. = NumOwnerOccupiedHU_&_years. - sum(B25091e12, B25091e23)
+	OwnerCostBurdenDenom_&_years. = NumOwnerOccupiedHU_&_years. - sum(B25091e12, B25091e23);
 
-	GrossRentLT100_499_&_years. = sum(B25063e3, B25063e4, B25063e5, B25063e6, B25063e7, B25063e8, B25063e9, B25063e10, B25063e11)
-	GrossRent500_799_&_years. = sum(B25063e12, B25063e13, B2506314, B25063e15, B25063e16, B25063e17)
-	GrossRent800_899_&_years. = B25063e18
-	GrossRent900_999&_years. = B25063e19
-	GrossRent1000_1249_&_years. = B25063e20
-	GrossRent1250_1499_&_years. = B25063e21
-	GrossRent1500_1999_&_years. = B25063e22
-	GrossRent2000_2499_&_years. = B25063e23
-	GrossRent2500_2999_&_years. = B25063e24
-	GrossRent3000_3499_&_years. = B25063e25
-	GrossRentGT3500_&_years. = = B25063e26
+	GrossRentLT100_499_&_years. = sum(B25063e3, B25063e4, B25063e5, B25063e6, B25063e7, B25063e8, B25063e9, B25063e10, B25063e11);
+	GrossRent500_799_&_years. = sum(B25063e12, B25063e13, B2506314, B25063e15, B25063e16, B25063e17);
+	GrossRent800_899_&_years. = B25063e18;
+	GrossRent900_999&_years. = B25063e19;
+	GrossRent1000_1249_&_years. = B25063e20;
+	GrossRent1250_1499_&_years. = B25063e21;
+	GrossRent1500_1999_&_years. = B25063e22;
+	GrossRent2000_2499_&_years. = B25063e23;
+	GrossRent2500_2999_&_years. = B25063e24;
+	GrossRent3000_3499_&_years. = B25063e25;
+	GrossRentGT3500_&_years. = = B25063e26;
 
     mNumOccupiedHsgUnits_&_years. = B25003m1;
 		mNumOccupiedHsgUnitsB_&_years. = B25003Bm1;
@@ -2760,25 +2760,25 @@
     
     mNumRenterHsgUnits_&_years. = %moe_sum( var=mNumRenterOccupiedHU_&_years. mNumVacantHUForRent_&_years. );
 	
-	mNumRenterCostBurden_&_years. = %moe_sum( var=B25070m7 B25070m8 B25070m9 B25070m10)
-	mNumRentSevereCostBurden_&_years. = B25070m10
-	mNumOwnerCostBurden_&_years. = %moe_sum( var=B25091m8 B25091m9 B25091m10 B25091m11 B25091m19 B25091m20 B25091m21 B25091m22)
-	mNumOwnSevereCostBurden_&_years. = %moe_sum( var=B25091m11 B25091m22)
+	mNumRenterCostBurden_&_years. = %moe_sum( var=B25070m7 B25070m8 B25070m9 B25070m10);
+	mNumRentSevereCostBurden_&_years. = B25070m10;
+	mNumOwnerCostBurden_&_years. = %moe_sum( var=B25091m8 B25091m9 B25091m10 B25091m11 B25091m19 B25091m20 B25091m21 B25091m22);
+	mNumOwnSevereCostBurden_&_years. = %moe_sum( var=B25091m11 B25091m22);
 
 	mRentCostBurdenDenom_&_years. = %moe_sum( var=NumRenterOccupiedHU_&_years. -B25070e11);
-	mOwnerCostBurdenDenom_&_years. =  %moe_sum( var=NumOwnerOccupiedHU_&_years. -B25091e12 -B25091e23)
+	mOwnerCostBurdenDenom_&_years. =  %moe_sum( var=NumOwnerOccupiedHU_&_years. -B25091e12 -B25091e23);
 
-	mGrossRentLT100_499_&_years. = %moe_sum( var=B25063m3 B25063m4 B25063m5 B25063m6 B25063m7 B25063m8 B25063m9 B25063m10 B25063m11)
-	mGrossRent500_799_&_years. = %moe_sum( var=B25063m12 B25063m13 B2506314 B25063m15 B25063m16 B25063m17)
-	mGrossRent800_899_&_years. = B25063m18
-	mGrossRent900_999&_years. = B25063m19
-	mGrossRent1000_1249_&_years. = B25063m20
-	mGrossRent1250_1499_&_years. = B25063m21
-	mGrossRent1500_1999_&_years. = B25063m22
-	mGrossRent2000_2499_&_years. = B25063m23
-	mGrossRent2500_2999_&_years. = B25063m24
-	mGrossRent3000_3499_&_years. = B25063m25
-	mGrossRentGT3500_&_years. = B25063m26
+	mGrossRentLT100_499_&_years. = %moe_sum( var=B25063m3 B25063m4 B25063m5 B25063m6 B25063m7 B25063m8 B25063m9 B25063m10 B25063m11);
+	mGrossRent500_799_&_years. = %moe_sum( var=B25063m12 B25063m13 B2506314 B25063m15 B25063m16 B25063m17);
+	mGrossRent800_899_&_years. = B25063m18;
+	mGrossRent900_999&_years. = B25063m19;
+	mGrossRent1000_1249_&_years. = B25063m20;
+	mGrossRent1250_1499_&_years. = B25063m21;
+	mGrossRent1500_1999_&_years. = B25063m22;
+	mGrossRent2000_2499_&_years. = B25063m23;
+	mGrossRent2500_2999_&_years. = B25063m24;
+	mGrossRent3000_3499_&_years. = B25063m25;
+	mGrossRentGT3500_&_years. = B25063m26;
 
 	medianhomevalue_&_years. = B25077e1;
 	mmedianhomevalue_&_years. = B25077m1;
