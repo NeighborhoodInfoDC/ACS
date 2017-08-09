@@ -2637,7 +2637,6 @@
 
     label 
       AggFamilyIncome_&_years. = "Aggregate family income ($ &_last_year), &_years_dash "
-	  FamIncome_&_years. = "Family income, &_years_dash "
 	  FamIncomeLT75k_&_years. = "Family income less than $75000, &_years_dash "
 	  FamIncomeGT200k_&_years. = "Family income more than $200,000, &_years_dash "
 	  MedFamIncm_&_years. = "Median family income, &_years_dash "
@@ -2662,7 +2661,6 @@
 		  AggHshldIncomeIOM_&_years. = "Aggregate household income, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
 		  AggHshldIncomeAIOM_&_years. = "Aggregate household income, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
 	  mAggFamilyIncome_&_years. = "Aggregate family income ($ &_last_year), MOE, &_years_dash "
-	  mFamIncome_&_years. = "Family income, MOE, &_years_dash "
 	  mFamIncomeLT75k_&_years. = "Family income less than $75000, MOE, &_years_dash "
 	  mFamIncomeGT200k_&_years. = "Family income more than $200,000, MOE, &_years_dash "
 	  mMedFamIncm_&_years. = "Median family income, MOE, &_years_dash "
