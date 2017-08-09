@@ -34,7 +34,7 @@
            Unwtd: TotPop: PopUnder: Pop25: Pop65: PopAlone:
            PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
 		   NumHshldPhone_: NumHshldCar_: NumOccupied: NumOwner: NumRenter: NumVacant: Med:
-		   AggIncome: AggHshldIncome: Num: Agg: 
+		   AggIncome: AggHshldIncome: Num: Agg: GrossRent:
 
 		   NumFamilies_: NumHshlds_:
 
@@ -46,6 +46,9 @@
 		   Pop25andOverWSC_: Pop25andOverWCollege_:
 
 		   FamIncomeLT75k_: FamIncomeGT200k_:
+
+		   NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
+		   
 		   ;
            
     %let moe_vars =
@@ -67,6 +70,12 @@
 		   mPopAloneI_&_years. mPopAloneO_&_years.
 		   mPopAloneM_&_years. mPopAloneIOM_&_years.
 		   mPopAloneAIOM_&_years.
+
+		   mPopEmployedByInd_&_years. mPopEmployedAgric_&_years. mPopEmployedConstr_&_years. 
+		   mPopEmployedManuf_&_years. mPopEmployedWhlsale_&_years. mPopEmployedRetail_&_years. 
+		   mPopEmployedTransprt_&_years. mPopEmployedInfo_&_years. mPopEmployedFinance_&_years. 
+		   mPopEmployedProfServ_&_years. mPopEmployedEduction_&_years. mPopEmployedArts_&_years. 
+		   mPopEmployedOther_&_years. mPopEmployedPubAdmin_&_years.
 
 		   mPopEmployedByOcc_&_years. mPopEmployedMngmt_&_years.
 		   mPopEmployedServ_&_years. mPopEmployedSales_&_years.
@@ -126,7 +135,7 @@
 		   mNumOccupiedHsgUnitsA_&_years. mNumOccupiedHsgUnitsIOM_&_years.
 		   mNumOccupiedHsgUnitsAIOM_&_years.
 
-		   mNumOccupiedHsgUnits_&_years
+		   mNumOccupiedHsgUnits_&_years.
            mNumOwnerOccupiedHU_&_years. mNumOwnerOccupiedHUB_&_years.
 		   mNumOwnerOccupiedHUW_&_years. mNumOwnerOccupiedHUH_&_years.
 		   mNumOwnerOccupiedHUA_&_years. mNumOwnerOccupiedHUIOM_&_years.
@@ -135,7 +144,17 @@
 		   mNumOwnerOccupiedHU_&_years.
            mNumRenterOccupiedHU_&_years. mNumVacantHsgUnits_&_years.
            mNumVacantHUForRent_&_years. mNumVacantHUForSale_&_years. 
-		   mNumRenterHsgUnits_&_years.                  
+		   mNumRenterHsgUnits_&_years. 
+
+		   mNumRenterCostBurden_&_years.
+		   mNumRentSevereCostBurden_&_years. 
+		   mNumOwnerCostBurden_&_years. 
+		   mNumOwnSevereCostBurden_&_years. 
+
+		   mGrossRentLT100_499_&_years. mGrossRent500_799_&_years.  mGrossRent800_899_&_years. 
+		   mGrossRent900_999&_years. mGrossRent1000_1249_&_years. mGrossRent1250_1499_&_years. 
+		   mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. mGrossRent2500_2999_&_years. 
+		   mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
            ;
                
   %end;

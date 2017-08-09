@@ -24,7 +24,9 @@
   state_ab = MD,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
-  years = 2011_15
+  years = 2011_15,
+
+  revisions=%str(Add workers by industry/occupation, renters by gross rent, and housing cost burdens.)
 
 )
 
