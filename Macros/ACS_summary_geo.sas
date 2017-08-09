@@ -48,7 +48,7 @@
 		   FamIncomeLT75k_: FamIncomeGT200k_:
 
 		   NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
-		   
+		   RentCostBurdenDenom: OwnerCostBurdenDenom:
 		   ;
            
     %let moe_vars =
@@ -150,6 +150,8 @@
 		   mNumRentSevereCostBurden_&_years. 
 		   mNumOwnerCostBurden_&_years. 
 		   mNumOwnSevereCostBurden_&_years. 
+		   mRentCostBurdenDenom_&_years.
+		   mOwnerCostBurdenDenom_&_years.
 
 		   mGrossRentLT100_499_&_years. mGrossRent500_799_&_years.  mGrossRent800_899_&_years. 
 		   mGrossRent900_999&_years. mGrossRent1000_1249_&_years. mGrossRent1250_1499_&_years. 
@@ -440,7 +442,7 @@
 	label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
 	sortby=&geo_name.,
 	restrictions=None,
-	revisions=
+	revisions=&revisions.
 	)
 
 
@@ -483,7 +485,7 @@
 	label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
 	sortby=&geo_name.,
 	restrictions=None,
-	revisions=
+	revisions=&revisions.
 	)
     
   %end;  
