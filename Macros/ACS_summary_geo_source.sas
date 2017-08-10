@@ -2763,8 +2763,9 @@
 	mNumOwnerCostBurden_&_years. = %moe_sum( var=B25091m8 B25091m9 B25091m10 B25091m11 B25091m19 B25091m20 B25091m21 B25091m22);
 	mNumOwnSevereCostBurden_&_years. = %moe_sum( var=B25091m11 B25091m22);
 
-	mRentCostBurdenDenom_&_years. = %moe_sum( var=NumRenterOccupiedHU_&_years. B25070e11);
-	mOwnerCostBurdenDenom_&_years. =  %moe_sum( var=NumOwnerOccupiedHU_&_years. B25091e12 B25091e23);
+	mRentCostBurdenDenom_&_years. = %moe_sum( var=B25070m2 B25070m3 B25070m4 B25070m5 B25070m6 B25070m7 B25070m8 B25070m9 B25070m10);
+	mOwnerCostBurdenDenom_&_years. =  %moe_sum( var=B25091m3 B25091m4 B25091m5 B25091m6 B25091m7 B25091m8 B25091m9 
+			B25091m10 B25091m11 B25091m14 B25091m15 B25091m16 B25091m17 B25091m18 B25091m19 B25091m20 B25091m21 B25091m22);
 
 	mGrossRentLT100_499_&_years. = %moe_sum( var=B25063m3 B25063m4 B25063m5 B25063m6 B25063m7 B25063m8 B25063m9 B25063m10 B25063m11);
 	mGrossRent500_799_&_years. = %moe_sum( var=B25063m12 B25063m13 B25063m14 B25063m15 B25063m16 B25063m17);
@@ -2813,7 +2814,7 @@
 	  GrossRentLT100_499_&_years. = "Renter-occupied housing units where gross rent is less than $100 to $499, &_years_dash "
 			GrossRent500_799_&_years. = "Renter-occupied housing units where gross rent is $500 to $799, &_years_dash "
 			GrossRent800_899_&_years. = "Renter-occupied housing units where gross rent is $800 to $899, &_years_dash "
-			GrossRent900_999&_years. = "Renter-occupied housing units where gross rent is $900 to $999, &_years_dash "
+			GrossRent900_999_&_years. = "Renter-occupied housing units where gross rent is $900 to $999, &_years_dash "
 			GrossRent1000_1249_&_years. = "Renter-occupied housing units where gross rent is $1000 to $1249, &_years_dash "
 			GrossRent1250_1499_&_years. = "Renter-occupied housing units where gross rent is $1250 to $1499, &_years_dash "
 			GrossRent1500_1999_&_years. = "Renter-occupied housing units where gross rent is $1500 to $1999, &_years_dash "
@@ -2849,7 +2850,7 @@
 	  mGrossRentLT100_499_&_years. = "Renter-occupied housing units where gross rent is less than $100 to $499, MOE, &_years_dash "
 			mGrossRent500_799_&_years. = "Renter-occupied housing units where gross rent is $500 to $799, MOE, &_years_dash "
 			mGrossRent800_899_&_years. = "Renter-occupied housing units where gross rent is $800 to $899, MOE, &_years_dash "
-			mGrossRent900_999&_years. = "Renter-occupied housing units where gross rent is $900 to $999, MOE, &_years_dash "
+			mGrossRent900_999_&_years. = "Renter-occupied housing units where gross rent is $900 to $999, MOE, &_years_dash "
 			mGrossRent1000_1249_&_years. = "Renter-occupied housing units where gross rent is $1000 to $1249, MOE, &_years_dash "
 			mGrossRent1250_1499_&_years. = "Renter-occupied housing units where gross rent is $1250 to $1499, MOE, &_years_dash "
 			mGrossRent1500_1999_&_years. = "Renter-occupied housing units where gross rent is $1500 to $1999, MOE, &_years_dash "
