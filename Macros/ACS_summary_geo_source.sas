@@ -2763,8 +2763,9 @@
 	mNumOwnerCostBurden_&_years. = %moe_sum( var=B25091m8 B25091m9 B25091m10 B25091m11 B25091m19 B25091m20 B25091m21 B25091m22);
 	mNumOwnSevereCostBurden_&_years. = %moe_sum( var=B25091m11 B25091m22);
 
-	mRentCostBurdenDenom_&_years. = %moe_sum( var=mNumRenterOccupiedHU_&_years. -B25070m11);
-	mOwnerCostBurdenDenom_&_years. =  %moe_sum( var=mNumOwnerOccupiedHU_&_years. -B25091m12 -B25091m23);
+	mRentCostBurdenDenom_&_years. = %moe_sum( var=B25070m2 B25070m3 B25070m4 B25070m5 B25070m6 B25070m7 B25070m8 B25070m9 B25070m10);
+	mOwnerCostBurdenDenom_&_years. =  %moe_sum( var=B25091m3 B25091m4 B25091m5 B25091m6 B25091m7 B25091m8 B25091m9 
+			B25091m10 B25091m11 B25091m14 B25091m15 B25091m16 B25091m17 B25091m18 B25091m19 B25091m20 B25091m21 B25091m22);
 
 	mGrossRentLT100_499_&_years. = %moe_sum( var=B25063m3 B25063m4 B25063m5 B25063m6 B25063m7 B25063m8 B25063m9 B25063m10 B25063m11);
 	mGrossRent500_799_&_years. = %moe_sum( var=B25063m12 B25063m13 B25063m14 B25063m15 B25063m16 B25063m17);
