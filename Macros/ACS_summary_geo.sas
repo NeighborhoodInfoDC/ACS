@@ -168,10 +168,11 @@
            Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
            PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
            PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
-           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Med: PopMoved: GrossRent:;
+           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Med: PopMoved: GrossRent:
            
 		   NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
 		   RentCostBurdenDenom: OwnerCostBurdenDenom:
+		   ;
 
     %let moe_vars =
            mTotPop_&_years. 
