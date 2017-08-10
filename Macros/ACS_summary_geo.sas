@@ -168,8 +168,11 @@
            Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
            PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
            PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
-           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Med: PopMoved: ;
+           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Med: PopMoved: GrossRent:;
            
+		   NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
+		   RentCostBurdenDenom: OwnerCostBurdenDenom:
+
     %let moe_vars =
            mTotPop_&_years. 
 
@@ -289,6 +292,12 @@
 		   mPop25_64yearsA_&_years. mPop25_64yearsIOM_&_years.
 		   mPop25_64yearsAIOM_&_years.
 
+		   mPopEmployedByInd_&_years. mPopEmployedAgric_&_years. mPopEmployedConstr_&_years. 
+		   mPopEmployedManuf_&_years. mPopEmployedWhlsale_&_years. mPopEmployedRetail_&_years. 
+		   mPopEmployedTransprt_&_years. mPopEmployedInfo_&_years. mPopEmployedFinance_&_years. 
+		   mPopEmployedProfServ_&_years. mPopEmployedEduction_&_years. mPopEmployedArts_&_years. 
+		   mPopEmployedOther_&_years. mPopEmployedPubAdmin_&_years.
+
 		   mPopEmployedByOcc_&_years. mPopEmployedMngmt_&_years.
 		   mPopEmployedServ_&_years. mPopEmployedSales_&_years.
 		   mPopEmployedNatRes_&_years. mPopEmployedProd_&_years.
@@ -406,6 +415,18 @@
            mNumRenterOccupiedHU_&_years. mNumVacantHsgUnits_&_years.
            mNumVacantHUForRent_&_years. mNumVacantHUForSale_&_years. 
 		   mNumRenterHsgUnits_&_years. 
+
+		   mNumRenterCostBurden_&_years.
+		   mNumRentSevereCostBurden_&_years. 
+		   mNumOwnerCostBurden_&_years. 
+		   mNumOwnSevereCostBurden_&_years. 
+		   mRentCostBurdenDenom_&_years.
+		   mOwnerCostBurdenDenom_&_years.
+
+		   mGrossRentLT100_499_&_years. mGrossRent500_799_&_years.  mGrossRent800_899_&_years. 
+		   mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. mGrossRent1250_1499_&_years. 
+		   mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. mGrossRent2500_2999_&_years. 
+		   mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
 
 		   mPopMovedLastYear_&_years.  mPopMovedLastYearB_&_years.
 		   mPopMovedLastYearW_&_years.  mPopMovedLastYearH_&_years.
