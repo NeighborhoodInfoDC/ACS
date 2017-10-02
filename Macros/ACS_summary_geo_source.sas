@@ -1113,6 +1113,27 @@
 		Pop16andOverEmployAIOM_&_years. = PopCivilianEmployedAIOM_&_years. + 
 			sum(C23002Ce5, C23002Ce18, C23002De5, C23002De18, C23002Ee5, C23002Ee18, C23002Fe5, C23002Fe18, C23002Ge5, C23002Ge18);
 
+
+	PopEmployedWorkers_&_years. = B08007e1
+		PopEmployedWorkInState_&_years. = B08007e2;
+			PopEmployedWorkInCnty_&_years. = B08007e3;
+			PopEmployedWorkOutCnty_&_years. = B08007e4;
+		PopEmployedWorkOutState_&_years. = B08007e5;
+
+	PopEmployedTravel_&_years. = B08012e1;
+	PopEmployedTravel_LT5_&_years. = B08012e2;
+		PopEmployedTravel_5_9_&_years. = B08012e3;
+		PopEmployedTravel_10_14_&_years. = B08012e4;
+		PopEmployedTravel_15_19_&_years. = B08012e5;
+		PopEmployedTravel_20_24_&_years. = B08012e6;
+		PopEmployedTravel_25_29_&_years. = B08012e7;
+		PopEmployedTravel_30_34_&_years. = B08012e8;
+		PopEmployedTravel_35_39_&_years. = B08012e9;
+		PopEmployedTravel_40_44_&_years. = B08012e10;
+		PopEmployedTravel_45_59_&_years. = B08012e11;
+		PopEmployedTravel_60_89_&_years. = B08012e12;
+		PopEmployedTravel_GT90_&_years. = B08012e13;
+
 	  Pop16_64Employed_&_years. = 
 			sum(B23001e5, B23001e7, B23001e12, B23001e14, B23001e19, B23001e21, B23001e26, B23001e28, 
 				B23001e33, B23001e35, B23001e40, B23001e42, B23001e47, B23001e49, B23001e54, B23001e56, 
@@ -1452,6 +1473,26 @@
 		        %moe_sum( var=mPopCivilianEmployedAIOM_&_years. C23002Cm5 C23002Cm18 C23002Dm5 C23002Dm18 
 								C23002Em5 C23002Em18 C23002Fm5 C23002Fm18 C23002Gm5 C23002Gm18 );
 
+		mEmployedWorkers_&_years. = B08007e1
+			mPopEmployedWorkInState_&_years. = B08007m2;
+			mPopEmployedWorkInCnty_&_years. = B08007m3;
+			mPopEmployedWorkOutCnty_&_years. = B08007m4;
+			mPopEmployedWorkOutState_&_years. = B08007m5;
+
+		mPopEmployedTravel_&_years. = B08012m1;
+			mPopEmployedTravel_LT5_&_years. = B08012m2;
+			mPopEmployedTravel_5_9_&_years. = B08012m3;
+			mPopEmployedTravel_10_14_&_years. = B08012m4;
+			mPopEmployedTravel_15_19_&_years. = B08012m5;
+			mPopEmployedTravel_20_24_&_years. = B08012m6;
+			mPopEmployedTravel_25_29_&_years. = B08012m7;
+			mPopEmployedTravel_30_34_&_years. = B08012m8;
+			mPopEmployedTravel_35_39_&_years. = B08012m9;
+			mPopEmployedTravel_40_44_&_years. = B08012m10;
+			mPopEmployedTravel_45_59_&_years. = B08012m11;
+			mPopEmployedTravel_60_89_&_years. = B08012m12;
+			mPopEmployedTravel_GT90_&_years. = B08012m13;
+
 	  mPop16_64Employed_&_years. = 
 		%moe_sum( var=B23001m5 B23001m7 B23001m12 B23001m14 B23001m19 B23001m21 B23001m26 B23001m28 
 					B23001m33 B23001m35 B23001m40 B23001m42 B23001m47 B23001m49 B23001m54 B23001m56 
@@ -1739,6 +1780,24 @@
 			Pop16andOverEmployA_&_years. = "Persons 16+ years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
 			Pop16andOverEmployIOM_&_years. = "Persons 16+ years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
 			Pop16andOverEmployAIOM_&_years. = "Persons 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+		PopEmployedWorkers_&_years. = "Workers 16+ years, &_years_dash "
+			PopEmployedWorkInState_&_years. = "Workers 16+ years who worked in state of residence, &_years_dash "
+			PopEmployedWorkInCnty_&_years. = "Workers 16+ years who worked in county of residence, &_years_dash "
+			PopEmployedWorkOutCnty_&_years. = "Workers 16+ years who worked outside county of residence, &_years_dash "
+			PopEmployedWorkOutState_&_years. = "Workers 16+ years who worked outside state of residence, &_years_dash "
+		PopEmployedTravel_&_years. = "Workers 16+ years who did not work at home, &_years_dash "
+			PopEmployedTravel_LT5_&_years. = "Workers 16+ years who did not work at home with travel time less than 5 minutes, &_years_dash "
+			PopEmployedTravel_5_9_&_years. = "Workers 16+ years who did not work at home with travel time 5 to 9 minutes, &_years_dash "
+			PopEmployedTravel_10_14_&_years. = "Workers 16+ years who did not work at home with travel time 10 to 14 minutes, &_years_dash "
+			PopEmployedTravel_15_19_&_years. = "Workers 16+ years who did not work at home with travel time 15 to 19 minutes, &_years_dash "
+			PopEmployedTravel_20_24_&_years. = "Workers 16+ years who did not work at home with travel time 20 to 24 minutes, &_years_dash "
+			PopEmployedTravel_25_29_&_years. = "Workers 16+ years who did not work at home with travel time 25 to 29 minutes, &_years_dash "
+			PopEmployedTravel_30_34_&_years. = "Workers 16+ years who did not work at home with travel time 30 to 34 minutes, &_years_dash "
+			PopEmployedTravel_35_39_&_years. = "Workers 16+ years who did not work at home with travel time 35 to 39 minutes, &_years_dash "
+			PopEmployedTravel_40_44_&_years. = "Workers 16+ years who did not work at home with travel time 40 to 44 minutes, &_years_dash "
+			PopEmployedTravel_45_59_&_years. = "Workers 16+ years who did not work at home with travel time 45 to 59 minutes, &_years_dash "
+			PopEmployedTravel_60_89_&_years. = "Workers 16+ years who did not work at home with travel time 60 to 89 minutes, &_years_dash "
+			PopEmployedTravel_GT90_&_years. = "Workers 16+ years who did not work at home with travel time 90 or more minutes, &_years_dash "
 		Pop16_64Employed_&_years. = "Persons 16-64 years old who are employed (includes armed forces), &_years_dash "
 			Pop16_64EmployedB_&_years. = "Persons 16-64 years old who are employed (includes armed forces), Black/African American, &_years_dash "
 			Pop16_64EmployedW_&_years. = "Persons 16-64 years old who are employed (includes armed forces), Non-Hispanic White, &_years_dash "
@@ -1825,6 +1884,24 @@
 			mPop16andOverEmployA_&_years. = "Persons 16+ years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, MOE, &_years_dash "
 			mPop16andOverEmployIOM_&_years. = "Persons 16+ years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, MOE, &_years_dash "
 			mPop16andOverEmployAIOM_&_years. = "Persons 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, MOE, &_years_dash "
+		mPopEmployedWorkers_&_years. = "Workers 16+ years, MOE, &_years_dash "
+			mPopEmployedWorkInState_&_years. = "Workers 16+ years who worked in state of residence, MOE, &_years_dash "
+			mPopEmployedWorkInCnty_&_years. = "Workers 16+ years who worked in county of residence, MOE, &_years_dash "
+			mPopEmployedWorkOutCnty_&_years. = "Workers 16+ years who worked outside county of residence, MOE, &_years_dash "
+			mPopEmployedWorkOutState_&_years. = "Workers 16+ years who worked outside state of residence, MOE, &_years_dash "
+		mPopEmployedTravel_&_years. = "Workers 16+ years who did not work at home, MOE, &_years_dash "
+			mPopEmployedTravel_LT5_&_years. = "Workers 16+ years who did not work at home with travel time less than 5 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_5_9_&_years. = "Workers 16+ years who did not work at home with travel time 5 to 9 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_10_14_&_years. = "Workers 16+ years who did not work at home with travel time 10 to 14 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_15_19_&_years. = "Workers 16+ years who did not work at home with travel time 15 to 19 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_20_24_&_years. = "Workers 16+ years who did not work at home with travel time 20 to 24 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_25_29_&_years. = "Workers 16+ years who did not work at home with travel time 25 to 29 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_30_34_&_years. = "Workers 16+ years who did not work at home with travel time 30 to 34 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_35_39_&_years. = "Workers 16+ years who did not work at home with travel time 35 to 39 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_40_44_&_years. = "Workers 16+ years who did not work at home with travel time 40 to 44 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_45_59_&_years. = "Workers 16+ years who did not work at home with travel time 45 to 59 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_60_89_&_years. = "Workers 16+ years who did not work at home with travel time 60 to 89 minutes, MOE, &_years_dash "
+			mPopEmployedTravel_GT90_&_years. = "Workers 16+ years who did not work at home with travel time 90 or more minutes, MOE, &_years_dash "
 		mPop16_64Employed_&_years. = "Persons 16-64 years old who are employed (includes armed forces), MOE, &_years_dash "
 			mPop16_64EmployedB_&_years. = "Persons 16-64 years old who are employed (includes armed forces), Black/African American, MOE, &_years_dash "
 			mPop16_64EmployedW_&_years. = "Persons 16-64 years old who are employed (includes armed forces), Non-Hispanic White, MOE, &_years_dash "
@@ -2688,6 +2765,50 @@
 
     ** Housing **;    
 
+	%if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 
+		or %upcase( &source_geo ) = REGCOUNTY 
+	%then %do;
+
+		NumOwnCstBurden_LT10K_&_years. = sum(B25095e6, B25095e7, B25095e8, B25095e9);
+		NumOwnCstBurden_10_19K_&_years. = sum(B25095e15, B25095e16, B25095e17, B25095e18);
+		NumOwnCstBurden_20_34K_&_years. = sum(B25095e24, B25095e25, B25095e26, B25095e27);
+		NumOwnCstBurden_35_49K_&_years. = sum(B25095e33, B25095e34, B25095e35, B25095e36);
+		NumOwnCstBurden_50_74K_&_years. = sum(B25095e42, B25095e43, B25095e44, B25095e45);
+		NumOwnCstBurden_75_99_&_years. = sum(B25095e51, B25095e52, B25095e53, B25095e54);
+		NumOwnCstBurden_100_149_&_years. = sum(B25095e60, B25095e61, B25095e62, B25095e63);
+		NumOwnCstBurden_GT150K_&_years. = sum(B25095e69, B25095e70, B25095e71, B25095e72);
+
+		mNumOwnCstBurden_LT10K_&_years. = %moe_sum( var=B25095m6 B25095m7 B25095m8 B25095m9);
+		mNumOwnCstBurden_10_19K_&_years. = %moe_sum( var=B25095m15 B25095m16 B25095m17 B25095m18);
+		mNumOwnCstBurden_20_34K_&_years. = %moe_sum( var=B25095m24 B25095m25 B25095m26 B25095m27);
+		mNumOwnCstBurden_35_49K_&_years. = %moe_sum( var=B25095m33 B25095m34 B25095m35 B25095m36);
+		mNumOwnCstBurden_50_74K_&_years. = %moe_sum( var=B25095m42 B25095m43 B25095m44 B25095m45);
+		mNumOwnCstBurden_75_99_&_years. = %moe_sum( var=B25095m51 B25095m52 B25095m53 B25095m54);
+		mNumOwnCstBurden_100_149_&_years. = %moe_sum( var=B25095m60 B25095m61 B25095m62 B25095m63);
+		mNumOwnCstBurden_GT150K_&_years. = %moe_sum( var=B25095m69 B25095m70 B25095m71 B25095m72);
+
+
+	label
+
+	  NumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, &_years_dash  "
+			NumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, &_years_dash  "
+			NumOwnCstBurden_20_35K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, &_years_dash  "
+			NumOwnCstBurden_35_50K_&_years. = "Owner-occupied housing units with housing cost burden and household income $35,000 to $49,999, &_years_dash  "
+			NumOwnCstBurden_50_75K_&_years. = "Owner-occupied housing units with housing cost burden and household income $50,000 to $74,999, &_years_dash  "
+			NumOwnCstBurden_75_100_&_years. = "Owner-occupied housing units with housing cost burden and household income $75,000 to $99,999, &_years_dash  "
+			NumOwnCstBurden_100_150_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, &_years_dash  "
+			NumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, &_years_dash  "
+	  mNumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, MOE, &_years_dash  "
+			mNumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, MOE, &_years_dash  "
+			mNumOwnCstBurden_20_35K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, MOE, &_years_dash  "
+			mNumOwnCstBurden_35_50K_&_years. = "Owner-occupied housing units with housing cost burden and household income $35,000 to $49,999, MOE, &_years_dash  "
+			mNumOwnCstBurden_50_75K_&_years. = "Owner-occupied housing units with housing cost burden and household income $50,000 to $74,999, MOE, &_years_dash  "
+			mNumOwnCstBurden_75_100_&_years. = "Owner-occupied housing units with housing cost burden and household income $75,000 to $99,999, MOE, &_years_dash  "
+			mNumOwnCstBurden_100_150_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, MOE, &_years_dash  "
+			mNumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, MOE, &_years_dash  "
+		;
+	%end;
+
 	NumOccupiedHsgUnits_&_years. = B25003e1;
 		NumOccupiedHsgUnitsB_&_years. = B25003Be1;
 		NumOccupiedHsgUnitsW_&_years. = B25003He1;
@@ -2721,6 +2842,24 @@
 
 	RentCostBurdenDenom_&_years. = NumRenterOccupiedHU_&_years. - B25070e11;
 	OwnerCostBurdenDenom_&_years. = NumOwnerOccupiedHU_&_years. - sum(B25091e12, B25091e23);
+
+	NumRentCstBurden_15_24_&_years. = sum(B25072e6, B25072e7);
+	NumRentCstBurden_25_34_&_years. = sum(B25072e13, B25072e14);
+	NumRentCstBurden_35_64_&_years. = sum(B25072e20, B25072e21);
+	NumRentCstBurden_65Over_&_years. = sum(B25072e27, B25072e28);
+
+	NumOwnCstBurden_15_24_&_years. = sum(B25093e6, B25093e7);
+	NumOwnCstBurden_25_34_&_years. = sum(B25093e13, B25093e14);
+	NumOwnCstBurden_35_64_&_years. = sum(B25093e20, B25093e21);
+	NumOwnCstBurden_65Over_&_years. = sum(B25093e27, B25093e28);
+
+	NumRentCstBurden_LT10K_&_years. = sum(B25074e6, B25074e7, B25074e8, B25074e9);
+	NumRentCstBurden_10_19K_&_years. = sum(B25074e15, B25074e16, B25074e17, B25074e18);
+	NumRentCstBurden_20_35K_&_years. = sum(B25074e24, B25074e25, B25074e26, B25074e27);
+	NumRentCstBurden_35_50K_&_years. = sum(B25074e33, B25074e34, B25074e35, B25074e36);
+	NumRentCstBurden_50_75K_&_years. = sum(B25074e42, B25074e43, B25074e44, B25074e45);
+	NumRentCstBurden_75_100_&_years. = sum(B25074e51, B25074e52, B25074e53, B25074e54);
+	NumRentCstBurden_GT100K_&_years. = sum(B25074e60, B25074e61, B25074e62, B25074e63);
 
 	GrossRentLT100_499_&_years. = sum(B25063e3, B25063e4, B25063e5, B25063e6, B25063e7, B25063e8, B25063e9, B25063e10, B25063e11);
 	GrossRent500_799_&_years. = sum(B25063e12, B25063e13, B25063e14, B25063e15, B25063e16, B25063e17);
@@ -2767,6 +2906,25 @@
 	mOwnerCostBurdenDenom_&_years. =  %moe_sum( var=B25091m3 B25091m4 B25091m5 B25091m6 B25091m7 B25091m8 B25091m9 
 			B25091m10 B25091m11 B25091m14 B25091m15 B25091m16 B25091m17 B25091m18 B25091m19 B25091m20 B25091m21 B25091m22);
 
+
+	mNumRentCstBurden_15_24_&_years. = %moe_sum( var=B25072m6 B25072m7);
+	mNumRentCstBurden_25_34_&_years. = %moe_sum( var=B25072m13 B25072m14);
+	mNumRentCstBurden_35_64_&_years. = %moe_sum( var=B25072m20 B25072m21);
+	mNumRentCstBurden_65Over_&_years. = %moe_sum( var=B25072m27 B25072m28);
+
+	mNumOwnCstBurden_15_24_&_years. = %moe_sum( var=B25093m6 B25093m7);
+	mNumOwnCstBurden_25_34_&_years. = %moe_sum( var=B25093m13 B25093m14);
+	mNumOwnCstBurden_35_64_&_years. = %moe_sum( var=B25093m20 B25093m21);
+	mNumOwnCstBurden_65Over_&_years. = %moe_sum( var=B25093m27 B25093m28);
+
+	mNumRentCstBurden_LT10K_&_years. = %moe_sum( var=B25074m6 B25074m7 B25074m8 B25074m9);
+	mNumRentCstBurden_10_19K_&_years. = %moe_sum( var=B25074m15 B25074m16 B25074m17 B25074m18);
+	mNumRentCstBurden_20_35K_&_years. = %moe_sum( var=B25074m24 B25074m25 B25074m26 B25074m27);
+	mNumRentCstBurden_35_50K_&_years. = %moe_sum( var=B25074m33 B25074m34 B25074m35 B25074m36);
+	mNumRentCstBurden_50_75K_&_years. = %moe_sum( var=B25074m42 B25074m43 B25074m44 B25074m45);
+	mNumRentCstBurden_75_100_&_years. = %moe_sum( var=B25074m51 B25074m52 B25074m53 B25074m54);
+	mNumRentCstBurden_GT100K_&_years. = %moe_sum( var=B25074m60 B25074m61 B25074m62 B25074m63);
+
 	mGrossRentLT100_499_&_years. = %moe_sum( var=B25063m3 B25063m4 B25063m5 B25063m6 B25063m7 B25063m8 B25063m9 B25063m10 B25063m11);
 	mGrossRent500_799_&_years. = %moe_sum( var=B25063m12 B25063m13 B25063m14 B25063m15 B25063m16 B25063m17);
 	mGrossRent800_899_&_years. = B25063m18;
@@ -2811,6 +2969,21 @@
 	  NumOwnSevereCostBurden_&_years. = "Owner-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), &_years_dash "
 	  RentCostBurdenDenom_&_years. = "Renter-occupied housing units, excluding units where renter cost burden is not computed, &_years_dash  "
 	  OwnerCostBurdenDenom_&_years. = "Owner-occupied housing units, excluding units where owner cost burden is not computed, &_years_dash  "
+	  NumRentCstBurden_15_24_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 15 to 24 years old, &_years_dash  "
+			NumRentCstBurden_25_34_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 25 to 34 years old, &_years_dash  "
+			NumRentCstBurden_35_64_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 35 to 64 years old, &_years_dash  "
+			NumRentCstBurden_65Over_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 65 years old and older, &_years_dash  "
+	  NumOwnCstBurden_15_24_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 15 to 24 years old, &_years_dash  "
+			NumOwnCstBurden_25_34_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 25 to 34 years old, &_years_dash  "
+			NumOwnCstBurden_35_64_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 35 to 64 years old, &_years_dash  "
+			NumOwnCstBurden_65Over_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 65 years old and older, &_years_dash  "
+	  NumRentCstBurden_LT10K_&_years. = "Renter-occupied housing units with housing cost burden and household income less than $10,000, &_years_dash  "
+			NumRentCstBurden_10_19K_&_years. = "Renter-occupied housing units with housing cost burden and household income $10,000 to $19,999, &_years_dash  "
+			NumRentCstBurden_20_35K_&_years. = "Renter-occupied housing units with housing cost burden and household income $20,000 to $34,999, &_years_dash  "
+			NumRentCstBurden_35_50K_&_years. = "Renter-occupied housing units with housing cost burden and household income $35,000 to $49,999, &_years_dash  "
+			NumRentCstBurden_50_75K_&_years. = "Renter-occupied housing units with housing cost burden and household income $50,000 to $74,999, &_years_dash  "
+			NumRentCstBurden_75_100_&_years. = "Renter-occupied housing units with housing cost burden and household income $75,000 to $99,999, &_years_dash  "
+			NumRentCstBurden_GT100K_&_years. = "Renter-occupied housing units with housing cost burden and household income $100,000 or more, &_years_dash  "
 	  GrossRentLT100_499_&_years. = "Renter-occupied housing units where gross rent is less than $100 to $499, &_years_dash "
 			GrossRent500_799_&_years. = "Renter-occupied housing units where gross rent is $500 to $799, &_years_dash "
 			GrossRent800_899_&_years. = "Renter-occupied housing units where gross rent is $800 to $899, &_years_dash "
@@ -2847,17 +3020,21 @@
 	  mNumOwnSevereCostBurden_&_years. = "Owner-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), MOE, &_years_dash "
 	  mRentCostBurdenDenom_&_years. = "Renter-occupied housing units, excluding units where renter cost burden is not computed, MOE, &_years_dash  "
 	  mOwnerCostBurdenDenom_&_years. = "Owner-occupied housing units, excluding units where owner cost burden is not computed, MOE, &_years_dash  "
-	  mGrossRentLT100_499_&_years. = "Renter-occupied housing units where gross rent is less than $100 to $499, MOE, &_years_dash "
-			mGrossRent500_799_&_years. = "Renter-occupied housing units where gross rent is $500 to $799, MOE, &_years_dash "
-			mGrossRent800_899_&_years. = "Renter-occupied housing units where gross rent is $800 to $899, MOE, &_years_dash "
-			mGrossRent900_999_&_years. = "Renter-occupied housing units where gross rent is $900 to $999, MOE, &_years_dash "
-			mGrossRent1000_1249_&_years. = "Renter-occupied housing units where gross rent is $1000 to $1249, MOE, &_years_dash "
-			mGrossRent1250_1499_&_years. = "Renter-occupied housing units where gross rent is $1250 to $1499, MOE, &_years_dash "
-			mGrossRent1500_1999_&_years. = "Renter-occupied housing units where gross rent is $1500 to $1999, MOE, &_years_dash "
-			mGrossRent2000_2499_&_years. = "Renter-occupied housing units where gross rent is $2000 to $2499, MOE, &_years_dash "
-			mGrossRent2500_2999_&_years. = "Renter-occupied housing units where gross rent is $2500 to $2999, MOE, &_years_dash "
-			mGrossRent3000_3499_&_years. = "Renter-occupied housing units where gross rent is $3000 to $3499, MOE, &_years_dash "
-			mGrossRentGT3500_&_years. = "Renter-occupied housing units where gross rent is greater than $3500, MOE, &_years_dash "
+	  mNumRentCstBurden_15_24_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 15 to 24 years old, MOE, &_years_dash  "
+			mNumRentCstBurden_25_34_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 25 to 34 years old, MOE, &_years_dash  "
+			mNumRentCstBurden_35_64_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 35 to 64 years old, MOE, &_years_dash  "
+			mNumRentCstBurden_65Over_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 65 years old and older, MOE, &_years_dash  "
+	  mNumOwnCstBurden_15_24_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 15 to 24 years old, MOE, &_years_dash  "
+			mNumOwnCstBurden_25_34_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 25 to 34 years old, MOE, &_years_dash  "
+			mNumOwnCstBurden_35_64_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 35 to 64 years old, MOE, &_years_dash  "
+			mNumOwnCstBurden_65Over_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 65 years old and older, MOE, &_years_dash  "
+	  mNumRentCstBurden_LT10K_&_years. = "Renter-occupied housing units with housing cost burden and household income less than $10,000, MOE, &_years_dash  "
+			mNumRentCstBurden_10_19K_&_years. = "Renter-occupied housing units with housing cost burden and household income $10,000 to $19,999, MOE, &_years_dash  "
+			mNumRentCstBurden_20_35K_&_years. = "Renter-occupied housing units with housing cost burden and household income $20,000 to $34,999, MOE, &_years_dash  "
+			mNumRentCstBurden_35_50K_&_years. = "Renter-occupied housing units with housing cost burden and household income $35,000 to $49,999, MOE, &_years_dash  "
+			mNumRentCstBurden_50_75K_&_years. = "Renter-occupied housing units with housing cost burden and household income $50,000 to $74,999, MOE, &_years_dash  "
+			mNumRentCstBurden_75_100_&_years. = "Renter-occupied housing units with housing cost burden and household income $75,000 to $99,999, MOE, &_years_dash  "
+			mNumRentCstBurden_GT100K_&_years. = "Renter-occupied housing units with housing cost burden and household income $100,000 or more, MOE, &_years_dash  "
 	medianhomevalue_&_years. = "Median value of owner-occupied housing units ($),&_years_dash"
 	mmedianhomevalue_&_years.="Median value of owner-occupied housing units ($), MOE, &_years_dash"
 

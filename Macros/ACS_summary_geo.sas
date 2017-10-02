@@ -34,7 +34,7 @@
            Unwtd: TotPop: PopUnder: Pop25: Pop65: PopAlone:
            PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
 		   NumHshldPhone_: NumHshldCar_: NumOccupied: NumOwner: NumRenter: NumVacant: Med:
-		   AggIncome: AggHshldIncome: Num: Agg: GrossRent:
+		   AggIncome: AggHshldIncome: Num: Agg: GrossRent: 
 
 		   NumFamilies_: NumHshlds_:
 
@@ -49,6 +49,9 @@
 
 		   NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
 		   RentCostBurdenDenom: OwnerCostBurdenDenom:
+
+		   NumRentCst: NumOwnCstBurden_15_24: NumOwnCstBurden_25_34: NumOwnCstBurden_35_64: NumOwnCstBurden_65Over:
+
 		   ;
            
     %let moe_vars =
@@ -105,6 +108,13 @@
 		   mPopEmployedServAIOM_&_years. mPopEmployedSalesAIOM_&_years.
 		   mPopEmployedNatResAIOM_&_years. mPopEmployedProdAIOM_&_years.
 
+		   mPopEmployedWorkers_&_years. mPopEmployedWorkInState_&_years. mPopEmployedWorkInCnty_&_years. mPopEmployedWorkOutCnty_&_years. mPopEmployedWorkOutState_&_years.
+
+		   mPopEmployedTravel_&_years. mPopEmployedTravel_LT5_&_years. mPopEmployedTravel_5_9_&_years. mPopEmployedTravel_10_14_&_years.
+		   mPopEmployedTravel_15_19_&_years. mPopEmployedTravel_20_24_&_years. mPopEmployedTravel_25_29_&_years. mPopEmployedTravel_30_34_&_years. 
+		   mPopEmployedTravel_35_39_&_years. mPopEmployedTravel_40_44_&_years. mPopEmployedTravel_45_59_&_years. mPopEmployedTravel_60_89_&_years. 
+		   mPopEmployedTravel_GT90_&_years. 
+
            mPop25andOverWoutHS_&_years. mPop25andOverWHS_&_years. 
 		   mPop25andOverWSC_&_years. mPop25andOverWCollege_&_years.
 		   mPop25andOverYears_&_years.
@@ -153,6 +163,17 @@
 		   mRentCostBurdenDenom_&_years.
 		   mOwnerCostBurdenDenom_&_years.
 
+		   mNumRentCstBurden_15_24_&_years. mNumRentCstBurden_25_34_&_years. 
+		   mNumRentCstBurden_35_64_&_years. mNumRentCstBurden_65Over_&_years. 
+
+		   mNumOwnCstBurden_15_24_&_years. mNumOwnCstBurden_25_34_&_years. 
+		   mNumOwnCstBurden_35_64_&_years. mNumOwnCstBurden_65Over_&_years. 
+
+		   mNumRentCstBurden_LT10K_&_years. mNumRentCstBurden_10_19K_&_years. 
+		   mNumRentCstBurden_20_34K_&_years. mNumRentCstBurden_35_49K_&_years. 
+		   mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99_&_years. 
+		   mNumRentCstBurden_GT100K_&_years. 
+
 		   mGrossRentLT100_499_&_years. mGrossRent500_799_&_years.  mGrossRent800_899_&_years. 
 		   mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. mGrossRent1250_1499_&_years. 
 		   mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. mGrossRent2500_2999_&_years. 
@@ -172,6 +193,8 @@
            
 		   NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
 		   RentCostBurdenDenom: OwnerCostBurdenDenom:
+
+		   NumRentCst: NumOwnCst:
 		   ;
 
     %let moe_vars =
@@ -327,6 +350,13 @@
 		   mPopEmployedServAIOM_&_years. mPopEmployedSalesAIOM_&_years.
 		   mPopEmployedNatResAIOM_&_years. mPopEmployedProdAIOM_&_years.
 
+		   mPopEmployedWorkers_&_years. mPopEmployedWorkInState_&_years. mPopEmployedWorkInCnty_&_years. mPopEmployedWorkOutCnty_&_years. mPopEmployedWorkOutState_&_years.
+
+		   mPopEmployedTravel_&_years. mPopEmployedTravel_LT5_&_years. mPopEmployedTravel_5_9_&_years. mPopEmployedTravel_10_14_&_years.
+		   mPopEmployedTravel_15_19_&_years. mPopEmployedTravel_20_24_&_years. mPopEmployedTravel_25_29_&_years. mPopEmployedTravel_30_34_&_years. 
+		   mPopEmployedTravel_35_39_&_years. mPopEmployedTravel_40_44_&_years. mPopEmployedTravel_45_59_&_years. mPopEmployedTravel_60_89_&_years. 
+		   mPopEmployedTravel_GT90_&_years. 
+
 		   mPopWorkFT_&_years. mPopWorkFTB_&_years.
 		   mPopWorkFTW_&_years. mPopWorkFTH_&_years.
 		   mPopWorkFTA_&_years. mPopWorkFTIOM_&_years.
@@ -423,6 +453,22 @@
 		   mNumOwnSevereCostBurden_&_years. 
 		   mRentCostBurdenDenom_&_years.
 		   mOwnerCostBurdenDenom_&_years.
+
+		   mNumRentCstBurden_15_24_&_years. mNumRentCstBurden_25_34_&_years. 
+		   mNumRentCstBurden_35_64_&_years. mNumRentCstBurden_65Over_&_years. 
+
+		   mNumOwnCstBurden_15_24_&_years. mNumOwnCstBurden_25_34_&_years. 
+		   mNumOwnCstBurden_35_64_&_years. mNumOwnCstBurden_65Over_&_years. 
+
+		   mNumRentCstBurden_LT10K_&_years. mNumRentCstBurden_10_19K_&_years. 
+		   mNumRentCstBurden_20_34K_&_years. mNumRentCstBurden_35_49K_&_years. 
+		   mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99_&_years. 
+		   mNumRentCstBurden_GT100K_&_years. 
+
+		   mNumOwnCstBurden_LT10K_&_years. mNumOwnCstBurden_10_19K_&_years. 
+		   mNumOwnCstBurden_20_34K_&_years. mNumOwnCstBurden_35_49K_&_years. 
+		   mNumOwnCstBurden_50_74K_&_years. mNumOwnCstBurden_75_99_&_years. 
+		   mNumOwnCstBurden_100_149_&_years. mNumOwnCstBurden_GT150K_&_years. 
 
 		   mGrossRentLT100_499_&_years. mGrossRent500_799_&_years.  mGrossRent800_899_&_years. 
 		   mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. mGrossRent1250_1499_&_years. 
