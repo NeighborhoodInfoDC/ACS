@@ -24,7 +24,9 @@
   state_ab = DC,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
-  years = 2011_15
+  years = 2011_15,
+  
+  revisions=%str(Add B25072, B25074, B25093, B25095, B08007, and B08012 tables.)
 
 )
 
