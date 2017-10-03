@@ -20,6 +20,8 @@
 
 %Acs_sf(
 
+  finalize = N,  /** TEMPORARY FIX FOR METADATA REGISTRATION PROBLEM **/
+  
   /** State abbreviation. Ex: DC **/
   state_ab = DC,
 
