@@ -57,7 +57,6 @@
 
   %ACS_summary_geo_source( bg10 )
 
-
   **** Create summary files from census tract source ****;
 
   %ACS_summary_geo_source( tr10 )
