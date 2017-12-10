@@ -26,7 +26,7 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2011_15,
 
-  revisions=%str(New file.)
+  revisions=%str(Rerun for new tr10_regcd weights.)
 
 )
 

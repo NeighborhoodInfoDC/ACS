@@ -26,7 +26,7 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2011_15,
 
-  revisions=%str(Add workers by industry/occupation, renters by gross rent, and housing cost burdens.)
+  revisions=%str(Rerun for new tr10_regcd weights.)
 
 )
 
