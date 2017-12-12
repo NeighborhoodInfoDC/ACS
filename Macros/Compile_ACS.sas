@@ -245,12 +245,13 @@
   
   %File_info( data=&_out_lib..&_out_ds_base._&geo_suffix, printobs=0, freqvars=sumlevel )
   
-  
+/* Comment this out for now. Needs to be replaced with %finalize and meta set to=
+       until a more comprehensive fix:
+    %Dc_update_meta_file(
   %if %mparam_is_yes( &Finalize ) %then %do;
   
     ** Register metadata **;
-    
-    %Dc_update_meta_file(
+
       ds_lib=ACS,
       ds_name=&_out_ds_base._&geo_suffix,
       creator_process=&_out_ds_base..sas,
@@ -259,7 +260,7 @@
     )
 
   %end;
-  
+  */
   
   %exit_macro:
   
