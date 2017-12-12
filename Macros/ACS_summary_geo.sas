@@ -120,11 +120,6 @@
 
        mFamIncomeLT75k_&_years. mFamIncomeGT200k_&_years.
 
-       mMedFamIncm_&_years. mMedFamIncmB_&_years.
-       mMedFamIncmW_&_years. mMedFamIncmH_&_years.
-       mMedFamIncmA_&_years. mMedFamIncmIOM_&_years.
-       mMedFamIncmAIOM_&_years.
-
        mAggIncome_&_years. mAggIncomeB_&_years.
        mAggIncomeW_&_years. mAggIncomeH_&_years.
        mAggIncomeA_&_years. mAggIncomeIOM_&_years.

@@ -2022,6 +2022,41 @@
       mFamIncomeGT200kAIOM_&_years. = "Family income more than $200,000, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
       ;
 
+	  MedFamIncm_&_years. = B19113e1;
+	  MedFamIncmB_&_years. = B19113Be1;
+	  MedFamIncmW_&_years. = B19113He1;
+	  MedFamIncmH_&_years. = B19113Ie1;
+	  MedFamIncmA_&_years. = sum(B19113De1, B19113Ee1 );
+	  MedFamIncmIOM_&_years. = sum(B19113Ce1, B19113Fe1, B19113Ge1 );
+	  MedFamIncmAIOM_&_years. = sum(B19113Ce1, B19113De1, B19113Ee1, B19113Fe1, B19113Ge1 );
+
+
+	  mMedFamIncm_&_years. = B19113m1;
+      mMedFamIncmB_&_years. = B19113Bm1;
+      mMedFamIncmW_&_years. = B19113Hm1;
+      mMedFamIncmH_&_years. = B19113Im1;
+      mMedFamIncmA_&_years. = %moe_sum( var=B19113Dm1 B19113Em1);
+      mMedFamIncmIOM_&_years. = %moe_sum( var=B19113Cm1 B19113Fm1 B19113Gm1);
+      mMedFamIncmAIOM_&_years. = %moe_sum( var=B19113Cm1 B19113Dm1 B19113Em1 B19113Fm1 B19113Gm1); 
+
+
+	  label 
+	  MedFamIncm_&_years. = "Median family income, &_years_dash "
+      MedFamIncmB_&_years. = "Median family income, Black/African American, &_years_dash "
+      MedFamIncmW_&_years. = "Median family income, Non-Hispanic White, &_years_dash "
+      MedFamIncmH_&_years. = "Median family income, Hispanic/Latino, &_years_dash "
+      MedFamIncmA_&_years. = "Median family income, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+      MedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+      MedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+	  mMedFamIncm_&_years. = "Median family income, MOE, &_years_dash "
+      mMedFamIncmB_&_years. = "Median family income, Black/African American, MOE, &_years_dash "
+      mMedFamIncmW_&_years. = "Median family income, Non-Hispanic White, MOE, &_years_dash "
+      mMedFamIncmH_&_years. = "Median family income, Hispanic/Latino, MOE, &_years_dash "
+      mMedFamIncmA_&_years. = "Median family income, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
+      mMedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
+      mMedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+	;
+
     ** Housing **;
 
     NumOwnCstBurden_LT10K_&_years. = sum(B25095e6, B25095e7, B25095e8, B25095e9);
@@ -2062,6 +2097,101 @@
       mNumOwnCstBurden_100_149_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, MOE, &_years_dash  "
       mNumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, MOE, &_years_dash  "
     ;
+
+
+	  ** Mobility **;
+
+  PopMovedLastYear_&_years. = sum(B07003e7, B07003e10, B07003e13, B07003e16);
+    PopMovedLastYearB_&_years. = sum(B07004Be3, B07004Be4, B07004Be5, B07004Be6);
+    PopMovedLastYearW_&_years. = sum(B07004He3, B07004He4, B07004He5, B07004He6);
+    PopMovedLastYearH_&_years. = sum(B07004Ie3, B07004Ie4, B07004Ie5, B07004Ie6);
+    PopMovedLastYearA_&_years. = sum(B07004De3, B07004De4, B07004De5, B07004De6,
+                     B07004Ee3, B07004Ee4, B07004Ee5, B07004Ee6);
+    PopMovedLastYearIOM_&_years. = sum(B07004Ce3, B07004Ce4, B07004Ce5, B07004Ce6,
+                         B07004Fe3, B07004Fe4, B07004Fe5, B07004Fe6,
+                       B07004Ge3, B07004Ge4, B07004Ge5, B07004Ge6);
+    PopMovedLastYearAIOM_&_years. = sum(B07004Ce3, B07004Ce4, B07004Ce5, B07004Ce6,
+                      B07004De3, B07004De4, B07004De5, B07004De6,
+                      B07004Ee3, B07004Ee4, B07004Ee5, B07004Ee6,
+                          B07004Fe3, B07004Fe4, B07004Fe5, B07004Fe6,
+                        B07004Ge3, B07004Ge4, B07004Ge5, B07004Ge6);
+
+  mPopMovedLastYear_&_years. = %moe_sum( var=B07003m7 B07003m10 B07003m13 B07003m16);
+    mPopMovedLastYearB_&_years. = %moe_sum( var=B07004Bm3 B07004Bm4 B07004Bm5 B07004Bm6);
+    mPopMovedLastYearW_&_years. = %moe_sum( var=B07004Hm3 B07004Hm4 B07004Hm5 B07004Hm6);
+    mPopMovedLastYearH_&_years. = %moe_sum( var=B07004Im3 B07004Im4 B07004Im5 B07004Im6);
+    mPopMovedLastYearA_&_years. = %moe_sum( var=B07004Dm3 B07004Dm4 B07004Dm5 B07004Dm6
+                         B07004Em3 B07004Em4 B07004Em5 B07004Em6);
+    mPopMovedLastYearIOM_&_years. = %moe_sum( var=B07004Cm3 B07004Cm4 B07004Cm5 B07004Cm6
+                             B07004Fm3 B07004Fm4 B07004Fm5 B07004Fm6
+                           B07004Gm3 B07004Gm4 B07004Gm5 B07004Gm6);
+    mPopMovedLastYearAIOM_&_years. = %moe_sum( var=B07004Cm3 B07004Cm4 B07004Cm5 B07004Cm6
+                          B07004Dm3 B07004Dm4 B07004Dm5 B07004Dm6
+                          B07004Em3 B07004Em4 B07004Em5 B07004Em6
+                             B07004Fm3 B07004Fm4 B07004Fm5 B07004Fm6
+                           B07004Gm3 B07004Gm4 B07004Gm5 B07004Gm6);
+
+  PopMovedDiffCnty_&_years. = sum(B07003e10, B07003e13, B07003e16);
+    PopMovedDiffCntyB_&_years. = sum(B07004Be4, B07004Be5, B07004Be6);
+    PopMovedDiffCntyW_&_years. = sum(B07004He4, B07004He5, B07004He6);
+    PopMovedDiffCntyH_&_years. = sum(B07004Ie4, B07004Ie5, B07004Ie6);
+    PopMovedDiffCntyA_&_years. = sum(B07004De4, B07004De5, B07004De6,
+                     B07004Ee4, B07004Ee5, B07004Ee6);
+    PopMovedDiffCntyIOM_&_years. = sum(B07004Ce4, B07004Ce5, B07004Ce6,
+                         B07004Fe4, B07004Fe5, B07004Fe6,
+                       B07004Ge4, B07004Ge5, B07004Ge6);
+    PopMovedDiffCntyAIOM_&_years. = sum(B07004Ce4, B07004Ce5, B07004Ce6,
+                      B07004De4, B07004De5, B07004De6,
+                      B07004Ee4, B07004Ee5, B07004Ee6,
+                         B07004Fe4, B07004Fe5, B07004Fe6,
+                      B07004Ge4, B07004Ge5, B07004Ge6);
+
+  mPopMovedDiffCnty_&_years. = %moe_sum( var=B07003m10 B07003m13 B07003m16);
+    mPopMovedDiffCntyB_&_years. = %moe_sum( var=B07004Bm4 B07004Bm5 B07004Bm6);
+    mPopMovedDiffCntyW_&_years. = %moe_sum( var=B07004Hm4 B07004Hm5 B07004Hm6);
+    mPopMovedDiffCntyH_&_years. = %moe_sum( var=B07004Im4 B07004Im5 B07004Im6);
+    mPopMovedDiffCntyA_&_years. = %moe_sum( var=B07004Dm4 B07004Dm5 B07004Dm6
+                     B07004Em4 B07004Em5 B07004Em6);
+    mPopMovedDiffCntyIOM_&_years. = %moe_sum( var=B07004Cm4 B07004Cm5 B07004Cm6
+                         B07004Fm4 B07004Fm5 B07004Fm6
+                       B07004Gm4 B07004Gm5 B07004Gm6);
+    mPopMovedDiffCntyAIOM_&_years. = %moe_sum( var=B07004Cm4 B07004Cm5 B07004Cm6
+                      B07004Dm4 B07004Dm5 B07004Dm6
+                      B07004Em4 B07004Em5 B07004Em6
+                         B07004Fm4 B07004Fm5 B07004Fm6
+                       B07004Gm4 B07004Gm5 B07004Gm6);
+
+   label
+    PopMovedLastYear_&_years. = "Population moved in past year, &_years_dash"
+          PopMovedLastYearB_&_years. = "Population moved in past year, Black/African American, &_years_dash"
+        PopMovedLastYearW_&_years. = "Population moved in past year, Non-Hispanic White, &_years_dash"
+        PopMovedLastYearH_&_years. = "Population moved in past year, Hispanic/Latino, &_years_dash"
+        PopMovedLastYearA_&_years. = "Population moved in past year, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash"
+        PopMovedLastYearIOM_&_years. = "Population moved in past year, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash"
+        PopMovedLastYearAIOM_&_years. = "Population moved in past year, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash"
+    mPopMovedLastYear_&_years. = "Population moved in past year, MOE, &_years_dash"
+          mPopMovedLastYearB_&_years. = "Population moved in past year, Black/African American, MOE, &_years_dash"
+        mPopMovedLastYearW_&_years. = "Population moved in past year, Non-Hispanic White, MOE, &_years_dash"
+        mPopMovedLastYearH_&_years. = "Population moved in past year, Hispanic/Latino, MOE, &_years_dash"
+        mPopMovedLastYearA_&_years. = "Population moved in past year, Asian and Native Hawaiian and Other Pacific Islander, MOE, &_years_dash"
+        mPopMovedLastYearIOM_&_years. = "Population moved in past year, American Indian/Alaska Native, Some other race, Two or more races, MOE, &_years_dash"
+        mPopMovedLastYearAIOM_&_years. = "Population moved in past year, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash"
+    PopMovedDiffCnty_&_years. = "Population moved from a different county in past year, &_years_dash"
+          PopMovedDiffCntyB_&_years. = "Population moved from a different county in past year, Black/African American, &_years_dash"
+        PopMovedDiffCntyW_&_years. = "Population moved from a different county in past year, Non-Hispanic White, &_years_dash"
+        PopMovedDiffCntyH_&_years. = "Population moved from a different county in past year, Hispanic/Latino, &_years_dash"
+        PopMovedDiffCntyA_&_years. = "Population moved from a different county in past year, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash"
+        PopMovedDiffCntyIOM_&_years. = "Population moved from a different county in past year, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash"
+        PopMovedDiffCntyAIOM_&_years. = "Population moved from a different county in past year, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash"
+    mPopMovedDiffCnty_&_years. = "Population moved from a different county in past year, &_years_dash"
+          mPopMovedDiffCntyB_&_years. = "Population moved from a different county in past year, Black/African American, , MOE, &_years_dash"
+        mPopMovedDiffCntyW_&_years. = "Population moved from a different county in past year, Non-Hispanic White, , MOE, &_years_dash"
+        mPopMovedDiffCntyH_&_years. = "Population moved from a different county in past year, Hispanic/Latino, , MOE, &_years_dash"
+        mPopMovedDiffCntyA_&_years. = "Population moved from a different county in past year, Asian and Native Hawaiian and Other Pacific Islander, , MOE, &_years_dash"
+        mPopMovedDiffCntyIOM_&_years. = "Population moved from a different county in past year, American Indian/Alaska Native, Some other race, Two or more races, , MOE, &_years_dash"
+        mPopMovedDiffCntyAIOM_&_years. = "Population moved from a different county in past year, All remaining groups other than Black, Non-Hispanic White, Hispanic, , MOE, &_years_dash"
+    ; 
+
 
 %mend ACS_summary_geo_source_tr_vars;
 
