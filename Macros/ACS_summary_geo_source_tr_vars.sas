@@ -2122,7 +2122,7 @@
 	  mIncmByOwnerCst_50_74K_&_years. = "Owner-occupied housing units with household income $50,000 to $74,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
 	  mIncmByOwnerCst_75_99K_&_years. = "Owner-occupied housing units with household income $75,000 to $99,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
 	  mIncmByOwnerCst_100_149_&_years. = "Owner-occupied housing units with household income $100,000 to $149,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-	  mIncmByOwnerCst_GT100K_&_years. = "Owner-occupied housing units with household income $150,000 or more, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_GT150K_&_years. = "Owner-occupied housing units with household income $150,000 or more, excluding units where owner cost burden is not computed, MOE, &_years_dash "
     mNumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, MOE, &_years_dash  "
       mNumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, MOE, &_years_dash  "
       mNumOwnCstBurden_20_34K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, MOE, &_years_dash  "
