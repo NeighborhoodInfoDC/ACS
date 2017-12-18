@@ -2059,6 +2059,16 @@
 
     ** Housing **;
 
+
+	IncmByOwnerCst_LT10K_&_years. = sum(B25095e3, B25095e4, B25095e5, B25095e6, B25095e7, B25095e8, B25095e9);
+  	IncmByOwnerCst_10_19K_&_years. = sum(B25095e12, B25095e13, B25095e14, B25095e15, B25095e16, B25095e17, B25095e18);
+  	IncmByOwnerCst_20_34K_&_years. = sum(B25095e21, B25095e22, B25095e23, B25095e24, B25095e25, B25095e26, B25095e27);
+  	IncmByOwnerCst_35_49K_&_years. = sum(B25095e30, B25095e31, B25095e32, B25095e33, B25095e34, B25095e35, B25095e36);
+  	IncmByOwnerCst_50_74K_&_years. = sum(B25095e39, B25095e40, B25095e41, B25095e42, B25095e43, B25095e44, B25095e45);
+  	IncmByOwnerCst_75_99K_&_years. = sum(B25095e48, B25095e49, B25095e50, B25095e51, B25095e52, B25095e53, B25095e54);
+  	IncmByOwnerCst_100_149_&_years. = sum(B25095e57, B25095e58, B25095e59, B25095e60, B25095e61, B25095e62, B25095e63);
+  	IncmByOwnerCst_GT150K_&_years. = sum(B25095e66, B25095e67, B25095e68, B25095e69, B25095e70, B25095e71, B25095e72);
+
     NumOwnCstBurden_LT10K_&_years. = sum(B25095e6, B25095e7, B25095e8, B25095e9);
     NumOwnCstBurden_10_19K_&_years. = sum(B25095e15, B25095e16, B25095e17, B25095e18);
     NumOwnCstBurden_20_34K_&_years. = sum(B25095e24, B25095e25, B25095e26, B25095e27);
@@ -2067,6 +2077,15 @@
     NumOwnCstBurden_75_99K_&_years. = sum(B25095e51, B25095e52, B25095e53, B25095e54);
     NumOwnCstBurden_100_149_&_years. = sum(B25095e60, B25095e61, B25095e62, B25095e63);
     NumOwnCstBurden_GT150K_&_years. = sum(B25095e69, B25095e70, B25095e71, B25095e72);
+
+	mIncmByOwnerCst_LT10K_&_years. = %moe_sum( var=B25095m3 B25095m4 B25095m5 B25095m6 B25095m7 B25095m8 B25095m9);
+  	mIncmByOwnerCst_10_19K_&_years. = %moe_sum( var=B25095m12 B25095m13 B25095m14 B25095m15 B25095m16 B25095m17 B25095m18);
+  	mIncmByOwnerCst_20_34K_&_years. = %moe_sum( var=B25095m21 B25095m22 B25095m23 B25095m24 B25095m25 B25095m26 B25095m27);
+  	mIncmByOwnerCst_35_49K_&_years. = %moe_sum( var=B25095m30 B25095m31 B25095m32 B25095m33 B25095m34 B25095m35 B25095m36);
+  	mIncmByOwnerCst_50_74K_&_years. = %moe_sum( var=B25095m39 B25095m40 B25095m41 B25095m42 B25095m43 B25095m44 B25095m45);
+  	mIncmByOwnerCst_75_99K_&_years. = %moe_sum( var=B25095m48 B25095m49 B25095m50 B25095m51 B25095m52 B25095m53 B25095m54);
+  	mIncmByOwnerCst_100_149_&_years. = %moe_sum( var=B25095m57 B25095m58 B25095m59 B25095m60 B25095m61 B25095m62 B25095m63);
+  	mIncmByOwnerCst_GT150K_&_years. = %moe_sum( var=B25095m66 B25095m67 B25095m68 B25095m69 B25095m70 B25095m71 B25095m72);
 
     mNumOwnCstBurden_LT10K_&_years. = %moe_sum( var=B25095m6 B25095m7 B25095m8 B25095m9);
     mNumOwnCstBurden_10_19K_&_years. = %moe_sum( var=B25095m15 B25095m16 B25095m17 B25095m18);
@@ -2080,6 +2099,14 @@
 
   label
 
+    IncmByOwnerCst_LT10K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_10_19K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_20_34K_&_years. = "Owner-occupied housing units with household income $20,000 to $34,999, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_35_49K_&_years. = "Owner-occupied housing units with household income $35,000 to $49,999, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_50_74K_&_years. = "Owner-occupied housing units with household income $50,000 to $74,999, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_75_99K_&_years. = "Owner-occupied housing units with household income $75,000 to $99,999, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_100_149_&_years. = "Owner-occupied housing units with household income $100,000 to $149,999, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_GT150K_&_years. = "Owner-occupied housing units with household income $150,000 or more, excluding units where owner cost burden is not computed, &_years_dash  "
     NumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, &_years_dash  "
       NumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, &_years_dash  "
       NumOwnCstBurden_20_34K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, &_years_dash  "
@@ -2087,8 +2114,16 @@
       NumOwnCstBurden_50_74K_&_years. = "Owner-occupied housing units with housing cost burden and household income $50,000 to $74,999, &_years_dash  "
       NumOwnCstBurden_75_99K_&_years. = "Owner-occupied housing units with housing cost burden and household income $75,000 to $99,999, &_years_dash  "
       NumOwnCstBurden_100_149_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, &_years_dash  "
-      NumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, &_years_dash  "
-      mNumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, MOE, &_years_dash  "
+	  NumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, &_years_dash  "
+    mIncmByOwnerCst_LT10K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_10_19K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_20_34K_&_years. = "Owner-occupied housing units with household income $20,000 to $34,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_35_49K_&_years. = "Owner-occupied housing units with household income $35,000 to $49,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_50_74K_&_years. = "Owner-occupied housing units with household income $50,000 to $74,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_75_99K_&_years. = "Owner-occupied housing units with household income $75,000 to $99,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_100_149_&_years. = "Owner-occupied housing units with household income $100,000 to $149,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_GT100K_&_years. = "Owner-occupied housing units with household income $150,000 or more, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+    mNumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, MOE, &_years_dash  "
       mNumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, MOE, &_years_dash  "
       mNumOwnCstBurden_20_34K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, MOE, &_years_dash  "
       mNumOwnCstBurden_35_49K_&_years. = "Owner-occupied housing units with housing cost burden and household income $35,000 to $49,999, MOE, &_years_dash  "
