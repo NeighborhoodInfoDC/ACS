@@ -27,7 +27,8 @@
   years = 2011_15,
 
   revisions=%str(Creates estimate and MOE vars for age of householder and household income 
-				by selected monthly costs as a percentage of income (housing cost burden) for both renters and homeowners. 
+				by selected monthly costs as a percentage of income for both renters and homeowners. 
+				These vars serve as denominators for age and income cost-burden tabulations.
 				Creates all gross rent variables according to table B25063.)
 
 )
