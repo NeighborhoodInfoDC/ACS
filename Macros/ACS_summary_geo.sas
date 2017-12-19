@@ -444,7 +444,7 @@
        mNumOccupiedHsgUnitsA_&_years. mNumOccupiedHsgUnitsIOM_&_years.
        mNumOccupiedHsgUnitsAIOM_&_years.
 
-           mNumOwnerOccupiedHU_&_years. mNumOwnerOccupiedHUB_&_years.
+       mNumOwnerOccupiedHU_&_years. mNumOwnerOccupiedHUB_&_years.
        mNumOwnerOccupiedHUW_&_years. mNumOwnerOccupiedHUH_&_years.
        mNumOwnerOccupiedHUA_&_years. mNumOwnerOccupiedHUIOM_&_years.
        mNumOwnerOccupiedHUAIOM_&_years.
@@ -452,11 +452,6 @@
        mNumRenterOccupiedHU_&_years. mNumVacantHsgUnits_&_years.
        mNumVacantHUForRent_&_years. mNumVacantHUForSale_&_years. 
        mNumRenterHsgUnits_&_years. 
-
-	   mGrossRentLT100_499_&_years. mGrossRent500_799_&_years.  mGrossRent800_899_&_years. 
-       mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. mGrossRent1250_1499_&_years. 
-       mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. mGrossRent2500_2999_&_years. 
-       mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
 
 	   mGrossRentLT100_&_years. mGrossRent100_149_&_years. mGrossRent150_199_&_years. 
 	   mGrossRent200_249_&_years. mGrossRent250_299_&_years. mGrossRent300_349_&_years. 

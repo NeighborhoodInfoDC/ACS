@@ -667,7 +667,7 @@
   GrossRent300_349_&_years. = B25063e8;
   GrossRent350_349_&_years. = B25063e9;
   GrossRent400_449_&_years. = B25063e10;
-  GrossRent450_499_&_years. = B25063e11
+  GrossRent450_499_&_years. = B25063e11;
   GrossRent500_549_&_years. = B25063e12;
   GrossRent550_599_&_years. = B25063e13;
   GrossRent600_649_&_years. = B25063e14;
@@ -682,13 +682,13 @@
   GrossRent2000_2499_&_years. = B25063e23;
   GrossRent2500_2999_&_years. = B25063e24;
   GrossRent3000_3499_&_years. = B25063e25;
-  GrossRentGT3500&_years. = B25063e26;
+  GrossRentGT3500_&_years. = B25063e26;
   GrossRentNoCash_&_years. = B25063e27;
 
   IncmByRenterCst_LT10K_&_years. = sum(B25074e3, B25074e4, B25074e5, B25074e6, B25074e7, B25074e8, B25074e9);
   IncmByRenterCst_10_19K_&_years. = sum(B25074e12, B25074e13, B25074e14, B25074e15, B25074e16, B25074e17, B25074e18);
   IncmByRenterCst_20_34K_&_years. = sum(B25074e21, B25074e22, B25074e23, B25074e24, B25074e25, B25074e26, B25074e27);
-  IncmByRenterCst_35_49K_&_years. = sum(B25074e30, B25074e31, B25074e32, B25074e33, B25074e34, B25074e35, B25074e36;
+  IncmByRenterCst_35_49K_&_years. = sum(B25074e30, B25074e31, B25074e32, B25074e33, B25074e34, B25074e35, B25074e36);
   IncmByRenterCst_50_74K_&_years. = sum(B25074e39, B25074e40, B25074e41, B25074e42, B25074e43, B25074e44, B25074e45);
   IncmByRenterCst_75_99K_&_years. = sum(B25074e48, B25074e49, B25074e50, B25074e51, B25074e52, B25074e53, B25074e54);
   IncmByRenterCst_GT100K_&_years. = sum(B25074e57, B25074e58, B25074e59, B25074e60, B25074e61, B25074e62, B25074e63);
@@ -764,7 +764,7 @@
   mGrossRent300_349_&_years. = B25063m8;
   mGrossRent350_349_&_years. = B25063m9;
   mGrossRent400_449_&_years. = B25063m10;
-  mGrossRent450_499_&_years. = B25063m11
+  mGrossRent450_499_&_years. = B25063m11;
   mGrossRent500_549_&_years. = B25063m12;
   mGrossRent550_599_&_years. = B25063m13;
   mGrossRent600_649_&_years. = B25063m14;
@@ -779,7 +779,7 @@
   mGrossRent2000_2499_&_years. = B25063m23;
   mGrossRent2500_2999_&_years. = B25063m24;
   mGrossRent3000_3499_&_years. = B25063m25;
-  mGrossRentGT3500&_years. = B25063m26;
+  mGrossRentGT3500_&_years. = B25063m26;
   mGrossRentNoCash_&_years. = B25063m27;
 
   mIncmByRenterCst_LT10K_&_years. = %moe_sum( var=B25074m3 B25074m4 B25074m5 B25074m6 B25074m7 B25074m8 B25074m9);
@@ -791,12 +791,12 @@
   mIncmByRenterCst_GT100K_&_years. = %moe_sum( var=B25074m57 B25074m58 B25074m59 B25074m60 B25074m61 B25074m62 B25074m63);
 
   mAgeByRenterCst_15_24_&_years. = %moe_sum( var=B25074m3 B25074m4 B25074m5 B25074m6 B25074m7);
-  mAgeByRenterCst_25_34_&_years. = %moe_sum( var=B25074m10 B25074m11 B25074m12,B25074m13 B25074m14);
+  mAgeByRenterCst_25_34_&_years. = %moe_sum( var=B25074m10 B25074m11 B25074m12 B25074m13 B25074m14);
   mAgeByRenterCst_35_64_&_years. = %moe_sum( var=B25074m17 B25074m18 B25074m19 B25074m20 B25074m21);
   mAgeByRenterCst_65Over_&_years. = %moe_sum( var=B25074m24 B25074m25 B25074m26 B25074m27 B25074m28);
 
   mAgeByOwnerCst_15_24_&_years. = %moe_sum( var=B25093m3 B25093m4 B25093m5 B25093m6 B25093m7);
-  mAgeByOwnerCst_25_34_&_years. = %moe_sum( var=B25093m10 B25093m11 B25093m12,B25093m13 B25093m14);
+  mAgeByOwnerCst_25_34_&_years. = %moe_sum( var=B25093m10 B25093m11 B25093m12 B25093m13 B25093m14);
   mAgeByOwnerCst_35_64_&_years. = %moe_sum( var=B25093m17 B25093m18 B25093m19 B25093m20 B25093m21);
   mAgeByOwnerCst_65Over_&_years. = %moe_sum( var=B25093m24 B25093m25 B25093m26 B25093m27 B25093m28);
 
@@ -994,7 +994,7 @@
       mNumRentCstBurden_75_99K_&_years. = "Renter-occupied housing units with housing cost burden and household income $75,000 to $99,999, MOE, &_years_dash  "
       mNumRentCstBurden_GT100K_&_years. = "Renter-occupied housing units with housing cost burden and household income $100,000 or more, MOE, &_years_dash  "
   medianhomevalue_&_years. = "Median value of owner-occupied housing units ($),&_years_dash"
-  mmedianhomevalue_&_years.="Median value of owner-occupied housing units ($), MOE, &_years_dash"
+  mmedianhomevalue_&_years.= "Median value of owner-occupied housing units ($), MOE, &_years_dash"
       ;
 
 
