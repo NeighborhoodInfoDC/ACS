@@ -26,7 +26,10 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2011_15,
 
-  revisions=%str(Rerun for new tr10_regcd weights.)
+  revisions=%str(Creates estimate and MOE vars for age of householder and household income 
+				by selected monthly costs as a percentage of income for both renters and homeowners. 
+				These vars serve as denominators for age and income cost-burden tabulations.
+				Creates all gross rent variables according to table B25063.)
 
 )
 
