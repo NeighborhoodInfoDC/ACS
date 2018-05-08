@@ -14,7 +14,7 @@
 
 /** Macro Compile_ACS - Start Definition **/
 
-%macro Compile_ACS( geo=, finalize=, revisions= );
+%macro Compile_ACS( geo=, revisions= );
 
   %local sum_level geo_suffix geo_var geo_label geo_length geo_format geo_vformat 
          i v;
@@ -218,7 +218,7 @@
 
   ** Drop unneeded table cells **;
   
-  data &_out_lib..&_out_ds_base._&geo_suffix (label="ACS SF 5-year tables, &_years_dash, %upcase(&_state_ab.), &geo_label");
+  data &_out_ds_base._&geo_suffix;
 
     set _&_out_ds_base._&geo_suffix;
 
@@ -230,10 +230,22 @@
       
   run;
   
-  proc sort data=&_out_lib..&_out_ds_base._&geo_suffix;
-    by &geo_var;
-  run;
-
+  ** Finalize data set **;
+  
+  %Finalize_data_set( 
+    /** Finalize data set parameters **/
+    data=&_out_ds_base._&geo_suffix,
+    out=&_out_ds_base._&geo_suffix,
+    outlib=ACS,
+    label="ACS SF 5-year tables, &_years_dash, %upcase(&_state_ab.), &geo_label",
+    sortby=&geo_var,
+    /** Metadata parameters **/
+    revisions=%str(&revisions),
+    /** File info parameters **/
+    printobs=0,
+    freqvars=sumlevel,
+    stats=n sum mean stddev min max
+  )
 
   ** Cleanup temporary data sets **;
   
@@ -241,26 +253,7 @@
     delete _&_out_ds_base._&geo_suffix &_geo_file seq_: sfe: sfm: ;
   quit;
   run; 
-
   
-  %File_info( data=&_out_lib..&_out_ds_base._&geo_suffix, printobs=0, freqvars=sumlevel )
-  
-/* Comment this out for now. Needs to be replaced with %finalize and meta set to=
-       until a more comprehensive fix:
-    %Dc_update_meta_file(
-  %if %mparam_is_yes( &Finalize ) %then %do;
-  
-    ** Register metadata **;
-
-      ds_lib=ACS,
-      ds_name=&_out_ds_base._&geo_suffix,
-      creator_process=&_out_ds_base..sas,
-      restrictions=None,
-      revisions=%str(&revisions)
-    )
-
-  %end;
-  */
   
   %exit_macro:
   

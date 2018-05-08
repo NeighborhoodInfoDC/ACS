@@ -24,7 +24,10 @@
   state_ab = DC,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
-  years = 2012_16
+  years = 2012_16,
+  
+  /** Description of latest file revisions for metadata **/
+  revisions = %str(New file.)
 
 )
 
