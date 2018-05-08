@@ -2,8 +2,8 @@
  Program:  Acs_sf_2012_16_dc.sas
  Library:  ACS
  Project:  NeighborhoodInfo DC
- Author:   Carl Hedman
- Created:  12/20/17
+ Author:   Wilton Oliver
+ Created:  05/08/18
  Version:  SAS 9.2
  Environment:  Local Windows session (desktop)
  
@@ -24,7 +24,9 @@
   state_ab = DC,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
-  years = 2012_16
+  years = 2012_16,
+
+  revisions=%str(Add B25072, B25074, B25093, B25095, B08007, and B08012 tables.)
 
 )
 
