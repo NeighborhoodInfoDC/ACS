@@ -141,6 +141,7 @@
 	B25079 B25080 B25082
 	B25077
 	B25106
+	B25031 B25042 B25068 B05006 B27001 B25095 B25074 B14001
 ,
   
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from all data sets **/
