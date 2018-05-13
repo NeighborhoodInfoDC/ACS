@@ -27,7 +27,7 @@
   years = 2012_16,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Added tables B25031 B25041 B25042 B25068 B05006 B27001 B25095 B25074 B14001.)
+  revisions = %str(Added tables B05003 and B05003A-I.)
 
 )
 
