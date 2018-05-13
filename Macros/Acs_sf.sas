@@ -189,13 +189,6 @@
 );
 
 
-  %** Check if OK to run finalized data sets **;
-
-  %if %mparam_is_yes( &Finalize ) and not &_remote_batch_submit %then %do;
-    %warn_mput( macro=Acs_sf, msg=%str(Not a remote batch submit session. Finalize will be set to N.) )
-    %let Finalize = N;
-  %end;
-
   %** Global macro parameters **;
 
   %global _acs_sf_raw_base_path _acs_sf_raw_path _state_fips _state_ab _state_name
@@ -221,13 +214,6 @@
   
   %let _out_ds_base = Acs_sf_&_years._&_state_ab;
 
-  %if %mparam_is_yes( &Finalize ) %then %do;
-    %let _out_lib = ACS;
-  %end;
-  %else %do;
-    %let _out_lib = WORK;
-  %end;
-  
   %if &_remote_batch_submit %then 
     %let _sf_macro_file_path = &_dcdata_r_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;
   %else
@@ -285,14 +271,14 @@
   
   **** Compile block group, tract and county files ****;
 
-  %Compile_ACS( geo=geobg2010, finalize=&finalize, revisions=&revisions ) 
+  %Compile_ACS( geo=geobg2010, revisions=&revisions ) 
 
-  %Compile_ACS( geo=geo2010, finalize=&finalize, revisions=&revisions )
+  %Compile_ACS( geo=geo2010, revisions=&revisions )
 
-  %Compile_ACS( geo=county, finalize=&finalize, revisions=&revisions )
+  %Compile_ACS( geo=county, revisions=&revisions )
 
 /*
-  %Compile_ACS( geo=place, finalize=&finalize, revisions=&revisions )
+  %Compile_ACS( geo=place, revisions=&revisions )
 */
 
 
