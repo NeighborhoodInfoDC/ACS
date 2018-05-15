@@ -112,6 +112,7 @@
     %ACS_summary_geo( zip, &source_geo )
     %ACS_summary_geo( cluster2000, &source_geo )
     %ACS_summary_geo( bridgepk, &source_geo )
+	%ACS_summary_geo( stantoncommons, &source_geo )
 
   %end;
 
