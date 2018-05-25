@@ -2335,7 +2335,7 @@
 		mNumOwnOccHU5plusbdrms_&_years. = %moe_sum( var=B25042m8 );
 		mNumOwnOccHU3plusbdrms_&_years. = %moe_sum( var=B25042m6 B25042m7 B25042m8 );
 
-		if &_years. in("2006_10", "2007_11", "2008_12", "2009_13", "2010_14") then do; 
+		%if &_years. in("2006_10", "2007_11", "2008_12", "2009_13", "2010_14") %then %do; 
 			NumRentOccHU0bdrmsunder500_&_years. = sum( B25068e4, B25068e5, B25068e6, B25068e10 );
 			NumRentOccHU0bdrms500to749_&_years. = B25068e7;
 			NumRentOccHU0bdrms750to999_&_years. = B25068e8;
@@ -2368,8 +2368,8 @@
 			mNumRentOccHU3bdrms500to749_&_years. = %moe_sum( var=B25068m34);
 			mNumRentOccHU3bdrms750to999_&_years. = %moe_sum( var= B25068m35 );
 			mNumRentOccHU3bdrms1000plus_&_years. = %moe_sum( var=B25068m36 );
-		end;
-		else do;
+		%end;
+		%else %do;
 			NumRentOccHU0bdrmsunder500_&_years. = sum( B25068e4, B25068e5, B25068e10 );
 			NumRentOccHU0bdrms500to749_&_years. = B25068e6;
 			NumRentOccHU0bdrms750to999_&_years. = B25068e7;
@@ -2418,7 +2418,7 @@
 			mNumRentOccHU3bdrms1000to1499_&_years. = %moe_sum( var= B25068m35 );
 			mNumRentOccHU3bdrms1500plus_&_years. = %moe_sum( var=B25068m36 );
 			mNumRentOccHU3bdrms1500plus_&_years. = %moe_sum( var=B25068m35 B25068m36 );
-		end;
+		%end;
 
 
 

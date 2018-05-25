@@ -34,7 +34,7 @@
            Unwtd: TotPop: PopUnder: Pop25: Pop65: PopAlone:
            PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
        NumHshldPhone_: NumHshldCar_: NumOccupied: NumOwner: NumRenter: NumVacant: Med:
-       AggIncome: AggHshldIncome: Num: Agg: GrossRent: IncmBy: AgeBy:
+       Num: Agg: GrossRent: IncmBy: AgeBy:
 
        NumFamilies_: NumHshlds_:
 
@@ -195,7 +195,7 @@
            Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
            PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
            PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
-           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Med: PopMoved: GrossRent: IncmBy: AgeBy:
+           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
            
        NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
        RentCostBurdenDenom: OwnerCostBurdenDenom:
@@ -438,6 +438,11 @@
        mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
        mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
        mAggHshldIncomeAIOM_&_years.
+       
+       mHshldIncUnder15000_&_years. mHshldInc15000to34999_&_years. mHshldInc35000to49999_&_years. 
+       mHshldInc50000to74999_&_years. mHshldInc75000to99999_&_years. mHshldInc100000plus_&_years.
+       mHshldInc100000to124999_&_years. mHshldInc125000to149999_&_years. mHshldInc150000to199999_&_years. 
+       mHshldInc200000plus_&_years.
 
        mNumOccupiedHsgUnits_&_years. mNumOccupiedHsgUnitsB_&_years.
        mNumOccupiedHsgUnitsW_&_years. mNumOccupiedHsgUnitsH_&_years.
@@ -498,6 +503,41 @@
        mNumOwnCstBurden_50_74K_&_years. mNumOwnCstBurden_75_99K_&_years. 
        mNumOwnCstBurden_100_149_&_years. mNumOwnCstBurden_GT150K_&_years. 
 
+       mMedRent0bdrms_&_years. mMedRent1bdrm_&_years.
+       mMedRent2bdrms_&_years. mMedRent3bdrms_&_years.
+       mMedRent4bdrms_&_years. mMedRent5plusbdrms_&_years.
+       
+       mNumHsgUnits_&_years.
+       
+       mNumHsgUnits0bdrms_&_years. mNumHsgUnits1bdrm_&_years.
+       mNumhsqUnits2bdrms_&_years. mNumhsqUnits3bdrms_&_years.
+       mNumHsgUnits3plusbdrms_&_years.
+       mNumHsgUnits4bdrms_&_years. mNumHsgUnits5plusbdrms_&_years.
+       
+       mNumRentOccHU0bdrms_&_years. mNumRentOccHU1bdrm_&_years. 
+       mNumRentOccHU2bdrms_&_years. mNumRentOccHU3bdrms_&_years.
+       mNumRentOccHU4bdrms_&_years. mNumRentOccHU5plusbdrms_&_years.
+       mNumRentOccHU3plusbdrms_&_years.
+       
+       mNumOwnOccHU0bdrms_&_years. mNumOwnOccHU1bdrm_&_years.
+       mNumOwnOccHU2bdrms_&_years. mNumOwnOccHU3bdrms_&_years.
+       mNumOwnOccHU4bdrms_&_years. mNumOwnOccHU5plusbdrms_&_years.
+       mNumOwnOccHU3plusbdrms_&_years.
+       
+       mNumRentOccHU0bdrmsunder500_&_years. mNumRentOccHU0bdrms500to749_&_years. 
+       mNumRentOccHU0bdrms750to999_&_years. mNumRentOccHU0bdrms1000to1499_&_years.
+       mNumRentOccHU0bdrms1500plus_&_years. mNumRentOccHU0bdrms1000plus_&_years.
+       mNumRentOccHU1bdrmunder500_&_years. mNumRentOccHU1bdrm500to749_&_years. 
+       mNumRentOccHU1bdrm750to999_&_years. mNumRentOccHU1bdrm1000to1499_&_years. 
+       mNumRentOccHU1bdrm1500plus_&_years. mNumRentOccHU1bdrm1000plus_&_years.
+       mNumRentOccHU2bdrmsunder500_&_years. mNumRentOccHU2bdrms500to749_&_years.
+       mNumRentOccHU2bdrms750to999_&_years. mNumRentOccHU2bdrms1000to1499_&_years. 
+       mNumRentOccHU2bdrms1500plus_&_years. mNumRentOccHU2bdrms1000plus_&_years. 
+       mNumRentOccHU3bdrmsunder500_&_years. mNumRentOccHU3bdrms500to749_&_years. 
+       mNumRentOccHU3bdrms750to999_&_years. mNumRentOccHU3bdrms1000to1499_&_years.
+       mNumRentOccHU3bdrms1500plus_&_years. mNumRentOccHU3bdrms1500plus_&_years. 
+       
+              
        mPopMovedLastYear_&_years.  mPopMovedLastYearB_&_years.
        mPopMovedLastYearW_&_years.  mPopMovedLastYearH_&_years.
        mPopMovedLastYearA_&_years.  mPopMovedLastYearIOM_&_years.
