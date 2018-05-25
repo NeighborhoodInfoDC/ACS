@@ -2133,6 +2133,7 @@
 		  mAggFamilyIncome_&_years. = "Aggregate family income ($ &_last_year), MOE, &_years_dash "
 	      mFamIncomeLT75k_&_years. = "Family income less than $75000, MOE, &_years_dash "
 	      mFamIncomeGT200k_&_years. = "Family income more than $200,000, MOE, &_years_dash "
+
 		  FamIncomeLT75kB_&_years. = "Family income less than $75000, Black/African American, &_years_dash "
 	      FamIncomeLT75kW_&_years. = "Family income less than $75000, Non-Hispanic White, &_years_dash "
 	      FamIncomeLT75kH_&_years. = "Family income less than $75000, Hispanic/Latino, &_years_dash "
@@ -2159,40 +2160,40 @@
 	      mFamIncomeGT200kAIOM_&_years. = "Family income more than $200,000, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
 	      ;
 
-	  MedFamIncm_&_years. = B19113e1;
-	  MedFamIncmB_&_years. = B19113Be1;
-	  MedFamIncmW_&_years. = B19113He1;
-	  MedFamIncmH_&_years. = B19113Ie1;
-	  MedFamIncmA_&_years. = sum(B19113De1, B19113Ee1 );
-	  MedFamIncmIOM_&_years. = sum(B19113Ce1, B19113Fe1, B19113Ge1 );
-	  MedFamIncmAIOM_&_years. = sum(B19113Ce1, B19113De1, B19113Ee1, B19113Fe1, B19113Ge1 );
+		  MedFamIncm_&_years. = B19113e1;
+		  MedFamIncmB_&_years. = B19113Be1;
+		  MedFamIncmW_&_years. = B19113He1;
+		  MedFamIncmH_&_years. = B19113Ie1;
+		  MedFamIncmA_&_years. = sum(B19113De1, B19113Ee1 );
+		  MedFamIncmIOM_&_years. = sum(B19113Ce1, B19113Fe1, B19113Ge1 );
+		  MedFamIncmAIOM_&_years. = sum(B19113Ce1, B19113De1, B19113Ee1, B19113Fe1, B19113Ge1 );
 
 
-	  mMedFamIncm_&_years. = B19113m1;
-      mMedFamIncmB_&_years. = B19113Bm1;
-      mMedFamIncmW_&_years. = B19113Hm1;
-      mMedFamIncmH_&_years. = B19113Im1;
-      mMedFamIncmA_&_years. = %moe_sum( var=B19113Dm1 B19113Em1);
-      mMedFamIncmIOM_&_years. = %moe_sum( var=B19113Cm1 B19113Fm1 B19113Gm1);
-      mMedFamIncmAIOM_&_years. = %moe_sum( var=B19113Cm1 B19113Dm1 B19113Em1 B19113Fm1 B19113Gm1); 
+		  mMedFamIncm_&_years. = B19113m1;
+	      mMedFamIncmB_&_years. = B19113Bm1;
+	      mMedFamIncmW_&_years. = B19113Hm1;
+	      mMedFamIncmH_&_years. = B19113Im1;
+	      mMedFamIncmA_&_years. = %moe_sum( var=B19113Dm1 B19113Em1);
+	      mMedFamIncmIOM_&_years. = %moe_sum( var=B19113Cm1 B19113Fm1 B19113Gm1);
+	      mMedFamIncmAIOM_&_years. = %moe_sum( var=B19113Cm1 B19113Dm1 B19113Em1 B19113Fm1 B19113Gm1); 
 
 
-	  label 
-	  MedFamIncm_&_years. = "Median family income, &_years_dash "
-      MedFamIncmB_&_years. = "Median family income, Black/African American, &_years_dash "
-      MedFamIncmW_&_years. = "Median family income, Non-Hispanic White, &_years_dash "
-      MedFamIncmH_&_years. = "Median family income, Hispanic/Latino, &_years_dash "
-      MedFamIncmA_&_years. = "Median family income, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
-      MedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
-      MedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-	  mMedFamIncm_&_years. = "Median family income, MOE, &_years_dash "
-      mMedFamIncmB_&_years. = "Median family income, Black/African American, MOE, &_years_dash "
-      mMedFamIncmW_&_years. = "Median family income, Non-Hispanic White, MOE, &_years_dash "
-      mMedFamIncmH_&_years. = "Median family income, Hispanic/Latino, MOE, &_years_dash "
-      mMedFamIncmA_&_years. = "Median family income, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
-      mMedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
-      mMedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-	;
+		  label 
+		  MedFamIncm_&_years. = "Median family income, &_years_dash "
+	      MedFamIncmB_&_years. = "Median family income, Black/African American, &_years_dash "
+	      MedFamIncmW_&_years. = "Median family income, Non-Hispanic White, &_years_dash "
+	      MedFamIncmH_&_years. = "Median family income, Hispanic/Latino, &_years_dash "
+	      MedFamIncmA_&_years. = "Median family income, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+	      MedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+	      MedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+		  mMedFamIncm_&_years. = "Median family income, MOE, &_years_dash "
+	      mMedFamIncmB_&_years. = "Median family income, Black/African American, MOE, &_years_dash "
+	      mMedFamIncmW_&_years. = "Median family income, Non-Hispanic White, MOE, &_years_dash "
+	      mMedFamIncmH_&_years. = "Median family income, Hispanic/Latino, MOE, &_years_dash "
+	      mMedFamIncmA_&_years. = "Median family income, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
+	      mMedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
+	      mMedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+		;
 
     ** Housing **;
 
