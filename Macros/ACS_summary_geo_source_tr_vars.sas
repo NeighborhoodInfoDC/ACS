@@ -2133,6 +2133,269 @@
       mNumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, MOE, &_years_dash  "
     ;
 
+ 	  ** Housing vars related to bedroom size; 
+
+		MedRent5plusbdrms_&_years.  = B25031e7;
+		MedRent4bdrms_&_years. = B25031e6 ;
+		MedRent3bdrms_&_years. = B25031e5;
+		MedRent2bdrms_&_years. = B25031e4 ;
+		MedRent1bdrm_&_years. = B25031e3 ;
+		MedRent0bdrms_&_years. = B25031e2 ;
+		mMedRent0bdrms_&_years. = %moe_sum( var=B25031m2 );
+		mMedRent1bdrm_&_years. = %moe_sum( var=B25031m3 );
+		mMedRent2bdrms_&_years. = %moe_sum( var=B25031m4 );
+		mMedRent3bdrms_&_years. = %moe_sum( var=B25031m5 );
+		mMedRent4bdrms_&_years. = %moe_sum( var=B25031m6 );
+		mMedRent5plusbdrms_&_years. = %moe_sum( var=B25031m7 );
+
+		NumHsgUnits_&_years. = B25041e1;
+		mNumHsgUnits_&_years. = B25041e1;
+
+		NumHsgUnits0bdrms_&_years. = B25041e2;
+		mNumHsgUnits0bdrms_&_years. = %moe_sum( var=B25041m2 );
+		NumHsgUnits1bdrm_&_years. = B25041e3 ; 
+		mNumHsgUnits1bdrm_&_years. = %moe_sum( var=B25041m3 );
+		NumHsgUnits2bdrms_&_years. = B25041e4 ;
+		mNumhsqUnits2bdrms_&_years. = %moe_sum( var=B25041m4 );
+		NumHsgUnits3bdrms_&_years. =B25041e5 ;
+		mNumHsgUnits3bdrms_&_years. = %moe_sum( var=B25041m5 );
+		NumHsgUnits3plusbdrms_&_years. = sum( B25041e5, B25041e6, B25041e7 );
+		mNumHsgUnits3plusbdrms_&_years. = %moe_sum( var=B25041m5 B25041m6 B25041m7 );
+		NumHsgUnits4bdrms_&_years. = B25041e6 ;
+		mNumHsgUnits4bdrms_&_years. = %moe_sum( var=B25041m6 );
+		NumHsgUnits5plusbdrms_&_years. =B25041e7 ;
+		mNumHsgUnits5plusbdrms_&_years. = %moe_sum( var=B25041m7 );
+
+		NumRentOccHU5plusbdrms_&_years. = B25042e15 ;
+		NumRentOccHU4bdrms_&_years. = B25042e14 ;
+		NumRentOccHU3bdrms_&_years. = B25042e13 ;
+		NumRentOccHU2bdrms_&_years. = B25042e12 ;
+		NumRentOccHU1bdrm_&_years. = B25042e11 ;
+		NumRentOccHU0bdrms_&_years. = B25042e10 ;
+		NumRentOccHU3plusbdrms_&_years. = sum( B25042e13, B25042e14, B25042e15 );
+		mNumRentOccHU0bdrms_&_years. = %moe_sum( var=B25042m10 );
+		mNumRentOccHU1bdrm_&_years. = %moe_sum( var=B25042m11 );
+		mNumRentOccHU2bdrms_&_years. = %moe_sum( var=B25042m12 );
+		mNumRentOccHU3bdrms_&_years. = %moe_sum( var=B25042m13 );
+		mNumRentOccHU4bdrms_&_years. = %moe_sum( var=B25042m14 );
+		mNumRentOccHU5plusbdrms_&_years. = %moe_sum( var=B25042m15 );
+		mNumRentOccHU3plusbdrms_&_years. = %moe_sum( var=B25042m13 B25042m14 B25042m15 );
+
+		NumOwnOccHU0bdrms_&_years. = B25042e3 ;
+		NumOwnOccHU1bdrm_&_years. = B25042e4 ;
+		NumOwnOccHU2bdrms_&_years. = B25042e5 ;
+		NumOwnOccHU3bdrms_&_years. = B25042e6 ;
+		NumOwnOccHU4bdrms_&_years. = B25042e7 ;
+		NumOwnOccHU3plusbdrms_&_years. =
+		sum( B25042e6, B25042e7, B25042e8 );
+		NumOwnOccHU5plusbdrms_&_years. = B25042e8 ;
+		mNumOwnOccHU0bdrms_&_years. = %moe_sum( var=B25042m3 );
+		mNumOwnOccHU1bdrm_&_years. = %moe_sum( var=B25042m4 );
+		mNumOwnOccHU2bdrms_&_years. = %moe_sum( var=B25042m5 );
+		mNumOwnOccHU3bdrms_&_years. = %moe_sum( var=B25042m6 );
+		mNumOwnOccHU4bdrms_&_years. = %moe_sum( var=B25042m7 );
+		mNumOwnOccHU5plusbdrms_&_years. = %moe_sum( var=B25042m8 );
+		mNumOwnOccHU3plusbdrms_&_years. = %moe_sum( var=B25042m6 B25042m7 B25042m8 );
+
+		if &_years. in("2006_10", "2007_11", "2008_12", "2009_13", "2010_14") then do; 
+			NumRentOccHU0bdrmsunder500_&_years. = sum( B25068e4, B25068e5, B25068e6, B25068e10 );
+			NumRentOccHU0bdrms500to749_&_years. = B25068e7;
+			NumRentOccHU0bdrms750to999_&_years. = B25068e8;
+			NumRentOccHU0bdrms1000plus_&_years. = B25068e9;
+			NumRentOccHU1bdrmunder500_&_years. =  sum( B25068e13, B25068e14, B25068e15, B25068e19 );
+			NumRentOccHU1bdrm500to749_&_years. = B25068e16;
+			NumRentOccHU1bdrm750to999_&_years. = B25068e17;
+			NumRentOccHU1bdrm1000plus_&_years. = B25068e18;
+			NumRentOccHU2bdrmsunder500_&_years. = sum( B25068e22, B25068e23, B25068e24, B25068e28 );
+			NumRentOccHU2bdrms500to749_&_years. = B25068e25;
+			NumRentOccHU2bdrms750to999_&_years. = B25068e26;
+			NumRentOccHU2bdrms1000plus_&_years. = B25068e27 
+			NumRentOccHU3bdrmsunder500_&_years. = sum( B25068e31, B25068e32, B25068e33, B25068e37);
+			NumRentOccHU3bdrms500to749_&_years. = B25068e34;
+			NumRentOccHU3bdrms750to999_&_years. = B25068e35;
+			NumRentOccHU3bdrms1000plus_&_years. = B25068e36;
+			mNumRentOccHU0bdrmsunder500_&_years. = %moe_sum( var=B25068m4 B25068m5 B25068m6 B25068e10);
+			mNumRentOccHU0bdrms500to749_&_years. = %moe_sum( var= B25068m7);
+			mNumRentOccHU0bdrms750to999_&_years. = %moe_sum( var= B25068m8 );
+			mNumRentOccHU0bdrms1000plus_&_years. = %moe_sum( var=B25068m9 );
+			mNumRentOccHU1bdrmunder500_&_years. = %moe_sum( var=B25068m13 B25068m14 B25068m15 B25068e19);
+			mNumRentOccHU1bdrm500to749_&_years. = %moe_sum( var= B25068m16);
+			mNumRentOccHU1bdrm750to999_&_years. = %moe_sum( var= B25068m17 );
+			mNumRentOccHU1bdrm1000plus_&_years. = %moe_sum( var=B25068m18 );
+			mNumRentOccHU2bdrmsunder500_&_years. = %moe_sum( var=B25068m22 B25068m23 B25068m24 B25068e28);
+			mNumRentOccHU2bdrms500to749_&_years. = %moe_sum( var=B25068m25 );
+			mNumRentOccHU2bdrms750to999_&_years. = %moe_sum( var= B25068m26 );
+			mNumRentOccHU2bdrms1000plus_&_years. = %moe_sum( var=B25068m27 );
+			mNumRentOccHU3bdrmsunder500_&_years. = %moe_sum( var=B25068m31 B25068m32 B25068m33  B25068e37);
+			mNumRentOccHU3bdrms500to749_&_years. = %moe_sum( var=B25068m34);
+			mNumRentOccHU3bdrms750to999_&_years. = %moe_sum( var= B25068m35 );
+			mNumRentOccHU3bdrms1000plus_&_years. = %moe_sum( var=B25068m36 );
+		end;
+		else do;
+			NumRentOccHU0bdrmsunder500_&_years. = sum( B25068e4, B25068e5, B25068e10 );
+			NumRentOccHU0bdrms500to749_&_years. = B25068e6;
+			NumRentOccHU0bdrms750to999_&_years. = B25068e7;
+			NumRentOccHU0bdrms1000to1499_&_years. = B25068e8;
+			NumRentOccHU0bdrms1500plus_&_years. = B25068e9;
+			NumRentOccHU0bdrms1000plus_&_years. = sum( B25068e8, B25068e9 );
+			NumRentOccHU1bdrmunder500_&_years. =  sum( B25068e13, B25068e14, B25068e19 );
+			NumRentOccHU1bdrm500to749_&_years. = B25068e15 ;
+			NumRentOccHU1bdrm750to999_&_years. = B25068e16;
+			NumRentOccHU1bdrm1000to1499_&_years. = B25068e17;
+			NumRentOccHU1bdrm1500plus_&_years. = B25068e18;
+			NumRentOccHU1bdrm1000plus_&_years. = sum( B25068e17, B25068e18 );
+			NumRentOccHU2bdrmsunder500_&_years. = sum( B25068e22, B25068e23, B25068e28 );
+			NumRentOccHU2bdrms500to749_&_years. = B25068e24;
+			NumRentOccHU2bdrms750to999_&_years. = B25068e25;
+			NumRentOccHU2bdrms1000to1499_&_years. = B25068e26;
+			NumRentOccHU2bdrms1500plus_&_years. = B25068e27;
+			NumRentOccHU2bdrms1500plus_&_years. = sum( B25068e26, B25068e27 );
+			NumRentOccHU3bdrmsunder500_&_years. = sum( B25068e31, B25068e32, B25068e37);
+			NumRentOccHU3bdrms500to749_&_years. = B25068e33;
+			NumRentOccHU3bdrms750to999_&_years. = B25068e34;
+			NumRentOccHU3bdrms1000to1499_&_years. = B25068e35;
+			NumRentOccHU3bdrms1500plus_&_years. = B25068e36;
+			NumRentOccHU3bdrms1000plus_&_years. = sum( B25068e35, B25068e36 );
+			mNumRentOccHU0bdrmsunder500_&_years. = %moe_sum( var=B25068m4 B25068m5 B25068e10 );
+			mNumRentOccHU0bdrms500to749_&_years. = %moe_sum( var=B25068m6 );
+			mNumRentOccHU0bdrms750to999_&_years. = %moe_sum( var=B25068m7 );
+			mNumRentOccHU0bdrms1000to1499_&_years. = %moe_sum( var= B25068m8 );
+			mNumRentOccHU0bdrms1500plus_&_years. = %moe_sum( var=B25068m9 );
+			mNumRentOccHU0bdrms1000plus_&_years. = %moe_sum( var=B25068m8 B25068m9 );
+			mNumRentOccHU1bdrmunder500_&_years. = %moe_sum( var=B25068m13 B25068m14 B25068e19 );
+			mNumRentOccHU1bdrm500to749_&_years. = %moe_sum( var=B25068m15 );
+			mNumRentOccHU1bdrm750to999_&_years. = %moe_sum( var=B25068m16 );
+			mNumRentOccHU1bdrm1000to1499_&_years. = %moe_sum( var= B25068m17 );
+			mNumRentOccHU1bdrm1500plus_&_years. = %moe_sum( var=B25068m18 );
+			mNumRentOccHU1bdrm1000plus_&_years. = %moe_sum( var=B25068m17 B25068m18 );
+			mNumRentOccHU2bdrmsunder500_&_years. = %moe_sum( var=B25068m22 B25068m23 B25068e28 );
+			mNumRentOccHU2bdrms500to749_&_years. = %moe_sum( var=B25068m24 );
+			mNumRentOccHU2bdrms750to999_&_years. = %moe_sum( var=B25068m25  );
+			mNumRentOccHU2bdrms1000to1499_&_years. = %moe_sum( var=B25068m26 );
+			mNumRentOccHU2bdrms1500plus_&_years. = %moe_sum( var=B25068m27 );
+			mNumRentOccHU2bdrms1000plus_&_years. = %moe_sum( var=B25068m26 B25068m27 );
+			mNumRentOccHU3bdrmsunder500_&_years. = %moe_sum( var=B25068m31 B25068m32 B25068e37 );
+			mNumRentOccHU3bdrms500to749_&_years. = %moe_sum( var=B25068m33 );
+			mNumRentOccHU3bdrms750to999_&_years. = %moe_sum( var=B25068m34 );
+			mNumRentOccHU3bdrms1000to1499_&_years. = %moe_sum( var= B25068m35 );
+			mNumRentOccHU3bdrms1500plus_&_years. = %moe_sum( var=B25068m36 );
+			mNumRentOccHU3bdrms1500plus_&_years. = %moe_sum( var=B25068m35 B25068m36 );
+		end;
+
+
+
+		label 
+			MedRent5plusbdrms_&_years.  = "Median gross rent for five or more bedrooms, &_years_dash "
+			MedRent4bdrms_&_years.  = "Median gross rent for four bedrooms, &_years_dash "
+			MedRent3bdrms_&_years.  = "Median gross rent for three bedrooms, &_years_dash "
+			MedRent2bdrms_&_years.  = "Median gross rent for two bedrooms, &_years_dash "
+			MedRent1bdrm_&_years.  = "Median gross rent for one bedroom, &_years_dash "
+			MedRent0bdrms_&_years.  = "Median gross rent for zero bedrooms, &_years_dash "
+			mMedRent5plusbdrms_&_years.  = "Median gross rent for five or more bedrooms, MOE, &_years_dash "
+			mMedRent4bdrms_&_years.  = "Median gross rent for four bedrooms, MOE, &_years_dash "
+			mMedRent3bdrms_&_years.  = "Median gross rent for three bedrooms, MOE, &_years_dash "
+			mMedRent2bdrms_&_years.  = "Median gross rent for two bedrooms, MOE, &_years_dash "
+			mMedRent1bdrm_&_years.  = "Median gross rent for one bedroom, MOE, &_years_dash "
+			mMedRent0bdrms_&_years.  = "Median gross rent for zero bedrooms, MOE, &_years_dash "
+			
+			Numhsgunits_&_years. = "Number of housing units (tract-based), &_years_dash "
+			mNumHsgunits_&_years. = "Number of housing units (tract-based), MOE, &_years_dash "
+
+			Numhsgunits0bdrms_&_years. = "Number of housing units with zero bedrooms, &_years_dash "
+			Numhsgunits1bdrm_&_years. = "Number of housing units with one bedrooms, &_years_dash "
+			Numhsgunits2bdrms_&_years. = "Number of housing units with two bedrooms, &_years_dash "
+			Numhsgunits3bdrms_&_years. = "Number of housing units with three bedrooms, &_years_dash "
+			Numhsgunits3plusbdrms_&_years. = "Number of housing units with three or more bedrooms, &_years_dash "
+			Numhsgunits4bdrms_&_years. = "Number of housing units with four bedrooms, &_years_dash "
+			Numhsgunits5plusbdrms_&_years. = "Number of housing units with five or more bedrooms, &_years_dash "
+			mNumhsgunits0bdrms_&_years. = "Number of housing units with zero bedrooms, MOE, &_years_dash "
+			mNumhsgunits1bdrm_&_years. = "Number of housing units with one bedrooms, MOE, &_years_dash "
+			mNumhsgunits2bdrms_&_years. = "Number of housing units with two bedrooms, MOE, &_years_dash "
+			mNumhsgunits3bdrms_&_years. = "Number of housing units with three bedrooms, MOE, &_years_dash "
+			mNumhsgunits3plusbdrms_&_years. = "Number of housing units with three or more bedrooms, MOE, &_years_dash "
+			mNumhsgunits4bdrms_&_years. = "Number of housing units with four bedrooms, MOE, &_years_dash "
+			mNumhsgunits5plusbdrms_&_years. = "Number of housing units with five or more bedrooms, MOE, &_years_dash "
+
+
+			Numrentocchu0bdrms_&_years. = "Number of renter-occupied housing units with zero bedrooms, &_years_dash "
+			Numrentocchu1bdrm_&_years. = "Number of renter-occupied housing units with one bedroom, &_years_dash "
+			Numrentocchu2bdrms_&_years. = "Number of renter-occupied housing units with two bedrooms, &_years_dash "
+			Numrentocchu3bdrms_&_years. = "Number of renter-occupied housing units with three bedrooms, &_years_dash "
+			Numrentocchu3plusbdrms_&_years. = "Number of renter-occupied housing units with three or more bedrooms, &_years_dash "
+			Numrentocchu4bdrms_&_years. = "Number of renter-occupied housing units with four bedrooms, &_years_dash "
+			Numrentocchu5plusbdrms_&_years. = "Number of renter-occupied housing units with five or more bedrooms, &_years_dash "
+			mNumrentocchu0bdrms_&_years. = "Number of renter-occupied housing units with zero bedrooms, MOE, &_years_dash "
+			mNumrentocchu1bdrm_&_years. = "Number of renter-occupied housing units with one bedroom, MOE, &_years_dash "
+			mNumrentocchu2bdrms_&_years. = "Number of renter-occupied housing units with two bedrooms, MOE, &_years_dash "
+			mNumrentocchu3bdrms_&_years. = "Number of renter-occupied housing units with three bedrooms, MOE, &_years_dash "
+			mNumrentocchu3plusbdrms_&_years. = "Number of renter-occupied housing units with three or more bedrooms, MOE, &_years_dash "
+			mNumrentocchu4bdrms_&_years. = "Number of renter-occupied housing units with four bedrooms, MOE, &_years_dash "
+			mNumrentocchu5plusbdrms_&_years. = "Number of renter-occupied housing units with five or more bedrooms, MOE, &_years_dash "
+			
+			Numownocchu0bdrms_&_years. = "Number of owner-occupied housing units with zero bedrooms, &_years_dash "
+			Numownocchu1bdrm_&_years. = "Number of owner-occupied housing units with one bedroom, &_years_dash "
+			Numownocchu2bdrms_&_years. = "Number of owner-occupied housing units with two bedrooms, &_years_dash "
+			Numownocchu3bdrms_&_years. = "Number of owner-occupied housing units with three bedrooms, &_years_dash "
+			Numownocchu3plusbdrms_&_years. = "Number of owner-occupied housing units with three or more bedrooms, &_years_dash "
+			Numownocchu4bdrms_&_years. = "Number of owner-occupied housing units with four bedrooms, &_years_dash "
+			Numownocchu5plusbdrms_&_years. = "Number of owner-occupied housing units with five or more bedrooms, &_years_dash "
+			mNumownocchu0bdrms_&_years. = "Number of owner-occupied housing units with zero bedrooms, MOE, &_years_dash "
+			mNumownocchu1bdrm_&_years. = "Number of owner-occupied housing units with one bedroom, MOE, &_years_dash "
+			mNumownocchu2bdrms_&_years. = "Number of owner-occupied housing units with two bedrooms, MOE, &_years_dash "
+			mNumownocchu3bdrms_&_years. = "Number of owner-occupied housing units with three bedrooms, MOE, &_years_dash "
+			mNumownocchu3plusbdrms_&_years. = "Number of owner-occupied housing units with three or more bedrooms, MOE, &_years_dash "
+			mNumownocchu4bdrms_&_years. = "Number of owner-occupied housing units with four bedrooms, MOE, &_years_dash "
+			mNumownocchu5plusbdrms_&_years. = "Number of owner-occupied housing units with five or more bedrooms, MOE, &_years_dash "
+			
+			numrentocchu0bdrmsunder500_&_years. = "Renter-occupied housing units with zero bedrooms and paying under $500 in cash rent or no rent, &_years_dash "
+			numrentocchu0bdrms500to749&_years. = "Renter-occupied housing units with zero bedrooms and paying $500 to $749 in cash rent, &_years_dash "
+			numrentocchu0bdrms750to999_&_years. = "Renter-occupied housing units with zero bedrooms and paying $750 to $999 in cash rent, &_years_dash "
+			numrentocchu0bdrms1000to1499_&_years. = "Renter-occupied housing units with zero bedrooms and paying $1000 to $1499 in cash rent, &_years_dash "
+			numrentocchu0bdrms1500plus_&_years. = "Renter-occupied housing units with zero bedrooms and paying over $1500 in cash rent, &_years_dash "
+			numrentocchu0bdrms1000plus_&_years. = "Renter-occupied housing units with zero bedrooms and paying over $1000 in cash rent, &_years_dash "
+			numrentocchu1bdrmunder500_&_years. = "Renter-occupied housing units with one bedroom and paying under $500 in cash rent or no rent, &_years_dash "
+			numrentocchu1bdrm500to749_&_years. = "Renter-occupied housing units with zero bedrooms and paying $500 to $749 in cash rent, &_years_dash "
+			numrentocchu1bdrm750to999_&_years. = "Renter-occupied housing units with one bedroom and paying $750 to $999 in cash rent, &_years_dash "
+			numrentocchu1bdrm1000to1499_&_years. = "Renter-occupied housing units with one bedroom and paying $1000 to $1499 in cash rent, &_years_dash "
+			numrentocchu1bdrm1500plus_&_years. = "Renter-occupied housing units with one bedroom and paying over $1500 in cash rent, &_years_dash "
+			numrentocchu1bdrm1000plus_&_years. = "Renter-occupied housing units with one bedroom and paying over $1000 in cash rent, &_years_dash "
+			numrentocchu2bdrmsunder500_&_years. = "Renter-occupied housing units with two bedrooms and paying under $500 in cash rent or no rent, &_years_dash "
+			numrentocchu2bdrms500to749_&_years. = "Renter-occupied housing units with two bedrooms and paying $500 to $749 in cash rent, &_years_dash "
+			numrentocchu2bdrms750to999_&_years. = "Renter-occupied housing units with two bedrooms and paying $750 to $999 in cash rent, &_years_dash "
+			numrentocchu2bdrms1000to1499_&_years. = "Renter-occupied housing units with two bedrooms and paying $1000 to $1499 in cash rent, &_years_dash "
+			numrentocchu2bdrms1500plus_&_years. = "Renter-occupied housing units with two bedrooms and paying over $1500 in cash rent, &_years_dash "
+			numrentocchu2bdrms1000plus_&_years. = "Renter-occupied housing units with two bedrooms and paying over $1000 in cash rent, &_years_dash "
+			numrentocchu3bdrmsunder500_&_years. = "Renter-occupied housing units with three bedrooms and paying under $500 in cash rent or no rent, &_years_dash "
+			numrentocchu3bdrms500to749_&_years. = "Renter-occupied housing units with three bedrooms and paying $500 to $749 in cash rent, &_years_dash "
+			numrentocchu3bdrms750to999_&_years. = "Renter-occupied housing units with three bedrooms and paying $750 to $999 in cash rent, &_years_dash "
+			numrentocchu3bdrms1000to1499_&_years. = "Renter-occupied housing units with three bedrooms and paying $1000 to $1499 in cash rent, &_years_dash "
+			numrentocchu3bdrms1500plus_&_years. = "Renter-occupied housing units with three bedrooms and paying over $1500 in cash rent, &_years_dash "
+			numrentocchu3bdrms1000plus_&_years. = "Renter-occupied housing units with three bedrooms and paying over $1000 in cash rent, &_years_dash "
+			mNumrentocchu0bdrmsunder500_&_years. = "Renter-occupied housing units with zero bedrooms and paying under $500 in cash rent or no rent, MOE, &_years_dash "
+			mNumrentocchu0bdrms500to749_&_years. = "Renter-occupied housing units with zero bedrooms and paying $500 to $749 in cash rent, MOE, &_years_dash "
+			mNumrentocchu0bdrms750to999_&_years. = "Renter-occupied housing units with zero bedrooms and paying $750 to $999 in cash rent, MOE, &_years_dash "
+			mNumrentocchu0bdrms1000to1499_&_years. = "Renter-occupied housing units with zero bedrooms and paying $1000 to $1499 in cash rent, MOE, &_years_dash "
+			mNumrentocchu0bdrms1500plus_&_years. = "Renter-occupied housing units with zero bedrooms and paying over $1500 in cash rent, MOE, &_years_dash "
+			mNumrentocchu0bdrms1000plus_&_years. = "Renter-occupied housing units with zero bedrooms and paying over $1000 in cash rent, MOE, &_years_dash "
+			mNumrentocchu1bdrmunder500_&_years. = "Renter-occupied housing units with one bedroom and paying under $500 in cash rent, MOE, &_years_dash "
+			mNumrentocchu1bdrm500to749_&_years. = "Renter-occupied housing units with zero bedrooms and paying $500 to $749 in cash rent, MOE, &_years_dash "
+			mNumrentocchu1bdrm750to999_&_years. = "Renter-occupied housing units with one bedroom and paying $750 to $999 in cash rent, MOE, &_years_dash "
+			mNumrentocchu1bdrm1000to1499_&_years. = "Renter-occupied housing units with one bedroom and paying $1000 to $1499 in cash rent, MOE, &_years_dash "
+			mNumrentocchu1bdrm1500plus_&_years. = "Renter-occupied housing units with one bedroom and paying over $1500 in cash rent, MOE, &_years_dash "
+			mNumrentocchu1bdrm1000plus_&_years. = "Renter-occupied housing units with one bedroom and paying over $1000 in cash rent, MOE, &_years_dash "
+			mNumrentocchu2bdrmsunder500_&_years. = "Renter-occupied housing units with two bedrooms and paying under $500 in cash rent or no rent, MOE, &_years_dash "
+			mNumrentocchu2bdrms500to749_&_years. = "Renter-occupied housing units with two bedrooms and paying $500 to $749 in cash rent, MOE, &_years_dash "
+			mNumrentocchu2bdrms750to999_&_years. = "Renter-occupied housing units with two bedrooms and paying $750 to $999 in cash rent, MOE, &_years_dash "
+			mNumrentocchu2bdrms1000to1499_&_years. = "Renter-occupied housing units with two bedrooms and paying $1000 to $1499 in cash rent, MOE, &_years_dash "
+			mNumrentocchu2bdrms1500plus_&_years. = "Renter-occupied housing units with two bedrooms and paying over $1500 in cash rent, MOE, &_years_dash "
+			mNumrentocchu2bdrms1000plus_&_years. = "Renter-occupied housing units with two bedrooms and paying over $1000 in cash rent, MOE, &_years_dash "
+			mNumrentocchu3bdrmsunder500_&_years. = "Renter-occupied housing units with three bedrooms and paying under $500 in cash rent, MOE, &_years_dash "
+			mNumrentocchu3bdrms500to749_&_years. = "Renter-occupied housing units with three bedrooms and paying $500 to $749 in cash rent, MOE, &_years_dash "
+			mNumrentocchu3bdrms750to999_&_years. = "Renter-occupied housing units with three bedrooms and paying $750 to $999 in cash rent, MOE, &_years_dash "
+			mNumrentocchu3bdrms1000to1499_&_years. = "Renter-occupied housing units with three bedrooms and paying $1000 to $1499 in cash rent, MOE, &_years_dash "
+			mNumrentocchu3bdrms1500plus_&_years. = "Renter-occupied housing units with three bedrooms and paying over $1500 in cash rent, MOE, &_years_dash "
+			mNumrentocchu3bdrms1000plus_&_years. = "Renter-occupied housing units with three bedrooms and paying over $1000 in cash rent, MOE, &_years_dash "
+		;
 
 	  ** Mobility **;
 
