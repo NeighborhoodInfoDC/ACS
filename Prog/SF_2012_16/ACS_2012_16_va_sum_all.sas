@@ -24,7 +24,9 @@
   state_ab = VA,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
-  years = 2012_16
+  years = 2012_16,
+  
+   revisions=%str(Added indicators for bedroom sizes for Family-Sized housing units study and household income distribution.)
 
 )
 
