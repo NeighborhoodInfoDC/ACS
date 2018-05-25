@@ -34,7 +34,7 @@
            Unwtd: TotPop: PopUnder: Pop25: Pop65: PopAlone:
            PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
        NumHshldPhone_: NumHshldCar_: NumOccupied: NumOwner: NumRenter: NumVacant: Med:
-       Num: Agg: GrossRent: IncmBy: AgeBy:
+       Num: GrossRent: IncmBy: AgeBy:
 
        NumFamilies_: NumHshlds_:
 
@@ -45,9 +45,7 @@
        Pop25andOverYears_: Pop25andOverWoutHS_: Pop25andOverWHS_:
        Pop25andOverWSC_: Pop25andOverWCollege_:
 
-       FamIncomeLT75k_: FamIncomeGT200k_:
-	
-	   
+         
        NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
        RentCostBurdenDenom: OwnerCostBurdenDenom:
 
@@ -116,20 +114,6 @@
        mPop25andOverYears_&_years.
 
        mNumHshldPhone_&_years. mNumHshldCar_&_years. 
-
-       mAggFamilyIncome_&_years. 
-
-       mFamIncomeLT75k_&_years. mFamIncomeGT200k_&_years.
-
-       mAggIncome_&_years. mAggIncomeB_&_years.
-       mAggIncomeW_&_years. mAggIncomeH_&_years.
-       mAggIncomeA_&_years. mAggIncomeIOM_&_years.
-       mAggIncomeAIOM_&_years.
-
-       mAggHshldIncome_&_years. mAggHshldIncomeB_&_years.
-       mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
-       mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
-       mAggHshldIncomeAIOM_&_years.
 
        mNumOccupiedHsgUnits_&_years. mNumOccupiedHsgUnitsB_&_years.
        mNumOccupiedHsgUnitsW_&_years. mNumOccupiedHsgUnitsH_&_years.
@@ -412,7 +396,20 @@
            mNumFamiliesOwnChildren_&_years. mNumFamiliesOwnChildFH_&_years. 
        mNumHshldPhone_&_years. mNumHshldCar_&_years. 
 
+       
+       mAggIncome_&_years. mAggIncomeB_&_years.
+       mAggIncomeW_&_years. mAggIncomeH_&_years.
+       mAggIncomeA_&_years. mAggIncomeIOM_&_years.
+       mAggIncomeAIOM_&_years.
+              
+       mAggHshldIncome_&_years. mAggHshldIncomeB_&_years.
+       mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
+       mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
+       mAggHshldIncomeAIOM_&_years.
+
        mAggFamilyIncome_&_years. 
+       mFamIncomeLT75k_&_years. mFamIncomeGT200k_&_years.
+       
 
        mFamIncomeLT75k_&_years. mFamIncomeLT75kB_&_years.
        mFamIncomeLT75kW_&_years. mFamIncomeLT75kH_&_years.
@@ -503,39 +500,39 @@
        mNumOwnCstBurden_50_74K_&_years. mNumOwnCstBurden_75_99K_&_years. 
        mNumOwnCstBurden_100_149_&_years. mNumOwnCstBurden_GT150K_&_years. 
 
-       mMedRent0bdrms_&_years. mMedRent1bdrm_&_years.
-       mMedRent2bdrms_&_years. mMedRent3bdrms_&_years.
-       mMedRent4bdrms_&_years. mMedRent5plusbdrms_&_years.
+       mMedRent0bd_&_years. mMedRent1bd_&_years.
+       mMedRent2bd_&_years. mMedRent3bd_&_years.
+       mMedRent4bd_&_years. mMedRent5plusbd_&_years.
        
        mNumHsgUnits_&_years.
        
-       mNumHsgUnits0bdrms_&_years. mNumHsgUnits1bdrm_&_years.
-       mNumhsqUnits2bdrms_&_years. mNumhsqUnits3bdrms_&_years.
-       mNumHsgUnits3plusbdrms_&_years.
-       mNumHsgUnits4bdrms_&_years. mNumHsgUnits5plusbdrms_&_years.
+       mNumHsgUnits0bd_&_years. mNumHsgUnits1bd_&_years.
+       mNumhsgUnits2bd_&_years. mNumhsgUnits3bd_&_years.
+       mNumHsgUnits3plusbd_&_years.
+       mNumHsgUnits4bd_&_years. mNumHsgUnits5plusbd_&_years.
        
-       mNumRentOccHU0bdrms_&_years. mNumRentOccHU1bdrm_&_years. 
-       mNumRentOccHU2bdrms_&_years. mNumRentOccHU3bdrms_&_years.
-       mNumRentOccHU4bdrms_&_years. mNumRentOccHU5plusbdrms_&_years.
-       mNumRentOccHU3plusbdrms_&_years.
+       mNumRentOccHU0bd_&_years. mNumRentOccHU1bd_&_years. 
+       mNumRentOccHU2bd_&_years. mNumRentOccHU3bd_&_years.
+       mNumRentOccHU4bd_&_years. mNumRentOccHU5plusbd_&_years.
+       mNumRentOccHU3plusbd_&_years.
        
-       mNumOwnOccHU0bdrms_&_years. mNumOwnOccHU1bdrm_&_years.
-       mNumOwnOccHU2bdrms_&_years. mNumOwnOccHU3bdrms_&_years.
-       mNumOwnOccHU4bdrms_&_years. mNumOwnOccHU5plusbdrms_&_years.
-       mNumOwnOccHU3plusbdrms_&_years.
+       mNumOwnOccHU0bd_&_years. mNumOwnOccHU1bd_&_years.
+       mNumOwnOccHU2bd_&_years. mNumOwnOccHU3bd_&_years.
+       mNumOwnOccHU4bd_&_years. mNumOwnOccHU5plusbd_&_years.
+       mNumOwnOccHU3plusbd_&_years.
        
-       mNumRentOccHU0bdrmsunder500_&_years. mNumRentOccHU0bdrms500to749_&_years. 
-       mNumRentOccHU0bdrms750to999_&_years. mNumRentOccHU0bdrms1000to1499_&_years.
-       mNumRentOccHU0bdrms1500plus_&_years. mNumRentOccHU0bdrms1000plus_&_years.
-       mNumRentOccHU1bdrmunder500_&_years. mNumRentOccHU1bdrm500to749_&_years. 
-       mNumRentOccHU1bdrm750to999_&_years. mNumRentOccHU1bdrm1000to1499_&_years. 
-       mNumRentOccHU1bdrm1500plus_&_years. mNumRentOccHU1bdrm1000plus_&_years.
-       mNumRentOccHU2bdrmsunder500_&_years. mNumRentOccHU2bdrms500to749_&_years.
-       mNumRentOccHU2bdrms750to999_&_years. mNumRentOccHU2bdrms1000to1499_&_years. 
-       mNumRentOccHU2bdrms1500plus_&_years. mNumRentOccHU2bdrms1000plus_&_years. 
-       mNumRentOccHU3bdrmsunder500_&_years. mNumRentOccHU3bdrms500to749_&_years. 
-       mNumRentOccHU3bdrms750to999_&_years. mNumRentOccHU3bdrms1000to1499_&_years.
-       mNumRentOccHU3bdrms1500plus_&_years. mNumRentOccHU3bdrms1500plus_&_years. 
+       mNumRtOHU0Bunder500_&_years. mNumRtOHU0B500to749_&_years. 
+       mNumRtOHU0B750to999_&_years. mNumRtOHU0B1000to1499_&_years.
+       mNumRtOHU0B1500plus_&_years. mNumRtOHU0B1000plus_&_years.
+       mNumRtOHU1Bunder500_&_years. mNumRtOHU1B500to749_&_years. 
+       mNumRtOHU1B750to999_&_years. mNumRtOHU1B1000to1499_&_years. 
+       mNumRtOHU1B1500plus_&_years. mNumRtOHU1B1000plus_&_years.
+       mNumRtOHU2Bunder500_&_years. mNumRtOHU2B500to749_&_years.
+       mNumRtOHU2B750to999_&_years. mNumRtOHU2B1000to1499_&_years. 
+       mNumRtOHU2B1500plus_&_years. mNumRtOHU2B1000plus_&_years. 
+       mNumRtOHU3Bunder500_&_years. mNumRtOHU3B500to749_&_years. 
+       mNumRtOHU3B750to999_&_years. mNumRtOHU3B1000to1499_&_years.
+       mNumRtOHU3B1500plus_&_years. mNumRtOHU3B1500plus_&_years. 
        
               
        mPopMovedLastYear_&_years.  mPopMovedLastYearB_&_years.
