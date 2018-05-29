@@ -1970,7 +1970,7 @@
 		HshldInc75000to99999_&_years. = B19001e13 ;
 		HshldInc100000plus_&_years. =
 		        sum( B19001e14, B19001e15, B19001e16, B19001e17 );
-		HshldInc100000to124999_&_years. = B19001e14
+		HshldInc100000to124999_&_years. = B19001e14 ;
 		HshldInc125000to149999_&_years. = B19001e15 ;
 		HshldInc150000to199999_&_years. = B19001e16 ;
 		HshldInc200000plus_&_years. = B19001e17 ;
