@@ -2387,7 +2387,7 @@
 			NumRtOHU2B750to999_&_years. = B25068e25;
 			NumRtOHU2B1000to1499_&_years. = B25068e26;
 			NumRtOHU2B1500plus_&_years. = B25068e27;
-			NumRtOHU2B1500plus_&_years. = sum( B25068e26, B25068e27 );
+			NumRtOHU2B1000plus_&_years. = sum( B25068e26, B25068e27 );
 			NumRtOHU3Bunder500_&_years. = sum( B25068e31, B25068e32, B25068e37);
 			NumRtOHU3B500to749_&_years. = B25068e33;
 			NumRtOHU3B750to999_&_years. = B25068e34;
@@ -2417,7 +2417,7 @@
 			mNumRtOHU3B750to999_&_years. = %moe_sum( var=B25068m34 );
 			mNumRtOHU3B1000to1499_&_years. = %moe_sum( var= B25068m35 );
 			mNumRtOHU3B1500plus_&_years. = %moe_sum( var=B25068m36 );
-			mNumRtOHU3B1500plus_&_years. = %moe_sum( var=B25068m35 B25068m36 );
+			mNumRtOHU3B1000plus_&_years. = %moe_sum( var=B25068m35 B25068m36 );
 		%end;
 
 
@@ -2486,7 +2486,7 @@
 			mNumownocchu5plusbd_&_years. = "Number of owner-occupied housing units with five or more bedrooms, MOE, &_years_dash "
 			
 			numRtOHU0Bunder500_&_years. = "Renter-occupied housing units with zero bedrooms and paying under $500 in cash rent or no rent, &_years_dash "
-			numRtOHU0B500to749&_years. = "Renter-occupied housing units with zero bedrooms and paying $500 to $749 in cash rent, &_years_dash "
+			numRtOHU0B500to749_&_years. = "Renter-occupied housing units with zero bedrooms and paying $500 to $749 in cash rent, &_years_dash "
 			numRtOHU0B750to999_&_years. = "Renter-occupied housing units with zero bedrooms and paying $750 to $999 in cash rent, &_years_dash "
 			numRtOHU0B1000to1499_&_years. = "Renter-occupied housing units with zero bedrooms and paying $1000 to $1499 in cash rent, &_years_dash "
 			numRtOHU0B1500plus_&_years. = "Renter-occupied housing units with zero bedrooms and paying over $1500 in cash rent, &_years_dash "
