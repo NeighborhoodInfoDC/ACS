@@ -555,24 +555,24 @@
       ( &geo_name = GEO2010 and %upcase( &source_geo_var ) = GEO2010 ) or
     ( &geo_name = COUNTY and %upcase( &source_geo_var ) = REGCOUNTY )%then %do;
 
-    ** Census tracts from census tract source (same year): just recopy selected vars **;
-    
-    data &out_ds (label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label");
-    
-      set &source_ds_work (keep=&geo_var &count_vars &moe_vars);
+	    ** Census tracts from census tract source (same year): just recopy selected vars **;
 
-    run;
+	    data &out_ds (label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label");
 
-  %Finalize_data_set( 
-  data=&out_ds.,
-  out=&out_ds.,
-  outlib=&_out_lib.,
-  label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
-  sortby=&geo_name.,
-  restrictions=None,
-  printobs=0,
-  revisions=&revisions.
-  )
+	      set &source_ds_work (keep=&geo_var &count_vars &moe_vars);
+
+	    run;
+
+	  %Finalize_data_set( 
+	  data=&out_ds.,
+	  out=&out_ds.,
+	  outlib=&_out_lib.,
+	  label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
+	  sortby=&geo_name.,
+	  restrictions=None,
+	  printobs=0,
+	  revisions=&revisions.
+	  )
 
 
   %end;
@@ -580,28 +580,94 @@
   %else %do;
 
     ** Transform data from source geography (&source_geo_var) to target geography (&geo_var) **;
+    
+   	%if &geo = councildist %then %do;
+   
+		%if &_state_ab = md %then %do;
 
-    %Transform_geo_data(
-      dat_ds_name=&source_ds_work,
-      dat_org_geo=&source_geo_var,
-      dat_count_vars=&count_vars,
-      dat_count_moe_vars=&moe_vars,
-      dat_prop_vars=,
-      wgt_ds_name=General.&geo_wt_file,
-      wgt_org_geo=&source_geo_var,
-      wgt_new_geo=&geo_var,
-      wgt_id_vars=,
-      wgt_wgt_var=popwt,
-      out_ds_name=&out_ds._,
-      out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
-      calc_vars=,
-      calc_vars_labels=,
-      keep_nonmatch=N,
-      show_warnings=10,
-      print_diag=Y,
-      full_diag=N,
-      mprint=Y
-    )
+			data &geo_wt_file (where=(ucounty in("24009" "24017" "24021" "24031" "24033")));
+				set General.&geo_wt_file;
+
+			ucounty=substr(&source_geo_var,1,5);
+			run; 
+		%end;	
+		%if &_state_ab = va %then %do;
+
+			data &geo_wt_file (where=(ucounty in("51013" "51043" "51047" "51059" "51061" "51107" "51153" "51157" "51177" "51179" "51187" "51510" "51600" "51610" "51630" "51683" "51685")));
+				set General.&geo_wt_file;
+
+			ucounty=substr(&source_geo_var,1,5);
+			run; 
+		%end;
+		%if &_state_ab = wv %then %do;
+
+			data &geo_wt_file (where=(ucounty="54037"));
+				set General.&geo_wt_file;
+
+			ucounty=substr(&source_geo_var,1,5);
+			run; 
+		%end;
+		%if &_state_ab = dc %then %do;
+
+			data &geo_wt_file (where=(ucounty ="11001"));
+				set General.&geo_wt_file;
+
+			ucounty=substr(&source_geo_var,1,5);
+			run; 
+		%end;
+   	
+
+		    %Transform_geo_data(
+		      dat_ds_name=&source_ds_work,
+		      dat_org_geo=&source_geo_var,
+		      dat_count_vars=&count_vars,
+		      dat_count_moe_vars=&moe_vars,
+		      dat_prop_vars=,
+		      wgt_ds_name=&geo_wt_file,
+		      wgt_org_geo=&source_geo_var,
+		      wgt_new_geo=&geo_var,
+		      wgt_id_vars=,
+		      wgt_wgt_var=popwt,
+		      out_ds_name=&out_ds._,
+		      out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
+		      calc_vars=,
+		      calc_vars_labels=,
+		      keep_nonmatch=N,
+		      show_warnings=10,
+		      print_diag=Y,
+		      full_diag=N,
+		      mprint=Y
+		    )
+
+	   %end;
+   
+  	 %else %do;
+   
+	    %Transform_geo_data(
+		 dat_ds_name=&source_ds_work,
+		 dat_org_geo=&source_geo_var,
+		 dat_count_vars=&count_vars,
+		 dat_count_moe_vars=&moe_vars,
+		 dat_prop_vars=,
+		 wgt_ds_name=General.&geo_wt_file,
+		 wgt_org_geo=&source_geo_var,
+		 wgt_new_geo=&geo_var,
+		 wgt_id_vars=,
+		 wgt_wgt_var=popwt,
+		 out_ds_name=&out_ds._,
+		 out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
+		 calc_vars=,
+		 calc_vars_labels=,
+		 keep_nonmatch=N,
+		 show_warnings=10,
+		 print_diag=Y,
+		 full_diag=N,
+		 mprint=Y
+	    )
+
+	    %end;
+   
+   
 
   data &out_ds;
     set &out_ds._;
