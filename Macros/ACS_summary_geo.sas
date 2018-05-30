@@ -34,7 +34,7 @@
            Unwtd: TotPop: PopUnder: Pop25: Pop65: PopAlone:
            PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
        NumHshldPhone_: NumHshldCar_: NumOccupied: NumOwner: NumRenter: NumVacant: Med:
-       AggIncome: AggHshldIncome: Num: Agg: GrossRent: IncmBy: AgeBy:
+       Num: GrossRent: IncmBy: AgeBy:
 
        NumFamilies_: NumHshlds_:
 
@@ -45,9 +45,7 @@
        Pop25andOverYears_: Pop25andOverWoutHS_: Pop25andOverWHS_:
        Pop25andOverWSC_: Pop25andOverWCollege_:
 
-       FamIncomeLT75k_: FamIncomeGT200k_:
-	
-	   
+         
        NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
        RentCostBurdenDenom: OwnerCostBurdenDenom:
 
@@ -117,20 +115,6 @@
 
        mNumHshldPhone_&_years. mNumHshldCar_&_years. 
 
-       mAggFamilyIncome_&_years. 
-
-       mFamIncomeLT75k_&_years. mFamIncomeGT200k_&_years.
-
-       mAggIncome_&_years. mAggIncomeB_&_years.
-       mAggIncomeW_&_years. mAggIncomeH_&_years.
-       mAggIncomeA_&_years. mAggIncomeIOM_&_years.
-       mAggIncomeAIOM_&_years.
-
-       mAggHshldIncome_&_years. mAggHshldIncomeB_&_years.
-       mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
-       mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
-       mAggHshldIncomeAIOM_&_years.
-
        mNumOccupiedHsgUnits_&_years. mNumOccupiedHsgUnitsB_&_years.
        mNumOccupiedHsgUnitsW_&_years. mNumOccupiedHsgUnitsH_&_years.
        mNumOccupiedHsgUnitsA_&_years. mNumOccupiedHsgUnitsIOM_&_years.
@@ -195,7 +179,7 @@
            Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
            PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
            PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
-           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Med: PopMoved: GrossRent: IncmBy: AgeBy:
+           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
            
        NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
        RentCostBurdenDenom: OwnerCostBurdenDenom:
@@ -412,7 +396,20 @@
            mNumFamiliesOwnChildren_&_years. mNumFamiliesOwnChildFH_&_years. 
        mNumHshldPhone_&_years. mNumHshldCar_&_years. 
 
+       
+       mAggIncome_&_years. mAggIncomeB_&_years.
+       mAggIncomeW_&_years. mAggIncomeH_&_years.
+       mAggIncomeA_&_years. mAggIncomeIOM_&_years.
+       mAggIncomeAIOM_&_years.
+              
+       mAggHshldIncome_&_years. mAggHshldIncomeB_&_years.
+       mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
+       mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
+       mAggHshldIncomeAIOM_&_years.
+
        mAggFamilyIncome_&_years. 
+       mFamIncomeLT75k_&_years. mFamIncomeGT200k_&_years.
+       
 
        mFamIncomeLT75k_&_years. mFamIncomeLT75kB_&_years.
        mFamIncomeLT75kW_&_years. mFamIncomeLT75kH_&_years.
@@ -438,6 +435,11 @@
        mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
        mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
        mAggHshldIncomeAIOM_&_years.
+       
+       mHshldIncUnder15000_&_years. mHshldInc15000to34999_&_years. mHshldInc35000to49999_&_years. 
+       mHshldInc50000to74999_&_years. mHshldInc75000to99999_&_years. mHshldInc100000plus_&_years.
+       mHshldInc100000to124999_&_years. mHshldInc125000to149999_&_years. mHshldInc150000to199999_&_years. 
+       mHshldInc200000plus_&_years.
 
        mNumOccupiedHsgUnits_&_years. mNumOccupiedHsgUnitsB_&_years.
        mNumOccupiedHsgUnitsW_&_years. mNumOccupiedHsgUnitsH_&_years.
@@ -498,6 +500,41 @@
        mNumOwnCstBurden_50_74K_&_years. mNumOwnCstBurden_75_99K_&_years. 
        mNumOwnCstBurden_100_149_&_years. mNumOwnCstBurden_GT150K_&_years. 
 
+       mMedRent0bd_&_years. mMedRent1bd_&_years.
+       mMedRent2bd_&_years. mMedRent3bd_&_years.
+       mMedRent4bd_&_years. mMedRent5plusbd_&_years.
+       
+       mNumHsgUnits_&_years.
+       
+       mNumHsgUnits0bd_&_years. mNumHsgUnits1bd_&_years.
+       mNumhsgUnits2bd_&_years. mNumhsgUnits3bd_&_years.
+       mNumHsgUnits3plusbd_&_years.
+       mNumHsgUnits4bd_&_years. mNumHsgUnits5plusbd_&_years.
+       
+       mNumRentOccHU0bd_&_years. mNumRentOccHU1bd_&_years. 
+       mNumRentOccHU2bd_&_years. mNumRentOccHU3bd_&_years.
+       mNumRentOccHU4bd_&_years. mNumRentOccHU5plusbd_&_years.
+       mNumRentOccHU3plusbd_&_years.
+       
+       mNumOwnOccHU0bd_&_years. mNumOwnOccHU1bd_&_years.
+       mNumOwnOccHU2bd_&_years. mNumOwnOccHU3bd_&_years.
+       mNumOwnOccHU4bd_&_years. mNumOwnOccHU5plusbd_&_years.
+       mNumOwnOccHU3plusbd_&_years.
+       
+       mNumRtOHU0Bunder500_&_years. mNumRtOHU0B500to749_&_years. 
+       mNumRtOHU0B750to999_&_years. mNumRtOHU0B1000to1499_&_years.
+       mNumRtOHU0B1500plus_&_years. mNumRtOHU0B1000plus_&_years.
+       mNumRtOHU1Bunder500_&_years. mNumRtOHU1B500to749_&_years. 
+       mNumRtOHU1B750to999_&_years. mNumRtOHU1B1000to1499_&_years. 
+       mNumRtOHU1B1500plus_&_years. mNumRtOHU1B1000plus_&_years.
+       mNumRtOHU2Bunder500_&_years. mNumRtOHU2B500to749_&_years.
+       mNumRtOHU2B750to999_&_years. mNumRtOHU2B1000to1499_&_years. 
+       mNumRtOHU2B1500plus_&_years. mNumRtOHU2B1000plus_&_years. 
+       mNumRtOHU3Bunder500_&_years. mNumRtOHU3B500to749_&_years. 
+       mNumRtOHU3B750to999_&_years. mNumRtOHU3B1000to1499_&_years.
+       mNumRtOHU3B1500plus_&_years. mNumRtOHU3B1500plus_&_years. 
+       
+              
        mPopMovedLastYear_&_years.  mPopMovedLastYearB_&_years.
        mPopMovedLastYearW_&_years.  mPopMovedLastYearH_&_years.
        mPopMovedLastYearA_&_years.  mPopMovedLastYearIOM_&_years.
@@ -518,24 +555,24 @@
       ( &geo_name = GEO2010 and %upcase( &source_geo_var ) = GEO2010 ) or
     ( &geo_name = COUNTY and %upcase( &source_geo_var ) = REGCOUNTY )%then %do;
 
-    ** Census tracts from census tract source (same year): just recopy selected vars **;
-    
-    data &out_ds (label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label");
-    
-      set &source_ds_work (keep=&geo_var &count_vars &moe_vars);
+	    ** Census tracts from census tract source (same year): just recopy selected vars **;
 
-    run;
+	    data &out_ds (label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label");
 
-  %Finalize_data_set( 
-  data=&out_ds.,
-  out=&out_ds.,
-  outlib=&_out_lib.,
-  label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
-  sortby=&geo_name.,
-  restrictions=None,
-  printobs=0,
-  revisions=&revisions.
-  )
+	      set &source_ds_work (keep=&geo_var &count_vars &moe_vars);
+
+	    run;
+
+	  %Finalize_data_set( 
+	  data=&out_ds.,
+	  out=&out_ds.,
+	  outlib=&_out_lib.,
+	  label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
+	  sortby=&geo_name.,
+	  restrictions=None,
+	  printobs=0,
+	  revisions=&revisions.
+	  )
 
 
   %end;
@@ -543,28 +580,94 @@
   %else %do;
 
     ** Transform data from source geography (&source_geo_var) to target geography (&geo_var) **;
+    
+   	%if &geo = councildist %then %do;
+   
+		%if &_state_ab = md %then %do;
 
-    %Transform_geo_data(
-      dat_ds_name=&source_ds_work,
-      dat_org_geo=&source_geo_var,
-      dat_count_vars=&count_vars,
-      dat_count_moe_vars=&moe_vars,
-      dat_prop_vars=,
-      wgt_ds_name=General.&geo_wt_file,
-      wgt_org_geo=&source_geo_var,
-      wgt_new_geo=&geo_var,
-      wgt_id_vars=,
-      wgt_wgt_var=popwt,
-      out_ds_name=&out_ds._,
-      out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
-      calc_vars=,
-      calc_vars_labels=,
-      keep_nonmatch=N,
-      show_warnings=10,
-      print_diag=Y,
-      full_diag=N,
-      mprint=Y
-    )
+			data &geo_wt_file (where=(ucounty in("24009" "24017" "24021" "24031" "24033")));
+				set General.&geo_wt_file;
+
+			ucounty=substr(&source_geo_var,1,5);
+			run; 
+		%end;	
+		%if &_state_ab = va %then %do;
+
+			data &geo_wt_file (where=(ucounty in("51013" "51043" "51047" "51059" "51061" "51107" "51153" "51157" "51177" "51179" "51187" "51510" "51600" "51610" "51630" "51683" "51685")));
+				set General.&geo_wt_file;
+
+			ucounty=substr(&source_geo_var,1,5);
+			run; 
+		%end;
+		%if &_state_ab = wv %then %do;
+
+			data &geo_wt_file (where=(ucounty="54037"));
+				set General.&geo_wt_file;
+
+			ucounty=substr(&source_geo_var,1,5);
+			run; 
+		%end;
+		%if &_state_ab = dc %then %do;
+
+			data &geo_wt_file (where=(ucounty ="11001"));
+				set General.&geo_wt_file;
+
+			ucounty=substr(&source_geo_var,1,5);
+			run; 
+		%end;
+   	
+
+		    %Transform_geo_data(
+		      dat_ds_name=&source_ds_work,
+		      dat_org_geo=&source_geo_var,
+		      dat_count_vars=&count_vars,
+		      dat_count_moe_vars=&moe_vars,
+		      dat_prop_vars=,
+		      wgt_ds_name=&geo_wt_file,
+		      wgt_org_geo=&source_geo_var,
+		      wgt_new_geo=&geo_var,
+		      wgt_id_vars=,
+		      wgt_wgt_var=popwt,
+		      out_ds_name=&out_ds._,
+		      out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
+		      calc_vars=,
+		      calc_vars_labels=,
+		      keep_nonmatch=N,
+		      show_warnings=10,
+		      print_diag=Y,
+		      full_diag=N,
+		      mprint=Y
+		    )
+
+	   %end;
+   
+  	 %else %do;
+   
+	    %Transform_geo_data(
+		 dat_ds_name=&source_ds_work,
+		 dat_org_geo=&source_geo_var,
+		 dat_count_vars=&count_vars,
+		 dat_count_moe_vars=&moe_vars,
+		 dat_prop_vars=,
+		 wgt_ds_name=General.&geo_wt_file,
+		 wgt_org_geo=&source_geo_var,
+		 wgt_new_geo=&geo_var,
+		 wgt_id_vars=,
+		 wgt_wgt_var=popwt,
+		 out_ds_name=&out_ds._,
+		 out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
+		 calc_vars=,
+		 calc_vars_labels=,
+		 keep_nonmatch=N,
+		 show_warnings=10,
+		 print_diag=Y,
+		 full_diag=N,
+		 mprint=Y
+	    )
+
+	    %end;
+   
+   
 
   data &out_ds;
     set &out_ds._;

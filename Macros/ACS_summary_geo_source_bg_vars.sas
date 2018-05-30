@@ -544,94 +544,9 @@
   
 
     ** Income - Block group-level variables **;
-
-    AggFamilyIncome_&_years. = B19127e1;
-    
-  FamIncomeLT75k_&_years. = 
-    sum(B19101e2, B19101e3, B19101e4, B19101e5, B19101e6, B19101e7, 
-      B19101e8, B19101e9, B19101e10, B19101e11, B19101e12 );
-
-  FamIncomeGT200k_&_years. = B19101e17;
-
-  AggIncome_&_years. = B19313e1;
-    AggIncomeB_&_years. = B19313Be1;
-    AggIncomeW_&_years. = B19313He1;
-    AggIncomeH_&_years. = B19313Ie1;
-    AggIncomeA_&_years. = sum(B19313De1, B19313Ee1 );
-    AggIncomeIOM_&_years. = sum(B19313Ce1, B19313Fe1, B19313Ge1 );
-    AggIncomeAIOM_&_years. = sum(B19313Ce1, B19313De1, B19313Ee1, B19313Fe1, B19313Ge1 );
-
-  AggHshldIncome_&_years. = B19025e1;
-    AggHshldIncomeB_&_years. = B19025Be1;
-    AggHshldIncomeW_&_years. = B19025He1;
-    AggHshldIncomeH_&_years. = B19025Ie1;
-    AggHshldIncomeA_&_years. = sum(B19025De1, B19025Ee1 );
-    AggHshldIncomeIOM_&_years. = sum(B19025Ce1, B19025Fe1, B19025Ge1 );
-    AggHshldIncomeAIOM_&_years. = sum(B19025Ce1, B19025De1, B19025Ee1, B19025Fe1, B19025Ge1 );
-
-    mAggFamilyIncome_&_years. = B19127m1;
-
-  mFamIncomeLT75k_&_years. = 
-    %moe_sum( var=B19101m2 B19101m3 B19101m4 B19101m5 B19101m6 B19101m7 
-    B19101m8 B19101m9 B19101m10 B19101m11 B19101m12);
-
-  mFamIncomeGT200k_&_years. = B19101m17;
-
-  mAggIncome_&_years. = B19313m1;
-      mAggIncomeB_&_years. = B19313Bm1;
-      mAggIncomeW_&_years. = B19313Hm1;
-      mAggIncomeH_&_years. = B19313Im1;
-      mAggIncomeA_&_years. = %moe_sum( var=B19313Dm1 B19313Em1);
-      mAggIncomeIOM_&_years. = %moe_sum( var=B19313Cm1 B19313Fm1 B19313Gm1);
-      mAggIncomeAIOM_&_years. = %moe_sum( var=B19313Cm1 B19313Dm1 B19313Em1 B19313Fm1 B19313Gm1);
-
-  mAggHshldIncome_&_years. = B19025m1;
-    mAggHshldIncomeB_&_years. = B19025Bm1;
-    mAggHshldIncomeW_&_years. = B19025Hm1;
-    mAggHshldIncomeH_&_years. = B19025Im1;
-    mAggHshldIncomeA_&_years. = %moe_sum( var=B19025Dm1 B19025Em1 );
-    mAggHshldIncomeIOM_&_years. = %moe_sum( var=B19025Cm1 B19025Fm1 B19025Gm1 );
-    mAggHshldIncomeAIOM_&_years. = %moe_sum( var=B19025Cm1 B19025Dm1 B19025Em1 B19025Fm1 B19025Gm1 );
-
-    label 
-      AggFamilyIncome_&_years. = "Aggregate family income ($ &_last_year), &_years_dash "
-    FamIncomeLT75k_&_years. = "Family income less than $75000, &_years_dash "
-    FamIncomeGT200k_&_years. = "Family income more than $200,000, &_years_dash "
-    AggIncome_&_years. = "Aggregate income, &_years_dash "
-      AggIncomeB_&_years. = "Aggregate income, Black, &_years_dash "
-      AggIncomeW_&_years. = "Aggregate income, Non-Hispanic White, &_years_dash "
-      AggIncomeH_&_years. = "Aggregate income, Hispanic/Latino, &_years_dash "
-      AggIncomeA_&_years. = "Aggregate income, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
-      AggIncomeIOM_&_years. = "Aggregate income, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
-      AggIncomeAIOM_&_years. = "Aggregate income, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-    AggHshldIncome_&_years. = "Aggregate household income, &_years_dash "
-      AggHshldIncomeB_&_years. = "Aggregate household income, Black/African American, &_years_dash "
-      AggHshldIncomeW_&_years. = "Aggregate household income, Non-Hispanic White, &_years_dash "
-      AggHshldIncomeH_&_years. = "Aggregate household income, Hispanic/Latino, &_years_dash "
-      AggHshldIncomeA_&_years. = "Aggregate household income, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
-      AggHshldIncomeIOM_&_years. = "Aggregate household income, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
-      AggHshldIncomeAIOM_&_years. = "Aggregate household income, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-    mAggFamilyIncome_&_years. = "Aggregate family income ($ &_last_year), MOE, &_years_dash "
-    mFamIncomeLT75k_&_years. = "Family income less than $75000, MOE, &_years_dash "
-    mFamIncomeGT200k_&_years. = "Family income more than $200,000, MOE, &_years_dash "
-    mAggIncome_&_years. = "Aggregate income, MOE, &_years_dash "
-      mAggIncomeB_&_years. = "Aggregate income, Black, MOE, &_years_dash "
-      mAggIncomeW_&_years. = "Aggregate income, Non-Hispanic White, MOE, &_years_dash "
-      mAggIncomeH_&_years. = "Aggregate income, Hispanic/Latino, MOE, &_years_dash "
-      mAggIncomeA_&_years. = "Aggregate income, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
-      mAggIncomeIOM_&_years. = "Aggregate income, American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
-      mAggIncomeAIOM_&_years. = "Aggregate income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-    mAggHshldIncome_&_years. = "Aggregate household income, MOE, &_years_dash "
-      mAggHshldIncomeB_&_years. = "Aggregate household income, Black/African American, MOE, &_years_dash "
-      mAggHshldIncomeW_&_years. = "Aggregate household income, Non-Hispanic White, MOE, &_years_dash "
-      mAggHshldIncomeH_&_years. = "Aggregate household income, Hispanic/Latino, MOE, &_years_dash "
-      mAggHshldIncomeA_&_years. = "Aggregate household income, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
-      mAggHshldIncomeIOM_&_years. = "Aggregate household income, American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
-      mAggHshldIncomeAIOM_&_years. = "Aggregate household income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-      ;
-
-
-    ** Housing - Block group vars **;
+		***LH MOVED 5-25-18 to geo_soucre_tr_vars***; 
+  
+     ** Housing - Block group vars **;
     
   NumOccupiedHsgUnits_&_years. = B25003e1;
     NumOccupiedHsgUnitsB_&_years. = B25003Be1;
