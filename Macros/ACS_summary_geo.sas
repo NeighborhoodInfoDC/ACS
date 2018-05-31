@@ -125,9 +125,9 @@
 	   RentCostBurdenDenom: OwnerCostBurdenDenom:
 
        ;
-
-    %let moe_vars =
-           mTotPop_&_years. 
+	
+	%**variables appear in all years;
+	%let moeallyears=  mTotPop_&_years. 
 
        mNumHshlds_&_years. mNumHshldsB_&_years.
        mNumHshldsW_&_years. mNumHshldsH_&_years.
@@ -416,17 +416,12 @@
 	   mGrossRent500_549_&_years. mGrossRent550_599_&_years. mGrossRent600_649_&_years. 
 	   mGrossRent650_699_&_years. mGrossRent700_749_&_years. mGrossRent750_799_&_years. 
 	   mGrossRent800_899_&_years. mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. 
-	   mGrossRent1250_1499_&_years. mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. 
-	   mGrossRent2500_2999_&_years. mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
+	   mGrossRent1250_1499_&_years. mGrossRent1500_1999_&_years. mGrossRentGT2000_&_years. 
 	   mGrossRentNoCash_&_years. 
 
 	   mIncmByRenterCst_LT10K_&_years. mIncmByRenterCst_10_19K_&_years. mIncmByRenterCst_20_34K_&_years. 
 	   mIncmByRenterCst_35_49K_&_years. mIncmByRenterCst_50_74K_&_years. mIncmByRenterCst_75_99K_&_years. 
 	   mIncmByRenterCst_GT100K_&_years. 
-
-	   mIncmByOwnerCst_LT10K_&_years. mIncmByOwnerCst_10_19K_&_years. mIncmByOwnerCst_20_34K_&_years. 
-	   mIncmByOwnerCst_35_49K_&_years. mIncmByOwnerCst_50_74K_&_years. mIncmByOwnerCst_75_99K_&_years. 
-	   mIncmByOwnerCst_100_149_&_years. mIncmByOwnerCst_GT150K_&_years. 
 
 	   mAgeByRenterCst_15_24_&_years. mAgeByRenterCst_25_34_&_years. mAgeByRenterCst_35_64_&_years. mAgeByRenterCst_65Over_&_years. 
 
@@ -449,18 +444,6 @@
        mNumRentCstBurden_20_34K_&_years. mNumRentCstBurden_35_49K_&_years. 
        mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99K_&_years. 
        mNumRentCstBurden_GT100K_&_years. 
-
-       mNumOwnCstBurden_LT10K_&_years. mNumOwnCstBurden_10_19K_&_years. 
-       mNumOwnCstBurden_20_34K_&_years. mNumOwnCstBurden_35_49K_&_years. 
-       mNumOwnCstBurden_50_74K_&_years. mNumOwnCstBurden_75_99K_&_years. 
-       mNumOwnCstBurden_100_149_&_years. mNumOwnCstBurden_GT150K_&_years. 
-
-
-       mMedRent0bd_&_years. mMedRent1bd_&_years.
-       mMedRent2bd_&_years. mMedRent3bd_&_years.
-       mMedRent4bd_&_years. mMedRent5plusbd_&_years.
-       
- 
        
        mNumHsgUnits0bd_&_years. mNumHsgUnits1bd_&_years.
        mNumhsgUnits2bd_&_years. mNumhsgUnits3bd_&_years.
@@ -478,18 +461,13 @@
        mNumOwnOccHU3plusbd_&_years.
        
        mNumRtOHU0Bunder500_&_years. mNumRtOHU0B500to749_&_years. 
-       mNumRtOHU0B750to999_&_years. mNumRtOHU0B1000to1499_&_years.
-       mNumRtOHU0B1500plus_&_years. mNumRtOHU0B1000plus_&_years.
+       mNumRtOHU0B750to999_&_years. mNumRtOHU0B1000plus_&_years.
        mNumRtOHU1Bunder500_&_years. mNumRtOHU1B500to749_&_years. 
-       mNumRtOHU1B750to999_&_years. mNumRtOHU1B1000to1499_&_years. 
-       mNumRtOHU1B1500plus_&_years. mNumRtOHU1B1000plus_&_years.
+       mNumRtOHU1B750to999_&_years. mNumRtOHU1B1000plus_&_years.
        mNumRtOHU2Bunder500_&_years. mNumRtOHU2B500to749_&_years.
-       mNumRtOHU2B750to999_&_years. mNumRtOHU2B1000to1499_&_years. 
-       mNumRtOHU2B1500plus_&_years. mNumRtOHU2B1000plus_&_years. 
+       mNumRtOHU2B750to999_&_years.  mNumRtOHU2B1000plus_&_years. 
        mNumRtOHU3Bunder500_&_years. mNumRtOHU3B500to749_&_years. 
-       mNumRtOHU3B750to999_&_years. mNumRtOHU3B1000to1499_&_years.
-       mNumRtOHU3B1500plus_&_years. mNumRtOHU3B1500plus_&_years. 
-       
+       mNumRtOHU3B750to999_&_years. mNumRtOHU3B1000plus_&_years. 
               
        mPopMovedLastYear_&_years.  mPopMovedLastYearB_&_years.
        mPopMovedLastYearW_&_years.  mPopMovedLastYearH_&_years.
@@ -500,10 +478,55 @@
        mPopMovedDiffCntyW_&_years.  mPopMovedDiffCntyH_&_years.
        mPopMovedDiffCntyA_&_years.  mPopMovedDiffCntyIOM_&_years.
        mPopMovedDiffCntyAIOM_&_years.
- 
-           ;
+	   ;
+	
+	%**variables appear only 2013 and later; 
+	%let moe2013plus = 
+	  	   mIncmByOwnerCst_LT10K_&_years. mIncmByOwnerCst_10_19K_&_years. mIncmByOwnerCst_20_34K_&_years. 
+		   mIncmByOwnerCst_35_49K_&_years. mIncmByOwnerCst_50_74K_&_years. mIncmByOwnerCst_75_99K_&_years. 
+		   mIncmByOwnerCst_100_149_&_years. mIncmByOwnerCst_GT150K_&_years. 
+
+			mNumOwnCstBurden_LT10K_&_years. mNumOwnCstBurden_10_19K_&_years. 
+       		mNumOwnCstBurden_20_34K_&_years. mNumOwnCstBurden_35_49K_&_years. 
+       		mNumOwnCstBurden_50_74K_&_years. mNumOwnCstBurden_75_99K_&_years. 
+       		mNumOwnCstBurden_100_149_&_years. mNumOwnCstBurden_GT150K_&_years. 
+
+			;
+
+	%**variables appear only 2015 and later; 
+	%let moe2015plus = 
+			
+			mMedRent0bd_&_years. mMedRent1bd_&_years.
+	       mMedRent2bd_&_years. mMedRent3bd_&_years.
+	       mMedRent4bd_&_years. mMedRent5plusbd_&_years.
+		
+		   mGrossRent2000_2499_&_years. mGrossRent2500_2999_&_years. mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
+
+			mNumRtOHU0B1000to1499_&_years. mNumRtOHU0B1500plus_&_years.
+			mNumRtOHU1B1000to1499_&_years. mNumRtOHU1B1500plus_&_years.
+			mNumRtOHU2B1000to1499_&_years. mNumRtOHU2B1500plus_&_years.
+			mNumRtOHU3B1000to1499_&_years. mNumRtOHU3B1500plus_&_years. 
+			
+		;
+
+	%if &_last_year. < 2013 %then %do; 
+    	%let moe_vars =&moeallyears.; 
+
+	%end; 
+
+	%else %if &_last_year. > 2012 %then %do; 
+		%let moe_vars =&moeallyears. &moe2013plus.; 
+ 	
+         %end; 
+
+	%else %if &_last_year. > 2014 %then %do; 
+		 	
+		%let moe_vars =&moeallyears. &moe2013plus. &moe2015plus;
+
+		%end;
                
   %end;
+
   
   %put _local_;
   

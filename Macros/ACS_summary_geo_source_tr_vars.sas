@@ -2304,7 +2304,8 @@
 	  medianhomevalue_&_years. = B25077e1;
   	  		mmedianhomevalue_&_years. = B25077m1;
 
-	 %if (&_years. ="2006_10" | &_years. = "2007_11" | &_years. = "2008_12" | &_years. = "2009_13" | &_years. = "2010_14") %then %do; 
+		*table change to B25063 in 2011-15; 
+	 %if &_last_year. < 2015 %then %do; 
 
 	  GrossRentLT100_&_years. = B25063e3;
 	  GrossRent100_149_&_years. = B25063e4;
@@ -2536,7 +2537,7 @@
 
 	
 	 /*table change in 2010-14 for B25074*/ 
-	%if (&_years. ="2006_10" | &_years. = "2007_11" | &_years. = "2008_12" | &_years. = "2009_13") %then %do;  
+	%if &_last_year. < 2014  %then %do;  
 		  IncmByRenterCst_LT10K_&_years. = sum(B25074e3, B25074e4, B25074e5, B25074e6, B25074e7);
 		  IncmByRenterCst_10_19K_&_years. = sum(B25074e10, B25074e11, B25074e12, B25074e13, B25074e14);
 		  IncmByRenterCst_20_34K_&_years. = sum(B25074e17, B25074e18, B25074e19, B25074e20, B25074e21);
@@ -2688,11 +2689,11 @@
 
       ;
 
-	%if (&_years. ="2006_10" | &_years. = "2007_11" | &_years. = "2008_12" ) %then %do; 
+	%if &_last_year. < 2013  %then %do; 
 	
 	%end; 
 
-	%else %if (&_years. = "2009_13" ) %then %do; 
+	%else %if &_last_year.= 2013 %then %do; 
 
 		IncmByOwnerCst_LT10K_&_years. = sum(B25095e3, B25095e4, B25095e5, B25095e6, B25095e7);
 	  	IncmByOwnerCst_10_19K_&_years. = sum(B25095e10, B25095e11, B25095e12, B25095e13, B25095e14);
@@ -2892,7 +2893,7 @@
 		mNumOwnOccHU5plusbd_&_years. = %moe_sum( var=B25042m8 );
 		mNumOwnOccHU3plusbd_&_years. = %moe_sum( var=B25042m6 B25042m7 B25042m8 );
 
-		%if (&_years. ="2006_10" | &_years. = "2007_11" | &_years. = "2008_12" | &_years. = "2009_13" | &_years. = "2010_14") %then %do; 
+		%if &_last_year. < 2015 %then %do; 
 			NumRtOHU0Bunder500_&_years. = sum( B25068e4, B25068e5, B25068e6, B25068e10 );
 			NumRtOHU0B500to749_&_years. = B25068e7;
 			NumRtOHU0B750to999_&_years. = B25068e8;
@@ -2904,7 +2905,7 @@
 			NumRtOHU2Bunder500_&_years. = sum( B25068e22, B25068e23, B25068e24, B25068e28 );
 			NumRtOHU2B500to749_&_years. = B25068e25;
 			NumRtOHU2B750to999_&_years. = B25068e26;
-			NumRtOHU2B1000plus_&_years. = B25068e27 
+			NumRtOHU2B1000plus_&_years. = B25068e27; 
 			NumRtOHU3Bunder500_&_years. = sum( B25068e31, B25068e32, B25068e33, B25068e37);
 			NumRtOHU3B500to749_&_years. = B25068e34;
 			NumRtOHU3B750to999_&_years. = B25068e35;
