@@ -564,32 +564,32 @@
    
 		%if &_state_ab = md %then %do;
 
-			data &geo_wt_file (where=(ucounty in("24009" "24017" "24021" "24031" "24033")));
-				set General.&geo_wt_file;
+			data &source_ds_work (where=(ucounty in("24009" "24017" "24021" "24031" "24033")));
+				set &source_ds_work;
 
 			ucounty=substr(&source_geo_var,1,5);
 			run; 
 		%end;	
 		%if &_state_ab = va %then %do;
 
-			data &geo_wt_file (where=(ucounty in("51013" "51043" "51047" "51059" "51061" "51107" "51153" "51157" "51177" "51179" "51187" "51510" "51600" "51610" "51630" "51683" "51685")));
-				set General.&geo_wt_file;
+			data &source_ds_work (where=(ucounty in("51013" "51043" "51047" "51059" "51061" "51107" "51153" "51157" "51177" "51179" "51187" "51510" "51600" "51610" "51630" "51683" "51685")));
+				set &source_ds_work;
 
 			ucounty=substr(&source_geo_var,1,5);
 			run; 
 		%end;
 		%if &_state_ab = wv %then %do;
 
-			data &geo_wt_file (where=(ucounty="54037"));
-				set General.&geo_wt_file;
+			data &source_ds_work (where=(ucounty="54037"));
+				set &source_ds_work;
 
 			ucounty=substr(&source_geo_var,1,5);
 			run; 
 		%end;
 		%if &_state_ab = dc %then %do;
 
-			data &geo_wt_file (where=(ucounty ="11001"));
-				set General.&geo_wt_file;
+			data &source_ds_work (where=(ucounty ="11001"));
+				set &source_ds_work;
 
 			ucounty=substr(&source_geo_var,1,5);
 			run; 
@@ -602,7 +602,7 @@
 		      dat_count_vars=&count_vars,
 		      dat_count_moe_vars=&moe_vars,
 		      dat_prop_vars=,
-		      wgt_ds_name=&geo_wt_file,
+		      wgt_ds_name=General.&geo_wt_file,
 		      wgt_org_geo=&source_geo_var,
 		      wgt_new_geo=&geo_var,
 		      wgt_id_vars=,
