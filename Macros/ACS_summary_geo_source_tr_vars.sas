@@ -2382,6 +2382,8 @@
 	  GrossRent3000_3499_&_years. = B25063e25;
 	  GrossRentGT3500_&_years. = B25063e26;
 	  GrossRentNoCash_&_years. = B25063e27;
+	  GrossRentGT2000_&_years. = sum(B25063e23, B25063e24, B25063e25, B25063e26);
+	  
 		  
 		  mGrossRentLT100_&_years. = B25063m3;
 		  mGrossRent100_149_&_years. = B25063m4;
@@ -2408,6 +2410,7 @@
 		  mGrossRent3000_3499_&_years. = B25063m25;
 		  mGrossRentGT3500_&_years. = B25063m26;
 		  mGrossRentNoCash_&_years. = B25063m27;
+		  mGrossRentGT2000_&_years. = %moe_sum(var=B25063m23 B25063m24 B25063m25 B25063m26);
 
 		  label
 
