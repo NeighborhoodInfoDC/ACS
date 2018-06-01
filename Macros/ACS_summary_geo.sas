@@ -550,6 +550,7 @@
 	  sortby=&geo_name.,
 	  restrictions=None,
 	  printobs=0,
+	  freqvars=&geo_name.,
 	  revisions=&revisions.
 	  )
 
@@ -661,17 +662,12 @@
   sortby=&geo_name.,
   restrictions=None,
   printobs=0,
+  freqvars=&geo_name.,
   revisions=&revisions.
   )
     
   %end;  
 
-
-  ** Add sortedby= to data set descriptor **;
-
-  proc datasets library=&_out_lib memtype=(data) nolist;
-    modify &out_ds (sortedby=&geo_var);
-  quit;
 
 %mend ACS_summary_geo;
 
