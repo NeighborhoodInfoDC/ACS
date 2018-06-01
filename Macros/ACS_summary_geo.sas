@@ -550,7 +550,6 @@
 	  sortby=&geo_name.,
 	  restrictions=None,
 	  printobs=0,
-	  freqvars=&geo_name.,
 	  revisions=&revisions.
 	  )
 
@@ -662,7 +661,6 @@
   sortby=&geo_name.,
   restrictions=None,
   printobs=0,
-  freqvars=&geo_name.,
   revisions=&revisions.
   )
     
