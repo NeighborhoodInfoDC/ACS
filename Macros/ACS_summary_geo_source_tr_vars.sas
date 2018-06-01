@@ -2410,7 +2410,7 @@
 		  mGrossRent3000_3499_&_years. = B25063m25;
 		  mGrossRentGT3500_&_years. = B25063m26;
 		  mGrossRentNoCash_&_years. = B25063m27;
-		  mGrossRentGT2000_&_years. = %moe_sum(B25063m23 B25063m24 B25063m25 B25063m26);
+		  mGrossRentGT2000_&_years. = %moe_sum(var=B25063m23 B25063m24 B25063m25 B25063m26);
 
 		  label
 
