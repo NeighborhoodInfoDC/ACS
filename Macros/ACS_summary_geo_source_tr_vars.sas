@@ -159,7 +159,33 @@
       B01001Fe14, B01001Fe15, B01001Fe16, B01001Fe29, B01001Fe30, B01001Fe31, 
       B01001Ge14, B01001Ge15, B01001Ge16, B01001Ge29, B01001Ge30, B01001Ge31 );
 
-    mNumFamiliesB_&_years. = B19101Bm1;
+/*Yipeng Su Added new varables 6/4/2018*/
+  PopUnder18YearsM_&_years.=
+  sum()
+
+  PopUnder18YearsF_&_years.= 
+  sum()
+
+  Pop18_34YearsM_&_years.=
+  sum()
+
+  Pop18_34YearsF_&_years.= 
+  sum()
+
+  Pop35_64YearsM_&_years.=
+  sum()
+
+  Pop35_64YearsF_&_years.= 
+  sum()
+
+  Pop65andOverYearsM_&_years.=
+  sum()
+
+  Pop65andOverYearsF_&_years.= 
+  sum()
+
+
+  mNumFamiliesB_&_years. = B19101Bm1;
   mNumFamiliesW_&_years. = B19101Hm1;
   mNumFamiliesH_&_years. = B19101Im1;
   mNumFamiliesA_&_years. = %moe_sum( var=B19101Dm1 B19101Em1);
@@ -301,6 +327,30 @@
            B01001Fm14 B01001Fm15 B01001Fm16 B01001Fm29 B01001Fm30 B01001Fm31 
            B01001Gm14 B01001Gm15 B01001Gm16 B01001Gm29 B01001Gm30 B01001Gm31 );
 
+  mPopUnder18YearsM_&_years. = 
+    %moe_sum()
+
+  mPopUnder18YearsF_&_years. = 
+    %moe_sum()
+
+  mPop18_34YearsM_&_years. = 
+    %moe_sum()
+
+  mPop18_34YearsF_&_years. = 
+    %moe_sum()
+
+  mPop35_64YearsM_&_years. = 
+    %moe_sum()
+
+  mPop35_64YearsF_&_years. = 
+    %moe_sum()
+
+ mPop65andOverYearsM_&_years. = 
+    %moe_sum()
+
+ mPop65andOverYearsF_&_years. = 
+    %moe_sum()
+
     label
     NumFamiliesB_&_years. = "Family HHs, Black/African American, &_years_dash "
     NumFamiliesW_&_years. = "Family HHs, Non-Hispanic White, &_years_dash "
@@ -339,6 +389,15 @@
     Pop65andOverYearsA_&_years. = "Persons 65 years old and over, Asian, Hawaiian and other Pacific Islander, &_years_dash "
     Pop65andOverYearsIOM_&_years. = "Persons 65 years old and over, American Indian/Alaska Native, other race, two or more races, &_years_dash "
     Pop65andOverYearsAIOM_&_years. = "Persons 65 years old and over, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+    PopUnder18YearsM_&_years. = "Persons under 18 years old, Male, &_years_dash "
+    PopUnder18YearsF_&_years. = "Persons under 18 years old, Female, &_years_dash "
+    Pop18_34YearsM_&_years.="Persons 18-34 years old, Male, &_years_dash "
+    Pop18_34YearsF_&_years.="Persons 18-34 years old, Female, &_years_dash "
+    Pop35_64YearsM_&_years.="Persons 35-64 years old, Male, &_years_dash"
+    Pop35_64YearsF_&_years.="Persons 35-64 years old, Female, &_years_dash"
+    Pop65andOverYearsM&_years.="Persons 65 years old and over, Male, &_years_dash "
+    Pop65andOverYearsF&_years.="Persons 65 years old and over, Female, &_years_dash "
+
     mNumFamiliesB_&_years. = "Family HHs, Black/African American, MOE, &_years_dash "
     mNumFamiliesW_&_years. = "Family HHs, Non-Hispanic White, MOE, &_years_dash "
     mNumFamiliesH_&_years. = "Family HHs, Hispanic/Latino, MOE, &_years_dash "
@@ -376,7 +435,16 @@
     mPop65andOverYearsA_&_years. = "Persons 65 years old and over,Asian, Hawaiian and other Pacific Islander, MOE, &_years_dash "
     mPop65andOverYearsIOM_&_years. = "Persons 65 years old and over, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
     mPop65andOverYearsAIOM_&_years. = "Persons 65 years old and over, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-    ;
+    mPopUnder18YearsM_&_years. = "Persons under 18 years old, Male, MOE, &_years_dash "
+    mPopUnder18YearsF_&_years. = "Persons under 18 years old, Female, MOE, &_years_dash "
+    mPop18_34YearsM_&_years.="Persons 18-34 years old, Male, MOE,&_years_dash "
+    mPop18_34YearsF_&_years.="Persons 18-34 years old, Female, MOE,&_years_dash "
+    mPop35_64YearsM_&_years.="Persons 35-64 years old, Male, MOE,&_years_dash"
+    mPop35_64YearsF_&_years.="Persons 35-64 years old, Female, MOE,&_years_dash"
+    mPop65andOverYearsM&_years.="Persons 65 years old and over, Male, MOE,&_years_dash "
+    mPop65andOverYearsF&_years.="Persons 65 years old and over, Female, MOE,&_years_dash "
+
+;
 
       ** Foreign born **;
 
@@ -3206,6 +3274,40 @@
         mPopMovedDiffCntyIOM_&_years. = "Population moved from a different county in past year, American Indian/Alaska Native, Some other race, Two or more races, , MOE, &_years_dash"
         mPopMovedDiffCntyAIOM_&_years. = "Population moved from a different county in past year, All remaining groups other than Black, Non-Hispanic White, Hispanic, , MOE, &_years_dash"
     ; 
+
+
+
+   InsCovUnder18Years_&_years.= 
+   sum();
+
+   InsCov18_34Years_&_years.= 
+   sum();
+
+   InsCov35_64Years_&_years.= 
+   sum();
+   
+   InsCov65andOverYears_&_years.= 
+   sum();
+   
+   mInsCovUnder18Years_&_years.= %moe_sum(var=);
+   mInsCov18_34Years_&_years.= %moe_sum(var=);
+   mInsCov35_64Years_&_years.= %moe_sum(var=);
+   mInsCov65andOverYears_&_years.= %moe_sum(var=);
+
+label 
+   InsCovUnder18Years_&_years.= "Persons below 18 years old with health insurance coverage, Total, &_years_dash"
+   InsCov18_34Years_&_years.= "Persons 18-34 years old with health insurance coverage, Total, &_years_dash"
+   InsCov35_64Years_&_years.=  "Persons 35-64 years old with health insurance coverage, Total, &_years_dash"
+   InsCov65andOverYears_&_years.= "Persons over 65 years old with health insurance coverage, Total, &_years_dash"
+   mInsCovUnder18Years_&_years.="Persons below 18 years old with health insurance coverage, Total, MOE, &_years_dash"
+   mInsCov18_34Years_&_years.= "Persons 18-34 years old with health insurance coverage, Total, MOE, &_years_dash"
+   mInsCov35_64Years_&_years.=  "Persons 35-64 years old with health insurance coverage, Total, MOE, &_years_dash"
+   mInsCov65andOverYears_&_years.= "Persons over 65 years old with health insurance coverage, Total, MOE, &_years_dash"
+
+;
+
+
+
 
 
 %mend ACS_summary_geo_source_tr_vars;
