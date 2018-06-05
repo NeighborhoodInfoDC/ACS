@@ -80,7 +80,7 @@
  B25088	0106	MEDIAN SELECTED MONTHLY OWNER COSTS (DOLLARS) BY MORTGAGE STATUS
  B25091	0106	MORTGAGE STATUS BY SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME IN THE PAST 12 MONTHS
  B25105 	0107	MEDIAN MONTHLY HOUSING COSTS (DOLLARS)
-
+ B08119       PERSON BY EARNING
  Modifications:
   03/20/13 PAT Added tables B16004 C24030 C24010 B19050 B19001 B25063 
                B25065 B25061 B25062 B25070.
@@ -93,6 +93,7 @@
   03/04/14 MSW Added sequence numbers 0063, 0064 and 0075. Added  B01002Ee/m, B25014Ee/m, and B19013Ee/m to drop list. 
   11/05/14 SXZ Added Table B19113 B09001
   06826/17 LP and RP Added Tables for racial equity work.
+  06/05/18 Yipeng Su Added tables for pop by sex and age, insurance coverage, family type, earnings for Stanton Commons 
 **************************************************************************/
 
 /** Macro Acs_sf - Start Definition **/
@@ -143,7 +144,7 @@
 	B25079 B25080 B25082
 	B25077
 	B25106
-	B25031 B25042 B25068 B05006 B27001 B25095 B25074 B14001
+	B25031 B25042 B25068 B05006 B27001 B25095 B25074 B14001 B08119
 ,
   
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from all data sets **/

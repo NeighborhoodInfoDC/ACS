@@ -11,6 +11,7 @@
  geography.
 
  Modifications: 7/29/16 - Added additional variables, included racial breakdowns. 
+                06/05/18-- Yipeng Su added additional variables pop by sex and age, insurance coverage, family type, earnings
 **************************************************************************/
 
 %macro ACS_summary_geo( geo, source_geo );
@@ -52,7 +53,7 @@
        RentCostBurdenDenom: OwnerCostBurdenDenom:
 
        NumRentCst: NumOwnCstBurden:
-
+      
        ;
            
     %let moe_vars =
@@ -183,7 +184,7 @@
        mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99K_&_years. 
        mNumRentCstBurden_GT100K_&_years. 
 
-
+ 
            ;
                
   %end;
@@ -201,6 +202,17 @@
        RentCostBurdenDenom: OwnerCostBurdenDenom:
 
        NumRentCst: NumOwnCst:
+
+	   PopUnder18YearsM: PopUnder18YearsF: Pop18_34YearsM: Pop18_34YearsF: Pop35_64YearsM:
+	   Pop35_64YearsF: Pop65andOverYearsM: Pop65andOverYearsF:
+
+       InsCovUnder18Years: InsCov18_34Years: InsCov35_64Years: InsCov65andOverYears: 
+	   NInsCovUnder18Years: NInsCov18_34Years: NInsCov35_64Years: NInsCov65andOverYears:
+
+       EarningUnder10K: Earning10to15K: Earning15to25K: Earning25to35K: Earning35to50K:
+	   Earning50to65K: Earning65to75K: EarningOver75K:
+
+	   FamMarriedCouple: FamMaleholder: FamFemaleholder: Nonfamlivingalone: Nonfamnotlivingalone:
        ;
 
     %let moe_vars =
@@ -508,6 +520,26 @@
        mPopMovedDiffCntyA_&_years.  mPopMovedDiffCntyIOM_&_years.
        mPopMovedDiffCntyAIOM_&_years.
  
+       mPopUnder18YearsM_&_years. mPopUnder18YearsF_&_years.
+	   mPop18_34YearsM_&_years. mPop18_34YearsF_&_years.
+	   mPop35_64YearsM_&_years. mPop35_64YearsF_&_years. 
+	   mPop65andOverYearsM_&_years. mPop65andOverYearsF_&_years. 
+
+       mInsCovUnder18Years_&_years. mInsCov18_34Years_&_years.
+	   mInsCov35_64Years_&_years. ov65andOverYears_&_years.
+
+	   mNInsCovUnder18Years_&_years. mNInsCov18_34Years_&_years.
+	   mNInsCov35_64Years_&_years. mNInsCov65andOverYears_&_years.
+
+	   mEarningUnder10K_&_years. mEarning10to15K_&_years.
+	   mEarning15to25K_&_years. mEarning25to35K_&_years.
+	   mEarning35to50K_&_years. mEarning50to65K_&_years.
+	   mEarning65to75K_&_years. mEarningOver75K_&_years.
+
+	   mFamMarriedCouple_&_years. mFamMaleholder_&_years.
+	   mFamFemaleholder_&_years. mNonfamlivingalone_&_years.
+	   mNonfamnotlivingalone_&_years.
+
            ;
                
   %end;
