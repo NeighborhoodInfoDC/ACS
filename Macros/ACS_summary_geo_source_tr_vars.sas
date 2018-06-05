@@ -161,28 +161,45 @@
 
 /*Yipeng Su Added new varables 6/4/2018*/
   PopUnder18YearsM_&_years.=
-  sum()
+  sum(B01001e3 B01001e4 B01001e5 B01001e6);   
 
   PopUnder18YearsF_&_years.= 
-  sum()
+  sum(B01001e27 B01001e28 B01001e29 B01001e30)
 
   Pop18_34YearsM_&_years.=
-  sum()
+  sum(B01001e7 B01001e8 B01001e9 B01001e10 B01001e11 B01001e12)
 
   Pop18_34YearsF_&_years.= 
-  sum()
+  sum(B01001e31 B01001e32 B01001e33 B01001e34 B01001e35 B01001e36)
 
   Pop35_64YearsM_&_years.=
-  sum()
+  sum(B01001e13 B01001e14 B01001e15 B01001e16 B01001e17 B01001e18 B01001e19)
 
   Pop35_64YearsF_&_years.= 
-  sum()
+  sum(B01001e37 B01001e38 B01001e39 B01001e40 B01001e41 B01001e42 B01001e43)
 
   Pop65andOverYearsM_&_years.=
-  sum()
+  sum(B01001e20 B01001e21 B01001e22 B01001e23 B01001e24 B01001e25)
 
   Pop65andOverYearsF_&_years.= 
-  sum()
+  sum(B01001e44 B01001e45 B01001e46 B01001e47 B01001e48 B01001e49)
+
+  mPopUnder18YearsM_&_years. = 
+    %moe_sum(var= B01001m3 B01001m4 B01001m5 B01001m6);
+  mPopUnder18YearsF_&_years. = 
+    %moe_sum(var=B01001m27 B01001m28 B01001m29 B01001m30);
+  mPop18_34YearsM_&_years. = 
+    %moe_sum(var=B01001m7 B01001m8 B01001m9 B01001m10 B01001m11 B01001m12);
+  mPop18_34YearsF_&_years. = 
+    %moe_sum(var=B01001m31 B01001m32 B01001m33 B01001m34 B01001m35 B01001m36);
+  mPop35_64YearsM_&_years. = 
+    %moe_sum(var=B01001m13 B01001m14 B01001m15 B01001m16 B01001m17 B01001m18 B01001m19);
+  mPop35_64YearsF_&_years. = 
+    %moe_sum(var=B01001m37 B01001m38 B01001m39 B01001m40 B01001m41 B01001m42 B01001m43);
+  mPop65andOverYearsM_&_years. = 
+    %moe_sum(var=B01001m20 B01001m21 B01001m22 B01001m23 B01001m24 B01001m25);
+  mPop65andOverYearsF_&_years. = 
+    %moe_sum(var=B01001m44 B01001m45 B01001m46 B01001m47 B01001m48 B01001m49);
 
 
   mNumFamiliesB_&_years. = B19101Bm1;
@@ -327,30 +344,6 @@
            B01001Fm14 B01001Fm15 B01001Fm16 B01001Fm29 B01001Fm30 B01001Fm31 
            B01001Gm14 B01001Gm15 B01001Gm16 B01001Gm29 B01001Gm30 B01001Gm31 );
 
-  mPopUnder18YearsM_&_years. = 
-    %moe_sum()
-
-  mPopUnder18YearsF_&_years. = 
-    %moe_sum()
-
-  mPop18_34YearsM_&_years. = 
-    %moe_sum()
-
-  mPop18_34YearsF_&_years. = 
-    %moe_sum()
-
-  mPop35_64YearsM_&_years. = 
-    %moe_sum()
-
-  mPop35_64YearsF_&_years. = 
-    %moe_sum()
-
- mPop65andOverYearsM_&_years. = 
-    %moe_sum()
-
- mPop65andOverYearsF_&_years. = 
-    %moe_sum()
-
     label
     NumFamiliesB_&_years. = "Family HHs, Black/African American, &_years_dash "
     NumFamiliesW_&_years. = "Family HHs, Non-Hispanic White, &_years_dash "
@@ -448,7 +441,7 @@
 
       ** Foreign born **;
 
-      PopForeignBorn_&_years. = B05002e13;
+    PopForeignBorn_&_years. = B05002e13;
     PopNativeBorn_&_years. = B05002e2;
     PopNonEnglish_&_years. = sum(B06007e3, B06007e6 );
 
@@ -2295,24 +2288,26 @@
         mPopMovedDiffCntyAIOM_&_years. = "Population moved from a different county in past year, All remaining groups other than Black, Non-Hispanic White, Hispanic, , MOE, &_years_dash"
     ; 
 
+/*Yipeng added on 6.5  Insurance, Earning, Family type*/
 
 
+/* Health Insurance Coverage by Age*/
    InsCovUnder18Years_&_years.= 
-   sum();
+   sum(B27001e4 B27001e7 B27001e32 B27001e35 );
 
    InsCov18_34Years_&_years.= 
-   sum();
+   sum(B27001e10 B27001e13 B27001e38 B27001e41);
 
    InsCov35_64Years_&_years.= 
-   sum();
+   sum(B27001e16 B27001e19 B27001e22 B27001e44 B27001e47 B27001e50);
    
    InsCov65andOverYears_&_years.= 
-   sum();
+   sum(B27001e25 B27001e28 B27001e53 B27001e56);
    
-   mInsCovUnder18Years_&_years.= %moe_sum(var=);
-   mInsCov18_34Years_&_years.= %moe_sum(var=);
-   mInsCov35_64Years_&_years.= %moe_sum(var=);
-   mInsCov65andOverYears_&_years.= %moe_sum(var=);
+   mInsCovUnder18Years_&_years.= %moe_sum(var= B27001m4 B27001m7 B27001m32 B27001m35);
+   mInsCov18_34Years_&_years.= %moe_sum(var= B27001m10 B27001m13 B27001m38 B27001m41);
+   mInsCov35_64Years_&_years.= %moe_sum(var= B27001m16 B27001m19 B27001m22 B27001m44 B27001m47 B27001m50);
+   mInsCov65andOverYears_&_years.= %moe_sum(var= B27001m25 B27001m28 B27001m53 B27001m56);
 
 label 
    InsCovUnder18Years_&_years.= "Persons below 18 years old with health insurance coverage, Total, &_years_dash"
@@ -2326,9 +2321,102 @@ label
 
 ;
 
+   NInsCovUnder18Years_&_years.= 
+   sum(B27001e5 B27001e8 B27001e33 B27001e36 );
+
+   NInsCov18_34Years_&_years.= 
+   sum(B27001e11 B27001e12 B27001e39 B27001e42);
+
+   NInsCov35_64Years_&_years.= 
+   sum(B27001e17 B27001e20 B27001e23 B27001e45 B27001e48 B27001e51);
+   
+   NInsCov65andOverYears_&_years.= 
+   sum(B27001e26 B27001e29 B27001e54 B27001e57);
+   
+   mNInsCovUnder18Years_&_years.= %moe_sum(var= B27001m5 B27001m8 B27001m33 B27001m36);
+   mNInsCov18_34Years_&_years.= %moe_sum(var= B27001m11 B27001m12 B27001m39 B27001m42);
+   mNInsCov35_64Years_&_years.= %moe_sum(var= B27001m17 B27001m20 B27001m23 B27001m45 B27001m48 B27001m51);
+   mNInsCov65andOverYears_&_years.= %moe_sum(var= B27001m26 B27001m29 B27001m54 B27001m57);
+
+label 
+   NInsCovUnder18Years_&_years.= "Persons below 18 years old without health insurance coverage, Total, &_years_dash"
+   NInsCov18_34Years_&_years.= "Persons 18-34 years old without health insurance coverage, Total, &_years_dash"
+   NInsCov35_64Years_&_years.=  "Persons 35-64 years old without health insurance coverage, Total, &_years_dash"
+   NInsCov65andOverYears_&_years.= "Persons over 65 years old without health insurance coverage, Total, &_years_dash"
+   mNInsCovUnder18Years_&_years.="Persons below 18 years old without health insurance coverage, Total, MOE, &_years_dash"
+   mNInsCov18_34Years_&_years.= "Persons 18-34 years old with healthout insurance coverage, Total, MOE, &_years_dash"
+   mNInsCov35_64Years_&_years.=  "Persons 35-64 years old with healthout insurance coverage, Total, MOE, &_years_dash"
+   mNInsCov65andOverYears_&_years.= "Persons over 65 years old without health insurance coverage, Total, MOE, &_years_dash"
+
+;
+
+/*Annual Earning*/
+EarningUnder10K_&_years.= B08119e2;
+Earning10to15K_&_years.= B08119e3;
+Earning15to25K_&_years.= B08119e4;
+Earning25to35K_&_years.= B08119e5;
+Earning35to50K_&_years.= B08119e6;
+Earning50to65K_&_years.= B08119e7;
+Earning65to75K_&_years.= B08119e8;
+EarningOver75K_&_years.= B08119e9;
 
 
+mEarningUnder10K_&_years.= B08119m2;
+mEarning10to15K_&_years.= B08119m3;
+mEarning15to25K_&_years.= B08119m4;
+mEarning25to35K_&_years.= B08119m5;
+mEarning35to50K_&_years.= B08119m6;
+mEarning50to65K_&_years.= B08119m7;
+mEarning65to75K_&_years.= B08119m8;
+mEarningOver75K_&_years.= B08119m9;
 
+label 
+   EarningUnder10K_&_years.= "Workers 16 years and over with earning of $1-$9999 or loss in the past 12 months, total, &_years_dash "
+   Earning10to15K_&_years.= "Workers 16 years and over with earning of $10,000-$14,999 in the past 12 months, total, &_years_dash "
+   Earning15to25K_&_years.= "Workers 16 years and over with earning of $15,000-$24,999 in the past 12 months, total, &_years_dash "
+   Earning25to35K_&_years.= "Workers 16 years and over with earning of $25,000-$34,999 in the past 12 months, total, &_years_dash "
+   Earning35to50K_&_years.= "Workers 16 years and over with earning of $35,000-$49,999 in the past 12 months, total, &_years_dash "
+   Earning50to65K_&_years.= "Workers 16 years and over with earning of $50,000-$64,999 in the past 12 months, total, &_years_dash "
+   Earning65to75K_&_years.= "Workers 16 years and over with earning of $65,000-$74,999 in the past 12 months, total, &_years_dash "
+   EarningOver75K_&_years.= "Workers 16 years and over with earning of $75,000 or more in the past 12 months, total, &_years_dash "
+   mEarningUnder10K_&_years.= "Workers 16 years and over with earning of $1-$9999 or loss in the past 12 months, MOE, &_years_dash "
+   mEarning10to15K_&_years.= "Workers 16 years and over with earning of $10,000-$14,999 in the past 12 months, MOE, &_years_dash "
+   mEarning15to25K_&_years.= "Workers 16 years and over with earning of $15,000-$24,999 in the past 12 months, MOE, &_years_dash "
+   mEarning25to35K_&_years.= "Workers 16 years and over with earning of $25,000-$34,999 in the past 12 months, MOE, &_years_dash "
+   mEarning35to50K_&_years.= "Workers 16 years and over with earning of $35,000-$49,999 in the past 12 months, MOE, &_years_dash "
+   mEarning50to65K_&_years.= "Workers 16 years and over with earning of $50,000-$64,999 in the past 12 months, MOE, &_years_dash "
+   mEarning65to75K_&_years.= "Workers 16 years and over with earning of $65,000-$74,999 in the past 12 months, MOE, &_years_dash "
+   mEarningOver75K_&_years.= "Workers 16 years and over with earning of $75,000 or more in the past 12 months, MOE, &_years_dash "
+;
+
+
+/*Family Types*/
+
+FamMarriedCouple_&_years.= B11001e2;
+FamMaleholder_&_years.= B11001e5;
+FamFemaleholder_&_years.= B11001e6;
+Nonfamlivingalone_&_years.= B11001e8;
+Nonfamnotlivingalone_&_years.= B11001e9;
+
+FamMarriedCouple_&_years.= B11001m2;
+FamMaleholder_&_years.= B11001m5;
+FamFemaleholder_&_years.= B11001m6;
+Nonfamlivingalone_&_years.= B11001m8;
+Nonfamnotlivingalone_&_years.= B11001m9;
+
+label
+   FamMarriedCouple_&_years.= "Married Couple Family, Total, &_years_dash "
+   FamMaleholder_&_years.= "Male Householder with no wife present, Total, &_years_dash "
+   FamFemaleholder_&_years.= "Female Householder with no husband present, Total, &_years_dash "
+   Nonfamlivingalone_&_years.= "Householder living alone, Total, &_years_dash "
+   Nonfamnotlivingalone_&_years.= "Householder not living alone, Total, &_years_dash "
+
+   FamMarriedCouple_&_years.= "Married Couple Family, MOE,&_years_dash "
+   FamMaleholder_&_years.= "Male Householder with no wife present, MOE, &_years_dash "
+   FamFemaleholder_&_years.= "Female Householder with no husband present, MOE, &_years_dash "
+   Nonfamlivingalone_&_years.= "Householder living alone, MOE, &_years_dash "
+   Nonfamnotlivingalone_&_years.= "Householder not living alone, MOE, &_years_dash "
+;
 
 %mend ACS_summary_geo_source_tr_vars;
 
