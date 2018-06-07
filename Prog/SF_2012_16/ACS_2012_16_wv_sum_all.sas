@@ -24,7 +24,9 @@
   state_ab = WV,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
-  years = 2012_16
+  years = 2012_16,
+  
+   revisions=%str(Fixed proc compare issue #103 and moved all housing vars to tract source.)
 
 )
 
