@@ -164,6 +164,7 @@
   sum(B01001e3 B01001e4 B01001e5 B01001e6);   
 
   PopUnder18YearsF_&_years.= 
+<<<<<<< HEAD
 
   sum(B01001e27 B01001e28 B01001e29 B01001e30)
 
@@ -185,6 +186,7 @@
   Pop65andOverYearsF_&_years.= 
   sum(B01001e44 B01001e45 B01001e46 B01001e47 B01001e48 B01001e49)
 
+
   sum(B01001e27, B01001e28, B01001e29, B01001e30);
 
   Pop18_34YearsM_&_years.=
@@ -204,7 +206,6 @@
 
   Pop65andOverYearsF_&_years.= 
   sum(B01001e44, B01001e45, B01001e46, B01001e47, B01001e48, B01001e49);
-
 
   mPopUnder18YearsM_&_years. = 
     %moe_sum(var= B01001m3 B01001m4 B01001m5 B01001m6);
