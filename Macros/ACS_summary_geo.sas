@@ -11,6 +11,7 @@
  geography.
 
  Modifications: 7/29/16 - Added additional variables, included racial breakdowns. 
+                06/05/18-- Yipeng Su added additional variables pop by sex and age, insurance coverage, family type, earnings
 **************************************************************************/
 
 %macro ACS_summary_geo( geo, source_geo );
@@ -33,8 +34,8 @@
     %let count_vars = 
            Unwtd: TotPop: PopUnder: Pop25: Pop65: PopAlone:
            PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
-       NumHshldPhone_: NumHshldCar_:  
-       Num: 
+       NumHshldPhone_: NumHshldCar_: NumOccupied: NumOwner: NumRenter: NumVacant: Med:
+       AggIncome: AggHshldIncome: Num: Agg: GrossRent: IncmBy: AgeBy:
 
        NumFamilies_: NumHshlds_:
 
@@ -44,7 +45,15 @@
 
        Pop25andOverYears_: Pop25andOverWoutHS_: Pop25andOverWHS_:
        Pop25andOverWSC_: Pop25andOverWCollege_:
-               
+
+       FamIncomeLT75k_: FamIncomeGT200k_:
+	
+	   
+       NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
+       RentCostBurdenDenom: OwnerCostBurdenDenom:
+
+       NumRentCst: NumOwnCstBurden:
+      
        ;
            
     %let moe_vars =
@@ -109,7 +118,74 @@
 
        mNumHshldPhone_&_years. mNumHshldCar_&_years. 
 
-              ;
+       mAggFamilyIncome_&_years. 
+
+       mFamIncomeLT75k_&_years. mFamIncomeGT200k_&_years.
+
+       mAggIncome_&_years. mAggIncomeB_&_years.
+       mAggIncomeW_&_years. mAggIncomeH_&_years.
+       mAggIncomeA_&_years. mAggIncomeIOM_&_years.
+       mAggIncomeAIOM_&_years.
+
+       mAggHshldIncome_&_years. mAggHshldIncomeB_&_years.
+       mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
+       mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
+       mAggHshldIncomeAIOM_&_years.
+
+       mNumOccupiedHsgUnits_&_years. mNumOccupiedHsgUnitsB_&_years.
+       mNumOccupiedHsgUnitsW_&_years. mNumOccupiedHsgUnitsH_&_years.
+       mNumOccupiedHsgUnitsA_&_years. mNumOccupiedHsgUnitsIOM_&_years.
+       mNumOccupiedHsgUnitsAIOM_&_years.
+
+       mNumOccupiedHsgUnits_&_years.
+
+       mNumOwnerOccupiedHU_&_years. mNumOwnerOccupiedHUB_&_years.
+       mNumOwnerOccupiedHUW_&_years. mNumOwnerOccupiedHUH_&_years.
+       mNumOwnerOccupiedHUA_&_years. mNumOwnerOccupiedHUIOM_&_years.
+       mNumOwnerOccupiedHUAIOM_&_years.
+
+       mNumOwnerOccupiedHU_&_years. mNumRenterOccupiedHU_&_years. 
+	   mNumVacantHsgUnits_&_years. mNumVacantHUForRent_&_years. 
+	   mNumVacantHUForSale_&_years. mNumRenterHsgUnits_&_years. 
+
+	   mGrossRentLT100_&_years. mGrossRent100_149_&_years. mGrossRent150_199_&_years. 
+	   mGrossRent200_249_&_years. mGrossRent250_299_&_years. mGrossRent300_349_&_years. 
+	   mGrossRent350_349_&_years. mGrossRent400_449_&_years. mGrossRent450_499_&_years. 
+	   mGrossRent500_549_&_years. mGrossRent550_599_&_years. mGrossRent600_649_&_years. 
+	   mGrossRent650_699_&_years. mGrossRent700_749_&_years. mGrossRent750_799_&_years. 
+	   mGrossRent800_899_&_years. mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. 
+	   mGrossRent1250_1499_&_years. mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. 
+	   mGrossRent2500_2999_&_years. mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
+	   mGrossRentNoCash_&_years. 
+
+	   mIncmByRenterCst_LT10K_&_years. mIncmByRenterCst_10_19K_&_years. mIncmByRenterCst_20_34K_&_years. 
+	   mIncmByRenterCst_35_49K_&_years. mIncmByRenterCst_50_74K_&_years. mIncmByRenterCst_75_99K_&_years. 
+	   mIncmByRenterCst_GT100K_&_years. 
+
+	   mAgeByRenterCst_15_24_&_years. mAgeByRenterCst_25_34_&_years. mAgeByRenterCst_35_64_&_years. mAgeByRenterCst_65Over_&_years. 
+
+	   mAgeByOwnerCst_15_24_&_years. mAgeByOwnerCst_25_34_&_years. mAgeByOwnerCst_35_64_&_years. mAgeByOwnerCst_65Over_&_years. 
+
+       mNumRenterCostBurden_&_years.
+       mNumRentSevereCostBurden_&_years. 
+       mNumOwnerCostBurden_&_years. 
+       mNumOwnSevereCostBurden_&_years. 
+       mRentCostBurdenDenom_&_years.
+       mOwnerCostBurdenDenom_&_years.
+
+       mNumRentCstBurden_15_24_&_years. mNumRentCstBurden_25_34_&_years. 
+       mNumRentCstBurden_35_64_&_years. mNumRentCstBurden_65Over_&_years. 
+
+       mNumOwnCstBurden_15_24_&_years. mNumOwnCstBurden_25_34_&_years. 
+       mNumOwnCstBurden_35_64_&_years. mNumOwnCstBurden_65Over_&_years. 
+
+       mNumRentCstBurden_LT10K_&_years. mNumRentCstBurden_10_19K_&_years. 
+       mNumRentCstBurden_20_34K_&_years. mNumRentCstBurden_35_49K_&_years. 
+       mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99K_&_years. 
+       mNumRentCstBurden_GT100K_&_years. 
+
+ 
+           ;
                
   %end;
   %else %do;
@@ -120,14 +196,27 @@
            Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
            PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
            PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
-           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
+           Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Med: PopMoved: GrossRent: IncmBy: AgeBy:
            
-	   RentCostBurdenDenom: OwnerCostBurdenDenom:
+       NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
+       RentCostBurdenDenom: OwnerCostBurdenDenom:
 
+       NumRentCst: NumOwnCst:
+
+	   PopUnder18YearsM: PopUnder18YearsF: Pop18_34YearsM: Pop18_34YearsF: Pop35_64YearsM:
+	   Pop35_64YearsF: Pop65andOverYearsM: Pop65andOverYearsF:
+
+       InsCovUnder18Years: InsCov18_34Years: InsCov35_64Years: InsCov65andOverYears: 
+	   NInsCovUnder18Years: NInsCov18_34Years: NInsCov35_64Years: NInsCov65andOverYears:
+
+       EarningUnder10K: Earning10to15K: Earning15to25K: Earning25to35K: Earning35to50K:
+	   Earning50to65K: Earning65to75K: EarningOver75K:
+
+	   FamMarriedCouple: FamMaleholder: FamFemaleholder: Nonfamlivingalone: Nonfamnotlivingalone:
        ;
-	
-	%**variables appear in all years;
-	%let moeallyears=  mTotPop_&_years. 
+
+    %let moe_vars =
+           mTotPop_&_years. 
 
        mNumHshlds_&_years. mNumHshldsB_&_years.
        mNumHshldsW_&_years. mNumHshldsH_&_years.
@@ -335,20 +424,7 @@
            mNumFamiliesOwnChildren_&_years. mNumFamiliesOwnChildFH_&_years. 
        mNumHshldPhone_&_years. mNumHshldCar_&_years. 
 
-       
-       mAggIncome_&_years. mAggIncomeB_&_years.
-       mAggIncomeW_&_years. mAggIncomeH_&_years.
-       mAggIncomeA_&_years. mAggIncomeIOM_&_years.
-       mAggIncomeAIOM_&_years.
-              
-       mAggHshldIncome_&_years. mAggHshldIncomeB_&_years.
-       mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
-       mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
-       mAggHshldIncomeAIOM_&_years.
-
        mAggFamilyIncome_&_years. 
-       mFamIncomeLT75k_&_years. mFamIncomeGT200k_&_years.
-       
 
        mFamIncomeLT75k_&_years. mFamIncomeLT75kB_&_years.
        mFamIncomeLT75kW_&_years. mFamIncomeLT75kH_&_years.
@@ -374,29 +450,8 @@
        mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
        mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
        mAggHshldIncomeAIOM_&_years.
-       
-       mHshldIncUnder15000_&_years. mHshldInc15000to34999_&_years. mHshldInc35000to49999_&_years. 
-       mHshldInc50000to74999_&_years. mHshldInc75000to99999_&_years. mHshldInc100000plus_&_years.
-       mHshldInc100000to124999_&_years. mHshldInc125000to149999_&_years. mHshldInc150000to199999_&_years. 
-       mHshldInc200000plus_&_years.
 
-       mNumHsgUnits_&_years.
-	   mNumOccupiedHsgUnits_&_years.
-	   mNumOccupiedHsgUnits_&_years. mNumOccupiedHsgUnitsB_&_years.
-       mNumOccupiedHsgUnitsW_&_years. mNumOccupiedHsgUnitsH_&_years.
-       mNumOccupiedHsgUnitsA_&_years. mNumOccupiedHsgUnitsIOM_&_years.
-       mNumOccupiedHsgUnitsAIOM_&_years.
-
-       mNumOwnerOccupiedHU_&_years. mNumOwnerOccupiedHUB_&_years.
-       mNumOwnerOccupiedHUW_&_years. mNumOwnerOccupiedHUH_&_years.
-       mNumOwnerOccupiedHUA_&_years. mNumOwnerOccupiedHUIOM_&_years.
-       mNumOwnerOccupiedHUAIOM_&_years.
-
-       mNumOwnerOccupiedHU_&_years. mNumRenterOccupiedHU_&_years. 
-	   mNumVacantHsgUnits_&_years. mNumVacantHUForRent_&_years. 
-	   mNumVacantHUForSale_&_years. mNumRenterHsgUnits_&_years. 
-
-	   mNumOccupiedHsgUnits_&_years. mNumOccupiedHsgUnitsB_&_years.
+       mNumOccupiedHsgUnits_&_years. mNumOccupiedHsgUnitsB_&_years.
        mNumOccupiedHsgUnitsW_&_years. mNumOccupiedHsgUnitsH_&_years.
        mNumOccupiedHsgUnitsA_&_years. mNumOccupiedHsgUnitsIOM_&_years.
        mNumOccupiedHsgUnitsAIOM_&_years.
@@ -416,12 +471,17 @@
 	   mGrossRent500_549_&_years. mGrossRent550_599_&_years. mGrossRent600_649_&_years. 
 	   mGrossRent650_699_&_years. mGrossRent700_749_&_years. mGrossRent750_799_&_years. 
 	   mGrossRent800_899_&_years. mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. 
-	   mGrossRent1250_1499_&_years. mGrossRent1500_1999_&_years. mGrossRentGT2000_&_years. 
+	   mGrossRent1250_1499_&_years. mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. 
+	   mGrossRent2500_2999_&_years. mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
 	   mGrossRentNoCash_&_years. 
 
 	   mIncmByRenterCst_LT10K_&_years. mIncmByRenterCst_10_19K_&_years. mIncmByRenterCst_20_34K_&_years. 
 	   mIncmByRenterCst_35_49K_&_years. mIncmByRenterCst_50_74K_&_years. mIncmByRenterCst_75_99K_&_years. 
 	   mIncmByRenterCst_GT100K_&_years. 
+
+	   mIncmByOwnerCst_LT10K_&_years. mIncmByOwnerCst_10_19K_&_years. mIncmByOwnerCst_20_34K_&_years. 
+	   mIncmByOwnerCst_35_49K_&_years. mIncmByOwnerCst_50_74K_&_years. mIncmByOwnerCst_75_99K_&_years. 
+	   mIncmByOwnerCst_100_149_&_years. mIncmByOwnerCst_GT150K_&_years. 
 
 	   mAgeByRenterCst_15_24_&_years. mAgeByRenterCst_25_34_&_years. mAgeByRenterCst_35_64_&_years. mAgeByRenterCst_65Over_&_years. 
 
@@ -444,31 +504,12 @@
        mNumRentCstBurden_20_34K_&_years. mNumRentCstBurden_35_49K_&_years. 
        mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99K_&_years. 
        mNumRentCstBurden_GT100K_&_years. 
-       
-       mNumHsgUnits0bd_&_years. mNumHsgUnits1bd_&_years.
-       mNumhsgUnits2bd_&_years. mNumhsgUnits3bd_&_years.
-       mNumHsgUnits3plusbd_&_years.
-       mNumHsgUnits4bd_&_years. mNumHsgUnits5plusbd_&_years.
-       
-       mNumRentOccHU0bd_&_years. mNumRentOccHU1bd_&_years. 
-       mNumRentOccHU2bd_&_years. mNumRentOccHU3bd_&_years.
-       mNumRentOccHU4bd_&_years. mNumRentOccHU5plusbd_&_years.
-       mNumRentOccHU3plusbd_&_years.
-       
-       mNumOwnOccHU0bd_&_years. mNumOwnOccHU1bd_&_years.
-       mNumOwnOccHU2bd_&_years. mNumOwnOccHU3bd_&_years.
-       mNumOwnOccHU4bd_&_years. mNumOwnOccHU5plusbd_&_years.
-       mNumOwnOccHU3plusbd_&_years.
-       
-       mNumRtOHU0Bunder500_&_years. mNumRtOHU0B500to749_&_years. 
-       mNumRtOHU0B750to999_&_years. mNumRtOHU0B1000plus_&_years.
-       mNumRtOHU1Bunder500_&_years. mNumRtOHU1B500to749_&_years. 
-       mNumRtOHU1B750to999_&_years. mNumRtOHU1B1000plus_&_years.
-       mNumRtOHU2Bunder500_&_years. mNumRtOHU2B500to749_&_years.
-       mNumRtOHU2B750to999_&_years.  mNumRtOHU2B1000plus_&_years. 
-       mNumRtOHU3Bunder500_&_years. mNumRtOHU3B500to749_&_years. 
-       mNumRtOHU3B750to999_&_years. mNumRtOHU3B1000plus_&_years. 
-              
+
+       mNumOwnCstBurden_LT10K_&_years. mNumOwnCstBurden_10_19K_&_years. 
+       mNumOwnCstBurden_20_34K_&_years. mNumOwnCstBurden_35_49K_&_years. 
+       mNumOwnCstBurden_50_74K_&_years. mNumOwnCstBurden_75_99K_&_years. 
+       mNumOwnCstBurden_100_149_&_years. mNumOwnCstBurden_GT150K_&_years. 
+
        mPopMovedLastYear_&_years.  mPopMovedLastYearB_&_years.
        mPopMovedLastYearW_&_years.  mPopMovedLastYearH_&_years.
        mPopMovedLastYearA_&_years.  mPopMovedLastYearIOM_&_years.
@@ -478,55 +519,30 @@
        mPopMovedDiffCntyW_&_years.  mPopMovedDiffCntyH_&_years.
        mPopMovedDiffCntyA_&_years.  mPopMovedDiffCntyIOM_&_years.
        mPopMovedDiffCntyAIOM_&_years.
-	   ;
-	
-	%**variables appear only 2013 and later; 
-	%let moe2013plus = 
-	  	   mIncmByOwnerCst_LT10K_&_years. mIncmByOwnerCst_10_19K_&_years. mIncmByOwnerCst_20_34K_&_years. 
-		   mIncmByOwnerCst_35_49K_&_years. mIncmByOwnerCst_50_74K_&_years. mIncmByOwnerCst_75_99K_&_years. 
-		   mIncmByOwnerCst_100_149_&_years. mIncmByOwnerCst_GT150K_&_years. 
+ 
+       mPopUnder18YearsM_&_years. mPopUnder18YearsF_&_years.
+	   mPop18_34YearsM_&_years. mPop18_34YearsF_&_years.
+	   mPop35_64YearsM_&_years. mPop35_64YearsF_&_years. 
+	   mPop65andOverYearsM_&_years. mPop65andOverYearsF_&_years. 
 
-			mNumOwnCstBurden_LT10K_&_years. mNumOwnCstBurden_10_19K_&_years. 
-       		mNumOwnCstBurden_20_34K_&_years. mNumOwnCstBurden_35_49K_&_years. 
-       		mNumOwnCstBurden_50_74K_&_years. mNumOwnCstBurden_75_99K_&_years. 
-       		mNumOwnCstBurden_100_149_&_years. mNumOwnCstBurden_GT150K_&_years. 
+       mInsCovUnder18Years_&_years. mInsCov18_34Years_&_years.
+	   mInsCov35_64Years_&_years. mInsCov65andOverYears_&_years.
 
-			;
+	   mNInsCovUnder18Years_&_years. mNInsCov18_34Years_&_years.
+	   mNInsCov35_64Years_&_years. mNInsCov65andOverYears_&_years.
 
-	%**variables appear only 2015 and later; 
-	%let moe2015plus = 
-			
-			mMedRent0bd_&_years. mMedRent1bd_&_years.
-	       mMedRent2bd_&_years. mMedRent3bd_&_years.
-	       mMedRent4bd_&_years. mMedRent5plusbd_&_years.
-		
-		   mGrossRent2000_2499_&_years. mGrossRent2500_2999_&_years. mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
+	   mEarningUnder10K_&_years. mEarning10to15K_&_years.
+	   mEarning15to25K_&_years. mEarning25to35K_&_years.
+	   mEarning35to50K_&_years. mEarning50to65K_&_years.
+	   mEarning65to75K_&_years. mEarningOver75K_&_years.
 
-			mNumRtOHU0B1000to1499_&_years. mNumRtOHU0B1500plus_&_years.
-			mNumRtOHU1B1000to1499_&_years. mNumRtOHU1B1500plus_&_years.
-			mNumRtOHU2B1000to1499_&_years. mNumRtOHU2B1500plus_&_years.
-			mNumRtOHU3B1000to1499_&_years. mNumRtOHU3B1500plus_&_years. 
-			
-		;
+	   mFamMarriedCouple_&_years. mFamMaleholder_&_years.
+	   mFamFemaleholder_&_years. mNonfamlivingalone_&_years.
+	   mNonfamnotlivingalone_&_years.
 
-	%if &_last_year. < 2013 %then %do; 
-    	%let moe_vars =&moeallyears.; 
-
-	%end; 
-
-	%else %if &_last_year. > 2012 %then %do; 
-		%let moe_vars =&moeallyears. &moe2013plus.; 
- 	
-         %end; 
-
-	%else %if &_last_year. > 2014 %then %do; 
-		 	
-		%let moe_vars =&moeallyears. &moe2013plus. &moe2015plus;
-
-		%end;
+           ;
                
   %end;
-
   
   %put _local_;
   
@@ -534,24 +550,24 @@
       ( &geo_name = GEO2010 and %upcase( &source_geo_var ) = GEO2010 ) or
     ( &geo_name = COUNTY and %upcase( &source_geo_var ) = REGCOUNTY )%then %do;
 
-	    ** Census tracts from census tract source (same year): just recopy selected vars **;
+    ** Census tracts from census tract source (same year): just recopy selected vars **;
+    
+    data &out_ds (label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label");
+    
+      set &source_ds_work (keep=&geo_var &count_vars &moe_vars);
 
-	    data &out_ds (label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label");
+    run;
 
-	      set &source_ds_work (keep=&geo_var &count_vars &moe_vars);
-
-	    run;
-
-	  %Finalize_data_set( 
-	  data=&out_ds.,
-	  out=&out_ds.,
-	  outlib=&_out_lib.,
-	  label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
-	  sortby=&geo_name.,
-	  restrictions=None,
-	  printobs=0,
-	  revisions=&revisions.
-	  )
+  %Finalize_data_set( 
+  data=&out_ds.,
+  out=&out_ds.,
+  outlib=&_out_lib.,
+  label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
+  sortby=&geo_name.,
+  restrictions=None,
+  printobs=0,
+  revisions=&revisions.
+  )
 
 
   %end;
@@ -559,94 +575,28 @@
   %else %do;
 
     ** Transform data from source geography (&source_geo_var) to target geography (&geo_var) **;
-    
-   	%if &geo = councildist %then %do;
-   
-		%if &_state_ab = md %then %do;
 
-			data &source_ds_work.1 (where=(ucounty in("24009" "24017" "24021" "24031" "24033")));
-				set &source_ds_work;
-
-			ucounty=substr(&source_geo_var,1,5);
-			run; 
-		%end;	
-		%if &_state_ab = va %then %do;
-
-			data &source_ds_work.1 (where=(ucounty in("51013" "51043" "51047" "51059" "51061" "51107" "51153" "51157" "51177" "51179" "51187" "51510" "51600" "51610" "51630" "51683" "51685")));
-				set &source_ds_work;
-
-			ucounty=substr(&source_geo_var,1,5);
-			run; 
-		%end;
-		%if &_state_ab = wv %then %do;
-
-			data &source_ds_work.1 (where=(ucounty="54037"));
-				set &source_ds_work;
-
-			ucounty=substr(&source_geo_var,1,5);
-			run; 
-		%end;
-		%if &_state_ab = dc %then %do;
-
-			data &source_ds_work.1 (where=(ucounty ="11001"));
-				set &source_ds_work;
-
-			ucounty=substr(&source_geo_var,1,5);
-			run; 
-		%end;
-   	
-
-		    %Transform_geo_data(
-		      dat_ds_name=&source_ds_work.1,
-		      dat_org_geo=&source_geo_var,
-		      dat_count_vars=&count_vars,
-		      dat_count_moe_vars=&moe_vars,
-		      dat_prop_vars=,
-		      wgt_ds_name=General.&geo_wt_file,
-		      wgt_org_geo=&source_geo_var,
-		      wgt_new_geo=&geo_var,
-		      wgt_id_vars=,
-		      wgt_wgt_var=popwt,
-		      out_ds_name=&out_ds._,
-		      out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
-		      calc_vars=,
-		      calc_vars_labels=,
-		      keep_nonmatch=N,
-		      show_warnings=10,
-		      print_diag=Y,
-		      full_diag=N,
-		      mprint=Y
-		    )
-
-	   %end;
-   
-  	 %else %do;
-   
-	    %Transform_geo_data(
-		 dat_ds_name=&source_ds_work,
-		 dat_org_geo=&source_geo_var,
-		 dat_count_vars=&count_vars,
-		 dat_count_moe_vars=&moe_vars,
-		 dat_prop_vars=,
-		 wgt_ds_name=General.&geo_wt_file,
-		 wgt_org_geo=&source_geo_var,
-		 wgt_new_geo=&geo_var,
-		 wgt_id_vars=,
-		 wgt_wgt_var=popwt,
-		 out_ds_name=&out_ds._,
-		 out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
-		 calc_vars=,
-		 calc_vars_labels=,
-		 keep_nonmatch=N,
-		 show_warnings=10,
-		 print_diag=Y,
-		 full_diag=N,
-		 mprint=Y
-	    )
-
-	    %end;
-   
-   
+    %Transform_geo_data(
+      dat_ds_name=&source_ds_work,
+      dat_org_geo=&source_geo_var,
+      dat_count_vars=&count_vars,
+      dat_count_moe_vars=&moe_vars,
+      dat_prop_vars=,
+      wgt_ds_name=General.&geo_wt_file,
+      wgt_org_geo=&source_geo_var,
+      wgt_new_geo=&geo_var,
+      wgt_id_vars=,
+      wgt_wgt_var=popwt,
+      out_ds_name=&out_ds._,
+      out_ds_label=%str(ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label),
+      calc_vars=,
+      calc_vars_labels=,
+      keep_nonmatch=N,
+      show_warnings=10,
+      print_diag=Y,
+      full_diag=N,
+      mprint=Y
+    )
 
   data &out_ds;
     set &out_ds._;
@@ -666,6 +616,12 @@
     
   %end;  
 
+
+  ** Add sortedby= to data set descriptor **;
+
+  proc datasets library=&_out_lib memtype=(data) nolist;
+    modify &out_ds (sortedby=&geo_var);
+  quit;
 
 %mend ACS_summary_geo;
 

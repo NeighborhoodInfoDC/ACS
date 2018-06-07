@@ -14,7 +14,7 @@
  be added to the %ACS_summary_geo_source_bg_vars() macro. 
  No variable should be added to both macros. 
 
- Modifications:
+ Modifications: 06/05/18 Yipeng Su add variables for summary (Population by age and sex, insurance, family type, earning) 
 **************************************************************************/
 
 
@@ -159,7 +159,50 @@
       B01001Fe14, B01001Fe15, B01001Fe16, B01001Fe29, B01001Fe30, B01001Fe31, 
       B01001Ge14, B01001Ge15, B01001Ge16, B01001Ge29, B01001Ge30, B01001Ge31 );
 
-    mNumFamiliesB_&_years. = B19101Bm1;
+/*Yipeng Su Added new varables 6/4/2018*/
+  PopUnder18YearsM_&_years.=
+  sum(B01001e3, B01001e4, B01001e5, B01001e6);   
+
+  PopUnder18YearsF_&_years.= 
+  sum(B01001e27, B01001e28, B01001e29, B01001e30);
+
+  Pop18_34YearsM_&_years.=
+  sum(B01001e7, B01001e8, B01001e9, B01001e10, B01001e11, B01001e12);
+
+  Pop18_34YearsF_&_years.= 
+  sum(B01001e31, B01001e32, B01001e33, B01001e34, B01001e35, B01001e36);
+
+  Pop35_64YearsM_&_years.=
+  sum(B01001e13, B01001e14, B01001e15, B01001e16, B01001e17, B01001e18, B01001e19);
+
+  Pop35_64YearsF_&_years.= 
+  sum(B01001e37, B01001e38, B01001e39, B01001e40, B01001e41, B01001e42, B01001e43);
+
+  Pop65andOverYearsM_&_years.=
+  sum(B01001e20, B01001e21, B01001e22, B01001e23, B01001e24, B01001e25);
+
+  Pop65andOverYearsF_&_years.= 
+  sum(B01001e44, B01001e45, B01001e46, B01001e47, B01001e48, B01001e49);
+
+  mPopUnder18YearsM_&_years. = 
+    %moe_sum(var= B01001m3 B01001m4 B01001m5 B01001m6);
+  mPopUnder18YearsF_&_years. = 
+    %moe_sum(var=B01001m27 B01001m28 B01001m29 B01001m30);
+  mPop18_34YearsM_&_years. = 
+    %moe_sum(var=B01001m7 B01001m8 B01001m9 B01001m10 B01001m11 B01001m12);
+  mPop18_34YearsF_&_years. = 
+    %moe_sum(var=B01001m31 B01001m32 B01001m33 B01001m34 B01001m35 B01001m36);
+  mPop35_64YearsM_&_years. = 
+    %moe_sum(var=B01001m13 B01001m14 B01001m15 B01001m16 B01001m17 B01001m18 B01001m19);
+  mPop35_64YearsF_&_years. = 
+    %moe_sum(var=B01001m37 B01001m38 B01001m39 B01001m40 B01001m41 B01001m42 B01001m43);
+  mPop65andOverYearsM_&_years. = 
+    %moe_sum(var=B01001m20 B01001m21 B01001m22 B01001m23 B01001m24 B01001m25);
+  mPop65andOverYearsF_&_years. = 
+    %moe_sum(var=B01001m44 B01001m45 B01001m46 B01001m47 B01001m48 B01001m49);
+
+
+  mNumFamiliesB_&_years. = B19101Bm1;
   mNumFamiliesW_&_years. = B19101Hm1;
   mNumFamiliesH_&_years. = B19101Im1;
   mNumFamiliesA_&_years. = %moe_sum( var=B19101Dm1 B19101Em1);
@@ -339,6 +382,15 @@
     Pop65andOverYearsA_&_years. = "Persons 65 years old and over, Asian, Hawaiian and other Pacific Islander, &_years_dash "
     Pop65andOverYearsIOM_&_years. = "Persons 65 years old and over, American Indian/Alaska Native, other race, two or more races, &_years_dash "
     Pop65andOverYearsAIOM_&_years. = "Persons 65 years old and over, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+    PopUnder18YearsM_&_years. = "Persons under 18 years old, Male, &_years_dash "
+    PopUnder18YearsF_&_years. = "Persons under 18 years old, Female, &_years_dash "
+    Pop18_34YearsM_&_years.="Persons 18-34 years old, Male, &_years_dash "
+    Pop18_34YearsF_&_years.="Persons 18-34 years old, Female, &_years_dash "
+    Pop35_64YearsM_&_years.="Persons 35-64 years old, Male, &_years_dash"
+    Pop35_64YearsF_&_years.="Persons 35-64 years old, Female, &_years_dash"
+    Pop65andOverYearsM&_years.="Persons 65 years old and over, Male, &_years_dash "
+    Pop65andOverYearsF&_years.="Persons 65 years old and over, Female, &_years_dash "
+
     mNumFamiliesB_&_years. = "Family HHs, Black/African American, MOE, &_years_dash "
     mNumFamiliesW_&_years. = "Family HHs, Non-Hispanic White, MOE, &_years_dash "
     mNumFamiliesH_&_years. = "Family HHs, Hispanic/Latino, MOE, &_years_dash "
@@ -376,11 +428,20 @@
     mPop65andOverYearsA_&_years. = "Persons 65 years old and over,Asian, Hawaiian and other Pacific Islander, MOE, &_years_dash "
     mPop65andOverYearsIOM_&_years. = "Persons 65 years old and over, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
     mPop65andOverYearsAIOM_&_years. = "Persons 65 years old and over, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-    ;
+    mPopUnder18YearsM_&_years. = "Persons under 18 years old, Male, MOE, &_years_dash "
+    mPopUnder18YearsF_&_years. = "Persons under 18 years old, Female, MOE, &_years_dash "
+    mPop18_34YearsM_&_years.="Persons 18-34 years old, Male, MOE,&_years_dash "
+    mPop18_34YearsF_&_years.="Persons 18-34 years old, Female, MOE,&_years_dash "
+    mPop35_64YearsM_&_years.="Persons 35-64 years old, Male, MOE,&_years_dash"
+    mPop35_64YearsF_&_years.="Persons 35-64 years old, Female, MOE,&_years_dash"
+    mPop65andOverYearsM&_years.="Persons 65 years old and over, Male, MOE,&_years_dash "
+    mPop65andOverYearsF&_years.="Persons 65 years old and over, Female, MOE,&_years_dash "
+
+;
 
       ** Foreign born **;
 
-      PopForeignBorn_&_years. = B05002e13;
+    PopForeignBorn_&_years. = B05002e13;
     PopNativeBorn_&_years. = B05002e2;
     PopNonEnglish_&_years. = sum(B06007e3, B06007e6 );
 
@@ -1911,1212 +1972,232 @@
         mNumFamiliesOwnChildFH_&_years. = "Female-headed families and subfamilies with own children, MOE, &_years_dash "
       ;
        
-  ** Income -variables **;
-
-    ** individual income **; 
-	    AggIncome_&_years. = B19313e1;
-	    AggIncomeB_&_years. = B19313Be1;
-	    AggIncomeW_&_years. = B19313He1;
-	    AggIncomeH_&_years. = B19313Ie1;
-	    AggIncomeA_&_years. = sum(B19313De1, B19313Ee1 );
-	    AggIncomeIOM_&_years. = sum(B19313Ce1, B19313Fe1, B19313Ge1 );
-	    AggIncomeAIOM_&_years. = sum(B19313Ce1, B19313De1, B19313Ee1, B19313Fe1, B19313Ge1 );
-
-		  mAggIncome_&_years. = B19313m1;
-	      mAggIncomeB_&_years. = B19313Bm1;
-	      mAggIncomeW_&_years. = B19313Hm1;
-	      mAggIncomeH_&_years. = B19313Im1;
-	      mAggIncomeA_&_years. = %moe_sum( var=B19313Dm1 B19313Em1);
-	      mAggIncomeIOM_&_years. = %moe_sum( var=B19313Cm1 B19313Fm1 B19313Gm1);
-	      mAggIncomeAIOM_&_years. = %moe_sum( var=B19313Cm1 B19313Dm1 B19313Em1 B19313Fm1 B19313Gm1);
-
-		label 
-
-		  AggIncome_&_years. = "Aggregate income, &_years_dash "
-	      AggIncomeB_&_years. = "Aggregate income, Black, &_years_dash "
-	      AggIncomeW_&_years. = "Aggregate income, Non-Hispanic White, &_years_dash "
-	      AggIncomeH_&_years. = "Aggregate income, Hispanic/Latino, &_years_dash "
-	      AggIncomeA_&_years. = "Aggregate income, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
-	      AggIncomeIOM_&_years. = "Aggregate income, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
-	      AggIncomeAIOM_&_years. = "Aggregate income, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-		  ;
-
-	** household income variables**; 
-
-	    AggHshldIncome_&_years. = B19025e1;
-	    AggHshldIncomeB_&_years. = B19025Be1;
-	    AggHshldIncomeW_&_years. = B19025He1;
-	    AggHshldIncomeH_&_years. = B19025Ie1;
-	    AggHshldIncomeA_&_years. = sum(B19025De1, B19025Ee1 );
-	    AggHshldIncomeIOM_&_years. = sum(B19025Ce1, B19025Fe1, B19025Ge1 );
-	    AggHshldIncomeAIOM_&_years. = sum(B19025Ce1, B19025De1, B19025Ee1, B19025Fe1, B19025Ge1 );
-	  
-	    mAggHshldIncome_&_years. = B19025m1;
-	    mAggHshldIncomeB_&_years. = B19025Bm1;
-	    mAggHshldIncomeW_&_years. = B19025Hm1;
-	    mAggHshldIncomeH_&_years. = B19025Im1;
-	    mAggHshldIncomeA_&_years. = %moe_sum( var=B19025Dm1 B19025Em1 );
-	    mAggHshldIncomeIOM_&_years. = %moe_sum( var=B19025Cm1 B19025Fm1 B19025Gm1 );
-	    mAggHshldIncomeAIOM_&_years. = %moe_sum( var=B19025Cm1 B19025Dm1 B19025Em1 B19025Fm1 B19025Gm1 );
-
-	   	HshldIncUnder15000_&_years. =
-		        sum( B19001e2, B19001e3 );
-		HshldInc15000to34999_&_years. =
-		        sum( B19001e4, B19001e5, B19001e6, B19001e7 );
-		HshldInc35000to49999_&_years. =
-		        sum( B19001e8, B19001e9, B19001e10 );
-		HshldInc50000to74999_&_years. =
-		        sum( B19001e11, B19001e12 );
-		HshldInc75000to99999_&_years. = B19001e13 ;
-		HshldInc100000plus_&_years. =
-		        sum( B19001e14, B19001e15, B19001e16, B19001e17 );
-		HshldInc100000to124999_&_years. = B19001e14 ;
-		HshldInc125000to149999_&_years. = B19001e15 ;
-		HshldInc150000to199999_&_years. = B19001e16 ;
-		HshldInc200000plus_&_years. = B19001e17 ;
-		mHshldIncUnder15000_&_years. = %moe_sum( var=B19001e2 B19001e3 );
-		mHshldInc15000to34999_&_years. = %moe_sum( var=B19001e4 B19001e5 B19001e6 B19001e7 );
-		mHshldInc35000to49999_&_years. = %moe_sum( var=B19001e8 B19001e9 B19001e10 );
-		mHshldInc50000to74999_&_years. = %moe_sum( var=B19001e11 B19001e12 );
-		mHshldInc75000to99999_&_years. = %moe_sum( var=B19001e13 );
-		mHshldInc100000plus_&_years. = %moe_sum( var=B19001e14 B19001e15 B19001e16 B19001e17 );
-		mHshldInc100000to124999_&_years. = %moe_sum( var=B19001e14 );
-		mHshldInc125000to149999_&_years. = %moe_sum( var=B19001e15 );
-		mHshldInc150000to199999_&_years. = %moe_sum( var=B19001e16 );
-		mHshldInc200000plus_&_years. = %moe_sum( var=B19001e17 );
-
-		 label 
-	    
-	      AggHshldIncome_&_years. = "Aggregate household income, &_years_dash "
-	      AggHshldIncomeB_&_years. = "Aggregate household income, Black/African American, &_years_dash "
-	      AggHshldIncomeW_&_years. = "Aggregate household income, Non-Hispanic White, &_years_dash "
-	      AggHshldIncomeH_&_years. = "Aggregate household income, Hispanic/Latino, &_years_dash "
-	      AggHshldIncomeA_&_years. = "Aggregate household income, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
-	      AggHshldIncomeIOM_&_years. = "Aggregate household income, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
-	      AggHshldIncomeAIOM_&_years. = "Aggregate household income, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-	      mAggIncome_&_years. = "Aggregate income, MOE, &_years_dash "
-	      mAggIncomeB_&_years. = "Aggregate income, Black, MOE, &_years_dash "
-	      mAggIncomeW_&_years. = "Aggregate income, Non-Hispanic White, MOE, &_years_dash "
-	      mAggIncomeH_&_years. = "Aggregate income, Hispanic/Latino, MOE, &_years_dash "
-	      mAggIncomeA_&_years. = "Aggregate income, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
-	      mAggIncomeIOM_&_years. = "Aggregate income, American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
-	      mAggIncomeAIOM_&_years. = "Aggregate income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-	      mAggHshldIncome_&_years. = "Aggregate household income, MOE, &_years_dash "
-	      mAggHshldIncomeB_&_years. = "Aggregate household income, Black/African American, MOE, &_years_dash "
-	      mAggHshldIncomeW_&_years. = "Aggregate household income, Non-Hispanic White, MOE, &_years_dash "
-	      mAggHshldIncomeH_&_years. = "Aggregate household income, Hispanic/Latino, MOE, &_years_dash "
-	      mAggHshldIncomeA_&_years. = "Aggregate household income, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
-	      mAggHshldIncomeIOM_&_years. = "Aggregate household income, American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
-	      mAggHshldIncomeAIOM_&_years. = "Aggregate household income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-
-		  HshldIncUnder15000_&_years. ="Household income less than $15,000, &_years_dash "
-		  HshldInc15000to34999_&_years. ="Household income $15,000 to $34,999, &_years_dash "
-		  HshldInc35000to49999_&_years. ="Household income $35,000 to $49,999, &_years_dash "
-		  HshldInc50000to74999_&_years. ="Household income $50,000 to $74,999, &_years_dash "
-		  HshldInc75000to99999_&_years. ="Household income $75,000 to $99,999, &_years_dash " 
-		  HshldInc100000plus_&_years. ="Household income $100,000 or more, &_years_dash "
-		  HshldInc100000to124999_&_years. ="Household income $100,000 to $124,999, &_years_dash "
-		  HshldInc125000to149999_&_years. ="Household income $125,000 to $149,999, &_years_dash " 
-		  HshldInc150000to199999_&_years. ="Household income $150,000 to $199,999, &_years_dash " 
-		  HshldInc200000plus_&_years. = "Household income $200,000 or more, &_years_dash "
-		  mHshldIncUnder15000_&_years. = "Household income less than $15,000, MOE, &_years_dash "
-		  mHshldInc15000to34999_&_years. ="Household income $15,000 to $34,999, MOE, &_years_dash "
-		  mHshldInc35000to49999_&_years. ="Household income $35,000 to $49,999, MOE, &_years_dash "
-		  mHshldInc50000to74999_&_years. ="Household income $50,000 to $74,999, MOE, &_years_dash "
-		  mHshldInc75000to99999_&_years. ="Household income $75,000 to $99,999, MOE, &_years_dash " 
-		  mHshldInc100000plus_&_years. ="Household income $100,000 or more, MOE, &_years_dash "
-		  mHshldInc100000to124999_&_years. ="Household income $100,000 to $124,999, MOE, &_years_dash " 
-		  mHshldInc125000to149999_&_years. ="Household income $125,000 to $149,999, MOE, &_years_dash " 
-		  mHshldInc150000to199999_&_years. ="Household income $150,000 to $199,999, MOE, &_years_dash "
-		  mHshldInc200000plus_&_years. = "Household income $200,000 or more, MOE, &_years_dash "
-		;
-
-		**Family income**;
-		AggFamilyIncome_&_years. = B19127e1;
-	    mAggFamilyIncome_&_years. = B19127m1;
-
-		FamIncomeLT75k_&_years. = 
-	    	sum(B19101e2, B19101e3, B19101e4, B19101e5, B19101e6, B19101e7, 
-	     		 B19101e8, B19101e9, B19101e10, B19101e11, B19101e12 );
-		mFamIncomeLT75k_&_years. = 
-	    		%moe_sum( var=B19101m2 B19101m3 B19101m4 B19101m5 B19101m6 B19101m7 
-	    					 B19101m8 B19101m9 B19101m10 B19101m11 B19101m12);
-
-	  	FamIncomeGT200k_&_years. = B19101e17;
-	  	mFamIncomeGT200k_&_years. = B19101m17;
-
-	    FamIncomeLT75kB_&_years. = 
-	      sum(B19101Be2, B19101Be3, B19101Be4, B19101Be5, B19101Be6, B19101Be7, 
-	        B19101Be8, B19101Be9, B19101Be10, B19101Be11, B19101Be12 );
-	    FamIncomeLT75kW_&_years. = 
-	      sum(B19101He2, B19101He3, B19101He4, B19101He5, B19101He6, B19101He7, 
-	        B19101He8, B19101He9, B19101He10, B19101He11, B19101He12 );
-	    FamIncomeLT75kH_&_years. = 
-	      sum(B19101Ie2, B19101Ie3, B19101Ie4, B19101Ie5, B19101Ie6, B19101Ie7, 
-	        B19101Ie8, B19101Ie9, B19101Ie10, B19101Ie11, B19101Ie12 );
-	    FamIncomeLT75kA_&_years. = 
-	      sum(B19101De2, B19101De3, B19101De4, B19101De5, B19101De6, B19101De7, 
-	        B19101De8, B19101De9, B19101De10, B19101De11, B19101De12, 
-	        B19101Ee2, B19101Ee3, B19101Ee4, B19101Ee5, B19101Ee6, B19101Ee7, 
-	        B19101Ee8, B19101Ee9, B19101Ee10, B19101Ee11, B19101Ee12 );
-	    FamIncomeLT75kIOM_&_years. = 
-	      sum(B19101Ce2, B19101Ce3, B19101Ce4, B19101Ce5, B19101Ce6, B19101Ce7, 
-	        B19101Ce8, B19101Ce9, B19101Ce10, B19101Ce11, B19101Ce12, 
-	        B19101Fe2, B19101Fe3, B19101Fe4, B19101Fe5, B19101Fe6, B19101Fe7, 
-	        B19101Fe8, B19101Fe9, B19101Fe10, B19101Fe11, B19101Fe12, 
-	        B19101Ge2, B19101Ge3, B19101Ge4, B19101Ge5, B19101Ge6, B19101Ge7, 
-	        B19101Ge8, B19101Ge9, B19101Ge10, B19101Ge11, B19101Ge12 );
-	    FamIncomeLT75kAIOM_&_years. = 
-	      sum(B19101Ce2, B19101Ce3, B19101Ce4, B19101Ce5, B19101Ce6, B19101Ce7, 
-	        B19101Ce8, B19101Ce9, B19101Ce10, B19101Ce11, B19101Ce12, 
-	        B19101De2, B19101De3, B19101De4, B19101De5, B19101De6, B19101De7, 
-	        B19101De8, B19101De9, B19101De10, B19101De11, B19101De12, 
-	        B19101Ee2, B19101Ee3, B19101Ee4, B19101Ee5, B19101Ee6, B19101Ee7, 
-	        B19101Ee8, B19101Ee9, B19101Ee10, B19101Ee11, B19101Ee12,
-	        B19101Fe2, B19101Fe3, B19101Fe4, B19101Fe5, B19101Fe6, B19101Fe7, 
-	        B19101Fe8, B19101Fe9, B19101Fe10, B19101Fe11, B19101Fe12, 
-	        B19101Ge2, B19101Ge3, B19101Ge4, B19101Ge5, B19101Ge6, B19101Ge7, 
-	        B19101Ge8, B19101Ge9, B19101Ge10, B19101Ge11, B19101Ge12 );
-
-	    FamIncomeGT200kB_&_years. = B19101Be17;
-	    FamIncomeGT200kW_&_years. = B19101He17;
-	    FamIncomeGT200kH_&_years. = B19101Ie17;
-	    FamIncomeGT200kA_&_years. = sum(B19101De17, B19101Ee17 );
-	    FamIncomeGT200kIOM_&_years. = sum(B19101Ce17, B19101Fe17, B19101Ge17 );
-	    FamIncomeGT200kAIOM_&_years. = sum(B19101Ce17, B19101De17, B19101Ee17, B19101Fe17, B19101Ge17 );
-
-	    mFamIncomeLT75kB_&_years. = 
-	      %moe_sum( var=B19101Bm2 B19101Bm3 B19101Bm4 B19101Bm5 B19101Bm6 B19101Bm7 
-	      B19101Bm8 B19101Bm9 B19101Bm10 B19101Bm11 B19101Bm12);
-	    mFamIncomeLT75kW_&_years. = 
-	      %moe_sum( var=B19101Hm2 B19101Hm3 B19101Hm4 B19101Hm5 B19101Hm6 B19101Hm7 
-	      B19101Hm8 B19101Hm9 B19101Hm10 B19101Hm11 B19101Hm12);
-	    mFamIncomeLT75kH_&_years. = 
-	      %moe_sum( var=B19101Im2 B19101Im3 B19101Im4 B19101Im5 B19101Im6 B19101Im7 
-	      B19101Im8 B19101Im9 B19101Im10 B19101Im11 B19101Im12);
-	    mFamIncomeLT75kA_&_years. = 
-	      %moe_sum( var=B19101Dm2 B19101Dm3 B19101Dm4 B19101Dm5 B19101Dm6 B19101Dm7 
-	      B19101Dm8 B19101Dm9 B19101Dm10 B19101Dm11 B19101Dm12 
-	      B19101Em2 B19101Em3 B19101Em4 B19101Em5 B19101Em6 B19101Em7 
-	      B19101Em8 B19101Em9 B19101Em10 B19101Em11 B19101Em12);
-	    mFamIncomeLT75kIOM_&_years. = 
-	      %moe_sum( var=B19101Cm2 B19101Cm3 B19101Cm4 B19101Cm5 B19101Cm6 B19101Cm7 
-	      B19101Cm8 B19101Cm9 B19101Cm10 B19101Cm11 B19101Cm12 
-	      B19101Fm2 B19101Fm3 B19101Fm4 B19101Fm5 B19101Fm6 B19101Fm7 
-	      B19101Fm8 B19101Fm9 B19101Fm10 B19101Fm11 B19101Fm12 
-	      B19101Gm2 B19101Gm3 B19101Gm4 B19101Gm5 B19101Gm6 B19101Gm7 
-	      B19101Gm8 B19101Gm9 B19101Gm10 B19101Gm11 B19101Gm12);
-	    mFamIncomeLT75kAIOM_&_years. = 
-	      %moe_sum( var=B19101Cm2 B19101Cm3 B19101Cm4 B19101Cm5 B19101Cm6 B19101Cm7 
-	      B19101Cm8 B19101Cm9 B19101Cm10 B19101Cm11 B19101Cm12 
-	      B19101Dm2 B19101Dm3 B19101Dm4 B19101Dm5 B19101Dm6 B19101Dm7 
-	      B19101Dm8 B19101Dm9 B19101Dm10 B19101Dm11 B19101Dm12 
-	      B19101Em2 B19101Em3 B19101Em4 B19101Em5 B19101Em6 B19101Em7 
-	      B19101Em8 B19101Em9 B19101Em10 B19101Em11 B19101Em12 
-	      B19101Fm2 B19101Fm3 B19101Fm4 B19101Fm5 B19101Fm6 B19101Fm7 
-	      B19101Fm8 B19101Fm9 B19101Fm10 B19101Fm11 B19101Fm12 
-	      B19101Gm2 B19101Gm3 B19101Gm4 B19101Gm5 B19101Gm6 B19101Gm7 
-	      B19101Gm8 B19101Gm9 B19101Gm10 B19101Gm11 B19101Gm12);
-
-	    mFamIncomeGT200kB_&_years. = B19101Bm17;
-	    mFamIncomeGT200kW_&_years. = B19101Hm17;
-	    mFamIncomeGT200kH_&_years. = B19101Im17;
-	    mFamIncomeGT200kA_&_years. = %moe_sum( var=B19101Dm17 B19101Em17);
-	    mFamIncomeGT200kIOM_&_years. = %moe_sum( var=B19101Cm17 B19101Fm17 B19101Gm17);
-	    mFamIncomeGT200kAIOM_&_years. = %moe_sum( var=B19101Cm17 B19101Dm17 B19101Em17 B19101Fm17 B19101Gm17);
-
-	    label
-
-		  AggFamilyIncome_&_years. = "Aggregate family income ($ &_last_year), &_years_dash "
-	      FamIncomeLT75k_&_years. = "Family income less than $75000, &_years_dash "
-	   	  FamIncomeGT200k_&_years. = "Family income more than $200,000, &_years_dash "
-		  mAggFamilyIncome_&_years. = "Aggregate family income ($ &_last_year), MOE, &_years_dash "
-	      mFamIncomeLT75k_&_years. = "Family income less than $75000, MOE, &_years_dash "
-	      mFamIncomeGT200k_&_years. = "Family income more than $200,000, MOE, &_years_dash "
-
-		  FamIncomeLT75kB_&_years. = "Family income less than $75000, Black/African American, &_years_dash "
-	      FamIncomeLT75kW_&_years. = "Family income less than $75000, Non-Hispanic White, &_years_dash "
-	      FamIncomeLT75kH_&_years. = "Family income less than $75000, Hispanic/Latino, &_years_dash "
-	      FamIncomeLT75kA_&_years. = "Family income less than $75000, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-	      FamIncomeLT75kIOM_&_years. = "Family income less than $75000, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-	      FamIncomeLT75kAIOM_&_years. = "Family income less than $75000,All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-	      FamIncomeGT200kB_&_years. = "Family income more than $200,000, Black or African American, &_years_dash "
-	      FamIncomeGT200kW_&_years. = "Family income more than $200,000, Non-Hispanic White, &_years_dash "
-	      FamIncomeGT200kH_&_years. = "Family income more than $200,000, Hispanic or Latino, &_years_dash "
-	      FamIncomeGT200kA_&_years. = "Family income more than $200,000, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
-	      FamIncomeGT200kIOM_&_years. = "Family income more than $200,000, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-	      FamIncomeGT200kAIOM_&_years. = "Family income more than $200,000, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-	      mFamIncomeLT75kB_&_years. = "Family income less than $75000, Black/African American, MOE, &_years_dash "
-	      mFamIncomeLT75kW_&_years. = "Family income less than $75000, Non-Hispanic White, MOE, &_years_dash "
-	      mFamIncomeLT75kH_&_years. = "Family income less than $75000, Hispanic/Latino, MOE, &_years_dash "
-	      mFamIncomeLT75kA_&_years. = "Family income less than $75000, Asian, Hawaiian, and other Pacific Islander, MOE, &_years_dash "
-	      mFamIncomeLT75kIOM_&_years. = "Family income less than $75000, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
-	      mFamIncomeLT75kAIOM_&_years. = "Family income less than $75000,All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-	      mFamIncomeGT200kB_&_years. = "Family income more than $200,000, Black or African American, MOE, &_years_dash "
-	      mFamIncomeGT200kW_&_years. = "Family income more than $200,000, Non-Hispanic White, MOE, &_years_dash "
-	      mFamIncomeGT200kH_&_years. = "Family income more than $200,000, Hispanic or Latino, MOE, &_years_dash "
-	      mFamIncomeGT200kA_&_years. = "Family income more than $200,000, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
-	      mFamIncomeGT200kIOM_&_years. = "Family income more than $200,000, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
-	      mFamIncomeGT200kAIOM_&_years. = "Family income more than $200,000, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-	      ;
-
-		  MedFamIncm_&_years. = B19113e1;
-		  MedFamIncmB_&_years. = B19113Be1;
-		  MedFamIncmW_&_years. = B19113He1;
-		  MedFamIncmH_&_years. = B19113Ie1;
-		  MedFamIncmA_&_years. = sum(B19113De1, B19113Ee1 );
-		  MedFamIncmIOM_&_years. = sum(B19113Ce1, B19113Fe1, B19113Ge1 );
-		  MedFamIncmAIOM_&_years. = sum(B19113Ce1, B19113De1, B19113Ee1, B19113Fe1, B19113Ge1 );
-
-
-		  mMedFamIncm_&_years. = B19113m1;
-	      mMedFamIncmB_&_years. = B19113Bm1;
-	      mMedFamIncmW_&_years. = B19113Hm1;
-	      mMedFamIncmH_&_years. = B19113Im1;
-	      mMedFamIncmA_&_years. = %moe_sum( var=B19113Dm1 B19113Em1);
-	      mMedFamIncmIOM_&_years. = %moe_sum( var=B19113Cm1 B19113Fm1 B19113Gm1);
-	      mMedFamIncmAIOM_&_years. = %moe_sum( var=B19113Cm1 B19113Dm1 B19113Em1 B19113Fm1 B19113Gm1); 
-
-
-		  label 
-		  MedFamIncm_&_years. = "Median family income, &_years_dash "
-	      MedFamIncmB_&_years. = "Median family income, Black/African American, &_years_dash "
-	      MedFamIncmW_&_years. = "Median family income, Non-Hispanic White, &_years_dash "
-	      MedFamIncmH_&_years. = "Median family income, Hispanic/Latino, &_years_dash "
-	      MedFamIncmA_&_years. = "Median family income, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
-	      MedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
-	      MedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-		  mMedFamIncm_&_years. = "Median family income, MOE, &_years_dash "
-	      mMedFamIncmB_&_years. = "Median family income, Black/African American, MOE, &_years_dash "
-	      mMedFamIncmW_&_years. = "Median family income, Non-Hispanic White, MOE, &_years_dash "
-	      mMedFamIncmH_&_years. = "Median family income, Hispanic/Latino, MOE, &_years_dash "
-	      mMedFamIncmA_&_years. = "Median family income, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
-	      mMedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
-	      mMedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-		;
-
-    ** Housing **;
-		
-	**basic unit counts**;
-	NumHsgUnits_&_years. = B25041e1;
-		mNumHsgUnits_&_years. = B25041e1;
-
-	NumOccupiedHsgUnits_&_years. = B25003e1;
-    NumOccupiedHsgUnitsB_&_years. = B25003Be1;
-    NumOccupiedHsgUnitsW_&_years. = B25003He1;
-    NumOccupiedHsgUnitsH_&_years. = B25003Ie1;
-    NumOccupiedHsgUnitsA_&_years. = sum(B25003De1, B25003Ee1 );
-    NumOccupiedHsgUnitsIOM_&_years. = sum(B25003Ce1, B25003Fe1, B25003Ge1 );
-    NumOccupiedHsgUnitsAIOM_&_years. = sum(B25003Ce1, B25003De1, B25003Ee1, B25003Fe1, B25003Ge1 );
-
-	  mNumOccupiedHsgUnits_&_years. = B25003m1;
-	  mNumOccupiedHsgUnitsB_&_years. = B25003Bm1;
-	  mNumOccupiedHsgUnitsW_&_years. = B25003Hm1;
-	  mNumOccupiedHsgUnitsH_&_years. = B25003Im1;
-	  mNumOccupiedHsgUnitsA_&_years. = %moe_sum( var=B25003Dm1 B25003Em1);
-	  mNumOccupiedHsgUnitsIOM_&_years. = %moe_sum( var=B25003Cm1 B25003Fm1 B25003Gm1);
-	  mNumOccupiedHsgUnitsAIOM_&_years. = %moe_sum( var=B25003Cm1 B25003Dm1 B25003Em1 B25003Fm1 B25003Gm1);
-
-
- 	NumOwnerOccupiedHU_&_years. = B25003e2;
-    NumOwnerOccupiedHsgUnits_&_years. = B25003e2;
-    NumOwnerOccupiedHUB_&_years. = B25003Be2;
-    NumOwnerOccupiedHUW_&_years. = B25003He2;
-    NumOwnerOccupiedHUH_&_years. = B25003Ie2;
-    NumOwnerOccupiedHUA_&_years. = sum(B25003De2, B25003Ee2 );
-    NumOwnerOccupiedHUIOM_&_years. = sum(B25003Ce2, B25003Fe2, B25003Ge2 );
-    NumOwnerOccupiedHUAIOM_&_years. = sum(B25003Ce2, B25003De2, B25003Ee2, B25003Fe2, B25003Ge2 );
-
-		mNumOwnerOccupiedHU_&_years. = B25003m2;
-  		mNumOwnerOccupiedHUB_&_years. = B25003Bm2;
- 	 	mNumOwnerOccupiedHUW_&_years. = B25003Hm2;
-	  	mNumOwnerOccupiedHUH_&_years. = B25003Im2;
-  		mNumOwnerOccupiedHUA_&_years. = %moe_sum( var=B25003Dm2 B25003Em2);
-  		mNumOwnerOccupiedHUIOM_&_years. = %moe_sum( var=B25003Cm2 B25003Fm2 B25003Gm2);
-  		mNumOwnerOccupiedHUAIOM_&_years. = %moe_sum( var=B25003Cm2 B25003Dm2 B25003Em2 B25003Fm2 B25003Gm2);
-
-  	NumRenterOccupiedHU_&_years. = B25003e3;
-  	NumRenterOccupiedHsgUnit_&_years. = B25003e3; *this is an older var in legacy code; 
-
-    NumVacantHsgUnits_&_years. = B25004e1;
-	NumVacantHsgUnitsForRent_&_years. = B25004e2;
-	NumVacantHsgUnitsForSale_&_years. = B25004e4;
-
-  	NumRenterHsgUnits_&_years. = NumRenterOccupiedHU_&_years. + NumVacantHsgUnitsForRent_&_years.;
-
-	    mNumRenterOccupiedHU_&_years. = B25003m3;
-
-  		mNumVacantHsgUnits_&_years. = B25004m1;
-  		mNumVacantHUForRent_&_years. = B25004m2;
-  		mNumVacantHUForSale_&_years. = B25004m4;
+  ** Income - non block group (tract,county) variables **;
     
-  		mNumRenterHsgUnits_&_years. = %moe_sum( var=mNumRenterOccupiedHU_&_years. mNumVacantHUForRent_&_years. );
 
+    FamIncomeLT75kB_&_years. = 
+      sum(B19101Be2, B19101Be3, B19101Be4, B19101Be5, B19101Be6, B19101Be7, 
+        B19101Be8, B19101Be9, B19101Be10, B19101Be11, B19101Be12 );
+    FamIncomeLT75kW_&_years. = 
+      sum(B19101He2, B19101He3, B19101He4, B19101He5, B19101He6, B19101He7, 
+        B19101He8, B19101He9, B19101He10, B19101He11, B19101He12 );
+    FamIncomeLT75kH_&_years. = 
+      sum(B19101Ie2, B19101Ie3, B19101Ie4, B19101Ie5, B19101Ie6, B19101Ie7, 
+        B19101Ie8, B19101Ie9, B19101Ie10, B19101Ie11, B19101Ie12 );
+    FamIncomeLT75kA_&_years. = 
+      sum(B19101De2, B19101De3, B19101De4, B19101De5, B19101De6, B19101De7, 
+        B19101De8, B19101De9, B19101De10, B19101De11, B19101De12, 
+        B19101Ee2, B19101Ee3, B19101Ee4, B19101Ee5, B19101Ee6, B19101Ee7, 
+        B19101Ee8, B19101Ee9, B19101Ee10, B19101Ee11, B19101Ee12 );
+    FamIncomeLT75kIOM_&_years. = 
+      sum(B19101Ce2, B19101Ce3, B19101Ce4, B19101Ce5, B19101Ce6, B19101Ce7, 
+        B19101Ce8, B19101Ce9, B19101Ce10, B19101Ce11, B19101Ce12, 
+        B19101Fe2, B19101Fe3, B19101Fe4, B19101Fe5, B19101Fe6, B19101Fe7, 
+        B19101Fe8, B19101Fe9, B19101Fe10, B19101Fe11, B19101Fe12, 
+        B19101Ge2, B19101Ge3, B19101Ge4, B19101Ge5, B19101Ge6, B19101Ge7, 
+        B19101Ge8, B19101Ge9, B19101Ge10, B19101Ge11, B19101Ge12 );
+    FamIncomeLT75kAIOM_&_years. = 
+      sum(B19101Ce2, B19101Ce3, B19101Ce4, B19101Ce5, B19101Ce6, B19101Ce7, 
+        B19101Ce8, B19101Ce9, B19101Ce10, B19101Ce11, B19101Ce12, 
+        B19101De2, B19101De3, B19101De4, B19101De5, B19101De6, B19101De7, 
+        B19101De8, B19101De9, B19101De10, B19101De11, B19101De12, 
+        B19101Ee2, B19101Ee3, B19101Ee4, B19101Ee5, B19101Ee6, B19101Ee7, 
+        B19101Ee8, B19101Ee9, B19101Ee10, B19101Ee11, B19101Ee12,
+        B19101Fe2, B19101Fe3, B19101Fe4, B19101Fe5, B19101Fe6, B19101Fe7, 
+        B19101Fe8, B19101Fe9, B19101Fe10, B19101Fe11, B19101Fe12, 
+        B19101Ge2, B19101Ge3, B19101Ge4, B19101Ge5, B19101Ge6, B19101Ge7, 
+        B19101Ge8, B19101Ge9, B19101Ge10, B19101Ge11, B19101Ge12 );
 
-	label
-	  Numhsgunits_&_years. = "Number of housing units (tract-based), &_years_dash "
-	  mNumHsgunits_&_years. = "Number of housing units (tract-based), MOE, &_years_dash "
-	  NumOccupiedHsgUnits_&_years. = "Occupied housing units, &_years_dash "
-      NumOwnerOccupiedHsgUnits_&_years. = "Owner-occupied housing units, &_years_dash "
-      NumOccupiedHsgUnitsB_&_years. = "Occupied housing units, Black/African American, &_years_dash "
-      NumOccupiedHsgUnitsW_&_years. = "Occupied housing units, Non-Hispanic White, &_years_dash "
-      NumOccupiedHsgUnitsH_&_years. = "Occupied housing units, Hispanic/Latino, &_years_dash "
-      NumOccupiedHsgUnitsA_&_years. = "Occupied housing units, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
-      NumOccupiedHsgUnitsIOM_&_years. = "Occupied housing units,  American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
-      NumOccupiedHsgUnitsAIOM_&_years. = "Occupied housing units, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-      NumOwnerOccupiedHU_&_years. = "Owner-occupied housing units, &_years_dash "
-     
-      NumOwnerOccupiedHUB_&_years. = "Owner-occupied housing units, Black/African American, &_years_dash "
-      NumOwnerOccupiedHUW_&_years. = "Owner-occupied housing units, Non-Hispanic White, &_years_dash "
-      NumOwnerOccupiedHUH_&_years. = "Owner-occupied housing units, Hispanic/Latino, &_years_dash "
-      NumOwnerOccupiedHUA_&_years. = "Owner-occupied housing units, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
-      NumOwnerOccupiedHUIOM_&_years. = "Owner-occupied housing units, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
-      NumOwnerOccupiedHUAIOM_&_years. = "Owner-occupied housing units, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-      NumRenterOccupiedHU_&_years. = "Renter-occupied housing units, &_years_dash "
-	  NumRenterOccupiedHsgUnit_&_years. = "Renter-occupied housing units, &_years_dash "
-      NumVacantHsgUnits_&_years. = "Vacant housing units, &_years_dash "
-      NumVacantHsgUnitsForRent_&_years. = "Vacant housing units for rent, &_years_dash "
-      NumVacantHsgUnitsForSale_&_years. = "Vacant housing units for sale, &_years_dash "
-      NumRenterHsgUnits_&_years. = "Total rental housing units, &_years_dash "
+    FamIncomeGT200kB_&_years. = B19101Be17;
+    FamIncomeGT200kW_&_years. = B19101He17;
+    FamIncomeGT200kH_&_years. = B19101Ie17;
+    FamIncomeGT200kA_&_years. = sum(B19101De17, B19101Ee17 );
+    FamIncomeGT200kIOM_&_years. = sum(B19101Ce17, B19101Fe17, B19101Ge17 );
+    FamIncomeGT200kAIOM_&_years. = sum(B19101Ce17, B19101De17, B19101Ee17, B19101Fe17, B19101Ge17 );
 
-	   mNumOccupiedHsgUnits_&_years. = "Occupied housing units, MOE, &_years_dash "
-       mNumOccupiedHsgUnitsB_&_years. = "Occupied housing units, Black/African American, &_years_dash "
-      mNumOccupiedHsgUnitsW_&_years. = "Occupied housing units, Non-Hispanic White, &_years_dash "
-      mNumOccupiedHsgUnitsH_&_years. = "Occupied housing units, Hispanic/Latino, &_years_dash "
-      mNumOccupiedHsgUnitsA_&_years. = "Occupied housing units, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
-      mNumOccupiedHsgUnitsIOM_&_years. = "Occupied housing units,  American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
-      mNumOccupiedHsgUnitsAIOM_&_years. = "Occupied housing units, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-      mNumOwnerOccupiedHU_&_years. = "Owner-occupied housing units, MOE, &_years_dash "
-      mNumOwnerOccupiedHUB_&_years. = "Owner-occupied housing units, Black/African American, MOE, &_years_dash "
-      mNumOwnerOccupiedHUW_&_years. = "Owner-occupied housing units, Non-Hispanic White, MOE, &_years_dash "
-      mNumOwnerOccupiedHUH_&_years. = "Owner-occupied housing units, Hispanic/Latino, MOE, &_years_dash "
-      mNumOwnerOccupiedHUA_&_years. = "Owner-occupied housing units, Asian and Native Hawaiian and Other Pacific Islander, MOE, &_years_dash "
-      mNumOwnerOccupiedHUIOM_&_years. = "Owner-occupied housing units, American Indian/Alaska Native, Some other race, Two or more races, MOE, &_years_dash "
-      mNumOwnerOccupiedHUAIOM_&_years. = "Owner-occupied housing units, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-      mNumRenterOccupiedHU_&_years. = "Renter-occupied housing units, MOE, &_years_dash "
-      mNumVacantHsgUnits_&_years. = "Vacant housing units, MOE, &_years_dash "
-      mNumVacantHUForRent_&_years. = "Vacant housing units for rent, MOE, &_years_dash "
-      mNumVacantHUForSale_&_years. = "Vacant housing units for sale, MOE, &_years_dash "
-      mNumRenterHsgUnits_&_years. = "Total rental housing units, MOE, &_years_dash "
-	  ;
+    mFamIncomeLT75kB_&_years. = 
+      %moe_sum( var=B19101Bm2 B19101Bm3 B19101Bm4 B19101Bm5 B19101Bm6 B19101Bm7 
+      B19101Bm8 B19101Bm9 B19101Bm10 B19101Bm11 B19101Bm12);
+    mFamIncomeLT75kW_&_years. = 
+      %moe_sum( var=B19101Hm2 B19101Hm3 B19101Hm4 B19101Hm5 B19101Hm6 B19101Hm7 
+      B19101Hm8 B19101Hm9 B19101Hm10 B19101Hm11 B19101Hm12);
+    mFamIncomeLT75kH_&_years. = 
+      %moe_sum( var=B19101Im2 B19101Im3 B19101Im4 B19101Im5 B19101Im6 B19101Im7 
+      B19101Im8 B19101Im9 B19101Im10 B19101Im11 B19101Im12);
+    mFamIncomeLT75kA_&_years. = 
+      %moe_sum( var=B19101Dm2 B19101Dm3 B19101Dm4 B19101Dm5 B19101Dm6 B19101Dm7 
+      B19101Dm8 B19101Dm9 B19101Dm10 B19101Dm11 B19101Dm12 
+      B19101Em2 B19101Em3 B19101Em4 B19101Em5 B19101Em6 B19101Em7 
+      B19101Em8 B19101Em9 B19101Em10 B19101Em11 B19101Em12);
+    mFamIncomeLT75kIOM_&_years. = 
+      %moe_sum( var=B19101Cm2 B19101Cm3 B19101Cm4 B19101Cm5 B19101Cm6 B19101Cm7 
+      B19101Cm8 B19101Cm9 B19101Cm10 B19101Cm11 B19101Cm12 
+      B19101Fm2 B19101Fm3 B19101Fm4 B19101Fm5 B19101Fm6 B19101Fm7 
+      B19101Fm8 B19101Fm9 B19101Fm10 B19101Fm11 B19101Fm12 
+      B19101Gm2 B19101Gm3 B19101Gm4 B19101Gm5 B19101Gm6 B19101Gm7 
+      B19101Gm8 B19101Gm9 B19101Gm10 B19101Gm11 B19101Gm12);
+    mFamIncomeLT75kAIOM_&_years. = 
+      %moe_sum( var=B19101Cm2 B19101Cm3 B19101Cm4 B19101Cm5 B19101Cm6 B19101Cm7 
+      B19101Cm8 B19101Cm9 B19101Cm10 B19101Cm11 B19101Cm12 
+      B19101Dm2 B19101Dm3 B19101Dm4 B19101Dm5 B19101Dm6 B19101Dm7 
+      B19101Dm8 B19101Dm9 B19101Dm10 B19101Dm11 B19101Dm12 
+      B19101Em2 B19101Em3 B19101Em4 B19101Em5 B19101Em6 B19101Em7 
+      B19101Em8 B19101Em9 B19101Em10 B19101Em11 B19101Em12 
+      B19101Fm2 B19101Fm3 B19101Fm4 B19101Fm5 B19101Fm6 B19101Fm7 
+      B19101Fm8 B19101Fm9 B19101Fm10 B19101Fm11 B19101Fm12 
+      B19101Gm2 B19101Gm3 B19101Gm4 B19101Gm5 B19101Gm6 B19101Gm7 
+      B19101Gm8 B19101Gm9 B19101Gm10 B19101Gm11 B19101Gm12);
 
-	  **vars related to rent or home value; 
-	  medianhomevalue_&_years. = B25077e1;
-  	  		mmedianhomevalue_&_years. = B25077m1;
+    mFamIncomeGT200kB_&_years. = B19101Bm17;
+    mFamIncomeGT200kW_&_years. = B19101Hm17;
+    mFamIncomeGT200kH_&_years. = B19101Im17;
+    mFamIncomeGT200kA_&_years. = %moe_sum( var=B19101Dm17 B19101Em17);
+    mFamIncomeGT200kIOM_&_years. = %moe_sum( var=B19101Cm17 B19101Fm17 B19101Gm17);
+    mFamIncomeGT200kAIOM_&_years. = %moe_sum( var=B19101Cm17 B19101Dm17 B19101Em17 B19101Fm17 B19101Gm17);
 
-		*table change to B25063 in 2011-15; 
-	 %if &_last_year. < 2015 %then %do; 
+    label
 
-	  GrossRentLT100_&_years. = B25063e3;
-	  GrossRent100_149_&_years. = B25063e4;
-	  GrossRent150_199_&_years. = B25063e5;
-	  GrossRent200_249_&_years. = B25063e6;
-	  GrossRent250_299_&_years. = B25063e7;
-	  GrossRent300_349_&_years. = B25063e8;
-	  GrossRent350_349_&_years. = B25063e9;
-	  GrossRent400_449_&_years. = B25063e10;
-	  GrossRent450_499_&_years. = B25063e11;
-	  GrossRent500_549_&_years. = B25063e12;
-	  GrossRent550_599_&_years. = B25063e13;
-	  GrossRent600_649_&_years. = B25063e14;
-	  GrossRent650_699_&_years. = B25063e15;
-	  GrossRent700_749_&_years. = B25063e16;
-	  GrossRent750_799_&_years. = B25063e17;
-	  GrossRent800_899_&_years. = B25063e18;
-	  GrossRent900_999_&_years. = B25063e19;
-	  GrossRent1000_1249_&_years. = B25063e20;
-	  GrossRent1250_1499_&_years. = B25063e21;
-	  GrossRent1500_1999_&_years. = B25063e22;
-	  GrossRentGT2000_&_years. = B25063e23;
-	  GrossRentNoCash_&_years. = B25063e24;
-		  
-		  mGrossRentLT100_&_years. = B25063m3;
-		  mGrossRent100_149_&_years. = B25063m4;
-		  mGrossRent150_199_&_years. = B25063m5;
-		  mGrossRent200_249_&_years. = B25063m6;
-		  mGrossRent250_299_&_years. = B25063m7;
-		  mGrossRent300_349_&_years. = B25063m8;
-		  mGrossRent350_349_&_years. = B25063m9;
-		  mGrossRent400_449_&_years. = B25063m10;
-		  mGrossRent450_499_&_years. = B25063m11;
-		  mGrossRent500_549_&_years. = B25063m12;
-		  mGrossRent550_599_&_years. = B25063m13;
-		  mGrossRent600_649_&_years. = B25063m14;
-		  mGrossRent650_699_&_years. = B25063m15;
-		  mGrossRent700_749_&_years. = B25063m16;
-		  mGrossRent750_799_&_years. = B25063m17;
-		  mGrossRent800_899_&_years. = B25063m18;
-		  mGrossRent900_999_&_years. = B25063m19;
-		  mGrossRent1000_1249_&_years. = B25063m20;
-		  mGrossRent1250_1499_&_years. = B25063m21;
-		  mGrossRent1500_1999_&_years. = B25063m22;
-		  mGrossRentGT2000_&_years. = B25063m23;
-		  mGrossRentNoCash_&_years. = B25063m24;
-
-	 %end; 
-
-	 %else %do;
-
-	  GrossRentLT100_&_years. = B25063e3;
-	  GrossRent100_149_&_years. = B25063e4;
-	  GrossRent150_199_&_years. = B25063e5;
-	  GrossRent200_249_&_years. = B25063e6;
-	  GrossRent250_299_&_years. = B25063e7;
-	  GrossRent300_349_&_years. = B25063e8;
-	  GrossRent350_349_&_years. = B25063e9;
-	  GrossRent400_449_&_years. = B25063e10;
-	  GrossRent450_499_&_years. = B25063e11;
-	  GrossRent500_549_&_years. = B25063e12;
-	  GrossRent550_599_&_years. = B25063e13;
-	  GrossRent600_649_&_years. = B25063e14;
-	  GrossRent650_699_&_years. = B25063e15;
-	  GrossRent700_749_&_years. = B25063e16;
-	  GrossRent750_799_&_years. = B25063e17;
-	  GrossRent800_899_&_years. = B25063e18;
-	  GrossRent900_999_&_years. = B25063e19;
-	  GrossRent1000_1249_&_years. = B25063e20;
-	  GrossRent1250_1499_&_years. = B25063e21;
-	  GrossRent1500_1999_&_years. = B25063e22;
-	  GrossRent2000_2499_&_years. = B25063e23;
-	  GrossRent2500_2999_&_years. = B25063e24;
-	  GrossRent3000_3499_&_years. = B25063e25;
-	  GrossRentGT3500_&_years. = B25063e26;
-	  GrossRentNoCash_&_years. = B25063e27;
-	  GrossRentGT2000_&_years. = sum(B25063e23, B25063e24, B25063e25, B25063e26);
-	  
-		  
-		  mGrossRentLT100_&_years. = B25063m3;
-		  mGrossRent100_149_&_years. = B25063m4;
-		  mGrossRent150_199_&_years. = B25063m5;
-		  mGrossRent200_249_&_years. = B25063m6;
-		  mGrossRent250_299_&_years. = B25063m7;
-		  mGrossRent300_349_&_years. = B25063m8;
-		  mGrossRent350_349_&_years. = B25063m9;
-		  mGrossRent400_449_&_years. = B25063m10;
-		  mGrossRent450_499_&_years. = B25063m11;
-		  mGrossRent500_549_&_years. = B25063m12;
-		  mGrossRent550_599_&_years. = B25063m13;
-		  mGrossRent600_649_&_years. = B25063m14;
-		  mGrossRent650_699_&_years. = B25063m15;
-		  mGrossRent700_749_&_years. = B25063m16;
-		  mGrossRent750_799_&_years. = B25063m17;
-		  mGrossRent800_899_&_years. = B25063m18;
-		  mGrossRent900_999_&_years. = B25063m19;
-		  mGrossRent1000_1249_&_years. = B25063m20;
-		  mGrossRent1250_1499_&_years. = B25063m21;
-		  mGrossRent1500_1999_&_years. = B25063m22;
-		  mGrossRent2000_2499_&_years. = B25063m23;
-		  mGrossRent2500_2999_&_years. = B25063m24;
-		  mGrossRent3000_3499_&_years. = B25063m25;
-		  mGrossRentGT3500_&_years. = B25063m26;
-		  mGrossRentNoCash_&_years. = B25063m27;
-		  mGrossRentGT2000_&_years. = %moe_sum(var=B25063m23 B25063m24 B25063m25 B25063m26);
-
-		  label
-
-		  GrossRent2000_2499_&_years. = "Renter-occupied housing units where gross rent is $2000 to $2499, &_years_dash "
-	      GrossRent2500_2999_&_years. = "Renter-occupied housing units where gross rent is $2500 to $2999, &_years_dash "
-	      GrossRent3000_3499_&_years. = "Renter-occupied housing units where gross rent is $3000 to $3499, &_years_dash "
-	      GrossRentGT3500_&_years. = "Renter-occupied housing units where gross rent is greater than $3500, &_years_dash "
-		  mGrossRent2000_2499_&_years. = "Renter-occupied housing units where gross rent is $2000 to $2499, MOE, &_years_dash "
-	      mGrossRent2500_2999_&_years. = "Renter-occupied housing units where gross rent is $2500 to $2999, MOE, &_years_dash "
-	      mGrossRent3000_3499_&_years. = "Renter-occupied housing units where gross rent is $3000 to $3499, MOE, &_years_dash "
-	      mGrossRentGT3500_&_years. = "Renter-occupied housing units where gross rent is greater than $3500, MOE &_years_dash "
-	  	;
-
-	 %end;
-
-	  label
-	  medianhomevalue_&_years. = "Median value of owner-occupied housing units ($),&_years_dash"
- 	  mmedianhomevalue_&_years.= "Median value of owner-occupied housing units ($), MOE, &_years_dash"	
-
-	  GrossRentLT100_&_years. = "Renter-occupied housing units where gross rent is less than $100, &_years_dash "
-	  GrossRent100_149_&_years. = "Renter-occupied housing units where gross rent is $100 to $149, &_years_dash "
-	  GrossRent150_199_&_years. = "Renter-occupied housing units where gross rent is $150 to $199, &_years_dash "
-	  GrossRent200_249_&_years. = "Renter-occupied housing units where gross rent is $200 to $249, &_years_dash "
-	  GrossRent250_299_&_years. = "Renter-occupied housing units where gross rent is $250 to $299, &_years_dash "
-	  GrossRent300_349_&_years. = "Renter-occupied housing units where gross rent is $300 to $349, &_years_dash "
-	  GrossRent350_349_&_years. = "Renter-occupied housing units where gross rent is $350 to $399, &_years_dash "
-	  GrossRent400_449_&_years. = "Renter-occupied housing units where gross rent is $400 to $449, &_years_dash "
-	  GrossRent450_499_&_years. = "Renter-occupied housing units where gross rent is $450 to $499, &_years_dash "
-	  GrossRent500_549_&_years. = "Renter-occupied housing units where gross rent is $500 to $549, &_years_dash "
-	  GrossRent550_599_&_years. = "Renter-occupied housing units where gross rent is $550 to $599, &_years_dash "
-	  GrossRent600_649_&_years. = "Renter-occupied housing units where gross rent is $600 to $649, &_years_dash "
-	  GrossRent650_699_&_years. = "Renter-occupied housing units where gross rent is $650 to $699, &_years_dash "
-	  GrossRent700_749_&_years. = "Renter-occupied housing units where gross rent is $700 to $749, &_years_dash "
-	  GrossRent750_799_&_years. = "Renter-occupied housing units where gross rent is $750 to $799, &_years_dash "
-      GrossRent800_899_&_years. = "Renter-occupied housing units where gross rent is $800 to $899, &_years_dash "
-      GrossRent900_999_&_years. = "Renter-occupied housing units where gross rent is $900 to $999, &_years_dash "
-      GrossRent1000_1249_&_years. = "Renter-occupied housing units where gross rent is $1000 to $1249, &_years_dash "
-      GrossRent1250_1499_&_years. = "Renter-occupied housing units where gross rent is $1250 to $1499, &_years_dash "
-      GrossRent1500_1999_&_years. = "Renter-occupied housing units where gross rent is $1500 to $1999, &_years_dash "
-	  GrossRentGT2000_&_years. = "Renter-occupied housing units where gross rent is greater than $2000, &_years_dash "
-
-	  GrossRentNoCash_&_years. = "Renter-occupied housing units where there is no cash rent, &_years_dash "
-
-	  mGrossRentLT100_&_years. = "Renter-occupied housing units where gross rent is less than $100, MOE, &_years_dash "
-	  mGrossRent100_149_&_years. = "Renter-occupied housing units where gross rent is $100 to $149, MOE, &_years_dash "
-	  mGrossRent150_199_&_years. = "Renter-occupied housing units where gross rent is $150 to $199, MOE, &_years_dash "
-	  mGrossRent200_249_&_years. = "Renter-occupied housing units where gross rent is $200 to $249, MOE, &_years_dash "
-	  mGrossRent250_299_&_years. = "Renter-occupied housing units where gross rent is $250 to $299, MOE, &_years_dash "
-	  mGrossRent300_349_&_years. = "Renter-occupied housing units where gross rent is $300 to $349, MOE, &_years_dash "
-	  mGrossRent350_349_&_years. = "Renter-occupied housing units where gross rent is $350 to $399, MOE, &_years_dash "
-	  mGrossRent400_449_&_years. = "Renter-occupied housing units where gross rent is $400 to $449, MOE, &_years_dash "
-	  mGrossRent450_499_&_years. = "Renter-occupied housing units where gross rent is $450 to $499, MOE, &_years_dash "
-	  mGrossRent500_549_&_years. = "Renter-occupied housing units where gross rent is $500 to $549, MOE, &_years_dash "
-	  mGrossRent550_599_&_years. = "Renter-occupied housing units where gross rent is $550 to $599, MOE, &_years_dash "
-	  mGrossRent600_649_&_years. = "Renter-occupied housing units where gross rent is $600 to $649, MOE, &_years_dash "
-	  mGrossRent650_699_&_years. = "Renter-occupied housing units where gross rent is $650 to $699, MOE, &_years_dash "
-	  mGrossRent700_749_&_years. = "Renter-occupied housing units where gross rent is $700 to $749, MOE, &_years_dash "
-	  mGrossRent750_799_&_years. = "Renter-occupied housing units where gross rent is $750 to $799, MOE, &_years_dash "
-      mGrossRent800_899_&_years. = "Renter-occupied housing units where gross rent is $800 to $899, MOE, &_years_dash "
-      mGrossRent900_999_&_years. = "Renter-occupied housing units where gross rent is $900 to $999, MOE, &_years_dash "
-      mGrossRent1000_1249_&_years. = "Renter-occupied housing units where gross rent is $1000 to $1249, MOE, &_years_dash "
-      mGrossRent1250_1499_&_years. = "Renter-occupied housing units where gross rent is $1250 to $1499, MOE, &_years_dash "
-      mGrossRent1500_1999_&_years. = "Renter-occupied housing units where gross rent is $1500 to $1999, MOE, &_years_dash "
-	  mGrossRentGT2000_&_years. = "Renter-occupied housing units where gross rent is greater than $2000, MOE &_years_dash "
-      mGrossRentNoCash_&_years. = "Renter-occupied housing units where there is no cash rent, MOE,&_years_dash "
-	  ;
-
-	**housing vars related to cost-burden**; 
-	  
-	  NumRenterCostBurden_&_years. = sum(B25070e7, B25070e8, B25070e9, B25070e10);
-	  NumRentSevereCostBurden_&_years. = B25070e10;
-
-	  NumOwnerCostBurden_&_years. = sum(B25091e8, B25091e9, B25091e10, B25091e11, B25091e19, B25091e20, B25091e21, B25091e22);
-	  NumOwnSevereCostBurden_&_years. = sum(B25091e11, B25091e22);
-
-	  RentCostBurdenDenom_&_years. = NumRenterOccupiedHU_&_years. - B25070e11;
-	  OwnerCostBurdenDenom_&_years. = NumOwnerOccupiedHU_&_years. - sum(B25091e12, B25091e23);
-
-	  	     mNumRenterCostBurden_&_years. = %moe_sum( var=B25070m7 B25070m8 B25070m9 B25070m10);
-	 	 	 mNumRentSevereCostBurden_&_years. = B25070m10;
-			 mNumOwnerCostBurden_&_years. = %moe_sum( var=B25091m8 B25091m9 B25091m10 B25091m11 B25091m19 B25091m20 B25091m21 B25091m22);
-			 mNumOwnSevereCostBurden_&_years. = %moe_sum( var=B25091m11 B25091m22);
-
-			  mRentCostBurdenDenom_&_years. = %moe_sum( var=B25070m2 B25070m3 B25070m4 B25070m5 B25070m6 B25070m7 B25070m8 B25070m9 B25070m10);
-			  mOwnerCostBurdenDenom_&_years. =  %moe_sum( var=B25091m3 B25091m4 B25091m5 B25091m6 B25091m7 B25091m8 B25091m9 
-			      B25091m10 B25091m11 B25091m14 B25091m15 B25091m16 B25091m17 B25091m18 B25091m19 B25091m20 B25091m21 B25091m22);
-
-	  NumRentCstBurden_15_24_&_years. = sum(B25072e6, B25072e7);
-	  NumRentCstBurden_25_34_&_years. = sum(B25072e13, B25072e14);
-	  NumRentCstBurden_35_64_&_years. = sum(B25072e20, B25072e21);
-	  NumRentCstBurden_65Over_&_years. = sum(B25072e27, B25072e28);
-
-	  NumOwnCstBurden_15_24_&_years. = sum(B25093e6, B25093e7);
-	  NumOwnCstBurden_25_34_&_years. = sum(B25093e13, B25093e14);
-	  NumOwnCstBurden_35_64_&_years. = sum(B25093e20, B25093e21);
-	  NumOwnCstBurden_65Over_&_years. = sum(B25093e27, B25093e28);
-
-		  mNumRentCstBurden_15_24_&_years. = %moe_sum( var=B25072m6 B25072m7);
-		  mNumRentCstBurden_25_34_&_years. = %moe_sum( var=B25072m13 B25072m14);
-		  mNumRentCstBurden_35_64_&_years. = %moe_sum( var=B25072m20 B25072m21);
-		  mNumRentCstBurden_65Over_&_years. = %moe_sum( var=B25072m27 B25072m28);
-
-		  mNumOwnCstBurden_15_24_&_years. = %moe_sum( var=B25093m6 B25093m7);
-		  mNumOwnCstBurden_25_34_&_years. = %moe_sum( var=B25093m13 B25093m14);
-		  mNumOwnCstBurden_35_64_&_years. = %moe_sum( var=B25093m20 B25093m21);
-		  mNumOwnCstBurden_65Over_&_years. = %moe_sum( var=B25093m27 B25093m28);
-
-      AgeByRenterCst_15_24_&_years. = sum(B25072e3, B25072e4, B25072e5, B25072e6, B25072e7);
-	  AgeByRenterCst_25_34_&_years. = sum(B25072e10, B25072e11, B25072e12,B25072e13, B25072e14);
-	  AgeByRenterCst_35_64_&_years. = sum(B25072e17, B25072e18, B25072e19, B25072e20, B25072e21);
-	  AgeByRenterCst_65Over_&_years. = sum(B25072e24, B25072e25, B25072e26, B25072e27, B25072e28);
-
-	  AgeByOwnerCst_15_24_&_years. = sum(B25093e3, B25093e4, B25093e5, B25093e6, B25093e7);
-	  AgeByOwnerCst_25_34_&_years. = sum(B25093e10, B25093e11, B25093e12,B25093e13, B25093e14);
-	  AgeByOwnerCst_35_64_&_years. = sum(B25093e17, B25093e18, B25093e19, B25093e20, B25093e21);
-	  AgeByOwnerCst_65Over_&_years. = sum(B25093e24, B25093e25, B25093e26, B25093e27, B25093e28);
-
-		  mAgeByRenterCst_15_24_&_years. = %moe_sum( var=B25074m3 B25074m4 B25074m5 B25074m6 B25074m7);
-		  mAgeByRenterCst_25_34_&_years. = %moe_sum( var=B25074m10 B25074m11 B25074m12 B25074m13 B25074m14);
-		  mAgeByRenterCst_35_64_&_years. = %moe_sum( var=B25074m17 B25074m18 B25074m19 B25074m20 B25074m21);
-		  mAgeByRenterCst_65Over_&_years. = %moe_sum( var=B25074m24 B25074m25 B25074m26 B25074m27 B25074m28);
-
-		  mAgeByOwnerCst_15_24_&_years. = %moe_sum( var=B25093m3 B25093m4 B25093m5 B25093m6 B25093m7);
-		  mAgeByOwnerCst_25_34_&_years. = %moe_sum( var=B25093m10 B25093m11 B25093m12 B25093m13 B25093m14);
-		  mAgeByOwnerCst_35_64_&_years. = %moe_sum( var=B25093m17 B25093m18 B25093m19 B25093m20 B25093m21);
-		  mAgeByOwnerCst_65Over_&_years. = %moe_sum( var=B25093m24 B25093m25 B25093m26 B25093m27 B25093m28);
-
-	
-	 /*table change in 2010-14 for B25074*/ 
-	%if &_last_year. < 2014  %then %do;  
-		  IncmByRenterCst_LT10K_&_years. = sum(B25074e3, B25074e4, B25074e5, B25074e6, B25074e7);
-		  IncmByRenterCst_10_19K_&_years. = sum(B25074e10, B25074e11, B25074e12, B25074e13, B25074e14);
-		  IncmByRenterCst_20_34K_&_years. = sum(B25074e17, B25074e18, B25074e19, B25074e20, B25074e21);
-		  IncmByRenterCst_35_49K_&_years. = sum(B25074e24, B25074e25, B25074e26, B25074e27, B25074e28);
-		  IncmByRenterCst_50_74K_&_years. = sum(B25074e31, B25074e32, B25074e33, B25074e34, B25074e35);
-		  IncmByRenterCst_75_99K_&_years. = sum(B25074e38, B25074e39, B25074e40, B25074e41, B25074e42);
-		  IncmByRenterCst_GT100K_&_years. = sum(B25074e45, B25074e46, B25074e47, B25074e48, B25074e49);
-
-		   
-		  NumRentCstBurden_LT10K_&_years. = sum(B25074e6, B25074e7);
-		  NumRentCstBurden_10_19K_&_years. = sum(B25074e13, B25074e14);
-		  NumRentCstBurden_20_34K_&_years. = sum(B25074e20, B25074e21);
-		  NumRentCstBurden_35_49K_&_years. = sum(B25074e27, B25074e28);
-		  NumRentCstBurden_50_74K_&_years. = sum(B25074e34, B25074e35);
-		  NumRentCstBurden_75_99K_&_years. = sum(B25074e41, B25074e42);
-		  NumRentCstBurden_GT100K_&_years. = sum(B25074e48, B25074e49);
-
-			  mIncmByRenterCst_LT10K_&_years. = %moe_sum( var=B25074m3 B25074m4 B25074m5 B25074m6 B25074m7);
-			  mIncmByRenterCst_10_19K_&_years. = %moe_sum( var=B25074m10 B25074m11 B25074m12 B25074m13 B25074m14);
-			  mIncmByRenterCst_20_34K_&_years. = %moe_sum( var=B25074m17 B25074m18 B25074m19 B25074m20 B25074m21);
-			  mIncmByRenterCst_35_49K_&_years. = %moe_sum( var=B25074m24 B25074m25 B25074m26 B25074m27 B25074m28);
-			  mIncmByRenterCst_50_74K_&_years. = %moe_sum( var=B25074m31 B25074m32 B25074m33 B25074m34 B25074m35);
-			  mIncmByRenterCst_75_99K_&_years. = %moe_sum( var=B25074m38 B25074m39 B25074m40 B25074m41 B25074m42);
-			  mIncmByRenterCst_GT100K_&_years. = %moe_sum( var=B25074m45 B25074m46 B25074m47 B25074m48 B25074m49);
-
-			  mNumRentCstBurden_LT10K_&_years. = %moe_sum( var=B25074m6 B25074m7);
-			  mNumRentCstBurden_10_19K_&_years. = %moe_sum( var=B25074m13 B25074m14);
-			  mNumRentCstBurden_20_34K_&_years. = %moe_sum( var=B25074m20 B25074m21);
-			  mNumRentCstBurden_35_49K_&_years. = %moe_sum( var=B25074m27 B25074m28);
-			  mNumRentCstBurden_50_74K_&_years. = %moe_sum( var=B25074m34 B25074m35);
-			  mNumRentCstBurden_75_99K_&_years. = %moe_sum( var=B25074m41 B25074m42);
-			  mNumRentCstBurden_GT100K_&_years. = %moe_sum( var=B25074m48 B25074m49);
-
-	%end;
-
-	%else %do; 
-
-	  IncmByRenterCst_LT10K_&_years. = sum(B25074e3, B25074e4, B25074e5, B25074e6, B25074e7, B25074e8, B25074e9);
-	  IncmByRenterCst_10_19K_&_years. = sum(B25074e12, B25074e13, B25074e14, B25074e15, B25074e16, B25074e17, B25074e18);
-	  IncmByRenterCst_20_34K_&_years. = sum(B25074e21, B25074e22, B25074e23, B25074e24, B25074e25, B25074e26, B25074e27);
-	  IncmByRenterCst_35_49K_&_years. = sum(B25074e30, B25074e31, B25074e32, B25074e33, B25074e34, B25074e35, B25074e36);
-	  IncmByRenterCst_50_74K_&_years. = sum(B25074e39, B25074e40, B25074e41, B25074e42, B25074e43, B25074e44, B25074e45);
-	  IncmByRenterCst_75_99K_&_years. = sum(B25074e48, B25074e49, B25074e50, B25074e51, B25074e52, B25074e53, B25074e54);
-	  IncmByRenterCst_GT100K_&_years. = sum(B25074e57, B25074e58, B25074e59, B25074e60, B25074e61, B25074e62, B25074e63);
-
-	   
-	  NumRentCstBurden_LT10K_&_years. = sum(B25074e6, B25074e7, B25074e8, B25074e9);
-	  NumRentCstBurden_10_19K_&_years. = sum(B25074e15, B25074e16, B25074e17, B25074e18);
-	  NumRentCstBurden_20_34K_&_years. = sum(B25074e24, B25074e25, B25074e26, B25074e27);
-	  NumRentCstBurden_35_49K_&_years. = sum(B25074e33, B25074e34, B25074e35, B25074e36);
-	  NumRentCstBurden_50_74K_&_years. = sum(B25074e42, B25074e43, B25074e44, B25074e45);
-	  NumRentCstBurden_75_99K_&_years. = sum(B25074e51, B25074e52, B25074e53, B25074e54);
-	  NumRentCstBurden_GT100K_&_years. = sum(B25074e60, B25074e61, B25074e62, B25074e63);
-
-		  mIncmByRenterCst_LT10K_&_years. = %moe_sum( var=B25074m3 B25074m4 B25074m5 B25074m6 B25074m7 B25074m8 B25074m9);
-		  mIncmByRenterCst_10_19K_&_years. = %moe_sum( var=B25074m12 B25074m13 B25074m14 B25074m15 B25074m16 B25074m17 B25074m18);
-		  mIncmByRenterCst_20_34K_&_years. = %moe_sum( var=B25074m21 B25074m22 B25074m23 B25074m24 B25074m25 B25074m26 B25074m27);
-		  mIncmByRenterCst_35_49K_&_years. = %moe_sum( var=B25074m30 B25074m31 B25074m32 B25074m33 B25074m34 B25074m35 B25074m36);
-		  mIncmByRenterCst_50_74K_&_years. = %moe_sum( var=B25074m39 B25074m40 B25074m41 B25074m42 B25074m43 B25074m44 B25074m45);
-		  mIncmByRenterCst_75_99K_&_years. = %moe_sum( var=B25074m48 B25074m49 B25074m50 B25074m51 B25074m52 B25074m53 B25074m54);
-		  mIncmByRenterCst_GT100K_&_years. = %moe_sum( var=B25074m57 B25074m58 B25074m59 B25074m60 B25074m61 B25074m62 B25074m63);
-
-		  mNumRentCstBurden_LT10K_&_years. = %moe_sum( var=B25074m6 B25074m7 B25074m8 B25074m9);
-		  mNumRentCstBurden_10_19K_&_years. = %moe_sum( var=B25074m15 B25074m16 B25074m17 B25074m18);
-		  mNumRentCstBurden_20_34K_&_years. = %moe_sum( var=B25074m24 B25074m25 B25074m26 B25074m27);
-		  mNumRentCstBurden_35_49K_&_years. = %moe_sum( var=B25074m33 B25074m34 B25074m35 B25074m36);
-		  mNumRentCstBurden_50_74K_&_years. = %moe_sum( var=B25074m42 B25074m43 B25074m44 B25074m45);
-		  mNumRentCstBurden_75_99K_&_years. = %moe_sum( var=B25074m51 B25074m52 B25074m53 B25074m54);
-		  mNumRentCstBurden_GT100K_&_years. = %moe_sum( var=B25074m60 B25074m61 B25074m62 B25074m63);
-
-	%end; 
-
-   label
- 
-	   IncmByRenterCst_LT10K_&_years. = "Renter-occupied housing units with household income less than $10,000, excluding units where renter cost burden is not computed, &_years_dash  "
-	  IncmByRenterCst_10_19K_&_years. = "Renter-occupied housing units with household income less than $10,000, excluding units where renter cost burden is not computed, &_years_dash  "
-	  IncmByRenterCst_20_34K_&_years. = "Renter-occupied housing units with household income $20,000 to $34,999, excluding units where renter cost burden is not computed, &_years_dash  "
-	  IncmByRenterCst_35_49K_&_years. = "Renter-occupied housing units with household income $35,000 to $49,999, excluding units where renter cost burden is not computed, &_years_dash  "
-	  IncmByRenterCst_50_74K_&_years. = "Renter-occupied housing units with household income $50,000 to $74,999, excluding units where renter cost burden is not computed, &_years_dash  "
-	  IncmByRenterCst_75_99K_&_years. = "Renter-occupied housing units with household income $75,000 to $99,999, excluding units where renter cost burden is not computed, &_years_dash  "
-	  IncmByRenterCst_GT100K_&_years. = "Renter-occupied housing units with household income $100,000 or more, excluding units where renter cost burden is not computed, &_years_dash  "
-  	AgeByRenterCst_15_24_&_years. = "Renter-occupied housing units where householder is aged 15 to 25 years old, excluding units where renter cost burden is not computed, &_years_dash  "
-  	  AgeByRenterCst_25_34_&_years. = "Renter-occupied housing units where householder is aged 25 to 34 years old, excluding units where renter cost burden is not computed, &_years_dash  "
-  	  AgeByRenterCst_35_64_&_years. = "Renter-occupied housing units where householder is aged 35 to 64 years old, excluding units where renter cost burden is not computed, &_years_dash  "
-  	  AgeByRenterCst_65Over_&_years. = "Renter-occupied housing units where householder is aged 65 years and older, excluding units where renter cost burden is not computed, &_years_dash  "
-  	AgeByOwnerCst_15_24_&_years. = "Owner-occupied housing units where householder is aged 15 to 25 years old, excluding units where owner cost burden is not computed, &_years_dash  "
-  	  AgeByOwnerCst_25_34_&_years. = "Owner-occupied housing units where householder is aged 25 to 34 years old, excluding units where owner cost burden is not computed, &_years_dash  "
-  	  AgeByOwnerCst_35_64_&_years. = "Owner-occupied housing units where householder is aged 35 to 64 years old, excluding units where owner cost burden is not computed, &_years_dash  "
-  	  AgeByOwnerCst_65Over_&_years. = "Owner-occupied housing units where householder is aged 65 years and older, excluding units where owner cost burden is not computed, &_years_dash  "
-    NumRenterCostBurden_&_years. = "Renter-occupied housing units with housing cost burden (housing costs are or exceed 30% of household income), &_years_dash "
-    NumRentSevereCostBurden_&_years. = "Renter-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), &_years_dash "
-    NumOwnerCostBurden_&_years. = "Owner-occupied housing units with and without a mortgage with housing cost burden (owner costs are or exceed 30% of household income), &_years_dash "
-    NumOwnSevereCostBurden_&_years. = "Owner-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), &_years_dash "
-    RentCostBurdenDenom_&_years. = "Renter-occupied housing units, excluding units where renter cost burden is not computed, &_years_dash  "
-    OwnerCostBurdenDenom_&_years. = "Owner-occupied housing units, excluding units where owner cost burden is not computed, &_years_dash  "
-    NumRentCstBurden_15_24_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 15 to 24 years old, &_years_dash  "
-      NumRentCstBurden_25_34_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 25 to 34 years old, &_years_dash  "
-      NumRentCstBurden_35_64_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 35 to 64 years old, &_years_dash  "
-      NumRentCstBurden_65Over_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 65 years old and older, &_years_dash  "
-    NumOwnCstBurden_15_24_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 15 to 24 years old, &_years_dash  "
-      NumOwnCstBurden_25_34_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 25 to 34 years old, &_years_dash  "
-      NumOwnCstBurden_35_64_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 35 to 64 years old, &_years_dash  "
-      NumOwnCstBurden_65Over_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 65 years old and older, &_years_dash  "
-    NumRentCstBurden_LT10K_&_years. = "Renter-occupied housing units with housing cost burden and household income less than $10,000, &_years_dash  "
-      NumRentCstBurden_10_19K_&_years. = "Renter-occupied housing units with housing cost burden and household income $10,000 to $19,999, &_years_dash  "
-      NumRentCstBurden_20_34K_&_years. = "Renter-occupied housing units with housing cost burden and household income $20,000 to $34,999, &_years_dash  "
-      NumRentCstBurden_35_49K_&_years. = "Renter-occupied housing units with housing cost burden and household income $35,000 to $49,999, &_years_dash  "
-      NumRentCstBurden_50_74K_&_years. = "Renter-occupied housing units with housing cost burden and household income $50,000 to $74,999, &_years_dash  "
-      NumRentCstBurden_75_99K_&_years. = "Renter-occupied housing units with housing cost burden and household income $75,000 to $99,999, &_years_dash  "
-      NumRentCstBurden_GT100K_&_years. = "Renter-occupied housing units with housing cost burden and household income $100,000 or more, &_years_dash  "
-    
-	
-    mIncmByRenterCst_LT10K_&_years. = "Renter-occupied housing units with household income less than $10,000, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-	  mIncmByRenterCst_10_19K_&_years. = "Renter-occupied housing units with household income less than $10,000, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-	  mIncmByRenterCst_20_34K_&_years. = "Renter-occupied housing units with household income $20,000 to $34,999, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-	  mIncmByRenterCst_35_49K_&_years. = "Renter-occupied housing units with household income $35,000 to $49,999, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-	  mIncmByRenterCst_50_74K_&_years. = "Renter-occupied housing units with household income $50,000 to $74,999, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-	  mIncmByRenterCst_75_99K_&_years. = "Renter-occupied housing units with household income $75,000 to $99,999, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-	  mIncmByRenterCst_GT100K_&_years. = "Renter-occupied housing units with household income $100,000 or more, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-  	mAgeByRenterCst_15_24_&_years. = "Renter-occupied housing units where householder is aged 15 to 25 years old, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-  	  mAgeByRenterCst_25_34_&_years. = "Renter-occupied housing units where householder is aged 25 to 34 years old, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-  	  mAgeByRenterCst_35_64_&_years. = "Renter-occupied housing units where householder is aged 35 to 64 years old, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-  	  mAgeByRenterCst_65Over_&_years. = "Renter-occupied housing units where householder is aged 65 years and older, excluding units where renter cost burden is not computed, MOE, &_years_dash "
-  	mAgeByOwnerCst_15_24_&_years. = "Owner-occupied housing units where householder is aged 15 to 25 years old, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-  	  mAgeByOwnerCst_25_34_&_years. = "Owner-occupied housing units where householder is aged 25 to 34 years old, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-  	  mAgeByOwnerCst_35_64_&_years. = "Owner-occupied housing units where householder is aged 35 to 64 years old, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-  	  mAgeByOwnerCst_65Over_&_years. = "Owner-occupied housing units where householder is aged 65 years and older, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-    mNumRenterCostBurden_&_years. = "Renter-occupied housing units with housing cost burden (housing costs are or exceed 30% of household income), MOE, &_years_dash "
-    mNumRentSevereCostBurden_&_years. = "Renter-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), MOE, &_years_dash "
-    mNumOwnerCostBurden_&_years. = "Owner-occupied housing units with and without a mortgage with housing cost burden (owner costs are or exceed 30% of household income), MOE, &_years_dash "
-    mNumOwnSevereCostBurden_&_years. = "Owner-occupied housing units with severe housing cost burden (housing costs are or exceed 50% of household income), MOE, &_years_dash "
-    mRentCostBurdenDenom_&_years. = "Renter-occupied housing units, excluding units where renter cost burden is not computed, MOE, &_years_dash  "
-    mOwnerCostBurdenDenom_&_years. = "Owner-occupied housing units, excluding units where owner cost burden is not computed, MOE, &_years_dash  "
-    mNumRentCstBurden_15_24_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 15 to 24 years old, MOE, &_years_dash  "
-      mNumRentCstBurden_25_34_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 25 to 34 years old, MOE, &_years_dash  "
-      mNumRentCstBurden_35_64_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 35 to 64 years old, MOE, &_years_dash  "
-      mNumRentCstBurden_65Over_&_years. = "Renter-occupied housing units with housing cost burden and householder aged 65 years old and older, MOE, &_years_dash  "
-    mNumOwnCstBurden_15_24_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 15 to 24 years old, MOE, &_years_dash  "
-      mNumOwnCstBurden_25_34_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 25 to 34 years old, MOE, &_years_dash  "
-      mNumOwnCstBurden_35_64_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 35 to 64 years old, MOE, &_years_dash  "
-      mNumOwnCstBurden_65Over_&_years. = "Owner-occupied housing units with housing cost burden and householder aged 65 years old and older, MOE, &_years_dash  "
-    mNumRentCstBurden_LT10K_&_years. = "Renter-occupied housing units with housing cost burden and household income less than $10,000, MOE, &_years_dash  "
-      mNumRentCstBurden_10_19K_&_years. = "Renter-occupied housing units with housing cost burden and household income $10,000 to $19,999, MOE, &_years_dash  "
-      mNumRentCstBurden_20_34K_&_years. = "Renter-occupied housing units with housing cost burden and household income $20,000 to $34,999, MOE, &_years_dash  "
-      mNumRentCstBurden_35_49K_&_years. = "Renter-occupied housing units with housing cost burden and household income $35,000 to $49,999, MOE, &_years_dash  "
-      mNumRentCstBurden_50_74K_&_years. = "Renter-occupied housing units with housing cost burden and household income $50,000 to $74,999, MOE, &_years_dash  "
-      mNumRentCstBurden_75_99K_&_years. = "Renter-occupied housing units with housing cost burden and household income $75,000 to $99,999, MOE, &_years_dash  "
-      mNumRentCstBurden_GT100K_&_years. = "Renter-occupied housing units with housing cost burden and household income $100,000 or more, MOE, &_years_dash  "
-
+      FamIncomeLT75kB_&_years. = "Family income less than $75000, Black/African American, &_years_dash "
+      FamIncomeLT75kW_&_years. = "Family income less than $75000, Non-Hispanic White, &_years_dash "
+      FamIncomeLT75kH_&_years. = "Family income less than $75000, Hispanic/Latino, &_years_dash "
+      FamIncomeLT75kA_&_years. = "Family income less than $75000, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+      FamIncomeLT75kIOM_&_years. = "Family income less than $75000, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      FamIncomeLT75kAIOM_&_years. = "Family income less than $75000,All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      FamIncomeGT200kB_&_years. = "Family income more than $200,000, Black or African American, &_years_dash "
+      FamIncomeGT200kW_&_years. = "Family income more than $200,000, Non-Hispanic White, &_years_dash "
+      FamIncomeGT200kH_&_years. = "Family income more than $200,000, Hispanic or Latino, &_years_dash "
+      FamIncomeGT200kA_&_years. = "Family income more than $200,000, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+      FamIncomeGT200kIOM_&_years. = "Family income more than $200,000, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      FamIncomeGT200kAIOM_&_years. = "Family income more than $200,000, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      mFamIncomeLT75kB_&_years. = "Family income less than $75000, Black/African American, MOE, &_years_dash "
+      mFamIncomeLT75kW_&_years. = "Family income less than $75000, Non-Hispanic White, MOE, &_years_dash "
+      mFamIncomeLT75kH_&_years. = "Family income less than $75000, Hispanic/Latino, MOE, &_years_dash "
+      mFamIncomeLT75kA_&_years. = "Family income less than $75000, Asian, Hawaiian, and other Pacific Islander, MOE, &_years_dash "
+      mFamIncomeLT75kIOM_&_years. = "Family income less than $75000, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mFamIncomeLT75kAIOM_&_years. = "Family income less than $75000,All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mFamIncomeGT200kB_&_years. = "Family income more than $200,000, Black or African American, MOE, &_years_dash "
+      mFamIncomeGT200kW_&_years. = "Family income more than $200,000, Non-Hispanic White, MOE, &_years_dash "
+      mFamIncomeGT200kH_&_years. = "Family income more than $200,000, Hispanic or Latino, MOE, &_years_dash "
+      mFamIncomeGT200kA_&_years. = "Family income more than $200,000, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
+      mFamIncomeGT200kIOM_&_years. = "Family income more than $200,000, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mFamIncomeGT200kAIOM_&_years. = "Family income more than $200,000, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
       ;
 
-	%if &_last_year. < 2013  %then %do; 
-	
-	%end; 
-
-	%else %if &_last_year.= 2013 %then %do; 
-
-		IncmByOwnerCst_LT10K_&_years. = sum(B25095e3, B25095e4, B25095e5, B25095e6, B25095e7);
-	  	IncmByOwnerCst_10_19K_&_years. = sum(B25095e10, B25095e11, B25095e12, B25095e13, B25095e14);
-	  	IncmByOwnerCst_20_34K_&_years. = sum(B25095e17, B25095e18, B25095e19, B25095e20, B25095e21);
-	  	IncmByOwnerCst_35_49K_&_years. = sum(B25095e24, B25095e25, B25095e26, B25095e27, B25095e28);
-	  	IncmByOwnerCst_50_74K_&_years. = sum(B25095e31, B25095e32, B25095e33, B25095e34, B25095e35);
-	  	IncmByOwnerCst_75_99K_&_years. = sum(B25095e38, B25095e39, B25095e40, B25095e41, B25095e42);
-	  	IncmByOwnerCst_100_149_&_years. = sum(B25095e45, B25095e46, B25095e47, B25095e48, B25095e49);
-	  	IncmByOwnerCst_GT150K_&_years. = sum(B25095e52, B25095e53, B25095e54, B25095e55, B25095e56);
-
-	    NumOwnCstBurden_LT10K_&_years. = sum(B25095e6, B25095e7);
-	    NumOwnCstBurden_10_19K_&_years. = sum(B25095e13, B25095e14);
-	    NumOwnCstBurden_20_34K_&_years. = sum(B25095e20, B25095e21);
-	    NumOwnCstBurden_35_49K_&_years. = sum(B25095e27, B25095e28);
-	    NumOwnCstBurden_50_74K_&_years. = sum(B25095e34, B25095e35);
-	    NumOwnCstBurden_75_99K_&_years. = sum(B25095e41, B25095e42);
-	    NumOwnCstBurden_100_149_&_years. = sum(B25095e48, B25095e49);
-	    NumOwnCstBurden_GT150K_&_years. = sum(B25095e55, B25095e56);
-
-		mIncmByOwnerCst_LT10K_&_years. = %moe_sum( var=B25095m3 B25095m4 B25095m5 B25095m6 B25095m7);
-	  	mIncmByOwnerCst_10_19K_&_years. = %moe_sum( var=B25095m10 B25095m11 B25095m12 B25095m13 B25095m14);
-	  	mIncmByOwnerCst_20_34K_&_years. = %moe_sum( var=B25095m17 B25095m18 B25095m19 B25095m20 B25095m21);
-	  	mIncmByOwnerCst_35_49K_&_years. = %moe_sum( var=B25095m24 B25095m25 B25095m26 B25095m27 B25095m28);
-	  	mIncmByOwnerCst_50_74K_&_years. = %moe_sum( var=B25095m31 B25095m32 B25095m33 B25095m34 B25095m35);
-	  	mIncmByOwnerCst_75_99K_&_years. = %moe_sum( var=B25095m38 B25095m39 B25095m40 B25095m41 B25095m42);
-	  	mIncmByOwnerCst_100_149_&_years. = %moe_sum( var=B25095m45 B25095m46 B25095m47 B25095m48 B25095m49);
-	  	mIncmByOwnerCst_GT150K_&_years. = %moe_sum( var=B25095m52 B25095m53 B25095m54 B25095m55 B25095m56);
-
-	    mNumOwnCstBurden_LT10K_&_years. = %moe_sum( var=B25095m6 B25095m7);
-	    mNumOwnCstBurden_10_19K_&_years. = %moe_sum( var=B25095m13 B25095m14);
-	    mNumOwnCstBurden_20_34K_&_years. = %moe_sum( var=B25095m20 B25095m21);
-	    mNumOwnCstBurden_35_49K_&_years. = %moe_sum( var=B25095m27 B25095m28);
-	    mNumOwnCstBurden_50_74K_&_years. = %moe_sum( var=B25095m34 B25095m35);
-	    mNumOwnCstBurden_75_99K_&_years. = %moe_sum( var=B25095m41 B25095m42);
-	    mNumOwnCstBurden_100_149_&_years. = %moe_sum( var=B25095m48 B25095m49);
-	    mNumOwnCstBurden_GT150K_&_years. = %moe_sum( var=B25095m55 B25095m56);
-
-		  label
-
-	    IncmByOwnerCst_LT10K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_10_19K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_20_34K_&_years. = "Owner-occupied housing units with household income $20,000 to $34,999, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_35_49K_&_years. = "Owner-occupied housing units with household income $35,000 to $49,999, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_50_74K_&_years. = "Owner-occupied housing units with household income $50,000 to $74,999, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_75_99K_&_years. = "Owner-occupied housing units with household income $75,000 to $99,999, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_100_149_&_years. = "Owner-occupied housing units with household income $100,000 to $149,999, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_GT150K_&_years. = "Owner-occupied housing units with household income $150,000 or more, excluding units where owner cost burden is not computed, &_years_dash  "
-	    NumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, &_years_dash  "
-	      NumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, &_years_dash  "
-	      NumOwnCstBurden_20_34K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, &_years_dash  "
-	      NumOwnCstBurden_35_49K_&_years. = "Owner-occupied housing units with housing cost burden and household income $35,000 to $49,999, &_years_dash  "
-	      NumOwnCstBurden_50_74K_&_years. = "Owner-occupied housing units with housing cost burden and household income $50,000 to $74,999, &_years_dash  "
-	      NumOwnCstBurden_75_99K_&_years. = "Owner-occupied housing units with housing cost burden and household income $75,000 to $99,999, &_years_dash  "
-	      NumOwnCstBurden_100_149_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, &_years_dash  "
-		  NumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, &_years_dash  "
-	    mIncmByOwnerCst_LT10K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_10_19K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_20_34K_&_years. = "Owner-occupied housing units with household income $20,000 to $34,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_35_49K_&_years. = "Owner-occupied housing units with household income $35,000 to $49,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_50_74K_&_years. = "Owner-occupied housing units with household income $50,000 to $74,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_75_99K_&_years. = "Owner-occupied housing units with household income $75,000 to $99,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_100_149_&_years. = "Owner-occupied housing units with household income $100,000 to $149,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_GT150K_&_years. = "Owner-occupied housing units with household income $150,000 or more, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-	    mNumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, MOE, &_years_dash  "
-	      mNumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, MOE, &_years_dash  "
-	      mNumOwnCstBurden_20_34K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, MOE, &_years_dash  "
-	      mNumOwnCstBurden_35_49K_&_years. = "Owner-occupied housing units with housing cost burden and household income $35,000 to $49,999, MOE, &_years_dash  "
-	      mNumOwnCstBurden_50_74K_&_years. = "Owner-occupied housing units with housing cost burden and household income $50,000 to $74,999, MOE, &_years_dash  "
-	      mNumOwnCstBurden_75_99K_&_years. = "Owner-occupied housing units with housing cost burden and household income $75,000 to $99,999, MOE, &_years_dash  "
-	      mNumOwnCstBurden_100_149_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, MOE, &_years_dash  "
-	      mNumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, MOE, &_years_dash  "
-	    ;
-
-	%END;
-
-	
-	%else %do;
-		IncmByOwnerCst_LT10K_&_years. = sum(B25095e3, B25095e4, B25095e5, B25095e6, B25095e7, B25095e8, B25095e9);
-	  	IncmByOwnerCst_10_19K_&_years. = sum(B25095e12, B25095e13, B25095e14, B25095e15, B25095e16, B25095e17, B25095e18);
-	  	IncmByOwnerCst_20_34K_&_years. = sum(B25095e21, B25095e22, B25095e23, B25095e24, B25095e25, B25095e26, B25095e27);
-	  	IncmByOwnerCst_35_49K_&_years. = sum(B25095e30, B25095e31, B25095e32, B25095e33, B25095e34, B25095e35, B25095e36);
-	  	IncmByOwnerCst_50_74K_&_years. = sum(B25095e39, B25095e40, B25095e41, B25095e42, B25095e43, B25095e44, B25095e45);
-	  	IncmByOwnerCst_75_99K_&_years. = sum(B25095e48, B25095e49, B25095e50, B25095e51, B25095e52, B25095e53, B25095e54);
-	  	IncmByOwnerCst_100_149_&_years. = sum(B25095e57, B25095e58, B25095e59, B25095e60, B25095e61, B25095e62, B25095e63);
-	  	IncmByOwnerCst_GT150K_&_years. = sum(B25095e66, B25095e67, B25095e68, B25095e69, B25095e70, B25095e71, B25095e72);
-
-	    NumOwnCstBurden_LT10K_&_years. = sum(B25095e6, B25095e7, B25095e8, B25095e9);
-	    NumOwnCstBurden_10_19K_&_years. = sum(B25095e15, B25095e16, B25095e17, B25095e18);
-	    NumOwnCstBurden_20_34K_&_years. = sum(B25095e24, B25095e25, B25095e26, B25095e27);
-	    NumOwnCstBurden_35_49K_&_years. = sum(B25095e33, B25095e34, B25095e35, B25095e36);
-	    NumOwnCstBurden_50_74K_&_years. = sum(B25095e42, B25095e43, B25095e44, B25095e45);
-	    NumOwnCstBurden_75_99K_&_years. = sum(B25095e51, B25095e52, B25095e53, B25095e54);
-	    NumOwnCstBurden_100_149_&_years. = sum(B25095e60, B25095e61, B25095e62, B25095e63);
-	    NumOwnCstBurden_GT150K_&_years. = sum(B25095e69, B25095e70, B25095e71, B25095e72);
-
-		mIncmByOwnerCst_LT10K_&_years. = %moe_sum( var=B25095m3 B25095m4 B25095m5 B25095m6 B25095m7 B25095m8 B25095m9);
-	  	mIncmByOwnerCst_10_19K_&_years. = %moe_sum( var=B25095m12 B25095m13 B25095m14 B25095m15 B25095m16 B25095m17 B25095m18);
-	  	mIncmByOwnerCst_20_34K_&_years. = %moe_sum( var=B25095m21 B25095m22 B25095m23 B25095m24 B25095m25 B25095m26 B25095m27);
-	  	mIncmByOwnerCst_35_49K_&_years. = %moe_sum( var=B25095m30 B25095m31 B25095m32 B25095m33 B25095m34 B25095m35 B25095m36);
-	  	mIncmByOwnerCst_50_74K_&_years. = %moe_sum( var=B25095m39 B25095m40 B25095m41 B25095m42 B25095m43 B25095m44 B25095m45);
-	  	mIncmByOwnerCst_75_99K_&_years. = %moe_sum( var=B25095m48 B25095m49 B25095m50 B25095m51 B25095m52 B25095m53 B25095m54);
-	  	mIncmByOwnerCst_100_149_&_years. = %moe_sum( var=B25095m57 B25095m58 B25095m59 B25095m60 B25095m61 B25095m62 B25095m63);
-	  	mIncmByOwnerCst_GT150K_&_years. = %moe_sum( var=B25095m66 B25095m67 B25095m68 B25095m69 B25095m70 B25095m71 B25095m72);
-
-	    mNumOwnCstBurden_LT10K_&_years. = %moe_sum( var=B25095m6 B25095m7 B25095m8 B25095m9);
-	    mNumOwnCstBurden_10_19K_&_years. = %moe_sum( var=B25095m15 B25095m16 B25095m17 B25095m18);
-	    mNumOwnCstBurden_20_34K_&_years. = %moe_sum( var=B25095m24 B25095m25 B25095m26 B25095m27);
-	    mNumOwnCstBurden_35_49K_&_years. = %moe_sum( var=B25095m33 B25095m34 B25095m35 B25095m36);
-	    mNumOwnCstBurden_50_74K_&_years. = %moe_sum( var=B25095m42 B25095m43 B25095m44 B25095m45);
-	    mNumOwnCstBurden_75_99K_&_years. = %moe_sum( var=B25095m51 B25095m52 B25095m53 B25095m54);
-	    mNumOwnCstBurden_100_149_&_years. = %moe_sum( var=B25095m60 B25095m61 B25095m62 B25095m63);
-	    mNumOwnCstBurden_GT150K_&_years. = %moe_sum( var=B25095m69 B25095m70 B25095m71 B25095m72);
-	  label
-
-	    IncmByOwnerCst_LT10K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_10_19K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_20_34K_&_years. = "Owner-occupied housing units with household income $20,000 to $34,999, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_35_49K_&_years. = "Owner-occupied housing units with household income $35,000 to $49,999, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_50_74K_&_years. = "Owner-occupied housing units with household income $50,000 to $74,999, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_75_99K_&_years. = "Owner-occupied housing units with household income $75,000 to $99,999, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_100_149_&_years. = "Owner-occupied housing units with household income $100,000 to $149,999, excluding units where owner cost burden is not computed, &_years_dash  "
-		  IncmByOwnerCst_GT150K_&_years. = "Owner-occupied housing units with household income $150,000 or more, excluding units where owner cost burden is not computed, &_years_dash  "
-	    NumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, &_years_dash  "
-	      NumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, &_years_dash  "
-	      NumOwnCstBurden_20_34K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, &_years_dash  "
-	      NumOwnCstBurden_35_49K_&_years. = "Owner-occupied housing units with housing cost burden and household income $35,000 to $49,999, &_years_dash  "
-	      NumOwnCstBurden_50_74K_&_years. = "Owner-occupied housing units with housing cost burden and household income $50,000 to $74,999, &_years_dash  "
-	      NumOwnCstBurden_75_99K_&_years. = "Owner-occupied housing units with housing cost burden and household income $75,000 to $99,999, &_years_dash  "
-	      NumOwnCstBurden_100_149_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, &_years_dash  "
-		  NumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, &_years_dash  "
-	    mIncmByOwnerCst_LT10K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_10_19K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_20_34K_&_years. = "Owner-occupied housing units with household income $20,000 to $34,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_35_49K_&_years. = "Owner-occupied housing units with household income $35,000 to $49,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_50_74K_&_years. = "Owner-occupied housing units with household income $50,000 to $74,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_75_99K_&_years. = "Owner-occupied housing units with household income $75,000 to $99,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_100_149_&_years. = "Owner-occupied housing units with household income $100,000 to $149,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-		  mIncmByOwnerCst_GT150K_&_years. = "Owner-occupied housing units with household income $150,000 or more, excluding units where owner cost burden is not computed, MOE, &_years_dash "
-	    mNumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, MOE, &_years_dash  "
-	      mNumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, MOE, &_years_dash  "
-	      mNumOwnCstBurden_20_34K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, MOE, &_years_dash  "
-	      mNumOwnCstBurden_35_49K_&_years. = "Owner-occupied housing units with housing cost burden and household income $35,000 to $49,999, MOE, &_years_dash  "
-	      mNumOwnCstBurden_50_74K_&_years. = "Owner-occupied housing units with housing cost burden and household income $50,000 to $74,999, MOE, &_years_dash  "
-	      mNumOwnCstBurden_75_99K_&_years. = "Owner-occupied housing units with housing cost burden and household income $75,000 to $99,999, MOE, &_years_dash  "
-	      mNumOwnCstBurden_100_149_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, MOE, &_years_dash  "
-	      mNumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, MOE, &_years_dash  "
-	    ;
-
-	%end; 
+	  MedFamIncm_&_years. = B19113e1;
+	  MedFamIncmB_&_years. = B19113Be1;
+	  MedFamIncmW_&_years. = B19113He1;
+	  MedFamIncmH_&_years. = B19113Ie1;
+	  MedFamIncmA_&_years. = sum(B19113De1, B19113Ee1 );
+	  MedFamIncmIOM_&_years. = sum(B19113Ce1, B19113Fe1, B19113Ge1 );
+	  MedFamIncmAIOM_&_years. = sum(B19113Ce1, B19113De1, B19113Ee1, B19113Fe1, B19113Ge1 );
 
 
- 	  ** Housing vars related to bedroom size; 
-
-		NumHsgUnits0bd_&_years. = B25041e2;
-		mNumHsgUnits0bd_&_years. = %moe_sum( var=B25041m2 );
-		NumHsgUnits1bd_&_years. = B25041e3 ; 
-		mNumHsgUnits1bd_&_years. = %moe_sum( var=B25041m3 );
-		NumHsgUnits2bd_&_years. = B25041e4 ;
-		mNumhsgUnits2bd_&_years. = %moe_sum( var=B25041m4 );
-		NumHsgUnits3bd_&_years. =B25041e5 ;
-		mNumHsgUnits3bd_&_years. = %moe_sum( var=B25041m5 );
-		NumHsgUnits3plusbd_&_years. = sum( B25041e5, B25041e6, B25041e7 );
-		mNumHsgUnits3plusbd_&_years. = %moe_sum( var=B25041m5 B25041m6 B25041m7 );
-		NumHsgUnits4bd_&_years. = B25041e6 ;
-		mNumHsgUnits4bd_&_years. = %moe_sum( var=B25041m6 );
-		NumHsgUnits5plusbd_&_years. =B25041e7 ;
-		mNumHsgUnits5plusbd_&_years. = %moe_sum( var=B25041m7 );
-
-		NumRentOccHU5plusbd_&_years. = B25042e15 ;
-		NumRentOccHU4bd_&_years. = B25042e14 ;
-		NumRentOccHU3bd_&_years. = B25042e13 ;
-		NumRentOccHU2bd_&_years. = B25042e12 ;
-		NumRentOccHU1bd_&_years. = B25042e11 ;
-		NumRentOccHU0bd_&_years. = B25042e10 ;
-		NumRentOccHU3plusbd_&_years. = sum( B25042e13, B25042e14, B25042e15 );
-		mNumRentOccHU0bd_&_years. = %moe_sum( var=B25042m10 );
-		mNumRentOccHU1bd_&_years. = %moe_sum( var=B25042m11 );
-		mNumRentOccHU2bd_&_years. = %moe_sum( var=B25042m12 );
-		mNumRentOccHU3bd_&_years. = %moe_sum( var=B25042m13 );
-		mNumRentOccHU4bd_&_years. = %moe_sum( var=B25042m14 );
-		mNumRentOccHU5plusbd_&_years. = %moe_sum( var=B25042m15 );
-		mNumRentOccHU3plusbd_&_years. = %moe_sum( var=B25042m13 B25042m14 B25042m15 );
-
-		NumOwnOccHU0bd_&_years. = B25042e3 ;
-		NumOwnOccHU1bd_&_years. = B25042e4 ;
-		NumOwnOccHU2bd_&_years. = B25042e5 ;
-		NumOwnOccHU3bd_&_years. = B25042e6 ;
-		NumOwnOccHU4bd_&_years. = B25042e7 ;
-		NumOwnOccHU3plusbd_&_years. =
-		sum( B25042e6, B25042e7, B25042e8 );
-		NumOwnOccHU5plusbd_&_years. = B25042e8 ;
-		mNumOwnOccHU0bd_&_years. = %moe_sum( var=B25042m3 );
-		mNumOwnOccHU1bd_&_years. = %moe_sum( var=B25042m4 );
-		mNumOwnOccHU2bd_&_years. = %moe_sum( var=B25042m5 );
-		mNumOwnOccHU3bd_&_years. = %moe_sum( var=B25042m6 );
-		mNumOwnOccHU4bd_&_years. = %moe_sum( var=B25042m7 );
-		mNumOwnOccHU5plusbd_&_years. = %moe_sum( var=B25042m8 );
-		mNumOwnOccHU3plusbd_&_years. = %moe_sum( var=B25042m6 B25042m7 B25042m8 );
-
-		%if &_last_year. < 2015 %then %do; 
-			NumRtOHU0Bunder500_&_years. = sum( B25068e4, B25068e5, B25068e6, B25068e10 );
-			NumRtOHU0B500to749_&_years. = B25068e7;
-			NumRtOHU0B750to999_&_years. = B25068e8;
-			NumRtOHU0B1000plus_&_years. = B25068e9;
-			NumRtOHU1Bunder500_&_years. =  sum( B25068e13, B25068e14, B25068e15, B25068e19 );
-			NumRtOHU1B500to749_&_years. = B25068e16;
-			NumRtOHU1B750to999_&_years. = B25068e17;
-			NumRtOHU1B1000plus_&_years. = B25068e18;
-			NumRtOHU2Bunder500_&_years. = sum( B25068e22, B25068e23, B25068e24, B25068e28 );
-			NumRtOHU2B500to749_&_years. = B25068e25;
-			NumRtOHU2B750to999_&_years. = B25068e26;
-			NumRtOHU2B1000plus_&_years. = B25068e27; 
-			NumRtOHU3Bunder500_&_years. = sum( B25068e31, B25068e32, B25068e33, B25068e37);
-			NumRtOHU3B500to749_&_years. = B25068e34;
-			NumRtOHU3B750to999_&_years. = B25068e35;
-			NumRtOHU3B1000plus_&_years. = B25068e36;
-			mNumRtOHU0Bunder500_&_years. = %moe_sum( var=B25068m4 B25068m5 B25068m6 B25068e10);
-			mNumRtOHU0B500to749_&_years. = %moe_sum( var= B25068m7);
-			mNumRtOHU0B750to999_&_years. = %moe_sum( var= B25068m8 );
-			mNumRtOHU0B1000plus_&_years. = %moe_sum( var=B25068m9 );
-			mNumRtOHU1Bunder500_&_years. = %moe_sum( var=B25068m13 B25068m14 B25068m15 B25068e19);
-			mNumRtOHU1B500to749_&_years. = %moe_sum( var= B25068m16);
-			mNumRtOHU1B750to999_&_years. = %moe_sum( var= B25068m17 );
-			mNumRtOHU1B1000plus_&_years. = %moe_sum( var=B25068m18 );
-			mNumRtOHU2Bunder500_&_years. = %moe_sum( var=B25068m22 B25068m23 B25068m24 B25068e28);
-			mNumRtOHU2B500to749_&_years. = %moe_sum( var=B25068m25 );
-			mNumRtOHU2B750to999_&_years. = %moe_sum( var= B25068m26 );
-			mNumRtOHU2B1000plus_&_years. = %moe_sum( var=B25068m27 );
-			mNumRtOHU3Bunder500_&_years. = %moe_sum( var=B25068m31 B25068m32 B25068m33  B25068e37);
-			mNumRtOHU3B500to749_&_years. = %moe_sum( var=B25068m34);
-			mNumRtOHU3B750to999_&_years. = %moe_sum( var= B25068m35 );
-			mNumRtOHU3B1000plus_&_years. = %moe_sum( var=B25068m36 );
-		%end;
-		%else %do;
-			
-			*table b25031 appears in 2011-15; 
-			MedRent5plusbd_&_years.  = B25031e7;
-			MedRent4bd_&_years. = B25031e6 ;
-			MedRent3bd_&_years. = B25031e5;
-			MedRent2bd_&_years. = B25031e4 ;
-			MedRent1bd_&_years. = B25031e3 ;
-			MedRent0bd_&_years. = B25031e2 ;
-			mMedRent0bd_&_years. = %moe_sum( var=B25031m2 );
-			mMedRent1bd_&_years. = %moe_sum( var=B25031m3 );
-			mMedRent2bd_&_years. = %moe_sum( var=B25031m4 );
-			mMedRent3bd_&_years. = %moe_sum( var=B25031m5 );
-			mMedRent4bd_&_years. = %moe_sum( var=B25031m6 );
-			mMedRent5plusbd_&_years. = %moe_sum( var=B25031m7 );
-
-			*CHANGE TO TABLE b25068 IN 2011-15;
-
-			NumRtOHU0Bunder500_&_years. = sum( B25068e4, B25068e5, B25068e10 );
-			NumRtOHU0B500to749_&_years. = B25068e6;
-			NumRtOHU0B750to999_&_years. = B25068e7;
-			NumRtOHU0B1000to1499_&_years. = B25068e8;
-			NumRtOHU0B1500plus_&_years. = B25068e9;
-			NumRtOHU0B1000plus_&_years. = sum( B25068e8, B25068e9 );
-			NumRtOHU1Bunder500_&_years. =  sum( B25068e13, B25068e14, B25068e19 );
-			NumRtOHU1B500to749_&_years. = B25068e15 ;
-			NumRtOHU1B750to999_&_years. = B25068e16;
-			NumRtOHU1B1000to1499_&_years. = B25068e17;
-			NumRtOHU1B1500plus_&_years. = B25068e18;
-			NumRtOHU1B1000plus_&_years. = sum( B25068e17, B25068e18 );
-			NumRtOHU2Bunder500_&_years. = sum( B25068e22, B25068e23, B25068e28 );
-			NumRtOHU2B500to749_&_years. = B25068e24;
-			NumRtOHU2B750to999_&_years. = B25068e25;
-			NumRtOHU2B1000to1499_&_years. = B25068e26;
-			NumRtOHU2B1500plus_&_years. = B25068e27;
-			NumRtOHU2B1000plus_&_years. = sum( B25068e26, B25068e27 );
-			NumRtOHU3Bunder500_&_years. = sum( B25068e31, B25068e32, B25068e37);
-			NumRtOHU3B500to749_&_years. = B25068e33;
-			NumRtOHU3B750to999_&_years. = B25068e34;
-			NumRtOHU3B1000to1499_&_years. = B25068e35;
-			NumRtOHU3B1500plus_&_years. = B25068e36;
-			NumRtOHU3B1000plus_&_years. = sum( B25068e35, B25068e36 );
-			mNumRtOHU0Bunder500_&_years. = %moe_sum( var=B25068m4 B25068m5 B25068e10 );
-			mNumRtOHU0B500to749_&_years. = %moe_sum( var=B25068m6 );
-			mNumRtOHU0B750to999_&_years. = %moe_sum( var=B25068m7 );
-			mNumRtOHU0B1000to1499_&_years. = %moe_sum( var= B25068m8 );
-			mNumRtOHU0B1500plus_&_years. = %moe_sum( var=B25068m9 );
-			mNumRtOHU0B1000plus_&_years. = %moe_sum( var=B25068m8 B25068m9 );
-			mNumRtOHU1Bunder500_&_years. = %moe_sum( var=B25068m13 B25068m14 B25068e19 );
-			mNumRtOHU1B500to749_&_years. = %moe_sum( var=B25068m15 );
-			mNumRtOHU1B750to999_&_years. = %moe_sum( var=B25068m16 );
-			mNumRtOHU1B1000to1499_&_years. = %moe_sum( var= B25068m17 );
-			mNumRtOHU1B1500plus_&_years. = %moe_sum( var=B25068m18 );
-			mNumRtOHU1B1000plus_&_years. = %moe_sum( var=B25068m17 B25068m18 );
-			mNumRtOHU2Bunder500_&_years. = %moe_sum( var=B25068m22 B25068m23 B25068e28 );
-			mNumRtOHU2B500to749_&_years. = %moe_sum( var=B25068m24 );
-			mNumRtOHU2B750to999_&_years. = %moe_sum( var=B25068m25  );
-			mNumRtOHU2B1000to1499_&_years. = %moe_sum( var=B25068m26 );
-			mNumRtOHU2B1500plus_&_years. = %moe_sum( var=B25068m27 );
-			mNumRtOHU2B1000plus_&_years. = %moe_sum( var=B25068m26 B25068m27 );
-			mNumRtOHU3Bunder500_&_years. = %moe_sum( var=B25068m31 B25068m32 B25068e37 );
-			mNumRtOHU3B500to749_&_years. = %moe_sum( var=B25068m33 );
-			mNumRtOHU3B750to999_&_years. = %moe_sum( var=B25068m34 );
-			mNumRtOHU3B1000to1499_&_years. = %moe_sum( var= B25068m35 );
-			mNumRtOHU3B1500plus_&_years. = %moe_sum( var=B25068m36 );
-			mNumRtOHU3B1000plus_&_years. = %moe_sum( var=B25068m35 B25068m36 );
-
-			label
-			MedRent5plusbd_&_years.  = "Median gross rent for five or more bedrooms, &_years_dash "
-			MedRent4bd_&_years.  = "Median gross rent for four bedrooms, &_years_dash "
-			MedRent3bd_&_years.  = "Median gross rent for three bedrooms, &_years_dash "
-			MedRent2bd_&_years.  = "Median gross rent for two bedrooms, &_years_dash "
-			MedRent1bd_&_years.  = "Median gross rent for one bedroom, &_years_dash "
-			MedRent0bd_&_years.  = "Median gross rent for zero bedrooms, &_years_dash "
-			mMedRent5plusbd_&_years.  = "Median gross rent for five or more bedrooms, MOE, &_years_dash "
-			mMedRent4bd_&_years.  = "Median gross rent for four bedrooms, MOE, &_years_dash "
-			mMedRent3bd_&_years.  = "Median gross rent for three bedrooms, MOE, &_years_dash "
-			mMedRent2bd_&_years.  = "Median gross rent for two bedrooms, MOE, &_years_dash "
-			mMedRent1bd_&_years.  = "Median gross rent for one bedroom, MOE, &_years_dash "
-			mMedRent0bd_&_years.  = "Median gross rent for zero bedrooms, MOE, &_years_dash "
-
-			numRtOHU0B1000to1499_&_years. = "Renter-occupied housing units with zero bedrooms and paying $1000 to $1499 in cash rent, &_years_dash "
-			numRtOHU0B1500plus_&_years. = "Renter-occupied housing units with zero bedrooms and paying over $1500 in cash rent, &_years_dash "
-			numRtOHU1B1000to1499_&_years. = "Renter-occupied housing units with one bedroom and paying $1000 to $1499 in cash rent, &_years_dash "
-			numRtOHU1B1500plus_&_years. = "Renter-occupied housing units with one bedroom and paying over $1500 in cash rent, &_years_dash "
-			numRtOHU2B1000to1499_&_years. = "Renter-occupied housing units with two bedrooms and paying $1000 to $1499 in cash rent, &_years_dash "
-			numRtOHU2B1500plus_&_years. = "Renter-occupied housing units with two bedrooms and paying over $1500 in cash rent, &_years_dash "
-			numRtOHU3B1000to1499_&_years. = "Renter-occupied housing units with three bedrooms and paying $1000 to $1499 in cash rent, &_years_dash "
-			numRtOHU3B1500plus_&_years. = "Renter-occupied housing units with three bedrooms and paying over $1500 in cash rent, &_years_dash "
-			mNumRtOHU0B1000to1499_&_years. = "Renter-occupied housing units with zero bedrooms and paying $1000 to $1499 in cash rent, MOE, &_years_dash "
-			mNumRtOHU0B1500plus_&_years. = "Renter-occupied housing units with zero bedrooms and paying over $1500 in cash rent, MOE, &_years_dash "
-			mNumRtOHU1B1000to1499_&_years. = "Renter-occupied housing units with one bedroom and paying $1000 to $1499 in cash rent, MOE, &_years_dash "
-			mNumRtOHU1B1500plus_&_years. = "Renter-occupied housing units with one bedroom and paying over $1500 in cash rent, MOE, &_years_dash "
-			mNumRtOHU2B1000to1499_&_years. = "Renter-occupied housing units with two bedrooms and paying $1000 to $1499 in cash rent, MOE, &_years_dash "
-			mNumRtOHU2B1500plus_&_years. = "Renter-occupied housing units with two bedrooms and paying over $1500 in cash rent, MOE, &_years_dash "
-			mNumRtOHU3B1000to1499_&_years. = "Renter-occupied housing units with three bedrooms and paying $1000 to $1499 in cash rent, MOE, &_years_dash "
-			mNumRtOHU3B1500plus_&_years. = "Renter-occupied housing units with three bedrooms and paying over $1500 in cash rent, MOE, &_years_dash "
-			;
-		%end;
+	  mMedFamIncm_&_years. = B19113m1;
+      mMedFamIncmB_&_years. = B19113Bm1;
+      mMedFamIncmW_&_years. = B19113Hm1;
+      mMedFamIncmH_&_years. = B19113Im1;
+      mMedFamIncmA_&_years. = %moe_sum( var=B19113Dm1 B19113Em1);
+      mMedFamIncmIOM_&_years. = %moe_sum( var=B19113Cm1 B19113Fm1 B19113Gm1);
+      mMedFamIncmAIOM_&_years. = %moe_sum( var=B19113Cm1 B19113Dm1 B19113Em1 B19113Fm1 B19113Gm1); 
 
 
+	  label 
+	  MedFamIncm_&_years. = "Median family income, &_years_dash "
+      MedFamIncmB_&_years. = "Median family income, Black/African American, &_years_dash "
+      MedFamIncmW_&_years. = "Median family income, Non-Hispanic White, &_years_dash "
+      MedFamIncmH_&_years. = "Median family income, Hispanic/Latino, &_years_dash "
+      MedFamIncmA_&_years. = "Median family income, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+      MedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+      MedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+	  mMedFamIncm_&_years. = "Median family income, MOE, &_years_dash "
+      mMedFamIncmB_&_years. = "Median family income, Black/African American, MOE, &_years_dash "
+      mMedFamIncmW_&_years. = "Median family income, Non-Hispanic White, MOE, &_years_dash "
+      mMedFamIncmH_&_years. = "Median family income, Hispanic/Latino, MOE, &_years_dash "
+      mMedFamIncmA_&_years. = "Median family income, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
+      mMedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
+      mMedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+	;
 
-		label 
-						
-			Numhsgunits0bd_&_years. = "Number of housing units with zero bedrooms, &_years_dash "
-			Numhsgunits1bd_&_years. = "Number of housing units with one bedrooms, &_years_dash "
-			Numhsgunits2bd_&_years. = "Number of housing units with two bedrooms, &_years_dash "
-			Numhsgunits3bd_&_years. = "Number of housing units with three bedrooms, &_years_dash "
-			Numhsgunits3plusbd_&_years. = "Number of housing units with three or more bedrooms, &_years_dash "
-			Numhsgunits4bd_&_years. = "Number of housing units with four bedrooms, &_years_dash "
-			Numhsgunits5plusbd_&_years. = "Number of housing units with five or more bedrooms, &_years_dash "
-			mNumhsgunits0bd_&_years. = "Number of housing units with zero bedrooms, MOE, &_years_dash "
-			mNumhsgunits1bd_&_years. = "Number of housing units with one bedrooms, MOE, &_years_dash "
-			mNumhsgunits2bd_&_years. = "Number of housing units with two bedrooms, MOE, &_years_dash "
-			mNumhsgunits3bd_&_years. = "Number of housing units with three bedrooms, MOE, &_years_dash "
-			mNumhsgunits3plusbd_&_years. = "Number of housing units with three or more bedrooms, MOE, &_years_dash "
-			mNumhsgunits4bd_&_years. = "Number of housing units with four bedrooms, MOE, &_years_dash "
-			mNumhsgunits5plusbd_&_years. = "Number of housing units with five or more bedrooms, MOE, &_years_dash "
+    ** Housing **;
 
 
-			Numrentocchu0bd_&_years. = "Number of renter-occupied housing units with zero bedrooms, &_years_dash "
-			Numrentocchu1bd_&_years. = "Number of renter-occupied housing units with one bedroom, &_years_dash "
-			Numrentocchu2bd_&_years. = "Number of renter-occupied housing units with two bedrooms, &_years_dash "
-			Numrentocchu3bd_&_years. = "Number of renter-occupied housing units with three bedrooms, &_years_dash "
-			Numrentocchu3plusbd_&_years. = "Number of renter-occupied housing units with three or more bedrooms, &_years_dash "
-			Numrentocchu4bd_&_years. = "Number of renter-occupied housing units with four bedrooms, &_years_dash "
-			Numrentocchu5plusbd_&_years. = "Number of renter-occupied housing units with five or more bedrooms, &_years_dash "
-			mNumrentocchu0bd_&_years. = "Number of renter-occupied housing units with zero bedrooms, MOE, &_years_dash "
-			mNumrentocchu1bd_&_years. = "Number of renter-occupied housing units with one bedroom, MOE, &_years_dash "
-			mNumrentocchu2bd_&_years. = "Number of renter-occupied housing units with two bedrooms, MOE, &_years_dash "
-			mNumrentocchu3bd_&_years. = "Number of renter-occupied housing units with three bedrooms, MOE, &_years_dash "
-			mNumrentocchu3plusbd_&_years. = "Number of renter-occupied housing units with three or more bedrooms, MOE, &_years_dash "
-			mNumrentocchu4bd_&_years. = "Number of renter-occupied housing units with four bedrooms, MOE, &_years_dash "
-			mNumrentocchu5plusbd_&_years. = "Number of renter-occupied housing units with five or more bedrooms, MOE, &_years_dash "
-			
-			Numownocchu0bd_&_years. = "Number of owner-occupied housing units with zero bedrooms, &_years_dash "
-			Numownocchu1bd_&_years. = "Number of owner-occupied housing units with one bedroom, &_years_dash "
-			Numownocchu2bd_&_years. = "Number of owner-occupied housing units with two bedrooms, &_years_dash "
-			Numownocchu3bd_&_years. = "Number of owner-occupied housing units with three bedrooms, &_years_dash "
-			Numownocchu3plusbd_&_years. = "Number of owner-occupied housing units with three or more bedrooms, &_years_dash "
-			Numownocchu4bd_&_years. = "Number of owner-occupied housing units with four bedrooms, &_years_dash "
-			Numownocchu5plusbd_&_years. = "Number of owner-occupied housing units with five or more bedrooms, &_years_dash "
-			mNumownocchu0bd_&_years. = "Number of owner-occupied housing units with zero bedrooms, MOE, &_years_dash "
-			mNumownocchu1bd_&_years. = "Number of owner-occupied housing units with one bedroom, MOE, &_years_dash "
-			mNumownocchu2bd_&_years. = "Number of owner-occupied housing units with two bedrooms, MOE, &_years_dash "
-			mNumownocchu3bd_&_years. = "Number of owner-occupied housing units with three bedrooms, MOE, &_years_dash "
-			mNumownocchu3plusbd_&_years. = "Number of owner-occupied housing units with three or more bedrooms, MOE, &_years_dash "
-			mNumownocchu4bd_&_years. = "Number of owner-occupied housing units with four bedrooms, MOE, &_years_dash "
-			mNumownocchu5plusbd_&_years. = "Number of owner-occupied housing units with five or more bedrooms, MOE, &_years_dash "
-			
-			numRtOHU0Bunder500_&_years. = "Renter-occupied housing units with zero bedrooms and paying under $500 in cash rent or no rent, &_years_dash "
-			numRtOHU0B500to749_&_years. = "Renter-occupied housing units with zero bedrooms and paying $500 to $749 in cash rent, &_years_dash "
-			numRtOHU0B750to999_&_years. = "Renter-occupied housing units with zero bedrooms and paying $750 to $999 in cash rent, &_years_dash "
-			numRtOHU0B1000plus_&_years. = "Renter-occupied housing units with zero bedrooms and paying over $1000 in cash rent, &_years_dash "
-			numRtOHU1Bunder500_&_years. = "Renter-occupied housing units with one bedroom and paying under $500 in cash rent or no rent, &_years_dash "
-			numRtOHU1B500to749_&_years. = "Renter-occupied housing units with zero bedrooms and paying $500 to $749 in cash rent, &_years_dash "
-			numRtOHU1B750to999_&_years. = "Renter-occupied housing units with one bedroom and paying $750 to $999 in cash rent, &_years_dash "
-			numRtOHU1B1000plus_&_years. = "Renter-occupied housing units with one bedroom and paying over $1000 in cash rent, &_years_dash "
-			numRtOHU2Bunder500_&_years. = "Renter-occupied housing units with two bedrooms and paying under $500 in cash rent or no rent, &_years_dash "
-			numRtOHU2B500to749_&_years. = "Renter-occupied housing units with two bedrooms and paying $500 to $749 in cash rent, &_years_dash "
-			numRtOHU2B750to999_&_years. = "Renter-occupied housing units with two bedrooms and paying $750 to $999 in cash rent, &_years_dash "
-			numRtOHU2B1000plus_&_years. = "Renter-occupied housing units with two bedrooms and paying over $1000 in cash rent, &_years_dash "
-			numRtOHU3Bunder500_&_years. = "Renter-occupied housing units with three bedrooms and paying under $500 in cash rent or no rent, &_years_dash "
-			numRtOHU3B500to749_&_years. = "Renter-occupied housing units with three bedrooms and paying $500 to $749 in cash rent, &_years_dash "
-			numRtOHU3B750to999_&_years. = "Renter-occupied housing units with three bedrooms and paying $750 to $999 in cash rent, &_years_dash "
-			numRtOHU3B1000plus_&_years. = "Renter-occupied housing units with three bedrooms and paying over $1000 in cash rent, &_years_dash "
-			mNumRtOHU0Bunder500_&_years. = "Renter-occupied housing units with zero bedrooms and paying under $500 in cash rent or no rent, MOE, &_years_dash "
-			mNumRtOHU0B500to749_&_years. = "Renter-occupied housing units with zero bedrooms and paying $500 to $749 in cash rent, MOE, &_years_dash "
-			mNumRtOHU0B750to999_&_years. = "Renter-occupied housing units with zero bedrooms and paying $750 to $999 in cash rent, MOE, &_years_dash "
-			mNumRtOHU0B1000plus_&_years. = "Renter-occupied housing units with zero bedrooms and paying over $1000 in cash rent, MOE, &_years_dash "
-			mNumRtOHU1Bunder500_&_years. = "Renter-occupied housing units with one bedroom and paying under $500 in cash rent, MOE, &_years_dash "
-			mNumRtOHU1B500to749_&_years. = "Renter-occupied housing units with zero bedrooms and paying $500 to $749 in cash rent, MOE, &_years_dash "
-			mNumRtOHU1B750to999_&_years. = "Renter-occupied housing units with one bedroom and paying $750 to $999 in cash rent, MOE, &_years_dash "
-			mNumRtOHU1B1000plus_&_years. = "Renter-occupied housing units with one bedroom and paying over $1000 in cash rent, MOE, &_years_dash "
-			mNumRtOHU2Bunder500_&_years. = "Renter-occupied housing units with two bedrooms and paying under $500 in cash rent or no rent, MOE, &_years_dash "
-			mNumRtOHU2B500to749_&_years. = "Renter-occupied housing units with two bedrooms and paying $500 to $749 in cash rent, MOE, &_years_dash "
-			mNumRtOHU2B750to999_&_years. = "Renter-occupied housing units with two bedrooms and paying $750 to $999 in cash rent, MOE, &_years_dash "
-			mNumRtOHU2B1000plus_&_years. = "Renter-occupied housing units with two bedrooms and paying over $1000 in cash rent, MOE, &_years_dash "
-			mNumRtOHU3Bunder500_&_years. = "Renter-occupied housing units with three bedrooms and paying under $500 in cash rent, MOE, &_years_dash "
-			mNumRtOHU3B500to749_&_years. = "Renter-occupied housing units with three bedrooms and paying $500 to $749 in cash rent, MOE, &_years_dash "
-			mNumRtOHU3B750to999_&_years. = "Renter-occupied housing units with three bedrooms and paying $750 to $999 in cash rent, MOE, &_years_dash "
-			mNumRtOHU3B1000plus_&_years. = "Renter-occupied housing units with three bedrooms and paying over $1000 in cash rent, MOE, &_years_dash "
-		;
+	IncmByOwnerCst_LT10K_&_years. = sum(B25095e3, B25095e4, B25095e5, B25095e6, B25095e7, B25095e8, B25095e9);
+  	IncmByOwnerCst_10_19K_&_years. = sum(B25095e12, B25095e13, B25095e14, B25095e15, B25095e16, B25095e17, B25095e18);
+  	IncmByOwnerCst_20_34K_&_years. = sum(B25095e21, B25095e22, B25095e23, B25095e24, B25095e25, B25095e26, B25095e27);
+  	IncmByOwnerCst_35_49K_&_years. = sum(B25095e30, B25095e31, B25095e32, B25095e33, B25095e34, B25095e35, B25095e36);
+  	IncmByOwnerCst_50_74K_&_years. = sum(B25095e39, B25095e40, B25095e41, B25095e42, B25095e43, B25095e44, B25095e45);
+  	IncmByOwnerCst_75_99K_&_years. = sum(B25095e48, B25095e49, B25095e50, B25095e51, B25095e52, B25095e53, B25095e54);
+  	IncmByOwnerCst_100_149_&_years. = sum(B25095e57, B25095e58, B25095e59, B25095e60, B25095e61, B25095e62, B25095e63);
+  	IncmByOwnerCst_GT150K_&_years. = sum(B25095e66, B25095e67, B25095e68, B25095e69, B25095e70, B25095e71, B25095e72);
+
+    NumOwnCstBurden_LT10K_&_years. = sum(B25095e6, B25095e7, B25095e8, B25095e9);
+    NumOwnCstBurden_10_19K_&_years. = sum(B25095e15, B25095e16, B25095e17, B25095e18);
+    NumOwnCstBurden_20_34K_&_years. = sum(B25095e24, B25095e25, B25095e26, B25095e27);
+    NumOwnCstBurden_35_49K_&_years. = sum(B25095e33, B25095e34, B25095e35, B25095e36);
+    NumOwnCstBurden_50_74K_&_years. = sum(B25095e42, B25095e43, B25095e44, B25095e45);
+    NumOwnCstBurden_75_99K_&_years. = sum(B25095e51, B25095e52, B25095e53, B25095e54);
+    NumOwnCstBurden_100_149_&_years. = sum(B25095e60, B25095e61, B25095e62, B25095e63);
+    NumOwnCstBurden_GT150K_&_years. = sum(B25095e69, B25095e70, B25095e71, B25095e72);
+
+	mIncmByOwnerCst_LT10K_&_years. = %moe_sum( var=B25095m3 B25095m4 B25095m5 B25095m6 B25095m7 B25095m8 B25095m9);
+  	mIncmByOwnerCst_10_19K_&_years. = %moe_sum( var=B25095m12 B25095m13 B25095m14 B25095m15 B25095m16 B25095m17 B25095m18);
+  	mIncmByOwnerCst_20_34K_&_years. = %moe_sum( var=B25095m21 B25095m22 B25095m23 B25095m24 B25095m25 B25095m26 B25095m27);
+  	mIncmByOwnerCst_35_49K_&_years. = %moe_sum( var=B25095m30 B25095m31 B25095m32 B25095m33 B25095m34 B25095m35 B25095m36);
+  	mIncmByOwnerCst_50_74K_&_years. = %moe_sum( var=B25095m39 B25095m40 B25095m41 B25095m42 B25095m43 B25095m44 B25095m45);
+  	mIncmByOwnerCst_75_99K_&_years. = %moe_sum( var=B25095m48 B25095m49 B25095m50 B25095m51 B25095m52 B25095m53 B25095m54);
+  	mIncmByOwnerCst_100_149_&_years. = %moe_sum( var=B25095m57 B25095m58 B25095m59 B25095m60 B25095m61 B25095m62 B25095m63);
+  	mIncmByOwnerCst_GT150K_&_years. = %moe_sum( var=B25095m66 B25095m67 B25095m68 B25095m69 B25095m70 B25095m71 B25095m72);
+
+    mNumOwnCstBurden_LT10K_&_years. = %moe_sum( var=B25095m6 B25095m7 B25095m8 B25095m9);
+    mNumOwnCstBurden_10_19K_&_years. = %moe_sum( var=B25095m15 B25095m16 B25095m17 B25095m18);
+    mNumOwnCstBurden_20_34K_&_years. = %moe_sum( var=B25095m24 B25095m25 B25095m26 B25095m27);
+    mNumOwnCstBurden_35_49K_&_years. = %moe_sum( var=B25095m33 B25095m34 B25095m35 B25095m36);
+    mNumOwnCstBurden_50_74K_&_years. = %moe_sum( var=B25095m42 B25095m43 B25095m44 B25095m45);
+    mNumOwnCstBurden_75_99K_&_years. = %moe_sum( var=B25095m51 B25095m52 B25095m53 B25095m54);
+    mNumOwnCstBurden_100_149_&_years. = %moe_sum( var=B25095m60 B25095m61 B25095m62 B25095m63);
+    mNumOwnCstBurden_GT150K_&_years. = %moe_sum( var=B25095m69 B25095m70 B25095m71 B25095m72);
+
+
+  label
+
+    IncmByOwnerCst_LT10K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_10_19K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_20_34K_&_years. = "Owner-occupied housing units with household income $20,000 to $34,999, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_35_49K_&_years. = "Owner-occupied housing units with household income $35,000 to $49,999, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_50_74K_&_years. = "Owner-occupied housing units with household income $50,000 to $74,999, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_75_99K_&_years. = "Owner-occupied housing units with household income $75,000 to $99,999, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_100_149_&_years. = "Owner-occupied housing units with household income $100,000 to $149,999, excluding units where owner cost burden is not computed, &_years_dash  "
+	  IncmByOwnerCst_GT150K_&_years. = "Owner-occupied housing units with household income $150,000 or more, excluding units where owner cost burden is not computed, &_years_dash  "
+    NumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, &_years_dash  "
+      NumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, &_years_dash  "
+      NumOwnCstBurden_20_34K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, &_years_dash  "
+      NumOwnCstBurden_35_49K_&_years. = "Owner-occupied housing units with housing cost burden and household income $35,000 to $49,999, &_years_dash  "
+      NumOwnCstBurden_50_74K_&_years. = "Owner-occupied housing units with housing cost burden and household income $50,000 to $74,999, &_years_dash  "
+      NumOwnCstBurden_75_99K_&_years. = "Owner-occupied housing units with housing cost burden and household income $75,000 to $99,999, &_years_dash  "
+      NumOwnCstBurden_100_149_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, &_years_dash  "
+	  NumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, &_years_dash  "
+    mIncmByOwnerCst_LT10K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_10_19K_&_years. = "Owner-occupied housing units with household income less than $10,000, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_20_34K_&_years. = "Owner-occupied housing units with household income $20,000 to $34,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_35_49K_&_years. = "Owner-occupied housing units with household income $35,000 to $49,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_50_74K_&_years. = "Owner-occupied housing units with household income $50,000 to $74,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_75_99K_&_years. = "Owner-occupied housing units with household income $75,000 to $99,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_100_149_&_years. = "Owner-occupied housing units with household income $100,000 to $149,999, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+	  mIncmByOwnerCst_GT150K_&_years. = "Owner-occupied housing units with household income $150,000 or more, excluding units where owner cost burden is not computed, MOE, &_years_dash "
+    mNumOwnCstBurden_LT10K_&_years. = "Owner-occupied housing units with housing cost burden and household income less than $10,000, MOE, &_years_dash  "
+      mNumOwnCstBurden_10_19K_&_years. = "Owner-occupied housing units with housing cost burden and household income $10,000 to $19,999, MOE, &_years_dash  "
+      mNumOwnCstBurden_20_34K_&_years. = "Owner-occupied housing units with housing cost burden and household income $20,000 to $34,999, MOE, &_years_dash  "
+      mNumOwnCstBurden_35_49K_&_years. = "Owner-occupied housing units with housing cost burden and household income $35,000 to $49,999, MOE, &_years_dash  "
+      mNumOwnCstBurden_50_74K_&_years. = "Owner-occupied housing units with housing cost burden and household income $50,000 to $74,999, MOE, &_years_dash  "
+      mNumOwnCstBurden_75_99K_&_years. = "Owner-occupied housing units with housing cost burden and household income $75,000 to $99,999, MOE, &_years_dash  "
+      mNumOwnCstBurden_100_149_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, MOE, &_years_dash  "
+      mNumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, MOE, &_years_dash  "
+    ;
+
 
 	  ** Mobility **;
 
- 	PopMovedLastYear_&_years. = sum(B07003e7, B07003e10, B07003e13, B07003e16);
+  PopMovedLastYear_&_years. = sum(B07003e7, B07003e10, B07003e13, B07003e16);
     PopMovedLastYearB_&_years. = sum(B07004Be3, B07004Be4, B07004Be5, B07004Be6);
     PopMovedLastYearW_&_years. = sum(B07004He3, B07004He4, B07004He5, B07004He6);
     PopMovedLastYearH_&_years. = sum(B07004Ie3, B07004Ie4, B07004Ie5, B07004Ie6);
@@ -3131,7 +2212,7 @@
                           B07004Fe3, B07004Fe4, B07004Fe5, B07004Fe6,
                         B07004Ge3, B07004Ge4, B07004Ge5, B07004Ge6);
 
-    mPopMovedLastYear_&_years. = %moe_sum( var=B07003m7 B07003m10 B07003m13 B07003m16);
+  mPopMovedLastYear_&_years. = %moe_sum( var=B07003m7 B07003m10 B07003m13 B07003m16);
     mPopMovedLastYearB_&_years. = %moe_sum( var=B07004Bm3 B07004Bm4 B07004Bm5 B07004Bm6);
     mPopMovedLastYearW_&_years. = %moe_sum( var=B07004Hm3 B07004Hm4 B07004Hm5 B07004Hm6);
     mPopMovedLastYearH_&_years. = %moe_sum( var=B07004Im3 B07004Im4 B07004Im5 B07004Im6);
@@ -3207,6 +2288,135 @@
         mPopMovedDiffCntyAIOM_&_years. = "Population moved from a different county in past year, All remaining groups other than Black, Non-Hispanic White, Hispanic, , MOE, &_years_dash"
     ; 
 
+/*Yipeng added on 6.5  Insurance, Earning, Family type*/
+
+
+/* Health Insurance Coverage by Age*/
+   InsCovUnder18Years_&_years.= 
+   sum(B27001e4, B27001e7, B27001e32, B27001e35 );
+
+   InsCov18_34Years_&_years.= 
+   sum(B27001e10, B27001e13, B27001e38, B27001e41);
+
+   InsCov35_64Years_&_years.= 
+   sum(B27001e16, B27001e19, B27001e22, B27001e44, B27001e47, B27001e50);
+   
+   InsCov65andOverYears_&_years.= 
+   sum(B27001e25, B27001e28, B27001e53, B27001e56);
+   
+   mInsCovUnder18Years_&_years.= %moe_sum(var= B27001m4 B27001m7 B27001m32 B27001m35);
+   mInsCov18_34Years_&_years.= %moe_sum(var= B27001m10 B27001m13 B27001m38 B27001m41);
+   mInsCov35_64Years_&_years.= %moe_sum(var= B27001m16 B27001m19 B27001m22 B27001m44 B27001m47 B27001m50);
+   mInsCov65andOverYears_&_years.= %moe_sum(var= B27001m25 B27001m28 B27001m53 B27001m56);
+
+label 
+   InsCovUnder18Years_&_years.= "Persons below 18 years old with health insurance coverage, Total, &_years_dash"
+   InsCov18_34Years_&_years.= "Persons 18-34 years old with health insurance coverage, Total, &_years_dash"
+   InsCov35_64Years_&_years.=  "Persons 35-64 years old with health insurance coverage, Total, &_years_dash"
+   InsCov65andOverYears_&_years.= "Persons over 65 years old with health insurance coverage, Total, &_years_dash"
+   mInsCovUnder18Years_&_years.="Persons below 18 years old with health insurance coverage, Total, MOE, &_years_dash"
+   mInsCov18_34Years_&_years.= "Persons 18-34 years old with health insurance coverage, Total, MOE, &_years_dash"
+   mInsCov35_64Years_&_years.=  "Persons 35-64 years old with health insurance coverage, Total, MOE, &_years_dash"
+   mInsCov65andOverYears_&_years.= "Persons over 65 years old with health insurance coverage, Total, MOE, &_years_dash"
+
+;
+
+   NInsCovUnder18Years_&_years.= 
+   sum(B27001e5, B27001e8, B27001e33, B27001e36 );
+
+   NInsCov18_34Years_&_years.= 
+   sum(B27001e11, B27001e12, B27001e39, B27001e42);
+
+   NInsCov35_64Years_&_years.= 
+   sum(B27001e17, B27001e20, B27001e23, B27001e45, B27001e48, B27001e51);
+   
+   NInsCov65andOverYears_&_years.= 
+   sum(B27001e26, B27001e29, B27001e54, B27001e57);
+   
+   mNInsCovUnder18Years_&_years.= %moe_sum(var= B27001m5 B27001m8 B27001m33 B27001m36);
+   mNInsCov18_34Years_&_years.= %moe_sum(var= B27001m11 B27001m12 B27001m39 B27001m42);
+   mNInsCov35_64Years_&_years.= %moe_sum(var= B27001m17 B27001m20 B27001m23 B27001m45 B27001m48 B27001m51);
+   mNInsCov65andOverYears_&_years.= %moe_sum(var= B27001m26 B27001m29 B27001m54 B27001m57);
+
+label 
+   NInsCovUnder18Years_&_years.= "Persons below 18 years old without health insurance coverage, Total, &_years_dash"
+   NInsCov18_34Years_&_years.= "Persons 18-34 years old without health insurance coverage, Total, &_years_dash"
+   NInsCov35_64Years_&_years.=  "Persons 35-64 years old without health insurance coverage, Total, &_years_dash"
+   NInsCov65andOverYears_&_years.= "Persons over 65 years old without health insurance coverage, Total, &_years_dash"
+   mNInsCovUnder18Years_&_years.="Persons below 18 years old without health insurance coverage, Total, MOE, &_years_dash"
+   mNInsCov18_34Years_&_years.= "Persons 18-34 years old with healthout insurance coverage, Total, MOE, &_years_dash"
+   mNInsCov35_64Years_&_years.=  "Persons 35-64 years old with healthout insurance coverage, Total, MOE, &_years_dash"
+   mNInsCov65andOverYears_&_years.= "Persons over 65 years old without health insurance coverage, Total, MOE, &_years_dash"
+
+;
+
+/*Annual Earning*/
+EarningUnder10K_&_years.= B08119e2;
+Earning10to15K_&_years.= B08119e3;
+Earning15to25K_&_years.= B08119e4;
+Earning25to35K_&_years.= B08119e5;
+Earning35to50K_&_years.= B08119e6;
+Earning50to65K_&_years.= B08119e7;
+Earning65to75K_&_years.= B08119e8;
+EarningOver75K_&_years.= B08119e9;
+
+
+mEarningUnder10K_&_years.= B08119m2;
+mEarning10to15K_&_years.= B08119m3;
+mEarning15to25K_&_years.= B08119m4;
+mEarning25to35K_&_years.= B08119m5;
+mEarning35to50K_&_years.= B08119m6;
+mEarning50to65K_&_years.= B08119m7;
+mEarning65to75K_&_years.= B08119m8;
+mEarningOver75K_&_years.= B08119m9;
+
+label 
+   EarningUnder10K_&_years.= "Workers 16 years and over with earning of $1-$9999 or loss in the past 12 months, total, &_years_dash "
+   Earning10to15K_&_years.= "Workers 16 years and over with earning of $10,000-$14,999 in the past 12 months, total, &_years_dash "
+   Earning15to25K_&_years.= "Workers 16 years and over with earning of $15,000-$24,999 in the past 12 months, total, &_years_dash "
+   Earning25to35K_&_years.= "Workers 16 years and over with earning of $25,000-$34,999 in the past 12 months, total, &_years_dash "
+   Earning35to50K_&_years.= "Workers 16 years and over with earning of $35,000-$49,999 in the past 12 months, total, &_years_dash "
+   Earning50to65K_&_years.= "Workers 16 years and over with earning of $50,000-$64,999 in the past 12 months, total, &_years_dash "
+   Earning65to75K_&_years.= "Workers 16 years and over with earning of $65,000-$74,999 in the past 12 months, total, &_years_dash "
+   EarningOver75K_&_years.= "Workers 16 years and over with earning of $75,000 or more in the past 12 months, total, &_years_dash "
+   mEarningUnder10K_&_years.= "Workers 16 years and over with earning of $1-$9999 or loss in the past 12 months, MOE, &_years_dash "
+   mEarning10to15K_&_years.= "Workers 16 years and over with earning of $10,000-$14,999 in the past 12 months, MOE, &_years_dash "
+   mEarning15to25K_&_years.= "Workers 16 years and over with earning of $15,000-$24,999 in the past 12 months, MOE, &_years_dash "
+   mEarning25to35K_&_years.= "Workers 16 years and over with earning of $25,000-$34,999 in the past 12 months, MOE, &_years_dash "
+   mEarning35to50K_&_years.= "Workers 16 years and over with earning of $35,000-$49,999 in the past 12 months, MOE, &_years_dash "
+   mEarning50to65K_&_years.= "Workers 16 years and over with earning of $50,000-$64,999 in the past 12 months, MOE, &_years_dash "
+   mEarning65to75K_&_years.= "Workers 16 years and over with earning of $65,000-$74,999 in the past 12 months, MOE, &_years_dash "
+   mEarningOver75K_&_years.= "Workers 16 years and over with earning of $75,000 or more in the past 12 months, MOE, &_years_dash "
+;
+
+
+/*Family Types*/
+
+FamMarriedCouple_&_years.= B11001e2;
+FamMaleholder_&_years.= B11001e5;
+FamFemaleholder_&_years.= B11001e6;
+Nonfamlivingalone_&_years.= B11001e8;
+Nonfamnotlivingalone_&_years.= B11001e9;
+
+mFamMarriedCouple_&_years.= B11001m2;
+mFamMaleholder_&_years.= B11001m5;
+mFamFemaleholder_&_years.= B11001m6;
+mNonfamlivingalone_&_years.= B11001m8;
+mNonfamnotlivingalone_&_years.= B11001m9;
+
+label
+   FamMarriedCouple_&_years.= "Married Couple Family, Total, &_years_dash "
+   FamMaleholder_&_years.= "Male Householder with no wife present, Total, &_years_dash "
+   FamFemaleholder_&_years.= "Female Householder with no husband present, Total, &_years_dash "
+   Nonfamlivingalone_&_years.= "Householder living alone, Total, &_years_dash "
+   Nonfamnotlivingalone_&_years.= "Householder not living alone, Total, &_years_dash "
+
+   FamMarriedCouple_&_years.= "Married Couple Family, MOE,&_years_dash "
+   FamMaleholder_&_years.= "Male Householder with no wife present, MOE, &_years_dash "
+   FamFemaleholder_&_years.= "Female Householder with no husband present, MOE, &_years_dash "
+   Nonfamlivingalone_&_years.= "Householder living alone, MOE, &_years_dash "
+   Nonfamnotlivingalone_&_years.= "Householder not living alone, MOE, &_years_dash "
+;
 
 %mend ACS_summary_geo_source_tr_vars;
 
