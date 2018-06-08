@@ -225,6 +225,41 @@
     %moe_sum(var=B01001m44 B01001m45 B01001m46 B01001m47 B01001m48 B01001m49);
 
 
+    hshldincunder10000_&_years. = B19001e2;
+	hshldinc10000to14999_&_years.= B19001e3;
+    hshldinc15000to19999_&_years.= B19001e4;
+	hshldinc20000to24999_&_years.= B19001e5;
+    hshldinc25000to29999_&_years.= B19001e6;
+	hshldinc30000to34999_&_years.= B19001e7;
+	hshldinc35000to39999_&_years.= B19001e8;
+	hshldinc40000to44999_&_years.= B19001e9;
+    hshldinc45000to49999_&_years.= B19001e10;
+	hshldinc50000to59999_&_years.= B19001e11;
+	hshldinc60000to74999_&_years.= B19001e12;
+	hshldinc75000to99999_&_years.= B19001e13;
+	hshldinc100000to124999_&_years.= B19001e14;
+	hshldinc125000to149999_&_years.= B19001e15;
+	hshldinc150000to199999_&_years.= B19001e16;
+	hshldinc200000andover_&_years.= B19001e17;
+
+
+    mhshldincunder10000_&_years. = B19001m2;
+	mhshldinc10000to14999_&_years.= B19001m3;
+    mhshldinc15000to19999_&_years.= B19001m4;
+	mhshldinc20000to24999_&_years.= B19001m5;
+    mhshldinc25000to29999_&_years.= B19001m6;
+	mhshldinc30000to34999_&_years.= B19001m7;
+	mhshldinc35000to39999_&_years.= B19001m8;
+	mhshldinc40000to44999_&_years.= B19001m9;
+    mhshldinc45000to49999_&_years.= B19001m10;
+	mhshldinc50000to59999_&_years.= B19001m11;
+	mhshldinc60000to74999_&_years.= B19001m12;
+	mhshldinc75000to99999_&_years.= B19001m13;
+	mhshldinc100000to124999_&_years.= B19001m14;
+	mhshldinc125000to149999_&_years.= B19001m15;
+	mhshldinc150000to199999_&_years.= B19001m16;
+	mhshldinc200000andover_&_years.= B19001m17;
+
   mNumFamiliesB_&_years. = B19101Bm1;
   mNumFamiliesW_&_years. = B19101Hm1;
   mNumFamiliesH_&_years. = B19101Im1;
@@ -414,6 +449,23 @@
     Pop65andOverYearsM&_years.="Persons 65 years old and over, Male, &_years_dash "
     Pop65andOverYearsF&_years.="Persons 65 years old and over, Female, &_years_dash "
 
+    hshldincunder10000_&_years. = "Household income under 10000 in the past 12 months, total, &_years_dash"
+	hshldinc10000to14999_&_years.= "Household income from 10000 to 14999 in the past 12 months, total, &_years_dash"
+    hshldinc15000to19999_&_years.= "Household income from 15000 to 19999 in the past 12 months, total, &_years_dash"
+	hshldinc20000to24999_&_years.= "Household income from 20000 to 24999 in the past 12 months, total, &_years_dash"
+    hshldinc25000to29999_&_years.= "Household income from 25000 to 299999 in the past 12 months, total, &_years_dash"
+	hshldinc30000to34999_&_years.= "Household income from 30000 to 34999 in the past 12 months, total, &_years_dash"
+	hshldinc35000to39999_&_years.= "Household income 35000 to 39999 in the past 12 months, total, &_years_dash"
+	hshldinc40000to44999_&_years.= "Household income from 40000 to 44999 in the past 12 months, total, &_years_dash"
+    hshldinc45000to49999_&_years.= "Household income from 45000 to 49999 in the past 12 months, total, &_years_dash"
+	hshldinc50000to59999_&_years.= "Household income from 50000 to 59999 in the past 12 months, total, &_years_dash"
+	hshldinc60000to74999_&_years.= "Household income from 60000 to 74999 in the past 12 months, total, &_years_dash"
+	hshldinc75000to99999_&_years.= "Household income from 75000 to 99999 in the past 12 months, total, &_years_dash"
+	hshldinc100000to124999_&_years.= "Household income from 100000 to 124999 in the past 12 months, total, &_years_dash"
+	hshldinc125000to149999_&_years.= "Household income from 125000 to 149999 in the past 12 months, total, &_years_dash"
+	hshldinc150000to199999_&_years.= "Household income from 150000 to 199999 in the past 12 months, total, &_years_dash"
+	hshldinc200000andover_&_years.= "Household income over 200000 in the past 12 months, total, &_years_dash"
+
     mNumFamiliesB_&_years. = "Family HHs, Black/African American, MOE, &_years_dash "
     mNumFamiliesW_&_years. = "Family HHs, Non-Hispanic White, MOE, &_years_dash "
     mNumFamiliesH_&_years. = "Family HHs, Hispanic/Latino, MOE, &_years_dash "
@@ -459,6 +511,23 @@
     mPop35_64YearsF_&_years.="Persons 35-64 years old, Female, MOE,&_years_dash"
     mPop65andOverYearsM&_years.="Persons 65 years old and over, Male, MOE,&_years_dash "
     mPop65andOverYearsF&_years.="Persons 65 years old and over, Female, MOE,&_years_dash "
+
+    mhshldincunder10000_&_years. = "Household income under 10000 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc10000to14999_&_years.= "Household income from 10000 to 14999 in the past 12 months, total, MOE, &_years_dash"
+    mhshldinc15000to19999_&_years.= "Household income from 15000 to 19999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc20000to24999_&_years.= "Household income from 20000 to 24999 in the past 12 months, total, MOE, &_years_dash"
+    mhshldinc25000to29999_&_years.= "Household income from 25000 to 299999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc30000to34999_&_years.= "Household income from 30000 to 34999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc35000to39999_&_years.= "Household income 35000 to 39999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc40000to44999_&_years.= "Household income from 40000 to 44999 in the past 12 months, total, MOE, &_years_dash"
+    mhshldinc45000to49999_&_years.= "Household income from 45000 to 49999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc50000to59999_&_years.= "Household income from 50000 to 59999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc60000to74999_&_years.= "Household income from 60000 to 74999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc75000to99999_&_years.= "Household income from 75000 to 99999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc100000to124999_&_years.= "Household income from 100000 to 124999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc125000to149999_&_years.= "Household income from 125000 to 149999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc150000to199999_&_years.= "Household income from 150000 to 199999 in the past 12 months, total, MOE, &_years_dash"
+	mhshldinc200000andover_&_years.= "Household income over 200000 in the past 12 months, total, MOE, &_years_dash"
 
 ;
 

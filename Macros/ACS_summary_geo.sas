@@ -47,7 +47,6 @@
        Pop25andOverWSC_: Pop25andOverWCollege_:
 
        FamIncomeLT75k_: FamIncomeGT200k_:
-	
 	   
        NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
        RentCostBurdenDenom: OwnerCostBurdenDenom:
@@ -214,6 +213,23 @@
 	   Earning50to65K: Earning65to75K: EarningOver75K:
 
 	   FamMarriedCouple: FamMaleholder: FamFemaleholder: Nonfamlivingalone: Nonfamnotlivingalone:
+
+	   hshldincunder10000:
+	  hshldinc10000to14999:
+      hshldinc15000to19999:
+	  hshldinc20000to24999:
+      hshldinc25000to29999:
+	  hshldinc30000to34999:
+	  hshldinc35000to39999:
+	  hshldinc40000to44999:
+      hshldinc45000to49999:
+	  hshldinc50000to59999:
+	  hshldinc60000to74999:
+	  hshldinc75000to99999:
+	  hshldinc100000to124999:
+	  hshldinc125000to149999:
+	  hshldinc150000to199999:
+	  hshldinc200000andover:
        ;
 	
 	%**variables appear in all years;
@@ -635,6 +651,23 @@
 	   mFamMarriedCouple_&_years. mFamMaleholder_&_years.
 	   mFamFemaleholder_&_years. mNonfamlivingalone_&_years.
 	   mNonfamnotlivingalone_&_years.
+
+	   mhshldincunder10000_&_years.
+	   mhshldinc10000to14999_&_years.
+       mhshldinc15000to19999_&_years.
+	   mhshldinc20000to24999_&_years.
+       mhshldinc25000to29999_&_years.
+	   mhshldinc30000to34999_&_years.
+	   mhshldinc35000to39999_&_years.
+	   mhshldinc40000to44999_&_years.
+       mhshldinc45000to49999_&_years.
+	   mhshldinc50000to59999_&_years.
+	   mhshldinc60000to74999_&_years.
+	   mhshldinc75000to99999_&_years.
+	   mhshldinc100000to124999_&_years.
+	   mhshldinc125000to149999_&_years.
+	   mhshldinc150000to199999_&_years.
+	   mhshldinc200000andover_&_years.
 
            ;
                
