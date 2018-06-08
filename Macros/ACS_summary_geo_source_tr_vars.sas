@@ -3483,11 +3483,11 @@ label
    Nonfamlivingalone_&_years.= "Householder living alone, Total, &_years_dash "
    Nonfamnotlivingalone_&_years.= "Householder not living alone, Total, &_years_dash "
 
-   FamMarriedCouple_&_years.= "Married Couple Family, MOE,&_years_dash "
-   FamMaleholder_&_years.= "Male Householder with no wife present, MOE, &_years_dash "
-   FamFemaleholder_&_years.= "Female Householder with no husband present, MOE, &_years_dash "
-   Nonfamlivingalone_&_years.= "Householder living alone, MOE, &_years_dash "
-   Nonfamnotlivingalone_&_years.= "Householder not living alone, MOE, &_years_dash "
+   mFamMarriedCouple_&_years.= "Married Couple Family, MOE,&_years_dash "
+   mFamMaleholder_&_years.= "Male Householder with no wife present, MOE, &_years_dash "
+   mFamFemaleholder_&_years.= "Female Householder with no husband present, MOE, &_years_dash "
+   mNonfamlivingalone_&_years.= "Householder living alone, MOE, &_years_dash "
+   mNonfamnotlivingalone_&_years.= "Householder not living alone, MOE, &_years_dash "
 ;
 
 %mend ACS_summary_geo_source_tr_vars;
