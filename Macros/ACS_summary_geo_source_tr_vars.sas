@@ -14,7 +14,7 @@
  be added to the %ACS_summary_geo_source_bg_vars() macro. 
  No variable should be added to both macros. 
 
- Modifications:
+ Modifications: 06/05/18 Yipeng Su add variables for summary (Population by age and sex, insurance, family type, earning) 
 **************************************************************************/
 
 
@@ -3378,11 +3378,11 @@ FamFemaleholder_&_years.= B11001e6;
 Nonfamlivingalone_&_years.= B11001e8;
 Nonfamnotlivingalone_&_years.= B11001e9;
 
-FamMarriedCouple_&_years.= B11001m2;
-FamMaleholder_&_years.= B11001m5;
-FamFemaleholder_&_years.= B11001m6;
-Nonfamlivingalone_&_years.= B11001m8;
-Nonfamnotlivingalone_&_years.= B11001m9;
+mFamMarriedCouple_&_years.= B11001m2;
+mFamMaleholder_&_years.= B11001m5;
+mFamFemaleholder_&_years.= B11001m6;
+mNonfamlivingalone_&_years.= B11001m8;
+mNonfamnotlivingalone_&_years.= B11001m9;
 
 label
    FamMarriedCouple_&_years.= "Married Couple Family, Total, &_years_dash "
