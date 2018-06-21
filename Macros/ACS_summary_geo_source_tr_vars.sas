@@ -3365,16 +3365,16 @@
 
 /* Health Insurance Coverage by Age*/
    InsCovUnder18Years_&_years.= 
-   sum(B27001e4 B27001e7 B27001e32 B27001e35 );
+   sum(B27001e4, B27001e7, B27001e32, B27001e35 );
 
    InsCov18_34Years_&_years.= 
-   sum(B27001e10 B27001e13 B27001e38 B27001e41);
+   sum(B27001e10, B27001e13, B27001e38, B27001e41);
 
    InsCov35_64Years_&_years.= 
-   sum(B27001e16 B27001e19 B27001e22 B27001e44 B27001e47 B27001e50);
+   sum(B27001e16, B27001e19, B27001e22, B27001e44, B27001e47, B27001e50);
    
    InsCov65andOverYears_&_years.= 
-   sum(B27001e25 B27001e28 B27001e53 B27001e56);
+   sum(B27001e25, B27001e28, B27001e53, B27001e56);
    
    mInsCovUnder18Years_&_years.= %moe_sum(var= B27001m4 B27001m7 B27001m32 B27001m35);
    mInsCov18_34Years_&_years.= %moe_sum(var= B27001m10 B27001m13 B27001m38 B27001m41);
@@ -3394,16 +3394,16 @@ label
 ;
 
    NInsCovUnder18Years_&_years.= 
-   sum(B27001e5 B27001e8 B27001e33 B27001e36 );
+   sum(B27001e5, B27001e8, B27001e33, B27001e36 );
 
    NInsCov18_34Years_&_years.= 
-   sum(B27001e11 B27001e12 B27001e39 B27001e42);
+   sum(B27001e11, B27001e12, B27001e39, B27001e42);
 
    NInsCov35_64Years_&_years.= 
-   sum(B27001e17 B27001e20 B27001e23 B27001e45 B27001e48 B27001e51);
+   sum(B27001e17, B27001e20, B27001e23, B27001e45, B27001e48, B27001e51);
    
    NInsCov65andOverYears_&_years.= 
-   sum(B27001e26 B27001e29 B27001e54 B27001e57);
+   sum(B27001e26, B27001e29, B27001e54, B27001e57);
    
    mNInsCovUnder18Years_&_years.= %moe_sum(var= B27001m5 B27001m8 B27001m33 B27001m36);
    mNInsCov18_34Years_&_years.= %moe_sum(var= B27001m11 B27001m12 B27001m39 B27001m42);
