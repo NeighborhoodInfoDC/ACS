@@ -591,7 +591,7 @@
 	   mPop65andOverYearsM_&_years. mPop65andOverYearsF_&_years. 
 
        mInsCovUnder18Years_&_years. mInsCov18_34Years_&_years.
-	   mInsCov35_64Years_&_years. ov65andOverYears_&_years.
+	   mInsCov35_64Years_&_years. mInsCov65andOverYears_&_years.
 
 	   mNInsCovUnder18Years_&_years. mNInsCov18_34Years_&_years.
 	   mNInsCov35_64Years_&_years. mNInsCov65andOverYears_&_years.
