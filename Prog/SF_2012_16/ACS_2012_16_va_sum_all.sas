@@ -27,6 +27,5 @@
   years = 2012_16,
   
    revisions=%str(Fixed conflict with the ACS master branch that had previously caused issues.)
-
 )
 
