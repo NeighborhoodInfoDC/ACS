@@ -117,8 +117,6 @@
 
        mNumHshldPhone_&_years. mNumHshldCar_&_years. 
 
-              ;
-
        mAggFamilyIncome_&_years. 
 
        mFamIncomeLT75k_&_years. mFamIncomeGT200k_&_years.
@@ -184,8 +182,6 @@
        mNumRentCstBurden_20_34K_&_years. mNumRentCstBurden_35_49K_&_years. 
        mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99K_&_years. 
        mNumRentCstBurden_GT100K_&_years. 
-
- 
            ;
                
   %end;
