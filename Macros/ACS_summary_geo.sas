@@ -584,6 +584,43 @@
        mPopMovedDiffCntyW_&_years.  mPopMovedDiffCntyH_&_years.
        mPopMovedDiffCntyA_&_years.  mPopMovedDiffCntyIOM_&_years.
        mPopMovedDiffCntyAIOM_&_years.
+
+	   mPopUnder18YearsM_&_years. mPopUnder18YearsF_&_years.
+	   mPop18_34YearsM_&_years. mPop18_34YearsF_&_years.
+	   mPop35_64YearsM_&_years. mPop35_64YearsF_&_years. 
+	   mPop65andOverYearsM_&_years. mPop65andOverYearsF_&_years. 
+
+       mInsCovUnder18Years_&_years. mInsCov18_34Years_&_years.
+	   mInsCov35_64Years_&_years. ov65andOverYears_&_years.
+
+	   mNInsCovUnder18Years_&_years. mNInsCov18_34Years_&_years.
+	   mNInsCov35_64Years_&_years. mNInsCov65andOverYears_&_years.
+
+	   mEarningUnder10K_&_years. mEarning10to15K_&_years.
+	   mEarning15to25K_&_years. mEarning25to35K_&_years.
+	   mEarning35to50K_&_years. mEarning50to65K_&_years.
+	   mEarning65to75K_&_years. mEarningOver75K_&_years.
+
+	   mFamMarriedCouple_&_years. mFamMaleholder_&_years.
+	   mFamFemaleholder_&_years. mNonfamlivingalone_&_years.
+	   mNonfamnotlivingalone_&_years.
+
+	   mhshldincunder10000_&_years.
+	   mhshldinc10000to14999_&_years.
+       mhshldinc15000to19999_&_years.
+	   mhshldinc20000to24999_&_years.
+       mhshldinc25000to29999_&_years.
+	   mhshldinc30000to34999_&_years.
+	   mhshldinc35000to39999_&_years.
+	   mhshldinc40000to44999_&_years.
+       mhshldinc45000to49999_&_years.
+	   mhshldinc50000to59999_&_years.
+	   mhshldinc60000to74999_&_years.
+	   mhshldinc75000to99999_&_years.
+	   mhshldinc100000to124999_&_years.
+	   mhshldinc125000to149999_&_years.
+	   mhshldinc150000to199999_&_years.
+	   mhshldinc200000andover_&_years.
 	   ;
 	
 	%**variables appear only 2013 and later; 
@@ -631,45 +668,7 @@
 
 		%end;
 
- 
-       mPopUnder18YearsM_&_years. mPopUnder18YearsF_&_years.
-	   mPop18_34YearsM_&_years. mPop18_34YearsF_&_years.
-	   mPop35_64YearsM_&_years. mPop35_64YearsF_&_years. 
-	   mPop65andOverYearsM_&_years. mPop65andOverYearsF_&_years. 
 
-       mInsCovUnder18Years_&_years. mInsCov18_34Years_&_years.
-	   mInsCov35_64Years_&_years. ov65andOverYears_&_years.
-
-	   mNInsCovUnder18Years_&_years. mNInsCov18_34Years_&_years.
-	   mNInsCov35_64Years_&_years. mNInsCov65andOverYears_&_years.
-
-	   mEarningUnder10K_&_years. mEarning10to15K_&_years.
-	   mEarning15to25K_&_years. mEarning25to35K_&_years.
-	   mEarning35to50K_&_years. mEarning50to65K_&_years.
-	   mEarning65to75K_&_years. mEarningOver75K_&_years.
-
-	   mFamMarriedCouple_&_years. mFamMaleholder_&_years.
-	   mFamFemaleholder_&_years. mNonfamlivingalone_&_years.
-	   mNonfamnotlivingalone_&_years.
-
-	   mhshldincunder10000_&_years.
-	   mhshldinc10000to14999_&_years.
-       mhshldinc15000to19999_&_years.
-	   mhshldinc20000to24999_&_years.
-       mhshldinc25000to29999_&_years.
-	   mhshldinc30000to34999_&_years.
-	   mhshldinc35000to39999_&_years.
-	   mhshldinc40000to44999_&_years.
-       mhshldinc45000to49999_&_years.
-	   mhshldinc50000to59999_&_years.
-	   mhshldinc60000to74999_&_years.
-	   mhshldinc75000to99999_&_years.
-	   mhshldinc100000to124999_&_years.
-	   mhshldinc125000to149999_&_years.
-	   mhshldinc150000to199999_&_years.
-	   mhshldinc200000andover_&_years.
-
-           ;
                
   %end;
 
