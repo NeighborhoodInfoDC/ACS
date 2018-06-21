@@ -504,8 +504,8 @@
     mPop18_34YearsF_&_years.="Persons 18-34 years old, Female, MOE,&_years_dash "
     mPop35_64YearsM_&_years.="Persons 35-64 years old, Male, MOE,&_years_dash"
     mPop35_64YearsF_&_years.="Persons 35-64 years old, Female, MOE,&_years_dash"
-    mPop65andOverYearsM&_years.="Persons 65 years old and over, Male, MOE,&_years_dash "
-    mPop65andOverYearsF&_years.="Persons 65 years old and over, Female, MOE,&_years_dash "
+    mPop65andOverYearsM_&_years.="Persons 65 years old and over, Male, MOE,&_years_dash "
+    mPop65andOverYearsF_&_years.="Persons 65 years old and over, Female, MOE,&_years_dash "
 
     mhshldincunder10000_&_years. = "Household income under 10000 in the past 12 months, total, MOE, &_years_dash"
 	mhshldinc10000to14999_&_years.= "Household income from 10000 to 14999 in the past 12 months, total, MOE, &_years_dash"
