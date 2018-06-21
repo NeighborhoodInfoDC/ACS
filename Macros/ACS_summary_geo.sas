@@ -46,12 +46,7 @@
        Pop25andOverYears_: Pop25andOverWoutHS_: Pop25andOverWHS_:
        Pop25andOverWSC_: Pop25andOverWCollege_:
 
-       FamIncomeLT75k_: FamIncomeGT200k_:
-	   
-       NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
-       RentCostBurdenDenom: OwnerCostBurdenDenom:
 
-       NumRentCst: NumOwnCstBurden:
       
        ;
            
@@ -117,71 +112,6 @@
 
        mNumHshldPhone_&_years. mNumHshldCar_&_years. 
 
-       mAggFamilyIncome_&_years. 
-
-       mFamIncomeLT75k_&_years. mFamIncomeGT200k_&_years.
-
-       mAggIncome_&_years. mAggIncomeB_&_years.
-       mAggIncomeW_&_years. mAggIncomeH_&_years.
-       mAggIncomeA_&_years. mAggIncomeIOM_&_years.
-       mAggIncomeAIOM_&_years.
-
-       mAggHshldIncome_&_years. mAggHshldIncomeB_&_years.
-       mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
-       mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
-       mAggHshldIncomeAIOM_&_years.
-
-       mNumOccupiedHsgUnits_&_years. mNumOccupiedHsgUnitsB_&_years.
-       mNumOccupiedHsgUnitsW_&_years. mNumOccupiedHsgUnitsH_&_years.
-       mNumOccupiedHsgUnitsA_&_years. mNumOccupiedHsgUnitsIOM_&_years.
-       mNumOccupiedHsgUnitsAIOM_&_years.
-
-       mNumOccupiedHsgUnits_&_years.
-
-       mNumOwnerOccupiedHU_&_years. mNumOwnerOccupiedHUB_&_years.
-       mNumOwnerOccupiedHUW_&_years. mNumOwnerOccupiedHUH_&_years.
-       mNumOwnerOccupiedHUA_&_years. mNumOwnerOccupiedHUIOM_&_years.
-       mNumOwnerOccupiedHUAIOM_&_years.
-
-       mNumOwnerOccupiedHU_&_years. mNumRenterOccupiedHU_&_years. 
-	   mNumVacantHsgUnits_&_years. mNumVacantHUForRent_&_years. 
-	   mNumVacantHUForSale_&_years. mNumRenterHsgUnits_&_years. 
-
-	   mGrossRentLT100_&_years. mGrossRent100_149_&_years. mGrossRent150_199_&_years. 
-	   mGrossRent200_249_&_years. mGrossRent250_299_&_years. mGrossRent300_349_&_years. 
-	   mGrossRent350_349_&_years. mGrossRent400_449_&_years. mGrossRent450_499_&_years. 
-	   mGrossRent500_549_&_years. mGrossRent550_599_&_years. mGrossRent600_649_&_years. 
-	   mGrossRent650_699_&_years. mGrossRent700_749_&_years. mGrossRent750_799_&_years. 
-	   mGrossRent800_899_&_years. mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. 
-	   mGrossRent1250_1499_&_years. mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. 
-	   mGrossRent2500_2999_&_years. mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
-	   mGrossRentNoCash_&_years. 
-
-	   mIncmByRenterCst_LT10K_&_years. mIncmByRenterCst_10_19K_&_years. mIncmByRenterCst_20_34K_&_years. 
-	   mIncmByRenterCst_35_49K_&_years. mIncmByRenterCst_50_74K_&_years. mIncmByRenterCst_75_99K_&_years. 
-	   mIncmByRenterCst_GT100K_&_years. 
-
-	   mAgeByRenterCst_15_24_&_years. mAgeByRenterCst_25_34_&_years. mAgeByRenterCst_35_64_&_years. mAgeByRenterCst_65Over_&_years. 
-
-	   mAgeByOwnerCst_15_24_&_years. mAgeByOwnerCst_25_34_&_years. mAgeByOwnerCst_35_64_&_years. mAgeByOwnerCst_65Over_&_years. 
-
-       mNumRenterCostBurden_&_years.
-       mNumRentSevereCostBurden_&_years. 
-       mNumOwnerCostBurden_&_years. 
-       mNumOwnSevereCostBurden_&_years. 
-       mRentCostBurdenDenom_&_years.
-       mOwnerCostBurdenDenom_&_years.
-
-       mNumRentCstBurden_15_24_&_years. mNumRentCstBurden_25_34_&_years. 
-       mNumRentCstBurden_35_64_&_years. mNumRentCstBurden_65Over_&_years. 
-
-       mNumOwnCstBurden_15_24_&_years. mNumOwnCstBurden_25_34_&_years. 
-       mNumOwnCstBurden_35_64_&_years. mNumOwnCstBurden_65Over_&_years. 
-
-       mNumRentCstBurden_LT10K_&_years. mNumRentCstBurden_10_19K_&_years. 
-       mNumRentCstBurden_20_34K_&_years. mNumRentCstBurden_35_49K_&_years. 
-       mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99K_&_years. 
-       mNumRentCstBurden_GT100K_&_years. 
            ;
                
   %end;
@@ -209,6 +139,13 @@
 	   Earning50to65K: Earning65to75K: EarningOver75K:
 
 	   FamMarriedCouple: FamMaleholder: FamFemaleholder: Nonfamlivingalone: Nonfamnotlivingalone:
+
+	   FamIncomeLT75k_: FamIncomeGT200k_:
+	   
+       NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
+       RentCostBurdenDenom: OwnerCostBurdenDenom:
+
+       NumRentCst: NumOwnCstBurden:
 
 	   hshldincunder10000:
 	  hshldinc10000to14999:
@@ -617,6 +554,72 @@
 	   mhshldinc125000to149999_&_years.
 	   mhshldinc150000to199999_&_years.
 	   mhshldinc200000andover_&_years.
+
+	   mAggFamilyIncome_&_years. 
+
+	   mFamIncomeLT75k_&_years. mFamIncomeGT200k_&_years.
+
+       mAggIncome_&_years. mAggIncomeB_&_years.
+       mAggIncomeW_&_years. mAggIncomeH_&_years.
+       mAggIncomeA_&_years. mAggIncomeIOM_&_years.
+       mAggIncomeAIOM_&_years.
+
+       mAggHshldIncome_&_years. mAggHshldIncomeB_&_years.
+       mAggHshldIncomeW_&_years. mAggHshldIncomeH_&_years.
+       mAggHshldIncomeA_&_years. mAggHshldIncomeIOM_&_years.
+       mAggHshldIncomeAIOM_&_years.
+
+       mNumOccupiedHsgUnits_&_years. mNumOccupiedHsgUnitsB_&_years.
+       mNumOccupiedHsgUnitsW_&_years. mNumOccupiedHsgUnitsH_&_years.
+       mNumOccupiedHsgUnitsA_&_years. mNumOccupiedHsgUnitsIOM_&_years.
+       mNumOccupiedHsgUnitsAIOM_&_years.
+
+       mNumOccupiedHsgUnits_&_years.
+
+       mNumOwnerOccupiedHU_&_years. mNumOwnerOccupiedHUB_&_years.
+       mNumOwnerOccupiedHUW_&_years. mNumOwnerOccupiedHUH_&_years.
+       mNumOwnerOccupiedHUA_&_years. mNumOwnerOccupiedHUIOM_&_years.
+       mNumOwnerOccupiedHUAIOM_&_years.
+
+       mNumOwnerOccupiedHU_&_years. mNumRenterOccupiedHU_&_years. 
+	   mNumVacantHsgUnits_&_years. mNumVacantHUForRent_&_years. 
+	   mNumVacantHUForSale_&_years. mNumRenterHsgUnits_&_years. 
+
+	   mGrossRentLT100_&_years. mGrossRent100_149_&_years. mGrossRent150_199_&_years. 
+	   mGrossRent200_249_&_years. mGrossRent250_299_&_years. mGrossRent300_349_&_years. 
+	   mGrossRent350_349_&_years. mGrossRent400_449_&_years. mGrossRent450_499_&_years. 
+	   mGrossRent500_549_&_years. mGrossRent550_599_&_years. mGrossRent600_649_&_years. 
+	   mGrossRent650_699_&_years. mGrossRent700_749_&_years. mGrossRent750_799_&_years. 
+	   mGrossRent800_899_&_years. mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. 
+	   mGrossRent1250_1499_&_years. mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. 
+	   mGrossRent2500_2999_&_years. mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
+	   mGrossRentNoCash_&_years. 
+
+	   mIncmByRenterCst_LT10K_&_years. mIncmByRenterCst_10_19K_&_years. mIncmByRenterCst_20_34K_&_years. 
+	   mIncmByRenterCst_35_49K_&_years. mIncmByRenterCst_50_74K_&_years. mIncmByRenterCst_75_99K_&_years. 
+	   mIncmByRenterCst_GT100K_&_years. 
+
+	   mAgeByRenterCst_15_24_&_years. mAgeByRenterCst_25_34_&_years. mAgeByRenterCst_35_64_&_years. mAgeByRenterCst_65Over_&_years. 
+
+	   mAgeByOwnerCst_15_24_&_years. mAgeByOwnerCst_25_34_&_years. mAgeByOwnerCst_35_64_&_years. mAgeByOwnerCst_65Over_&_years. 
+
+       mNumRenterCostBurden_&_years.
+       mNumRentSevereCostBurden_&_years. 
+       mNumOwnerCostBurden_&_years. 
+       mNumOwnSevereCostBurden_&_years. 
+       mRentCostBurdenDenom_&_years.
+       mOwnerCostBurdenDenom_&_years.
+
+       mNumRentCstBurden_15_24_&_years. mNumRentCstBurden_25_34_&_years. 
+       mNumRentCstBurden_35_64_&_years. mNumRentCstBurden_65Over_&_years. 
+
+       mNumOwnCstBurden_15_24_&_years. mNumOwnCstBurden_25_34_&_years. 
+       mNumOwnCstBurden_35_64_&_years. mNumOwnCstBurden_65Over_&_years. 
+
+       mNumRentCstBurden_LT10K_&_years. mNumRentCstBurden_10_19K_&_years. 
+       mNumRentCstBurden_20_34K_&_years. mNumRentCstBurden_35_49K_&_years. 
+       mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99K_&_years. 
+       mNumRentCstBurden_GT100K_&_years. 
 	   ;
 	
 	%**variables appear only 2013 and later; 

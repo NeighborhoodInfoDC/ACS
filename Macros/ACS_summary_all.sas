@@ -54,9 +54,8 @@
   
 
   **** Create summary files from block group source ****;
-  ** RP 6/21/18 commented this out because we decided not to use BG based files anymore **;
 
-  /*%ACS_summary_geo_source( bg10 )*/
+  %ACS_summary_geo_source( bg10 )
 
   **** Create summary files from census tract source ****;
 
