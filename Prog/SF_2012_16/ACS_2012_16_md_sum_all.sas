@@ -24,7 +24,9 @@
   state_ab = MD,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
-  years = 2012_16
+  years = 2012_16,
+  
+   revisions=%str(Fixed conflict with the ACS master branch that had previously caused issues.)
 
 )
 
