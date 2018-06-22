@@ -232,6 +232,39 @@
   mNumHshldsIOM_&_years. = %moe_sum( var=B19001Cm1 B19001Fm1 B19001Gm1);
   mNumHshldsAIOM_&_years. = %moe_sum( var= B19001Cm1 B19001Dm1 B19001Em1 B19001Fm1 B19001Gm1);
 
+  FamilyHHTot = B11016e2;
+  FamilyHH2person = B11016e3;
+  FamilyHH3person = B11016e4;
+  FamilyHH4person = B11016e5;
+  FamilyHH5person = B11016e6;
+  FamilyHH6person =B11016e7;
+  FamilyHH7person = B11016e8;
+
+  NonFamilyHHTot = B11016e9;
+  NonFamilyHH2person = B11016e10;
+  NonFamilyHH3person = B11016e11;
+  NonFamilyHH4person = B11016e12;
+  NonFamilyHH5person = B11016e13;
+  NonFamilyHH6person = B11016e14;
+  NonFamilyHH7person = B11016e15;
+
+  mFamilyHHTot = B11016m2;
+  mFamilyHH2person = B11016m3;
+  mFamilyHH3person = B11016m4;
+  mFamilyHH4person = B11016m5;
+  mFamilyHH5person = B11016m6;
+  mFamilyHH6person =B11016m7;
+  mFamilyHH7person = B11016m8;
+
+  mNonFamilyHHTot = B11016m9;
+  mNonFamilyHH2person = B11016m10;
+  mNonFamilyHH3person = B11016m11;
+  mNonFamilyHH4person = B11016m12;
+  mNonFamilyHH5person = B11016m13;
+  mNonFamilyHH6person = B11016m14;
+  mNonFamilyHH7person = B11016m15;
+
+
   mPop5andOverYears_&_years. = B06007m1; 
 
   mPopUnder18YearsB_&_years. = 
@@ -452,6 +485,38 @@
     mPop35_64YearsF_&_years.="Persons 35-64 years old, Female, MOE,&_years_dash"
     mPop65andOverYearsM_&_years.="Persons 65 years old and over, Male, MOE,&_years_dash "
     mPop65andOverYearsF_&_years.="Persons 65 years old and over, Female, MOE,&_years_dash "
+
+	FamilyHHTot = "Total family households, &_years_dash "
+  	FamilyHH2person = "2-person family households, &_years_dash "
+    FamilyHH3person = "2-person family households, &_years_dash "
+    FamilyHH4person = "4-person family households, &_years_dash "
+    FamilyHH5person = "5-person family households, &_years_dash "
+    FamilyHH6person = "6-person family households, &_years_dash "
+    FamilyHH7person = "7+-person family households, &_years_dash "
+
+    NonFamilyHHTot = "Total non-family households, &_years_dash "
+    NonFamilyHH2person = "2-person non-family households, &_years_dash "
+    NonFamilyHH3person = "3-person non-family households, &_years_dash "
+    NonFamilyHH4person = "4-person non-family households, &_years_dash "
+    NonFamilyHH5person = "5-person non-family households, &_years_dash "
+    NonFamilyHH6person = "6-person non-family households, &_years_dash "
+    NonFamilyHH7person = "7+-person non-family households, &_years_dash "
+
+    mFamilyHHTot = "Total family households, MOE, &_years_dash "
+    mFamilyHH2person = "2-person family households, MOE, &_years_dash "
+    mFamilyHH3person = "3-person family households, MOE, &_years_dash "
+    mFamilyHH4person = "4-person family households, MOE, &_years_dash "
+    mFamilyHH5person = "5-person family households, MOE, &_years_dash "
+    mFamilyHH6person = "6-person family households, MOE, &_years_dash "
+    mFamilyHH7person = "7+-person family households, MOE, &_years_dash "
+
+    mNonFamilyHHTot = "Total non-family households, MOE, &_years_dash "
+    mNonFamilyHH2person = "2-person non-family households, MOE, &_years_dash "
+    mNonFamilyHH3person = "3-person non-family households, MOE, &_years_dash "
+    mNonFamilyHH4person = "4-person non-family households, MOE, &_years_dash "
+    mNonFamilyHH5person = "5-person non-family households, MOE, &_years_dash "
+    mNonFamilyHH6person = "6-person non-family households, MOE, &_years_dash "
+    mNonFamilyHH7person = "7-person non-family households, MOE, &_years_dash "
 ;
 
       ** Foreign born **;

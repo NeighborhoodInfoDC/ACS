@@ -139,6 +139,8 @@
 	   FamMarriedCouple: FamMaleholder: FamFemaleholder: Nonfamlivingalone: Nonfamnotlivingalone:
 
 	   FamIncomeLT75k_: FamIncomeGT200k_: hshldinc:
+
+	   FamilyHH: NonFamilyHH:
        ;
 	
 	%**variables appear in all years;
@@ -162,6 +164,12 @@
 
 	   mNumFamiliesOwnChildren_&_years. mNumFamiliesOwnChildFH_&_years. 
        mNumHshldPhone_&_years. mNumHshldCar_&_years. 
+
+	   mFamilyHHTot_&_years. mFamilyHH2person_&_years. mFamilyHH3person_&_years.  mFamilyHH4person_&_years. 
+       mFamilyHH5person_&_years. mFamilyHH6person_&_years. mFamilyHH7person_&_years. 
+
+       mNonFamilyHHTot_&_years.  mNonFamilyHH2person_&_years. mNonFamilyHH3person_&_years. mNonFamilyHH4person_&_years.
+       mNonFamilyHH5person_&_years. mNonFamilyHH6person_&_years. mNonFamilyHH7person_&_years. 
 
 	   /* Foreign born */
 
