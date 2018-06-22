@@ -232,37 +232,37 @@
   mNumHshldsIOM_&_years. = %moe_sum( var=B19001Cm1 B19001Fm1 B19001Gm1);
   mNumHshldsAIOM_&_years. = %moe_sum( var= B19001Cm1 B19001Dm1 B19001Em1 B19001Fm1 B19001Gm1);
 
-  FamilyHHTot = B11016e2;
-  FamilyHH2person = B11016e3;
-  FamilyHH3person = B11016e4;
-  FamilyHH4person = B11016e5;
-  FamilyHH5person = B11016e6;
-  FamilyHH6person =B11016e7;
-  FamilyHH7person = B11016e8;
+  FamilyHHTot_&_years. = B11016e2;
+  FamilyHH2person_&_years. = B11016e3;
+  FamilyHH3person_&_years. = B11016e4;
+  FamilyHH4person_&_years. = B11016e5;
+  FamilyHH5person_&_years. = B11016e6;
+  FamilyHH6person_&_years. =B11016e7;
+  FamilyHH7person_&_years. = B11016e8;
 
-  NonFamilyHHTot = B11016e9;
-  NonFamilyHH2person = B11016e10;
-  NonFamilyHH3person = B11016e11;
-  NonFamilyHH4person = B11016e12;
-  NonFamilyHH5person = B11016e13;
-  NonFamilyHH6person = B11016e14;
-  NonFamilyHH7person = B11016e15;
+  NonFamilyHHTot_&_years. = B11016e9;
+  NonFamilyHH2person_&_years. = B11016e10;
+  NonFamilyHH3person_&_years. = B11016e11;
+  NonFamilyHH4person_&_years. = B11016e12;
+  NonFamilyHH5person_&_years. = B11016e13;
+  NonFamilyHH6person_&_years. = B11016e14;
+  NonFamilyHH7person_&_years. = B11016e15;
 
-  mFamilyHHTot = B11016m2;
-  mFamilyHH2person = B11016m3;
-  mFamilyHH3person = B11016m4;
-  mFamilyHH4person = B11016m5;
-  mFamilyHH5person = B11016m6;
-  mFamilyHH6person =B11016m7;
-  mFamilyHH7person = B11016m8;
+  mFamilyHHTot_&_years. = B11016m2;
+  mFamilyHH2person_&_years. = B11016m3;
+  mFamilyHH3person_&_years. = B11016m4;
+  mFamilyHH4person_&_years. = B11016m5;
+  mFamilyHH5person_&_years. = B11016m6;
+  mFamilyHH6person_&_years. =B11016m7;
+  mFamilyHH7person_&_years. = B11016m8;
 
-  mNonFamilyHHTot = B11016m9;
-  mNonFamilyHH2person = B11016m10;
-  mNonFamilyHH3person = B11016m11;
-  mNonFamilyHH4person = B11016m12;
-  mNonFamilyHH5person = B11016m13;
-  mNonFamilyHH6person = B11016m14;
-  mNonFamilyHH7person = B11016m15;
+  mNonFamilyHHTot_&_years. = B11016m9;
+  mNonFamilyHH2person_&_years. = B11016m10;
+  mNonFamilyHH3person_&_years. = B11016m11;
+  mNonFamilyHH4person_&_years. = B11016m12;
+  mNonFamilyHH5person_&_years. = B11016m13;
+  mNonFamilyHH6person_&_years. = B11016m14;
+  mNonFamilyHH7person_&_years. = B11016m15;
 
 
   mPop5andOverYears_&_years. = B06007m1; 
