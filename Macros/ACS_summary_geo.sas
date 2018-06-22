@@ -124,10 +124,11 @@
            PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
            PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
            Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
-           
-	   RentCostBurdenDenom: OwnerCostBurdenDenom:
+        
+       NumRentCst: NumOwnCst: NumOwnCstBurden:
 
-       NumRentCst: NumOwnCst:
+	   NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
+       RentCostBurdenDenom: OwnerCostBurdenDenom:
 
 	   PopUnder18YearsM: PopUnder18YearsF: Pop18_34YearsM: Pop18_34YearsF: Pop35_64YearsM:
 	   Pop35_64YearsF: Pop65andOverYearsM: Pop65andOverYearsF:
@@ -142,10 +143,6 @@
 
 	   FamIncomeLT75k_: FamIncomeGT200k_:
 	   
-       NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
-       RentCostBurdenDenom: OwnerCostBurdenDenom:
-
-       NumRentCst: NumOwnCstBurden:
 
 	   hshldincunder10000:
 	  hshldinc10000to14999:
