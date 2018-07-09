@@ -10,6 +10,8 @@
  Description:  Read selected tables for ACS summary files.
  
  Modifications:
+ 05/13/18 PT Added tables B05003 and B05003A-I.
+ 07/09/18 LH Added table B25032.
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -27,7 +29,7 @@
   years = 2012_16,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Added tables B05003 and B05003A-I.)
+  revisions = %str(Added table B25032.)
 
 )
 
