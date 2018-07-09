@@ -2528,6 +2528,68 @@
     
   		mNumRenterHsgUnits_&_years. = %moe_sum( var=mNumRenterOccupiedHU_&_years. mNumVacantHUForRent_&_years. );
 
+		NumOwnOHU1det_&_years. = B25032e3;
+		NumOwnOHU1att_&_years. = B25032e4;
+		NumOwnOHU2u_&_years. = B25032e5;
+		NumOwnOHU3to4u_&_years. = B25032e6;
+		NumOwnOHU5to9u_&_years. = B25032e7;
+		NumOwnOHU10to19u_&_years. = B25032e8;
+		NumOwnOHU20to49u_&_years. = B25032e9;
+		NumOwnOHU50plusu_&_years. = B25032e10;
+		NumOwnOHUMob_&_years. = B25032e11;
+		NumOwnOHUBoat_&_years. = B25032e12;
+
+		NumOwnOHU1u_&_years. = sum( B25032e3, B25032e4 ); 
+		NumOwnOHU2to4u_&_years. = sum( B25032e5, B25032e6 ); 
+		NumOwnOHU20plusu_&_years. = sum( B25032e9, B25032e10 ); 
+
+		NumRtOHU1det_&_years. = B25032e14;
+		NumRtOHU1att_&_years. = B25032e15;
+		NumRtOHU2u_&_years. = B25032e16;
+		NumRtOHU3to4u_&_years. = B25032e17;
+		NumRtOHU5to9u_&_years. = B25032e18;
+		NumRtOHU10to19u_&_years. = B25032e19;
+		NumRtOHU20to49u_&_years. = B25032e20;
+		NumRtOHU50plusu_&_years. = B25032e21;
+		NumRtOHUMob_&_years. = B25032e22;
+		NumRtOHUBoat_&_years. = B25032e23;
+
+		NumRtOHU1u_&_years. = sum( B25032e14, B25032e15 ); 
+		NumRtOHU2to4u_&_years. = sum( B25032e16, B25032e17 ); 
+		NumRtOHU20plusu_&_years. = sum( B25032e20, B25032e21 ); 
+
+
+		mNumOwnOHU1det_&_years. = B25032m3;
+		mNumOwnOHU1att_&_years. = B25032m4;
+		mNumOwnOHU2u_&_years. = B25032m5;
+		mNumOwnOHU3to4u_&_years. = B25032m6;
+		mNumOwnOHU5to9u_&_years. = B25032m7;
+		mNumOwnOHU10to19u_&_years. = B25032m8;
+		mNumOwnOHU20to49u_&_years. = B25032m9;
+		mNumOwnOHU50plusu_&_years. = B25032m10;
+		mNumOwnOHUMob_&_years. = B25032m11;
+		mNumOwnOHUBoat_&_years. = B25032m12;
+
+		mNumOwnOHU1u_&_years. =  %moe_sum( var=B25032m3 B25032m4 ); 
+		mNumOwnOHU2to4u_&_years. =  %moe_sum( var= B25032m5 B25032m6 ); 
+		mNumOwnOHU20plusu_&_years. =  %moe_sum( var= B25032m9 B25032m10 ); 
+
+		mNumRtOHU1det_&_years. = B25032m14;
+		mNumRtOHU1att_&_years. = B25032m15;
+		mNumRtOHU2u_&_years. = B25032m16;
+		mNumRtOHU3to4u_&_years. = B25032m17;
+		mNumRtOHU5to9u_&_years. = B25032m18;
+		mNumRtOHU10to19u_&_years. = B25032m19;
+		mNumRtOHU20to49u_&_years. = B25032m20;
+		mNumRtOHU50plusu_&_years. = B25032m21;
+		mNumRtOHUMob_&_years. = B25032m22;
+		mNumRtOHUBoat_&_years. = B25032m23;
+
+		mNumRtOHU1u_&_years. =  %moe_sum( var= B25032m14 B25032m15 ); 
+		mNumRtOHU2to4u_&_years. =  %moe_sum( var= B25032m16 B25032m17 ); 
+		mNumRtOHU20plusu_&_years. =  %moe_sum( var= B25032m20 B25032m21 ); 
+
+
 
 	label
 	  Numhsgunits_&_years. = "Number of housing units (tract-based), &_years_dash "
@@ -2574,6 +2636,67 @@
       mNumVacantHUForRent_&_years. = "Vacant housing units for rent, MOE, &_years_dash "
       mNumVacantHUForSale_&_years. = "Vacant housing units for sale, MOE, &_years_dash "
       mNumRenterHsgUnits_&_years. = "Total rental housing units, MOE, &_years_dash "
+
+		NumOwnOHU1det_&_years. = "Owner-occupied housing units in structure: 1 unit detached, &_years_dash "
+		NumOwnOHU1att_&_years. = "Owner-occupied housing units in structure: 1 unit attached, &_years_dash "
+		NumOwnOHU2u_&_years. = "Owner-occupied housing units in structure: 2 units, &_years_dash "
+		NumOwnOHU3to4u_&_years. = "Owner-occupied housing units in structure: 3 to 4 units, &_years_dash "
+		NumOwnOHU5to9u_&_years. = "Owner-occupied housing units in structure: 5 to 9 units, &_years_dash "
+		NumOwnOHU10to19u_&_years. = "Owner-occupied housing units in structure: 10 to 19 units, &_years_dash "
+		NumOwnOHU20to49u_&_years. = "Owner-occupied housing units in structure: 20 to 49 units, &_years_dash "
+		NumOwnOHU50plusu_&_years. = "Owner-occupied housing units in structure: 50 or more units, &_years_dash "
+		NumOwnOHUMob_&_years. = "Owner-occupied housing units in structure: Mobile home, &_years_dash "
+		NumOwnOHUBoat_&_years. = "Owner-occupied housing units in structure: Boat, RV, van, etc., &_years_dash "
+
+		NumOwnOHU1u_&_years. = "Owner-occupied housing units in structure: 1 unit, &_years_dash "
+		NumOwnOHU2to4u_&_years. = "Owner-occupied housing units in structure: 2 to 4 units, &_years_dash "
+		NumOwnOHU20plusu_&_years. = "Owner-occupied housing units in structure: 20 or more units, &_years_dash "
+
+		NumRtOHU1det_&_years. = "Renter-occupied housing units in structure: 1 unit detached, &_years_dash "
+		NumRtOHU1att_&_years. = "Renter-occupied housing units in structure: 1 unit attached, &_years_dash "
+		NumRtOHU2u_&_years. = "Renter-occupied housing units in structure: 2 units, &_years_dash "
+		NumRtOHU3to4u_&_years. = "Renter-occupied housing units in structure: 3 to 4 units, &_years_dash "
+		NumRtOHU5to9u_&_years. =  "Renter-occupied housing units in structure: 3 to 4 units, &_years_dash "
+		NumRtOHU10to19u_&_years. = "Renter-occupied housing units in structure: 10 to 19 units, &_years_dash "
+		NumRtOHU20to49u_&_years. = "Renter-occupied housing units in structure: 20 to 49 units, &_years_dash "
+		NumRtOHU50plusu_&_years. = "Renter-occupied housing units in structure: 50 or more units, &_years_dash "
+		NumRtOHUMob_&_years. = "Renter-occupied housing units in structure: Mobile home, &_years_dash "
+		NumRtOHUBoat_&_years. = "Renter-occupied housing units in structure: Boat, RV, van, etc., &_years_dash "
+
+		NumRtOHU1u_&_years. = "Renter-occupied housing units in structure: 1 unit, &_years_dash "
+		NumRtOHU2to4u_&_years. = "Renter-occupied housing units in structure: 2 to 4 units, &_years_dash "
+		NumRtOHU20plusu_&_years. = "Renter-occupied housing units in structure: 20 or more units, &_years_dash "
+
+		mNumOwnOHU1det_&_years. = "Owner-occupied housing units in structure: 1 unit detached, MOE, &_years_dash "
+		mNumOwnOHU1att_&_years. = "Owner-occupied housing units in structure: 1 unit attached, MOE, &_years_dash "
+		mNumOwnOHU2u_&_years. = "Owner-occupied housing units in structure: 2 units, MOE, &_years_dash "
+		mNumOwnOHU3to4u_&_years. = "Owner-occupied housing units in structure: 3 to 4 units, MOE, &_years_dash "
+		mNumOwnOHU5to9u_&_years. = "Owner-occupied housing units in structure: 5 to 9 units, MOE, &_years_dash "
+		mNumOwnOHU10to19u_&_years. = "Owner-occupied housing units in structure: 10 to 19 units, MOE, &_years_dash "
+		mNumOwnOHU20to49u_&_years. = "Owner-occupied housing units in structure: 20 to 49 units, MOE, &_years_dash "
+		mNumOwnOHU50plusu_&_years. = "Owner-occupied housing units in structure: 50 or more units, MOE, &_years_dash "
+		mNumOwnOHUMob_&_years. = "Owner-occupied housing units in structure: Mobile home, MOE, &_years_dash "
+		mNumOwnOHUBoat_&_years. = "Owner-occupied housing units in structure: Boat, RV, van, etc., MOE, &_years_dash "
+
+		mNumOwnOHU1u_&_years. = "Owner-occupied housing units in structure: 1 unit, MOE, &_years_dash "
+		mNumOwnOHU2to4u_&_years. = "Owner-occupied housing units in structure: 2 to 4 units, MOE, &_years_dash "
+		mNumOwnOHU20plusu_&_years. =  "Owner-occupied housing units in structure: 20 or more units, MOE, &_years_dash "
+
+		mNumRtOHU1det_&_years. = "Renter-occupied housing units in structure: 1 unit detached, MOE, &_years_dash "
+		mNumRtOHU1att_&_years. = "Renter-occupied housing units in structure: 1 unit attached, MOE, &_years_dash "
+		mNumRtOHU2u_&_years. = "Renter-occupied housing units in structure: 2 units, MOE, &_years_dash "
+		mNumRtOHU3to4u_&_years. = "Renter-occupied housing units in structure: 3 to 4 units, MOE, &_years_dash "
+		mNumRtOHU5to9u_&_years. = "Renter-occupied housing units in structure: 5 to 9 units, MOE, &_years_dash "
+		mNumRtOHU10to19u_&_years. = "Renter-occupied housing units in structure: 10 to 19 units, MOE, &_years_dash "
+		mNumRtOHU20to49u_&_years. = "Renter-occupied housing units in structure: 20 to 49 units, MOE, &_years_dash "
+		mNumRtOHU50plusu_&_years. = "Renter-occupied housing units in structure: 50 or more units, MOE, &_years_dash "
+		mNumRtOHUMob_&_years. =  "Renter-occupied housing units in structure: Mobile home, MOE, &_years_dash "
+		mNumRtOHUBoat_&_years. = "Renter-occupied housing units in structure: Boat, RV, van, etc., MOE, &_years_dash "
+
+		mNumRtOHU1u_&_years. =  "Renter-occupied housing units in structure: 1 unit, MOE, &_years_dash "
+		mNumRtOHU2to4u_&_years. = "Renter-occupied housing units in structure: 2 to 4 units, MOE, &_years_dash "
+		mNumRtOHU20plusu_&_years. = "Renter-occupied housing units in structure: 20 or more units, MOE, &_years_dash "
+
 	  ;
 
 	  **vars related to rent or home value; 
