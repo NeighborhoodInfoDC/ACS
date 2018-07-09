@@ -487,7 +487,21 @@
        mNumOwnerOccupiedHU_&_years. mNumRenterOccupiedHU_&_years. 
 	   mNumVacantHsgUnits_&_years. mNumVacantHUForRent_&_years. 
 	   mNumVacantHUForSale_&_years. mNumRenterHsgUnits_&_years. 
-
+	   
+	    mNumOwnOHU1det_&_years. mNumOwnOHU1att_&_years.
+	    mNumOwnOHU2u_&_years.   mNumOwnOHU3to4u_&_years. 
+	    mNumOwnOHU5to9u_&_years. mNumOwnOHU10to19u_&_years.
+	    mNumOwnOHU20to49u_&_years.	mNumOwnOHU50plusu_&_years.
+	    mNumOwnOHUMob_&_years.     mNumOwnOHUBoat_&_years. 
+	    mNumOwnOHU1u_&_years.     mNumOwnOHU2to4u_&_years.	mNumOwnOHU20plusu_&_years. 
+	    
+	    mNumRtOHU1det_&_years. mNumRtOHU1att_&_years.
+	    mNumRtOHU2u_&_years.   mNumRtOHU3to4u_&_years. 
+	    mNumRtOHU5to9u_&_years. mNumRtOHU10to19u_&_years.
+	    mNumRtOHU20to49u_&_years.	mNumRtOHU50plusu_&_years.
+	    mNumRtOHUMob_&_years.     mNumRtOHUBoat_&_years. 
+	    mNumRtOHU1u_&_years.     mNumRtOHU2to4u_&_years.	mNumRtOHU20plusu_&_years. 
+	    
 	   /* Rents and cost burdens */
 
 	   mGrossRentLT100_&_years. mGrossRent100_149_&_years. mGrossRent150_199_&_years. 
