@@ -1,15 +1,18 @@
 /**************************************************************************
- Program:  Acs_sf_2006_10_va.sas
+ Program:  ACS_2006_10_va_sum_all.sas
  Library:  ACS
- Project:  Urban-Greater DC
- Author:   Wilton Oliver
- Created:  05/15/18
+ Project:  NeighborhoodInfo DC
+ Author:   Rob Pitingolo
+ Created:  7/13/18
  Version:  SAS 9.4
  Environment:  Local Windows session (desktop)
  
- Description:  Read selected tables for ACS summary files.
+ Description:  Create all standard summary files from ACS 5-year data.
  
  Modifications:
+ 6/21/18 RP Fixed conflict with the ACS master branch that had previously caused issues.
+ 07/09/18 LH Added indicators for structure type.
+ 7/13/18 RP Fixed master branch issue again. 
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -18,7 +21,7 @@
 %DCData_lib( ACS )
 
 
-%Acs_sf(
+%ACS_summary_all( 
 
   /** State abbreviation. Ex: DC **/
   state_ab = VA,
@@ -26,8 +29,6 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2006_10,
   
-  /** Description of latest file revisions for metadata **/
-  revisions = %str(Added table B25032.)
-
+   revisions=%str(Added indicators for structure type.)
 )
 
