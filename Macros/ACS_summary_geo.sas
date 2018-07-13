@@ -569,8 +569,7 @@
 	   mGrossRent500_549_&_years. mGrossRent550_599_&_years. mGrossRent600_649_&_years. 
 	   mGrossRent650_699_&_years. mGrossRent700_749_&_years. mGrossRent750_799_&_years. 
 	   mGrossRent800_899_&_years. mGrossRent900_999_&_years. mGrossRent1000_1249_&_years. 
-	   mGrossRent1250_1499_&_years. mGrossRent1500_1999_&_years. mGrossRent2000_2499_&_years. 
-	   mGrossRent2500_2999_&_years. mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
+	   mGrossRent1250_1499_&_years. mGrossRent1500_1999_&_years.
 	   mGrossRentNoCash_&_years. 
 
 	   mIncmByRenterCst_LT10K_&_years. mIncmByRenterCst_10_19K_&_years. mIncmByRenterCst_20_34K_&_years. 
