@@ -241,12 +241,13 @@
   FamilyHH7person_&_years. = B11016e8;
 
   NonFamilyHHTot_&_years. = B11016e9;
-  NonFamilyHH2person_&_years. = B11016e10;
-  NonFamilyHH3person_&_years. = B11016e11;
-  NonFamilyHH4person_&_years. = B11016e12;
-  NonFamilyHH5person_&_years. = B11016e13;
-  NonFamilyHH6person_&_years. = B11016e14;
-  NonFamilyHH7person_&_years. = B11016e15;
+  NonFamilyHH1person_&_years. = B11016e10;
+  NonFamilyHH2person_&_years. = B11016e11;
+  NonFamilyHH3person_&_years. = B11016e12;
+  NonFamilyHH4person_&_years. = B11016e13;
+  NonFamilyHH5person_&_years. = B11016e14;
+  NonFamilyHH6person_&_years. = B11016e15;
+  NonFamilyHH7person_&_years. = B11016e16;
 
   mFamilyHHTot_&_years. = B11016m2;
   mFamilyHH2person_&_years. = B11016m3;
@@ -257,12 +258,13 @@
   mFamilyHH7person_&_years. = B11016m8;
 
   mNonFamilyHHTot_&_years. = B11016m9;
-  mNonFamilyHH2person_&_years. = B11016m10;
-  mNonFamilyHH3person_&_years. = B11016m11;
-  mNonFamilyHH4person_&_years. = B11016m12;
-  mNonFamilyHH5person_&_years. = B11016m13;
-  mNonFamilyHH6person_&_years. = B11016m14;
-  mNonFamilyHH7person_&_years. = B11016m15;
+  mNonFamilyHH1person_&_years. = B11016m10;
+  mNonFamilyHH2person_&_years. = B11016m11;
+  mNonFamilyHH3person_&_years. = B11016m12;
+  mNonFamilyHH4person_&_years. = B11016m13;
+  mNonFamilyHH5person_&_years. = B11016m14;
+  mNonFamilyHH6person_&_years. = B11016m15;
+  mNonFamilyHH7person_&_years. = B11016m16;
 
 	  /*Family Types*/
 
@@ -510,6 +512,7 @@
     FamilyHH7person_&_years. = "7+-person family households, &_years_dash "
 
     NonFamilyHHTot_&_years. = "Total non-family households, &_years_dash "
+	NonFamilyHH1person_&_years. = "1-person non-family households, &_years_dash "
     NonFamilyHH2person_&_years. = "2-person non-family households, &_years_dash "
     NonFamilyHH3person_&_years. = "3-person non-family households, &_years_dash "
     NonFamilyHH4person_&_years. = "4-person non-family households, &_years_dash "
@@ -526,6 +529,7 @@
     mFamilyHH7person_&_years. = "7+-person family households, MOE, &_years_dash "
 
     mNonFamilyHHTot_&_years. = "Total non-family households, MOE, &_years_dash "
+	mNonFamilyHH1person_&_years. = "1-person non-family households, MOE, &_years_dash "
     mNonFamilyHH2person_&_years. = "2-person non-family households, MOE, &_years_dash "
     mNonFamilyHH3person_&_years. = "3-person non-family households, MOE, &_years_dash "
     mNonFamilyHH4person_&_years. = "4-person non-family households, MOE, &_years_dash "
