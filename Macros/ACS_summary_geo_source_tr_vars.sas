@@ -512,6 +512,7 @@
     FamilyHH7person_&_years. = "7+-person family households, &_years_dash "
 
     NonFamilyHHTot_&_years. = "Total non-family households, &_years_dash "
+	NonFamilyHH1person_&_years. = "1-person non-family households, &_years_dash "
     NonFamilyHH2person_&_years. = "2-person non-family households, &_years_dash "
     NonFamilyHH3person_&_years. = "3-person non-family households, &_years_dash "
     NonFamilyHH4person_&_years. = "4-person non-family households, &_years_dash "
@@ -528,6 +529,7 @@
     mFamilyHH7person_&_years. = "7+-person family households, MOE, &_years_dash "
 
     mNonFamilyHHTot_&_years. = "Total non-family households, MOE, &_years_dash "
+	mNonFamilyHH1person_&_years. = "1-person non-family households, MOE, &_years_dash "
     mNonFamilyHH2person_&_years. = "2-person non-family households, MOE, &_years_dash "
     mNonFamilyHH3person_&_years. = "3-person non-family households, MOE, &_years_dash "
     mNonFamilyHH4person_&_years. = "4-person non-family households, MOE, &_years_dash "
