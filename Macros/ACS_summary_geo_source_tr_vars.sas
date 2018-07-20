@@ -3330,7 +3330,7 @@
 			mNumRtOHU1B500to749_&_years. = %moe_sum( var= B25068m16);
 			mNumRtOHU1B750to999_&_years. = %moe_sum( var= B25068m17 );
 			mNumRtOHU1B1000plus_&_years. = %moe_sum( var=B25068m18 );
-			mNumRtOHU3Bnocash_&_years. = %moe_sum( var=B25068e28);
+			mNumRtOHU2Bnocash_&_years. = %moe_sum( var=B25068e28);
 			mNumRtOHU2Bunder500_&_years. = %moe_sum( var=B25068m22 B25068m23 B25068m24);
 			mNumRtOHU2B500to749_&_years. = %moe_sum( var=B25068m25 );
 			mNumRtOHU2B750to999_&_years. = %moe_sum( var= B25068m26 );
