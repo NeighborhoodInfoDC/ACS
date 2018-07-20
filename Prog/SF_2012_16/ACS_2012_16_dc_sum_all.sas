@@ -29,7 +29,7 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2012_16,
   
-  revisions=%str(Added indicators for structure type.)
+  revisions=%str(Split under $500 and no cash rent into separate variables)
 
 )
 
