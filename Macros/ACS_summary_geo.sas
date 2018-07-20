@@ -554,13 +554,13 @@
        mNumOwnOccHU4bd_&_years. mNumOwnOccHU5plusbd_&_years.
        mNumOwnOccHU3plusbd_&_years.
        
-       mNumRtOHU0Bunder500_&_years. mNumRtOHU0B500to749_&_years. 
+       mNumRtOHU0Bnocash_&_years. mNumRtOHU0Bunder500_&_years. mNumRtOHU0B500to749_&_years. 
        mNumRtOHU0B750to999_&_years. mNumRtOHU0B1000plus_&_years.
-       mNumRtOHU1Bunder500_&_years. mNumRtOHU1B500to749_&_years. 
+       mNumRtOHU1Bnocash_&_years. mNumRtOHU1Bunder500_&_years. mNumRtOHU1B500to749_&_years. 
        mNumRtOHU1B750to999_&_years. mNumRtOHU1B1000plus_&_years.
-       mNumRtOHU2Bunder500_&_years. mNumRtOHU2B500to749_&_years.
+       mNumRtOHU2Bnocash_&_years. mNumRtOHU2Bunder500_&_years. mNumRtOHU2B500to749_&_years.
        mNumRtOHU2B750to999_&_years.  mNumRtOHU2B1000plus_&_years. 
-       mNumRtOHU3Bunder500_&_years. mNumRtOHU3B500to749_&_years. 
+       mNumRtOHU3Bnocash_&_years. mNumRtOHU3Bunder500_&_years. mNumRtOHU3B500to749_&_years. 
        mNumRtOHU3B750to999_&_years. mNumRtOHU3B1000plus_&_years. 
 
 	   mGrossRentLT100_&_years. mGrossRent100_149_&_years. mGrossRent150_199_&_years. 
