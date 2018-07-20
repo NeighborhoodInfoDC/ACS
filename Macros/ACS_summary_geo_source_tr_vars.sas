@@ -3387,7 +3387,7 @@
 			NumRtOHU3B1000to1499_&_years. = B25068e35;
 			NumRtOHU3B1500plus_&_years. = B25068e36;
 			NumRtOHU3B1000plus_&_years. = sum( B25068e35, B25068e36 );
-			mNumRtOHU0Bunocash_&_years. = %moe_sum( var=B25068e10 );
+			mNumRtOHU0Bnocash_&_years. = %moe_sum( var=B25068e10 );
 			mNumRtOHU0Bunder500_&_years. = %moe_sum( var=B25068m4 B25068m5 );
 			mNumRtOHU0B500to749_&_years. = %moe_sum( var=B25068m6 );
 			mNumRtOHU0B750to999_&_years. = %moe_sum( var=B25068m7 );
