@@ -97,6 +97,7 @@
   06/26/17 LH and RP Added Tables for racial equity work.
   06/05/18 Yipeng Su Added tables for pop by sex and age, insurance coverage, family type, earnings for Stanton Commons 
   07/09/18 LH Added B25032 
+  08/30/18 RP ADded B25009
 **************************************************************************/
 
 /** Macro Acs_sf - Start Definition **/
@@ -148,6 +149,7 @@
 	B25077
 	B25106
 	B25031 B25042 B25068 B05006 B27001 B25095 B25074 B14001 B08119 B25032
+	B25009
 ,
   
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from all data sets **/
