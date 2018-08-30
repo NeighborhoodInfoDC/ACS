@@ -501,6 +501,12 @@
 	    mNumRtOHU20to49u_&_years.	mNumRtOHU50plusu_&_years.
 	    mNumRtOHUMob_&_years.     mNumRtOHUBoat_&_years. 
 	    mNumRtOHU1u_&_years.     mNumRtOHU2to4u_&_years.	mNumRtOHU20plusu_&_years. 
+
+		mNumOwnOcc1person_&_years. mNumOwnOcc2person_&_years. mNumOwnOcc3person_&_years. mNumOwnOcc4person_&_years.
+		mNumOwnOcc5person_&_years. mNumOwnOcc6person_&_years. mNumOwnOcc7plusperson_&_years.
+
+		mNumRentOcc1person_&_years. mNumRentOcc2person_&_years. mNumRentOcc3person_&_years. mNumRentOcc4person_&_years.
+		mNumRentOcc5person_&_years. mNumRentOcc6person_&_years. mNumRentOcc7plusperson_&_years.
 	    
 	   /* Rents and cost burdens */
 

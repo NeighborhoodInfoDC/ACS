@@ -13,6 +13,7 @@
  
  06/21/18 RP Fixed conflict with the ACS master branch that had previously caused issues.
  07/09/18 LH Added indicators for structure type.
+ 08/30/18 RP Added tenure by household size. 
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -29,7 +30,7 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2012_16,
   
-   revisions=%str(Split under $500 and no cash rent into separate variables)
+   revisions=%str(Added tenure by household size. )
 
 )
 
