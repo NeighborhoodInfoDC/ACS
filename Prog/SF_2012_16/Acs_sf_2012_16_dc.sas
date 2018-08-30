@@ -13,6 +13,7 @@
  
  05/13/18 PT Added tables B05003 and B05003A-I.
  07/09/18 LH Added table B25032.
+ 08/30/18 RP Added table 25009
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -30,7 +31,7 @@
   years = 2012_16,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Added table B25032.)
+  revisions = %str(Added table B25009.)
 
 )
 
