@@ -3299,6 +3299,37 @@
 		mNumOwnOccHU5plusbd_&_years. = %moe_sum( var=B25042m8 );
 		mNumOwnOccHU3plusbd_&_years. = %moe_sum( var=B25042m6 B25042m7 B25042m8 );
 
+		** Housing vars related to household size; 
+		NumOwnOcc1person_&_years. = B25009e3;
+		NumOwnOcc2person_&_years. = B25009e4;
+		NumOwnOcc3person_&_years. = B25009e5;
+		NumOwnOcc4person_&_years. = B25009e6;
+		NumOwnOcc5person_&_years. = B25009e7;
+		NumOwnOcc6person_&_years. = B25009e8;
+		NumOwnOcc7plusperson_&_years. = B25009e9;
+		mNumOwnOcc1person_&_years. = %moe_sum( var=B25009m3 );
+		mNumOwnOcc2person_&_years. = %moe_sum( var=B25009m4 );
+		mNumOwnOcc3person_&_years. = %moe_sum( var=B25009m5 );
+		mNumOwnOcc4person_&_years. = %moe_sum( var=B25009m6 );
+		mNumOwnOcc5person_&_years. = %moe_sum( var=B25009m7 );
+		mNumOwnOcc6person_&_years. = %moe_sum( var=B25009m8 );
+		mNumOwnOcc7plusperson_&_years. = %moe_sum( var=B25009m9 );
+
+		NumRentOcc1person_&_years. = B25009e11;
+		NumRentOcc2person_&_years. = B25009e12;
+		NumRentOcc3person_&_years. = B25009e13;
+		NumRentOcc4person_&_years. = B25009e14;
+		NumRentOcc5person_&_years. = B25009e15;
+		NumRentOcc6person_&_years. = B25009e16;
+		NumRentOcc7plusperson_&_years. = B25009e17;
+		mNumRentOcc1person_&_years. = %moe_sum( var=B25009m11 );
+		mNumRentOcc2person_&_years. = %moe_sum( var=B25009m12 );
+		mNumRentOcc3person_&_years. = %moe_sum( var=B25009m13 );
+		mNumRentOcc4person_&_years. = %moe_sum( var=B25009m14 );
+		mNumRentOcc5person_&_years. = %moe_sum( var=B25009m15 );
+		mNumRentOcc6person_&_years. = %moe_sum( var=B25009m16 );
+		mNumRentOcc7plusperson_&_years. = %moe_sum( var=B25009m17 );
+
 		%if &_last_year. < 2015 %then %do; 
 			NumRtOHU0Bnocash_&_years. = B25068e10;
 			NumRtOHU0Bunder500_&_years. = sum( B25068e4, B25068e5, B25068e6 );
@@ -3498,6 +3529,36 @@
 			mNumownocchu3plusbd_&_years. = "Number of owner-occupied housing units with three or more bedrooms, MOE, &_years_dash "
 			mNumownocchu4bd_&_years. = "Number of owner-occupied housing units with four bedrooms, MOE, &_years_dash "
 			mNumownocchu5plusbd_&_years. = "Number of owner-occupied housing units with five or more bedrooms, MOE, &_years_dash "
+
+			NumOwnOcc1person_&_years. = "Number of owner-occupied 1-person households, &_years_dash "
+			NumOwnOcc2person_&_years. = "Number of owner-occupied 2-person households, &_years_dash "
+			NumOwnOcc3person_&_years. = "Number of owner-occupied 3-person households, &_years_dash "
+			NumOwnOcc4person_&_years. = "Number of owner-occupied 4-person households, &_years_dash "
+			NumOwnOcc5person_&_years. = "Number of owner-occupied 5-person households, &_years_dash "
+			NumOwnOcc6person_&_years. = "Number of owner-occupied 6-person households, &_years_dash "
+			NumOwnOcc7plusperson_&_years. = "Number of owner-occupied 7plus-person households, &_years_dash "
+			mNumOwnOcc1person_&_years. = "Number of owner-occupied 1-person households, MOE, &_years_dash "
+			mNumOwnOcc2person_&_years. = "Number of owner-occupied 2-person households, MOE, &_years_dash "
+			mNumOwnOcc3person_&_years. = "Number of owner-occupied 3-person households, MOE, &_years_dash "
+			mNumOwnOcc4person_&_years. = "Number of owner-occupied 4-person households, MOE, &_years_dash "
+			mNumOwnOcc5person_&_years. = "Number of owner-occupied 5-person households, MOE, &_years_dash "
+			mNumOwnOcc6person_&_years. = "Number of owner-occupied 6-person households, MOE, &_years_dash "
+			mNumOwnOcc7plusperson_&_years. = "Number of owner-occupied 7-person households, MOE, &_years_dash "
+
+			NumRentOcc1person_&_years. = "Number of renter-occupied 1-person households, &_years_dash "
+			NumRentOcc2person_&_years. = "Number of renter-occupied 2-person households, &_years_dash "
+			NumRentOcc3person_&_years. = "Number of renter-occupied 3-person households, &_years_dash "
+			NumRentOcc4person_&_years. = "Number of renter-occupied 4-person households, &_years_dash "
+			NumRentOcc5person_&_years. = "Number of renter-occupied 5-person households, &_years_dash "
+			NumRentOcc6person_&_years. = "Number of renter-occupied 6-person households, &_years_dash "
+			NumRentOcc7plusperson_&_years. = "Number of renter-occupied 7plus-person households, &_years_dash "
+			mNumRentOcc1person_&_years. = "Number of renter-occupied 1-person households, MOE, &_years_dash "
+			mNumRentOcc2person_&_years. = "Number of renter-occupied 2-person households, MOE, &_years_dash "
+			mNumRentOcc3person_&_years. = "Number of renter-occupied 3-person households, MOE, &_years_dash "
+			mNumRentOcc4person_&_years. = "Number of renter-occupied 4-person households, MOE, &_years_dash "
+			mNumRentOcc5person_&_years. = "Number of renter-occupied 5-person households, MOE, &_years_dash "
+			mNumRentOcc6person_&_years. = "Number of renter-occupied 6-person households, MOE, &_years_dash "
+			mNumRentOcc7plusperson_&_years. = "Number of renter-occupied 7plus-person households, MOE, &_years_dash "
 			
 			numRtOHU0Bnocash_&_years. = "Renter-occupied housing units with zero bedrooms and paying no cash rent, &_years_dash "
 			numRtOHU0Bunder500_&_years. = "Renter-occupied housing units with zero bedrooms and paying under $500 in cash rent, &_years_dash "
