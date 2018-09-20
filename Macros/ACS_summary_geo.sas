@@ -12,6 +12,7 @@
 
  Modifications: 7/29/16 - Added additional variables, included racial breakdowns. 
                 06/05/18-- Yipeng Su added additional variables pop by sex and age, insurance coverage, family type, earnings
+                9/20/18 Yipeng Su added family type by presense of related children
 **************************************************************************/
 
 %macro ACS_summary_geo( geo, source_geo );
@@ -141,6 +142,10 @@
 	   FamIncomeLT75k_: FamIncomeGT200k_: hshldinc:
 
 	   FamilyHH: NonFamilyHH:
+
+      NumMarriedFam: 
+      NumFam:
+
        ;
 	
 	%**variables appear in all years;
@@ -636,6 +641,23 @@
 	   mFamMarriedCouple_&_years. mFamMaleholder_&_years.
 	   mFamFemaleholder_&_years. mNonfamlivingalone_&_years.
 	   mNonfamnotlivingalone_&_years.
+
+
+       /*Family types*/
+
+	  mNumMarriedFamRelatedChildrenunder6only_&_years. 
+      mNumMarriedFamRelatedChildrenunder6_17_&_years. 
+	  mNumMarriedFamRelatedChildrenunder17plusonly_&_years. 
+	  mNumMarriedFamnoRelatedChildren_&_years. 
+      mNumFamRelatedChildrenunder6only_mh_&_years. 
+      mNumFamRelatedChildrenunder6_17_mh_&_years. 
+	  mNumFamRelatedChildrenunder17plusonly_mh_&_years. 
+	  mNumFamnoRelatedChildren_mh_&_years. 
+      mNumFamRelatedChildrenunder6only_fh_&_years. 
+      mNumFamRelatedChildrenunder6_17_fh_&_years. 
+	  mNumFamRelatedChildrenunder17plusonly_fh_&_years. 
+	  mNumFamnoRelatedChildren_fh_&_years.
+
 	   ;
 	
 	%**variables appear only 2013 and later; 
