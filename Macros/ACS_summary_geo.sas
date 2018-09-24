@@ -143,7 +143,7 @@
 
 	   FamilyHH: NonFamilyHH:
 
-      NumMarriedFam: 
+      NumMarFam: 
       NumFam:
 
        ;
@@ -644,19 +644,18 @@
 
 
        /*Family types*/
-
-	  mNumMarriedFamRelatedChildrenunder6only_&_years. 
-      mNumMarriedFamRelatedChildrenunder6_17_&_years. 
-	  mNumMarriedFamRelatedChildrenunder17plusonly_&_years. 
-	  mNumMarriedFamnoRelatedChildren_&_years. 
-      mNumFamRelatedChildrenunder6only_mh_&_years. 
-      mNumFamRelatedChildrenunder6_17_mh_&_years. 
-	  mNumFamRelatedChildrenunder17plusonly_mh_&_years. 
-	  mNumFamnoRelatedChildren_mh_&_years. 
-      mNumFamRelatedChildrenunder6only_fh_&_years. 
-      mNumFamRelatedChildrenunder6_17_fh_&_years. 
-	  mNumFamRelatedChildrenunder17plusonly_fh_&_years. 
-	  mNumFamnoRelatedChildren_fh_&_years.
+      mNumMarFamRKidsU6_&_years. 
+      mNumMarFamRKidsU6U17_&_years.
+	  mNumMarFamRKids6_17_&_years.
+	  mNumMarFamNRKids_&_years. 
+      mNumFamRKidsU6_mh_&_years. 
+      mNumFamRKidsU6U17_mh_&_years. 
+	  mNumFamRKids6_17_mh_&_years. 
+	  mNumFamNRKids_mh_&_years. 
+      mNumFamRKidsU6_fh_&_years. 
+      mNumFamRKidsU6U17_fh_&_years. 
+	  mNumFamRKids6_17_fh_&_years. 
+	  mNumFamNRKids_fh_&_years. 
 
 	   ;
 	
