@@ -648,14 +648,14 @@
       mNumMarFamRKidsU6U17_&_years.
 	  mNumMarFamRKids6_17_&_years.
 	  mNumMarFamNRKids_&_years. 
-      mNumFamRKidsU6_mh_&_years. 
-      mNumFamRKidsU6U17_mh_&_years. 
-	  mNumFamRKids6_17_mh_&_years. 
-	  mNumFamNRKids_mh_&_years. 
-      mNumFamRKidsU6_fh_&_years. 
-      mNumFamRKidsU6U17_fh_&_years. 
-	  mNumFamRKids6_17_fh_&_years. 
-	  mNumFamNRKids_fh_&_years. 
+      mNumFamMHRKidsU6_&_years. 
+      mNumFamMHRKidsU6U17_&_years. 
+	  mNumFamMHRKids6_17_&_years. 
+	  mNumFamMHNRKids_&_years. 
+      mNumFamFHRKidsU6_&_years. 
+      mNumFamFHRKidsU6U17_&_years. 
+	  mNumFamFHRKids6_17_&_years. 
+	  mNumFamFHNRKids_&_years. 
 
 	   ;
 	

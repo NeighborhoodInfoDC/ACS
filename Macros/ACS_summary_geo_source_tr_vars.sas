@@ -2127,27 +2127,27 @@
       NumMarFamRKidsU6U17_&_years. = B11004e5;
 	  NumMarFamRKids6_17_&_years. = B11004e6;
 	  NumMarFamNRKids_&_years. = B11004e7;
-      NumFamRKidsU6_mh_&_years. = B11004e11;
-      NumFamRKidsU6U17_mh_&_years. = B11004e12;
-	  NumFamRKids6_17_mh_&_years. = B11004e13;
-	  NumFamNRKids_mh_&_years. = B11004e14;
-      NumFamRKidsU6_fh_&_years. = B11004e17;
-      NumFamRKidsU6U17_fh_&_years. = B11004e18;
-	  NumFamRKids6_17_fh_&_years. = B11004e19;
-	  NumFamNRKids_fh_&_years. = B11004e20;
+      NumFamMHRKidsU6_&_years. = B11004e11;
+      NumFamMHRKidsU6U17_&_years. = B11004e12;
+	  NumFamMHRKids6_17_&_years. = B11004e13;
+	  NumFamMHNRKids_&_years. = B11004e14;
+      NumFamFHRKidsU6_&_years. = B11004e17;
+      NumFamFHRKidsU6U17_&_years. = B11004e18;
+	  NumFamFHRKids6_17_&_years. = B11004e19;
+	  NumFamFHNRKids_&_years. = B11004e20;
 
       mNumMarFamRKidsU6_&_years. = B11004m4;
       mNumMarFamRKidsU6U17_&_years. = B11004m5;
 	  mNumMarFamRKids6_17_&_years. = B11004m6;
 	  mNumMarFamNRKids_&_years. = B11004m7;
-      mNumFamRKidsU6_mh_&_years. = B11004m11;
-      mNumFamRKidsU6U17_mh_&_years. = B11004m12;
-	  mNumFamRKids6_17_mh_&_years. = B11004m13;
-	  mNumFamNRKids_mh_&_years. = B11004m14;
-      mNumFamRKidsU6_fh_&_years. = B11004m17;
-      mNumFamRKidsU6U17_fh_&_years. = B11004m18;
-	  mNumFamRKids6_17_fh_&_years. = B11004m19;
-	  mNumFamNRKids_fh_&_years. = B11004m20;
+      mNumFamMHRKidsU6_&_years. = B11004m11;
+      mNumFamMHRKidsU6U17_&_years. = B11004m12;
+	  mNumFamMHRKids6_17_&_years. = B11004m13;
+	  mNumFamMHNRKids_&_years. = B11004m14;
+      mNumFamFHRKidsU6_&_years. = B11004m17;
+      mNumFamFHRKidsU6U17_&_years. = B11004m18;
+	  mNumFamFHRKids6_17_&_years. = B11004m19;
+	  mNumFamFHNRKids_&_years. = B11004m20;
 
     label 
 
@@ -2155,27 +2155,27 @@
       NumMarFamRKidsU6U17_&_years. = "Total married couple families with related children of householder under 6 years and 6-17, &_years_dash"
 	  NumMarFamRKids6_17_&_years. = "Total married couple families with related children of householder 6-17 years only, &_years_dash"
 	  NumMarFamNRKids_&_years. = "Total married couple families with no related children under 18, &_years_dash"
-      NumFamRKidsU6_mh_&_years. = "Male householder with no wife families with related children of householder under 6 years only, &_years_dash"
-      NumFamRKidsU6U17_mh_&_years. = "Male householder with no wife families with related children of householder under 6 years and 6-17, &_years_dash"
-	  NumFamRKids6_17_mh_&_years. = "Male householder with no wife families with related children of householder 6-17 years only, &_years_dash"
-	  NumFamNRKids_mh_&_years. = "Male householder with no wife families with no related children under 18, &_years_dash"
-      NumFamRKidsU6_fh_&_years. = "Female householder with no busband present families with related children of householder under 6 years only, &_years_dash"
-      NumFamRKidsU6U17_fh_&_years. = "Female householder with no busband present families with related children of householder under 6 years and 6-17, &_years_dash"
-	  NumFamRKids6_17_fh_&_years. = "Female householder with no busband present families with related children of householder 6-17 years only, &_years_dash"
-	  NumFamNRKids_fh_&_years. = "Female householder with no busband present families with no related children under 18, &_years_dash"
+      NumFamMHRKidsU6_&_years. = "Male householder with no wife families with related children of householder under 6 years only, &_years_dash"
+      NumFamMHRKidsU6U17_&_years. = "Male householder with no wife families with related children of householder under 6 years and 6-17, &_years_dash"
+	  NumFamMHRKids6_17_&_years. = "Male householder with no wife families with related children of householder 6-17 years only, &_years_dash"
+	  NumFamMHNRKids_&_years. = "Male householder with no wife families with no related children under 18, &_years_dash"
+      NumFamFHRKidsU6_&_years. = "Female householder with no busband present families with related children of householder under 6 years only, &_years_dash"
+      NumFamFHRKidsU6U17_&_years. = "Female householder with no busband present families with related children of householder under 6 years and 6-17, &_years_dash"
+	  NumFamFHRKids6_17_&_years. = "Female householder with no busband present families with related children of householder 6-17 years only, &_years_dash"
+	  NumFamFHNRKids_&_years. = "Female householder with no busband present families with no related children under 18, &_years_dash"
 
       mNumMarFamRKidsU6_&_years. = "Total married couple families with related children of householder under 6 years only, MOE, &_years_dash"
       mNumMarFamRKidsU6U17_&_years. = "Total married couple families with related children of householder under 6 years and 6-17, MOE,&_years_dash"
 	  mNumMarFamRKids6_17_&_years. = "Total married couple families with related children of householder 6-17 years only,MOE, &_years_dash"
 	  mNumMarFamNRKids_&_years. = "Total married couple families with no related children under 18,MOE, &_years_dash"
-      mNumFamRKidsU6_mh_&_years. = "Male householder with no wife families with related children of householder under 6 years only,MOE, &_years_dash"
-      mNumFamRKidsU6U17_mh_&_years. = "Male householder with no wife families with related children of householder under 6 years and 6-17,MOE, &_years_dash"
-	  mNumFamRKids6_17_mh_&_years. = "Male householder with no wife families with related children of householder 6-17 years only, MOE,&_years_dash"
-	  mNumFamNRKids_mh_&_years. = "Male householder with no wife families with no related children under 18,MOE, &_years_dash"
-      mNumFamRKidsU6_fh_&_years. = "Female householder with no busband present families with related children of householder under 6 years only, MOE,&_years_dash"
-      mNumFamRKidsU6U17_fh_&_years. = "Female householder with no busband present families with related children of householder under 6 years and 6-17,MOE, &_years_dash"
-	  mNumFamRKids6_17_fh_&_years. = "Female householder with no busband present families with related children of householder 6-17 years only,MOE, &_years_dash"
-	  mNumFamNRKids_fh_&_years. = "Female householder with no busband present families with no related children under 18, MOE, &_years_dash"
+      mNumFamMHRKidsU6_&_years. = "Male householder with no wife families with related children of householder under 6 years only,MOE, &_years_dash"
+      mNumFamMHRKidsU6U17_&_years. = "Male householder with no wife families with related children of householder under 6 years and 6-17,MOE, &_years_dash"
+	  mNumFamMHRKids6_17_&_years. = "Male householder with no wife families with related children of householder 6-17 years only, MOE,&_years_dash"
+	  mNumFamMHNRKids_&_years. = "Male householder with no wife families with no related children under 18,MOE, &_years_dash"
+      mNumFamFHRKidsU6_&_years. = "Female householder with no busband present families with related children of householder under 6 years only, MOE,&_years_dash"
+      mNumFamFHRKidsU6U17_&_years. = "Female householder with no busband present families with related children of householder under 6 years and 6-17,MOE, &_years_dash"
+	  mNumFamFHRKids6_17_&_years. = "Female householder with no busband present families with related children of householder 6-17 years only,MOE, &_years_dash"
+	  mNumFamFHNRKids_&_years. = "Female householder with no busband present families with no related children under 18, MOE, &_years_dash"
 
 
 ;
