@@ -268,13 +268,13 @@
 
 	  /*Family Types*/
 
-		FamMarriedCouple_&_years.= B11001e2;
+		FamMarriedCouple_&_years.= B11001e3;
 		FamMaleholder_&_years.= B11001e5;
 		FamFemaleholder_&_years.= B11001e6;
 		Nonfamlivingalone_&_years.= B11001e8;
 		Nonfamnotlivingalone_&_years.= B11001e9;
 
-		mFamMarriedCouple_&_years.= B11001m2;
+		mFamMarriedCouple_&_years.= B11001m3;
 		mFamMaleholder_&_years.= B11001m5;
 		mFamFemaleholder_&_years.= B11001m6;
 		mNonfamlivingalone_&_years.= B11001m8;
