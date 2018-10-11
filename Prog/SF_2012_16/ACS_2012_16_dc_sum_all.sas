@@ -31,7 +31,7 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2012_16,
   
-  revisions=%str(Update the ACS var used for married coupld familes . )
+  revisions=%str(Update the ACS var used for married couple families . )
 
 )
 
