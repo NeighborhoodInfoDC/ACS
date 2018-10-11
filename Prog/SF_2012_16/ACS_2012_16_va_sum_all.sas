@@ -30,6 +30,6 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2012_16,
   
-   revisions=%str(Added family type by head and existence of related children . )
+   revisions=%str(Update the ACS var used for married couple families  . )
 )
 
