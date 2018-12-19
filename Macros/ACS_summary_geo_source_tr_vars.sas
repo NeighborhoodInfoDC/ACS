@@ -454,8 +454,8 @@
     Pop18_34YearsF_&_years.="Persons 18-34 years old, Female, &_years_dash "
     Pop35_64YearsM_&_years.="Persons 35-64 years old, Male, &_years_dash"
     Pop35_64YearsF_&_years.="Persons 35-64 years old, Female, &_years_dash"
-    Pop65andOverYearsM&_years.="Persons 65 years old and over, Male, &_years_dash "
-    Pop65andOverYearsF&_years.="Persons 65 years old and over, Female, &_years_dash "
+    Pop65andOverYearsM_&_years.="Persons 65 years old and over, Male, &_years_dash "
+    Pop65andOverYearsF_&_years.="Persons 65 years old and over, Female, &_years_dash "
 
     mNumFamiliesB_&_years. = "Family HHs, Black/African American, MOE, &_years_dash "
     mNumFamiliesW_&_years. = "Family HHs, Non-Hispanic White, MOE, &_years_dash "
@@ -3496,7 +3496,7 @@
 			mNumRtOHU2B1000to1499_&_years. = %moe_sum( var=B25068m26 );
 			mNumRtOHU2B1500plus_&_years. = %moe_sum( var=B25068m27 );
 			mNumRtOHU2B1000plus_&_years. = %moe_sum( var=B25068m26 B25068m27 );
-			mNumRtOHU3Bnocash_&_years. = %moe_sum( var=BB25068e37 );
+			mNumRtOHU3Bnocash_&_years. = %moe_sum( var=B25068m37 );
 			mNumRtOHU3Bunder500_&_years. = %moe_sum( var=B25068m31 B25068m32 );
 			mNumRtOHU3B500to749_&_years. = %moe_sum( var=B25068m33 );
 			mNumRtOHU3B750to999_&_years. = %moe_sum( var=B25068m34 );
