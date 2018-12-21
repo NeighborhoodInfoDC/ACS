@@ -3538,6 +3538,249 @@
 		%end;
 
 
+	%if &_last_year. < 2017  %then %do; 
+	
+	%end; 
+
+	%else %if &_last_year.>= 2017 %then %do; 
+
+	/*access to internet by education*/
+	  	Numdialuplths_&_years. = B28006e3;
+		Numbroadbandlths_&_years. = B28006e4;
+		Numnointernetlths_&_years.= B28006e5;
+		Numnocomputerlths_&_years.= B28006e6;
+
+		Numdialupmths_&_years.= B28006e10;
+		Numbroadbandmths_&_years.= B28006e11;
+		Numnointernetmths_&_years.= B28006e12;
+		Numnocomputermths_&_years.= B28006e13;
+ 
+		Numdialupmtcollege_&_years.= B28006e16;
+		Numbroadbandmtcollege_&_years.= B28006e17;
+		Numnointernetmtcollege_&_years.= B28006e18;
+		Numnocomputermtcollege_&_years.= B28006e19;
+
+	  	mNumdialuplths_&_years. = %moe_sum (var=B28006m3);
+		mNumbroadbandlths_&_years. =  %moe_sum (B28006m4);
+		mNumnointernetlths_&_years.=  %moe_sum (B28006m5);
+		mNumnocomputerlths_&_years.=  %moe_sum (B28006m6);
+
+		mNumdialupmths_&_years.=  %moe_sum (B28006m10);
+		mNumbroadbandmths_&_years.=  %moe_sum (B28006m11);
+		mNumnointernetmths_&_years.=  %moe_sum (B28006m12);
+		mNumnocomputermths_&_years.=  %moe_sum (B28006m13);
+ 
+		mNumdialupmtcollege_&_years.=  %moe_sum (B28006m16);
+		mNumbroadbandmtcollege_&_years.=  %moe_sum (B28006m17);
+		mNumnointernetmtcollege_&_years.= %moe_sum ( B28006m18);
+		mNumnocomputermtcollege_&_years.=  %moe_sum (B28006m19);
+
+
+	/*access to internet by race*/
+
+NumdialupW_&_years. = B28009Ae3;
+NumbroadbandW_&_years.= B28009Ae4;
+NumnointernetW_&_years.= B28009Ae5;
+NumnocomputerW_&_years.= B28009Ae6;
+
+NumdialupB_&_years. = B28009Be3;
+NumdbroadbandB_&_years.= B28009Be4;
+NumnointernetB_&_years.= B28009Be5;
+NumnocomputerB_&_years.= B28009Be6;
+
+NumdialupH_&_years. = B28009He3;
+NumbroadbandH_&_years.= B28009He4;
+NumnointernetH_&_years.= B28009He5;
+NumnocomputerH_&_years.= B28009He6;
+
+NumdialupA_&_years.= sum(B28009De3+B28009Ee3);
+NumbroadbandA_&_years.= sum(B28009De4+B28009Ee4);
+NumnointernetA_&_years.= sum(B28009De5+B28009Ee5);
+NumnocomputerA_&_years.= sum(B28009De63+B28009Ee6);
+
+NumdialupIOM_&_years. = sum(B28009Ce3, B28009Fe3, B28009Ge3 );
+NumbroadbandIOM_&_years.= sum(B28009Ce4, B28009Fe4, B28009Ge4 );
+NumnointernetIOM_&_years.= sum(B28009Ce5, B28009Fe5, B28009Ge5 );
+NumnocomputerIOM_&_years.= sum(B28009Ce6, B28009Fe6, B28009Ge6 );
+
+NumdialupAIOM_&_years.=  sum(B28009Ce3, B28009De3, B28009Ee3, B28009Fe3, B28009Ge3 );
+NumbroadbandAIOM_&_years.=  sum(B28009Ce4, B28009De4, B28009Ee4, B28009Fe4, B28009Ge4 );
+NumnointernetAIOM_&_years.=  sum(B28009Ce5, B28009De5, B28009Ee5, B28009Fe5, B28009Ge5 );
+NumnocomputerAIOM_&_years.=  sum(B28009Ce6, B28009De6, B28009Ee6, B28009Fe6, B28009Ge6 );
+
+
+mNumdialupW_&_years. = B28009Am3;
+mNumbroadbandW_&_years.= B28009Am4;
+mNumnointernetW_&_years.= B28009Am5;
+mNumnocomputerW_&_years.= B28009Am6;
+
+mNumdialupB_&_years. = B28009Bm3;
+mNumdbroadbandB_&_years.= B28009Bm4;
+mNumnointernetB_&_years.= B28009Bm5;
+mNumnocomputerB_&_years.= B28009Bm6;
+
+mNumdialupH_&_years. = B28009Hm3;
+mNumbroadbandH_&_years.= B28009Hm4;
+mNumnointernetH_&_years.= B28009Hm5;
+mNumnocomputerH_&_years.= B28009Hm6;
+
+mNumdialupA_&_years.= sum(B28009Dm3+B28009Em3);
+mNumbroadbandA_&_years.= sum(B28009Dm4+B28009Em4);
+mNumnointernetA_&_years.= sum(B28009Dm5+B28009Em5);
+mNumnocomputerA_&_years.= sum(B28009Dm6+B28009Em6);
+
+mNumdialupIOM_&_years. = sum(B28009Cm3, B28009Fm3, B28009Gm3 );
+mNumbroadbandIOM_&_years.= sum(B28009Cm4, B28009Fm4, B28009Gm4 );
+mNumnointernetIOM_&_years.= sum(B28009Cm5, B28009Fm5, B28009Gm5 );
+mNumnocomputerIOM_&_years.= sum(B28009Cm6, B28009Fm6, B28009Gm6 );
+
+mNumdialupAIOM_&_years.=  sum(B28009Cm3, B28009Dm3, B28009Em3, B28009Fm3, B28009Gm3 );
+mNumbroadbandAIOM_&_years.=  sum(B28009Cm4, B28009Dm4, B28009Em4, B28009Fm4, B28009Gm4 );
+mNumnointernetAIOM_&_years.=  sum(B28009Cm5, B28009Dm5, B28009Em5, B28009Fm5, B28009Gm5 );
+mNumnocomputerAIOM_&_years.=  sum(B28009Cm6, B28009Dm6, B28009Em6, B28009Fm6, B28009Gm6 );
+
+
+/*access to types of computing devices*/
+
+
+NumDesktoporlaptop_&_years.= B28001e3;
+NumDesktoporlaptoponly_&_years.= B28001e4;
+NumSmartphone_&_years.= B28001e5;
+NumSmartphoneonly_&_years.=B28001e6;
+NumTabletorother_&_years.=B28001e7;
+NumTabletorotheronly_&_years.=B28001e8;
+NumOthercomputer_&_years.=B28001e9;
+NumOthercomputeronly_&_years.=B28001e10;
+NumNocomputer_&_years.=B28001e11;
+
+mNumDesktoporlaptop_&_years.= B28001m3;
+mNumDesktoporlaptoponly_&_years.= B28001m4;
+mNumSmartphone_&_years.= B28001m5;
+mNumSmartphoneonly_&_years.=B28001m6;
+mNumTabletorother_&_years.=B28001m7;
+mNumTabletorotheronly_&_years.=B28001m8;
+mNumOthercomputer_&_years.=B28001m9;
+mNumOthercomputeronly_&_years.=B28001m10;
+mNumNocomputer_&_years.=B28001m11;
+
+		label
+		Numdialuplths_&_years. = "Total household population 25 years and over that have less than high school degree have dial-up internet subscription, &_years_dash"
+		Numbroadbandlths_&_years. = "Total household population 25 years and over that have less than high school degree have broadband internet subscription, &_years_dash"
+		Numnointernetlths_&_years.= "Total household population 25 years and over that have less than high school degree have a computer but no internet subscription, &_years_dash"
+		Numnocomputerlths_&_years.= "Total household population 25 years and over that have less than high school degree don't have a computer, &_years_dash"
+
+		Numdialupmths_&_years.= "Total household population 25 years and over that have high school degree, some college or associates' have dial-up internet subscription, &_years_dash"
+		Numbroadbandmths_&_years.= "Total household population 25 years and over that have high school degree, some college or associates' have broadband internet subscription, &_years_dash"
+		Numnointernetmths_&_years.= "Total household population 25 years and over that have high school degree, some college or associates' have a computer but no internet subscription, &_years_dash"
+		Numnocomputermths_&_years.= "Total household population 25 years and over that have high school degree, some college or associates' that don't have a computer, &_years_dash"
+ 
+		Numdialupmtcollege_&_years.= "Total household population 25 years and over that have at least a college degree have dial-up internet subscription, &_years_dash"
+		Numbroadbandmtcollege_&_years.= "Total household population 25 years and over that have at least a college degree have braodband internet subscription, &_years_dash"
+		Numnointernetmtcollege_&_years.= "Total household population 25 years and over that have at least a college degree have a computer but no internet subscription, &_years_dash"
+		Numnocomputermtcollege_&_years.= "Total household population 25 years and over that have at least a college degree that don't have a computer, &_years_dash"
+
+        mNumdialuplths_&_years. = "Total household population 25 years and over that have less than high school degree have dial-up internet subscription, MOE, &_years_dash, &_years_dash"
+		mNumbroadbandlths_&_years. = "Total household population 25 years and over that have less than high school degree have broadband internet subscription, MOE, &_years_dash, &_years_dash"
+		mNumnointernetlths_&_years.= "Total household population 25 years and over that have less than high school degree have a computer but no internet subscription, MOE, &_years_dash, &_years_dash"
+		mNumnocomputerlths_&_years.= "Total household population 25 years and over that have less than high school degree don't have a computer, MOE, &_years_dash, &_years_dash"
+
+		mNumdialupmths_&_years.= "Total household population 25 years and over that have high school degree, some college or associates' have dial-up internet subscription, MOE, &_years_dash"
+		mNumbroadbandmths_&_years.= "Total household population 25 years and over that have high school degree, some college or associates' have broadband internet subscription, MOE, &_years_dash"
+		mNumnointernetmths_&_years.= "Total household population 25 years and over that have high school degree, some college or associates' have a computer but no internet subscription, MOE, &_years_dash"
+		mNumnocomputermths_&_years.= "Total household population 25 years and over that have high school degree, some college or associates' that don't have a computer, MOE, &_years_dash"
+ 
+		mNumdialupmtcollege_&_years.= "Total household population 25 years and over that have at least a college degree have dial-up internet subscription, MOE, &_years_dash"
+		mNumbroadbandmtcollege_&_years.= "Total household population 25 years and over that have at least a college degree have braodband internet subscription, MOE, &_years_dash"
+		mNumnointernetmtcollege_&_years.= "Total household population 25 years and over that have at least a college degree have a computer but no internet subscription, MOE, &_years_dash"
+		mNumnocomputermtcollege_&_years.= "Total household population 25 years and over that have at least a college degree that don't have a computer, MOE, &_years_dash"
+
+
+NumdialupW_&_years. ="Total household popualtion that have dial-up internet subscription, Non-Hispanic White,&_years_dash"
+NumbroadbandW_&_years.= "Total household popualtion that have broadband internet subscription, Non-Hispanic White,&_years_dash"
+NumnointernetW_&_years.= "Total household popualtion that have computer but no internet subscription, Non-Hispanic White,&_years_dash"
+NumnocomputerW_&_years.= "Total household popualtion that have no computer, Non-Hispanic White,&_years_dash"
+
+NumdialupB_&_years. = "Total household popualtion that have dial-up internet subscription, Black/African American,&_years_dash"
+NumdbroadbandB_&_years.= "Total household popualtion that have broadband internet subscription, Black/African American,&_years_dash"
+NumnointernetB_&_years.= "Total household popualtion that have computer but no internet subscription, Black/African American,&_years_dash"
+NumnocomputerB_&_years.= "Total household popualtion that have no computer, Black/African American,&_years_dash"
+
+
+NumdialupH_&_years. = "Total household popualtion that have dial-up internet subscription, Hispanic/Latino,&_years_dash"
+NumbroadbandH_&_years.= "Total household popualtion that have broadband internet subscription, Hispanic/Latino,&_years_dash"
+NumnointernetH_&_years.="Total household popualtion that have computer but no internet subscription, Hispanic/Latino,&_years_dash"
+NumnocomputerH_&_years.= "Total household popualtion that have no computer, Hispanic/Latino,&_years_dash"
+
+NumdialupA_&_years.= "Total household popualtion that have dial-up internet subscription, Asian, Native Hawaiian, and other Pacific Islander,&_years_dash"
+NumbroadbandA_&_years.= "Total household popualtion that have broadband internet subscription, Asian, Native Hawaiian, and other Pacific Islander,&_years_dash"
+NumnointernetA_&_years.= "Total household popualtion that have computer but no internet subscription, Asian, Native Hawaiian, and other Pacific Islander,&_years_dash"
+NumnocomputerA_&_years.= "Total household popualtion that have no computer, Asian, Native Hawaiian, and other Pacific Islander,&_years_dash"
+
+NumdialupIOM_&_years. = "Total household popualtion that have dial-up internet subscription,American Indian/Alaska Native, some other race, two or more races,&_years_dash"
+NumbroadbandIOM_&_years.= "Total household popualtion that have broadband internet subscription, American Indian/Alaska Native, some other race, two or more races,&_years_dash"
+NumnointernetIOM_&_years.= "Total household popualtion that have computer but no internet subscription,American Indian/Alaska Native, some other race, two or more races,&_years_dash"
+NumnocomputerIOM_&_years.= "Total household popualtion that have no computer, American Indian/Alaska Native, some other race, two or more races,&_years_dash"
+
+NumdialupAIOM_&_years.=  "Total household popualtion that have dial-up internet subscription, All remaining groups other than Black, Non-Hispanic White, Hispanic,&_years_dash"
+NumbroadbandAIOM_&_years.=  "Total household popualtion that have broadband internet subscription,All remaining groups other than Black, Non-Hispanic White, Hispanic,&_years_dash"
+NumnointernetAIOM_&_years.=  "Total household popualtion that have computer but no internet subscription, All remaining groups other than Black, Non-Hispanic White, Hispanic,&_years_dash"
+NumnocomputerAIOM_&_years.=  "Total household popualtion that have no computer, All remaining groups other than Black, Non-Hispanic White, Hispanic,&_years_dash"
+
+
+mNumdialupW_&_years. ="Total household popualtion that have dial-up internet subscription, Non-Hispanic White, MOE, &_years_dash "
+mNumbroadbandW_&_years.= "Total household popualtion that have broadband internet subscription, Non-Hispanic White, MOE, &_years_dash "
+mNumnointernetW_&_years.= "Total household popualtion that have computer but no internet subscription, Non-Hispanic White, MOE, &_years_dash "
+mNumnocomputerW_&_years.= "Total household popualtion that have no computer, Non-Hispanic White, MOE, &_years_dash "
+
+mNumdialupB_&_years. = "Total household popualtion that have dial-up internet subscription, Black/African American, MOE, &_years_dash "
+mNumdbroadbandB_&_years.= "Total household popualtion that have broadband internet subscription, Black/African American, MOE, &_years_dash "
+mNumnointernetB_&_years.= "Total household popualtion that have computer but no internet subscription, Black/African American, MOE, &_years_dash "
+mNumnocomputerB_&_years.= "Total household popualtion that have no computer, Black/African American, MOE, &_years_dash "
+
+
+mNumdialupH_&_years. = "Total household popualtion that have dial-up internet subscription, Hispanic/Latino, MOE, &_years_dash "
+mNumbroadbandH_&_years.= "Total household popualtion that have broadband internet subscription, Hispanic/Latino, MOE, &_years_dash "
+mNumnointernetH_&_years.="Total household popualtion that have computer but no internet subscription, Hispanic/Latino, MOE, &_years_dash "
+mNumnocomputerH_&_years.= "Total household popualtion that have no computer, Hispanic/Latino, MOE, &_years_dash "
+
+mNumdialupA_&_years.= "Total household popualtion that have dial-up internet subscription, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
+mNumbroadbandA_&_years.= "Total household popualtion that have broadband internet subscription, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
+mNumnointernetA_&_years.= "Total household popualtion that have computer but no internet subscription, Asian, Native Hawaiian, and other Pacific Islander,MOE,&_years_dash"
+mNumnocomputerA_&_years.= "Total household popualtion that have no computer, Asian, Native Hawaiian, and other Pacific Islander,MOE,&_years_dash"
+
+mNumdialupIOM_&_years. = "Total household popualtion that have dial-up internet subscription,American Indian/Alaska Native, some other race, two or more races,MOE,&_years_dash"
+mNumbroadbandIOM_&_years.= "Total household popualtion that have broadband internet subscription, American Indian/Alaska Native, some other race, two or more races,MOE,&_years_dash"
+mNumnointernetIOM_&_years.= "Total household popualtion that have computer but no internet subscription,American Indian/Alaska Native, some other race, two or more races,MOE,&_years_dash"
+mNumnocomputerIOM_&_years.= "Total household popualtion that have no computer, American Indian/Alaska Native, some other race, two or more races,MOE,&_years_dash"
+
+mNumdialupAIOM_&_years.=  "Total household popualtion that have dial-up internet subscription, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE,&_years_dash"
+mNumbroadbandAIOM_&_years.=  "Total household popualtion that have broadband internet subscription,All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE,&_years_dash"
+mNumnointernetAIOM_&_years.=  "Total household popualtion that have computer but no internet subscription, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE,&_years_dash"
+mNumnocomputerAIOM_&_years.=  "Total household popualtion that have no computer, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE,&_years_dash"
+
+NumDesktoporlaptop_&_years.= "Total number of households that has one or more desktop or laptop, &_years_dash "
+NumDesktoporlaptoponly_&_years.= "Total number of households that has one or more desktop or laptop with no other computing device, &_years_dash "
+NumSmartphone_&_years.= "Total number of households that has one or more smartphone, &_years_dash "
+NumSmartphoneonly_&_years.="Total number of households that has one or more smartphone with no other types of coputing devices, &_years_dash "
+NumTabletorother_&_years.="Total number of households that has tablet or other portable wireless computer,&_years_dash "
+NumTabletorotheronly_&_years.="Total number of households that has tablet or other portable wireless computer with no other types of computing devices,&_years_dash  "
+NumOthercomputer_&_years.="Total number of households that has other compueters ,&_years_dash "
+NumOthercomputeronly_&_years.="Total number of households that has other compueters with no other type of computing devices ,&_years_dash  "
+NumNocomputer_&_years.="Total number of households that has no computers,&_years_dash "
+
+mNumDesktoporlaptop_&_years.= "Total number of households that has one or more desktop or laptop, MOE,&_years_dash "
+mNumDesktoporlaptoponly_&_years.= "Total number of households that has one or more desktop or laptop with no other computing device, MOE,&_years_dash "
+mNumSmartphone_&_years.= "Total number of households that has one or more smartphone, MOE,&_years_dash "
+mNumSmartphoneonly_&_years.="Total number of households that has one or more smartphone with no other types of coputing devices,MOE, &_years_dash "
+mNumTabletorother_&_years.="Total number of households that has tablet or other portable wireless computer,MOE,&_years_dash "
+mNumTabletorotheronly_&_years.="Total number of households that has tablet or other portable wireless computer with no other types of computing devices,MOE,&_years_dash  "
+mNumOthercomputer_&_years.="Total number of households that has other compueters ,MOE,&_years_dash "
+mNumOthercomputeronly_&_years.="Total number of households that has other compueters with no other type of computing devices, MOE, &_years_dash  "
+mNumNocomputer_&_years.="Total number of households that has no computers,MOE,&_years_dash "
+ 
+;
+	%end;
+
 
 		label 
 						
