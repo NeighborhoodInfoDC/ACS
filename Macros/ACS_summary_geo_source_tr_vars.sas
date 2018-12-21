@@ -3578,20 +3578,20 @@
 
 	/*access to internet by race*/
 
-NumdialupW_&_years. = B28009Ae3;
-NumbroadbandW_&_years.= B28009Ae4;
-NumnointernetW_&_years.= B28009Ae5;
-NumnocomputerW_&_years.= B28009Ae6;
+NumdialupW_&_years. = B28009He3;
+NumbroadbandW_&_years.= B28009He4;
+NumnointernetW_&_years.= B28009He5;
+NumnocomputerW_&_years.= B28009He6;
 
 NumdialupB_&_years. = B28009Be3;
 NumdbroadbandB_&_years.= B28009Be4;
 NumnointernetB_&_years.= B28009Be5;
 NumnocomputerB_&_years.= B28009Be6;
 
-NumdialupH_&_years. = B28009He3;
-NumbroadbandH_&_years.= B28009He4;
-NumnointernetH_&_years.= B28009He5;
-NumnocomputerH_&_years.= B28009He6;
+NumdialupH_&_years. = B28009Ie3;
+NumbroadbandH_&_years.= B28009Ie4;
+NumnointernetH_&_years.= B28009Ie5;
+NumnocomputerH_&_years.= B28009Ie6;
 
 NumdialupA_&_years.= sum(B28009De3+B28009Ee3);
 NumbroadbandA_&_years.= sum(B28009De4+B28009Ee4);
@@ -3609,20 +3609,20 @@ NumnointernetAIOM_&_years.=  sum(B28009Ce5, B28009De5, B28009Ee5, B28009Fe5, B28
 NumnocomputerAIOM_&_years.=  sum(B28009Ce6, B28009De6, B28009Ee6, B28009Fe6, B28009Ge6 );
 
 
-mNumdialupW_&_years. = B28009Am3;
-mNumbroadbandW_&_years.= B28009Am4;
-mNumnointernetW_&_years.= B28009Am5;
-mNumnocomputerW_&_years.= B28009Am6;
+mNumdialupW_&_years. = B28009Hm3;
+mNumbroadbandW_&_years.= B28009Hm4;
+mNumnointernetW_&_years.= B28009Hm5;
+mNumnocomputerW_&_years.= B28009Hm6;
 
 mNumdialupB_&_years. = B28009Bm3;
 mNumdbroadbandB_&_years.= B28009Bm4;
 mNumnointernetB_&_years.= B28009Bm5;
 mNumnocomputerB_&_years.= B28009Bm6;
 
-mNumdialupH_&_years. = B28009Hm3;
-mNumbroadbandH_&_years.= B28009Hm4;
-mNumnointernetH_&_years.= B28009Hm5;
-mNumnocomputerH_&_years.= B28009Hm6;
+mNumdialupH_&_years. = B28009Im3;
+mNumbroadbandH_&_years.= B28009Im4;
+mNumnointernetH_&_years.= B28009Im5;
+mNumnocomputerH_&_years.= B28009Im6;
 
 mNumdialupA_&_years.= sum(B28009Dm3+B28009Em3);
 mNumbroadbandA_&_years.= sum(B28009Dm4+B28009Em4);
