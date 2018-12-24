@@ -9,7 +9,7 @@
  
  Description:  Create all standard summary files from ACS 5-year data.
  
- Modifications:
+ Modifications: 12/24/18 by Yipeng Su
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -27,7 +27,7 @@
   years = 2013_17 ,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(New file.)
+  revisions = %str(Add new access to internet variables to summary file)
 
 )
 

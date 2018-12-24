@@ -3609,35 +3609,35 @@ NumnointernetAIOM_&_years.=  sum(B28009Ce5, B28009De5, B28009Ee5, B28009Fe5, B28
 NumnocomputerAIOM_&_years.=  sum(B28009Ce6, B28009De6, B28009Ee6, B28009Fe6, B28009Ge6 );
 
 
-mNumdialupW_&_years. = B28009Hm3;
-mNumbroadbandW_&_years.= B28009Hm4;
-mNumnointernetW_&_years.= B28009Hm5;
-mNumnocomputerW_&_years.= B28009Hm6;
+mNumdialupW_&_years. = %moe_sum (B28009Hm3);
+mNumbroadbandW_&_years.= %moe_sum (B28009Hm4);
+mNumnointernetW_&_years.= %moe_sum (B28009Hm5);
+mNumnocomputerW_&_years.= %moe_sum (B28009Hm6);
 
-mNumdialupB_&_years. = B28009Bm3;
-mNumdbroadbandB_&_years.= B28009Bm4;
-mNumnointernetB_&_years.= B28009Bm5;
-mNumnocomputerB_&_years.= B28009Bm6;
+mNumdialupB_&_years. = %moe_sum (B28009Bm3);
+mNumdbroadbandB_&_years.= %moe_sum (B28009Bm4);
+mNumnointernetB_&_years.= %moe_sum (B28009Bm5);
+mNumnocomputerB_&_years.= %moe_sum (B28009Bm6);
 
-mNumdialupH_&_years. = B28009Im3;
-mNumbroadbandH_&_years.= B28009Im4;
-mNumnointernetH_&_years.= B28009Im5;
-mNumnocomputerH_&_years.= B28009Im6;
+mNumdialupH_&_years. = %moe_sum (B28009Im3);
+mNumbroadbandH_&_years.= %moe_sum (B28009Im4);
+mNumnointernetH_&_years.= %moe_sum (B28009Im5);
+mNumnocomputerH_&_years.= %moe_sum (B28009Im6);
 
-mNumdialupA_&_years.= sum(B28009Dm3+B28009Em3);
-mNumbroadbandA_&_years.= sum(B28009Dm4+B28009Em4);
-mNumnointernetA_&_years.= sum(B28009Dm5+B28009Em5);
-mNumnocomputerA_&_years.= sum(B28009Dm6+B28009Em6);
+mNumdialupA_&_years.= %moe_sum (B28009Dm3+B28009Em3);
+mNumbroadbandA_&_years.= %moe_sum (B28009Dm4+B28009Em4);
+mNumnointernetA_&_years.= %moe_sum (B28009Dm5+B28009Em5);
+mNumnocomputerA_&_years.= %moe_sum (B28009Dm6+B28009Em6);
 
-mNumdialupIOM_&_years. = sum(B28009Cm3, B28009Fm3, B28009Gm3 );
-mNumbroadbandIOM_&_years.= sum(B28009Cm4, B28009Fm4, B28009Gm4 );
-mNumnointernetIOM_&_years.= sum(B28009Cm5, B28009Fm5, B28009Gm5 );
-mNumnocomputerIOM_&_years.= sum(B28009Cm6, B28009Fm6, B28009Gm6 );
+mNumdialupIOM_&_years. = %moe_sum (B28009Cm3, B28009Fm3, B28009Gm3 );
+mNumbroadbandIOM_&_years.= %moe_sum (B28009Cm4, B28009Fm4, B28009Gm4 );
+mNumnointernetIOM_&_years.= %moe_sum (B28009Cm5, B28009Fm5, B28009Gm5 );
+mNumnocomputerIOM_&_years.= %moe_sum (B28009Cm6, B28009Fm6, B28009Gm6 );
 
-mNumdialupAIOM_&_years.=  sum(B28009Cm3, B28009Dm3, B28009Em3, B28009Fm3, B28009Gm3 );
-mNumbroadbandAIOM_&_years.=  sum(B28009Cm4, B28009Dm4, B28009Em4, B28009Fm4, B28009Gm4 );
-mNumnointernetAIOM_&_years.=  sum(B28009Cm5, B28009Dm5, B28009Em5, B28009Fm5, B28009Gm5 );
-mNumnocomputerAIOM_&_years.=  sum(B28009Cm6, B28009Dm6, B28009Em6, B28009Fm6, B28009Gm6 );
+mNumdialupAIOM_&_years.=  %moe_sum (B28009Cm3, B28009Dm3, B28009Em3, B28009Fm3, B28009Gm3 );
+mNumbroadbandAIOM_&_years.=  %moe_sum (B28009Cm4, B28009Dm4, B28009Em4, B28009Fm4, B28009Gm4 );
+mNumnointernetAIOM_&_years.=  %moe_sum (B28009Cm5, B28009Dm5, B28009Em5, B28009Fm5, B28009Gm5 );
+mNumnocomputerAIOM_&_years.=  %moe_sum (B28009Cm6, B28009Dm6, B28009Em6, B28009Fm6, B28009Gm6 );
 
 
 /*access to types of computing devices*/
@@ -3653,15 +3653,15 @@ NumOthercomputer_&_years.=B28001e9;
 NumOthercomputeronly_&_years.=B28001e10;
 NumNocomputer_&_years.=B28001e11;
 
-mNumDesktoporlaptop_&_years.= B28001m3;
-mNumDesktoporlaptoponly_&_years.= B28001m4;
-mNumSmartphone_&_years.= B28001m5;
-mNumSmartphoneonly_&_years.=B28001m6;
-mNumTabletorother_&_years.=B28001m7;
-mNumTabletorotheronly_&_years.=B28001m8;
-mNumOthercomputer_&_years.=B28001m9;
-mNumOthercomputeronly_&_years.=B28001m10;
-mNumNocomputer_&_years.=B28001m11;
+mNumDesktoporlaptop_&_years.= %moe_sum (B28001m3);
+mNumDesktoporlaptoponly_&_years.= %moe_sum (B28001m4);
+mNumSmartphone_&_years.= %moe_sum ( B28001m5);
+mNumSmartphoneonly_&_years.= %moe_sum (B28001m6);
+mNumTabletorother_&_years.= %moe_sum (B28001m7);
+mNumTabletorotheronly_&_years.= %moe_sum (B28001m8);
+mNumOthercomputer_&_years.= %moe_sum (B28001m9);
+mNumOthercomputeronly_&_years.= %moe_sum (B28001m10);
+mNumNocomputer_&_years.= %moe_sum (B28001m11);
 
 		label
 		Numdialuplths_&_years. = "Total household population 25 years and over that have less than high school degree have dial-up internet subscription, &_years_dash"
