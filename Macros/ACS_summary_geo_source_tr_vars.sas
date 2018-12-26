@@ -3596,7 +3596,7 @@ NumnocomputerH_&_years.= B28009Ie6;
 NumdialupA_&_years.= sum(B28009De3 , B28009Ee3);
 NumbroadbandA_&_years.= sum(B28009De4, B28009Ee4);
 NumnointernetA_&_years.= sum(B28009De5, B28009Ee5);
-NumnocomputerA_&_years.= sum(B28009De63, B28009Ee6);
+NumnocomputerA_&_years.= sum(B28009De6, B28009Ee6);
 
 NumdialupIOM_&_years. = sum(B28009Ce3, B28009Fe3, B28009Ge3 );
 NumbroadbandIOM_&_years.= sum(B28009Ce4, B28009Fe4, B28009Ge4 );
