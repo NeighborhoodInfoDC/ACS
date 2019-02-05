@@ -139,7 +139,7 @@
 
 	   FamMarriedCouple: FamMaleholder: FamFemaleholder: Nonfamlivingalone: Nonfamnotlivingalone:
 
-	   FamIncomeLT75k_: FamIncomeGT200k_: hshldinc:
+	   FamIncomeLT75k_: FamIncomeGT200k_: hshldinc: MedHHIncm_:
 
 	   FamilyHH: NonFamilyHH:
 
@@ -447,6 +447,8 @@
 	   mhshldinc50000to59999_&_years. mhshldinc60000to74999_&_years. mhshldinc75000to99999_&_years. 
 	   mhshldinc100000to124999_&_years. mhshldinc125000to149999_&_years. mhshldinc150000to199999_&_years.
 	   mhshldinc200000andover_&_years. 
+
+	   mMedHHIncm_&_years.
 
 	   /* Housing units */
 

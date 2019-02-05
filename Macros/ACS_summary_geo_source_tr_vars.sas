@@ -2532,6 +2532,15 @@
 	      mMedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
 		;
 
+
+		  MedHHIncm_&_years. = B19013e1;
+		  mMedHHIncm_&_years. = B19013m1;
+
+		  label 
+		  MedHHIncm_&_years. = "Median household income, &_years_dash "
+		  mMedHHIncm_&_years. = "Median household income, MOE, &_years_dash "
+	   	;
+
     ** Housing **;
 		
 	**basic unit counts**;
