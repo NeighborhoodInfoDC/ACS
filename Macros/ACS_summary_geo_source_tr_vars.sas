@@ -2534,7 +2534,7 @@
 
 
 		  MedHHIncm_&_years. = B19013e1;
-		  mMedHHIncm_&_years. = B19013m1;
+		  mMedHHIncm_&_years. =  %moe_sum (var= B19013m1);
 
 		  label 
 		  MedHHIncm_&_years. = "Median household income, &_years_dash "
