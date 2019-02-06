@@ -117,6 +117,40 @@
   
     %** Count and MOE variables for tract data **;
   
+%if  &_last_year. < 2017 %then %do;
+    %let count_vars = 
+       Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
+       PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
+       PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
+       Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
+        
+       NumRentCst: NumOwnCst: NumOwnCstBurden:
+
+	   NumRenterCostBurden: NumRentSevereCostBurden: NumOwnerCostBurden: NumOwnSevereCostBurden:
+       RentCostBurdenDenom: OwnerCostBurdenDenom:
+
+	   PopUnder18YearsM: PopUnder18YearsF: Pop18_34YearsM: Pop18_34YearsF: Pop35_64YearsM:
+	   Pop35_64YearsF: Pop65andOverYearsM: Pop65andOverYearsF:
+
+       InsCovUnder18Years: InsCov18_34Years: InsCov35_64Years: InsCov65andOverYears: 
+	   NInsCovUnder18Years: NInsCov18_34Years: NInsCov35_64Years: NInsCov65andOverYears:
+
+       EarningUnder10K: Earning10to15K: Earning15to25K: Earning25to35K: Earning35to50K:
+	   Earning50to65K: Earning65to75K: EarningOver75K:
+
+	   FamMarriedCouple: FamMaleholder: FamFemaleholder: Nonfamlivingalone: Nonfamnotlivingalone:
+
+	   FamIncomeLT75k_: FamIncomeGT200k_: hshldinc: MedHHIncm_:
+
+	   FamilyHH: NonFamilyHH:
+
+      NumMarFam: 
+      NumFam:
+	  ;
+%end;
+
+%else %do;
+
     %let count_vars = 
        Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
        PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
@@ -150,6 +184,7 @@
 	  NumDesktoporlaptop: NumSmartphone: NumTabletorother: NumOthercomputer: NumNocomputer:
 
        ;
+%end;
 	
 	%**variables appear in all years;
 	%let moeallyears=  
