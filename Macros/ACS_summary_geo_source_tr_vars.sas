@@ -15,6 +15,7 @@
  No variable should be added to both macros. 
 
  Modifications: 06/05/18 Yipeng Su add variables for summary (Population by age and sex, insurance, family type, earning) 
+2/6/19 YS added median hh income
 **************************************************************************/
 
 
