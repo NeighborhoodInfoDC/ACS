@@ -562,6 +562,7 @@
        mRentCostBurdenDenom_&_years.
        mOwnerCostBurdenDenom_&_years.
 
+
        mNumRentCstBurden_15_24_&_years. mNumRentCstBurden_25_34_&_years. 
        mNumRentCstBurden_35_64_&_years. mNumRentCstBurden_65Over_&_years. 
 
@@ -572,6 +573,7 @@
        mNumRentCstBurden_20_34K_&_years. mNumRentCstBurden_35_49K_&_years. 
        mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99K_&_years. 
        mNumRentCstBurden_GT100K_&_years. 
+
        
        mNumHsgUnits0bd_&_years. mNumHsgUnits1bd_&_years.
        mNumhsgUnits2bd_&_years. mNumhsgUnits3bd_&_years.
@@ -613,24 +615,6 @@
 	   mAgeByRenterCst_15_24_&_years. mAgeByRenterCst_25_34_&_years. mAgeByRenterCst_35_64_&_years. mAgeByRenterCst_65Over_&_years. 
 
 	   mAgeByOwnerCst_15_24_&_years. mAgeByOwnerCst_25_34_&_years. mAgeByOwnerCst_35_64_&_years. mAgeByOwnerCst_65Over_&_years. 
-
-       mNumRenterCostBurden_&_years.
-       mNumRentSevereCostBurden_&_years. 
-       mNumOwnerCostBurden_&_years. 
-       mNumOwnSevereCostBurden_&_years. 
-       mRentCostBurdenDenom_&_years.
-       mOwnerCostBurdenDenom_&_years.
-
-       mNumRentCstBurden_15_24_&_years. mNumRentCstBurden_25_34_&_years. 
-       mNumRentCstBurden_35_64_&_years. mNumRentCstBurden_65Over_&_years. 
-
-       mNumOwnCstBurden_15_24_&_years. mNumOwnCstBurden_25_34_&_years. 
-       mNumOwnCstBurden_35_64_&_years. mNumOwnCstBurden_65Over_&_years. 
-
-       mNumRentCstBurden_LT10K_&_years. mNumRentCstBurden_10_19K_&_years. 
-       mNumRentCstBurden_20_34K_&_years. mNumRentCstBurden_35_49K_&_years. 
-       mNumRentCstBurden_50_74K_&_years. mNumRentCstBurden_75_99K_&_years. 
-       mNumRentCstBurden_GT100K_&_years. 
 
 	   /* Mobility */
               
