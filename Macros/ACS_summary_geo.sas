@@ -114,6 +114,7 @@
            ;
                
   %end;
+
   %else %do;
   
     %** Count and MOE variables for tract data **;
@@ -155,9 +156,6 @@
 	  NumDesktoporlaptop: NumSmartphone: NumTabletorother: NumOthercomputer: NumNocomputer:
 
        ;
-
-
-%end;
 	
 
 	%if &_last_year. < 2017 %then %do; 
