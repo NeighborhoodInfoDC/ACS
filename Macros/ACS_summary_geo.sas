@@ -133,8 +133,6 @@
 
 	   Nonfamlivingalone: Nonfamnotlivingalone:
 
-	   MedHHIncm_:
-
 	   NonFamilyHH:
 
        ;
