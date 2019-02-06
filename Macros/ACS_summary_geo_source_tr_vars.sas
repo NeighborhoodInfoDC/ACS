@@ -15,6 +15,7 @@
  No variable should be added to both macros. 
 
  Modifications: 06/05/18 Yipeng Su add variables for summary (Population by age and sex, insurance, family type, earning) 
+2/6/19 YS added median hh income
 **************************************************************************/
 
 
@@ -2531,6 +2532,15 @@
 	      mMedFamIncmIOM_&_years. = "Median family income, American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
 	      mMedFamIncmAIOM_&_years. = "Median family income, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
 		;
+
+
+		  MedHHIncm_&_years. = B19013e1;
+		  mMedHHIncm_&_years. =  %moe_sum (var= B19013m1);
+
+		  label 
+		  MedHHIncm_&_years. = "Median household income, &_years_dash "
+		  mMedHHIncm_&_years. = "Median household income, MOE, &_years_dash "
+	   	;
 
     ** Housing **;
 		

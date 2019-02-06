@@ -15,6 +15,7 @@
  7/09/18 LH Added indicators for structure type. 
  8/30/18 RP Added tenure by household size. 
  9/20/18 YS added family by type and related child
+ 2/5/19 YS added median hh income
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -31,7 +32,7 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2012_16,
   
-  revisions=%str(Update the ACS var used for married couple families . )
+  revisions=%str(Update the ACS var median household income . )
 
 )
 
