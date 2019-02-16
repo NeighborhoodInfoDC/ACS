@@ -9,7 +9,8 @@
  
  Description:  Create all standard summary files from ACS 5-year data.
  
- Modifications:12/24/18 by Yipeng Su
+ Modifications:12/24/18 by Yipeng Su Added Access to Internet Vars
+ 	       02/16/19 LH Added median HH income
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -27,7 +28,7 @@
   years = 2013_17 ,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Add new access to internet variables to summary file)
+  revisions = %str(ADD median hh income)
 
 )
 
