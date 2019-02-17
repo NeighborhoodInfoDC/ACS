@@ -12,8 +12,9 @@
 
  Modifications: 7/29/16 - Added additional variables, included racial breakdowns. 
                 06/05/18-- Yipeng Su added additional variables pop by sex and age, insurance coverage, family type, earnings
-                9/20/18 Yipeng Su added family type by presense of related children
-                2/6/19 YS added median hh income
+                09/20/18 Yipeng Su added family type by presense of related children
+                02/06/19 YS added median hh income
+				02/17/19 LH removed unnessary %let=count_vars that varied by year for tracts
 **************************************************************************/
 
 %macro ACS_summary_geo( geo, source_geo );
@@ -117,7 +118,7 @@
   
     %** Count and MOE variables for tract data **;
 
-    %let count_vars_allyears = 
+    %let count_vars = 
        Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
        PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
        PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
@@ -137,23 +138,7 @@
 
        ;
 
-    %let count_vars_17plus= 
-
-      Numdialup: Numbroadband: Numnointernet: Numnocomputer:
-	  NumDesktoporlaptop: NumSmartphone: NumTabletorother: NumOthercomputer: NumNocomputer:
-
-       ;
-	
-
-	%if &_last_year. < 2017 %then %do; 
-    	%let count_vars =&count_vars_allyears. ; 
-	%end; 
-
-	%else %if &_last_year. > = 2017 %then %do; 
-		%let count_vars = &count_vars_allyears. &count_vars_17plus.; 
-     %end; 
-
-
+    
 	%**variables appear in all years;
 	%let moeallyears=  
 
