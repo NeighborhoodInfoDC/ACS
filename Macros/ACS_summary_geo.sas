@@ -600,49 +600,36 @@
 
 	  	%**variables appear only 2017 and later; 
 	%let moe2017plus = 
-			
-		mMedRent0bd_&_years. mMedRent1bd_&_years.
-	    mMedRent2bd_&_years. mMedRent3bd_&_years.
-	    mMedRent4bd_&_years. mMedRent5plusbd_&_years.
-		
-		mGrossRent2000_2499_&_years. mGrossRent2500_2999_&_years. mGrossRent3000_3499_&_years. mGrossRentGT3500_&_years. 
-
-		mNumRtOHU0B1000to1499_&_years. mNumRtOHU0B1500plus_&_years.
-		mNumRtOHU1B1000to1499_&_years. mNumRtOHU1B1500plus_&_years.
-		mNumRtOHU2B1000to1499_&_years. mNumRtOHU2B1500plus_&_years.
-		mNumRtOHU3B1000to1499_&_years. mNumRtOHU3B1500plus_&_years. 
-
-		mNumdialuplths_&_years. mNumbroadbandlths_&_years. mNumnointernetlths_&_years.	mNumnocomputerlths_&_years.
-		mNumdialupmths_&_years. mNumbroadbandmths_&_years. mNumnointernetmths_&_years.  mNumnocomputermths_&_years.
-		mNumdialupmtcollege_&_years. mNumbroadbandmtcollege_&_years. mNumnointernetmtcollege_&_years. mNumnocomputermtcollege_&_years.
-		mNumdialupW_&_years. mNumbroadbandW_&_years. mNumnointernetW_&_years. mNumnocomputerW_&_years.
-		mNumdialupB_&_years. mNumdbroadbandB_&_years. mNumnointernetB_&_years. mNumnocomputerB_&_years. 
-		mNumdialupH_&_years. mNumbroadbandH_&_years. mNumnointernetH_&_years. mNumnocomputerH_&_years.
-		mNumdialupA_&_years. mNumbroadbandA_&_years. mNumnointernetA_&_years. mNumnocomputerA_&_years.
-		mNumdialupIOM_&_years. mNumbroadbandIOM_&_years. mNumnointernetIOM_&_years. mNumnocomputerIOM_&_years.
-		mNumdialupAIOM_&_years. mNumbroadbandAIOM_&_years. mNumnointernetAIOM_&_years. mNumnocomputerAIOM_&_years.
+		mNumPopcomputer_&_years. mNumPopdialup_&_years. mNumPopbroadband_&_years.  mNumPopnointernet_&_years. mNumPopnocomputer_&_years.
+		mNumPopdialuplths_&_years. mNumPopbroadbandlths_&_years. mNumPopnointernetlths_&_years.	mNumPopnocomputerlths_&_years.
+		mNumPopdialupmths_&_years. mNumPopbroadbandmths_&_years. mNumPopnointernetmths_&_years.  mNumPopnocomputermths_&_years.
+		mNumPopdialupBA_&_years. mNumPopbroadbandBA_&_years. mNumPopnointernetBA_&_years. mNumPopnocomputerBA_&_years.
+		mNumPopdialupW_&_years. mNumPopbroadbandW_&_years. mNumPopnointernetW_&_years. mNumPopnocomputerW_&_years.
+		mNumPopdialupB_&_years. mNumPopbroadbandB_&_years. mNumPopnointernetB_&_years. mNumPopnocomputerB_&_years. 
+		mNumPopdialupH_&_years. mNumPopbroadbandH_&_years. mNumPopnointernetH_&_years. mNumPopnocomputerH_&_years.
+		mNumPopdialupA_&_years. mNumPopbroadbandA_&_years. mNumPopnointernetA_&_years. mNumPopnocomputerA_&_years.
+		mNumPopdialupIOM_&_years. mNumPopbroadbandIOM_&_years. mNumPopnointernetIOM_&_years. mNumPopnocomputerIOM_&_years.
 		mNumDesktoporlaptop_&_years. mNumDesktoporlaptoponly_&_years. mNumSmartphone_&_years. mNumSmartphoneonly_&_years. 
 		mNumTabletorother_&_years. mNumTabletorotheronly_&_years. mNumOthercomputer_&_years. mNumOthercomputeronly_&_years.
 		mNumNocomputer_&_years.
 
 		;
 
-	%if &_last_year. < 2013 %then %do; 
-    	%let moe_vars =&moeallyears.; 
-	%end; 
+		%if &_last_year. < 2013 %then %do; 
+	    	%let moe_vars =&moeallyears.; 
+		%end; 
 
-	%else %if &_last_year. > 2012 %then %do; 
-		%let moe_vars =&moeallyears. &moe2013plus.; 
-     %end; 
+		%else %if &_last_year. < 2014 %then %do; 
+			%let moe_vars =&moeallyears. &moe2013plus.; 
+	     %end; 
 
-	%else %if &_last_year. > 2014 %then %do;  	
-		%let moe_vars =&moeallyears. &moe2013plus. &moe2015plus.;
-	%end;
+		%else %if &_last_year. <= 2016 %then %do;  	
+			%let moe_vars =&moeallyears. &moe2013plus. &moe2015plus.;
+		%end;
 
-	%else %if &_last_year. > 2016 %then %do;  	
-		%let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus.;
-	%end;
-
+		%else %if &_last_year. >=2017 %then %do;  	
+			%let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus.;
+		%end;
                
   %end;
 
