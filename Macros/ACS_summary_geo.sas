@@ -611,8 +611,9 @@
 		mNumPopdialupIOM_&_years. mNumPopbroadbandIOM_&_years. mNumPopnointernetIOM_&_years. mNumPopnocomputerIOM_&_years.
 		mNumDesktoporlaptop_&_years. mNumDesktoporlaptoponly_&_years. mNumSmartphone_&_years. mNumSmartphoneonly_&_years. 
 		mNumTabletorother_&_years. mNumTabletorotheronly_&_years. mNumOthercomputer_&_years. mNumOthercomputeronly_&_years.
-		mNumNocomputer_&_years.
-
+		mNumNocomputer_&_years. mNumdialup_&_years. mNumbroadbandall_&_years. mNumcellular_&_years. mNumcellularonly_&_years.
+		mNumbroadband_&_years. mNumbroadbandonly_&_years. mNumsatellite_&_years. mNumsatelliteonly_&_years. mNumotheronly_&_years. 
+		mNumaccesswosub_&_years. mNumnointernet_&_years. 
 		;
 
 		%if &_last_year. < 2013 %then %do; 

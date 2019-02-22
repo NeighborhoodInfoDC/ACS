@@ -4153,8 +4153,6 @@ label
 
 
 
-
-
 %mend ACS_summary_geo_source_tr_vars;
 
 
