@@ -27,7 +27,7 @@
   years = 2013_17 ,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(New file.)
+  revisions = %str(Add table B19001A.)
 
 )
 
