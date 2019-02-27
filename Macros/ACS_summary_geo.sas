@@ -613,7 +613,7 @@
 		mNumTabletorother_&_years. mNumTabletorotheronly_&_years. mNumOthercomputer_&_years. mNumOthercomputeronly_&_years.
 		mNumNocomputer_&_years. mNumdialup_&_years. mNumbroadbandall_&_years. mNumcellular_&_years. mNumcellularonly_&_years.
 		mNumbroadband_&_years. mNumbroadbandonly_&_years. mNumsatellite_&_years. mNumsatelliteonly_&_years. mNumotheronly_&_years. 
-		mNumaccesswosub_&_years. mNumnointernet_&_years. 
+		mNumaccesswosub_&_years. mNumnointernet_&_years. mNum1orMoreComp_&_years.
 		;
 
 		%if &_last_year. < 2013 %then %do; 
