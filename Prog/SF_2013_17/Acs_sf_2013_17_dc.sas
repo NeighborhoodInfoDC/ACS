@@ -28,7 +28,7 @@
   
   /** Description of latest file revisions for metadata **/
 
-  revisions = %str(Added table B28002 B28003 B28005 B28008 B28011 )
+  revisions = %str(Add access to internet table B28001)
 
 )
 

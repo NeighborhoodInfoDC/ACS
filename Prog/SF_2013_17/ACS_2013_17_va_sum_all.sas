@@ -12,6 +12,7 @@
  Modifications:12/24/18 by Yipeng Su Add new access to internet variables
  	       02/16/19 LH Add Median HH Income
  	       02/21/19 LH Fix MOEs and add internet indicator total
+			02/27/19 YS add table B28001
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
@@ -29,7 +30,7 @@
   years = 2013_17 ,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Fix MOEs and add internet indicator total)
+  revisions = %str(Add table 28001 TYPES OF COMPUTERS IN HOUSEHOLD)
 
 )
 

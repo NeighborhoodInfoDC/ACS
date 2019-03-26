@@ -16,6 +16,7 @@
 
  Modifications: 06/05/18 Yipeng Su add variables for summary (Population by age and sex, insurance, family type, earning) 
 2/6/19 YS added median hh income
+2/21/19 YS added B28002vars
 **************************************************************************/
 
 
@@ -3799,7 +3800,7 @@
 
 /*access to types of computing devices*/
 
-
+        Num1orMoreComp_&_years. = B28001e2;
 		NumDesktoporlaptop_&_years.= B28001e3;
 		NumDesktoporlaptoponly_&_years.= B28001e4;
 		NumSmartphone_&_years.= B28001e5;
@@ -3809,7 +3810,8 @@
 		NumOthercomputer_&_years.=B28001e9;
 		NumOthercomputeronly_&_years.=B28001e10;
 		NumNocomputer_&_years.=B28001e11;
-
+ 
+		mNum1orMoreComp_&_years. = %moe_sum(var= B28001e2);
 		mNumDesktoporlaptop_&_years.= %moe_sum (var= B28001m3);
 		mNumDesktoporlaptoponly_&_years.= %moe_sum (var= B28001m4);
 		mNumSmartphone_&_years.= %moe_sum (var=  B28001m5);
@@ -3819,6 +3821,34 @@
 		mNumOthercomputer_&_years.= %moe_sum (var= B28001m9);
 		mNumOthercomputeronly_&_years.= %moe_sum (var= B28001m10);
 		mNumNocomputer_&_years.= %moe_sum (var= B28001m11);
+
+
+/*type of internet subscription in household*/
+        Numdialup_&_years. = B28002e3;
+		Numbroadbandall_&_years. = B28002e4;
+		Numcellular_&_years. = B28002e5;
+		Numcellularonly_&_years. = B28002e6;
+		Numbroadband_&_years. = B28002e7;
+		Numbroadbandonly_&_years. = B28002e8;
+		Numsatellite_&_years. = B28002e9;
+        Numsatelliteonly_&_years. = B28002e10;
+		Numotheronly_&_years. = B28002e11;
+		Numaccesswosub_&_years. = B28002e12;
+		Numnointernet_&_years. = B28002e13;
+
+		mNumdialup_&_years. = %moe_sum (var= B28002m3);
+		mNumbroadbandall_&_years. = %moe_sum (var= B28002m4);
+		mNumcellular_&_years. = %moe_sum (var= B28002m5);
+		mNumcellularonly_&_years. = %moe_sum (var= B28002m6);
+		mNumbroadband_&_years. = %moe_sum (var= B28002m7);
+		mNumbroadbandonly_&_years. = %moe_sum (var= B28002m8);
+		mNumsatellite_&_years. = %moe_sum (var= B28002m9);
+        mNumsatelliteonly_&_years. = %moe_sum (var= B28002m10);
+		mNumotheronly_&_years. = %moe_sum (var= B28002m11);
+		mNumaccesswosub_&_years. = %moe_sum (var= B28002m12);
+		mNumnointernet_&_years. = %moe_sum (var= B28002m13);
+
+
 
 		label
 		NumPopdialuplths_&_years. = "Total household population 25 years and over that have less than high school degree have dial-up internet subscription, &_years_dash"
@@ -3915,6 +3945,8 @@
 		mNumPopnointernetAIOM_&_years.=  "Total household population that have computer but no internet subscription, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE,&_years_dash"
 		mNumPopnocomputerAIOM_&_years.=  "Total household population that have no computer, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE,&_years_dash"
 
+
+		Num1orMoreComp_&_years.= "Total number of households that has one or more types of computing devices, &_years_dash"
 		NumDesktoporlaptop_&_years.= "Total number of households that has one or more desktop or laptop, &_years_dash "
 		NumDesktoporlaptoponly_&_years.= "Total number of households that has one or more desktop or laptop with no other computing device, &_years_dash "
 		NumSmartphone_&_years.= "Total number of households that has one or more smartphone, &_years_dash "
@@ -3925,6 +3957,7 @@
 		NumOthercomputeronly_&_years.="Total number of households that has other compueters with no other type of computing devices ,&_years_dash  "
 		NumNocomputer_&_years.="Total number of households that has no computers,&_years_dash "
 
+		mNum1orMoreComp_&_years.= "Total number of households that has one or more types of computing devices, MOE, &_years_dash"
 		mNumDesktoporlaptop_&_years.= "Total number of households that has one or more desktop or laptop, MOE,&_years_dash "
 		mNumDesktoporlaptoponly_&_years.= "Total number of households that has one or more desktop or laptop with no other computing device, MOE,&_years_dash "
 		mNumSmartphone_&_years.= "Total number of households that has one or more smartphone, MOE,&_years_dash "
@@ -3935,6 +3968,32 @@
 		mNumOthercomputeronly_&_years.="Total number of households that has other compueters with no other type of computing devices, MOE, &_years_dash  "
 		mNumNocomputer_&_years.="Total number of households that has no computers,MOE,&_years_dash "
 		 
+        Numdialup_&_years. = "Total number of households that have a dial up with no other type of Internet subscription,&_years_dash "
+		Numbroadbandall_&_years. = "Total number of households that have broadband subsctiption of any type,&_years_dash "
+		Numcellular_&_years. = "Total number of households that have a cellular data plan,&_years_dash "
+		Numcellularonly_&_years. = "Total number of households that have a cellular data plan with no other type of Internet subscription,&_years_dash "
+		Numbroadband_&_years. = "Total number of households that have broadband subscription such as cable fiber optics or DSL,&_years_dash "
+		Numbroadbandonly_&_years. = "Total number of households that have broadband subscription such as cable fiber optics or DSL wiht no other types of Internet subscription,&_years_dash "
+		Numsatellite_&_years. = "Total number of households that have satellite Internet service,&_years_dash "
+        Numsatelliteonly_&_years. = "Total number of households that have satellite Internet service with no other type of Internet subscription,&_years_dash "
+		Numotheronly_&_years. ="Total number of households that have other service with no other type of Internet subscription,&_years_dash "
+		Numaccesswosub_&_years. = "Total number of households that have Internet access without a subscription,&_years_dash "
+		Numnointernet_&_years. = "Total number of households that have no Internet access,&_years_dash "
+
+
+        mNumdialup_&_years. = "Total number of households that have a dial up with no other type of Internet subscription,MOE,&_years_dash "
+		mNumbroadbandall_&_years. = "Total number of households that have broadband subsctiption of any type,MOE,&_years_dash "
+		mNumcellular_&_years. = "Total number of households that have a cellular data plan,MOE,&_years_dash "
+		mNumcellularonly_&_years. = "Total number of households that have a cellular data plan with no other type of Internet subscription,MOE,&_years_dash "
+		mNumbroadband_&_years. = "Total number of households that have broadband subscription such as cable fiber optics or DSL,MOE,&_years_dash "
+		mNumbroadbandonly_&_years. = "Total number of households that have broadband subscription such as cable fiber optics or DSL wiht no other types of Internet subscription,MOE,&_years_dash "
+		mNumsatellite_&_years. = "Total number of households that have satellite Internet service,MOE,&_years_dash "
+        mNumsatelliteonly_&_years. = "Total number of households that have satellite Internet service with no other type of Internet subscription,MOE,&_years_dash "
+		mNumotheronly_&_years. ="Total number of households that have other service with no other type of Internet subscription,MOE,&_years_dash "
+		mNumaccesswosub_&_years. = "Total number of households that have Internet access without a subscription,MOE,&_years_dash "
+		mNumnointernet_&_years. = "Total number of households that have no Internet access,MOE,&_years_dash "
+
+
 		;
 			%end;
 
@@ -4094,8 +4153,6 @@ label
    mNInsCov65andOverYears_&_years.= "Persons over 65 years old without health insurance coverage, Total, MOE, &_years_dash"
 
 ;
-
-
 
 
 
