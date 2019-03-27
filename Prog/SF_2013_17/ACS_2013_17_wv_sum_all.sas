@@ -31,7 +31,7 @@
   years = 2013_17 ,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Add table 28001 TYPES OF COMPUTERS IN HOUSEHOLD)
+  revisions = %str(Add rows from table B28002)
 
 )
 
