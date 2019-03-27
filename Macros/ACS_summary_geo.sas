@@ -15,6 +15,7 @@
                 09/20/18 Yipeng Su added family type by presense of related children
                 02/06/19 YS added median hh income
 				02/17/19 LH removed unnessary %let=count_vars that varied by year for tracts
+                03/27/19 YS add MOE for the additional rows from table B28002
 **************************************************************************/
 
 %macro ACS_summary_geo( geo, source_geo );
@@ -613,7 +614,7 @@
 		mNumTabletorother_&_years. mNumTabletorotheronly_&_years. mNumOthercomputer_&_years. mNumOthercomputeronly_&_years.
 		mNumNocomputer_&_years. mNumdialup_&_years. mNumbroadbandall_&_years. mNumcellular_&_years. mNumcellularonly_&_years.
 		mNumbroadband_&_years. mNumbroadbandonly_&_years. mNumsatellite_&_years. mNumsatelliteonly_&_years. mNumotheronly_&_years. 
-		mNumaccesswosub_&_years. mNumnointernet_&_years. mNum1orMoreComp_&_years.
+		mNumaccesswosub_&_years. mNumnointernet_&_years. mNum1orMoreComp_&_years. mNumhhdefined_&_years. mNumwithinternet_&_years.
 		;
 
 		%if &_last_year. < 2013 %then %do; 

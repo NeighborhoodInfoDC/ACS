@@ -17,6 +17,7 @@
  Modifications: 06/05/18 Yipeng Su add variables for summary (Population by age and sex, insurance, family type, earning) 
 2/6/19 YS added median hh income
 2/21/19 YS added B28002vars
+3/27/19 YS add more rows from B28002
 **************************************************************************/
 
 
@@ -3824,6 +3825,8 @@
 
 
 /*type of internet subscription in household*/
+        Numhhdefined_&_years. = B28002e1;
+		Numwithinternet_&_years. = B28002e2;
         Numdialup_&_years. = B28002e3;
 		Numbroadbandall_&_years. = B28002e4;
 		Numcellular_&_years. = B28002e5;
@@ -3836,6 +3839,8 @@
 		Numaccesswosub_&_years. = B28002e12;
 		Numnointernet_&_years. = B28002e13;
 
+		mNumhhdefined_&_years. = %moe_sum (var=B28002m1);
+		mNumwithinternet_&_years. = %moe_sum (var=B28002m2);
 		mNumdialup_&_years. = %moe_sum (var= B28002m3);
 		mNumbroadbandall_&_years. = %moe_sum (var= B28002m4);
 		mNumcellular_&_years. = %moe_sum (var= B28002m5);
@@ -3968,6 +3973,9 @@
 		mNumOthercomputeronly_&_years.="Total number of households that has other compueters with no other type of computing devices, MOE, &_years_dash  "
 		mNumNocomputer_&_years.="Total number of households that has no computers,MOE,&_years_dash "
 		 
+      
+        Numhhdefined_&_years. = "Total number of households with internet subscription type defined,&_years_dash "
+		Numwithinternet_&_years. = "Total number of households with an Internet subscription,&_years_dash "
         Numdialup_&_years. = "Total number of households that have a dial up with no other type of Internet subscription,&_years_dash "
 		Numbroadbandall_&_years. = "Total number of households that have broadband subsctiption of any type,&_years_dash "
 		Numcellular_&_years. = "Total number of households that have a cellular data plan,&_years_dash "
@@ -3980,7 +3988,8 @@
 		Numaccesswosub_&_years. = "Total number of households that have Internet access without a subscription,&_years_dash "
 		Numnointernet_&_years. = "Total number of households that have no Internet access,&_years_dash "
 
-
+        mNumhhdefined_&_years. = "Total number of households with internet subscription type defined,MOE,&_years_dash "
+		mNumwithinternet_&_years. = "Total number of households with an Internet subscription,MOE,&_years_dash "
         mNumdialup_&_years. = "Total number of households that have a dial up with no other type of Internet subscription,MOE,&_years_dash "
 		mNumbroadbandall_&_years. = "Total number of households that have broadband subsctiption of any type,MOE,&_years_dash "
 		mNumcellular_&_years. = "Total number of households that have a cellular data plan,MOE,&_years_dash "
