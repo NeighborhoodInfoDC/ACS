@@ -13,6 +13,7 @@
  		02/16/19 LH Add Median HH Income
  		02/21/19 LH Fix MOEs and add internet indicator total
         02/27/19 YS add table B28001
+        03/27/19 YS add rows from table B28002
 **************************************************************************/
 
 %include "L:\SAS\Inc\StdLocal.sas";
