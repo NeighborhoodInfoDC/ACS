@@ -115,6 +115,7 @@
 	%ACS_summary_geo( cluster2017, &source_geo )
     %ACS_summary_geo( bridgepk, &source_geo )
 	%ACS_summary_geo( stantoncommons, &source_geo )
+	%ACS_summary_geo( npa2019, &source_geo )
 
   %end;
 
