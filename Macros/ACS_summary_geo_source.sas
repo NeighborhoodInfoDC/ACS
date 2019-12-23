@@ -104,6 +104,7 @@
     %ACS_summary_geo( eor, &source_geo )
     %ACS_summary_geo( psa2004, &source_geo )
     %ACS_summary_geo( psa2012, &source_geo )
+	%ACS_summary_geo( psa2019, &source_geo )
     %ACS_summary_geo( geo2000, &source_geo )
     %ACS_summary_geo( geo2010, &source_geo )
     %ACS_summary_geo( voterpre2012, &source_geo )
