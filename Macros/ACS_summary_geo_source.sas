@@ -104,6 +104,7 @@
     %ACS_summary_geo( eor, &source_geo )
     %ACS_summary_geo( psa2004, &source_geo )
     %ACS_summary_geo( psa2012, &source_geo )
+	%ACS_summary_geo( psa2019, &source_geo )
     %ACS_summary_geo( geo2000, &source_geo )
     %ACS_summary_geo( geo2010, &source_geo )
     %ACS_summary_geo( voterpre2012, &source_geo )
@@ -114,6 +115,7 @@
 	%ACS_summary_geo( cluster2017, &source_geo )
     %ACS_summary_geo( bridgepk, &source_geo )
 	%ACS_summary_geo( stantoncommons, &source_geo )
+	%ACS_summary_geo( npa2019, &source_geo )
 
   %end;
 
