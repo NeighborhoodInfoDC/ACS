@@ -12,7 +12,7 @@
  Modifications: September 28, 2020 - AH personalized file to read in MD data for 2010-2014 ACS
 **************************************************************************/
 
-%include "L:\SAS\Inc\StdLocal.sas";
+%include "\\sas1\DCDATA\SAS\Inc\StdLocal.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
