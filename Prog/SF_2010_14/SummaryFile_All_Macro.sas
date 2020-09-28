@@ -10,7 +10,7 @@
  Description:  Census-supplied macros for reading ACS summary file data.
  Adapted for NeighborhoodInfo DC standard setup.
  
- Modifications:
+ Modifications: September 28, 2020 - AH updated input and label statements
 **************************************************************************/
 
 
@@ -74,7 +74,7 @@ LABEL FILEID  ='File Identification'         	STUSAB   ='State Postal Abbreviati
 		SDELM     $ 141-145	    SDSEC     $ 146-150	    SDUNI     $	151-155
 		UR        $ 156-156		PCI       $ 157-157		TAZ       $ 158-163							
 		UGA       $ 164-168		PUMA5     $ 169-173		PUMA1     $	174-178
-		GEOID     $ 179-218		NAME      $ 219-418 					  ;
+		GEOID     $ 179-218		NAME      $ 219-418 					      ;
 /***** END COPY & PASTE ***************************************************************************/
 run;
 %mend AnyGeo;
