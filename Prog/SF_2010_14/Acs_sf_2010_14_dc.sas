@@ -11,9 +11,11 @@
  
  Modifications: SD added tables for Equity 8/15/2016.
 			    SD added tables for State of Latinos 9/23/2016.
+				AH changed include statement 
 **************************************************************************/
 
-%include "L:\SAS\Inc\StdLocal.sas";
+*%include "L:\SAS\Inc\StdLocal.sas";
+%include "\\sas1\DCDATA\SAS\Inc\StdLocal.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
