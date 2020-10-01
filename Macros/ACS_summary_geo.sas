@@ -16,6 +16,7 @@
                 02/06/19 YS added median hh income
 				02/17/19 LH removed unnessary %let=count_vars that varied by year for tracts
                 03/27/19 YS add MOE for the additional rows from table B28002
+				09/30/20 AH edited MOE conditional to make < 2014 <= 2014
 **************************************************************************/
 
 %macro ACS_summary_geo( geo, source_geo );
@@ -621,7 +622,7 @@
 	    	%let moe_vars =&moeallyears.; 
 		%end; 
 
-		%else %if &_last_year. < 2014 %then %do; 
+		%else %if &_last_year. <= 2014 %then %do; 
 			%let moe_vars =&moeallyears. &moe2013plus.; 
 	     %end; 
 
