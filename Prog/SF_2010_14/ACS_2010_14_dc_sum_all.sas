@@ -20,13 +20,13 @@
 
 %ACS_summary_all( 
 
-  revisions = %str(Re-submit to add the _regcnt geography)
+  revisions = %str(Re-submit to add the _regcnt geography),
 
   /** State abbreviation. Ex: DC **/
   state_ab = DC,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
-  years = 2010_14,
+  years = 2010_14
 
 )
 
