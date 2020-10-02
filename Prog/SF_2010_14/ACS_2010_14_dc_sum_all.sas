@@ -12,7 +12,7 @@
  Modifications:
 **************************************************************************/
 
-%include "L:\SAS\Inc\StdLocal.sas";
+%include "\\sas1\DCDATA\SAS\Inc\StdLocal.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
@@ -20,13 +20,13 @@
 
 %ACS_summary_all( 
 
+  revisions = %str(Re-submit to add the _regcnt geography)
+
   /** State abbreviation. Ex: DC **/
   state_ab = DC,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2010_14,
-
-  revisions = Restore var label for ChildrenPovertyDefined_2010_14.
 
 )
 
