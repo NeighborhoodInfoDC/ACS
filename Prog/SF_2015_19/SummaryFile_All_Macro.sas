@@ -23,22 +23,23 @@ data work.&geography;
   INFILE "&_acs_sf_raw_path\&geography..txt" MISSOVER TRUNCOVER LRECL=1500;
 
 /***** COPY AND PASTE LABEL AND INPUT STATEMENTS FROM THE DOWNLOADED SUMMARYFILE_ALL_MACRO.SAS ****/
-  LABEL FILEID  ='File Identification'         	STUSAB   ='State Postal Abbreviation'
-		SUMLEVEL='Summary Level'            	COMPONENT='geographic Component'
-		LOGRECNO='Logical Record Number'	    US       ='US'
-		REGION  ='Region'						DIVISION ='Division'
-		STATECE ='State (Census Code)'			STATE    ='State (FIPS Code)'
-		COUNTY  ='County'						COUSUB   ='County Subdivision (FIPS)'
-		PLACE   ='Place (FIPS Code)'			TRACT    ='Census Tract'
-		BLKGRP  ='Block Group'					CONCIT   ='Consolidated City'
-		CSA     ='Combined Statistical Area'	METDIV  ='Metropolitan Division'
-		UA      ='Urban Area'                   UACP    ='Urban Area Central Place'
-		VTD     ='Voting District'				ZCTA3  ='ZIP Code Tabulation Area (3-digit)'
-		SUBMCD  ='Subbarrio (FIPS)'				SDELM  ='School District (Elementary)'
-		SDSEC   ='School District (Secondary)'	SDUNI  ='School District (Unified)'
-		UR      ='Urban/Rural'					PCI    ='Principal City Indicator'
-		TAZ     ='Traffic Analysis Zone'		UGA    ='Urban Growth Area'
-		GEOID   ='geographic Identifier'		NAME   ='Area Name' 					    
+  LABEL	
+		FILEID  ='File Identification'              STUSAB   ='State Postal Abbreviation'
+		SUMLEVEL='Summary Level'                    COMPONENT='geographic Component'
+		LOGRECNO='Logical Record Number'            US       ='US'
+		REGION  ='Region'                           DIVISION ='Division'
+		STATECE ='State (Census Code)'              STATE    ='State (FIPS Code)'
+		COUNTY  ='County'                           COUSUB   ='County Subdivision (FIPS)'
+		PLACE   ='Place (FIPS Code)'                TRACT    ='Census Tract'
+		BLKGRP  ='Block Group'                      CONCIT   ='Consolidated City'
+		CSA     ='Combined Statistical Area'        METDIV   ='Metropolitan Division'
+		UA      ='Urban Area'                       UACP     ='Urban Area Central Place'
+		VTD     ='Voting District'                  ZCTA3    ='ZIP Code Tabulation Area (3-digit)'
+		SUBMCD  ='Subbarrio (FIPS)'                 SDELM    ='School District (Elementary)'
+		SDSEC   ='School District (Secondary)'      SDUNI    ='School District (Unified)'
+		UR      ='Urban/Rural'                      PCI      ='Principal City Indicator'
+		TAZ     ='Traffic Analysis Zone'            UGA      ='Urban Growth Area'
+		GEOID   ='geographic Identifier'            NAME     ='Area Name' 					    
 		AIANHH  ='American Indian Area/Alaska Native Area/Hawaiian Home Land (Census)'
 		AIANHHFP='American Indian Area/Alaska Native Area/Hawaiian Home Land (FIPS)'
 		AIHHTLI ='American Indian Trust Land/Hawaiian Home Land Indicator'
@@ -56,25 +57,26 @@ data work.&geography;
 		SLDL    ='State Legislative District Lower'
 		ZCTA5   ='ZIP Code Tabulation Area (5-digit)'
 		PUMA5   ='Public Use Microdata Area - 5% File'
-		PUMA1   ='Public Use Microdata Area - 1% File'						  ;
-    INPUT
-        FILEID    $ 1-6			STUSAB    $ 7-8			SUMLEVEL  $ 9-11							
-		COMPONENT $	12-13		LOGRECNO  $ 14-20		US        $ 21-21  
-		REGION    $ 22-22		DIVISION  $ 23-23		STATECE   $ 24-25							
-		STATE     $ 26-27		COUNTY    $ 28-30		COUSUB    $ 31-35 
-		PLACE     $	36-40		TRACT     $	41-46		BLKGRP    $ 47-47							
-		CONCIT    $ 48-52		AIANHH    $ 53-56		AIANHHFP  $ 57-61
-		AIHHTLI   $ 62-62		AITSCE    $ 63-65		AITS      $ 66-70							
-		ANRC      $ 71-75		CBSA      $ 76-80   	CSA       $ 81-83
-		METDIV    $ 84-88		MACC      $ 89-89		MEMI      $ 90-90							
-		NECTA     $	91-95   	CNECTA    $ 96-98		NECTADIV  $ 99-103	
-		UA        $ 104-108		UACP      $ 109-113		CDCURR    $ 114-115						    
-		SLDU      $ 116-118		SLDL      $ 119-121 	VTD       $ 122-127
-		ZCTA3     $ 128-130		ZCTA5     $ 131-135		SUBMCD    $ 136-140						    
-		SDELM     $ 141-145	    SDSEC     $ 146-150	    SDUNI     $	151-155
-		UR        $ 156-156		PCI       $ 157-157		TAZ       $ 158-163							
-		UGA       $ 164-168		PUMA5     $ 169-173		PUMA1     $	174-178
-		GEOID     $ 179-218		NAME      $ 219-418 					      ;
+		PUMA1   ='Public Use Microdata Area - 1% File';
+
+INPUT
+		FILEID    $ 1-6         STUSAB    $ 7-8			SUMLEVEL  $ 9-11							
+		COMPONENT $ 12-13       LOGRECNO  $ 14-20		US        $ 21-21  
+		REGION    $ 22-22       DIVISION  $ 23-23		STATECE   $ 24-25							
+		STATE     $ 26-27       COUNTY    $ 28-30		COUSUB    $ 31-35 
+		PLACE     $ 36-40       TRACT     $ 41-46		BLKGRP    $ 47-47							
+		CONCIT    $ 48-52       AIANHH    $ 53-56		AIANHHFP  $ 57-61
+		AIHHTLI   $ 62-62       AITSCE    $ 63-65		AITS      $ 66-70							
+		ANRC      $ 71-75       CBSA      $ 76-80		CSA       $ 81-83
+		METDIV    $ 84-88       MACC      $ 89-89		MEMI      $ 90-90							
+		NECTA     $ 91-95       CNECTA    $ 96-98		NECTADIV  $ 99-103	
+		UA        $ 104-108     UACP      $ 109-113		CDCURR    $ 114-115						    
+		SLDU      $ 116-118     SLDL      $ 119-121		VTD       $ 122-127
+		ZCTA3     $ 128-130     ZCTA5     $ 131-135		SUBMCD    $ 136-140						    
+		SDELM     $ 141-145     SDSEC     $ 146-150		SDUNI     $ 151-155
+		UR        $ 156-156     PCI       $ 157-157		TAZ       $ 158-163							
+		UGA       $ 164-168     PUMA5     $ 169-173		PUMA1     $ 174-178
+		GEOID     $ 179-218     NAME      $ 219-418;
 /***** END COPY & PASTE ***************************************************************************/
 run;
 %mend AnyGeo;
