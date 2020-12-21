@@ -14,20 +14,23 @@
  be added to the %ACS_summary_geo_source_tr_vars() macro. 
  No variable should be added to both macros. 
 
- Modifications:
+ Modifications: RP 12/18/20 B00001 and B00002 were replacd with B98003 and B98001 starting with 2015-19
 **************************************************************************/
 
 
 %macro ACS_summary_geo_source_bg_vars(  );
 
-    ** Unweighted sample counts **;
+    ** Unweighted sample counts - Census discontinued these in 2019 **;
     
+	%if &_last_year. <=2018 %then %do;  
     UnwtdPop_&_years. = B00001e1;
     UnwtdHsgUnits_&_years. = B00002e1;
 
     label
       UnwtdPop_&_years. = "Unweighted sample population, &_years_dash "
       UnwtdHsgUnits_&_years. = "Unweighted sample housing units, &_years_dash ";
+
+	%end;
 
     ** Demographics **;
 
