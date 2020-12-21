@@ -36,8 +36,9 @@
   
     %** Count and MOE variables for block group data **;
 
+	%if &_last_year. <=2018 %then %do;  
     %let count_vars = 
-       Unwtd: TotPop: PopUnder: Pop25: Pop65: PopAlone:
+	   Unwtd: TotPop: PopUnder: Pop25: Pop65: PopAlone:
        PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
        NumHshldPhone_: NumHshldCar_:  
        Num: 
@@ -49,6 +50,23 @@
        Pop25andOverYears_: Pop25andOverWoutHS_: Pop25andOverWHS_:
        Pop25andOverWSC_: Pop25andOverWCollege_:
        ;
+	%end;
+
+	%else %do;
+	%let count_vars = 
+	   TotPop: PopUnder: Pop25: Pop65: PopAlone:
+       PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
+       NumHshldPhone_: NumHshldCar_:  
+       Num: 
+
+       PopUnder5Years_: PopUnder18Years_:
+       Pop18_34Years_: Pop35_64Years_:
+       Pop65andOverYears_:
+
+       Pop25andOverYears_: Pop25andOverWoutHS_: Pop25andOverWHS_:
+       Pop25andOverWSC_: Pop25andOverWCollege_:
+       ;
+	%end;
            
     %let moe_vars =
        mTotPop_&_years. mPopUnder5Years_&_years. 
@@ -84,7 +102,7 @@
        mPopEmployedServB_&_years. mPopEmployedSalesB_&_years.
        mPopEmployedNatResB_&_years. mPopEmployedProdB_&_years.
 
-          mPopEmployedByOccW_&_years. mPopEmployedMngmtW_&_years.
+       mPopEmployedByOccW_&_years. mPopEmployedMngmtW_&_years.
        mPopEmployedServW_&_years. mPopEmployedSalesW_&_years.
        mPopEmployedNatResW_&_years. mPopEmployedProdW_&_years.
 
@@ -120,8 +138,9 @@
   
     %** Count and MOE variables for tract data **;
 
+	%if &_last_year. <=2018 %then %do;  
     %let count_vars = 
-       Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
+	   Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
        PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
        PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
        Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
@@ -137,8 +156,29 @@
 	   Nonfamlivingalone: Nonfamnotlivingalone:
 
 	   NonFamilyHH:
-
        ;
+	%end;
+
+	%else %do;
+    %let count_vars = 
+	   TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
+       PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
+       PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
+       Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
+        
+       RentCostBurdenDenom: OwnerCostBurdenDenom:
+
+       InsCovUnder18Years: InsCov18_34Years: InsCov35_64Years: InsCov65andOverYears: 
+	   NInsCovUnder18Years: NInsCov18_34Years: NInsCov35_64Years: NInsCov65andOverYears:
+
+       EarningUnder10K: Earning10to15K: Earning15to25K: Earning25to35K: Earning35to50K:
+	   Earning50to65K: Earning65to75K: EarningOver75K:
+
+	   Nonfamlivingalone: Nonfamnotlivingalone:
+
+	   NonFamilyHH:
+       ;
+	%end;
 
     
 	%**variables appear in all years;
