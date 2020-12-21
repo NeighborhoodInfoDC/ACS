@@ -1,9 +1,9 @@
 /**************************************************************************
- Program:  ACS_2015_19_dc_sum_all.sas
+ Program:  ACS_2015_19_DC_sum_all.sas
  Library:  ACS
  Project:  Urban-Greater DC
  Author:   Ananya Hariharan
- Created:  December 14, 2020
+ Created:  December 18, 2020
  Version:  SAS 9.4
  Environment:  Local Windows session (desktop)
  
@@ -12,7 +12,7 @@
  Modifications:
 **************************************************************************/
 
-%include "\\sas1\DCData\SAS\Inc\StdLocal.sas";
+%include "\\sas1\DCdata\SAS\Inc\StdLocal.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
