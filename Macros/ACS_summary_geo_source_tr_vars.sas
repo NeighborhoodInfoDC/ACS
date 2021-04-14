@@ -18,6 +18,7 @@
 2/6/19 YS added median hh income
 2/21/19 YS added B28002vars
 3/27/19 YS add more rows from B28002
+4/14/21 ALH added variables for regional AI
 **************************************************************************/
 
 
@@ -203,6 +204,12 @@
 
   Pop65andOverYearsF_&_years.= 
   sum(B01001e44, B01001e45, B01001e46, B01001e47, B01001e48, B01001e49);
+
+  MedGrossRent_&_years.= B25064e1;
+
+  DisabilityStatusY_&_years.=
+  sum(B181013e4, B181013e7, B181013e10, B181013e13,B181013e16, B181013e19, B181013e23, B181013e26, 
+	 B181013e29, B181013e32, B181013e35, B181013e38);
 
   mPopUnder18YearsM_&_years. = 
     %moe_sum(var= B01001m3 B01001m4 B01001m5 B01001m6);
@@ -413,6 +420,12 @@
            B01001Fm14 B01001Fm15 B01001Fm16 B01001Fm29 B01001Fm30 B01001Fm31 
            B01001Gm14 B01001Gm15 B01001Gm16 B01001Gm29 B01001Gm30 B01001Gm31 );
 
+  mMedGrossRent_&_years.= B25064m1;
+
+  mDisabilityStatusY_&_years.=
+  sum(B181013m4, B181013m7, B181013m10, B181013m13,B181013m16, B181013m19, B181013m23, B181013m26, 
+	  B181013m29, B181013m32, B181013m35, B181013m38);
+
     label
     NumFamiliesB_&_years. = "Family HHs, Black/African American, &_years_dash "
     NumFamiliesW_&_years. = "Family HHs, Non-Hispanic White, &_years_dash "
@@ -551,6 +564,12 @@
 	   mFamFemaleholder_&_years.= "Female Householder with no husband present, MOE, &_years_dash "
 	   mNonfamlivingalone_&_years.= "Householder living alone, MOE, &_years_dash "
 	   mNonfamnotlivingalone_&_years.= "Householder not living alone, MOE, &_years_dash "
+
+	mMedGrossRent_&_years. = "Median gross rent, MOE, &_years_dash"
+	MedGrossRent_&_years. = "Median gross rent, &_years_dash"
+	mDisabilityStatusY_&_years. = "Number of people with a disability, MOE, &_years_dash"
+	DisabilityStatusY_&_years. = "Number of people with a disability, &_years_dash"
+
 
 ;
 
