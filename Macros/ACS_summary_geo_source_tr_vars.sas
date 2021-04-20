@@ -423,8 +423,8 @@
   mMedGrossRent_&_years.= B25064m1;
 
   mDisabilityStatusY_&_years.=
-  %moe_sum(B18101m4, B18101m7, B18101m10, B18101m13, B18101m16, B18101m19, B18101m23, B18101m26, 
-	  B18101m29, B18101m32, B18101m35, B18101m38);
+  %moe_sum(var=B18101m4 B18101m7 B18101m10 B18101m13 B18101m16 B18101m19 B18101m23 B18101m26 
+	  B18101m29 B18101m32 B18101m35 B18101m38);
 
     label
     NumFamiliesB_&_years. = "Family HHs, Black/African American, &_years_dash "
