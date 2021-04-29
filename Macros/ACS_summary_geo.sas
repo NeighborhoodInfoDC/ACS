@@ -137,7 +137,13 @@
 	   Nonfamlivingalone: Nonfamnotlivingalone:
 
 	   NonFamilyHH:
-
+       
+	   *for regional AI;
+	   MedGrossRent_: Disability: InPov: NotInPov: NumSingFam: MedGRentPercInc_: AvgHHSize_: GRent:
+	   HIncInt: TotalCivHHPop_: InLaborForce_: NotInLaborForce_: Numw: MedEarnings: Disability:
+	   NoDisability: Commute: RentBurden: NRentBurden:  MedOwnerCosts: CostBurden: NCostBurden:
+	   OwnerOcc: RenterOcc: OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
+	   PubTrans: 
        ;
 
     
@@ -568,6 +574,222 @@
       mNumFamFHRKidsU6U17_&_years. 
 	  mNumFamFHRKids6_17_&_years. 
 	  mNumFamFHNRKids_&_years. 
+
+	  /*for Regional AI*/
+	  mMedGrossRent_&_years.
+	  mDisabilityStatusY_&_years.
+	  mInPovUnder25_&_years.
+ 	  mNotInPovUnder25_&_years.
+
+  	 mInPov25to44_&_years. 
+     mNotInPov25to44_&_years. 
+
+  	 mInPov45to64_&_years. 
+ 	 mNotInPov45to64_&_years.
+
+  	 mInPovOver65_&_years.
+  	 mNotInPovOver65_&_years. 
+
+ 	 mNumSingFamUnits_&_years. 
+
+  	 mNumSingFamRentalUnits_&_years.
+ 	 mNumSingFamOwnerOccUnits_&_years. 
+  	 mMedGRentPercInc_&_years. 
+
+ 	 mAvgHHSize_&_years. 
+ 	 mAvgHHSizeRenterOcc_&_years. 
+ 	 mAvgHHSizeOwnerOcc_&_years. 
+
+ 	 mGRentPercHIncL10_&_years.
+ 	 mGRentPercHInc10149_&_years. 
+ 	 mGRentPercHInc15199_&_years. 
+ 	 mGRentPercHInc20249_&_years.
+ 	 mGRentPercHInc25299_&_years. 
+  	 mGRentPercHInc30349_&_years. 
+ 	 mGRentPercHInc35399_&_years. 
+  	 mGRentPercHInc40499_&_years.
+ 	 mGRentPercHInc50M_&_years. 
+
+ 	 mHIncIntAccessL10KwInt_&_years. 
+   	 mHIncIntAccessL10KwoInt_&_years.
+ 	 mHIncIntAccess1019KwInt_&_years. 
+ 	 mHIncIntAccess1019KwoInt_&_years.
+ 	 mHIncIntAccess2034KwInt_&_years. 
+ 	 mHIncIntAccess2034KwoInt_&_years. 
+ 	 mHIncIntAccess3549KwInt_&_years. 
+ 	 mHIncIntAccess3549KwoInt_&_years.
+ 	 mHIncIntAccess5074KwInt_&_years. 
+ 	 mHIncIntAccess5074KwoInt_&_years. 
+ 	 mHIncIntAccess75MwInt_&_years.
+ 	 mHIncIntAccess75Mw0Int_&_years. 
+
+ 	 mTotalCivHHPop_&_years.
+ 	 mInLaborForce_&_years. 
+  	 mNotInLaborForce_&_years.
+
+  
+ 	 mNumwAmbulatoryDiff_&_years.
+   	 mNumwoAmbulatoryDiff_&_years. 
+
+ 	 mNumwCognitiveDiff_&_years. 
+ 	 mNumwoCognitiveDiff_&_years. 
+
+ 	 mNumwVisionDiff_&_years. 
+  	 mNumwoVisionDiff_&_years. 
+  
+ 	 mNumwHearingDiff_&_years. 
+ 	 mNumwoHearingDiff_&_years. 
+  
+ 	 mNumwSelfCareDiff_&_years. 
+ 	 mNumwoSelfCareDiff_&_years. 
+  
+  	 mNumwIndepLivingDiff_&_years. 
+ 	 mNumwoIndepLivingDiff_&_years. 
+
+  	 mMedEarningswDisab_&_years. 
+ 	 mMedEarningswoDisab_&_years. 
+
+ 	 mDisabilityW_&_years. 
+ 	 mDisabilityB_&_years. 
+ 	 mDisabilityA_&_years. 
+ 	 mDisabilityH_&_years. 
+ 	 mDisabilityAIOM_&_years. 
+
+  	mNoDisabilityW_&_years. 
+ 	mNoDisabilityB_&_years. 
+ 	mNoDisabilityA_&_years.
+ 	mNoDisabilityH_&_years. 
+  	mNoDisabilityAIOM_&_years. 
+  
+ 	mDisabilityPov_&_years. 
+  	mDisabilityNoPov_&_years. 
+  	mNoDisabilityPov_&_years. 
+  	mNoDisabilityNoPov_&_years.
+
+  	mDisabilityHI_&_years. 
+  	mDisabilityNoHI_&_years. 
+  	mNoDisabilityHI_&_years. 
+  	mNoDisabilityNoHI_&_years. 
+
+  	mDisabilityUnemp_&_years. 
+  	mDisabilityEmp_&_years. 
+  	mNoDisabilityUnemp_&_years. 
+  	mNoDisabilityEmp_&_years. 
+  	mDisabilityNotInLF_&_years. 
+  	mNoDisabilityNotInLF_&_years. 
+
+  	mCommuteL5_&_years. 
+  	mCommute5_9_&_years. 
+  	mCommute10_14_&_years. 
+  	mCommute15_19_&_years. 
+  	mCommute20_24_&_years. 
+  	mCommute25_29_&_years. 
+  	mCommute30_34_&_years. 
+  	mCommute35_39_&_years. 
+  	mCommute40_44_&_years. 
+  	mCommute45_59_&_years. 
+  	mCommute60_89_&_years. 
+  	mCommunity90M_&_years. 
+
+  mRentBurdenUnder10K_&_years. 
+  mNRentBurdenUnder10K_&_years. 
+  mRentBurden10199K_&_years. 
+  mNRentBurden10199K_&_years. 
+  mRentBurden20349K_&_years.
+  mNRentBurden20349K_&_years. 
+  mRentBurden35499K_&_years.
+  mNRentBurden35499K_&_years. 
+  mRentBurden50749K_&_years. 
+  mNRentBurden50749K_&_years. 
+  mRentBurden75KMore_&_years.
+  mNRentBurden75KMore_&_years. 
+
+  mMedOwnerCostsPctHHInc_&_years. 
+
+  mCostBurdenUnder10K_&_years.
+  mNCostBurdenUnder10K_&_years. 
+  mCostBurden10199K_&_years. 
+  mNCostBurden10199K_&_years.
+  mCostBurden20349K_&_years. 
+  mNCostBurden20349K_&_years. 
+  mCostBurden35499K_&_years. 
+  mNCostBurden35499K_&_years. 
+  mCostBurden50749K_&_years. 
+  mNCostBurden50749K_&_years. 
+  mCostBurden75999K_&_years. 
+  mNCostBurden75999K_&_years. 
+  mCostBurden100KMore_&_years. 
+  mNCostBurden100KMore_&_years. 
+
+  mOwnerOccHHIncL5K_&_years.
+  mOwnerOccHHInc5999K_&_years. 
+  mOwnerOccHHInc101499K_&_years.
+  mOwnerOccHHInc151999K_&_years. 
+  mOwnerOccHHInc202499K_&_years. 
+  mOwnerOccHHInc253499K_&_years.
+  mOwnerOccHHInc354999K_&_years.
+  mOwnerOccHHInc507499K_&_years. 
+  mOwnerOccHHInc759999K_&_years.
+  mOwnerOccHHInc10014999K_&_years. 
+  mOwnerOccHHInc150M_&_years. 
+
+  mRenterOccHHIncL5K_&_years. 
+  mRenterOccHHInc5999K_&_years. 
+  mRenterOccHHInc101499K_&_years.
+  mRenterOccHHInc151999K_&_years. 
+  mRenterOccHHInc202499K_&_years. 
+  mRenterOccHHInc253499K_&_years. 
+  mRenterOccHHInc354999K_&_years. 
+  mRenterOccHHInc507499K_&_years. 
+  mRenterOccHHInc759999K_&_years. 
+  mRenterOccHHInc10014999K_&_years. 
+  mRenterOccHHInc150M_&_years. 
+
+  mOwnerOccMovedIn2017later_&_years. 
+  mOwnerOccMovedIn201516_&_years. 
+  mOwnerOccMovedIn201014_&_years. 
+  mOwnerOccMovedIn200009_&_years. 
+  mOwnerOccMovedIn199099_&_years. 
+  mOwnerOccMovedIn1989earlier_&_years. 
+
+  mRenterOccMovedIn2017later_&_years. 
+  mRenterOccMovedIn201516_&_years.
+  mRenterOccMovedIn201014_&_years. 
+  mRenterOccMovedIn200009_&_years.
+  mRenterOccMovedIn199099_&_years. 
+  mRenterOccMovedIn1989earlier_&_years.
+
+  mOwnerOcc1SubstCond_&_years. 
+  mOwnerOcc2SubstCond_&_years. 
+  mOwnerOcc3SubstCond_&_years. 
+  mOwnerOcc4SubstCond_&_years. 
+  mOwnerOcc0SubstCond_&_years. 
+
+  mRenterOcc1SubstCond_&_years.
+  mRenterOcc2SubstCond_&_years.
+  mRenterOcc3SubstCond_&_years. 
+  mRenterOcc4SubstCond_&_years. 
+  mRenterOcc0SubstCond_&_years.
+
+  mOneSubstCond_&_years. 
+  mTwoSubstCond_&_years. 
+  mThreeSubstCond_&_years. 
+  mFourSubstCond_&_years. 
+  mNoSubstCond_&_years. 
+
+  mInLaborForceW_&_years.
+  mInLaborForceB_&_years.
+  mInLaborForceA_&_years. 
+  mInLaborForceH_&_years. 
+  mInLaborForceAIOM_&_years. 
+
+  mPubTranstoWorkW__&_years.
+  mPubTranstoWorkB__&_years. 
+  mPubTranstoWorkA__&_years. 
+  mPubTranstoWorkH__&_years.
+  mPubTranstoWorkAIOM__&_years. 
+
+  mPubTranstoWork_&_years. 
 
 	   ;
 	
