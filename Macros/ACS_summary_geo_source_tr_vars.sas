@@ -655,7 +655,7 @@
   mInPovOver65_&_years. = %moe_sum(var=B17017m8 B17017m14 B17017m19 B17017m25 B17017m30);
   mNotInPovOver65_&_years. = %moe_sum(var=B17017m37 B17017m43 B17017m48 B17017m54 B17017m59);
 
-  mNumSingFamUnits_&_years. = %moe_sum(var = B25024m2 B25024m3;
+  mNumSingFamUnits_&_years. = %moe_sum(var = B25024m2 B25024m3);
 
   mNumSingFamRentalUnits_&_years. = %moe_sum(var=B25032m14 B25032m15);
   mNumSingFamOwnerOccUnits_&_years. = %moe_sum(var=B25032m3 B25032m4);
