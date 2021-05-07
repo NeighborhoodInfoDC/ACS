@@ -4119,7 +4119,7 @@
 	      mNumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, MOE, &_years_dash  "
 	    ;
 
-	%END;
+	%end;
 
 	
 	%else %do;
@@ -4276,7 +4276,7 @@
 		mNumRentOcc6person_&_years. = %moe_sum( var=B25009m16 );
 		mNumRentOcc7plusperson_&_years. = %moe_sum( var=B25009m17 );
 
-		%if &_last_year. < 2015 %then %do; 
+	%if &_last_year. < 2015 %then %do; 
 			NumRtOHU0Bnocash_&_years. = B25068e10;
 			NumRtOHU0Bunder500_&_years. = sum( B25068e4, B25068e5, B25068e6 );
 			NumRtOHU0B500to749_&_years. = B25068e7;
@@ -4881,7 +4881,7 @@
 
 
 		;
-			%end;
+	%end;
 
 
 		
