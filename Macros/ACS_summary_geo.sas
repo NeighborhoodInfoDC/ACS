@@ -792,14 +792,14 @@
   mOwnerOccMovedIn201014_&_years. 
   mOwnerOccMovedIn200009_&_years. 
   mOwnerOccMovedIn199099_&_years. 
-  mOwnerOccMovedIn1989earlier_&_years. 
+  mOwnOcc1989earlier_&_years. 
 
-  mRenterOccMovedIn2017later_&_years. 
+  mRentOcc2017later_&_years.
   mRenterOccMovedIn201516_&_years.
   mRenterOccMovedIn201014_&_years. 
   mRenterOccMovedIn200009_&_years.
   mRenterOccMovedIn199099_&_years. 
-  mRenterOccMovedIn1989earlier_&_years.
+  mRentOcc1989earlier_&_years.
 
   mOwnerOcc1SubstCond_&_years. 
   mOwnerOcc2SubstCond_&_years. 
