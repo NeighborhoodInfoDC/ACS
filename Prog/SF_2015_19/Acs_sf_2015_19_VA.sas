@@ -17,6 +17,7 @@
 ** Define libraries **;
 %DCData_lib( ACS )
 
+/*proc contents data = acs.acs_sf_2015_19_md_regcnt; run; */
 
 %Acs_sf(
 

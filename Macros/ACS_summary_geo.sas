@@ -179,11 +179,11 @@
 	   NonFamilyHH:
      
      /*for regional AI */
-	   MedGrossRent_: Disability: InPov: NotInPov: NumSingFam: MedGRentPercInc_: AvgHHSize_: GRent:
-	   HIncInt: TotalCivHHPop_: InLaborForce_: NotInLaborForce_: Numw: MedEarnings: Disability:
-	   NoDisability: Commute: RentBurden: NRentBurden:  MedOwnerCosts: CostBurden: NCostBurden:
-	   OwnerOcc: RenterOcc: OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
-	   PubTrans: 
+	   Disability: InPov: NotInPov: SingFam: Med: AvgHH: GRent:
+	   IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce_: Numw: MedEarnings: Disability:
+	   NoDisability: Commute: RentBur: NRentBur: CostBur: NCostBur:
+	   OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
+	   PubTrans: Own: Rent: MOwner:
 
        ;
 	%end;
@@ -632,15 +632,15 @@
   	 mInPovOver65_&_years.
   	 mNotInPovOver65_&_years. 
 
- 	 mNumSingFamUnits_&_years. 
+ 	 mSingFamUnits_&_years. 
 
-  	 mNumSingFamRentalUnits_&_years.
- 	 mNumSingFamOwnerOccUnits_&_years. 
-  	 mMedGRentPercInc_&_years. 
+  	 mSingFamRentalUnits_&_years.
+ 	 mSingFamOwnerOccUnits_&_years. 
+  	 mMedGRentPInc_&_years. 
 
  	 mAvgHHSize_&_years. 
- 	 mAvgHHSizeRenterOcc_&_years. 
- 	 mAvgHHSizeOwnerOcc_&_years. 
+ 	 mAvgHHSizeRenter_&_years. 
+ 	 mAvgHHSizeOwner_&_years. 
 
  	 mGRentPercHIncL10_&_years.
  	 mGRentPercHInc10149_&_years. 
@@ -652,35 +652,35 @@
   	 mGRentPercHInc40499_&_years.
  	 mGRentPercHInc50M_&_years. 
 
- 	 mHIncIntAccessL10KwInt_&_years. 
-   	 mHIncIntAccessL10KwoInt_&_years.
- 	 mHIncIntAccess1019KwInt_&_years. 
- 	 mHIncIntAccess1019KwoInt_&_years.
- 	 mHIncIntAccess2034KwInt_&_years. 
- 	 mHIncIntAccess2034KwoInt_&_years. 
- 	 mHIncIntAccess3549KwInt_&_years. 
- 	 mHIncIntAccess3549KwoInt_&_years.
- 	 mHIncIntAccess5074KwInt_&_years. 
- 	 mHIncIntAccess5074KwoInt_&_years. 
- 	 mHIncIntAccess75MwInt_&_years.
- 	 mHIncIntAccess75Mw0Int_&_years. 
+	 mIncIntAccL10KwInt_&_years.
+ 	 mIncIntAccL10KwoInt_&_years.
+ 	 mIncIntAcc1019KwInt_&_years. 
+ 	 mIncIntAcc1019KwoInt_&_years. 
+  	 mIncIntAcc2034KwInt_&_years. 
+  	 mIncIntAcc2034KwoInt_&_years. 
+  	 mIncIntAcc3549KwInt_&_years. 
+ 	 mIncIntAcc3549KwoInt_&_years. 
+  	 mIncIntAcc5074KwInt_&_years. 
+ 	 mIncIntAcc5074KwoInt_&_years. 
+ 	 mIncIntAcc75MwInt_&_years.
+ 	 mIncIntAcc75Mw0Int_&_years. 
 
  	 mTotalCivHHPop_&_years.
  	 mInLaborForce_&_years. 
   	 mNotInLaborForce_&_years.
 
   
- 	 mNumwAmbulatoryDiff_&_years.
-   	 mNumwoAmbulatoryDiff_&_years. 
+ 	 mNumwAmbDiff_&_years.
+   	 mNumwoAmbDiff_&_years. 
 
- 	 mNumwCognitiveDiff_&_years. 
- 	 mNumwoCognitiveDiff_&_years. 
+ 	 mNumwCogDiff_&_years. 
+ 	 mNumwoCogDiff_&_years. 
 
- 	 mNumwVisionDiff_&_years. 
-  	 mNumwoVisionDiff_&_years. 
+ 	 mNumwVisDiff_&_years. 
+  	 mNumwoVisDiff_&_years. 
   
- 	 mNumwHearingDiff_&_years. 
- 	 mNumwoHearingDiff_&_years. 
+ 	 mNumwHearDiff_&_years. 
+ 	 mNumwoHearDiff_&_years. 
   
  	 mNumwSelfCareDiff_&_years. 
  	 mNumwoSelfCareDiff_&_years. 
@@ -733,85 +733,85 @@
   	mCommute60_89_&_years. 
   	mCommunity90M_&_years. 
 
-  mRentBurdenUnder10K_&_years. 
-  mNRentBurdenUnder10K_&_years. 
-  mRentBurden10199K_&_years. 
-  mNRentBurden10199K_&_years. 
-  mRentBurden20349K_&_years.
-  mNRentBurden20349K_&_years. 
-  mRentBurden35499K_&_years.
-  mNRentBurden35499K_&_years. 
-  mRentBurden50749K_&_years. 
-  mNRentBurden50749K_&_years. 
-  mRentBurden75KMore_&_years.
-  mNRentBurden75KMore_&_years. 
+  mRentBurUnder10K_&_years. 
+  mNRentBurUnder10K_&_years. 
+  mRentBur10199K_&_years. 
+  mNRentBur10199K_&_years. 
+  mRentBur20349K_&_years.
+  mNRentBur20349K_&_years. 
+  mRentBur35499K_&_years.
+  mNRentBur35499K_&_years. 
+  mRentBur50749K_&_years. 
+  mNRentBur50749K_&_years. 
+  mRentBur75KMore_&_years.
+  mNRentBur75KMore_&_years. 
 
-  mMedOwnerCostsPctHHInc_&_years. 
+  mMOwnerCostsPctHHInc_&_years. 
 
-  mCostBurdenUnder10K_&_years.
-  mNCostBurdenUnder10K_&_years. 
-  mCostBurden10199K_&_years. 
-  mNCostBurden10199K_&_years.
-  mCostBurden20349K_&_years. 
-  mNCostBurden20349K_&_years. 
-  mCostBurden35499K_&_years. 
-  mNCostBurden35499K_&_years. 
-  mCostBurden50749K_&_years. 
-  mNCostBurden50749K_&_years. 
-  mCostBurden75999K_&_years. 
-  mNCostBurden75999K_&_years. 
-  mCostBurden100KMore_&_years. 
-  mNCostBurden100KMore_&_years. 
+  mCostBurUnder10K_&_years.
+  mNCostBurUnder10K_&_years. 
+  mCostBur10199K_&_years. 
+  mNCostBur10199K_&_years.
+  mCostBur20349K_&_years. 
+  mNCostBur20349K_&_years. 
+  mCostBur35499K_&_years. 
+  mNCostBur35499K_&_years. 
+  mCostBur50749K_&_years. 
+  mNCostBur50749K_&_years. 
+  mCostBur75999K_&_years. 
+  mNCostBur75999K_&_years. 
+  mCostBur100KMore_&_years. 
+  mNCostBur100KMore_&_years. 
 
-  mOwnerOccHHIncL5K_&_years.
-  mOwnerOccHHInc5999K_&_years. 
-  mOwnerOccHHInc101499K_&_years.
-  mOwnerOccHHInc151999K_&_years. 
-  mOwnerOccHHInc202499K_&_years. 
-  mOwnerOccHHInc253499K_&_years.
-  mOwnerOccHHInc354999K_&_years.
-  mOwnerOccHHInc507499K_&_years. 
-  mOwnerOccHHInc759999K_&_years.
-  mOwnerOccHHInc10014999K_&_years. 
-  mOwnerOccHHInc150M_&_years. 
+  mOwnOccHHIncL5K_&_years. 
+  mOwnOccHHInc5999K_&_years.
+  mOwnOccHHInc101499K_&_years.
+  mOwnOccHHInc151999K_&_years.
+  mOwnOccHHInc202499K_&_years.
+  mOwnOccHHInc253499K_&_years. 
+  mOwnOccHHInc354999K_&_years. 
+  mOwnOccHHInc507499K_&_years. 
+  mOwnOccHHInc759999K_&_years.
+  mOwnOccHHInc10014999K_&_years. 
+  mOwnOccHHInc150M_&_years. 
 
-  mRenterOccHHIncL5K_&_years. 
-  mRenterOccHHInc5999K_&_years. 
-  mRenterOccHHInc101499K_&_years.
-  mRenterOccHHInc151999K_&_years. 
-  mRenterOccHHInc202499K_&_years. 
-  mRenterOccHHInc253499K_&_years. 
-  mRenterOccHHInc354999K_&_years. 
-  mRenterOccHHInc507499K_&_years. 
-  mRenterOccHHInc759999K_&_years. 
-  mRenterOccHHInc10014999K_&_years. 
-  mRenterOccHHInc150M_&_years. 
+  mRentOccHHIncL5K_&_years.
+  mRentOccHHInc5999K_&_years.
+  mRentOccHHInc101499K_&_years. 
+  mRentOccHHInc151999K_&_years. 
+  mRentOccHHInc202499K_&_years.
+  mRentOccHHInc253499K_&_years. 
+  mRentOccHHInc354999K_&_years.
+  mRentOccHHInc507499K_&_years.
+  mRentOccHHInc759999K_&_years. 
+  mRentOccHHInc10014999K_&_years.
+  mRentOccHHInc150M_&_years.
 
-  mOwnerOccMovedIn2017later_&_years. 
-  mOwnerOccMovedIn201516_&_years. 
-  mOwnerOccMovedIn201014_&_years. 
-  mOwnerOccMovedIn200009_&_years. 
-  mOwnerOccMovedIn199099_&_years. 
-  mOwnerOccMovedIn1989earlier_&_years. 
+  mOwnOcc2017later_&_years.
+  mOwnOcc201516_&_years. 
+  mOwnOcc201014_&_years. 
+  mOwnOcc200009_&_years. 
+  mOwnOcc199099_&_years. 
+  mOwnOcc1989earlier_&_years. 
 
-  mRenterOccMovedIn2017later_&_years. 
-  mRenterOccMovedIn201516_&_years.
-  mRenterOccMovedIn201014_&_years. 
-  mRenterOccMovedIn200009_&_years.
-  mRenterOccMovedIn199099_&_years. 
-  mRenterOccMovedIn1989earlier_&_years.
+  mRentOcc2017later_&_years. 
+  mRentOcc201516_&_years.
+  mRentOcc201014_&_years. 
+  mRentOcc200009_&_years. 
+  mRentOcc199099_&_years. 
+  mRentOcc1989earlier_&_years. 
 
-  mOwnerOcc1SubstCond_&_years. 
-  mOwnerOcc2SubstCond_&_years. 
-  mOwnerOcc3SubstCond_&_years. 
-  mOwnerOcc4SubstCond_&_years. 
-  mOwnerOcc0SubstCond_&_years. 
+  mOwnOcc1SubstCond_&_years. 
+  mOwnOcc2SubstCond_&_years. 
+  mOwnOcc3SubstCond_&_years. 
+  mOwnOcc4SubstCond_&_years. 
+  mOwnOcc0SubstCond_&_years. 
 
-  mRenterOcc1SubstCond_&_years.
-  mRenterOcc2SubstCond_&_years.
-  mRenterOcc3SubstCond_&_years. 
-  mRenterOcc4SubstCond_&_years. 
-  mRenterOcc0SubstCond_&_years.
+  mRentOcc1SubstCond_&_years.
+  mRentOcc2SubstCond_&_years.
+  mRentOcc3SubstCond_&_years. 
+  mRentOcc4SubstCond_&_years. 
+  mRentOcc0SubstCond_&_years.
 
   mOneSubstCond_&_years. 
   mTwoSubstCond_&_years. 
