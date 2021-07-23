@@ -698,7 +698,7 @@
   mNumwoAmbDiff_&_years. = %moe_sum(var=B18105m5 B18105m8 B18105m11 B18105m14 B18105m17 B18105m21 B18105m24 B18105m27 B18105m30 B18105m33);
 
   mNumwCogDiff_&_years. = %moe_sum(var=B18104m4 B18104m7 B18104m10 B18104m13 B18104m16 B18104m20 B18104m23 B18104m26 B18104m29 B18104m32);
-  mNumwoCogDiff_&_years. = %moe_sum(var=B18104m5 B18104m8 B18104m11 B18104m14 B18104m17 B18104m1 B18104m24 B18104m27 B18104m30 B18104m33);
+  mNumwoCogDiff_&_years. = %moe_sum(var=B18104m5 B18104m8 B18104m11 B18104m14 B18104m17 B1810421 B18104m24 B18104m27 B18104m30 B18104m33);
 
   mNumwVisDiff_&_years. = %moe_sum(var=B18103m4 B18103m7 B18103m10 B18103m13 B18103m16 B18103m20 B18103m23 B18103m26 B18103m29 B18103m32);
   mNumwoVisDiff_&_years. = %moe_sum(var=B18103m5 B18103m8 B18103m11 B18103m14 B18103m17 B18103m21 B18103m24 B18103m27 B18103m30 B18103m33);
@@ -852,11 +852,11 @@
 								  C23002Cm17 C23002Dm17 C23002Em17 C23002Fm17 C23002Gm17
 								  C23002Cm24 C23002Dm24 C23002Em24 C23002Fm24 C23002Gm24);
 
-  mPubTranstoWorkW_&_years. = B08105Hm4;
-  mPubTranstoWorkB_&_years. = B08105Bm4;
-  mPubTranstoWorkA_&_years. = B08105Dm4;
-  mPubTranstoWorkH_&_years. = B08105Im4;
-  mPubTranstoWorkAIOM_&_years. = %moe_sum(var=B08105Cm4 B08105Dm4 B08105Em4 B08105Fm4 B08105Gm4);
+  mPubTranstoWorkW__&_years. = B08105Hm4;
+  mPubTranstoWorkB__&_years. = B08105Bm4;
+  mPubTranstoWorkA__&_years. = B08105Dm4;
+  mPubTranstoWorkH__&_years. = B08105Im4;
+  mPubTranstoWorkAIOM__&_years. = %moe_sum(var=B08105Cm4 B08105Dm4 B08105Em4 B08105Fm4 B08105Gm4);
 
   mPubTranstoWork_&_years. = %moe_sum(var=B08105Be4 B08105Ce4 B08105De4 B08105Ee4 B08105Fe4 B08105Ge4 B08105He4);
 
@@ -1107,7 +1107,7 @@
   NumwoAmbDiff_&_years. = "Number of people not experiencing ambulatory difficulties, &_years_dash"
 
   mNumwAmbDiff_&_years. = "Number of people experiencing ambulatory difficulties, MOE, &_years_dash"
-  mNumwoAmbDiff_&_years. = "Number of people not experiencing ambulatory difficulties, MOE, &_years_dash"
+  mNumwoAmbuDiff_&_years. = "Number of people not experiencing ambulatory difficulties, MOE, &_years_dash"
 
   NumwCogDiff_&_years. = "Number of people experiencing cognitive difficulties, &_years_dash"
   NumwoCogDiff_&_years. = "Number of people not experiencing cognitive difficulties, &_years_dash"
@@ -1341,7 +1341,7 @@
 
   OwnOcc2017later_&_years. = "Owner-occupied unit to which tenant moved in 2017 or later, &_years_dash"
   OwnOcc201516_&_years. = "Owner-occupied unit to which tenant moved between 2015 and 2016, &_years_dash"
-  OwnOcc201014_&_years. = "Owner-occupied unit to which tenant moved between 2010 and 2014, &_years_dash"
+  OwneOcc201014_&_years. = "Owner-occupied unit to which tenant moved between 2010 and 2014, &_years_dash"
   OwnOcc200009_&_years. = "Owner-occupied unit to which tenant moved between 2000 and 2009, &_years_dash"
   OwnOcc199099_&_years. = "Owner-occupied unit to which tenant moved between 1990 and 1999, &_years_dash"
   OwnOcc1989earlier_&_years. = "Owner-occupied unit to which tenant moved in 1989 or earlier, &_years_dash"
@@ -1383,7 +1383,7 @@
   mOwnOcc2SubstCond_&_years. = "Owner-occ house with two selected substandard conditions, MOE, &_years_dash"
   mOwnOcc3SubstCond_&_years. = "Owner-occ house with three selected substandard conditions, MOE, &_years_dash"
   mOwnOcc4SubstCond_&_years. = "Owner-occ house with four selected substandard conditions, MOE, &_years_dash"
-  mOwnOcc0SubstCond_&_years. = "Owner-occ house with no selected substandard conditions, MOE, &_years_dash"
+  mOwnerOcc0SubstCond_&_years. = "Owner-occ house with no selected substandard conditions, MOE, &_years_dash"
 
   mRentOcc1SubstCond_&_years = "Renter-occ house with one selected substandard condition, MOE, &_years_dash"
   mRentOcc2SubstCond_&_years = "Renter-occ house with two selected substandard conditions, MOE, &_years_dash"
@@ -1415,17 +1415,17 @@
   mInLaborForceH_&_years. = "Count of Hispanic or Latino in labor force, MOE, &_years_dash"
   mInLaborForceAIOM_&_years. = "Count of not white alone, Black alone, Asian alone, or Hispanic/Latino in labor force, MOE, &_years_dash"
 
-  PubTranstoWorkW_&_years. = "White alone people who take public transportation to work, &_years_dash"
-  PubTranstoWorkB_&_years. = "Black or African American alone people who take public transportation to work, &_years_dash"
-  PubTranstoWorkA_&_years. = "Asian alone people who take public transportation to work, &_years_dash"
-  PubTranstoWorkH_&_years. = "Hispanic/Latino people who take public transportation to work, &_years_dash"
-  PubTranstoWorkAIOM_&_years. = "People who are not white alone, Black or African American alone, Asian alone, or Hispanic/Latino who take public transportation to work, &_years_dash"
+  PubTranstoWorkW__&_years. = "White alone people who take public transportation to work, &_years_dash"
+  PubTranstoWorkB__&_years. = "Black or African American alone people who take public transportation to work, &_years_dash"
+  PubTranstoWorkA__&_years. = "Asian alone people who take public transportation to work, &_years_dash"
+  PubTranstoWorkH__&_years. = "Hispanic/Latino people who take public transportation to work, &_years_dash"
+  PubTranstoWorkAIOM__&_years. = "People who are not white alone, Black or African American alone, Asian alone, or Hispanic/Latino who take public transportation to work, &_years_dash"
 
-  mPubTranstoWorkW_&_years. = "White alone people who take public transportation to work, MOE, &_years_dash"
-  mPubTranstoWorkB_&_years. = "Black or African American alone people who take public transportation to work, MOE, &_years_dash"
-  mPubTranstoWorkA_&_years. = "Asian alone people who take public transportation to work, MOE, &_years_dash"
-  mPubTranstoWorkH_&_years. = "Hispanic/Latino people who take public transportation to work, MOE, &_years_dash"
-  mPubTranstoWorkAIOM_&_years. = "People who are not white alone, Black or African American alone, Asian alone, or Hispanic/Latino who take public transportation to work, MOE, &_years_dash"
+  mPubTranstoWorkW__&_years. = "White alone people who take public transportation to work, MOE, &_years_dash"
+  mPubTranstoWorkB__&_years. = "Black or African American alone people who take public transportation to work, MOE, &_years_dash"
+  mPubTranstoWorkA__&_years. = "Asian alone people who take public transportation to work, MOE, &_years_dash"
+  mPubTranstoWorkH__&_years. = "Hispanic/Latino people who take public transportation to work, MOE, &_years_dash"
+  mPubTranstoWorkAIOM__&_years. = "People who are not white alone, Black or African American alone, Asian alone, or Hispanic/Latino who take public transportation to work, MOE, &_years_dash"
 
   PubTranstoWork_&_years. = "People who take public transportation to work, &_years_dash"
   mPubTranstoWork_&_years. = "People who take public transportation to work, MOE, &_years_dash"

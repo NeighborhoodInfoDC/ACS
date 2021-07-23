@@ -103,7 +103,6 @@
   2/21/19 YS added B28002 B28003 B28005 B28008 B28011
   02/22/19 PT Added B19001A. 
   12/16/20 RP Added B98001 B98002 B98003 which replace B00001 and B00002
-  7/22/21 ALH added tables for Regional AI
  
 **************************************************************************/
 
@@ -162,8 +161,7 @@
 	B17017 B25071 B18107 B18140 B23024 B18135 C18120 B08303 C25074 B25092 C25095 B25118 B25038 B25123 B08105H
 	B08105B B08105D B08105I B08105C B08105E B08105F B08105G
 
-/*	Regional AI tables*/
-	B18107 B18101H B18101B B18101D B18101E B18101I B18101C C25074 C25095 B18104 B181032 B18101 
+
 ,
   
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from all data sets **/
