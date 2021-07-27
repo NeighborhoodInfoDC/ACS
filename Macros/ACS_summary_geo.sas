@@ -733,35 +733,14 @@
   	mCommute60_89_&_years. 
   	mCommunity90M_&_years. 
 
-  mRentBurUnder10K_&_years. 
-  mNRentBurUnder10K_&_years. 
-  mRentBur10199K_&_years. 
-  mNRentBur10199K_&_years. 
-  mRentBur20349K_&_years.
-  mNRentBur20349K_&_years. 
-  mRentBur35499K_&_years.
-  mNRentBur35499K_&_years. 
-  mRentBur50749K_&_years. 
-  mNRentBur50749K_&_years. 
-  mRentBur75KMore_&_years.
-  mNRentBur75KMore_&_years. 
+  mRentBur_&_years. 
+  mNRentBur_&_years. 
 
   mMOwnerCostsPctHHInc_&_years. 
 
-  mCostBurUnder10K_&_years.
-  mNCostBurUnder10K_&_years. 
-  mCostBur10199K_&_years. 
-  mNCostBur10199K_&_years.
-  mCostBur20349K_&_years. 
-  mNCostBur20349K_&_years. 
-  mCostBur35499K_&_years. 
-  mNCostBur35499K_&_years. 
-  mCostBur50749K_&_years. 
-  mNCostBur50749K_&_years. 
-  mCostBur75999K_&_years. 
-  mNCostBur75999K_&_years. 
-  mCostBur100KMore_&_years. 
-  mNCostBur100KMore_&_years. 
+  mCostBur_&_years.
+  mNCostBur_&_years. 
+  
 
   mOwnOccHHIncL5K_&_years. 
   mOwnOccHHInc5999K_&_years.
@@ -825,11 +804,11 @@
   mInLaborForceH_&_years. 
   mInLaborForceAIOM_&_years. 
 
-  mPubTranstoWorkW__&_years.
-  mPubTranstoWorkB__&_years. 
-  mPubTranstoWorkA__&_years. 
-  mPubTranstoWorkH__&_years.
-  mPubTranstoWorkAIOM__&_years. 
+  mPubTranstoWorkW_&_years.
+  mPubTranstoWorkB_&_years. 
+  mPubTranstoWorkA_&_years. 
+  mPubTranstoWorkH_&_years.
+  mPubTranstoWorkAIOM_&_years. 
 
   mPubTranstoWork_&_years. 
 
