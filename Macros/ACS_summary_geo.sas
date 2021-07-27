@@ -180,7 +180,7 @@
      
      /*for regional AI */
 	   Disability: InPov: NotInPov: SingFam: Med: AvgHH: GRent:
-	   IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce_: Numw: MedEarnings: Disability:
+	   IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce: Numw: MedEarnings: Disability:
 	   NoDisability: Commute: RentBur: NRentBur: CostBur: NCostBur:
 	   OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
 	   PubTrans: Own: Rent: MOwner:
