@@ -265,7 +265,7 @@
   NumwoAmbDiff_&_years. = sum(B18105e5, B18105e8, B18105e11, B18105e14, B18105e17, B18105e21, B18105e24, B18105e27, B18105e30, B18105e33);
 
   NumwCogDiff_&_years. = sum(B18104e4, B18104e7, B18104e10, B18104e13, B18104e16, B18104e20, B18104e23, B18104e26, B18104e29, B18104e32);
-  NumwoCognitiveDiff_&_years. = sum(B18104e5, B18104e8, B18104e11, B18104e14, B18104e17, B18104e21, B18104e24, B18104e27, B18104e30, B18104e33);
+  NumwoCogDiff_&_years. = sum(B18104e5, B18104e8, B18104e11, B18104e14, B18104e17, B18104e21, B18104e24, B18104e27, B18104e30, B18104e33);
   	
   NumwVisDiff_&_years. = sum(B18103e4, B18103e7, B18103e10, B18103e13, B18103e16, B18103e20, B18103e23, B18103e26, B18103e29, B18103e32);
   NumwoVisDiff_&_years. = sum(B18103e5, B18103e8, B18103e11, B18103e14, B18103e17, B18103e21, B18103e24, B18103e27, B18103e30, B18103e33);
@@ -276,8 +276,8 @@
   NumwSelfCareDiff_&_years. = sum(B18106e4, B18106e7, B18106e10, B18106e13, B18106e16, B18106e20, B18106e23, B18106e26, B18106e29, B18106e32);
   NumwoSelfCareDiff_&_years. = sum(B18106e5, B18106e8, B18106e11, B18106e14, B18106e17, B18106e21, B18106e24, B18106e27, B18106e30, B18106e33);
   
-  NumwIndepLivingDiff_&_years. = sum(B18107e4, B18107e7, B18107e10, B18107e13, B18107e16, B18107e20, B18107e23, B18107e26, B18107e29, B18107e32);
-  NumwoIndepLivingDiff_&_years. = sum(B18107e5, B18107e8, B18107e11, B18107e14, B18107e17, B18107e21, B18107e24, B18107e27, B18107e30, B18107e33);
+  NumwIndepLivingDiff_&_years. = sum(B18107e4, B18107e7, B18107e10, B18107e13, B18107e16, B18107e20, B18107e23, B18107e26);
+  NumwoIndepLivingDiff_&_years. = sum(B18107e5, B18107e8, B18107e11, B18107e14, B18107e17, B18107e21, B18107e24, B18107e27);
   
   MedEarningswDisab_&_years. = B18140e2;
   MedEarningswoDisab_&_years. = B18140e5;
@@ -324,35 +324,19 @@
   Commute60_89_&_years. = B08303e12;
   Community90M_&_years. = B08303e13;
 
-  RentBurUnder10K_&_years. = C25074e4;
-  NRentBurUnder10K_&_years. = C25074e3;
-  RentBur10199K_&_years. = C25074e8;
-  NRentBur10199K_&_years. = C25074e7;
-  RentBur20349K_&_years. = C25074e12;
-  NRentBur20349K_&_years. = C25074e11;
-  RentBurd35499K_&_years. = C25074e16;
-  NRentBur35499K_&_years. = C25074e15;
-  RentBur50749K_&_years. = C25074e20;
-  NRentBur50749K_&_years. = C25074e19;
-  RentBur75KMore_&_years. = C25074e24;
-  NRentBur75KMore_&_years. = C25074e23;
+  RentBur_&_years. = sum(B25070e2, B25070e3, B25070e4, B25070e5, B25070e6);
+  NRentBur_&_years. = sum(B25070e7, B25070e8, B25070e9, B25070e10);
+  
 
   MOwnerCostsPctHHInc_&_years. = B25092e1;
 
-  CostBurUnder10K_&_years. = C25095e4;
-  NCostBurUnder10K_&_years. = C25095e3;
-  CostBur10199K_&_years. = C25095e8;
-  NCostBur10199K_&_years. = C25095e7;
-  CostBur20349K_&_years. = C25095e12;
-  NCostBur20349K_&_years. = C25095e11;
-  CostBur35499K_&_years. = C25095e16;
-  NCostBur35499K_&_years. = C25095e15;
-  CostBur50749K_&_years. = C25095e20;
-  NCostBur50749K_&_years. = C25095e19;
-  CostBur75999K_&_years. = C25095e24;
-  NCostBur75999K_&_years. = C25095e23;
-  CostBur100KMore_&_years. = C25095e28;
-  NCostBur100KMore_&_years. = C25095e27;
+  CostBur_&_years. = sum(B25095e3, B25095e4, B25095e5, B25095e12, B25095e13, B25095e14, B25095e21, B25095e22, B25095e23,
+  B25095e30, B25095e31, B25095e32, B25095e39, B25095e40, B25095e41, B25095e48, B25095e49, B25095e50, B25095e57, B25095e58, B25095e59,
+  B25095e66, B25095e67, B25095e68);
+  NCostBur_&_years. = sum(B25095e6, B25095e7, B25095e8, B25095e9, B25095e15, B25095e16, B25095e17, B25095e18, B25095e24, B25095e25, B25095e26, B25095e27,
+  B25095e33, B25095e34, B25095e35, B25095e36, B25095e42, B25095e43, B25095e44, B25095e45, B25095e51, B25095e52, B25095e53, B25095e54, B25095e60, B25095e61, B25095e62, B25095e63,
+  B25095e69, B25095e70, B25095e71, B25095e72);
+ 
 
   OwnOccHHIncL5K_&_years. = B25118e3;
   OwnOccHHInc5999K_&_years. = B25118e4;
@@ -698,19 +682,19 @@
   mNumwoAmbDiff_&_years. = %moe_sum(var=B18105m5 B18105m8 B18105m11 B18105m14 B18105m17 B18105m21 B18105m24 B18105m27 B18105m30 B18105m33);
 
   mNumwCogDiff_&_years. = %moe_sum(var=B18104m4 B18104m7 B18104m10 B18104m13 B18104m16 B18104m20 B18104m23 B18104m26 B18104m29 B18104m32);
-  mNumwoCogDiff_&_years. = %moe_sum(var=B18104m5 B18104m8 B18104m11 B18104m14 B18104m17 B1810421 B18104m24 B18104m27 B18104m30 B18104m33);
+  mNumwoCogDiff_&_years. = %moe_sum(var=B18104m5 B18104m8 B18104m11 B18104m14 B18104m17 B18104m21 B18104m24 B18104m27 B18104m30 B18104m33);
 
   mNumwVisDiff_&_years. = %moe_sum(var=B18103m4 B18103m7 B18103m10 B18103m13 B18103m16 B18103m20 B18103m23 B18103m26 B18103m29 B18103m32);
   mNumwoVisDiff_&_years. = %moe_sum(var=B18103m5 B18103m8 B18103m11 B18103m14 B18103m17 B18103m21 B18103m24 B18103m27 B18103m30 B18103m33);
   
   mNumwHearDiff_&_years. = %moe_sum(var=B18102m4 B18102m7 B18102m10 B18102m13 B18102m16 B18102m20 B18102m23 B18102m26 B18102m29 B18102m32);
-  mNumwoHearDiff_&_years. = %moe_sum(var=B18102m5 B18102m8 B181032m11 B18102m14 B18102m17 B18102m21 B18102m24 B18102m27 B18102m30 B18102m33);
+  mNumwoHearDiff_&_years. = %moe_sum(var=B18102m5 B18102m8 B18102m11 B18102m14 B18102m17 B18102m21 B18102m24 B18102m27 B18102m30 B18102m33);
   
   mNumwSelfCareDiff_&_years. = %moe_sum(var=B18106m4 B18106m7 B18106m10 B18106m13 B18106m16 B18106m20 B18106m23 B18106m26 B18106m29 B18106m32);
   mNumwoSelfCareDiff_&_years. = %moe_sum(var=B18106m5 B18106m8 B18106m11 B18106m14 B18106m17 B18106m21 B18106m24 B18106m27 B18106m30 B18106m33);
   
-  mNumwIndepLivingDiff_&_years. = %moe_sum(var=B18107m4 B18107m7 B18107m10 B18107m13 B18107m16 B18107m20 B18107m23 B18107m26 B18107m29 B18107m32);
-  mNumwoIndepLivingDiff_&_years. = %moe_sum(var=B18107m5 B18107m8 B18107m11 B18107m14 B18107m17 B18107m21 B18107m24 B18107m27 B18107m30 B18107m33);
+  mNumwIndepLivingDiff_&_years. = %moe_sum(var=B18107m4 B18107m7 B18107m10 B18107m13 B18107m16 B18107m20 B18107m23 B18107m26);
+  mNumwoIndepLivingDiff_&_years. = %moe_sum(var=B18107m5 B18107m8 B18107m11 B18107m14 B18107m17 B18107m21 B18107m24 B18107m27);
 
   mMedEarningswDisab_&_years. = B18140m2;
   mMedEarningswoDisab_&_years. = B18140m5;
@@ -757,35 +741,19 @@
   mCommute60_89_&_years. = B08303m12;
   mCommunity90M_&_years. = B08303m13;
 
-  mRentBurUnder10K_&_years. = C25074m4;
-  mNRentBurUnder10K_&_years. = C25074m3;
-  mRentBur10199K_&_years. = C25074m8;
-  mNRentBur10199K_&_years. = C25074m7;
-  mRentBur20349K_&_years. = C25074m12;
-  mNRentBur20349K_&_years. = C25074m11;
-  mRentBur35499K_&_years. = C25074m16;
-  mNRentBur35499K_&_years. = C25074m15;
-  mRentBur50749K_&_years. = C25074m20;
-  mNRentBur50749K_&_years. = C25074m19;
-  mRentBur75KMore_&_years. = C25074m24;
-  mNRentBur75KMore_&_years. = C25074m23;
+  mRentBur_&_years. = %moe_sum(var=B25070m2 B25070m3 B25070m4 B25070m5 B25070m6);
+  mNRentBur_&_years. = %moe_sum(var=B25070m7 B25070m8 B25070m9 B25070m10);
+  
 
   mMOwnerCostsPctHHInc_&_years. = B25092m1;
 
-  mCostBurUnder10K_&_years. = C25095m4;
-  mNCostBurUnder10K_&_years. = C25095m3;
-  mCostBur10199K_&_years. = C25095m8;
-  mNCostBur10199K_&_years. = C25095m7;
-  mCostBur20349K_&_years. = C25095m12;
-  mNCostBur20349K_&_years. = C25095m11;
-  mCostBur35499K_&_years. = C25095m16;
-  mNCostBur35499K_&_years. = C25095m15;
-  mCostBur50749K_&_years. = C25095m20;
-  mNCostBur50749K_&_years. = C25095m19;
-  mCostBur75999K_&_years. = C25095m24;
-  mNCostBur75999K_&_years. = C25095m23;
-  mCostBur100KMore_&_years. = C25095m28;
-  mNCostBur100KMore_&_years. = C25095m27;
+  mCostBur_&_years. = %moe_sum(var=B25095m3 B25095m4 B25095m5 B25095m12 B25095m13 B25095m14 B25095m21 B25095m22 B25095m23
+  B25095m30 B25095m31 B25095m32 B25095m39 B25095m40 B25095m41 B25095m48 B25095m49 B25095m50 B25095m57 B25095m58 B25095m59
+  B25095m66 B25095m67 B25095m68);
+  mNCostBur_&_years. = %moe_sum(var=B25095m6 B25095m7 B25095m8 B25095m9 B25095m15 B25095m16 B25095m17 B25095m18 B25095m24 B25095m25 B25095m26 B25095m27
+  B25095m33 B25095m34 B25095m35 B25095m36 B25095m42 B25095m43 B25095m44 B25095m45 B25095m51 B25095m52 B25095m53 B25095m54 B25095m60 B25095m61 B25095m62 B25095m63
+  B25095m69 B25095m70 B25095m71 B25095m72);
+  
 
   mOwnOccHHIncL5K_&_years. = B25118m3;
   mOwnOccHHInc5999K_&_years. = B25118m4;
@@ -852,11 +820,11 @@
 								  C23002Cm17 C23002Dm17 C23002Em17 C23002Fm17 C23002Gm17
 								  C23002Cm24 C23002Dm24 C23002Em24 C23002Fm24 C23002Gm24);
 
-  mPubTranstoWorkW__&_years. = B08105Hm4;
-  mPubTranstoWorkB__&_years. = B08105Bm4;
-  mPubTranstoWorkA__&_years. = B08105Dm4;
-  mPubTranstoWorkH__&_years. = B08105Im4;
-  mPubTranstoWorkAIOM__&_years. = %moe_sum(var=B08105Cm4 B08105Dm4 B08105Em4 B08105Fm4 B08105Gm4);
+  mPubTranstoWorkW_&_years. = B08105Hm4;
+  mPubTranstoWorkB_&_years. = B08105Bm4;
+  mPubTranstoWorkA_&_years. = B08105Dm4;
+  mPubTranstoWorkH_&_years. = B08105Im4;
+  mPubTranstoWorkAIOM_&_years. = %moe_sum(var=B08105Cm4 B08105Dm4 B08105Em4 B08105Fm4 B08105Gm4);
 
   mPubTranstoWork_&_years. = %moe_sum(var=B08105Be4 B08105Ce4 B08105De4 B08105Ee4 B08105Fe4 B08105Ge4 B08105He4);
 
@@ -1107,7 +1075,7 @@
   NumwoAmbDiff_&_years. = "Number of people not experiencing ambulatory difficulties, &_years_dash"
 
   mNumwAmbDiff_&_years. = "Number of people experiencing ambulatory difficulties, MOE, &_years_dash"
-  mNumwoAmbuDiff_&_years. = "Number of people not experiencing ambulatory difficulties, MOE, &_years_dash"
+  mNumwoAmbDiff_&_years. = "Number of people not experiencing ambulatory difficulties, MOE, &_years_dash"
 
   NumwCogDiff_&_years. = "Number of people experiencing cognitive difficulties, &_years_dash"
   NumwoCogDiff_&_years. = "Number of people not experiencing cognitive difficulties, &_years_dash"
@@ -1232,64 +1200,24 @@
   mCommute60_89_&_years. = "Householder's commute to work is between 60 and 89 minutes, MOE, &_years_dash"
   mCommunity90M_&_years. = "Householder's commute to work is 90 minutes or longer, MOE, &_years_dash"
 
-  RentBurUnder10K_&_years. = "Household income under 10K, renter-occ, and rent burdened, &_years_dash"
-  NRentBurUnder10K_&_years. = "Household income under 10K, renter-occ, and not rent burdened, &_years_dash"
-  RentBur10199K_&_years. = "Household income between 10K and 19.9K, renter-occ, and rent burdened, &_years_dash"
-  NRentBur10199K_&_years. = "Household income between 10K and 19.9K, renter-occ, and not rent burdened, &_years_dash"
-  RentBur20349K_&_years. = "Household income between 20K and 34.9K, renter-occ, and rent burdened, &_years_dash"
-  NRentBur20349K_&_years. = "Household income between 20K and 34.9K, renter-occ, and not rent burdened, &_years_dash"
-  RentBur35499K_&_years. = "Household income between 35K and 49.9K, renter-occ, and rent burdened, &_years_dash"
-  NRentBur35499K_&_years. = "Household income between 35K and 49.9K, renter-occ, and not rent burdened, &_years_dash"
-  RentBur50749K_&_years. = "Household income between 50K and 74.9K, renter-occ, and rent burdened, &_years_dash"
-  NRentBur50749K_&_years. = "Household income between 50K and 74.9K, renter-occ, and not rent burdened, &_years_dash"
-  RentBur75KMore_&_years. = "Household income 75K or more, renter-occ, and rent burdened, &_years_dash"
-  NRentBur75KMore_&_years. = "Household income 75K or more, renter-occ, and not rent burdened, &_years_dash"
+  RentBur_&_years. = "Renter-occ and rent burdened, &_years_dash"
+  NRentBur_&_years. = "Renter-occ and not rent burdened, &_years_dash"
+  
 
-  mRentBurUnder10K_&_years. = "Household income under 10K, renter-occ, and rent burdened, MOE, &_years_dash"
-  mNRentBurUnder10K_&_years. = "Household income under 10K, renter-occ, and not rent burdened, MOE, &_years_dash"
-  mRentBur10199K_&_years. = "Household income between 10K and 19.9K, renter-occ, and rent burdened, MOE, &_years_dash"
-  mNRentBur10199K_&_years. = "Household income between 10K and 19.9K, renter-occ, and not rent burdened, MOE, &_years_dash"
-  mRentBur20349K_&_years. = "Household income between 20K and 34.9K, renter-occ, and rent burdened, MOE, &_years_dash"
-  mNRentBur20349K_&_years. = "Household income between 20K and 34.9K, renter-occ, and not rent burdened, MOE, &_years_dash"
-  mRentBur35499K_&_years. = "Household income between 35K and 49.9K, renter-occ, and rent burdened, MOE, &_years_dash"
-  mNRentBur35499K_&_years. = "Household income between 35K and 49.9K, renter-occ, and not rent burdened, MOE, &_years_dash"
-  mRentBur50749K_&_years. = "Household income between 50K and 74.9K, renter-occ, and rent burdened, MOE, &_years_dash"
-  mNRentBur50749K_&_years. = "Household income between 50K and 74.9K, renter-occ, and not rent burdened, MOE, &_years_dash"
-  mRentBur75KMore_&_years. = "Household income 75K or more, renter-occ, and rent burdened, MOE, &_years_dash"
-  mNRentBur75KMore_&_years. = "Household income 75K or more, renter-occ, and not rent burdened, MOE, &_years_dash"
+  mRentBur_&_years. = "Renter-occ and rent burdened, MOE, &_years_dash"
+  mNRentBur_&_years. = "Renter-occ and not rent burdened, MOE, &_years_dash"
+ 
 
   MOwnerCostsPctHHInc_&_years. = "Median monthly owner costs as a percentage of household income, &_years_dash"
   mMOwnerCostsPctHHInc_&_years. = "Median monthly owner costs as a percentage of household income, MOE, &_years_dash"
 
-  CostBurUnder10K_&_years. = "Household income under 10K, owner-occ, and cost burdened, &_years_dash"
-  NCostBurUnder10K_&_years. = "Household income under 10K, owner-occ, and not cost burdened, &_years_dash"
-  CostBur10199K_&_years. = "Household income between 10K, owner-occ, and 19.9K and cost burdened, &_years_dash"
-  NCostBur10199K_&_years. = "Household income between 10K, owner-occ, and 19.9K and not cost burdened, &_years_dash"
-  CostBur20349K_&_years. = "Household income between 20K, owner-occ, and 34.9K and cost burdened, &_years_dash"
-  NCostBur20349K_&_years. = "Household income between 20K, owner-occ, and 34.9K and not cost burdened, &_years_dash"
-  CostBur35499K_&_years. = "Household income between 35K, owner-occ, and 49.9K and cost burdened, &_years_dash"
-  NCostBur35499K_&_years. = "Household income between 35K, owner-occ, and 49.9K and not cost burdened, &_years_dash"
-  CostBur50749K_&_years. = "Household income between 50K and 74.9K, owner-occ, and cost burdened, &_years_dash"
-  NCostBur50749K_&_years. = "Household income between 50K and 74.9K, owner-occ, and not cost burdened, &_years_dash"
-  CostBur75999K_&_years. = "Household income between 75K and 99.9K, owner-occ, and cost burdened, &_years_dash"
-  NCostBur75999K_&_years. = "Household income between 75K and 99.9K, not owner-occ, and cost burdened, &_years_dash"
-  CostBur100KMore_&_years. = "Household income 100K and over, owner-occ, and cost burdened, &_years_dash"
-  NCostBur100KMore_&_years. = "Household income 100K and over, owner-occ, and not cost burdened, &_years_dash"
+  CostBur_&_years. = "Owner-occ and cost burdened, &_years_dash"
+  NCostBur_&_years. = "Owner-occ and not cost burdened, &_years_dash"
+  
 
-  mCostBurUnder10K_&_years. = "Household income under 10K, owner-occ, and cost burdened, MOE, &_years_dash"
-  mNCostBurUnder10K_&_years. = "Household income under 10K, owner-occ, and not cost burdened, MOE, &_years_dash"
-  mCostBur10199K_&_years. = "Household income between 10K, owner-occ, and 19.9K and cost burdened, MOE, &_years_dash"
-  mNCostBur10199K_&_years. = "Household income between 10K, owner-occ, and 19.9K and not cost burdened, MOE, &_years_dash"
-  mCostBur20349K_&_years. = "Household income between 20K, owner-occ, and 34.9K and cost burdened, MOE, &_years_dash"
-  mNCostBur20349K_&_years. = "Household income between 20K, owner-occ, and 34.9K and not cost burdened, MOE, &_years_dash"
-  mCostBur35499K_&_years. = "Household income between 35K, owner-occ, and 49.9K and cost burdened, MOE, &_years_dash"
-  mNCostBur35499K_&_years. = "Household income between 35K, owner-occ, and 49.9K and not cost burdened, MOE, &_years_dash"
-  mCostBur50749K_&_years. = "Household income between 50K and 74.9K, owner-occ, and cost burdened, MOE, &_years_dash"
-  mNCostBur50749K_&_years. = "Household income between 50K and 74.9K, owner-occ, and not cost burdened, MOE, &_years_dash"
-  mCostBur75999K_&_years. = "Household income between 75K and 99.9K, owner-occ, and cost burdened, MOE, &_years_dash"
-  mNCostBur75999K_&_years. = "Household income between 75K and 99.9K, not owner-occ, and cost burdened, MOE, &_years_dash"
-  mCostBur100KMore_&_years. = "Household income 100K and over, owner-occ, and cost burdened, MOE, &_years_dash"
-  mNCostBur100KMore_&_years. = "Household income 100K and over, owner-occ, and not cost burdened, MOE, &_years_dash"
+  mCostBur_&_years. = "Owner-occ and cost burdened, MOE, &_years_dash"
+  mNCostBur_&_years. = "Owner-occ and cost burdened, MOE, &_years_dash"
+  
 
   OwnOccHHIncL5K_&_years. = "Household income less than 5K and owner-occ, &_years_dash"
   OwnOccHHInc5999K_&_years. = "Household income between 5K and 9.99K and owner-occ, &_years_dash"
@@ -1341,7 +1269,7 @@
 
   OwnOcc2017later_&_years. = "Owner-occupied unit to which tenant moved in 2017 or later, &_years_dash"
   OwnOcc201516_&_years. = "Owner-occupied unit to which tenant moved between 2015 and 2016, &_years_dash"
-  OwneOcc201014_&_years. = "Owner-occupied unit to which tenant moved between 2010 and 2014, &_years_dash"
+  OwnOcc201014_&_years. = "Owner-occupied unit to which tenant moved between 2010 and 2014, &_years_dash"
   OwnOcc200009_&_years. = "Owner-occupied unit to which tenant moved between 2000 and 2009, &_years_dash"
   OwnOcc199099_&_years. = "Owner-occupied unit to which tenant moved between 1990 and 1999, &_years_dash"
   OwnOcc1989earlier_&_years. = "Owner-occupied unit to which tenant moved in 1989 or earlier, &_years_dash"
@@ -1383,7 +1311,7 @@
   mOwnOcc2SubstCond_&_years. = "Owner-occ house with two selected substandard conditions, MOE, &_years_dash"
   mOwnOcc3SubstCond_&_years. = "Owner-occ house with three selected substandard conditions, MOE, &_years_dash"
   mOwnOcc4SubstCond_&_years. = "Owner-occ house with four selected substandard conditions, MOE, &_years_dash"
-  mOwnerOcc0SubstCond_&_years. = "Owner-occ house with no selected substandard conditions, MOE, &_years_dash"
+  mOwnOcc0SubstCond_&_years. = "Owner-occ house with no selected substandard conditions, MOE, &_years_dash"
 
   mRentOcc1SubstCond_&_years = "Renter-occ house with one selected substandard condition, MOE, &_years_dash"
   mRentOcc2SubstCond_&_years = "Renter-occ house with two selected substandard conditions, MOE, &_years_dash"
@@ -1415,17 +1343,17 @@
   mInLaborForceH_&_years. = "Count of Hispanic or Latino in labor force, MOE, &_years_dash"
   mInLaborForceAIOM_&_years. = "Count of not white alone, Black alone, Asian alone, or Hispanic/Latino in labor force, MOE, &_years_dash"
 
-  PubTranstoWorkW__&_years. = "White alone people who take public transportation to work, &_years_dash"
-  PubTranstoWorkB__&_years. = "Black or African American alone people who take public transportation to work, &_years_dash"
-  PubTranstoWorkA__&_years. = "Asian alone people who take public transportation to work, &_years_dash"
-  PubTranstoWorkH__&_years. = "Hispanic/Latino people who take public transportation to work, &_years_dash"
-  PubTranstoWorkAIOM__&_years. = "People who are not white alone, Black or African American alone, Asian alone, or Hispanic/Latino who take public transportation to work, &_years_dash"
+  PubTranstoWorkW_&_years. = "White alone people who take public transportation to work, &_years_dash"
+  PubTranstoWorkB_&_years. = "Black or African American alone people who take public transportation to work, &_years_dash"
+  PubTranstoWorkA_&_years. = "Asian alone people who take public transportation to work, &_years_dash"
+  PubTranstoWorkH_&_years. = "Hispanic/Latino people who take public transportation to work, &_years_dash"
+  PubTranstoWorkAIOM_&_years. = "People who are not white alone, Black or African American alone, Asian alone, or Hispanic/Latino who take public transportation to work, &_years_dash"
 
-  mPubTranstoWorkW__&_years. = "White alone people who take public transportation to work, MOE, &_years_dash"
-  mPubTranstoWorkB__&_years. = "Black or African American alone people who take public transportation to work, MOE, &_years_dash"
-  mPubTranstoWorkA__&_years. = "Asian alone people who take public transportation to work, MOE, &_years_dash"
-  mPubTranstoWorkH__&_years. = "Hispanic/Latino people who take public transportation to work, MOE, &_years_dash"
-  mPubTranstoWorkAIOM__&_years. = "People who are not white alone, Black or African American alone, Asian alone, or Hispanic/Latino who take public transportation to work, MOE, &_years_dash"
+  mPubTranstoWorkW_&_years. = "White alone people who take public transportation to work, MOE, &_years_dash"
+  mPubTranstoWorkB_&_years. = "Black or African American alone people who take public transportation to work, MOE, &_years_dash"
+  mPubTranstoWorkA_&_years. = "Asian alone people who take public transportation to work, MOE, &_years_dash"
+  mPubTranstoWorkH_&_years. = "Hispanic/Latino people who take public transportation to work, MOE, &_years_dash"
+  mPubTranstoWorkAIOM_&_years. = "People who are not white alone, Black or African American alone, Asian alone, or Hispanic/Latino who take public transportation to work, MOE, &_years_dash"
 
   PubTranstoWork_&_years. = "People who take public transportation to work, &_years_dash"
   mPubTranstoWork_&_years. = "People who take public transportation to work, MOE, &_years_dash"
