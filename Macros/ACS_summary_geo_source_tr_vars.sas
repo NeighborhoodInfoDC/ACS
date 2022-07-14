@@ -1792,6 +1792,37 @@
           C23002Fe7, C23002Fe12, C23002Fe20, C23002Fe25, 
           C23002Ge7, C23002Ge12, C23002Ge20, C23002Ge25 );
 
+      /*gender*/
+      PopEmployedB_M_&_years. = sum(C23002B_005,C23002B_007,C23002B_012);
+	  PopEmployedB_F_&_years. = sum(C23002B_018, C23002B_020, C23002B_025 );
+
+      PopEmployedW_M_&_years. = sum(C23002H_005,C23002H_007,C23002H_012);
+	  PopEmployedW_F_&_years. = sum(C23002H_018,C23002H_020,C23002H_025);
+
+      PopEmployedH_M_&_years. = sum(C23002I_005,C23002I_007,C23002I_012 );
+	  PopEmployedH_F_&_years. = sum(C23002I_018,C23002I_020,C23002I_025 );
+
+      PopEmployedA_M_&_years. = sum(C23002D_005,C23002D_007,C23002D_012);
+
+	 PopEmployedA_F_&_years. = sum(C23002D_018, C23002D_020, C23002D_025 );
+
+      PopEmployedIOM_M_&_years. = sum(C23002C_005,C23002C_007,C23002C_012);
+      PopEmployedIOM_F_&_years. = sum(C23002C_018, C23002C_020, C23002C_025 );
+
+      PopEmployedAIOM_M_&_years. = 
+        sum(C23002C_005,C23002C_007,C23002C_012,
+          C23002D_005,C23002D_007,C23002D_012, 
+          C23002E_005,C23002E_007,C23002E_012, 
+          C23002F_005,C23002F_007,C23002F_012, 
+          C23002G_005,C23002G_007,C23002G_012 );
+
+      PopEmployedAIOM_F_&_years. = 
+        sum(C23002C_018, C23002C_020, C23002C_025 ,
+          C23002D_018, C23002D_020, C23002D_025 , 
+          C23002E_018, C23002E_020, C23002E_025 , 
+          C23002F_018, C23002F_020, C23002F_025 , 
+          C23002G_018, C23002G_020, C23002G_025 );
+
       PopUnemployed_&_years. = 
         sum( B23001e8, B23001e15, B23001e22, B23001e29, B23001e36, B23001e43, B23001e50, 
              B23001e57, B23001e64, B23001e71, B23001e76, B23001e81, B23001e86, 
@@ -1814,6 +1845,49 @@
           C23002Ee8, C23002Ee13, C23002Ee21, C23002Ee26, 
           C23002Fe8, C23002Fe13, C23002Fe21, C23002Fe26, 
           C23002Ge8, C23002Ge13, C23002Ge21, C23002Ge26 );
+
+/*gender*/
+      PopUnemployedB_M_&_years. = sum(C23002B_008, C23002B_013 );
+	  PopUnemployedB_F_&_years. = sum(C23002B_021, C23002B_026 );
+
+      PopUnemployedW_M_&_years. = sum(C23002H_008, C23002H_013 );
+	  PopUnemployedW_F_&_years. = sum(C23002H_021, C23002H_026 );
+
+      PopUnemployedH_M_&_years. = sum(C23002I_008, C23002I_013 );
+	  PopUnemployedH_F_&_years. = sum(C23002I_021, C23002I_026  );
+
+      PopUnemployedA_M_&_years. = 
+        sum(C23002D_008, C23002D_013,
+          C23002E_008, C23002E_013 );
+
+      PopUnemployedA_F_&_years. = 
+        sum(C23002D_021, C23002D_026, 
+          C23002E_021, C23002E_026 );
+
+      PopUnemployedIOM_M_&_years. = 
+        sum(C23002C_008, C23002C_013, 
+          C23002F_008, C23002F_013, 
+          C23002G_008, C23002G_013 );
+
+      PopUnemployedIOM_F_&_years. = 
+        sum(C23002C_021, C23002C_026, 
+          C23002F_021, C23002F_026, 
+          C23002G_021, C23002G_026 );
+
+      PopUnemployedAIOM_M_&_years. = 
+        sum(C23002D_008, C23002D_013,
+          C23002E_008, C23002E_013, 
+          C23002C_008, C23002C_013, 
+          C23002F_008, C23002F_013, 
+          C23002G_008, C23002G_013 );
+
+      PopUnemployedAIOM_F_&_years. = 
+        sum(C23002D_021, C23002D_026, 
+          C23002E_021, C23002E_026, 
+          C23002C_021, C23002C_026, 
+          C23002F_021, C23002F_026, 
+          C23002G_021, C23002G_026 );
+
 
       PopInCivLaborForce_&_years. = sum( PopCivilianEmployed_&_years., PopUnemployed_&_years. );
       PopInCivLaborForceB_&_years. = sum(PopCivilianEmployedB_&_years., PopUnemployedB_&_years.);
@@ -1882,6 +1956,36 @@
           C23002Fe5, C23002Fe7, C23002Fe18, C23002Fe20, 
           C23002Ge5, C23002Ge7, C23002Ge18, C23002Ge20 );
 
+/*gender*/
+		  
+
+      Pop16_64EmployedB_M_&_years. = sum(C23002B_005,C23002B_007 );
+	  Pop16_64EmployedB_F_&_years. = sum(C23002B_018,C23002B_020 );
+
+      Pop16_64EmployedW_M_&_years. = sum(C23002H_005,C23002H_007 );
+	  Pop16_64EmployedW_F_&_years. = sum(C23002H_018,C23002H_020 );
+
+      Pop16_64EmployedH_M_&_years. = sum(C23002I_005,C23002I_007);
+	  Pop16_64EmployedH_F_&_years. = sum(C23002I_018,C23002I_020 );
+
+      Pop16_64EmployedA_M_&_years. = 
+        sum(C23002D_005,C23002D_007,C23002E_005,C23002E_007 );
+		  
+      Pop16_64EmployedA_F_&_years. = 
+        sum(C23002D_018,C23002D_020,C23002E_018,C23002E_020 );
+
+      Pop16_64EmployedIOM_M_&_years. = 
+        sum(C23002C_005,C23002C_007,C23002F_005,C23002F_007,C23002G_005,C23002G_007 );
+	 Pop16_64EmployedIOM_F_&_years. = 
+        sum(C23002C_018,C23002C_020,C23002F_018,C23002F_020,C23002G_018,C23002G_020 );
+
+      Pop16_64EmployedAIOM_M_&_years. = 
+        sum(C23002C_005,C23002C_007,C23002F_005,C23002F_007,C23002G_005,C23002G_007,
+            C23002D_005,C23002D_007,C23002E_005,C23002E_007);
+	 Pop16_64EmployedAIOM_F_&_years. = 
+        sum(C23002C_018,C23002C_020,C23002F_018,C23002F_020,C23002G_018,C23002G_020,
+            C23002D_018,C23002D_020,C23002E_018,C23002E_020);
+
     Pop25_64Employed_&_years. = 
         sum(B23001e26, B23001e28, B23001e33, B23001e35, B23001e40, B23001e42, B23001e47, B23001e49, 
           B23001e54, B23001e56, B23001e61, B23001e63, B23001e68, B23001e70, B23001e112, B23001e114, 
@@ -1896,6 +2000,27 @@
       Pop16andOverYearsA_&_years.  = sum(B20005De1, B20005Ee1);
       Pop16andOverYearsIOM_&_years. = sum(B20005Ce1, B20005Fe1, B20005Ge1);
       Pop16andOverYearsAIOM_&_years. = sum(B20005Ce1, B20005De1, B20005Ee1, B20005Fe1, B20005Ge1 );
+
+
+	  /*gender*/
+      Pop16andOverYearsB_M_&_years.  = B20005B_002;
+	  Pop16andOverYearsB_F_&_years.  = B20005B_049;
+
+      Pop16andOverYearsW_M_&_years.  = B20005H_002;
+	  Pop16andOverYearsW_F_&_years.  = B20005H_049;
+
+      Pop16andOverYearsH_M_&_years.  = B20005I_002;
+	  Pop16andOverYearsH_F_&_years.  = B20005I_049;
+
+      Pop16andOverYearsA_M_&_years.  = B20005D_002;
+	  Pop16andOverYearsA_F_&_years.  = B20005D_049;
+
+      Pop16andOverYearsIOM_M_&_years. = sum(B20005C_002, B20005F_002, B20005G_002);
+	  Pop16andOverYearsIOM_F_&_years. = sum(B20005C_049, B20005F_049, B20005G_049);
+
+      Pop16andOverYearsAIOM_M_&_years. = sum(B20005C_002, B20005D_002, B20005E_002,B20005F_002, B20005G_002 );
+	  Pop16andOverYearsAIOM_F_&_years. = sum(B20005C_049, B20005D_049, B20005E_049,B20005F_049, B20005G_049 );
+
 
     Pop16_64years_&_years. = 
       sum(B23001e3, B23001e10, B23001e17, B23001e24, B23001e31, B23001e38, B23001e45, B23001e52, 
@@ -1972,6 +2097,47 @@
           B20005Ee5, B20005Ee28, B20005Ee52, B20005Ee75, 
           B20005Fe5, B20005Fe28, B20005Fe52, B20005Fe75, 
           B20005Ge5, B20005Ge28, B20005Ge52, B20005Ge75 );
+
+
+/*gender*/
+
+      PopWorkEarnB_M_&_years. = sum(B20005B_005, B20005B_028 );
+	  PopWorkEarnB_F_&_years. = sum(B20005B_052, B20005B_075 );
+
+      PopWorkEarnW_M_&_years. = sum(B20005H_005, B20005H_028 );
+      PopWorkEarnW_F_&_years. = sum(B20005H_052, B20005H_075 );
+
+      PopWorkEarnH_M_&_years. = sum(B20005I_005, B20005I_028 );
+      PopWorkEarnH_F_&_years. = sum(B20005I_052, B20005I_075 );
+
+      PopWorkEarnA_M_&_years. = 
+        sum(B20005D_005, B20005D_028, 
+          B20005E_005, B20005E_028 );
+      PopWorkEarnA_F_&_years. = 
+        sum(B20005D_052, B20005D_075, 
+          B20005E_052, B20005E_075 );
+
+      PopWorkEarnIOM_M_&_years. = 
+        sum(B20005C_005, B20005C_028, 
+          B20005F_005, B20005F_028, 
+          B20005G_005, B20005G_028 );
+      PopWorkEarnIOM_F_&_years. = 
+        sum(B20005C_052, B20005C_075, 
+          B20005F_052, B20005F_075, 
+          B20005G_052, B20005G_075);
+
+      PopWorkEarnAIOM_M_&_years. = 
+        sum(B20005D_005, B20005D_028, 
+          B20005E_005, B20005E_028, 
+          B20005C_005, B20005C_028, 
+          B20005F_005, B20005F_028, 
+          B20005G_005, B20005G_028 );
+      PopWorkEarnAIOM_F_&_years. = 
+        sum(B20005D_052, B20005D_075, 
+          B20005E_052, B20005E_075, 
+          B20005C_052, B20005C_075, 
+          B20005F_052, B20005F_075, 
+          B20005G_052, B20005G_075 );
 
 					  /*Annual Earnings*/
 				EarningUnder10K_&_years.= B08119e2;
