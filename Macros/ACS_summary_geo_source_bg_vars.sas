@@ -275,6 +275,103 @@
           sum(C24010Ce7, C24010Ce13, C24010De7, C24010De13, C24010Ee7, C24010Ee13, 
             C24010Fe7, C24010Fe13, C24010Ge7, C24010Ge13 );
 
+/*gender*/
+
+      PopEmployedByOccB_M_&_years. = C24010B_002;
+        PopEmployedMngmtB_M_&_years. = C24010B_003;
+        PopEmployedServB_M_&_years. = C24010B_004;
+        PopEmployedSalesB_M_&_years. = C24010B_005;
+        PopEmployedNatResB_M_&_years. = C24010B_006;
+        PopEmployedProdB_M_&_years. = C24010B_007;
+
+		PopEmployedByOccB_F_&_years. = C24010B_008;
+        PopEmployedMngmtB_F_&_years. = C24010B_009;
+        PopEmployedServB_F_&_years. = C24010B_010;
+        PopEmployedSalesB_F_&_years. = C24010B_011;
+        PopEmployedNatResB_F_&_years. = C24010B_012;
+        PopEmployedProdB_F_&_years. = C24010B_013;
+
+      PopEmployedByOccW_M_&_years. = C24010H_002;
+        PopEmployedMngmtW_M_&_years. = C24010H_003;
+        PopEmployedServW_M_&_years. = C24010H_004;
+        PopEmployedSalesW_M_&_years. = C24010H_005;
+        PopEmployedNatResW_M_&_years. = C24010H_006;
+        PopEmployedProdW_M_&_years. = C24010H_007;
+
+
+      PopEmployedByOccW_F_&_years. = C24010H_008;
+        PopEmployedMngmtW_F_&_years. = C24010H_009;
+        PopEmployedServW_F_&_years. = C24010H_010;
+        PopEmployedSalesW_F_&_years. = C24010H_011;
+        PopEmployedNatResW_F_&_years. = C24010H_012;
+        PopEmployedProdW_F_&_years. = C24010H_013;
+
+      PopEmployedByOccH_M_&_years. = C24010I_002;
+        PopEmployedMngmtH_M_&_years. = C24010I_003;
+        PopEmployedServH_M_&_years. = C24010I_004;
+        PopEmployedSalesH_M_&_years. = C24010I_005;
+        PopEmployedNatResH_M_&_years. = C24010I_006;
+        PopEmployedProdH_M_&_years. = C24010I_007;
+
+      PopEmployedByOccH_F_&_years. = C24010I_008;
+        PopEmployedMngmtH_F_&_years. = C24010I_009;
+        PopEmployedServH_F_&_years. = C24010I_010;
+        PopEmployedSalesH_F_&_years. = C24010I_011;
+        PopEmployedNatResH_F_&_years. = C24010I_012;
+        PopEmployedProdH_F_&_years. = C24010I_013;
+
+      PopEmployedByOccA_M_&_years. = sum(C24010D_002, C24010E_002);
+        PopEmployedMngmtA_M_&_years. = sum( C24010D_003,  C24010E_003 );
+        PopEmployedServA_M_&_years. = sum(C24010D_004, C24010E_004 );
+        PopEmployedSalesA_M_&_years. = sum(C24010D_005, C24010E_005 );
+        PopEmployedNatResA_M_&_years. = sum(C24010D_006, C24010E_006 );
+        PopEmployedProdA_M_&_years. = sum(C24010D_007, C24010E_007 );
+
+      PopEmployedByOccA_F_&_years. = sum(C24010D_008, C24010E_008);
+        PopEmployedMngmtA_F_&_years. = sum(C24010D_009, C24010E_009 );
+        PopEmployedServA_F_&_years. = sum(C24010D_010, C24010E_010 );
+        PopEmployedSalesA_F_&_years. = sum(C24010D_011, C24010E_011 );
+        PopEmployedNatResA_F_&_years. = sum(C24010D_012, C24010E_012 );
+        PopEmployedProdA_F_&_years. = sum(C24010D_013, C24010E_013 );
+
+      PopEmployedByOccIOM_M_&_years. = sum(C24010C_002, C24010F_002, C24010G_002 );
+        PopEmployedMngmtIOM_M_&_years. = sum(C24010C_003, C24010F_003,C24010G_003);
+        PopEmployedServIOM_M_&_years. = sum(C24010C_004, C24010F_004, C24010G_004);
+        PopEmployedSalesIOM_M_&_years. = sum(C24010C_005, C24010F_005, C24010G_005);
+        PopEmployedNatResIOM_M_&_years. = sum(C24010C_006, C24010F_006, C24010G_006 );
+        PopEmployedProdIOM_M_&_years. = sum(C24010C_007, C24010F_007, C24010G_007);
+
+      PopEmployedByOccIOM_F_&_years. = sum(C24010C_008, C24010F_008, C24010G_008 );
+        PopEmployedMngmtIOM_F_&_years. = sum(C24010C_009, C24010F_009, C24010G_009);
+        PopEmployedServIOM_F_&_years. = sum(C24010C_010, C24010F_010, C24010G_010 );
+        PopEmployedSalesIOM_F_&_years. = sum(C24010C_011, C24010F_011, C24010G_011 );
+        PopEmployedNatResIOM_F_&_years. = sum(C24010C_012, C24010F_012, C24010G_012);
+        PopEmployedProdIOM_F_&_years. = sum(C24010C_013, C24010F_013, C24010G_013 );
+
+      PopEmployedByOccAIOM_M_&_years. = sum(C24010D_002, C24010E_002, C24010C_002, C24010F_002, C24010G_002  );
+        PopEmployedMngmtAIOM_M_&_years. = 
+          sum(C24010D_003,  C24010E_003, C24010C_003, C24010F_003,C24010G_003 );
+        PopEmployedServAIOM_M_&_years. = 
+          sum(C24010D_004, C24010E_004, C24010C_004, C24010F_004, C24010G_004 );
+        PopEmployedSalesAIOM_M_&_years. = 
+          sum(C24010D_005, C24010E_005, C24010C_005, C24010F_005, C24010G_005);
+        PopEmployedNatResAIOM_M_&_years. = 
+          sum(C24010D_006, C24010E_006, C24010C_006, C24010F_006, C24010G_006 );
+        PopEmployedProdAIOM_M_&_years. = 
+          sum(C24010D_007, C24010E_007, C24010C_007, C24010F_007, C24010G_007 );
+
+      PopEmployedByOccAIOM_F_&_years. = sum(C24010D_008, C24010E_008, C24010C_008, C24010F_008, C24010G_008 );
+        PopEmployedMngmtAIOM_F_&_years. = 
+          sum(C24010D_009, C24010E_009, C24010C_009, C24010F_009, C24010G_009 );
+        PopEmployedServAIOM_F_&_years. = 
+          sum(C24010D_010, C24010E_010, C24010C_010, C24010F_010, C24010G_010 );
+        PopEmployedSalesAIOM_F_&_years. = 
+          sum(C24010D_011, C24010E_011, C24010C_011, C24010F_011, C24010G_011 );
+        PopEmployedNatResAIOM_F_&_years. = 
+          sum(C24010D_012, C24010E_012, C24010C_012, C24010F_012, C24010G_012);
+        PopEmployedProdAIOM_F_&_years. = 
+          sum(C24010D_013, C24010E_013, C24010C_013, C24010F_013, C24010G_013  );
+
     mPopEmployedWorkers_&_years. = B08007m1;
       mPopEmployedWorkInState_&_years. = B08007m2;
       mPopEmployedWorkInCnty_&_years. = B08007m3;
