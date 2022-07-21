@@ -15,6 +15,7 @@
  No variable should be added to both macros. 
 
  Modifications: RP 12/18/20 B00001 and B00002 were replacd with B98003 and B98001 starting with 2015-19
+7/21/21 YS add employment related variable broken down by gender
 **************************************************************************/
 
 
