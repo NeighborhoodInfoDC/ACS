@@ -1837,8 +1837,15 @@
            C23002Ge20, C23002Ge25 );
 
 
-
       /*gender*/
+      PopEmployed_M_&_years. = sum(B23001e5, B23001e7, B23001e12, B23001e14, B23001e19, B23001e21, B23001e26, B23001e28, 
+        B23001e33, B23001e35, B23001e40, B23001e42, B23001e47, B23001e49, B23001e54, B23001e56, 
+        B23001e61, B23001e63, B23001e68, B23001e70, B23001e75, B23001e80, B23001e85 );
+	  PopEmployed_F_&_years. = sum(B23001e91, B23001e93, B23001e98, B23001e100, 
+        B23001e105, B23001e107, B23001e112, B23001e114, B23001e119, B23001e121, B23001e126, B23001e128, 
+        B23001e133, B23001e135, B23001e140, B23001e142, B23001e147, B23001e149, B23001e154, B23001e156,
+        B23001e161,B23001e166,B23001e171);
+
       PopEmployedB_M_&_years. = sum(C23002Be5,C23002Be7,C23002Be12);
 	  PopEmployedB_F_&_years. = sum(C23002Be18, C23002Be20, C23002Be25 );
 
@@ -1893,6 +1900,12 @@
           C23002Ge8, C23002Ge13, C23002Ge21, C23002Ge26 );
 
 /*gender*/
+      PopUnemployed_M_&_years. = sum(B23001e8, B23001e15, B23001e22, B23001e29, B23001e36, B23001e43, B23001e50, 
+             B23001e57, B23001e64, B23001e71, B23001e76, B23001e81, B23001e86 );
+	  PopUnemployed_F_&_years. = sum(
+             B23001e94, B23001e101, B23001e108, B23001e115, B23001e122, B23001e129, 
+             B23001e136, B23001e143, B23001e150, B23001e157, B23001e162, B23001e167, B23001e172 );
+
       PopUnemployedB_M_&_years. = sum(C23002Be8, C23002Be13 );
 	  PopUnemployedB_F_&_years. = sum(C23002Be21, C23002Be26 );
 
@@ -1943,8 +1956,6 @@
       PopInCivLaborForceIOM_&_years. = sum(PopCivilianEmployedIOM_&_years., PopUnemployedIOM_&_years.);
       PopInCivLaborForceAIOM_&_years. = sum(PopCivilianEmployedAIOM_&_years., PopUnemployedAIOM_&_years.);
 
-
-/*gender*/
 	  PopInCivLaborForceB_&_years. = sum(PopCivilianEmployedB_&_years., PopUnemployedB_&_years.);
       PopInCivLaborForceW_&_years. = sum(PopCivilianEmployedW_&_years., PopUnemployedW_&_years.);
       PopInCivLaborForceH_&_years. = sum(PopCivilianEmployedH_&_years., PopUnemployedH_&_years.);
@@ -2013,6 +2024,14 @@
 
 /*gender*/
 
+
+    Pop16_64Employed_M_&_years. = sum(B23001e5, B23001e7, B23001e12, B23001e14, B23001e19, B23001e21, B23001e26, B23001e28, 
+        B23001e33, B23001e35, B23001e40, B23001e42, B23001e47, B23001e49, B23001e54, B23001e56, 
+        B23001e61, B23001e63, B23001e68, B23001e70 );
+	  Pop16_64Employed_F_&_years. = sum(B23001e91, B23001e93, B23001e98, B23001e100, 
+        B23001e105, B23001e107, B23001e112, B23001e114, B23001e119, B23001e121, B23001e126, B23001e128, 
+        B23001e133, B23001e135, B23001e140, B23001e142, B23001e147, B23001e149, B23001e154, B23001e156 );
+
     Pop16_64EmployedB_M_&_years. = sum(C23002Be5,C23002Be7 );
 	  Pop16_64EmployedB_F_&_years. = sum(C23002Be18,C23002Be20 );
 
@@ -2057,6 +2076,10 @@
 
 
 	  /*gender*/
+
+      Pop16andOverYears_M_&_years.  = B20005e2;
+	  Pop16andOverYears_F_&_years.  = B20005e49;
+
       Pop16andOverYearsB_M_&_years.  = B20005Be2;
 	  Pop16andOverYearsB_F_&_years.  = B20005Be49;
 
@@ -2137,7 +2160,9 @@
 
 
 	/*gender*/
-					 
+      PopWorkFT_M_&_years. = B20005e3;
+      PopWorkFT_F_&_years. = B20005e50;
+ 
        PopWorkFTB_M_&_years. = B20005Be3;
       PopWorkFTB_F_&_years. = B20005Be50;
 
@@ -2179,6 +2204,8 @@
 
 
 /*gender*/
+      PopWorkEarnB_M_&_years. = sum(B20005e5, B20005e28 );
+	  PopWorkEarnB_F_&_years. = sum(B20005e52, B20005e75 );
 
       PopWorkEarnB_M_&_years. = sum(B20005Be5, B20005Be28 );
 	  PopWorkEarnB_F_&_years. = sum(B20005Be52, B20005Be75 );
@@ -2306,7 +2333,15 @@
 
 
 /*gender*/
-	  PopWorkFTLT35KB_M_&_years. = 
+	  PopWorkFTLT35K_M_&_years. = 
+        sum(B20005e6, B20005e7, B20005e8, B20005e9, B20005e10, B20005e11,
+            B20005e12, B20005e13, B20005e14, B20005e15, B20005e16, B20005e17);
+
+	  PopWorkFTLT35K_F_&_years. = 
+        sum(B20005e53, B20005e54, B20005e55, B20005e56, B20005e57, B20005e58,
+            B20005e59, B20005e60, B20005e61, B20005e62, B20005e63, B20005e64  );
+
+    PopWorkFTLT35KB_M_&_years. = 
         sum(B20005Be6, B20005Be7, B20005Be8, B20005Be9, B20005Be10, B20005Be11,
             B20005Be12, B20005Be13, B20005Be14, B20005Be15, B20005Be16, B20005Be17);
 
@@ -2467,6 +2502,14 @@
           B20005Ge65, B20005Ge66, B20005Ge67, B20005Ge68, B20005Ge69, B20005Ge70 );
 
 /*gender*/
+
+       PopWorkFTLT75K_M_&_years. = 
+        sum(B20005e6, B20005e7,B20005e8, B20005e9,B20005e10, B20005e11,B20005e12, B20005e13,B20005e14, B20005e15,
+            B20005e16, B20005e17,B20005e18, B20005e19,B20005e20, B20005e21,B20005e22, B20005e23);
+
+      PopWorkFTLT75K_F_&_years. = 
+        sum(B20005e53, B20005e54,B20005e55, B20005e56,B20005e57, B20005e58,B20005e59, B20005e60,B20005e61, B20005e62,
+            B20005e63, B20005e64,B20005e65, B20005e66,B20005e67, B20005e68,B20005e69, B20005e70 );
 
       PopWorkFTLT75KB_M_&_years. = 
         sum(B20005Be6, B20005Be7,B20005Be8, B20005Be9,B20005Be10, B20005Be11,B20005Be12, B20005Be13,B20005Be14, B20005Be15,
@@ -2893,7 +2936,7 @@
 
    /*gender*/
 
-        mPopEmployedB_M_&_years. = %moe_sum( var=C23002Bm5,C23002Bm7,C23002Bm12);
+      mPopEmployedB_M_&_years. = %moe_sum( var=C23002Bm5,C23002Bm7,C23002Bm12);
 	  mPopEmployedB_F_&_years. = %moe_sum( var=C23002Bm18, C23002Bm20, C23002Bm25 );
 
       mPopEmployedW_M_&_years. = %moe_sum( var=C23002Hm5,C23002Hm7,C23002Hm12);
@@ -3263,6 +3306,37 @@
             B20005Ge53, B20005Ge54,B20005Ge55, B20005Ge56,B20005Ge57, B20005Ge58,B20005Ge59, B20005Ge60,B20005Ge61, B20005Ge62,
             B20005Ge63, B20005Ge64,B20005Ge65, B20005Ge66,B20005Ge67, B20005Ge68,B20005Ge69, B20005Ge70);
 
+   mPop16_64Employed_M_&_years. = %moe_sum( var=B23001e5, B23001e7, B23001e12, B23001e14, B23001e19, B23001e21, B23001e26, B23001e28, 
+        B23001e33, B23001e35, B23001e40, B23001e42, B23001e47, B23001e49, B23001e54, B23001e56, 
+        B23001e61, B23001e63, B23001e68, B23001e70 );
+	  mPop16_64Employed_F_&_years. = %moe_sum( var=B23001e91, B23001e93, B23001e98, B23001e100, 
+        B23001e105, B23001e107, B23001e112, B23001e114, B23001e119, B23001e121, B23001e126, B23001e128, 
+        B23001e133, B23001e135, B23001e140, B23001e142, B23001e147, B23001e149, B23001e154, B23001e156 );
+
+      mPopEmployed_M_&_years. = %moe_sum( var=B23001e5, B23001e7, B23001e12, B23001e14, B23001e19, B23001e21, B23001e26, B23001e28, 
+        B23001e33, B23001e35, B23001e40, B23001e42, B23001e47, B23001e49, B23001e54, B23001e56, 
+        B23001e61, B23001e63, B23001e68, B23001e70, B23001e75, B23001e80, B23001e85 );
+	  mPopEmployed_F_&_years. = %moe_sum( var=B23001e91, B23001e93, B23001e98, B23001e100, 
+        B23001e105, B23001e107, B23001e112, B23001e114, B23001e119, B23001e121, B23001e126, B23001e128, 
+        B23001e133, B23001e135, B23001e140, B23001e142, B23001e147, B23001e149, B23001e154, B23001e156,
+        B23001e161,B23001e166,B23001e171);
+
+      mPopUnemployed_M_&_years. = %moe_sum( var=B23001e8, B23001e15, B23001e22, B23001e29, B23001e36, B23001e43, B23001e50, 
+             B23001e57, B23001e64, B23001e71, B23001e76, B23001e81, B23001e86 );
+	  mPopUnemployed_F_&_years. = %moe_sum( var=
+             B23001e94, B23001e101, B23001e108, B23001e115, B23001e122, B23001e129, 
+             B23001e136, B23001e143, B23001e150, B23001e157, B23001e162, B23001e167, B23001e172 );
+
+      mPop16andOverYears_M_&_years.  = B20005e2;
+	  mPop16andOverYears_F_&_years.  = B20005e49;
+
+      mPopWorkFT_M_&_years. = B20005e3;
+      mPopWorkFT_F_&_years. = B20005e50;
+
+      mPopWorkEarnB_M_&_years. = %moe_sum( var=B20005e5, B20005e28 );
+	  mPopWorkEarnB_F_&_years. = %moe_sum( var=B20005e52, B20005e75 );
+
+
       label
       PopCivilianEmployed_&_years. = "Persons 16+ years old in the civilian labor force and employed, &_years_dash "
       PopCivilianEmployedB_&_years. = "Persons 16+ years old in the civilian labor force and employed, Black/African American, &_years_dash "
@@ -3481,19 +3555,21 @@
 		   mEarningOver75K_&_years.= "Workers 16 years and over with earning of $75,000 or more in the past 12 months, MOE, &_years_dash "
 
 /*gender*/
-
+      PopEmploy_M_&_years. = "Male 16+ years old who are employed (includes armed forces), total, &_years_dash "
       PopEmployB_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Black/African American, &_years_dash "
       PopEmployW_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Non-Hispanic White, &_years_dash "
       PopEmployH_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Hispanic/Latino, &_years_dash "
       PopEmployA_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
       PopEmployIOM_M_&_years. = "Male 16+ years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
       PopEmployAIOM_M_&_years. = "Male 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      Pop16_64Employed_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), total, &_years_dash "
       Pop16_64EmployedB_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Black/African American, &_years_dash "
       Pop16_64EmployedW_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Non-Hispanic White, &_years_dash "
       Pop16_64EmployedH_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Hispanic/Latino, &_years_dash "
       Pop16_64EmployedA_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
       Pop16_64EmployedIOM_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
       Pop16_64EmployedAIOM_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      PopUnemployed_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, total, &_years_dash "
       PopUnemployedB_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Black/African American, &_years_dash "
       PopUnemployedW_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Non-Hispanic White, &_years_dash "
       PopUnemployedH_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Hispanic/Latino, &_years_dash "
@@ -3514,83 +3590,103 @@
       PopCivilianEmployedA_F_&_years. = "Female 16+ years old in the civilian labor force and employed, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
       PopCivilianEmployedIOM_F_&_years. = "Female 16+ years old in the civilian labor force and employed, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
       PopCivilianEmployedAIOM_F_&_years. = "Female 16+ years old in the civilian labor force and employed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
-
+      PopWorkFT_M_&_years. = "Male worked full-time,total, &_years_dash "
       PopWorkFTB_M_&_years. = "Male worked full-time Black/African American, &_years_dash "
       PopWorkFTW_M_&_years. = "Male worked full-time, Non-Hispanic White, &_years_dash "
       PopWorkFTH_M_&_years. = "Male worked full-time, Hispanic/Latino, &_years_dash "
       PopWorkFTA_M_&_years. = "Male worked full-time, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
       PopWorkFTIOM_M_&_years. = "Male worked full-time, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
       PopWorkFTAIOM_M_&_years. = "Male worked full-time, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopWorkEarn_M_&_years. = "Male worked with earnings, total, &_years_dash "
       PopWorkEarnB_M_&_years. = "Male worked with earnings Black/African American, &_years_dash "
       PopWorkEarnW_M_&_years. = "Male worked with earnings, Non-Hispanic White, &_years_dash "
       PopWorkEarnH_M_&_years. = "Male worked with earnings, Hispanic/Latino, &_years_dash "
       PopWorkEarnA_M_&_years. = "Male worked with earnings, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
       PopWorkEarnIOM_M_&_years. = "Male worked with earnings, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
       PopWorkEarnAIOM_M_&_years. = "Male worked with earnings, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopWorkFTLT35K_M_&_years. = "Male worked full-time with earning less than $35000, total, &_years_dash "
       PopWorkFTLT35KB_M_&_years. = "Male worked full-time with earning less than $35000, Black/African American, &_years_dash "
       PopWorkFTLT35KW_M_&_years. = "Male worked full-time with earnings less than $35000, Non-Hispanic White, &_years_dash "
       PopWorkFTLT35KH_M_&_years. = "Male worked full-time with earnings less than $35000, Hispanic/Latino, &_years_dash "
       PopWorkFTLT35KA_M_&_years. = "Male worked full-time with earnings less than $35000, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
       PopWorkFTLT35KIOM_M_&_years. = "Male worked full-time with earnings less than $35000, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
       PopWorkFTLT35KAIOM_M_&_years. = "Male worked full-time with earnings less than $35000, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+
+      PopWorkFTLT75K_M_&_years. = "Male worked full-time with earnings less than $75000, total, &_years_dash "
+	  PopWorkFTLT75KB_M_&_years. = "Male worked full-time with earnings less than $75000, Black/African American, &_years_dash "    
       PopWorkFTLT75KW_M_&_years. = "Male worked full-time with earnings less than $75000, Non-Hispanic White, &_years_dash "
       PopWorkFTLT75KH_M_&_years. = "Male worked full-time with earnings less than $75000, Hispanic/Latino, &_years_dash "
       PopWorkFTLT75KA_M_&_years. = "Male worked full-time with earnings less than $75000, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
       PopWorkFTLT75KIOM_M_&_years. = "Male worked full-time with earnings less than $75000, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
       PopWorkFTLT75KAIOM_M_&_years. = "Male worked full-time with earnings less than $75000, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+
+      PopEmploy_F_&_years. = "Female 16+ years old who are employed (includes armed forces), total, &_years_dash "
       PopEmployB_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Black/African American, &_years_dash "
       PopEmployW_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Non-Hispanic White, &_years_dash "
       PopEmployH_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Hispanic/Latino, &_years_dash "
       PopEmployA_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
       PopEmployIOM_F_&_years. = "Female 16+ years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
-      PopEmployAIOM_F_&_years. = "Female 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      PopEmployAIOM_F_&_years. = "Female 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "Pop16_64EmployedB_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Black/African American, &_years_dash "
+      Pop16_64Employed_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), total, &_years_dash "
       Pop16_64EmployedB_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Black/African American, &_years_dash "
       Pop16_64EmployedW_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Non-Hispanic White, &_years_dash "
       Pop16_64EmployedH_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Hispanic/Latino, &_years_dash "
       Pop16_64EmployedA_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
       Pop16_64EmployedIOM_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
       Pop16_64EmployedAIOM_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      PopUnemployed_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, total, &_years_dash "
       PopUnemployedB_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Black/African American, &_years_dash "
       PopUnemployedW_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Non-Hispanic White, &_years_dash "
       PopUnemployedH_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Hispanic/Latino, &_years_dash "
       PopUnemployedA_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
       PopUnemployedIOM_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
       PopUnemployedAIOM_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+
+      PopWorkFT_F_&_years. = "Female worked full-time, total, &_years_dash "
       PopWorkFTB_F_&_years. = "Female worked full-time Black/African American, &_years_dash "
       PopWorkFTW_F_&_years. = "Female worked full-time, Non-Hispanic White, &_years_dash "
       PopWorkFTH_F_&_years. = "Female worked full-time, Hispanic/Latino, &_years_dash "
       PopWorkFTA_F_&_years. = "Female worked full-time, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
       PopWorkFTIOM_F_&_years. = "Female worked full-time, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
       PopWorkFTAIOM_F_&_years. = "Female worked full-time, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopWorkEarn_F_&_years. = "Female worked with earnings,total, &_years_dash "
       PopWorkEarnB_F_&_years. = "Female worked with earnings Black/African American, &_years_dash "
       PopWorkEarnW_F_&_years. = "Female worked with earnings, Non-Hispanic White, &_years_dash "
       PopWorkEarnH_F_&_years. = "Female worked with earnings, Hispanic/Latino, &_years_dash "
       PopWorkEarnA_F_&_years. = "Female worked with earnings, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
       PopWorkEarnIOM_F_&_years. = "Female worked with earnings, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
       PopWorkEarnAIOM_F_&_years. = "Female worked with earnings, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopWorkFTLT35K_F_&_years. = "Female worked full-time with earning less than $35000, total, &_years_dash "
       PopWorkFTLT35KB_F_&_years. = "Female worked full-time with earning less than $35000, Black/African American, &_years_dash "
       PopWorkFTLT35KW_F_&_years. = "Female worked full-time with earnings less than $35000, Non-Hispanic White, &_years_dash "
       PopWorkFTLT35KH_F_&_years. = "Female worked full-time with earnings less than $35000, Hispanic/Latino, &_years_dash "
       PopWorkFTLT35KA_F_&_years. = "Female worked full-time with earnings less than $35000, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
       PopWorkFTLT35KIOM_F_&_years. = "Female worked full-time with earnings less than $35000, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
       PopWorkFTLT35KAIOM_F_&_years. = "Female worked full-time with earnings less than $35000, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopWorkFTLT75K_F_&_years. = "Female worked full-time with earnings less than $75000, total, &_years_dash "
+      PopWorkFTLT75KB_F_&_years. = "Female worked full-time with earnings less than $75000, Black/African American, &_years_dash "
       PopWorkFTLT75KW_F_&_years. = "Female worked full-time with earnings less than $75000, Non-Hispanic White, &_years_dash "
       PopWorkFTLT75KH_F_&_years. = "Female worked full-time with earnings less than $75000, Hispanic/Latino, &_years_dash "
       PopWorkFTLT75KA_F_&_years. = "Female worked full-time with earnings less than $75000, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
       PopWorkFTLT75KIOM_F_&_years. = "Female worked full-time with earnings less than $75000, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
       PopWorkFTLT75KAIOM_F_&_years. = "Female worked full-time with earnings less than $75000, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-     mPopEmployB_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Black/African American,MOE, &_years_dash "
+
+      mPopEmploy_M_&_years. = "Male 16+ years old who are employed (includes armed forces), total,MOE, &_years_dash "
+      mPopEmployB_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Black/African American,MOE, &_years_dash "
       mPopEmployW_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Non-Hispanic White,MOE, &_years_dash "
       mPopEmployH_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Hispanic/Latino,MOE, &_years_dash "
       mPopEmployA_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander,MOE, &_years_dash "
       mPopEmployIOM_M_&_years. = "Male 16+ years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races,MOE, &_years_dash "
       mPopEmployAIOM_M_&_years. = "Male 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino,MOE, &_years_dash "
+      mPop16_64Employed_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), total,MOE, &_years_dash "
       mPop16_64EmployedB_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Black/African American,MOE, &_years_dash "
       mPop16_64EmployedW_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Non-Hispanic White,MOE, &_years_dash "
       mPop16_64EmployedH_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Hispanic/Latino,MOE, &_years_dash "
       mPop16_64EmployedA_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander,MOE, &_years_dash "
       mPop16_64EmployedIOM_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races,MOE, &_years_dash "
       mPop16_64EmployedAIOM_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino,MOE, &_years_dash "
+
+      mPopUnemployed_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, total,MOE, &_years_dash "
       mPopUnemployedB_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Black/African American,MOE, &_years_dash "
       mPopUnemployedW_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Non-Hispanic White,MOE, &_years_dash "
       mPopUnemployedH_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Hispanic/Latino,MOE, &_years_dash "
@@ -3613,66 +3709,83 @@
       mPopCivilianEmployedIOM_F_&_years. = "Female 16+ years old in the civilian labor force and employed, American Indian/Alaska Native, Some other race, Two or more races, MOE, &_years_dash "
       mPopCivilianEmployedAIOM_F_&_years. = "Female 16+ years old in the civilian labor force and employed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, MOE, &_years_dash "
 
-
+      mPopWorkFT_M_&_years. = "Male worked full-time, total,MOE, &_years_dash "
       mPopWorkFTB_M_&_years. = "Male worked full-time Black/African American,MOE, &_years_dash "
       mPopWorkFTW_M_&_years. = "Male worked full-time, Non-Hispanic White,MOE, &_years_dash "
       mPopWorkFTH_M_&_years. = "Male worked full-time, Hispanic/Latino,MOE, &_years_dash "
       mPopWorkFTA_M_&_years. = "Male worked full-time, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
       mPopWorkFTIOM_M_&_years. = "Male worked full-time, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
       mPopWorkFTAIOM_M_&_years. = "Male worked full-time, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+
+      mPopWorkEarn_M_&_years. = "Male worked with earnings, total,MOE, &_years_dash "
       mPopWorkEarnB_M_&_years. = "Male worked with earnings Black/African American,MOE, &_years_dash "
       mPopWorkEarnW_M_&_years. = "Male worked with earnings, Non-Hispanic White,MOE, &_years_dash "
       mPopWorkEarnH_M_&_years. = "Male worked with earnings, Hispanic/Latino,MOE, &_years_dash "
       mPopWorkEarnA_M_&_years. = "Male worked with earnings, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
       mPopWorkEarnIOM_M_&_years. = "Male worked with earnings, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
       mPopWorkEarnAIOM_M_&_years. = "Male worked with earnings, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+      mPopWorkFTLT35K_M_&_years. = "Male worked full-time with earning less than $35000, total,MOE, &_years_dash "
       mPopWorkFTLT35KB_M_&_years. = "Male worked full-time with earning less than $35000, Black/African American,MOE, &_years_dash "
       mPopWorkFTLT35KW_M_&_years. = "Male worked full-time with earnings less than $35000, Non-Hispanic White,MOE, &_years_dash "
       mPopWorkFTLT35KH_M_&_years. = "Male worked full-time with earnings less than $35000, Hispanic/Latino,MOE, &_years_dash "
       mPopWorkFTLT35KA_M_&_years. = "Male worked full-time with earnings less than $35000, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
       mPopWorkFTLT35KIOM_M_&_years. = "Male worked full-time with earnings less than $35000, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
       mPopWorkFTLT35KAIOM_M_&_years. = "Male worked full-time with earnings less than $35000, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+
+
+      mPopWorkFTLT75K_M_&_years. = "Male worked full-time with earnings less than $75000, total,MOE, &_years_dash "
+      mPopWorkFTLT75KB_M_&_years. = "Male worked full-time with earnings less than $75000, Black/African American,MOE, &_years_dash "
       mPopWorkFTLT75KW_M_&_years. = "Male worked full-time with earnings less than $75000, Non-Hispanic White,MOE, &_years_dash "
       mPopWorkFTLT75KH_M_&_years. = "Male worked full-time with earnings less than $75000, Hispanic/Latino,MOE, &_years_dash "
       mPopWorkFTLT75KA_M_&_years. = "Male worked full-time with earnings less than $75000, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
       mPopWorkFTLT75KIOM_M_&_years. = "Male worked full-time with earnings less than $75000, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
       mPopWorkFTLT75KAIOM_M_&_years. = "Male worked full-time with earnings less than $75000, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+
+      mPopEmploy_F_&_years. = "Female 16+ years old who are employed (includes armed forces), total,MOE, &_years_dash "
       mPopEmployB_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Black/African American,MOE, &_years_dash "
       mPopEmployW_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Non-Hispanic White,MOE, &_years_dash "
       mPopEmployH_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Hispanic/Latino,MOE, &_years_dash "
       mPopEmployA_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander,MOE, &_years_dash "
       mPopEmployIOM_F_&_years. = "Female 16+ years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races,MOE, &_years_dash "
       mPopEmployAIOM_F_&_years. = "Female 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino,MOE, &_years_dash "
+      mPop16_64Employed_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), total,MOE, &_years_dash "
       mPop16_64EmployedB_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Black/African American,MOE, &_years_dash "
       mPop16_64EmployedW_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Non-Hispanic White,MOE, &_years_dash "
       mPop16_64EmployedH_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Hispanic/Latino,MOE, &_years_dash "
       mPop16_64EmployedA_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander,MOE, &_years_dash "
       mPop16_64EmployedIOM_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races,MOE, &_years_dash "
       mPop16_64EmployedAIOM_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino,MOE, &_years_dash "
+      mPopUnemployed_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, total,MOE, &_years_dash "
       mPopUnemployedB_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Black/African American,MOE, &_years_dash "
       mPopUnemployedW_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Non-Hispanic White,MOE, &_years_dash "
       mPopUnemployedH_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Hispanic/Latino,MOE, &_years_dash "
       mPopUnemployedA_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Asian and Native Hawaiian and Other Pacific Islander,MOE, &_years_dash "
       mPopUnemployedIOM_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, American Indian/Alaska Native, Some other race, Two or more races,MOE, &_years_dash "
       mPopUnemployedAIOM_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino,MOE, &_years_dash "
+      mPopWorkFT_F_&_years. = "Female worked full-time,total,MOE, &_years_dash "
       mPopWorkFTB_F_&_years. = "Female worked full-time Black/African American,MOE, &_years_dash "
       mPopWorkFTW_F_&_years. = "Female worked full-time, Non-Hispanic White,MOE, &_years_dash "
       mPopWorkFTH_F_&_years. = "Female worked full-time, Hispanic/Latino,MOE, &_years_dash "
       mPopWorkFTA_F_&_years. = "Female worked full-time, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
       mPopWorkFTIOM_F_&_years. = "Female worked full-time, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
       mPopWorkFTAIOM_F_&_years. = "Female worked full-time, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+
+      mPopWorkEarn_F_&_years. = "Female worked with earnings, total,MOE, &_years_dash "
       mPopWorkEarnB_F_&_years. = "Female worked with earnings Black/African American,MOE, &_years_dash "
       mPopWorkEarnW_F_&_years. = "Female worked with earnings, Non-Hispanic White,MOE, &_years_dash "
       mPopWorkEarnH_F_&_years. = "Female worked with earnings, Hispanic/Latino,MOE, &_years_dash "
       mPopWorkEarnA_F_&_years. = "Female worked with earnings, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
       mPopWorkEarnIOM_F_&_years. = "Female worked with earnings, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
       mPopWorkEarnAIOM_F_&_years. = "Female worked with earnings, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+      mPopWorkFTLT35K_F_&_years. = "Female worked full-time with earning less than $35000, total,MOE, &_years_dash "
       mPopWorkFTLT35KB_F_&_years. = "Female worked full-time with earning less than $35000, Black/African American,MOE, &_years_dash "
       mPopWorkFTLT35KW_F_&_years. = "Female worked full-time with earnings less than $35000, Non-Hispanic White,MOE, &_years_dash "
       mPopWorkFTLT35KH_F_&_years. = "Female worked full-time with earnings less than $35000, Hispanic/Latino,MOE, &_years_dash "
       mPopWorkFTLT35KA_F_&_years. = "Female worked full-time with earnings less than $35000, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
       mPopWorkFTLT35KIOM_F_&_years. = "Female worked full-time with earnings less than $35000, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
       mPopWorkFTLT35KAIOM_F_&_years. = "Female worked full-time with earnings less than $35000, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+      mPopWorkFTLT75K_F_&_years. = "Female worked full-time with earnings less than $75000, total,MOE, &_years_dash "
+	  mPopWorkFTLT75KB_F_&_years. = "Female worked full-time with earnings less than $75000, Black/African American,MOE, &_years_dash "
       mPopWorkFTLT75KW_F_&_years. = "Female worked full-time with earnings less than $75000, Non-Hispanic White,MOE, &_years_dash "
       mPopWorkFTLT75KH_F_&_years. = "Female worked full-time with earnings less than $75000, Hispanic/Latino,MOE, &_years_dash "
       mPopWorkFTLT75KA_F_&_years. = "Female worked full-time with earnings less than $75000, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
