@@ -281,16 +281,16 @@
 			
         PopEmployedByOcc_M_&_years. = C24010e2;
         PopEmployedMngmt_M_&_years. = C24010e3;
-        PopEmployedServ_M_&_years. = C24010e4;
-        PopEmployedSales_M_&_years. = C24010e5;
-        PopEmployedNatRes_M_&_years. = C24010e6;
-        PopEmployedProd_M_&_years. = C24010e7;
-      PopEmployedByOcc_F_&_years. = C24010e8;
-        PopEmployedMngmt_F_&_years. = C24010e9;
-        PopEmployedServ_F_&_years. = C24010e10;
-        PopEmployedSales_F_&_years. = C24010e11;
-        PopEmployedNatRes_F_&_years. = C24010e12;
-        PopEmployedProd_F_&_years. = C24010e13;
+        PopEmployedServ_M_&_years. = C24010e19;
+        PopEmployedSales_M_&_years. = C24010e27;
+        PopEmployedNatRes_M_&_years. = C24010e30;
+        PopEmployedProd_M_&_years. = C24010e34;
+      	PopEmployedByOcc_F_&_years. = C24010e38;
+        PopEmployedMngmt_F_&_years. = C24010e39;
+        PopEmployedServ_F_&_years. = C24010e55;
+        PopEmployedSales_F_&_years. = C24010e63;
+        PopEmployedNatRes_F_&_years. = C24010e66;
+        PopEmployedProd_F_&_years. = C24010e70;
 
         PopEmployedByOccB_M_&_years. = C24010Be2;
         PopEmployedMngmtB_M_&_years. = C24010Be3;
@@ -461,17 +461,17 @@
 
         mPopEmployedByOcc_M_&_years. = C24010m2;
         mPopEmployedMngmt_M_&_years. = C24010m3;
-        mPopEmployedServ_M_&_years. = C24010m4;
-        mPopEmployedSales_M_&_years. = C24010m5;
-        mPopEmployedNatRes_M_&_years. = C24010m6;
-        mPopEmployedProd_M_&_years. = C24010m7;
+        mPopEmployedServ_M_&_years. = C24010m19;
+        mPopEmployedSales_M_&_years. = C24010m27;
+        mPopEmployedNatRes_M_&_years. = C24010m30;
+        mPopEmployedProd_M_&_years. = C24010m34;
 
-      mPopEmployedByOcc_F_&_years. = C24010m8;
-        mPopEmployedMngmt_F_&_years. = C24010m9;
-        mPopEmployedServ_F_&_years. = C24010m10;
-        mPopEmployedSales_F_&_years. = C24010m11;
-        mPopEmployedNatRes_F_&_years. = C24010m12;
-        mPopEmployedProd_F_&_years. = C24010m13;
+      mPopEmployedByOcc_F_&_years. = C24010m38;
+        mPopEmployedMngmt_F_&_years. = C24010m39;
+        mPopEmployedServ_F_&_years. = C24010m55;
+        mPopEmployedSales_F_&_years. = C24010m63;
+        mPopEmployedNatRes_F_&_years. = C24010m66;
+        mPopEmployedProd_F_&_years. = C24010m70;
 
         mPopEmployedByOccB_M_&_years. = C24010Bm2;
         mPopEmployedMngmtB_M_&_years. = C24010Bm3;
