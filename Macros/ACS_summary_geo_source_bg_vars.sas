@@ -516,57 +516,57 @@
         mPopEmployedNatResH_F_&_years. = C24010Im12;
         mPopEmployedProdH_F_&_years. = C24010Im13;
 
-       mPopEmployedByOccA_M_&_years. = %moe_sum( var=C24010Dm2, C24010Em2);
-        mPopEmployedMngmtA_M_&_years. = %moe_sum( var= C24010Dm3,  C24010Em3 );
-        mPopEmployedServA_M_&_years. = %moe_sum( var=C24010Dm4, C24010Em4 );
-        mPopEmployedSalesA_M_&_years. = %moe_sum( var=C24010Dm5, C24010Em5 );
-        mPopEmployedNatResA_M_&_years. = %moe_sum( var=C24010Dm6, C24010Em6 );
-        mPopEmployedProdA_M_&_years. = %moe_sum( var=C24010Dm7, C24010Em7 );
+       mPopEmployedByOccA_M_&_years. = %moe_sum( var=C24010Dm2 C24010Em2);
+        mPopEmployedMngmtA_M_&_years. = %moe_sum( var= C24010Dm3  C24010Em3 );
+        mPopEmployedServA_M_&_years. = %moe_sum( var=C24010Dm4 C24010Em4 );
+        mPopEmployedSalesA_M_&_years. = %moe_sum( var=C24010Dm5 C24010Em5 );
+        mPopEmployedNatResA_M_&_years. = %moe_sum( var=C24010Dm6 C24010Em6 );
+        mPopEmployedProdA_M_&_years. = %moe_sum( var=C24010Dm7 C24010Em7 );
 
-      mPopEmployedByOccA_F_&_years. = %moe_sum( var=C24010Dm8, C24010Em8);
-        mPopEmployedMngmtA_F_&_years. = %moe_sum( var=C24010Dm9, C24010Em9 );
-        mPopEmployedServA_F_&_years. = %moe_sum( var=C24010Dm10, C24010Em10 );
-        mPopEmployedSalesA_F_&_years. = %moe_sum( var=C24010Dm11, C24010Em11 );
-        mPopEmployedNatResA_F_&_years. = %moe_sum( var=C24010Dm12, C24010Em12 );
-        mPopEmployedProdA_F_&_years. = %moe_sum( var=C24010Dm13, C24010Em13 );
+      mPopEmployedByOccA_F_&_years. = %moe_sum( var=C24010Dm8 C24010Em8);
+        mPopEmployedMngmtA_F_&_years. = %moe_sum( var=C24010Dm9 C24010Em9 );
+        mPopEmployedServA_F_&_years. = %moe_sum( var=C24010Dm10 C24010Em10 );
+        mPopEmployedSalesA_F_&_years. = %moe_sum( var=C24010Dm11 C24010Em11 );
+        mPopEmployedNatResA_F_&_years. = %moe_sum( var=C24010Dm12 C24010Em12 );
+        mPopEmployedProdA_F_&_years. = %moe_sum( var=C24010Dm13 C24010Em13 );
 
-      mPopEmployedByOccIOM_M_&_years. = %moe_sum( var=C24010Cm2, C24010Fm2, C24010Gm2 );
-        mPopEmployedMngmtIOM_M_&_years. = %moe_sum( var=C24010Cm3, C24010Fm3,C24010Gm3);
-        mPopEmployedServIOM_M_&_years. = %moe_sum( var=C24010Cm4, C24010Fm4, C24010Gm4);
-        mPopEmployedSalesIOM_M_&_years. = %moe_sum( var=C24010Cm5, C24010Fm5, C24010Gm5);
-        mPopEmployedNatResIOM_M_&_years. = %moe_sum( var=C24010Cm6, C24010Fm6, C24010Gm6 );
-        mPopEmployedProdIOM_M_&_years. = %moe_sum( var=C24010Cm7, C24010Fm7, C24010Gm7);
+      mPopEmployedByOccIOM_M_&_years. = %moe_sum( var=C24010Cm2 C24010Fm2 C24010Gm2 );
+        mPopEmployedMngmtIOM_M_&_years. = %moe_sum( var=C24010Cm3 C24010Fm3C24010Gm3);
+        mPopEmployedServIOM_M_&_years. = %moe_sum( var=C24010Cm4 C24010Fm4 C24010Gm4);
+        mPopEmployedSalesIOM_M_&_years. = %moe_sum( var=C24010Cm5 C24010Fm5 C24010Gm5);
+        mPopEmployedNatResIOM_M_&_years. = %moe_sum( var=C24010Cm6 C24010Fm6 C24010Gm6 );
+        mPopEmployedProdIOM_M_&_years. = %moe_sum( var=C24010Cm7 C24010Fm7 C24010Gm7);
 
-      mPopEmployedByOccIOM_F_&_years. = %moe_sum( var=C24010Cm8, C24010Fm8, C24010Gm8 );
-        mPopEmployedMngmtIOM_F_&_years. = %moe_sum( var=C24010Cm9, C24010Fm9, C24010Gm9);
-        mPopEmployedServIOM_F_&_years. = %moe_sum( var=C24010Cm10, C24010Fm10, C24010Gm10 );
-        mPopEmployedSalesIOM_F_&_years. = %moe_sum( var=C24010Cm11, C24010Fm11, C24010Gm11 );
-        mPopEmployedNatResIOM_F_&_years. = %moe_sum( var=C24010Cm12, C24010Fm12, C24010Gm12);
-        mPopEmployedProdIOM_F_&_years. = %moe_sum( var=C24010Cm13, C24010Fm13, C24010Gm13 );
+      mPopEmployedByOccIOM_F_&_years. = %moe_sum( var=C24010Cm8 C24010Fm8 C24010Gm8 );
+        mPopEmployedMngmtIOM_F_&_years. = %moe_sum( var=C24010Cm9 C24010Fm9 C24010Gm9);
+        mPopEmployedServIOM_F_&_years. = %moe_sum( var=C24010Cm10 C24010Fm10 C24010Gm10 );
+        mPopEmployedSalesIOM_F_&_years. = %moe_sum( var=C24010Cm11 C24010Fm11 C24010Gm11 );
+        mPopEmployedNatResIOM_F_&_years. = %moe_sum( var=C24010Cm12 C24010Fm12 C24010Gm12);
+        mPopEmployedProdIOM_F_&_years. = %moe_sum( var=C24010Cm13 C24010Fm13 C24010Gm13 );
 
-      mPopEmployedByOccAIOM_M_&_years. = %moe_sum( var=C24010Dm2, C24010Em2, C24010Cm2, C24010Fm2, C24010Gm2  );
+      mPopEmployedByOccAIOM_M_&_years. = %moe_sum( var=C24010Dm2 C24010Em2 C24010Cm2 C24010Fm2 C24010Gm2  );
         mPopEmployedMngmtAIOM_M_&_years. = 
-          %moe_sum( var=C24010De3,  C24010Ee3, C24010Cm3, C24010Fm3,C24010Gm3 );
+          %moe_sum( var=C24010De3  C24010Ee3 C24010Cm3 C24010Fm3C24010Gm3 );
         mPopEmployedServAIOM_M_&_years. = 
-          %moe_sum( var=C24010De4, C24010Ee4, C24010Cm4, C24010Fe, C24010Gm4 );
+          %moe_sum( var=C24010De4 C24010Ee4 C24010Cm4 C24010Fe C24010Gm4 );
         mPopEmployedSalesAIOM_M_&_years. = 
-          %moe_sum( var=C24010De5, C24010Ee5, C24010Cm5, C24010Fm5, C24010Gm5);
+          %moe_sum( var=C24010De5 C24010Ee5 C24010Cm5 C24010Fm5 C24010Gm5);
         mPopEmployedNatResAIOM_M_&_years. = 
-          %moe_sum( var=C24010De6, C24010Ee6, C24010Cm6, C24010Fm6, C24010Gm6 );
+          %moe_sum( var=C24010De6 C24010Ee6 C24010Cm6 C24010Fm6 C24010Gm6 );
         mPopEmployedProdAIOM_M_&_years. = 
-          %moe_sum( var=C24010De7, C24010Ee7, C24010Cm7, C24010Fm7, C24010Gm7 );
+          %moe_sum( var=C24010De7 C24010Ee7 C24010Cm7 C24010Fm7 C24010Gm7 );
 
-      mPopEmployedByOccAIOM_F_&_years. = %moe_sum( var=C24010Dm8, C24010Em8, C24010Cm8, C24010Fm8, C24010Gm8 );
+      mPopEmployedByOccAIOM_F_&_years. = %moe_sum( var=C24010Dm8 C24010Em8 C24010Cm8 C24010Fm8 C24010Gm8 );
         mPopEmployedMngmtAIOM_F_&_years. = 
-          %moe_sum( var=C24010Dm9, C24010Em9, C24010Cm9, C24010Fm9, C24010Gm9 );
+          %moe_sum( var=C24010Dm9 C24010Em9 C24010Cm9 C24010Fm9 C24010Gm9 );
         mPopEmployedServAIOM_F_&_years. = 
-          %moe_sum( var=C24010Dm10, C24010Em10, C24010Cm10, C24010Fm10, C24010Gm10 );
+          %moe_sum( var=C24010Dm10 C24010Em10 C24010Cm10 C24010Fm10 C24010Gm10 );
         mPopEmployedSalesAIOM_F_&_years. = 
-          %moe_sum( var=C24010m11, C24010Em11, C24010Cm11, C24010Fm11, C24010Gm11 );
+          %moe_sum( var=C24010m11 C24010Em11 C24010Cm11 C24010Fm11 C24010Gm11 );
         mPopEmployedNatResAIOM_F_&_years. = 
-          %moe_sum( var=C24010Dm12, C24010Em12, C24010Cm12, C24010Fm12, C24010Gm12);
+          %moe_sum( var=C24010Dm12 C24010Em12 C24010Cm12 C24010Fm12 C24010Gm12);
         mPopEmployedProdAIOM_F_&_years. = 
-          %moe_sum( var=C24010Dm13, C24010Em13, C24010Cm13, C24010Fm13, C24010Gm13  );
+          %moe_sum( var=C24010Dm13 C24010Em13 C24010Cm13 C24010Fm13 C24010Gm13  );
 
 
   label
