@@ -198,7 +198,7 @@
     %let count_vars = 
 	   Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
        PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
-       PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
+       PopPoor: PopInCivLaborFor: PopCivilian: PopUnemployed: PopEmployed: PopWork:
        Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
         
        RentCostBurdenDenom: OwnerCostBurdenDenom:
@@ -219,7 +219,7 @@
     %let count_vars = 
 	   TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
        PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
-       PopPoor: PopInCivLaborForce: PopCivilian: PopUnemployed: PopEmployed: PopWork:
+       PopPoor: PopInCivLaborForce: PopCivil: PopUnemployed: PopEmployed: PopWork:
        Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
         
        RentCostBurdenDenom: OwnerCostBurdenDenom:
@@ -327,15 +327,15 @@
        mPopCivilianEmployedA_&_years. mPopCivilianEmployedIOM_&_years.
        mPopCivilianEmployedAIOM_&_years.
 
-       mPopCivilianEmployed_M_&_years. mPopCivilianEmployedB_M_&_years.
-       mPopCivilianEmployedW_M_&_years. mPopCivilianEmployedH_M_&_years.
-       mPopCivilianEmployedA_M_&_years. mPopCivilianEmployedIOM_M_&_years.
-       mPopCivilianEmployedAIOM_M_&_years.
+       mPopCivilEmployed_M_&_years. mPopCivilEmployedB_M_&_years.
+       mPopCivilEmployedW_M_&_years. mPopCivilEmployedH_M_&_years.
+       mPopCivilEmployedA_M_&_years. mPopCivilEmployedIOM_M_&_years.
+       mPopCivilEmployedAIOM_M_&_years.
        
-       mPopCivilianEmployed_F_&_years. mPopCivilianEmployedB_F_&_years.
-       mPopCivilianEmployedW_F_&_years. mPopCivilianEmployedH_F_&_years.
-       mPopCivilianEmployedA_F_&_years. mPopCivilianEmployedIOF_F_&_years.
-       mPopCivilianEmployedAIOF_F_&_years.
+       mPopCivilEmployed_F_&_years. mPopCivilEmployedB_F_&_years.
+       mPopCivilEmployedW_F_&_years. mPopCivilEmployedH_F_&_years.
+       mPopCivilEmployedA_F_&_years. mPopCivilEmployedIOM_F_&_years.
+       mPopCivilEmployedAIOM_F_&_years.
        
              
        mPopUnemployed_&_years. mPopUnemployedB_&_years.
@@ -350,23 +350,23 @@
 
        mPopUnemployed_F_&_years. mPopUnemployedB_F_&_years.
        mPopUnemployedW_F_&_years. mPopUnemployedH_F_&_years.
-       mPopUnemployedA_F_&_years. mPopUnemployedIOF_F_&_years.
-       mPopUnemployedAIOF_F_&_years.
+       mPopUnemployedA_F_&_years. mPopUnemployedIOM_F_&_years.
+       mPopUnemployedAIOM_F_&_years.
        
        mPopInCivLaborForce_&_years. mPopInCivLaborForceB_&_years.
        mPopInCivLaborForceW_&_years. mPopInCivLaborForceH_&_years.
        mPopInCivLaborForceA_&_years. mPopInCivLaborForceIOM_&_years.
        mPopInCivLaborForceAIOM_&_years.
 
-       mPopInCivLaborForce_M_&_years. mPopInCivLaborForceB_M_&_years.
-       mPopInCivLaborForceW_M_&_years. mPopInCivLaborForceH_M_&_years.
-       mPopInCivLaborForceA_M_&_years. mPopInCivLaborForceIOM_M_&_years.
-       mPopInCivLaborForceAIOM_M_&_years.
+       mPopInCivLaborForce_M_&_years. mPopInCivLaborForB_M_&_years.
+       mPopInCivLaborForW_M_&_years. mPopInCivLaborForH_M_&_years.
+       mPopInCivLaborForA_M_&_years. mPopInCivLaborForIOM_M_&_years.
+       mPopInCivLaborForAIOM_M_&_years.
        
-       mPopInCivLaborForce_F_&_years. mPopInCivLaborForceB_F_&_years.
-       mPopInCivLaborForceW_F_&_years. mPopInCivLaborForceH_F_&_years.
-       mPopInCivLaborForceA_F_&_years. mPopInCivLaborForceIOF_F_&_years.
-       mPopInCivLaborForceAIOF_F_&_years.
+       mPopInCivLaborForce_F_&_years. mPopInCivLaborForB_F_&_years.
+       mPopInCivLaborForW_F_&_years. mPopInCivLaborForH_F_&_years.
+       mPopInCivLaborForA_F_&_years. mPopInCivLaborForIOM_F_&_years.
+       mPopInCivLaborForAIOM_F_&_years.
        
        mPop16andOverEmployed_&_years
        mPop16andOverEmploy_&_years. mPop16andOverEmployB_&_years.
@@ -374,15 +374,15 @@
        mPop16andOverEmployA_&_years. mPop16andOverEmployIOM_&_years.
        mPop16andOverEmployAIOM_&_years.
        
-       mPop16andOverEmploy_M_&_years. mPop16andOverEmployB_M_&_years.
-       mPop16andOverEmployW_M_&_years. mPop16andOverEmployH_M_&_years.
-       mPop16andOverEmployA_M_&_years. mPop16andOverEmployIOM_M_&_years.
-       mPop16andOverEmployAIOM_M_&_years.
+       mPop16andOverEmp_M_&_years. mPop16andOverEmpB_M_&_years.
+       mPop16andOverEmpW_M_&_years. mPop16andOverEmpH_M_&_years.
+       mPop16andOverEmpA_M_&_years. mPop16andOverEmpIOM_M_&_years.
+       mPop16andOverEmpAIOM_M_&_years.
 
-       mPop16andOverEmploy_F_&_years. mPop16andOverEmployB_F_&_years.
-       mPop16andOverEmployW_F_&_years. mPop16andOverEmployH_F_&_years.
-       mPop16andOverEmployA_F_&_years. mPop16andOverEmployIOF_F_&_years.
-       mPop16andOverEmployAIOF_F_&_years.
+       mPop16andOverEmp_F_&_years. mPop16andOverEmpB_F_&_years.
+       mPop16andOverEmpW_F_&_years. mPop16andOverEmpH_F_&_years.
+       mPop16andOverEmpA_F_&_years. mPop16andOverEmpIOM_F_&_years.
+       mPop16andOverEmpAIOM_F_&_years.
        
        mPop16_64Employed_&_years. mPop16_64EmployedB_&_years.
        mPop16_64EmployedW_&_years. mPop16_64EmployedH_&_years.
@@ -396,8 +396,8 @@
        
        mPop16_64Employed_F_&_years. mPop16_64EmployedB_F_&_years.
        mPop16_64EmployedW_F_&_years. mPop16_64EmployedH_F_&_years.
-       mPop16_64EmployedA_F_&_years. mPop16_64EmployedIOF_F_&_years.
-       mPop16_64EmployedAIOF_F_&_years.
+       mPop16_64EmployedA_F_&_years. mPop16_64EmployedIOM_F_&_years.
+       mPop16_64EmployedAIOM_F_&_years.
        
        mPop25_64Employed_&_years. 
 
@@ -454,23 +454,23 @@
 
        mPopWorkFT_F_&_years. mPopWorkFTB_F_&_years.
        mPopWorkFTW_F_&_years. mPopWorkFTH_F_&_years.
-       mPopWorkFTA_F_&_years. mPopWorkFTIOF_F_&_years.
-       mPopWorkFTAIOF_F_&_years.
+       mPopWorkFTA_F_&_years. mPopWorkFTIOM_F_&_years.
+       mPopWorkFTAIOM_F_&_years.
        
        mPopWorkEarn_&_years. mPopWorkEarnB_&_years.
        mPopWorkEarnW_&_years. mPopWorkEarnH_&_years.
        mPopWorkEarnA_&_years. mPopWorkEarnIOM_&_years.
        mPopWorkEarnAIOM_&_years.
 
-       mPopWorkEarn_M_&_years. mPopWorkEarnB_M__&_years.
-       mPopWorkEarnW_M__&_years. mPopWorkEarnH_M__&_years.
-       mPopWorkEarnA_M__&_years. mPopWorkEarnIOM_M__&_years.
-       mPopWorkEarnAIOM_M__&_years.
+       mPopWorkEarn_M_&_years. mPopWorkEarnB_M_&_years.
+       mPopWorkEarnW_M_&_years. mPopWorkEarnH_M_&_years.
+       mPopWorkEarnA_M_&_years. mPopWorkEarnIOM_M_&_years.
+       mPopWorkEarnAIOM_M_&_years.
        
-       mPopWorkEarn_F_&_years. mPopWorkEarnB_F__&_years.
-       mPopWorkEarnW_F__&_years. mPopWorkEarnH_F__&_years.
-       mPopWorkEarnA_F__&_years. mPopWorkEarnIOF_F__&_years.
-       mPopWorkEarnAIOF_F__&_years.
+       mPopWorkEarn_F_&_years. mPopWorkEarnB_F_&_years.
+       mPopWorkEarnW_F_&_years. mPopWorkEarnH_F_&_years.
+       mPopWorkEarnA_F_&_years. mPopWorkEarnIOM_F_&_years.
+       mPopWorkEarnAIOM_F_&_years.
        
        mPopWorkFTLT35K_&_years. mPopWorkFTLT35KB_&_years.
        mPopWorkFTLT35KW_&_years. mPopWorkFTLT35KH_&_years.
@@ -484,8 +484,8 @@
 
        mPopWorkFTLT35K_F_&_years. mPopWorkFTLT35KB_F_&_years.
        mPopWorkFTLT35KW_F_&_years. mPopWorkFTLT35KH_F_&_years.
-       mPopWorkFTLT35KA_F_&_years. mPopWorkFTLT35KIOF_F_&_years.
-       mPopWorkFTLT35KAIOF_F_&_years.
+       mPopWorkFTLT35KA_F_&_years. mPopWorkFTLT35KIOM_F_&_years.
+       mPopWorkFTLT35KAIOM_F_&_years.
        
        mPopWorkFTLT75K_&_years. mPopWorkFTLT75KB_&_years.
        mPopWorkFTLT75KW_&_years. mPopWorkFTLT75KH_&_years.
@@ -499,8 +499,8 @@
        
        mPopWorkFTLT75K_F_&_years. mPopWorkFTLT75KB_F_&_years.
        mPopWorkFTLT75KW_F_&_years. mPopWorkFTLT75KH_F_&_years.
-       mPopWorkFTLT75KA_F_&_years. mPopWorkFTLT75KIOF_F_&_years.
-       mPopWorkFTLT75KAIOF_F_&_years.
+       mPopWorkFTLT75KA_F_&_years. mPopWorkFTLT75KIOM_F_&_years.
+       mPopWorkFTLT75KAIOM_F_&_years.
 
 
 	   /* Age */
@@ -537,8 +537,8 @@
 
        mPop16andOverYears_F_&_years. mPop16andOverYearsB_F_&_years.
        mPop16andOverYearsW_F_&_years. mPop16andOverYearsH_F_&_years.
-       mPop16andOverYearsA_F_&_years. mPop16andOverYearsIOF_F_&_years.
-       mPop16andOverYearsAIOF_F_&_years.
+       mPop16andOverYearsA_F_&_years. mPop16andOverYearsIOM_F_&_years.
+       mPop16andOverYearsAIOM_F_&_years.
 	
 	mPop16_64years_&_years. mPop16_64yearsB_&_years.
        mPop16_64yearsW_&_years. mPop16_64yearsH_&_years.
@@ -552,8 +552,8 @@
 
        mPop16_64years_F_&_years. mPop16_64yearsB_F_&_years.
        mPop16_64yearsW_F_&_years. mPop16_64yearsH_F_&_years.
-       mPop16_64yearsA_F_&_years. mPop16_64yearsIOF_F_&_years.
-       mPop16_64yearsAIOF_F_&_years.
+       mPop16_64yearsA_F_&_years. mPop16_64yearsIOM_F_&_years.
+       mPop16_64yearsAIOM_F_&_years.
        
        mPop25_64years_&_years. mPop25_64yearsB_&_years.
        mPop25_64yearsW_&_years. mPop25_64yearsH_&_years.
