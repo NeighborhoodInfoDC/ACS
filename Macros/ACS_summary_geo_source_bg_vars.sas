@@ -15,6 +15,7 @@
  No variable should be added to both macros. 
 
  Modifications: RP 12/18/20 B00001 and B00002 were replacd with B98003 and B98001 starting with 2015-19
+7/21/21 YS add employment related variable broken down by gender
 **************************************************************************/
 
 
@@ -152,7 +153,7 @@
     
     ** Population by race/ethnicity alone**;
 
-    PopAloneB_&_years. = sum(B03002e4, B03002e14 );
+  PopAloneB_&_years. = sum(B03002e4, B03002e14 );
   PopAloneW_&_years. = sum(B03002e3, B03002e13 );
   PopAloneH_&_years. = B03002e12;
   PopAloneA_&_years. = sum(B03002e6, B03002e7, B03002e16, B03002e17 );
@@ -275,6 +276,116 @@
           sum(C24010Ce7, C24010Ce13, C24010De7, C24010De13, C24010Ee7, C24010Ee13, 
             C24010Fe7, C24010Fe13, C24010Ge7, C24010Ge13 );
 
+/*gender*/
+
+			
+        PopEmployedByOcc_M_&_years. = C24010e2;
+        PopEmployedMngmt_M_&_years. = C24010e3;
+        PopEmployedServ_M_&_years. = C24010e19;
+        PopEmployedSales_M_&_years. = C24010e27;
+        PopEmployedNatRes_M_&_years. = C24010e30;
+        PopEmployedProd_M_&_years. = C24010e34;
+      	PopEmployedByOcc_F_&_years. = C24010e38;
+        PopEmployedMngmt_F_&_years. = C24010e39;
+        PopEmployedServ_F_&_years. = C24010e55;
+        PopEmployedSales_F_&_years. = C24010e63;
+        PopEmployedNatRes_F_&_years. = C24010e66;
+        PopEmployedProd_F_&_years. = C24010e70;
+
+        PopEmployedByOccB_M_&_years. = C24010Be2;
+        PopEmployedMngmtB_M_&_years. = C24010Be3;
+        PopEmployedServB_M_&_years. = C24010Be4;
+        PopEmployedSalesB_M_&_years. = C24010Be5;
+        PopEmployedNatResB_M_&_years. = C24010Be6;
+        PopEmployedProdB_M_&_years. = C24010Be7;
+
+		PopEmployedByOccB_F_&_years. = C24010Be8;
+        PopEmployedMngmtB_F_&_years. = C24010Be9;
+        PopEmployedServB_F_&_years. = C24010Be10;
+        PopEmployedSalesB_F_&_years. = C24010Be11;
+        PopEmployedNatResB_F_&_years. = C24010Be12;
+        PopEmployedProdB_F_&_years. = C24010Be13;
+
+      PopEmployedByOccW_M_&_years. = C24010He2;
+        PopEmployedMngmtW_M_&_years. = C24010He3;
+        PopEmployedServW_M_&_years. = C24010He4;
+        PopEmployedSalesW_M_&_years. = C24010He5;
+        PopEmployedNatResW_M_&_years. = C24010He6;
+        PopEmployedProdW_M_&_years. = C24010He7;
+
+      PopEmployedByOccW_F_&_years. = C24010He8;
+        PopEmployedMngmtW_F_&_years. = C24010He9;
+        PopEmployedServW_F_&_years. = C24010He10;
+        PopEmployedSalesW_F_&_years. = C24010He11;
+        PopEmployedNatResW_F_&_years. = C24010He12;
+        PopEmployedProdW_F_&_years. = C24010He13;
+
+      PopEmployedByOccH_M_&_years. = C24010Ie2;
+        PopEmployedMngmtH_M_&_years. = C24010Ie3;
+        PopEmployedServH_M_&_years. = C24010Ie4;
+        PopEmployedSalesH_M_&_years. = C24010Ie5;
+        PopEmployedNatResH_M_&_years. = C24010Ie6;
+        PopEmployedProdH_M_&_years. = C24010Ie7;
+
+      PopEmployedByOccH_F_&_years. = C24010Ie8;
+        PopEmployedMngmtH_F_&_years. = C24010Ie9;
+        PopEmployedServH_F_&_years. = C24010Ie10;
+        PopEmployedSalesH_F_&_years. = C24010Ie11;
+        PopEmployedNatResH_F_&_years. = C24010Ie12;
+        PopEmployedProdH_F_&_years. = C24010Ie13;
+
+      PopEmployedByOccA_M_&_years. = sum(C24010De2, C24010Ee2);
+        PopEmployedMngmtA_M_&_years. = sum( C24010De3,  C24010Ee3 );
+        PopEmployedServA_M_&_years. = sum(C24010De4, C24010Ee4 );
+        PopEmployedSalesA_M_&_years. = sum(C24010De5, C24010Ee5 );
+        PopEmployedNatResA_M_&_years. = sum(C24010De6, C24010Ee6 );
+        PopEmployedProdA_M_&_years. = sum(C24010De7, C24010Ee7 );
+
+      PopEmployedByOccA_F_&_years. = sum(C24010De8, C24010Ee8);
+        PopEmployedMngmtA_F_&_years. = sum(C24010De9, C24010Ee9 );
+        PopEmployedServA_F_&_years. = sum(C24010De10, C24010Ee10 );
+        PopEmployedSalesA_F_&_years. = sum(C24010De11, C24010Ee11 );
+        PopEmployedNatResA_F_&_years. = sum(C24010De12, C24010Ee12 );
+        PopEmployedProdA_F_&_years. = sum(C24010De13, C24010Ee13 );
+
+      PopEmployedByOccIOM_M_&_years. = sum(C24010Ce2, C24010Fe2, C24010Ge2 );
+        PopEmployedMngmtIOM_M_&_years. = sum(C24010Ce3, C24010Fe3,C24010Ge3);
+        PopEmployedServIOM_M_&_years. = sum(C24010Ce4, C24010Fe4, C24010Ge4);
+        PopEmployedSalesIOM_M_&_years. = sum(C24010Ce5, C24010Fe5, C24010Ge5);
+        PopEmployedNatResIOM_M_&_years. = sum(C24010Ce6, C24010Fe6, C24010Ge6 );
+        PopEmployedProdIOM_M_&_years. = sum(C24010Ce7, C24010Fe7, C24010Ge7);
+
+      PopEmployedByOccIOM_F_&_years. = sum(C24010Ce8, C24010Fe8, C24010Ge8 );
+        PopEmployedMngmtIOM_F_&_years. = sum(C24010Ce9, C24010Fe9, C24010Ge9);
+        PopEmployedServIOM_F_&_years. = sum(C24010Ce10, C24010Fe10, C24010Ge10 );
+        PopEmployedSalesIOM_F_&_years. = sum(C24010Ce11, C24010Fe11, C24010Ge11 );
+        PopEmployedNatResIOM_F_&_years. = sum(C24010Ce12, C24010Fe12, C24010Ge12);
+        PopEmployedProdIOM_F_&_years. = sum(C24010Ce13, C24010Fe13, C24010Ge13 );
+
+      PopEmployedByOccAIOM_M_&_years. = sum(C24010De2, C24010Ee2, C24010Ce2, C24010Fe2, C24010Ge2  );
+        PopEmployedMngmtAIOM_M_&_years. = 
+          sum(C24010De3,  C24010Ee3, C24010Ce3, C24010Fe3,C24010Ge3 );
+        PopEmployedServAIOM_M_&_years. = 
+          sum(C24010De4, C24010Ee4, C24010Ce4, C24010Fe4, C24010Ge4 );
+        PopEmployedSalesAIOM_M_&_years. = 
+          sum(C24010De5, C24010Ee5, C24010Ce5, C24010Fe5, C24010Ge5);
+        PopEmployedNatResAIOM_M_&_years. = 
+          sum(C24010De6, C24010Ee6, C24010Ce6, C24010Fe6, C24010Ge6 );
+        PopEmployedProdAIOM_M_&_years. = 
+          sum(C24010De7, C24010Ee7, C24010Ce7, C24010Fe7, C24010Ge7 );
+
+      PopEmployedByOccAIOM_F_&_years. = sum(C24010De8, C24010Ee8, C24010Ce8, C24010Fe8, C24010Ge8 );
+        PopEmployedMngmtAIOM_F_&_years. = 
+          sum(C24010De9, C24010Ee9, C24010Ce9, C24010Fe9, C24010Ge9 );
+        PopEmployedServAIOM_F_&_years. = 
+          sum(C24010De10, C24010Ee10, C24010Ce10, C24010Fe10, C24010Ge10 );
+        PopEmployedSalesAIOM_F_&_years. = 
+          sum(C24010e11, C24010Ee11, C24010Ce11, C24010Fe11, C24010Ge11 );
+        PopEmployedNatResAIOM_F_&_years. = 
+          sum(C24010De12, C24010Ee12, C24010Ce12, C24010Fe12, C24010Ge12);
+        PopEmployedProdAIOM_F_&_years. = 
+          sum(C24010De13, C24010Ee13, C24010Ce13, C24010Fe13, C24010Ge13  );
+
     mPopEmployedWorkers_&_years. = B08007m1;
       mPopEmployedWorkInState_&_years. = B08007m2;
       mPopEmployedWorkInCnty_&_years. = B08007m3;
@@ -344,6 +455,119 @@
         mPopEmployedSalesAIOM_&_years. = %moe_sum( var=C24010Cm5 C24010Cm11 C24010Dm5 C24010Dm11 C24010Em5 C24010Em11 C24010Fm5 C24010Fm11 C24010Gm5 C24010Gm11);
         mPopEmployedNatResAIOM_&_years. = %moe_sum( var=C24010Cm6 C24010Cm12 C24010Cm6 C24010Cm12 C24010Dm6 C24010Dm12 C24010Em6 C24010Em12 C24010Fm6 C24010Fm12 C24010Gm6 C24010Gm12);
         mPopEmployedProdAIOM_&_years. = %moe_sum( var=C24010Cm7 C24010Cm13 C24010Dm7 C24010Dm13 C24010Em7 C24010Em13 C24010Fm7 C24010Fm13 C24010Gm7 C24010Gm13);
+
+
+/*gender*/
+
+        mPopEmployedByOcc_M_&_years. = C24010m2;
+        mPopEmployedMngmt_M_&_years. = C24010m3;
+        mPopEmployedServ_M_&_years. = C24010m19;
+        mPopEmployedSales_M_&_years. = C24010m27;
+        mPopEmployedNatRes_M_&_years. = C24010m30;
+        mPopEmployedProd_M_&_years. = C24010m34;
+
+      mPopEmployedByOcc_F_&_years. = C24010m38;
+        mPopEmployedMngmt_F_&_years. = C24010m39;
+        mPopEmployedServ_F_&_years. = C24010m55;
+        mPopEmployedSales_F_&_years. = C24010m63;
+        mPopEmployedNatRes_F_&_years. = C24010m66;
+        mPopEmployedProd_F_&_years. = C24010m70;
+
+        mPopEmployedByOccB_M_&_years. = C24010Bm2;
+        mPopEmployedMngmtB_M_&_years. = C24010Bm3;
+        mPopEmployedServB_M_&_years. = C24010Bm4;
+        mPopEmployedSalesB_M_&_years. = C24010Bm5;
+        mPopEmployedNatResB_M_&_years. = C24010Bm6;
+        mPopEmployedProdB_M_&_years. = C24010Bm7;
+
+      mPopEmployedByOccB_F_&_years. = C24010Bm8;
+        mPopEmployedMngmtB_F_&_years. = C24010Bm9;
+        mPopEmployedServB_F_&_years. = C24010Bm10;
+        mPopEmployedSalesB_F_&_years. = C24010Bm11;
+        mPopEmployedNatResB_F_&_years. = C24010Bm12;
+        mPopEmployedProdB_F_&_years. = C24010Bm13;
+
+      mPopEmployedByOccW_M_&_years. = C24010Hm2;
+        mPopEmployedMngmtW_M_&_years. = C24010Hm3;
+        mPopEmployedServW_M_&_years. = C24010Hm4;
+        mPopEmployedSalesW_M_&_years. = C24010Hm5;
+        mPopEmployedNatResW_M_&_years. = C24010Hm6;
+        mPopEmployedProdW_M_&_years. = C24010Hm7;
+
+
+      mPopEmployedByOccW_F_&_years. = C24010Hm8;
+        mPopEmployedMngmtW_F_&_years. = C24010Hm9;
+        mPopEmployedServW_F_&_years. = C24010Hm10;
+        mPopEmployedSalesW_F_&_years. = C24010Hm11;
+        mPopEmployedNatResW_F_&_years. = C24010Hm12;
+        mPopEmployedProdW_F_&_years. = C24010Hm13;
+
+      mPopEmployedByOccH_M_&_years. = C24010Im2;
+        mPopEmployedMngmtH_M_&_years. = C24010Im3;
+        mPopEmployedServH_M_&_years. = C24010Im4;
+        mPopEmployedSalesH_M_&_years. = C24010Im5;
+        mPopEmployedNatResH_M_&_years. = C24010Im6;
+        mPopEmployedProdH_M_&_years. = C24010Im7;
+
+      mPopEmployedByOccH_F_&_years. = C24010Im8;
+        mPopEmployedMngmtH_F_&_years. = C24010Im9;
+        mPopEmployedServH_F_&_years. = C24010Im10;
+        mPopEmployedSalesH_F_&_years. = C24010Im11;
+        mPopEmployedNatResH_F_&_years. = C24010Im12;
+        mPopEmployedProdH_F_&_years. = C24010Im13;
+
+       mPopEmployedByOccA_M_&_years. = %moe_sum( var=C24010Dm2 C24010Em2);
+        mPopEmployedMngmtA_M_&_years. = %moe_sum( var= C24010Dm3  C24010Em3 );
+        mPopEmployedServA_M_&_years. = %moe_sum( var=C24010Dm4 C24010Em4 );
+        mPopEmployedSalesA_M_&_years. = %moe_sum( var=C24010Dm5 C24010Em5 );
+        mPopEmployedNatResA_M_&_years. = %moe_sum( var=C24010Dm6 C24010Em6 );
+        mPopEmployedProdA_M_&_years. = %moe_sum( var=C24010Dm7 C24010Em7 );
+
+      mPopEmployedByOccA_F_&_years. = %moe_sum( var=C24010Dm8 C24010Em8);
+        mPopEmployedMngmtA_F_&_years. = %moe_sum( var=C24010Dm9 C24010Em9 );
+        mPopEmployedServA_F_&_years. = %moe_sum( var=C24010Dm10 C24010Em10 );
+        mPopEmployedSalesA_F_&_years. = %moe_sum( var=C24010Dm11 C24010Em11 );
+        mPopEmployedNatResA_F_&_years. = %moe_sum( var=C24010Dm12 C24010Em12 );
+        mPopEmployedProdA_F_&_years. = %moe_sum( var=C24010Dm13 C24010Em13 );
+
+      mPopEmployedByOccIOM_M_&_years. = %moe_sum( var=C24010Cm2 C24010Fm2 C24010Gm2 );
+        mPopEmployedMngmtIOM_M_&_years. = %moe_sum( var=C24010Cm3 C24010Fm3 C24010Gm3);
+        mPopEmployedServIOM_M_&_years. = %moe_sum( var=C24010Cm4 C24010Fm4 C24010Gm4);
+        mPopEmployedSalesIOM_M_&_years. = %moe_sum( var=C24010Cm5 C24010Fm5 C24010Gm5);
+        mPopEmployedNatResIOM_M_&_years. = %moe_sum( var=C24010Cm6 C24010Fm6 C24010Gm6 );
+        mPopEmployedProdIOM_M_&_years. = %moe_sum( var=C24010Cm7 C24010Fm7 C24010Gm7);
+
+      mPopEmployedByOccIOM_F_&_years. = %moe_sum( var=C24010Cm8 C24010Fm8 C24010Gm8 );
+        mPopEmployedMngmtIOM_F_&_years. = %moe_sum( var=C24010Cm9 C24010Fm9 C24010Gm9);
+        mPopEmployedServIOM_F_&_years. = %moe_sum( var=C24010Cm10 C24010Fm10 C24010Gm10 );
+        mPopEmployedSalesIOM_F_&_years. = %moe_sum( var=C24010Cm11 C24010Fm11 C24010Gm11 );
+        mPopEmployedNatResIOM_F_&_years. = %moe_sum( var=C24010Cm12 C24010Fm12 C24010Gm12);
+        mPopEmployedProdIOM_F_&_years. = %moe_sum( var=C24010Cm13 C24010Fm13 C24010Gm13 );
+
+      mPopEmployedByOccAIOM_M_&_years. = %moe_sum( var=C24010Dm2 C24010Em2 C24010Cm2 C24010Fm2 C24010Gm2  );
+        mPopEmployedMngmtAIOM_M_&_years. = 
+          %moe_sum( var=C24010Dm3  C24010Em3 C24010Cm3 C24010Fm3 C24010Gm3 );
+        mPopEmployedServAIOM_M_&_years. = 
+          %moe_sum( var=C24010Dm4 C24010Em4 C24010Cm4 C24010Fm4 C24010Gm4 );
+        mPopEmployedSalesAIOM_M_&_years. = 
+          %moe_sum( var=C24010De5 C24010Em5 C24010Cm5 C24010Fm5 C24010Gm5);
+        mPopEmployedNatResAIOM_M_&_years. = 
+          %moe_sum( var=C24010Dm6 C24010Em6 C24010Cm6 C24010Fm6 C24010Gm6 );
+        mPopEmployedProdAIOM_M_&_years. = 
+          %moe_sum( var=C24010Dm7 C24010Em7 C24010Cm7 C24010Fm7 C24010Gm7 );
+
+      mPopEmployedByOccAIOM_F_&_years. = %moe_sum( var=C24010Dm8 C24010Em8 C24010Cm8 C24010Fm8 C24010Gm8 );
+        mPopEmployedMngmtAIOM_F_&_years. = 
+          %moe_sum( var=C24010Dm9 C24010Em9 C24010Cm9 C24010Fm9 C24010Gm9 );
+        mPopEmployedServAIOM_F_&_years. = 
+          %moe_sum( var=C24010Dm10 C24010Em10 C24010Cm10 C24010Fm10 C24010Gm10 );
+        mPopEmployedSalesAIOM_F_&_years. = 
+          %moe_sum( var=C24010m11 C24010Em11 C24010Cm11 C24010Fm11 C24010Gm11 );
+        mPopEmployedNatResAIOM_F_&_years. = 
+          %moe_sum( var=C24010Dm12 C24010Em12 C24010Cm12 C24010Fm12 C24010Gm12);
+        mPopEmployedProdAIOM_F_&_years. = 
+          %moe_sum( var=C24010Dm13 C24010Em13 C24010Cm13 C24010Fm13 C24010Gm13  );
+
 
   label
     PopEmployedWorkers_&_years. = "Workers 16+ years, &_years_dash "
@@ -468,7 +692,182 @@
       mPopEmployedSalesAIOM_&_years. = "Persons 16+ years old employed in sales and office occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
       mPopEmployedNatResAIOM_&_years. = "Persons 16+ years old employed in natural resources, construction, and maintenance occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
       mPopEmployedProdAIOM_&_years. = "Persons 16+ years old employed in production, transportation, and material moving occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
-      ;
+
+/*gender*/
+
+     PopEmployedByOcc_M_&_years. = "Male 16+ years old employed in civilian occupations, &_years_dash "
+      PopEmployedMngmt_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations,&_years_dash "
+      PopEmployedServ_M_&_years. = "Male 16+ years old employed in service occupations,  &_years_dash "
+      PopEmployedSales_M_&_years. = "Male 16+ years old employed in sales and office occupations,  &_years_dash "
+      PopEmployedNatRes_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, &_years_dash "
+      PopEmployedProd_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, &_years_dash "
+     PopEmployedByOcc_F_&_years. = "Female 16+ years old employed in civilian occupations, &_years_dash "
+      PopEmployedMngmt_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations,&_years_dash "
+      PopEmployedServ_F_&_years. = "Female 16+ years old employed in service occupations,  &_years_dash "
+      PopEmployedSales_F_&_years. = "Female 16+ years old employed in sales and office occupations,  &_years_dash "
+      PopEmployedNatRes_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, &_years_dash "
+      PopEmployedProd_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, &_years_dash "
+
+   PopEmployedByOccB_M_&_years. = "Male 16+ years old employed in civilian occupations, Black/African American, &_years_dash "
+      PopEmployedMngmtB_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, Black/African American, &_years_dash "
+      PopEmployedServB_M_&_years. = "Male 16+ years old employed in service occupations, Black/African American, &_years_dash "
+      PopEmployedSalesB_M_&_years. = "Male 16+ years old employed in sales and office occupations, Black/African American, &_years_dash "
+      PopEmployedNatResB_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, Black/African American, &_years_dash "
+      PopEmployedProdB_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, Black/African American, &_years_dash "
+    PopEmployedByOccW_M_&_years. = "Male 16+ years old employed in civilian occupations, Non-Hispanic White, &_years_dash "
+      PopEmployedMngmtW_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, Non-Hispanic White, &_years_dash "
+      PopEmployedServW_M_&_years. = "Male 16+ years old employed in service occupations, Non-Hispanic White, &_years_dash "
+      PopEmployedSalesW_M_&_years. = "Male 16+ years old employed in sales and office occupations, Non-Hispanic White, &_years_dash "
+      PopEmployedNatResW_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, Non-Hispanic White, &_years_dash "
+      PopEmployedProdW_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, Non-Hispanic White, &_years_dash "
+    PopEmployedByOccH_M_&_years. = "Male 16+ years old employed in civilian occupations, Hispanic/Latino, &_years_dash "
+      PopEmployedMngmtH_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, Hispanic/Latino, &_years_dash "
+      PopEmployedServH_M_&_years. = "Male 16+ years old employed in service occupations, Hispanic/Latino, &_years_dash "
+      PopEmployedSalesH_M_&_years. = "Male 16+ years old employed in sales and office occupations, Hispanic/Latino, &_years_dash "
+      PopEmployedNatResH_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, Hispanic/Latino, &_years_dash "
+      PopEmployedProdH_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, Hispanic/Latino, &_years_dash "
+    PopEmployedByOccA_M_&_years. = "Male 16+ years old employed in civilian occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+      PopEmployedMngmtA_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+      PopEmployedServA_M_&_years. = "Male 16+ years old employed in service occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+      PopEmployedSalesA_M_&_years. = "Male 16+ years old employed in sales and office occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+      PopEmployedNatResA_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+      PopEmployedProdA_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+    PopEmployedByOccIOM_M_&_years. = "Male 16+ years old employed in civilian occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      PopEmployedMngmtIOM_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      PopEmployedServIOM_M_&_years. = "Male 16+ years old employed in service occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      PopEmployedSalesIOM_M_&_years. = "Male 16+ years old employed in sales and office occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      PopEmployedNatResIOM_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      PopEmployedProdIOM_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+    PopEmployedByOccAIOM_M_&_years. = "Male 16+ years old employed in civilian occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedMngmtAIOM_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedServAIOM_M_&_years. = "Male 16+ years old employed in service occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedSalesAIOM_M_&_years. = "Male 16+ years old employed in sales and office occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedNatResAIOM_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedProdAIOM_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedByOccB_F_&_years. = "Female 16+ years old employed in civilian occupations, Black/African American, &_years_dash "
+      PopEmployedMngmtB_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, Black/African American, &_years_dash "
+      PopEmployedServB_F_&_years. = "Female 16+ years old employed in service occupations, Black/African American, &_years_dash "
+      PopEmployedSalesB_F_&_years. = "Female 16+ years old employed in sales and office occupations, Black/African American, &_years_dash "
+      PopEmployedNatResB_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, Black/African American, &_years_dash "
+      PopEmployedProdB_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, Black/African American, &_years_dash "
+    PopEmployedByOccW_F_&_years. = "Female 16+ years old employed in civilian occupations, Non-Hispanic White, &_years_dash "
+      PopEmployedMngmtW_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, Non-Hispanic White, &_years_dash "
+      PopEmployedServW_F_&_years. = "Female 16+ years old employed in service occupations, Non-Hispanic White, &_years_dash "
+      PopEmployedSalesW_F_&_years. = "Female 16+ years old employed in sales and office occupations, Non-Hispanic White, &_years_dash "
+      PopEmployedNatResW_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, Non-Hispanic White, &_years_dash "
+      PopEmployedProdW_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, Non-Hispanic White, &_years_dash "
+    PopEmployedByOccH_F_&_years. = "Female 16+ years old employed in civilian occupations, Hispanic/Latino, &_years_dash "
+      PopEmployedMngmtH_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, Hispanic/Latino, &_years_dash "
+      PopEmployedServH_F_&_years. = "Female 16+ years old employed in service occupations, Hispanic/Latino, &_years_dash "
+      PopEmployedSalesH_F_&_years. = "Female 16+ years old employed in sales and office occupations, Hispanic/Latino, &_years_dash "
+      PopEmployedNatResH_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, Hispanic/Latino, &_years_dash "
+      PopEmployedProdH_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, Hispanic/Latino, &_years_dash "
+    PopEmployedByOccA_F_&_years. = "Female 16+ years old employed in civilian occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+      PopEmployedMngmtA_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+      PopEmployedServA_F_&_years. = "Female 16+ years old employed in service occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+      PopEmployedSalesA_F_&_years. = "Female 16+ years old employed in sales and office occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+      PopEmployedNatResA_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+      PopEmployedProdA_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, Asian, Native Hawaiian, or Other Pacific Islander, &_years_dash "
+    PopEmployedByOccIOM_F_&_years. = "Female 16+ years old employed in civilian occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      PopEmployedMngmtIOM_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      PopEmployedServIOM_F_&_years. = "Female 16+ years old employed in service occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      PopEmployedSalesIOM_F_&_years. = "Female 16+ years old employed in sales and office occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      PopEmployedNatResIOM_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      PopEmployedProdIOM_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+    PopEmployedByOccAIOM_F_&_years. = "Female 16+ years old employed in civilian occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedMngmtAIOM_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedServAIOM_F_&_years. = "Female 16+ years old employed in service occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedSalesAIOM_F_&_years. = "Female 16+ years old employed in sales and office occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedNatResAIOM_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopEmployedProdAIOM_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+
+    mPopEmployedByOcc_M_&_years. = "Male 16+ years old employed in civilian occupations, MOE, &_years_dash "
+      mPopEmployedMngmt_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations,&_years_dash "
+      mPopEmployedServ_M_&_years. = "Male 16+ years old employed in service occupations,  &_years_dash "
+      mPopEmployedSales_M_&_years. = "Male 16+ years old employed in sales and office occupations,  &_years_dash "
+      mPopEmployedNatRes_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, MOE, &_years_dash "
+      mPopEmployedProd_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, MOE, &_years_dash "
+     mPopEmployedByOcc_F_&_years. = "Female 16+ years old employed in civilian occupations, MOE, &_years_dash "
+      mPopEmployedMngmt_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations,&_years_dash "
+      mPopEmployedServ_F_&_years. = "Female 16+ years old employed in service occupations,  &_years_dash "
+      mPopEmployedSales_F_&_years. = "Female 16+ years old employed in sales and office occupations,  &_years_dash "
+      mPopEmployedNatRes_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, MOE, &_years_dash "
+      mPopEmployedProd_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, MOE, &_years_dash "
+
+   mPopEmployedByOccB_M_&_years. = "Male 16+ years old employed in civilian occupations, Black/African American, MOE, &_years_dash "
+      mPopEmployedMngmtB_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, Black/African American, MOE, &_years_dash "
+      mPopEmployedServB_M_&_years. = "Male 16+ years old employed in service occupations, Black/African American, MOE, &_years_dash "
+      mPopEmployedSalesB_M_&_years. = "Male 16+ years old employed in sales and office occupations, Black/African American, MOE, &_years_dash "
+      mPopEmployedNatResB_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, Black/African American, MOE, &_years_dash "
+      mPopEmployedProdB_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, Black/African American, MOE, &_years_dash "
+    mPopEmployedByOccW_M_&_years. = "Male 16+ years old employed in civilian occupations, Non-Hispanic White, MOE, &_years_dash "
+      mPopEmployedMngmtW_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, Non-Hispanic White, MOE, &_years_dash "
+      mPopEmployedServW_M_&_years. = "Male 16+ years old employed in service occupations, Non-Hispanic White, MOE, &_years_dash "
+      mPopEmployedSalesW_M_&_years. = "Male 16+ years old employed in sales and office occupations, Non-Hispanic White, MOE, &_years_dash "
+      mPopEmployedNatResW_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, Non-Hispanic White, MOE, &_years_dash "
+      mPopEmployedProdW_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, Non-Hispanic White, MOE, &_years_dash "
+    mPopEmployedByOccH_M_&_years. = "Male 16+ years old employed in civilian occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedMngmtH_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedServH_M_&_years. = "Male 16+ years old employed in service occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedSalesH_M_&_years. = "Male 16+ years old employed in sales and office occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedNatResH_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedProdH_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedByOccA_M_&_years. = "Male 16+ years old employed in civilian occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedMngmtA_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedServA_M_&_years. = "Male 16+ years old employed in service occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedSalesA_M_&_years. = "Male 16+ years old employed in sales and office occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedNatResA_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedProdA_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedByOccIOM_M_&_years. = "Male 16+ years old employed in civilian occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedMngmtIOM_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedServIOM_M_&_years. = "Male 16+ years old employed in service occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedSalesIOM_M_&_years. = "Male 16+ years old employed in sales and office occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedNatResIOM_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedProdIOM_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedByOccAIOM_M_&_years. = "Male 16+ years old employed in civilian occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPopEmployedMngmtAIOM_M_&_years. = "Male 16+ years old employed in management, business, science and arts occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPopEmployedServAIOM_M_&_years. = "Male 16+ years old employed in service occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPopEmployedSalesAIOM_M_&_years. = "Male 16+ years old employed in sales and office occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPopEmployedNatResAIOM_M_&_years. = "Male 16+ years old employed in natural resources, construction, and maintenance occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPopEmployedProdAIOM_M_&_years. = "Male 16+ years old employed in production, transportation, and material moving occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+  mPopEmployedByOccB_F_&_years. = "Female 16+ years old employed in civilian occupations, Black/African American, MOE, &_years_dash "
+      mPopEmployedMngmtB_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, Black/African American, MOE, &_years_dash "
+      mPopEmployedServB_F_&_years. = "Female 16+ years old employed in service occupations, Black/African American, MOE, &_years_dash "
+      mPopEmployedSalesB_F_&_years. = "Female 16+ years old employed in sales and office occupations, Black/African American, MOE, &_years_dash "
+      mPopEmployedNatResB_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, Black/African American, MOE, &_years_dash "
+      mPopEmployedProdB_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, Black/African American, MOE, &_years_dash "
+    mPopEmployedByOccW_F_&_years. = "Female 16+ years old employed in civilian occupations, Non-Hispanic White, MOE, &_years_dash "
+      mPopEmployedMngmtW_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, Non-Hispanic White, MOE, &_years_dash "
+      mPopEmployedServW_F_&_years. = "Female 16+ years old employed in service occupations, Non-Hispanic White, MOE, &_years_dash "
+      mPopEmployedSalesW_F_&_years. = "Female 16+ years old employed in sales and office occupations, Non-Hispanic White, MOE, &_years_dash "
+      mPopEmployedNatResW_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, Non-Hispanic White, MOE, &_years_dash "
+      mPopEmployedProdW_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, Non-Hispanic White, MOE, &_years_dash "
+    mPopEmployedByOccH_F_&_years. = "Female 16+ years old employed in civilian occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedMngmtH_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedServH_F_&_years. = "Female 16+ years old employed in service occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedSalesH_F_&_years. = "Female 16+ years old employed in sales and office occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedNatResH_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedProdH_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, Hispanic/Latino, MOE, &_years_dash "
+      mPopEmployedByOccA_F_&_years. = "Female 16+ years old employed in civilian occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedMngmtA_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedServA_F_&_years. = "Female 16+ years old employed in service occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedSalesA_F_&_years. = "Female 16+ years old employed in sales and office occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedNatResA_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedProdA_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, Asian, Native Hawaiian, or Other Pacific Islander, MOE, &_years_dash "
+      mPopEmployedByOccIOM_F_&_years. = "Female 16+ years old employed in civilian occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedMngmtIOM_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedServIOM_F_&_years. = "Female 16+ years old employed in service occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedSalesIOM_F_&_years. = "Female 16+ years old employed in sales and office occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedNatResIOM_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedProdIOM_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPopEmployedByOccAIOM_F_&_years. = "Female 16+ years old employed in civilian occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPopEmployedMngmtAIOM_F_&_years. = "Female 16+ years old employed in management, business, science and arts occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPopEmployedServAIOM_F_&_years. = "Female 16+ years old employed in service occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPopEmployedSalesAIOM_F_&_years. = "Female 16+ years old employed in sales and office occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPopEmployedNatResAIOM_F_&_years. = "Female 16+ years old employed in natural resources, construction, and maintenance occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPopEmployedProdAIOM_F_&_years. = "Female 16+ years old employed in production, transportation, and material moving occupations, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+
+;
 
     ** Education **;
 

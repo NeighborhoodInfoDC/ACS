@@ -19,6 +19,7 @@
 2/21/19 YS added B28002vars
 3/27/19 YS add more rows from B28002
 4/14/21 ALH added variables for regional AI
+7/21/22 YS add employment related variable broken down by gender
 **************************************************************************/
 
 
@@ -1792,6 +1793,53 @@
           C23002Fe7, C23002Fe12, C23002Fe20, C23002Fe25, 
           C23002Ge7, C23002Ge12, C23002Ge20, C23002Ge25 );
 
+/*gender*/
+	 PopCivilEmployed_M_&_years. = 
+        sum( B23001e7, B23001e14, B23001e21, B23001e28, B23001e35, B23001e42, B23001e49, 
+             B23001e56, B23001e63, B23001e70, B23001e75, B23001e80, B23001e85 );
+
+      PopCivilEmployedB_M_&_years. = sum(C23002Be7, C23002Be12 );
+      PopCivilEmployedW_M_&_years. = sum(C23002He7, C23002He12 );
+      PopCivilEmployedH_M_&_years. = sum(C23002Ie7, C23002Ie12 );
+      PopCivilEmployedA_M_&_years. = 
+        sum(C23002De7, C23002De12,
+          C23002Ee7, C23002Ee12 );
+      PopCivilEmployedIOM_M_&_years. = 
+        sum(C23002Ce7, C23002Ce12,  
+          C23002Fe7, C23002Fe12,
+          C23002Ge7, C23002Ge12 );
+      PopCivilEmployedAIOM_M_&_years. = 
+        sum(C23002Ce7, C23002Ce12, 
+          C23002De7, C23002De12,
+          C23002Ee7, C23002Ee12, 
+          C23002Fe7, C23002Fe12, 
+          C23002Ge7, C23002Ge12);
+
+	 PopCivilEmployed_F_&_years. = 
+        sum( B23001e93, B23001e100, B23001e107, B23001e114, B23001e121, B23001e128, 
+             B23001e135, B23001e142, B23001e149, B23001e156, B23001e161, B23001e166, B23001e171 );
+
+      PopCivilEmployedB_F_&_years. = sum( C23002Be20, C23002Be25 );
+      PopCivilEmployedW_F_&_years. = sum(C23002He20, C23002He25 );
+      PopCivilEmployedH_F_&_years. = sum(C23002Ie20, C23002Ie25 );
+      PopCivilEmployedA_F_&_years. = 
+        sum(C23002De20, C23002De25, 
+          C23002Ee20, C23002Ee25 );
+      PopCivilEmployedIOM_F_&_years. = 
+        sum(C23002Ce20, C23002Ce25, 
+          C23002Fe20, C23002Fe25, 
+          C23002Ge20, C23002Ge25 );
+      PopCivilEmployedAIOM_F_&_years. = 
+        sum(C23002Ce20, C23002Ce25,
+           C23002De20, C23002De25, 
+          C23002Ee20, C23002Ee25, 
+           C23002Fe20, C23002Fe25, 
+           C23002Ge20, C23002Ge25 );
+
+
+      /*gender*/
+
+
       PopUnemployed_&_years. = 
         sum( B23001e8, B23001e15, B23001e22, B23001e29, B23001e36, B23001e43, B23001e50, 
              B23001e57, B23001e64, B23001e71, B23001e76, B23001e81, B23001e86, 
@@ -1814,14 +1862,73 @@
           C23002Ee8, C23002Ee13, C23002Ee21, C23002Ee26, 
           C23002Fe8, C23002Fe13, C23002Fe21, C23002Fe26, 
           C23002Ge8, C23002Ge13, C23002Ge21, C23002Ge26 );
+          
 
-      PopInCivLaborForce_&_years. = sum( PopCivilianEmployed_&_years., PopUnemployed_&_years. );
-      PopInCivLaborForceB_&_years. = sum(PopCivilianEmployedB_&_years., PopUnemployedB_&_years.);
-      PopInCivLaborForceW_&_years. = sum(PopCivilianEmployedW_&_years., PopUnemployedW_&_years.);
-      PopInCivLaborForceH_&_years. = sum(PopCivilianEmployedH_&_years., PopUnemployedH_&_years.);
-      PopInCivLaborForceA_&_years. = sum(PopCivilianEmployedA_&_years., PopUnemployedA_&_years.);
-      PopInCivLaborForceIOM_&_years. = sum(PopCivilianEmployedIOM_&_years., PopUnemployedIOM_&_years.);
-      PopInCivLaborForceAIOM_&_years. = sum(PopCivilianEmployedAIOM_&_years., PopUnemployedAIOM_&_years.);
+/*gender*/
+      PopUnemployed_M_&_years. = sum(B23001e8, B23001e15, B23001e22, B23001e29, B23001e36, B23001e43, B23001e50, 
+             B23001e57, B23001e64, B23001e71, B23001e76, B23001e81, B23001e86 );
+	  PopUnemployed_F_&_years. = sum(
+             B23001e94, B23001e101, B23001e108, B23001e115, B23001e122, B23001e129, 
+             B23001e136, B23001e143, B23001e150, B23001e157, B23001e162, B23001e167, B23001e172 );
+
+      PopUnemployedB_M_&_years. = sum(C23002Be8, C23002Be13 );
+	  PopUnemployedB_F_&_years. = sum(C23002Be21, C23002Be26 );
+
+      PopUnemployedW_M_&_years. = sum(C23002He8, C23002He13 );
+	  PopUnemployedW_F_&_years. = sum(C23002He21, C23002He26 );
+
+      PopUnemployedH_M_&_years. = sum(C23002Ie8, C23002Ie13 );
+	  PopUnemployedH_F_&_years. = sum(C23002Ie21, C23002Ie26  );
+
+      PopUnemployedA_M_&_years. = 
+        sum(C23002De8, C23002De13,
+          C23002Ee8, C23002Ee13 );
+
+      PopUnemployedA_F_&_years. = 
+        sum(C23002De21, C23002De26, 
+          C23002Ee21, C23002Ee26 );
+
+      PopUnemployedIOM_M_&_years. = 
+        sum(C23002Ce8, C23002Ce13, 
+          C23002Fe8, C23002Fe13, 
+          C23002Ge8, C23002Ge13 );
+
+      PopUnemployedIOM_F_&_years. = 
+        sum(C23002Ce21, C23002Ce26, 
+          C23002Fe21, C23002Fe26, 
+          C23002Ge21, C23002Ge26 );
+
+      PopUnemployedAIOM_M_&_years. = 
+        sum(C23002De8, C23002De13,
+          C23002Ee8, C23002Ee13, 
+          C23002Ce8, C23002Ce13, 
+          C23002Fe8, C23002Fe13, 
+          C23002Ge8, C23002Ge13 );
+
+      PopUnemployedAIOM_F_&_years. = 
+        sum(C23002De21, C23002De26, 
+          C23002Ee21, C23002Ee26, 
+          C23002Ce21, C23002Ce26, 
+          C23002Fe21, C23002Fe26, 
+          C23002Ge21, C23002Ge26 );
+
+     
+	
+      PopInCivLaborForce_M_&_years. = sum( PopCivilEmployed_M_&_years., PopUnemployed_M_&_years. );	
+      PopInCivLaborForB_M_&_years. = sum(PopCivilEmployedB_M_&_years., PopUnemployedB_M_&_years.);
+      PopInCivLaborForW_M_&_years. = sum(PopCivilEmployedW_M_&_years., PopUnemployedW_M_&_years.);
+      PopInCivLaborForH_M_&_years. = sum(PopCivilEmployedH_M_&_years., PopUnemployedH_M_&_years.);
+      PopInCivLaborForA_M_&_years. = sum(PopCivilEmployedA_M_&_years., PopUnemployedA_M_&_years.);
+      PopInCivLaborForIOM_M_&_years. = sum(PopCivilEmployedIOM_M_&_years., PopUnemployedIOM_M_&_years.);
+      PopInCivLaborForAIOM_M_&_years. = sum(PopCivilEmployedAIOM_M_&_years., PopUnemployedAIOM_M_&_years.);
+      
+      PopInCivLaborForce_F_&_years. = sum( PopCivilEmployed_F_&_years., PopUnemployed_F_&_years. );	
+            PopInCivLaborForB_F_&_years. = sum(PopCivilEmployedB_F_&_years., PopUnemployedB_F_&_years.);
+            PopInCivLaborForW_F_&_years. = sum(PopCivilEmployedW_F_&_years., PopUnemployedW_F_&_years.);
+            PopInCivLaborForH_F_&_years. = sum(PopCivilEmployedH_F_&_years., PopUnemployedH_F_&_years.);
+            PopInCivLaborForA_F_&_years. = sum(PopCivilEmployedA_F_&_years., PopUnemployedA_F_&_years.);
+            PopInCivLaborForIOM_F_&_years. = sum(PopCivilEmployedIOM_F_&_years., PopUnemployedIOM_F_&_years.);
+      PopInCivLaborForAIOM_F_&_years. = sum(PopCivilEmployedAIOM_F_&_years., PopUnemployedAIOM_F_&_years.);
 
   Pop16andOverEmployed_&_years. = PopCivilianEmployed_&_years. +
         sum( B23001e5, B23001e12, B23001e19, B23001e26, B23001e33, B23001e40, 
@@ -1843,7 +1950,32 @@
       sum(C23002Ce5, C23002Ce18, C23002Fe5, C23002Fe18, C23002Ge5, C23002Ge18);
     Pop16andOverEmployAIOM_&_years. = PopCivilianEmployedAIOM_&_years. + 
       sum(C23002Ce5, C23002Ce18, C23002De5, C23002De18, C23002Ee5, C23002Ee18, C23002Fe5, C23002Fe18, C23002Ge5, C23002Ge18);
-
+ 
+      /*gender*/
+      
+          Pop16andOverEmp_M_&_years. = PopCivilEmployed_M_&_years. +
+              sum( B23001e5, B23001e12, B23001e19, B23001e26, B23001e33, B23001e40, 
+                   B23001e47, B23001e54, B23001e61, B23001e68);
+      
+          Pop16andOverEmpB_M_&_years. = PopCivilEmployedB_M_&_years. + C23002Be5;
+          Pop16andOverEmpW_M_&_years. = PopCivilEmployedW_M_&_years. + C23002He5;
+          Pop16andOverEmpH_M_&_years. = PopCivilEmployedH_M_&_years. + C23002Ie5;
+          Pop16andOverEmpA_M_&_years. = PopCivilEmployedA_M_&_years. + sum(C23002De5, C23002Ee5);
+          Pop16andOverEmpIOM_M_&_years. = PopCivilEmployedIOM_M_&_years. + sum(C23002Ce5, C23002Fe5, C23002Ge5);
+          Pop16andOverEmpAIOM_M_&_years. = PopCivilEmployedAIOM_M_&_years. + sum(C23002Ce5, C23002De5, C23002Ee5, C23002Fe5, C23002Ge5);
+      
+        Pop16andOverEmp_F_&_years. = PopCivilEmployed_F_&_years. +
+                    sum( B23001e91, B23001e98, B23001e105, B23001e112, B23001e119, B23001e126, 
+                         B23001e133, B23001e140, B23001e147, B23001e154 );
+            
+                Pop16andOverEmpB_F_&_years. = PopCivilEmployedB_F_&_years. + C23002Be18;
+                Pop16andOverEmpW_F_&_years. = PopCivilEmployedW_F_&_years. + C23002He18;
+                Pop16andOverEmpH_F_&_years. = PopCivilEmployedH_F_&_years. + C23002Ie18;
+                Pop16andOverEmpA_F_&_years. = PopCivilEmployedA_F_&_years. + sum(C23002De18, C23002Ee18);
+                Pop16andOverEmpIOM_F_&_years. = PopCivilEmployedIOM_F_&_years. + sum(C23002Ce18, C23002Fe18, C23002Ge18);
+                Pop16andOverEmpAIOM_F_&_years. = PopCivilEmployedAIOM_F_&_years. + sum(C23002Ce18, C23002De18, C23002Ee18, C23002Fe18, C23002Ge18);
+      
+      
 
   PopEmployedTravel_&_years. = B08012e1;
   PopEmployedTravel_LT5_&_years. = B08012e2;
@@ -1882,6 +2014,43 @@
           C23002Fe5, C23002Fe7, C23002Fe18, C23002Fe20, 
           C23002Ge5, C23002Ge7, C23002Ge18, C23002Ge20 );
 
+/*gender*/
+
+
+    Pop16_64Employed_M_&_years. = sum(B23001e5, B23001e7, B23001e12, B23001e14, B23001e19, B23001e21, B23001e26, B23001e28, 
+        B23001e33, B23001e35, B23001e40, B23001e42, B23001e47, B23001e49, B23001e54, B23001e56, 
+        B23001e61, B23001e63, B23001e68, B23001e70 );
+    Pop16_64Employed_F_&_years. = sum(B23001e91, B23001e93, B23001e98, B23001e100, 
+        B23001e105, B23001e107, B23001e112, B23001e114, B23001e119, B23001e121, B23001e126, B23001e128, 
+        B23001e133, B23001e135, B23001e140, B23001e142, B23001e147, B23001e149, B23001e154, B23001e156 );
+
+    Pop16_64EmployedB_M_&_years. = sum(C23002Be5,C23002Be7 );
+	  Pop16_64EmployedB_F_&_years. = sum(C23002Be18,C23002Be20 );
+
+      Pop16_64EmployedW_M_&_years. = sum(C23002He5,C23002He7 );
+	  Pop16_64EmployedW_F_&_years. = sum(C23002He18,C23002He20 );
+
+      Pop16_64EmployedH_M_&_years. = sum(C23002Ie5,C23002Ie7);
+	  Pop16_64EmployedH_F_&_years. = sum(C23002Ie18,C23002Ie20 );
+
+      Pop16_64EmployedA_M_&_years. = 
+        sum(C23002De5,C23002De7,C23002Ee5,C23002Ee7 );
+		  
+      Pop16_64EmployedA_F_&_years. = 
+        sum(C23002De18,C23002De20,C23002Ee18,C23002Ee20 );
+
+      Pop16_64EmployedIOM_M_&_years. = 
+        sum(C23002Ce5,C23002Ce7,C23002Fe5,C23002Fe7,C23002Ge5,C23002Ge7 );
+	 Pop16_64EmployedIOM_F_&_years. = 
+        sum(C23002Ce18,C23002Ce20,C23002Fe18,C23002Fe20,C23002Ge18,C23002Ge20 );
+
+      Pop16_64EmployedAIOM_M_&_years. = 
+        sum(C23002Ce5,C23002Ce7,C23002Fe5,C23002Fe7,C23002Ge5,C23002Ge7,
+            C23002De5,C23002De7,C23002Ee5,C23002Ee7);
+	 Pop16_64EmployedAIOM_F_&_years. = 
+        sum(C23002Ce18,C23002Ce20,C23002Fe18,C23002Fe20,C23002Ge18,C23002Ge20,
+            C23002De18,C23002De20,C23002Ee18,C23002Ee20);
+
     Pop25_64Employed_&_years. = 
         sum(B23001e26, B23001e28, B23001e33, B23001e35, B23001e40, B23001e42, B23001e47, B23001e49, 
           B23001e54, B23001e56, B23001e61, B23001e63, B23001e68, B23001e70, B23001e112, B23001e114, 
@@ -1897,6 +2066,31 @@
       Pop16andOverYearsIOM_&_years. = sum(B20005Ce1, B20005Fe1, B20005Ge1);
       Pop16andOverYearsAIOM_&_years. = sum(B20005Ce1, B20005De1, B20005Ee1, B20005Fe1, B20005Ge1 );
 
+
+	  /*gender*/
+
+      Pop16andOverYears_M_&_years.  = B20005e2;
+	  Pop16andOverYears_F_&_years.  = B20005e49;
+
+      Pop16andOverYearsB_M_&_years.  = B20005Be2;
+	  Pop16andOverYearsB_F_&_years.  = B20005Be49;
+
+      Pop16andOverYearsW_M_&_years.  = B20005He2;
+	  Pop16andOverYearsW_F_&_years.  = B20005He49;
+
+      Pop16andOverYearsH_M_&_years.  = B20005Ie2;
+	  Pop16andOverYearsH_F_&_years.  = B20005Ie49;
+
+      Pop16andOverYearsA_M_&_years.  = B20005De2;
+	  Pop16andOverYearsA_F_&_years.  = B20005De49;
+
+      Pop16andOverYearsIOM_M_&_years. = sum(B20005Ce2, B20005Fe2, B20005Ge2);
+	  Pop16andOverYearsIOM_F_&_years. = sum(B20005Ce49, B20005Fe49, B20005Ge49);
+
+      Pop16andOverYearsAIOM_M_&_years. = sum(B20005Ce2, B20005De2, B20005Ee2,B20005Fe2, B20005Ge2 );
+	  Pop16andOverYearsAIOM_F_&_years. = sum(B20005Ce49, B20005De49, B20005Ee49,B20005Fe49, B20005Ge49 );
+
+
     Pop16_64years_&_years. = 
       sum(B23001e3, B23001e10, B23001e17, B23001e24, B23001e31, B23001e38, B23001e45, B23001e52, 
         B23001e59, B23001e66, B23001e89, B23001e96, B23001e103, B23001e110, B23001e117, B23001e124, 
@@ -1908,6 +2102,25 @@
       Pop16_64yearsIOM_&_years. = sum(C23002Ce3, C23002Ce16, C23002Fe3, C23002Fe16, C23002Ge3, C23002Ge16 );
       Pop16_64yearsAIOM_&_years. = sum(C23002Ce3, C23002Ce16, C23002De3, C23002De16, C23002Ee3, C23002Ee16, 
                        C23002Fe3, C23002Fe16, C23002Ge3, C23002Ge16 );
+                     
+      /*gender*/
+      Pop16_64years_M_&_years. = 
+            sum(B23001e3, B23001e10, B23001e17, B23001e24, B23001e31, B23001e38, B23001e45, B23001e52, B23001e59, B23001e66);
+            Pop16_64yearsB_M_&_years. = C23002Be3;
+            Pop16_64yearsW_M_&_years.  = C23002He3;
+            Pop16_64yearsH_M_&_years.  = C23002Ie3;
+            Pop16_64yearsA_M_&_years.  = sum(C23002De3, C23002Ee3);
+            Pop16_64yearsIOM_M_&_years. = sum(C23002Ce3, C23002Fe3, C23002Ge3 );
+            Pop16_64yearsAIOM_M_&_years. = sum(C23002Ce3, C23002De3,C23002Ee3, C23002Fe3, C23002Ge3);
+                       
+      Pop16_64years_F_&_years. = 
+                  sum( B23001e89, B23001e96, B23001e103, B23001e110, B23001e117, B23001e124, B23001e131, B23001e138, B23001e145, B23001e152 );
+                  Pop16_64yearsB_F_&_years. = C23002Be16;
+                  Pop16_64yearsW_F_&_years.  = C23002He16;
+                  Pop16_64yearsH_F_&_years.  = C23002Ie16;
+                  Pop16_64yearsA_F_&_years.  = sum(C23002De16,  C23002Ee16 );
+                  Pop16_64yearsIOM_F_&_years. = sum(C23002Ce16, C23002Fe16, C23002Ge16 );
+                  Pop16_64yearsAIOM_F_&_years. = sum(C23002Ce16, C23002De16, C23002Ee16, C23002Fe16, C23002Ge16 );
 
     Pop25_64years_&_years. = 
       sum(B01001e11, B01001e12, B01001e13, B01001e14, B01001e15, B01001e16, B01001e17, 
@@ -1955,6 +2168,33 @@
       PopWorkFTAIOM_&_years. = sum(B20005Ce3, B20005Ce50, B20005De3, B20005De50, B20005Ee3, B20005Ee50,
                      B20005Fe3, B20005Fe50, B20005Ge3, B20005Ge50 );
 
+
+
+	/*gender*/
+      PopWorkFT_M_&_years. = B20005e3;
+      PopWorkFT_F_&_years. = B20005e50;
+ 
+       PopWorkFTB_M_&_years. = B20005Be3;
+      PopWorkFTB_F_&_years. = B20005Be50;
+
+      PopWorkFTW_M_&_years. = B20005He3;
+      PopWorkFTW_F_&_years. = B20005He50;
+
+      PopWorkFTH_M_&_years. = B20005Ie3;
+      PopWorkFTH_F_&_years. = B20005Ie50;
+
+      PopWorkFTA_M_&_years. = sum(B20005De3, B20005Ee3 );
+      PopWorkFTA_F_&_years. = sum(B20005De50, B20005Ee50 );
+
+      PopWorkFTIOM_M_&_years. = sum(B20005Ce3, B20005Fe3, B20005Ge3 );
+      PopWorkFTIOM_F_&_years. = sum(B20005Ce50, B20005Fe50, B20005Ge50 );
+
+      PopWorkFTAIOM_M_&_years. = sum(B20005De3, B20005Ee3,
+                     B20005Ce3, B20005Fe3, B20005Ge3 );
+      PopWorkFTAIOM_F_&_years. = sum(B20005De50, B20005Ee50,
+                     B20005Ce50, B20005Fe50, B20005Ge50 );
+
+
     PopWorkEarn_&_years. = sum(B20005e5, B20005e28, B20005e52, B20005e75 );
       PopWorkEarnB_&_years. = sum(B20005Be5, B20005Be28, B20005Be52, B20005Be75 );
       PopWorkEarnW_&_years. = sum(B20005He5, B20005He28, B20005He52, B20005He75 );
@@ -1972,6 +2212,49 @@
           B20005Ee5, B20005Ee28, B20005Ee52, B20005Ee75, 
           B20005Fe5, B20005Fe28, B20005Fe52, B20005Fe75, 
           B20005Ge5, B20005Ge28, B20005Ge52, B20005Ge75 );
+
+
+/*gender*/
+      PopWorkEarn_M_&_years. = sum(B20005e5, B20005e28 );
+	  PopWorkEarn_F_&_years. = sum(B20005e52, B20005e75 );
+
+      PopWorkEarnB_M_&_years. = sum(B20005Be5, B20005Be28 );
+	  PopWorkEarnB_F_&_years. = sum(B20005Be52, B20005Be75 );
+
+      PopWorkEarnW_M_&_years. = sum(B20005He5, B20005He28 );
+      PopWorkEarnW_F_&_years. = sum(B20005He52, B20005He75 );
+
+      PopWorkEarnH_M_&_years. = sum(B20005Ie5, B20005Ie28 );
+      PopWorkEarnH_F_&_years. = sum(B20005Ie52, B20005Ie75 );
+
+      PopWorkEarnA_M_&_years. = 
+        sum(B20005De5, B20005De28, 
+          B20005Ee5, B20005Ee28 );
+      PopWorkEarnA_F_&_years. = 
+        sum(B20005De52, B20005De75, 
+          B20005Ee52, B20005Ee75 );
+
+      PopWorkEarnIOM_M_&_years. = 
+        sum(B20005Ce5, B20005Ce28, 
+          B20005Fe5, B20005Fe28, 
+          B20005Ge5, B20005Ge28 );
+      PopWorkEarnIOM_F_&_years. = 
+        sum(B20005Ce52, B20005Ce75, 
+          B20005Fe52, B20005Fe75, 
+          B20005Ge52, B20005Ge75);
+
+      PopWorkEarnAIOM_M_&_years. = 
+        sum(B20005De5, B20005De28, 
+          B20005Ee5, B20005Ee28, 
+          B20005Ce5, B20005Ce28, 
+          B20005Fe5, B20005Fe28, 
+          B20005Ge5, B20005Ge28 );
+      PopWorkEarnAIOM_F_&_years. = 
+        sum(B20005De52, B20005De75, 
+          B20005Ee52, B20005Ee75, 
+          B20005Ce52, B20005Ce75, 
+          B20005Fe52, B20005Fe75, 
+          B20005Ge52, B20005Ge75 );
 
 					  /*Annual Earnings*/
 				EarningUnder10K_&_years.= B08119e2;
@@ -2059,6 +2342,92 @@
           B20005Ge51, B20005Ge53, B20005Ge54, B20005Ge55, B20005Ge56, B20005Ge57, 
           B20005Ge58, B20005Ge59, B20005Ge60, B20005Ge61, B20005Ge62, B20005Ge63, B20005Ge64 );
 
+
+/*gender*/
+	  PopWorkFTLT35K_M_&_years. = 
+        sum(B20005e6, B20005e7, B20005e8, B20005e9, B20005e10, B20005e11,
+            B20005e12, B20005e13, B20005e14, B20005e15, B20005e16, B20005e17);
+
+	  PopWorkFTLT35K_F_&_years. = 
+        sum(B20005e53, B20005e54, B20005e55, B20005e56, B20005e57, B20005e58,
+            B20005e59, B20005e60, B20005e61, B20005e62, B20005e63, B20005e64  );
+
+    PopWorkFTLT35KB_M_&_years. = 
+        sum(B20005Be6, B20005Be7, B20005Be8, B20005Be9, B20005Be10, B20005Be11,
+            B20005Be12, B20005Be13, B20005Be14, B20005Be15, B20005Be16, B20005Be17);
+
+	  PopWorkFTLT35KB_F_&_years. = 
+        sum(B20005Be53, B20005Be54, B20005Be55, B20005Be56, B20005Be57, B20005Be58,
+            B20005Be59, B20005Be60, B20005Be61, B20005Be62, B20005Be63, B20005Be64  );
+
+      PopWorkFTLT35KW_M_&_years. = 
+        sum(B20005He6, B20005He7, B20005He8, B20005He9, B20005He10, B20005He11,
+            B20005He12, B20005He13, B20005He14, B20005He15, B20005He16, B20005He17 );
+
+      PopWorkFTLT35KW_F_&_years. = 
+        sum(B20005He53, B20005He54, B20005He55, B20005He56, B20005He57, B20005He58,
+            B20005He59, B20005He60, B20005He61, B20005He62, B20005He63, B20005He64 );
+
+      PopWorkFTLT35KH_M_&_years. = 
+        sum(B20005Ie6, B20005Ie7, B20005Ie8, B20005Ie9, B20005Ie10, B20005Ie11,
+            B20005Ie12, B20005Ie13, B20005Ie14, B20005Ie15,B20005Ie16, B20005Ie17 );
+
+      PopWorkFTLT35KH_F_&_years. = 
+        sum(B20005Ie53, B20005Ie54, B20005Ie55, B20005Ie56, B20005Ie57, B20005Ie58,
+            B20005Ie59, B20005Ie60, B20005Ie61, B20005Ie62, B20005Ie63, B20005Ie64 );
+
+      PopWorkFTLT35KA_M_&_years. = 
+        sum(B20005De6, B20005De7, B20005De8, B20005De9, B20005De10, B20005De11,
+            B20005De12, B20005De13, B20005De14, B20005De15, B20005De16, B20005De17,
+            B20005Ee6, B20005Ee7, B20005Ee8, B20005Ee9, B20005Ee10, B20005Ee11,
+            B20005Ee12, B20005Ee13, B20005Ee14, B20005Ee15, B20005Ee16, B20005Ee17);
+
+      PopWorkFTLT35KA_F_&_years. = 
+        sum(B20005De53, B20005De54, B20005De55, B20005De56, B20005De57, B20005De58,
+            B20005De59, B20005De60, B20005De61, B20005De62, B20005De63, B20005De64,
+            B20005Ee53, B20005Ee54, B20005Ee55, B20005Ee56, B20005Ee57, B20005Ee58,
+            B20005Ee59, B20005Ee60, B20005Ee61, B20005Ee62, B20005Ee63, B20005Ee64 );
+
+      PopWorkFTLT35KIOM_M_&_years. = 
+        sum(B20005Ce6, B20005Ce7, B20005Ce8, B20005Ce9, B20005Ce10, B20005Ce11,
+            B20005Ce12, B20005Ce13, B20005Ce14, B20005Ce15, B20005Ce16, B20005Ce17, 
+          	B20005Fe6, B20005Fe7, B20005Fe8, B20005Fe9, B20005Fe10, B20005Fe11,
+          	B20005Fe12, B20005Fe13, B20005Fe14, B20005Fe15, B20005Fe16, B20005Fe17,
+          	B20005Ge6, B20005Ge7, B20005Ge8, B20005Ge9, B20005Ge10, B20005Ge11,
+            B20005Ge12, B20005Ge13, B20005Ge14, B20005Ge15, B20005Ge16, B20005Ge17 );
+
+	      PopWorkFTLT35KIOM_F_&_years. = 
+        sum(B20005Ce53, B20005Ce54, B20005Ce55, B20005Ce56, B20005Ce57, B20005Ce58,
+            B20005Ce59, B20005Ce60, B20005Ce61, B20005Ce62, B20005Ce63, B20005Ce64,
+          	B20005Fe53,B20005Fe54, B20005Fe55, B20005Fe56, B20005Fe57, B20005Fe58,
+            B20005Fe59, B20005Fe60, B20005Fe61, B20005Fe62, B20005Fe63, B20005Fe64,
+          	B20005Ge53, B20005Ge54, B20005Ge55, B20005Ge56, B20005Ge57, B20005Ge58,
+            B20005Ge59, B20005Ge60, B20005Ge61, B20005Ge62, B20005Ge63, B20005Ge64 );
+
+      PopWorkFTLT35KAIOM_M_&_years. = 
+        sum(B20005De6, B20005De7, B20005De8, B20005De9, B20005De10, B20005De11,
+            B20005De12, B20005De13, B20005De14, B20005De15, B20005De16, B20005De17,
+            B20005Ee6, B20005Ee7, B20005Ee8, B20005Ee9, B20005Ee10, B20005Ee11,
+            B20005Ee12, B20005Ee13, B20005Ee14, B20005Ee15, B20005Ee16, B20005Ee17,
+            B20005Ce6, B20005Ce7, B20005Ce8, B20005Ce9, B20005Ce10, B20005Ce11,
+            B20005Ce12, B20005Ce13, B20005Ce14, B20005Ce15, B20005Ce16, B20005Ce17, 
+          	B20005Fe6, B20005Fe7, B20005Fe8, B20005Fe9, B20005Fe10, B20005Fe11,
+          	B20005Fe12, B20005Fe13, B20005Fe14, B20005Fe15, B20005Fe16, B20005Fe17,
+          	B20005Ge6, B20005Ge7, B20005Ge8, B20005Ge9, B20005Ge10, B20005Ge11,
+            B20005Ge12, B20005Ge13, B20005Ge14, B20005Ge15, B20005Ge16, B20005Ge17);
+
+      PopWorkFTLT35KAIOM_F_&_years. = 
+        sum(B20005De53, B20005De54, B20005De55, B20005De56, B20005De57, B20005De58,
+            B20005De59, B20005De60, B20005De61, B20005De62, B20005De63, B20005De64,
+            B20005Ee53, B20005Ee54, B20005Ee55, B20005Ee56, B20005Ee57, B20005Ee58,
+            B20005Ee59, B20005Ee60, B20005Ee61, B20005Ee62, B20005Ee63, B20005Ee64,
+            B20005Ce53, B20005Ce54, B20005Ce55, B20005Ce56, B20005Ce57, B20005Ce58,
+            B20005Ce59, B20005Ce60, B20005Ce61, B20005Ce62, B20005Ce63, B20005Ce64,
+	   B20005Fe53, B20005Fe54, B20005Fe55, B20005Fe56, B20005Fe57, B20005Fe58,
+            B20005Fe59, B20005Fe60, B20005Fe61, B20005Fe62, B20005Fe63, B20005Fe64,
+            B20005Ge53, B20005Ge54, B20005Ge55, B20005Ge56, B20005Ge57, B20005Ge58,
+            B20005Ge59, B20005Ge60, B20005Ge61, B20005Ge62, B20005Ge63, B20005Ge64);
+
     PopWorkFTLT75K_&_years. = 
     sum(B20005e4, B20005e6, B20005e7, B20005e8, B20005e9, B20005e10, B20005e11, B20005e12, 
       B20005e13, B20005e14, B20005e15, B20005e16, B20005e17, B20005e18, B20005e19, B20005e20, 
@@ -2142,6 +2511,92 @@
           B20005Ge21, B20005Ge22, B20005Ge23, B20005Ge51, B20005Ge53, B20005Ge54, B20005Ge55, B20005Ge56, 
           B20005Ge57, B20005Ge58, B20005Ge59, B20005Ge60, B20005Ge61, B20005Ge62, B20005Ge63, B20005Ge64, 
           B20005Ge65, B20005Ge66, B20005Ge67, B20005Ge68, B20005Ge69, B20005Ge70 );
+
+/*gender*/
+
+       PopWorkFTLT75K_M_&_years. = 
+        sum(B20005e6, B20005e7,B20005e8, B20005e9,B20005e10, B20005e11,B20005e12, B20005e13,B20005e14, B20005e15,
+            B20005e16, B20005e17,B20005e18, B20005e19,B20005e20, B20005e21,B20005e22, B20005e23);
+
+      PopWorkFTLT75K_F_&_years. = 
+        sum(B20005e53, B20005e54,B20005e55, B20005e56,B20005e57, B20005e58,B20005e59, B20005e60,B20005e61, B20005e62,
+            B20005e63, B20005e64,B20005e65, B20005e66,B20005e67, B20005e68,B20005e69, B20005e70 );
+
+      PopWorkFTLT75KB_M_&_years. = 
+        sum(B20005Be6, B20005Be7,B20005Be8, B20005Be9,B20005Be10, B20005Be11,B20005Be12, B20005Be13,B20005Be14, B20005Be15,
+            B20005Be16, B20005Be17,B20005Be18, B20005Be19,B20005Be20, B20005Be21,B20005Be22, B20005Be23);
+
+      PopWorkFTLT75KB_F_&_years. = 
+        sum(B20005Be53, B20005Be54,B20005Be55, B20005Be56,B20005Be57, B20005Be58,B20005Be59, B20005Be60,B20005Be61, B20005Be62,
+            B20005Be63, B20005Be64,B20005Be65, B20005Be66,B20005Be67, B20005Be68,B20005Be69, B20005Be70 );
+
+      PopWorkFTLT75KW_M_&_years. = 
+        sum(B20005He6, B20005He7,B20005He8, B20005He9,B20005He10, B20005He11,B20005He12, B20005He13,B20005He14, B20005He15,
+            B20005He16, B20005He17,B20005He18, B20005He19,B20005He20, B20005He21,B20005He22, B20005He23 );
+
+	  PopWorkFTLT75KW_F_&_years. = 
+        sum(B20005He53, B20005He54,B20005He55, B20005He56,B20005He57, B20005He58,B20005He59, B20005He60,B20005He61, B20005He62,
+            B20005He63, B20005He64,B20005He65, B20005He66,B20005He67, B20005He68,B20005He69, B20005He70 );
+
+      PopWorkFTLT75KH_M_&_years. = 
+        sum(B20005Ie6, B20005Ie7,B20005Ie8, B20005Ie9,B20005Ie10, B20005Ie11,B20005Ie12, B20005Ie13,B20005Ie14, B20005Ie15,
+            B20005Ie16, B20005Ie17,B20005Ie18, B20005Ie19,B20005Ie20, B20005Ie21,B20005Ie22, B20005Ie23 );
+
+      PopWorkFTLT75KH_F_&_years. = 
+        sum(B20005Ie53, B20005Ie54,B20005Ie55, B20005Ie56,B20005Ie57, B20005Ie58,B20005Ie59, B20005Ie60,B20005Ie61, B20005Ie62,
+            B20005Ie63, B20005Ie64,B20005Ie65, B20005Ie66,B20005Ie67, B20005Ie68,B20005Ie69, B20005Ie70);
+
+      PopWorkFTLT75KA_M_&_years. = 
+        sum(B20005De6, B20005De7,B20005De8, B20005De9,B20005De10, B20005De11,B20005De12, B20005De13,B20005De14, B20005De15,
+            B20005De16, B20005De17,B20005De18, B20005De19,B20005De20, B20005De21,B20005De22, B20005De23,
+            B20005Ee6, B20005Ee7,B20005Ee8, B20005Ee9,B20005Ee10, B20005Ee11,B20005Ee12, B20005Ee13,B20005Ee14, B20005Ee15,
+            B20005Ee16, B20005Ee17,B20005Ee18, B20005Ee19,B20005Ee20, B20005Ee21,B20005Ee22, B20005Ee23);
+
+      PopWorkFTLT75KA_F_&_years. = 
+        sum(B20005De53, B20005De54,B20005De55, B20005De56,B20005De57, B20005De58,B20005De59, B20005De60,B20005De61, B20005De62,
+            B20005De63, B20005De64,B20005De65, B20005De66,B20005De67, B20005De68,B20005De69, B20005De70,
+            B20005Ee53, B20005Ee54,B20005Ee55, B20005Ee56,B20005Ee57, B20005Ee58,B20005Ee59, B20005Ee60,B20005Ee61, B20005Ee62,
+            B20005Ee63, B20005Ee64,B20005Ee65, B20005Ee66,B20005Ee67, B20005Ee68,B20005Ee69, B20005Ee70);
+
+      PopWorkFTLT75KIOM_M_&_years. = 
+        sum(B20005Ce6, B20005Ce7,B20005Ce8, B20005Ce9,B20005Ce10, B20005Ce11,B20005Ce12, B20005Ce13,B20005Ce14, B20005Ce15,
+            B20005Ce16, B20005Ce17,B20005Ce18, B20005Ce19,B20005Ce20, B20005Ce21,B20005Ce22, B20005Ce23,
+            B20005Fe6, B20005Fe7,B20005Fe8, B20005Fe9,B20005Fe10, B20005Fe11,B20005Fe12, B20005Fe13,B20005Fe14, B20005Fe15,
+            B20005Fe16, B20005Fe17,B20005Fe18, B20005Fe19,B20005Fe20, B20005Fe21,B20005Fe22, B20005Fe23,
+            B20005Ge6, B20005Ge7,B20005Ge8, B20005Ge9,B20005Ge10, B20005Ge11,B20005Ge12, B20005Ge13,B20005Ge14, B20005Ge15,
+            B20005Ge16, B20005Ge17,B20005Ge18, B20005Ge19,B20005Ge20, B20005Ge21,B20005Ge22, B20005Ge23);
+
+      PopWorkFTLT75KIOM_F_&_years. = 
+        sum(B20005Ce53, B20005Ce54,B20005Ce55, B20005Ce56,B20005Ce57, B20005Ce58,B20005Ce59, B20005Ce60,B20005Ce61, B20005Ce62,
+            B20005Ce63, B20005Ce64,B20005Ce65, B20005Ce66,B20005Ce67, B20005Ce68,B20005Ce69, B20005Ce70,
+            B20005Fe53, B20005Fe54,B20005Fe55, B20005Fe56,B20005Fe57, B20005Fe58,B20005Fe59, B20005Fe60,B20005Fe61, B20005Fe62,
+            B20005Fe63, B20005Fe64,B20005Fe65, B20005Fe66,B20005Fe67, B20005Fe68,B20005Fe69, B20005Fe70,
+            B20005Ge53, B20005Ge54,B20005Ge55, B20005Ge56,B20005Ge57, B20005Ge58,B20005Ge59, B20005Ge60,B20005Ge61, B20005Ge62,
+            B20005Ge63, B20005Ge64,B20005Ge65, B20005Ge66,B20005Ge67, B20005Ge68,B20005Ge69, B20005Ge70);
+
+      PopWorkFTLT75KAIOM_M_&_years. = 
+        sum(B20005De6, B20005De7,B20005De8, B20005De9,B20005De10, B20005De11,B20005De12, B20005De13,B20005De14, B20005De15,
+            B20005De16, B20005De17,B20005De18, B20005De19,B20005De20, B20005De21,B20005De22, B20005De23,
+            B20005Ee6, B20005Ee7,B20005Ee8, B20005Ee9,B20005Ee10, B20005Ee11,B20005Ee12, B20005Ee13,B20005Ee14, B20005Ee15,
+            B20005Ee16, B20005Ee17,B20005Ee18, B20005Ee19,B20005Ee20, B20005Ee21,B20005Ee22, B20005Ee23,
+            B20005Ce6, B20005Ce7,B20005Ce8, B20005Ce9,B20005Ce10, B20005Ce11,B20005Ce12, B20005Ce13,B20005Ce14, B20005Ce15,
+            B20005Ce16, B20005Ce17,B20005Ce18, B20005Ce19,B20005Ce20, B20005Ce21,B20005Ce22, B20005Ce23,
+            B20005Fe6, B20005Fe7,B20005Fe8, B20005Fe9,B20005Fe10, B20005Fe11,B20005Fe12, B20005Fe13,B20005Fe14, B20005Fe15,
+            B20005Fe16, B20005Fe17,B20005Fe18, B20005Fe19,B20005Fe20, B20005Fe21,B20005Fe22, B20005Fe23,
+            B20005Ge6, B20005Ge7,B20005Ge8, B20005Ge9,B20005Ge10, B20005Ge11,B20005Ge12, B20005Ge13,B20005Ge14, B20005Ge15,
+            B20005Ge16, B20005Ge17,B20005Ge18, B20005Ge19,B20005Ge20, B20005Ge21,B20005Ge22, B20005Ge23);
+
+      PopWorkFTLT75KAIOM_F_&_years. = 
+        sum(B20005De53, B20005De54,B20005De55, B20005De56,B20005De57, B20005De58,B20005De59, B20005De60,B20005De61, B20005De62,
+            B20005De63, B20005De64,B20005De65, B20005De66,B20005De67, B20005De68,B20005De69, B20005De70,
+            B20005Ee53, B20005Ee54,B20005Ee55, B20005Ee56,B20005Ee57, B20005Ee58,B20005Ee59, B20005Ee60,B20005Ee61, B20005Ee62,
+            B20005Ee63, B20005Ee64,B20005Ee65, B20005Ee66,B20005Ee67, B20005Ee68,B20005Ee69, B20005Ee70,
+            B20005Ce53, B20005Ce54,B20005Ce55, B20005Ce56,B20005Ce57, B20005Ce58,B20005Ce59, B20005Ce60,B20005Ce61, B20005Ce62,
+            B20005Ce63, B20005Ce64,B20005Ce65, B20005Ce66,B20005Ce67, B20005Ce68,B20005Ce69, B20005Ce70,
+            B20005Fe53, B20005Fe54,B20005Fe55, B20005Fe56,B20005Fe57, B20005Fe58,B20005Fe59, B20005Fe60,B20005Fe61, B20005Fe62,
+            B20005Fe63, B20005Fe64,B20005Fe65, B20005Fe66,B20005Fe67, B20005Fe68,B20005Fe69, B20005Fe70,
+            B20005Ge53, B20005Ge54,B20005Ge55, B20005Ge56,B20005Ge57, B20005Ge58,B20005Ge59, B20005Ge60,B20005Ge61, B20005Ge62,
+            B20005Ge63, B20005Ge64,B20005Ge65, B20005Ge66,B20005Ge67, B20005Ge68,B20005Ge69, B20005Ge70);
 
       mPopCivilianEmployed_&_years. = 
         %moe_sum( var=B23001m7 B23001m14 B23001m21 B23001m28 B23001m35 B23001m42 B23001m49 
@@ -2351,6 +2806,7 @@
             B20005m12 B20005m13 B20005m14 B20005m15 B20005m16 B20005m17 
             B20005m51 B20005m53 B20005m54 B20005m55 B20005m56 B20005m57 
             B20005m58 B20005m59 B20005m60 B20005m61 B20005m62 B20005m63 B20005m64);
+            
       mPopWorkFTLT35KB_&_years. = 
         %moe_sum( var=B20005Bm4 B20005Bm6 B20005Bm7 B20005Bm8 B20005Bm9 B20005Bm10 B20005Bm11 
                 B20005Bm12 B20005Bm13 B20005Bm14 B20005Bm15 B20005Bm16 B20005Bm17 
@@ -2488,6 +2944,446 @@
               B20005Gm21 B20005Gm22 B20005Gm23 B20005Gm51 B20005Gm53 B20005Gm54 B20005Gm55 B20005Gm56 
               B20005Gm57 B20005Gm58 B20005Gm59 B20005Gm60 B20005Gm61 B20005Gm62 B20005Gm63 B20005Gm64 
               B20005Gm65 B20005Gm66 B20005Gm67 B20005Gm68 B20005Gm69 B20005Gm70);
+
+
+   /*gender*/
+
+      mPopUnemployedB_M_&_years. = %moe_sum( var=C23002Bm8  C23002Bm13 );
+	  mPopUnemployedB_F_&_years. = %moe_sum( var=C23002Bm21  C23002Bm26 );
+
+      mPopUnemployedW_M_&_years. = %moe_sum( var=C23002Hm8  C23002Hm13 );
+	  mPopUnemployedW_F_&_years. = %moe_sum( var=C23002Hm21  C23002Hm26 );
+
+      mPopUnemployedH_M_&_years. = %moe_sum( var=C23002Im8  C23002Im13 );
+	  mPopUnemployedH_F_&_years. = %moe_sum( var=C23002Im21  C23002Im26  );
+
+      mPopUnemployedA_M_&_years. = 
+        %moe_sum( var=C23002Dm8  C23002Dm13 
+          C23002Em8  C23002Em13 );
+
+      mPopUnemployedA_F_&_years. = 
+        %moe_sum( var=C23002Dm21  C23002Dm26  
+          C23002Em21  C23002Em26 );
+
+      mPopUnemployedIOM_M_&_years. = 
+        %moe_sum( var=C23002Cm8  C23002Cm13  
+          C23002Fm8  C23002Fm13  
+          C23002Gm8  C23002Gm13 );
+
+      mPopUnemployedIOM_F_&_years. = 
+        %moe_sum( var=C23002Cm21  C23002Cm26  
+          C23002Fm21  C23002Fm26  
+          C23002Gm21  C23002Gm26 );
+
+      mPopUnemployedAIOM_M_&_years. = 
+        %moe_sum( var=C23002Dm8  C23002Dm13 
+          C23002Em8  C23002Em13  
+          C23002Cm8  C23002Cm13  
+          C23002Fm8  C23002Fm13  
+          C23002Gm8  C23002Gm13 );
+
+      mPopUnemployedAIOM_F_&_years. = 
+        %moe_sum( var=C23002Dm21  C23002Dm26  
+          C23002Em21  C23002Em26  
+          C23002Cm21  C23002Cm26  
+          C23002Fm21  C23002Fm26  
+          C23002Gm21  C23002Gm26 );
+
+	 mPopCivilEmployed_M_&_years. = 
+        %moe_sum( var= B23001m7  B23001m14  B23001m21  B23001m28  B23001m35  B23001m42  B23001m49  
+             B23001m56  B23001m63  B23001m70  B23001m75  B23001m80  B23001m85 );
+
+      mPopCivilEmployedB_M_&_years. = %moe_sum( var=C23002Bm7  C23002Bm12 );
+      mPopCivilEmployedW_M_&_years. = %moe_sum( var=C23002Hm7  C23002Hm12 );
+      mPopCivilEmployedH_M_&_years. = %moe_sum( var=C23002Im7  C23002Im12 );
+      mPopCivilEmployedA_M_&_years. = 
+        %moe_sum( var=C23002Dm7  C23002Dm12 
+          C23002Em7  C23002Em12 );
+      mPopCivilEmployedIOM_M_&_years. = 
+        %moe_sum( var=C23002Cm7  C23002Cm12   
+          C23002Fm7  C23002Fm12 
+          C23002Gm7  C23002Gm12 );
+      mPopCivilEmployedAIOM_M_&_years. = 
+        %moe_sum( var=C23002Cm7  C23002Cm12  
+          C23002Dm7  C23002Dm12 
+          C23002Em7  C23002Em12  
+          C23002Fm7  C23002Fm12  
+          C23002Gm7  C23002Gm12);
+
+	 mPopCivilEmployed_F_&_years. = 
+        %moe_sum( var= B23001m93  B23001m100  B23001m107  B23001m114  B23001m121  B23001m128  
+             B23001m135  B23001m142  B23001m149  B23001m156  B23001m161  B23001m166  B23001m171 );
+
+      mPopCivilEmployedB_F_&_years. = %moe_sum( var= C23002Bm20  C23002Bm25 );
+      mPopCivilEmployedW_F_&_years. = %moe_sum( var=C23002Hm20  C23002Hm25 );
+      mPopCivilEmployedH_F_&_years. = %moe_sum( var=C23002Im20  C23002Im25 );
+      mPopCivilEmployedA_F_&_years. = 
+        %moe_sum( var=C23002Dm20  C23002Dm25  
+          C23002Em20  C23002Em25 );
+      mPopCivilEmployedIOM_F_&_years. = 
+        %moe_sum( var=C23002Cm20  C23002Cm25  
+          C23002Fm20  C23002Fm25  
+          C23002Gm20  C23002Gm25 );
+      mPopCivilEmployedAIOM_F_&_years. = 
+        %moe_sum( var=C23002Cm20  C23002Cm25 
+           C23002Dm20  C23002Dm25  
+          C23002Em20  C23002Em25  
+           C23002Fm20  C23002Fm25  
+           C23002Gm20  C23002Gm25 );
+           
+      mPopInCivLaborForce_M_&_years. = %moe_sum( var=mPopCivilEmployed_M_&_years. mPopUnemployed_M_&_years. );
+       mPopInCivLaborForce_F_&_years. = %moe_sum( var=mPopCivilEmployed_F_&_years. mPopUnemployed_F_&_years. );
+           
+      mPopInCivLaborForB_M_&_years. = %moe_sum( var=mPopCivilEmployedB_M_&_years. mPopUnemployedB_M_&_years.);
+      mPopInCivLaborForW_M_&_years. = %moe_sum( var=mPopCivilEmployedW_M_&_years. mPopUnemployedW_M_&_years.);
+      mPopInCivLaborForH_M_&_years. = %moe_sum( var=mPopCivilEmployedH_M_&_years. mPopUnemployedH_M_&_years.);
+      mPopInCivLaborForA_M_&_years. = %moe_sum( var=mPopCivilEmployedA_M_&_years. mPopUnemployedA_M_&_years.);
+      mPopInCivLaborForIOM_M_&_years. = %moe_sum( var=mPopCivilEmployedIOM_M_&_years. mPopUnemployedIOM_M_&_years.);
+      mPopInCivLaborForAIOM_M_&_years. = %moe_sum( var=mPopCivilEmployedAIOM_M_&_years. mPopUnemployedAIOM_M_&_years.);
+            
+      mPopInCivLaborForB_F_&_years. = %moe_sum( var=mPopCivilEmployedB_F_&_years. mPopUnemployedB_F_&_years.);
+      mPopInCivLaborForW_F_&_years. = %moe_sum( var=mPopCivilEmployedW_F_&_years. mPopUnemployedW_F_&_years.);
+      mPopInCivLaborForH_F_&_years. = %moe_sum( var=mPopCivilEmployedH_F_&_years. mPopUnemployedH_F_&_years.);
+      mPopInCivLaborForA_F_&_years. = %moe_sum( var=mPopCivilEmployedA_F_&_years. mPopUnemployedA_F_&_years.);
+      mPopInCivLaborForIOM_F_&_years. = %moe_sum( var=mPopCivilEmployedIOM_F_&_years. mPopUnemployedIOM_F_&_years.);
+      mPopInCivLaborForAIOM_F_&_years. = %moe_sum( var=mPopCivilEmployedAIOM_F_&_years. mPopUnemployedAIOM_F_&_years.);
+      
+      mPop16andOverEmp_M_&_years. = %moe_sum( var=mPopCivilEmployed_M_&_years. B23001m5 B23001m12 B23001m19 B23001m26 B23001m33 B23001m40 
+                         B23001m47 B23001m54 B23001m61 B23001m68);
+            
+                mPop16andOverEmpB_M_&_years. = %moe_sum( var=mPopCivilEmployedB_M_&_years. C23002Bm5);
+                mPop16andOverEmpW_M_&_years. = %moe_sum( var=mPopCivilEmployedW_M_&_years. C23002Hm5);
+                mPop16andOverEmpH_M_&_years. = %moe_sum( var=mPopCivilEmployedH_M_&_years. C23002Im5);
+                mPop16andOverEmpA_M_&_years. = %moe_sum( var=mPopCivilEmployedA_M_&_years. C23002Dm5 C23002Em5);
+                mPop16andOverEmpIOM_M_&_years. = %moe_sum( var=mPopCivilEmployedIOM_M_&_years. C23002Cm5 C23002Fm5 C23002Gm5);
+                mPop16andOverEmpAIOM_M_&_years. = %moe_sum( var=mPopCivilEmployedAIOM_M_&_years. C23002Cm5 C23002Dm5 C23002Em5 C23002Fm5 C23002Gm5);
+            
+      mPop16andOverEmp_F_&_years. = %moe_sum( var=mPopCivilEmployed_F_&_years. B23001m91 B23001m98 B23001m105 B23001m112 B23001m119 B23001m126 
+		       B23001m133 B23001m140 B23001m147 B23001m154 );
+
+	      mPop16andOverEmpB_F_&_years. = %moe_sum( var=mPopCivilEmployedB_F_&_years. C23002Bm18);
+	      mPop16andOverEmpW_F_&_years. = %moe_sum( var=mPopCivilEmployedW_F_&_years. C23002Hm18);
+	      mPop16andOverEmpH_F_&_years. = %moe_sum( var=mPopCivilEmployedH_F_&_years. C23002Im18);
+	      mPop16andOverEmpA_F_&_years. = %moe_sum( var=mPopCivilEmployedA_F_&_years. C23002Dm18 C23002Em18);
+	      mPop16andOverEmpIOM_F_&_years. = %moe_sum( var=mPopCivilEmployedIOM_F_&_years. C23002Cm18 C23002Fm18 C23002Gm18);
+	      mPop16andOverEmpAIOM_F_&_years. = %moe_sum( var=mPopCivilEmployedAIOM_F_&_years. C23002Cm18 C23002Dm18 C23002Em18 C23002Fm18 C23002Gm18);
+
+
+    mPop16_64EmployedB_M_&_years. = %moe_sum( var=C23002Bm5 C23002Bm7 );
+	  mPop16_64EmployedB_F_&_years. = %moe_sum( var=C23002Bm18 C23002Bm20 );
+
+      mPop16_64EmployedW_M_&_years. = %moe_sum( var=C23002Hm5 C23002Hm7 );
+	  mPop16_64EmployedW_F_&_years. = %moe_sum( var=C23002Hm18 C23002Hm20 );
+
+      mPop16_64EmployedH_M_&_years. = %moe_sum( var=C23002Im5 C23002Im7);
+	  mPop16_64EmployedH_F_&_years. = %moe_sum( var=C23002Im18 C23002Im20 );
+
+      mPop16_64EmployedA_M_&_years. = 
+        %moe_sum( var=C23002Dm5 C23002Dm7 C23002Em5 C23002Em7 );
+		  
+      mPop16_64EmployedA_F_&_years. = 
+        %moe_sum( var=C23002Dm18 C23002Dm20 C23002Em18 C23002Em20 );
+
+      mPop16_64EmployedIOM_M_&_years. = 
+        %moe_sum( var=C23002Cm5 C23002Cm7 C23002Fm5 C23002Fm7 C23002Gm5 C23002Gm7 );
+	 mPop16_64EmployedIOM_F_&_years. = 
+        %moe_sum( var=C23002Cm18 C23002Cm20 C23002Fm18 C23002Fm20 C23002Gm18 C23002Gm20 );
+
+      mPop16_64EmployedAIOM_M_&_years. = 
+        %moe_sum( var=C23002Cm5 C23002Cm7 C23002Fm5 C23002Fm7 C23002Gm5 C23002Gm7 
+            C23002Dm5 C23002Dm7 C23002Em5 C23002Em7);
+	 mPop16_64EmployedAIOM_F_&_years. = 
+        %moe_sum( var=C23002Cm18 C23002Cm20 C23002Fm18 C23002Fm20 C23002Gm18 C23002Gm20 
+            C23002Dm18 C23002Dm20 C23002Em18 C23002Em20);
+
+     mPop16andOverYearsB_M_&_years.  = B20005Bm2;
+	  mPop16andOverYearsB_F_&_years.  = B20005Bm49;
+
+      mPop16andOverYearsW_M_&_years.  = B20005Hm2;
+	  mPop16andOverYearsW_F_&_years.  = B20005Hm49;
+
+      mPop16andOverYearsH_M_&_years.  = B20005Im2;
+	  mPop16andOverYearsH_F_&_years.  = B20005Im49;
+
+      mPop16andOverYearsA_M_&_years.  = B20005Dm2;
+	  mPop16andOverYearsA_F_&_years.  = B20005Dm49;
+
+      mPop16andOverYearsIOM_M_&_years. = %moe_sum( var=B20005Cm2  B20005Fm2  B20005Gm2);
+	  mPop16andOverYearsIOM_F_&_years. = %moe_sum( var=B20005Cm49  B20005Fm49  B20005Gm49);
+
+      mPop16andOverYearsAIOM_M_&_years. = %moe_sum( var=B20005Cm2  B20005Dm2  B20005Em2 B20005Fm2  B20005Gm2 );
+	  mPop16andOverYearsAIOM_F_&_years. = %moe_sum( var=B20005Cm49  B20005Dm49  B20005Em49 B20005Fm49  B20005Gm49 );
+	  
+ 	   mPop16_64years_M_&_years. = %moe_sum( var=B23001m3 B23001m10 B23001m17 B23001m24 B23001m31 B23001m38 B23001m45 B23001m52 B23001m59 B23001m66);
+	            mPop16_64yearsB_M_&_years. = C23002Bm3;
+	            mPop16_64yearsW_M_&_years.  = C23002Hm3;
+	            mPop16_64yearsH_M_&_years.  = C23002Im3;
+	            mPop16_64yearsA_M_&_years.  = %moe_sum( var=C23002Dm3 C23002Em3);
+	            mPop16_64yearsIOM_M_&_years. = %moe_sum( var=C23002Cm3 C23002Fm3 C23002Gm3 );
+	            mPop16_64yearsAIOM_M_&_years. = %moe_sum( var=C23002Cm3 C23002Dm3 C23002Em3 C23002Fm3 C23002Gm3);
+	                       
+	      mPop16_64years_F_&_years. = %moe_sum( var= B23001m89 B23001m96 B23001m103 B23001m110 B23001m117 B23001m124 B23001m131 B23001m138 B23001m145 B23001m152);
+	                  mPop16_64yearsB_F_&_years. = C23002Bm16;
+	                  mPop16_64yearsW_F_&_years.  = C23002Hm16;
+	                  mPop16_64yearsH_F_&_years.  = C23002Im16;
+	                  mPop16_64yearsA_F_&_years.  = %moe_sum( var=C23002Dm16  C23002Em16 );
+	                  mPop16_64yearsIOM_F_&_years. = %moe_sum( var=C23002Cm16 C23002Fm16 C23002Gm16 );
+                  	  mPop16_64yearsAIOM_F_&_years. = %moe_sum( var=C23002Cm16 C23002Dm16 C23002Em16 C23002Fm16 C23002Gm16);
+
+      mPopWorkFTB_M_&_years. = B20005Bm3;
+      mPopWorkFTB_F_&_years. = B20005Bm50;
+
+      mPopWorkFTW_M_&_years. = B20005Hm3;
+      mPopWorkFTW_F_&_years. = B20005Hm50;
+
+      mPopWorkFTH_M_&_years. = B20005Im3;
+      mPopWorkFTH_F_&_years. = B20005Im50;
+
+      mPopWorkFTA_M_&_years. = %moe_sum( var=B20005Dm3  B20005Em3 );
+      mPopWorkFTA_F_&_years. = %moe_sum( var=B20005Dm50  B20005Em50 );
+
+      mPopWorkFTIOM_M_&_years. = %moe_sum( var=B20005Cm3  B20005Fm3  B20005Gm3 );
+      mPopWorkFTIOM_F_&_years. = %moe_sum( var=B20005Cm50  B20005Fm50  B20005Gm50 );
+
+      mPopWorkFTAIOM_M_&_years. = %moe_sum( var=B20005Dm3  B20005Em3 
+                     B20005Cm3  B20005Fm3  B20005Gm3 );
+      mPopWorkFTAIOM_F_&_years. = %moe_sum( var=B20005Dm50  B20005Em50 
+                     B20005Cm50  B20005Fm50  B20005Gm50 );
+
+     mPopWorkEarn_M_&_years. = %moe_sum( var=B20005m5 B20005m28 );
+	  mPopWorkEarn_F_&_years. = %moe_sum( var=B20005m52 B20005m75 );
+     
+     mPopWorkEarnB_M_&_years. = %moe_sum( var=B20005Bm5  B20005Bm28 );
+	  mPopWorkEarnB_F_&_years. = %moe_sum( var=B20005Bm52  B20005Bm75 );
+
+      mPopWorkEarnW_M_&_years. = %moe_sum( var=B20005Hm5  B20005Hm28 );
+      mPopWorkEarnW_F_&_years. = %moe_sum( var=B20005Hm52  B20005Hm75 );
+
+      mPopWorkEarnH_M_&_years. = %moe_sum( var=B20005Im5  B20005Im28 );
+      mPopWorkEarnH_F_&_years. = %moe_sum( var=B20005Im52  B20005Im75 );
+
+      mPopWorkEarnA_M_&_years. = 
+        %moe_sum( var=B20005Dm5  B20005Dm28  
+          B20005Em5  B20005Em28 );
+      mPopWorkEarnA_F_&_years. = 
+        %moe_sum( var=B20005Dm52  B20005Dm75  
+          B20005Em52  B20005Em75 );
+
+      mPopWorkEarnIOM_M_&_years. = 
+        %moe_sum( var=B20005Cm5  B20005Cm28  
+          B20005Fm5  B20005Fm28  
+          B20005Gm5  B20005Gm28 );
+      mPopWorkEarnIOM_F_&_years. = 
+        %moe_sum( var=B20005Cm52  B20005Cm75  
+          B20005Fm52  B20005Fm75  
+          B20005Gm52  B20005Gm75);
+
+      mPopWorkEarnAIOM_M_&_years. = 
+        %moe_sum( var=B20005Dm5  B20005Dm28  
+          B20005Em5  B20005Em28  
+          B20005Cm5  B20005Cm28  
+          B20005Fm5  B20005Fm28  
+          B20005Gm5  B20005Gm28 );
+      mPopWorkEarnAIOM_F_&_years. = 
+        %moe_sum( var=B20005Dm52  B20005Dm75  
+          B20005Em52  B20005Em75  
+          B20005Cm52  B20005Cm75  
+          B20005Fm52  B20005Fm75  
+          B20005Gm52  B20005Gm75 );
+          
+          mPopWorkFTLT35K_M_&_years. = %moe_sum( var=B20005m6 B20005m7 B20005m8 B20005m9 B20005m10 B20005m11
+	              B20005m12 B20005m13 B20005m14 B20005m15 B20005m16 B20005m17);
+	  
+	  	  mPopWorkFTLT35K_F_&_years. = %moe_sum( var=B20005m53 B20005m54 B20005m55 B20005m56 B20005m57 B20005m58
+            B20005m59 B20005m60 B20005m61 B20005m62 B20005m63 B20005m64  );
+
+    	  mPopWorkFTLT35KB_M_&_years. = 
+        %moe_sum( var=B20005Bm6  B20005Bm7  B20005Bm8  B20005Bm9  B20005Bm10  B20005Bm11 
+            B20005Bm12  B20005Bm13  B20005Bm14  B20005Bm15  B20005Bm16  B20005Bm17);
+
+	  mPopWorkFTLT35KB_F_&_years. = 
+        %moe_sum( var=B20005Bm53  B20005Bm54  B20005Bm55  B20005Bm56  B20005Bm57  B20005Bm58 
+            B20005Bm59  B20005Bm60  B20005Bm61  B20005Bm62  B20005Bm63  B20005Bm64  );
+
+      mPopWorkFTLT35KW_M_&_years. = 
+        %moe_sum( var=B20005Hm6  B20005Hm7  B20005Hm8  B20005Hm9  B20005Hm10  B20005Hm11 
+            B20005Hm12  B20005Hm13  B20005Hm14  B20005Hm15  B20005Hm16  B20005Hm17 );
+
+      mPopWorkFTLT35KW_F_&_years. = 
+        %moe_sum( var=B20005Hm53  B20005Hm54  B20005Hm55  B20005Hm56  B20005Hm57  B20005Hm58 
+            B20005Hm59  B20005Hm60  B20005Hm61  B20005Hm62  B20005Hm63  B20005Hm64 );
+
+      mPopWorkFTLT35KH_M_&_years. = 
+        %moe_sum( var=B20005Im6  B20005Im7  B20005Im8  B20005Im9  B20005Im10  B20005Im11 
+            B20005Im12  B20005Im13  B20005Im14  B20005Im15 B20005Im16  B20005Im17 );
+
+      mPopWorkFTLT35KH_F_&_years. = 
+        %moe_sum( var=B20005Im53  B20005Im54  B20005Im55  B20005Im56  B20005Im57  B20005Im58 
+            B20005Im59  B20005Im60  B20005Im61  B20005Im62  B20005Im63  B20005Im64 );
+
+      mPopWorkFTLT35KA_M_&_years. = 
+        %moe_sum( var=B20005Dm6  B20005Dm7  B20005Dm8  B20005Dm9  B20005Dm10  B20005Dm11 
+            B20005Dm12  B20005Dm13  B20005Dm14  B20005Dm15  B20005Dm16  B20005Dm17
+            B20005Em6  B20005Em7  B20005Em8  B20005Em9  B20005Em10  B20005Em11 
+            B20005Em12  B20005Em13  B20005Em14  B20005Em15  B20005Em16  B20005Em17);
+
+      mPopWorkFTLT35KA_F_&_years. = 
+        %moe_sum( var=B20005Dm53  B20005Dm54  B20005Dm55  B20005Dm56  B20005Dm57  B20005Dm58 
+            B20005Dm59  B20005Dm60  B20005Dm61  B20005Dm62  B20005Dm63  B20005Dm64
+            B20005Em53  B20005Em54  B20005Em55  B20005Em56  B20005Em57  B20005Em58 
+            B20005Em59  B20005Em60  B20005Em61  B20005Em62  B20005Em63  B20005Em64 );
+
+      mPopWorkFTLT35KIOM_M_&_years. = 
+        %moe_sum( var= B20005Cm6  B20005Cm7  B20005Cm8  B20005Cm9  B20005Cm10  B20005Cm11 
+            B20005Cm12  B20005Cm13  B20005Cm14  B20005Cm15 B20005Cm16  B20005Cm17
+          	B20005Fm6  B20005Fm7  B20005Fm8  B20005Fm9  B20005Fm10  B20005Fm11 
+            B20005Fm12  B20005Fm13  B20005Fm14  B20005Fm15  B20005Fm16  B20005Fm17
+          	B20005Gm6  B20005Gm7  B20005Gm8  B20005Gm9  B20005Gm10  B20005Gm11 
+            B20005Gm12  B20005Gm13  B20005Gm14  B20005Gm15  B20005Gm16  B20005Gm17 );
+
+	      mPopWorkFTLT35KIOM_F_&_years. = 
+        %moe_sum( var=B20005Cm53  B20005Cm54  B20005Cm55  B20005Cm56  B20005Cm57  B20005Cm58 
+            B20005Cm59  B20005Cm60  B20005Cm61  B20005Cm62  B20005Cm63  B20005Cm64
+            B20005Fm53  B20005Fm54  B20005Fm55  B20005Fm56  B20005Fm57  B20005Fm58 
+            B20005Fm59  B20005Fm60  B20005Fm61  B20005Fm62  B20005Fm63  B20005Fm64
+            B20005Gm53  B20005Gm54  B20005Gm55  B20005Gm56  B20005Gm57  B20005Gm58 
+            B20005Gm59  B20005Gm60  B20005Gm61  B20005Gm62  B20005Gm63  B20005Gm64 );
+
+      mPopWorkFTLT35KAIOM_M_&_years. = 
+        %moe_sum( var=B20005Dm6  B20005Dm7  B20005Dm8  B20005Dm9  B20005Dm10  B20005Dm11 
+            B20005Dm12  B20005Dm13  B20005Dm14  B20005Dm15  B20005Dm16  B20005Dm17
+            B20005Em6  B20005Em7  B20005Em8  B20005Em9  B20005Em10  B20005Em11 
+            B20005Em12  B20005Em13  B20005Em14  B20005Em15  B20005Em16  B20005Em17 
+            B20005Cm6  B20005Cm7  B20005Cm8  B20005Cm9  B20005Cm10  B20005Cm11 
+            B20005Cm12  B20005Cm13  B20005Cm14  B20005Cm15 B20005Cm16  B20005Cm17
+          	B20005Fm6  B20005Fm7  B20005Fm8  B20005Fm9  B20005Fm10  B20005Fm11 
+            B20005Fm12  B20005Fm13  B20005Fm14  B20005Fm15  B20005Fm16  B20005Fm17
+          	B20005Gm6  B20005Gm7  B20005Gm8  B20005Gm9  B20005Gm10  B20005Gm11 
+            B20005Gm12  B20005Gm13  B20005Gm14  B20005Gm15  B20005Gm16  B20005Gm17);
+
+      mPopWorkFTLT35KAIOM_F_&_years. = 
+        %moe_sum( var=B20005Dm53  B20005Dm54  B20005Dm55  B20005Dm56  B20005Dm57  B20005Dm58 
+            B20005Dm59  B20005Dm60  B20005Dm61  B20005Dm62  B20005Dm63  B20005Dm64
+            B20005Em53  B20005Em54  B20005Em55  B20005Em56  B20005Em57  B20005Em58 
+            B20005Em59  B20005Em60  B20005Em61  B20005Em62  B20005Em63  B20005Em64 
+            B20005Cm53  B20005Cm54  B20005Cm55  B20005Cm56  B20005Cm57  B20005Cm58 
+            B20005Cm59  B20005Cm60  B20005Cm61  B20005Cm62  B20005Cm63  B20005Cm64
+          	B20005Fm53  B20005Fm54  B20005Fm55  B20005Fm56  B20005Fm57  B20005Fm58 
+            B20005Fm59  B20005Fm60  B20005Fm61  B20005Fm62  B20005Fm63  B20005Fm64
+            B20005Gm53  B20005Gm54  B20005Gm55  B20005Gm56  B20005Gm57  B20005Gm58 
+            B20005Gm59  B20005Gm60  B20005Gm61  B20005Gm62  B20005Gm63  B20005Gm64);
+
+	 mPopWorkFTLT75K_M_&_years. =  %moe_sum( var=B20005m6 B20005m7 B20005m8 B20005m9 B20005m10 B20005m11 B20005m12 B20005m13 B20005m14 B20005m15
+	            B20005m16 B20005m17 B20005m18 B20005m19 B20005m20 B20005m21 B20005m22 B20005m23);
+	
+	     mPopWorkFTLT75K_F_&_years. =  %moe_sum( var=B20005m53 B20005m54 B20005m55 B20005m56 B20005m57 B20005m58 B20005m59 B20005m60 B20005m61 B20005m62 
+            B20005m63 B20005m64 B20005m65 B20005m66 B20005m67 B20005m68 B20005m69 B20005m70 );
+
+   mPopWorkFTLT75KB_M_&_years. = 
+         %moe_sum( var=B20005Bm6  B20005Bm7 B20005Bm8  B20005Bm9 B20005Bm10  B20005Bm11 B20005Bm12  B20005Bm13 B20005Bm14  B20005Bm15 
+            B20005Bm16  B20005Bm17 B20005Bm18  B20005Bm19 B20005Bm20  B20005Bm21 B20005Bm22  B20005Bm23);
+
+      mPopWorkFTLT75KB_F_&_years. = 
+         %moe_sum( var=B20005Bm53  B20005Bm54 B20005Bm55  B20005Bm56 B20005Bm57  B20005Bm58 B20005Bm59  B20005Bm60 B20005Bm61  B20005Bm62 
+            B20005Bm63  B20005Bm64 B20005Bm65  B20005Bm66 B20005Bm67  B20005Bm68 B20005Bm69  B20005Bm70 );
+
+      mPopWorkFTLT75KW_M_&_years. = 
+         %moe_sum( var=B20005Hm6  B20005Hm7 B20005Hm8  B20005Hm9 B20005Hm10  B20005Hm11 B20005Hm12  B20005Hm13 B20005Hm14  B20005Hm15 
+            B20005Hm16  B20005Hm17 B20005Hm18  B20005Hm19 B20005Hm20  B20005Hm21 B20005Hm22  B20005Hm23 );
+
+	  mPopWorkFTLT75KW_F_&_years. = 
+         %moe_sum( var=B20005Hm53  B20005Hm54 B20005Hm55  B20005Hm56 B20005Hm57  B20005Hm58 B20005Hm59  B20005Hm60 B20005Hm61  B20005Hm62 
+            B20005Hm63  B20005Hm64 B20005Hm65  B20005Hm66 B20005Hm67  B20005Hm68 B20005Hm69  B20005Hm70 );
+
+      mPopWorkFTLT75KH_M_&_years. = 
+         %moe_sum( var=B20005Im6  B20005Im7 B20005Im8  B20005Im9 B20005Im10  B20005Im11 B20005Im12  B20005Im13 B20005Im14  B20005Im15 
+            B20005Im16  B20005Im17 B20005Im18  B20005Im19 B20005Im20  B20005Im21 B20005Im22  B20005Im23 );
+
+      mPopWorkFTLT75KH_F_&_years. = 
+         %moe_sum( var=B20005Im53  B20005Im54 B20005Im55  B20005Im56 B20005Im57  B20005Im58 B20005Im59  B20005Im60 B20005Im61  B20005Im62 
+            B20005Im63  B20005Im64 B20005Im65  B20005Im66 B20005Im67  B20005Im68 B20005Im69  B20005Im70);
+
+      mPopWorkFTLT75KA_M_&_years. = 
+         %moe_sum( var=B20005Dm6  B20005Dm7 B20005Dm8  B20005Dm9 B20005Dm10  B20005Dm11 B20005Dm12  B20005Dm13 B20005Dm14  B20005Dm15 
+            B20005Dm16  B20005Dm17 B20005Dm18  B20005Dm19 B20005Dm20  B20005Dm21 B20005Dm22  B20005Dm23 
+            B20005Em6  B20005Em7 B20005Em8  B20005Em9 B20005Em10  B20005Em11 B20005Em12  B20005Em13 B20005Em14  B20005Em15 
+            B20005Em16  B20005Em17 B20005Em18  B20005Em19 B20005Em20  B20005Em21 B20005Em22  B20005Em23);
+
+      mPopWorkFTLT75KA_F_&_years. = 
+         %moe_sum( var=B20005Dm53  B20005Dm54 B20005Dm55  B20005Dm56 B20005Dm57  B20005Dm58 B20005Dm59  B20005Dm60 B20005Dm61  B20005Dm62 
+            B20005Dm63  B20005Dm64 B20005Dm65  B20005Dm66 B20005Dm67  B20005Dm68 B20005Dm69  B20005Dm70 
+            B20005Em53  B20005Em54 B20005Em55  B20005Em56 B20005Em57  B20005Em58 B20005Em59  B20005Em60 B20005Em61  B20005Em62 
+            B20005Em63  B20005Em64 B20005Em65  B20005Em66 B20005Em67  B20005Em68 B20005Em69  B20005Em70);
+
+      mPopWorkFTLT75KIOM_M_&_years. = 
+         %moe_sum( var=B20005Cm6  B20005Cm7 B20005Cm8  B20005Cm9 B20005Cm10  B20005Cm11 B20005Cm12  B20005Cm13 B20005Cm14  B20005Cm15 
+            B20005Cm16  B20005Cm17 B20005Cm18  B20005Cm19 B20005Cm20  B20005Cm21 B20005Cm22  B20005Cm23 
+            B20005Fm6  B20005Fm7 B20005Fm8  B20005Fm9 B20005Fm10  B20005Fm11 B20005Fm12  B20005Fm13 B20005Fm14  B20005Fm15 
+            B20005Fm16  B20005Fm17 B20005Fm18  B20005Fm19 B20005Fm20  B20005Fm21 B20005Fm22  B20005Fm23 
+            B20005Gm6  B20005Gm7 B20005Gm8  B20005Gm9 B20005Gm10  B20005Gm11 B20005Gm12  B20005Gm13 B20005Gm14  B20005Gm15 
+            B20005Gm16  B20005Gm17 B20005Gm18  B20005Gm19 B20005Gm20  B20005Gm21 B20005Gm22  B20005Gm23);
+
+      mPopWorkFTLT75KIOM_F_&_years. = 
+         %moe_sum( var=B20005Cm53  B20005Cm54 B20005Cm55  B20005Cm56 B20005Cm57  B20005Cm58 B20005Cm59  B20005Cm60 B20005Cm61  B20005Cm62 
+            B20005Cm63  B20005Cm64 B20005Cm65  B20005Cm66 B20005Cm67  B20005Cm68 B20005Cm69  B20005Cm70 
+            B20005Fm53  B20005Fm54 B20005Fm55  B20005Fm56 B20005Fm57  B20005Fm58 B20005Fm59  B20005Fm60 B20005Fm61  B20005Fm62 
+            B20005Fm63  B20005Fm64 B20005Fm65  B20005Fm66 B20005Fm67  B20005Fm68 B20005Fm69  B20005Fm70 
+            B20005Gm53  B20005Gm54 B20005Gm55  B20005Gm56 B20005Gm57  B20005Gm58 B20005Gm59  B20005Gm60 B20005Gm61  B20005Gm62 
+            B20005Gm63  B20005Gm64 B20005Gm65  B20005Gm66 B20005Gm67  B20005Gm68 B20005Gm69  B20005Gm70);
+
+      mPopWorkFTLT75KAIOM_M_&_years. = 
+         %moe_sum( var=B20005Dm6  B20005Dm7 B20005Dm8  B20005Dm9 B20005Dm10  B20005Dm11 B20005Dm12  B20005Dm13 B20005Dm14  B20005Dm15 
+            B20005Dm16  B20005Dm17 B20005Dm18  B20005Dm19 B20005Dm20  B20005Dm21 B20005Dm22  B20005Dm23 
+            B20005Em6  B20005Em7 B20005Em8  B20005Em9 B20005Em10  B20005Em11 B20005Em12  B20005Em13 B20005Em14  B20005Em15 
+            B20005Em16  B20005Em17 B20005Em18  B20005Em19 B20005Em20  B20005Em21 B20005Em22  B20005Em23 
+            B20005Cm6  B20005Cm7 B20005Cm8  B20005Cm9 B20005Cm10  B20005Cm11 B20005Cm12  B20005Cm13 B20005Cm14  B20005Cm15 
+            B20005Cm16  B20005Cm17 B20005Cm18  B20005Cm19 B20005Cm20  B20005Cm21 B20005Cm22  B20005Cm23 
+            B20005Fm6  B20005Fm7 B20005Fm8  B20005Fm9 B20005Fm10  B20005Fm11 B20005Fm12  B20005Fm13 B20005Fm14  B20005Fm15 
+            B20005Fm16  B20005Fm17 B20005Fm18  B20005Fm19 B20005Fm20  B20005Fm21 B20005Fm22  B20005Fm23 
+            B20005Gm6  B20005Gm7 B20005Gm8  B20005Gm9 B20005Gm10  B20005Gm11 B20005Gm12  B20005Gm13 B20005Gm14  B20005Gm15 
+            B20005Gm16  B20005Gm17 B20005Gm18  B20005Gm19 B20005Gm20  B20005Gm21 B20005Gm22  B20005Gm23);
+
+      mPopWorkFTLT75KAIOM_F_&_years. = 
+         %moe_sum( var=B20005Dm53  B20005Dm54 B20005Dm55  B20005Dm56 B20005Dm57  B20005Dm58 B20005Dm59  B20005Dm60 B20005Dm61  B20005Dm62 
+            B20005Dm63  B20005Dm64 B20005Dm65  B20005Dm66 B20005Dm67  B20005Dm68 B20005Dm69  B20005Dm70 
+            B20005Em53  B20005Em54 B20005Em55  B20005Em56 B20005Em57  B20005Em58 B20005Em59  B20005Em60 B20005Em61  B20005Em62 
+            B20005Em63  B20005Em64 B20005Em65  B20005Em66 B20005Em67  B20005Em68 B20005Em69  B20005Em70 
+            B20005Cm53  B20005Cm54 B20005Cm55  B20005Cm56 B20005Cm57  B20005Cm58 B20005Cm59  B20005Cm60 B20005Cm61  B20005Cm62 
+            B20005Cm63  B20005Cm64 B20005Cm65  B20005Cm66 B20005Cm67  B20005Cm68 B20005Cm69  B20005Cm70 
+            B20005Fm53  B20005Fm54 B20005Fm55  B20005Fm56 B20005Fm57  B20005Fm58 B20005Fm59  B20005Fm60 B20005Fm61  B20005Fm62 
+            B20005Fm63  B20005Fm64 B20005Fm65  B20005Fm66 B20005Fm67  B20005Fm68 B20005Fm69  B20005Fm70 
+            B20005Gm53  B20005Gm54 B20005Gm55  B20005Gm56 B20005Gm57  B20005Gm58 B20005Gm59  B20005Gm60 B20005Gm61  B20005Gm62 
+            B20005Gm63  B20005Gm64 B20005Gm65  B20005Gm66 B20005Gm67  B20005Gm68 B20005Gm69  B20005Gm70);
+
+   mPop16_64Employed_M_&_years. = %moe_sum( var=B23001m5  B23001m7  B23001m12  B23001m14  B23001m19  B23001m21  B23001m26  B23001m28  
+        B23001m33  B23001m35  B23001m40  B23001m42  B23001m47  B23001m49  B23001m54  B23001m56  
+        B23001m61  B23001m63  B23001m68  B23001m70 );
+	  mPop16_64Employed_F_&_years. = %moe_sum( var=B23001m91  B23001m93  B23001m98  B23001m100  
+        B23001m105  B23001m107  B23001m112  B23001m114  B23001m119  B23001m121  B23001m126  B23001m128  
+        B23001m133  B23001m135  B23001m140  B23001m142  B23001m147  B23001m149  B23001m154  B23001m156 );
+
+      mPopEmployed_M_&_years. = %moe_sum( var=B23001m5  B23001m7  B23001m12  B23001m14  B23001m19  B23001m21  B23001m26  B23001m28  
+        B23001m33  B23001m35  B23001m40  B23001m42  B23001m47  B23001m49  B23001m54  B23001m56  
+        B23001m61  B23001m63  B23001m68  B23001m70  B23001m75  B23001m80  B23001m85 );
+	  mPopEmployed_F_&_years. = %moe_sum( var=B23001m91  B23001m93  B23001m98  B23001m100  
+        B23001m105  B23001m107  B23001m112  B23001m114  B23001m119  B23001m121  B23001m126  B23001m128  
+        B23001m133  B23001m135  B23001m140  B23001m142  B23001m147  B23001m149  B23001m154  B23001m156 
+        B23001m161 B23001m166 B23001m171);
+
+      mPopUnemployed_M_&_years. = %moe_sum( var=B23001m8  B23001m15  B23001m22  B23001m29  B23001m36  B23001m43  B23001m50  
+             B23001m57  B23001m64  B23001m71  B23001m76  B23001m81  B23001m86 );
+	  mPopUnemployed_F_&_years. = %moe_sum( var=
+             B23001m94  B23001m101  B23001m108  B23001m115  B23001m122  B23001m129  
+             B23001m136  B23001m143  B23001m150  B23001m157  B23001m162  B23001m167  B23001m172 );
+
+      mPop16andOverYears_M_&_years.  = B20005m2;
+	  mPop16andOverYears_F_&_years.  = B20005m49;
+
+      mPopWorkFT_M_&_years. = B20005m3;
+      mPopWorkFT_F_&_years. = B20005m50;
+
+      mPopWorkEarnB_M_&_years. = %moe_sum( var=B20005m5  B20005m28 );
+	  mPopWorkEarnB_F_&_years. = %moe_sum( var=B20005m52  B20005m75 );
 
 
       label
@@ -2706,7 +3602,342 @@
 		   mEarning50to65K_&_years.= "Workers 16 years and over with earning of $50,000-$64,999 in the past 12 months, MOE, &_years_dash "
 		   mEarning65to75K_&_years.= "Workers 16 years and over with earning of $65,000-$74,999 in the past 12 months, MOE, &_years_dash "
 		   mEarningOver75K_&_years.= "Workers 16 years and over with earning of $75,000 or more in the past 12 months, MOE, &_years_dash "
-		;
+
+/*gender*/
+
+      Pop16andOverEmp_M_&_years. = "Male 16+ years old who are employed (includes armed forces), &_years_dash "
+      Pop16andOverEmpB_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Black/African American, &_years_dash "
+      Pop16andOverEmpW_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Non-Hispanic White, &_years_dash "
+      Pop16andOverEmpH_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Hispanic/Latino, &_years_dash "
+      Pop16andOverEmpA_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
+      Pop16andOverEmpIOM_M_&_years. = "Male 16+ years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
+      Pop16andOverEmpAIOM_M_&_years. = "Male 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      Pop16_64Employed_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), total, &_years_dash "
+      Pop16_64EmployedB_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Black/African American, &_years_dash "
+      Pop16_64EmployedW_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Non-Hispanic White, &_years_dash "
+      Pop16_64EmployedH_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Hispanic/Latino, &_years_dash "
+      Pop16_64EmployedA_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
+      Pop16_64EmployedIOM_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
+      Pop16_64EmployedAIOM_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      PopUnemployed_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, total, &_years_dash "
+      PopUnemployedB_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Black/African American, &_years_dash "
+      PopUnemployedW_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Non-Hispanic White, &_years_dash "
+      PopUnemployedH_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Hispanic/Latino, &_years_dash "
+      PopUnemployedA_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
+      PopUnemployedIOM_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
+      PopUnemployedAIOM_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      PopWorkFT_M_&_years. = "Male worked full-time,total, &_years_dash "
+            PopWorkFTB_M_&_years. = "Male worked full-time Black/African American, &_years_dash "
+            PopWorkFTW_M_&_years. = "Male worked full-time, Non-Hispanic White, &_years_dash "
+            PopWorkFTH_M_&_years. = "Male worked full-time, Hispanic/Latino, &_years_dash "
+            PopWorkFTA_M_&_years. = "Male worked full-time, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+            PopWorkFTIOM_M_&_years. = "Male worked full-time, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+            PopWorkFTAIOM_M_&_years. = "Male worked full-time, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+            PopWorkEarn_M_&_years. = "Male worked with earnings, total, &_years_dash "
+            PopWorkEarnB_M_&_years. = "Male worked with earnings Black/African American, &_years_dash "
+            PopWorkEarnW_M_&_years. = "Male worked with earnings, Non-Hispanic White, &_years_dash "
+            PopWorkEarnH_M_&_years. = "Male worked with earnings, Hispanic/Latino, &_years_dash "
+            PopWorkEarnA_M_&_years. = "Male worked with earnings, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+            PopWorkEarnIOM_M_&_years. = "Male worked with earnings, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+            PopWorkEarnAIOM_M_&_years. = "Male worked with earnings, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+            PopWorkFTLT35K_M_&_years. = "Male worked full-time with earning less than $35000, total, &_years_dash "
+            PopWorkFTLT35KB_M_&_years. = "Male worked full-time with earning less than $35000, Black/African American, &_years_dash "
+            PopWorkFTLT35KW_M_&_years. = "Male worked full-time with earnings less than $35000, Non-Hispanic White, &_years_dash "
+            PopWorkFTLT35KH_M_&_years. = "Male worked full-time with earnings less than $35000, Hispanic/Latino, &_years_dash "
+            PopWorkFTLT35KA_M_&_years. = "Male worked full-time with earnings less than $35000, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+            PopWorkFTLT35KIOM_M_&_years. = "Male worked full-time with earnings less than $35000, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+            PopWorkFTLT35KAIOM_M_&_years. = "Male worked full-time with earnings less than $35000, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      
+            PopWorkFTLT75K_M_&_years. = "Male worked full-time with earnings less than $75000, total, &_years_dash "
+      	  PopWorkFTLT75KB_M_&_years. = "Male worked full-time with earnings less than $75000, Black/African American, &_years_dash "    
+            PopWorkFTLT75KW_M_&_years. = "Male worked full-time with earnings less than $75000, Non-Hispanic White, &_years_dash "
+            PopWorkFTLT75KH_M_&_years. = "Male worked full-time with earnings less than $75000, Hispanic/Latino, &_years_dash "
+            PopWorkFTLT75KA_M_&_years. = "Male worked full-time with earnings less than $75000, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+            PopWorkFTLT75KIOM_M_&_years. = "Male worked full-time with earnings less than $75000, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+      PopWorkFTLT75KAIOM_M_&_years. = "Male worked full-time with earnings less than $75000, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      
+      PopCivilEmployed_M_&_years. = "Male 16+ years old in the civilian labor force and employed, &_years_dash "
+      PopCivilEmployedB_M_&_years. = "Male 16+ years old in the civilian labor force and employed, Black/African American, &_years_dash "
+      PopCivilEmployedW_M_&_years. = "Male 16+ years old in the civilian labor force and employed, Non-Hispanic White, &_years_dash "
+      PopCivilEmployedH_M_&_years. = "Male 16+ years old in the civilian labor force and employed, Hispanic/Latino, &_years_dash "
+      PopCivilEmployedA_M_&_years. = "Male 16+ years old in the civilian labor force and employed, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
+      PopCivilEmployedIOM_M_&_years. = "Male 16+ years old in the civilian labor force and employed, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
+      PopCivilEmployedAIOM_M_&_years. = "Male 16+ years old in the civilian labor force and employed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      PopCivilEmployed_F_&_years. = "Female 16+ years old in the civilian labor force and employed, &_years_dash "
+      PopCivilEmployedB_F_&_years. = "Female 16+ years old in the civilian labor force and employed, Black/African American, &_years_dash "
+      PopCivilEmployedW_F_&_years. = "Female 16+ years old in the civilian labor force and employed, Non-Hispanic White, &_years_dash "
+      PopCivilEmployedH_F_&_years. = "Female 16+ years old in the civilian labor force and employed, Hispanic/Latino, &_years_dash "
+      PopCivilEmployedA_F_&_years. = "Female 16+ years old in the civilian labor force and employed, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
+      PopCivilEmployedIOM_F_&_years. = "Female 16+ years old in the civilian labor force and employed, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
+      PopCivilEmployedAIOM_F_&_years. = "Female 16+ years old in the civilian labor force and employed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      PopInCivLaborForce_M_&_years. = "Male 16+ years old in the civilian labor force, &_years_dash "
+      PopInCivLaborForB_M_&_years. = "Male 16+ years old in the civilian labor force, Black/African American, &_years_dash "
+      PopInCivLaborForW_M_&_years. = "Male 16+ years old in the civilian labor force, Non-Hispanic White, &_years_dash "
+      PopInCivLaborForH_M_&_years. = "Male 16+ years old in the civilian labor force, Hispanic/Latino, &_years_dash "
+      PopInCivLaborForA_M_&_years. = "Male 16+ years old in the civilian labor force, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
+      PopInCivLaborForIOM_M_&_years. = "Male 16+ years old in the civilian labor force, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
+      PopInCivLaborForAIOM_M_&_years. = "Male 16+ years old in the civilian labor force, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      PopInCivLaborForce_F_&_years. = "Female 16+ years old in the civilian labor force, &_years_dash "
+      PopInCivLaborForB_F_&_years. = "Female 16+ years old in the civilian labor force, Black/African American, &_years_dash "
+      PopInCivLaborForW_F_&_years. = "Female 16+ years old in the civilian labor force, Non-Hispanic White, &_years_dash "
+      PopInCivLaborForH_F_&_years. = "Female 16+ years old in the civilian labor force, Hispanic/Latino, &_years_dash "
+      PopInCivLaborForA_F_&_years. = "Female 16+ years old in the civilian labor force, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
+      PopInCivLaborForIOM_F_&_years. = "Female 16+ years old in the civilian labor force, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
+      PopInCivLaborForAIOM_F_&_years. = "Female 16+ years old in the civilian labor force, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      
+
+      Pop16andOverEmp_F_&_years. = "Female 16+ years old who are employed (includes armed forces), &_years_dash "
+      Pop16andOverEmpB_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Black/African American, &_years_dash "
+      Pop16andOverEmpW_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Non-Hispanic White, &_years_dash "
+      Pop16andOverEmpH_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Hispanic/Latino, &_years_dash "
+      Pop16andOverEmpA_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
+      Pop16andOverEmpIOM_F_&_years. = "Female 16+ years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
+      Pop16andOverEmpAIOM_F_&_years. = "Female 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      Pop16_64Employed_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), total, &_years_dash "
+      Pop16_64EmployedB_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Black/African American, &_years_dash "
+      Pop16_64EmployedW_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Non-Hispanic White, &_years_dash "
+      Pop16_64EmployedH_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Hispanic/Latino, &_years_dash "
+      Pop16_64EmployedA_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
+      Pop16_64EmployedIOM_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
+      Pop16_64EmployedAIOM_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+      PopUnemployed_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, total, &_years_dash "
+      PopUnemployedB_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Black/African American, &_years_dash "
+      PopUnemployedW_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Non-Hispanic White, &_years_dash "
+      PopUnemployedH_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Hispanic/Latino, &_years_dash "
+      PopUnemployedA_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Asian and Native Hawaiian and Other Pacific Islander, &_years_dash "
+      PopUnemployedIOM_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, American Indian/Alaska Native, Some other race, Two or more races, &_years_dash "
+      PopUnemployedAIOM_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, &_years_dash "
+       
+      Pop16andOverYears_M_&_years. = "Male 16+ years old, &_years_dash "
+      Pop16andOverYearsB_M_&_years. = "Male 16 years old and over, Black/African American, &_years_dash"
+      Pop16andOverYearsW_M_&_years. = "Male 16 years old and over, Non-Hispanic White, &_years_dash"
+      Pop16andOverYearsH_M_&_years. = "Male 16 years old and over, Hispanic/Latino, &_years_dash "
+      Pop16andOverYearsA_M_&_years. = "Male 16 years old and over, Asian, Hawaiian and other Pacific Islander, &_years_dash "
+      Pop16andOverYearsIOM_M_&_years. = "Male 16 years old and over, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      Pop16andOverYearsAIOM_M_&_years. = "Male 16 years old and over, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      Pop16andOverYears_F_&_years. = "Female 16+ years old, &_years_dash "
+      Pop16andOverYearsB_F_&_years. = "Female 16 years old and over, Black/African American, &_years_dash"
+      Pop16andOverYearsW_F_&_years. = "Female 16 years old and over, Non-Hispanic White, &_years_dash"
+      Pop16andOverYearsH_F_&_years. = "Female 16 years old and over, Hispanic/Latino, &_years_dash "
+      Pop16andOverYearsA_F_&_years. = "Female 16 years old and over, Asian, Hawaiian and other Pacific Islander, &_years_dash "
+      Pop16andOverYearsIOM_F_&_years. = "Female 16 years old and over, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+      Pop16andOverYearsAIOM_F_&_years. = "Female 16 years old and over, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      
+      Pop16_64years_&_years. = "Persons 16-64 years old, &_years_dash "
+      Pop16_64years_M_&_years. = "Male 16-64 years old, &_years_dash "
+      Pop16_64yearsB_M_&_years. = "Male 16-64 years old, Black/African American, &_years_dash "
+      Pop16_64yearsW_M_&_years. = "Male 16-64 years old, Non-Hispanic White, &_years_dash "
+      Pop16_64yearsH_M_&_years. = "Male 16-64 years old, Hispanic/Latino, &_years_dash "
+      Pop16_64yearsA_M_&_years. = "Male 16-64 years old, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+      Pop16_64yearsIOM_M_&_years. = "Male 16-64 years old,  American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+      Pop16_64yearsAIOM_M_&_years. = "Male 16-64 years old, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      Pop16_64years_F_&_years. = "Female 16-64 years old, &_years_dash "
+      Pop16_64yearsB_F_&_years. = "Female 16-64 years old, Black/African American, &_years_dash "
+      Pop16_64yearsW_F_&_years. = "Female 16-64 years old, Non-Hispanic White, &_years_dash "
+      Pop16_64yearsH_F_&_years. = "Female 16-64 years old, Hispanic/Latino, &_years_dash "
+      Pop16_64yearsA_F_&_years. = "Female 16-64 years old, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+      Pop16_64yearsIOM_F_&_years. = "Female 16-64 years old,  American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+      Pop16_64yearsAIOM_F_&_years. = "Female 16-64 years old, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      
+      
+      PopWorkFT_F_&_years. = "Female worked full-time, total, &_years_dash "
+      PopWorkFTB_F_&_years. = "Female worked full-time Black/African American, &_years_dash "
+      PopWorkFTW_F_&_years. = "Female worked full-time, Non-Hispanic White, &_years_dash "
+      PopWorkFTH_F_&_years. = "Female worked full-time, Hispanic/Latino, &_years_dash "
+      PopWorkFTA_F_&_years. = "Female worked full-time, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+      PopWorkFTIOM_F_&_years. = "Female worked full-time, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+      PopWorkFTAIOM_F_&_years. = "Female worked full-time, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopWorkEarn_F_&_years. = "Female worked with earnings,total, &_years_dash "
+      PopWorkEarnB_F_&_years. = "Female worked with earnings Black/African American, &_years_dash "
+      PopWorkEarnW_F_&_years. = "Female worked with earnings, Non-Hispanic White, &_years_dash "
+      PopWorkEarnH_F_&_years. = "Female worked with earnings, Hispanic/Latino, &_years_dash "
+      PopWorkEarnA_F_&_years. = "Female worked with earnings, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+      PopWorkEarnIOM_F_&_years. = "Female worked with earnings, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+      PopWorkEarnAIOM_F_&_years. = "Female worked with earnings, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopWorkFTLT35K_F_&_years. = "Female worked full-time with earning less than $35000, total, &_years_dash "
+      PopWorkFTLT35KB_F_&_years. = "Female worked full-time with earning less than $35000, Black/African American, &_years_dash "
+      PopWorkFTLT35KW_F_&_years. = "Female worked full-time with earnings less than $35000, Non-Hispanic White, &_years_dash "
+      PopWorkFTLT35KH_F_&_years. = "Female worked full-time with earnings less than $35000, Hispanic/Latino, &_years_dash "
+      PopWorkFTLT35KA_F_&_years. = "Female worked full-time with earnings less than $35000, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+      PopWorkFTLT35KIOM_F_&_years. = "Female worked full-time with earnings less than $35000, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+      PopWorkFTLT35KAIOM_F_&_years. = "Female worked full-time with earnings less than $35000, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+      PopWorkFTLT75K_F_&_years. = "Female worked full-time with earnings less than $75000, total, &_years_dash "
+      PopWorkFTLT75KB_F_&_years. = "Female worked full-time with earnings less than $75000, Black/African American, &_years_dash "
+      PopWorkFTLT75KW_F_&_years. = "Female worked full-time with earnings less than $75000, Non-Hispanic White, &_years_dash "
+      PopWorkFTLT75KH_F_&_years. = "Female worked full-time with earnings less than $75000, Hispanic/Latino, &_years_dash "
+      PopWorkFTLT75KA_F_&_years. = "Female worked full-time with earnings less than $75000, Asian, Native Hawaiian, and other Pacific Islander, &_years_dash "
+      PopWorkFTLT75KIOM_F_&_years. = "Female worked full-time with earnings less than $75000, American Indian/Alaska Native, some other race, two or more races, &_years_dash "
+      PopWorkFTLT75KAIOM_F_&_years. = "Female worked full-time with earnings less than $75000, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+
+      mPop16andOverEmp_M_&_years. = "Male 16+ years old who are employed (includes armed forces), MOE, &_years_dash "
+      mPop16andOverEmpB_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Black/African American, MOE, &_years_dash "
+      mPop16andOverEmpW_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Non-Hispanic White, MOE, &_years_dash "
+      mPop16andOverEmpH_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Hispanic/Latino, MOE,  &_years_dash "
+      mPop16andOverEmpA_M_&_years. = "Male 16+ years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, MOE, &_years_dash "
+      mPop16andOverEmpIOM_M_&_years. = "Male 16+ years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, MOE,  &_years_dash "
+      mPop16andOverEmpAIOM_M_&_years. = "Male 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, MOE,  &_years_dash "
+      mPop16_64Employed_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), total,MOE, &_years_dash "
+      mPop16_64EmployedB_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Black/African American,MOE, &_years_dash "
+      mPop16_64EmployedW_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Non-Hispanic White,MOE, &_years_dash "
+      mPop16_64EmployedH_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Hispanic/Latino,MOE, &_years_dash "
+      mPop16_64EmployedA_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander,MOE, &_years_dash "
+      mPop16_64EmployedIOM_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races,MOE, &_years_dash "
+      mPop16_64EmployedAIOM_M_&_years. = "Male 16-64 years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino,MOE, &_years_dash "
+
+      mPopUnemployed_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, total,MOE, &_years_dash "
+      mPopUnemployedB_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Black/African American,MOE, &_years_dash "
+      mPopUnemployedW_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Non-Hispanic White,MOE, &_years_dash "
+      mPopUnemployedH_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Hispanic/Latino,MOE, &_years_dash "
+      mPopUnemployedA_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, Asian and Native Hawaiian and Other Pacific Islander,MOE, &_years_dash "
+      mPopUnemployedIOM_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, American Indian/Alaska Native, Some other race, Two or more races,MOE, &_years_dash "
+      mPopUnemployedAIOM_M_&_years. = "Male 16+ years old in the civilian labor force and unemployed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino,MOE, &_years_dash "
+
+      mPopCivilEmployed_M_&_years. = "Male 16+ years old in the civilian labor force and employed, MOE, &_years_dash "
+      mPopCivilEmployedB_M_&_years. = "Male 16+ years old in the civilian labor force and employed, Black/African American, MOE, &_years_dash "
+      mPopCivilEmployedW_M_&_years. = "Male 16+ years old in the civilian labor force and employed, Non-Hispanic White, MOE, &_years_dash "
+      mPopCivilEmployedH_M_&_years. = "Male 16+ years old in the civilian labor force and employed, Hispanic/Latino, MOE, &_years_dash "
+      mPopCivilEmployedA_M_&_years. = "Male 16+ years old in the civilian labor force and employed, Asian and Native Hawaiian and Other Pacific Islander, MOE, &_years_dash "
+      mPopCivilEmployedIOM_M_&_years. = "Male 16+ years old in the civilian labor force and employed, American Indian/Alaska Native, Some other race, Two or more races, MOE, &_years_dash "
+      mPopCivilEmployedAIOM_M_&_years. = "Male 16+ years old in the civilian labor force and employed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, MOE, &_years_dash "
+      mPopCivilEmployed_F_&_years. = "Female 16+ years old in the civilian labor force and employed, MOE, &_years_dash "
+      mPopCivilEmployedB_F_&_years. = "Female 16+ years old in the civilian labor force and employed, Black/African American, MOE, &_years_dash "
+      mPopCivilEmployedW_F_&_years. = "Female 16+ years old in the civilian labor force and employed, Non-Hispanic White, MOE, &_years_dash "
+      mPopCivilEmployedH_F_&_years. = "Female 16+ years old in the civilian labor force and employed, Hispanic/Latino, MOE, &_years_dash "
+      mPopCivilEmployedA_F_&_years. = "Female 16+ years old in the civilian labor force and employed, Asian and Native Hawaiian and Other Pacific Islander, MOE, &_years_dash "
+      mPopCivilEmployedIOM_F_&_years. = "Female 16+ years old in the civilian labor force and employed, American Indian/Alaska Native, Some other race, Two or more races, MOE, &_years_dash "
+      mPopCivilEmployedAIOM_F_&_years. = "Female 16+ years old in the civilian labor force and employed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, MOE, &_years_dash "
+      
+      mPopInCivLaborForce_M_&_years. = "Male 16+ years old in the civilian labor force, MOE, &_years_dash "
+      mPopInCivLaborForB_M_&_years. = "Male 16+ years old in the civilian labor force, Black/African American, MOE, &_years_dash "
+      mPopInCivLaborForW_M_&_years. = "Male 16+ years old in the civilian labor force, Non-Hispanic White, MOE, &_years_dash "
+      mPopInCivLaborForH_M_&_years. = "Male 16+ years old in the civilian labor force, Hispanic/Latino, MOE, &_years_dash "
+      mPopInCivLaborForA_M_&_years. = "Male 16+ years old in the civilian labor force, Asian and Native Hawaiian and Other Pacific Islander, MOE, &_years_dash "
+      mPopInCivLaborForIOM_M_&_years. = "Male 16+ years old in the civilian labor force, American Indian/Alaska Native, Some other race, Two or more races, MOE, &_years_dash "
+      mPopInCivLaborForAIOM_M_&_years. = "Male 16+ years old in the civilian labor force, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, MOE, &_years_dash "
+      mPopInCivLaborForce_F_&_years. = "Female 16+ years old in the civilian labor force, MOE, &_years_dash "
+      mPopInCivLaborForB_F_&_years. = "Female 16+ years old in the civilian labor force, Black/African American, MOE, &_years_dash "
+      mPopInCivLaborForW_F_&_years. = "Female 16+ years old in the civilian labor force, Non-Hispanic White, MOE, &_years_dash "
+      mPopInCivLaborForH_F_&_years. = "Female 16+ years old in the civilian labor force, Hispanic/Latino, MOE, &_years_dash "
+      mPopInCivLaborForA_F_&_years. = "Female 16+ years old in the civilian labor force, Asian and Native Hawaiian and Other Pacific Islander, MOE, &_years_dash "
+      mPopInCivLaborForIOM_F_&_years. = "Female 16+ years old in the civilian labor force, American Indian/Alaska Native, Some other race, Two or more races, MOE, &_years_dash "
+      mPopInCivLaborForAIOM_F_&_years. = "Female 16+ years old in the civilian labor force, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, MOE, &_years_dash "
+      
+      mPopWorkFT_M_&_years. = "Male worked full-time, total,MOE, &_years_dash "
+      mPopWorkFTB_M_&_years. = "Male worked full-time Black/African American,MOE, &_years_dash "
+      mPopWorkFTW_M_&_years. = "Male worked full-time, Non-Hispanic White,MOE, &_years_dash "
+      mPopWorkFTH_M_&_years. = "Male worked full-time, Hispanic/Latino,MOE, &_years_dash "
+      mPopWorkFTA_M_&_years. = "Male worked full-time, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
+      mPopWorkFTIOM_M_&_years. = "Male worked full-time, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
+      mPopWorkFTAIOM_M_&_years. = "Male worked full-time, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+
+      mPopWorkEarn_M_&_years. = "Male worked with earnings, total,MOE, &_years_dash "
+      mPopWorkEarnB_M_&_years. = "Male worked with earnings Black/African American,MOE, &_years_dash "
+      mPopWorkEarnW_M_&_years. = "Male worked with earnings, Non-Hispanic White,MOE, &_years_dash "
+      mPopWorkEarnH_M_&_years. = "Male worked with earnings, Hispanic/Latino,MOE, &_years_dash "
+      mPopWorkEarnA_M_&_years. = "Male worked with earnings, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
+      mPopWorkEarnIOM_M_&_years. = "Male worked with earnings, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
+      mPopWorkEarnAIOM_M_&_years. = "Male worked with earnings, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+      mPopWorkFTLT35K_M_&_years. = "Male worked full-time with earning less than $35000, total,MOE, &_years_dash "
+      mPopWorkFTLT35KB_M_&_years. = "Male worked full-time with earning less than $35000, Black/African American,MOE, &_years_dash "
+      mPopWorkFTLT35KW_M_&_years. = "Male worked full-time with earnings less than $35000, Non-Hispanic White,MOE, &_years_dash "
+      mPopWorkFTLT35KH_M_&_years. = "Male worked full-time with earnings less than $35000, Hispanic/Latino,MOE, &_years_dash "
+      mPopWorkFTLT35KA_M_&_years. = "Male worked full-time with earnings less than $35000, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
+      mPopWorkFTLT35KIOM_M_&_years. = "Male worked full-time with earnings less than $35000, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
+      mPopWorkFTLT35KAIOM_M_&_years. = "Male worked full-time with earnings less than $35000, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+
+
+      mPopWorkFTLT75K_M_&_years. = "Male worked full-time with earnings less than $75000, total,MOE, &_years_dash "
+      mPopWorkFTLT75KB_M_&_years. = "Male worked full-time with earnings less than $75000, Black/African American,MOE, &_years_dash "
+      mPopWorkFTLT75KW_M_&_years. = "Male worked full-time with earnings less than $75000, Non-Hispanic White,MOE, &_years_dash "
+      mPopWorkFTLT75KH_M_&_years. = "Male worked full-time with earnings less than $75000, Hispanic/Latino,MOE, &_years_dash "
+      mPopWorkFTLT75KA_M_&_years. = "Male worked full-time with earnings less than $75000, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
+      mPopWorkFTLT75KIOM_M_&_years. = "Male worked full-time with earnings less than $75000, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
+      mPopWorkFTLT75KAIOM_M_&_years. = "Male worked full-time with earnings less than $75000, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+
+      
+      mPop16andOverEmp_F_&_years. = "Female 16+ years old who are employed (includes armed forces), MOE, &_years_dash "
+      mPop16andOverEmpB_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Black/African American, MOE, &_years_dash "
+      mPop16andOverEmpW_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Non-Hispanic White, MOE, &_years_dash "
+      mPop16andOverEmpH_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Hispanic/Latino, MOE, &_years_dash "
+      mPop16andOverEmpA_F_&_years. = "Female 16+ years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander, MOE, &_years_dash "
+      mPop16andOverEmpIOM_F_&_years. = "Female 16+ years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races, MOE, &_years_dash "
+      mPop16andOverEmpAIOM_F_&_years. = "Female 16+ years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino, MOE, &_years_dash "
+      mPop16_64Employed_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), total,MOE, &_years_dash "
+      mPop16_64EmployedB_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Black/African American,MOE, &_years_dash "
+      mPop16_64EmployedW_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Non-Hispanic White,MOE, &_years_dash "
+      mPop16_64EmployedH_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Hispanic/Latino,MOE, &_years_dash "
+      mPop16_64EmployedA_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), Asian and Native Hawaiian and Other Pacific Islander,MOE, &_years_dash "
+      mPop16_64EmployedIOM_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), American Indian/Alaska Native, Some other race, Two or more races,MOE, &_years_dash "
+      mPop16_64EmployedAIOM_F_&_years. = "Female 16-64 years old who are employed (includes armed forces), All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino,MOE, &_years_dash "
+     
+      mPop16_64years_M_&_years. = "Male 16-64 years old, MOE, &_years_dash "
+      mPop16_64yearsB_M_&_years. = "Male 16-64 years old, Black/African American, MOE, &_years_dash "
+      mPop16_64yearsW_M_&_years. = "Male 16-64 years old, Non-Hispanic White, MOE, &_years_dash "
+      mPop16_64yearsH_M_&_years. = "Male 16-64 years old, Hispanic/Latino, MOE, &_years_dash "
+      mPop16_64yearsA_M_&_years. = "Male 16-64 years old, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
+      mPop16_64yearsIOM_M_&_years. = "Male 16-64 years old,  American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
+      mPop16_64yearsAIOM_M_&_years. = "Male 16-64 years old, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPop16_64years_F_&_years. = "Female 16-64 years old, MOE, &_years_dash "
+      mPop16_64yearsB_F_&_years. = "Female 16-64 years old, Black/African American, MOE, &_years_dash "
+      mPop16_64yearsW_F_&_years. = "Female 16-64 years old, Non-Hispanic White, MOE, &_years_dash "
+      mPop16_64yearsH_F_&_years. = "Female 16-64 years old, Hispanic/Latino, MOE, &_years_dash "
+      mPop16_64yearsA_F_&_years. = "Female 16-64 years old, Asian, Native Hawaiian, and other Pacific Islander, MOE, &_years_dash "
+      mPop16_64yearsIOM_F_&_years. = "Female 16-64 years old,  American Indian/Alaska Native, some other race, two or more races, MOE, &_years_dash "
+      mPop16_64yearsAIOM_F_&_years. = "Female 16-64 years old, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      Pop16andOverYears_M_&_years. = "Male 16+ years old, MOE, &_years_dash "
+      mPop16andOverYearsB_M_&_years. = "Male 16 years old and over, Black/African American, MOE, &_years_dash"
+      mPop16andOverYearsW_M_&_years. = "Male 16 years old and over, Non-Hispanic White, MOE, &_years_dash"
+      mPop16andOverYearsH_M_&_years. = "Male 16 years old and over, Hispanic/Latino, MOE, &_years_dash "
+      mPop16andOverYearsA_M_&_years. = "Male 16 years old and over, Asian, Hawaiian and other Pacific Islander, MOE, &_years_dash "
+      mPop16andOverYearsIOM_M_&_years. = "Male 16 years old and over, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPop16andOverYearsAIOM_M_&_years. = "Male 16 years old and over, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+      mPop16andOverYears_F_&_years. = "Female 16+ years old, MOE, &_years_dash "
+      mPop16andOverYearsB_F_&_years. = "Female 16 years old and over, Black/African American, MOE, &_years_dash"
+      mPop16andOverYearsW_F_&_years. = "Female 16 years old and over, Non-Hispanic White, MOE, &_years_dash"
+      mPop16andOverYearsH_F_&_years. = "Female 16 years old and over, Hispanic/Latino, MOE, &_years_dash "
+      mPop16andOverYearsA_F_&_years. = "Female 16 years old and over, Asian, Hawaiian and other Pacific Islander, MOE, &_years_dash "
+      mPop16andOverYearsIOM_F_&_years. = "Female 16 years old and over, American Indian/Alaska Native, other race, two or more races, MOE, &_years_dash "
+      mPop16andOverYearsAIOM_F_&_years. = "Female 16 years old and over, All remaining groups other than Black, Non-Hispanic White, Hispanic, MOE, &_years_dash "
+       
+       mPopUnemployed_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, total,MOE, &_years_dash "
+       mPopUnemployedB_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Black/African American,MOE, &_years_dash "
+      mPopUnemployedW_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Non-Hispanic White,MOE, &_years_dash "
+      mPopUnemployedH_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Hispanic/Latino,MOE, &_years_dash "
+      mPopUnemployedA_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, Asian and Native Hawaiian and Other Pacific Islander,MOE, &_years_dash "
+      mPopUnemployedIOM_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, American Indian/Alaska Native, Some other race, Two or more races,MOE, &_years_dash "
+      mPopUnemployedAIOM_F_&_years. = "Female 16+ years old in the civilian labor force and unemployed, All remaining groups other than Black, Non-Hispanic White, Hispanic/Latino,MOE, &_years_dash "
+      mPopWorkFT_F_&_years. = "Female worked full-time,total,MOE, &_years_dash "
+      mPopWorkFTB_F_&_years. = "Female worked full-time Black/African American,MOE, &_years_dash "
+      mPopWorkFTW_F_&_years. = "Female worked full-time, Non-Hispanic White,MOE, &_years_dash "
+      mPopWorkFTH_F_&_years. = "Female worked full-time, Hispanic/Latino,MOE, &_years_dash "
+      mPopWorkFTA_F_&_years. = "Female worked full-time, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
+      mPopWorkFTIOM_F_&_years. = "Female worked full-time, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
+      mPopWorkFTAIOM_F_&_years. = "Female worked full-time, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+
+      mPopWorkEarn_F_&_years. = "Female worked with earnings, total,MOE, &_years_dash "
+      mPopWorkEarnB_F_&_years. = "Female worked with earnings Black/African American,MOE, &_years_dash "
+      mPopWorkEarnW_F_&_years. = "Female worked with earnings, Non-Hispanic White,MOE, &_years_dash "
+      mPopWorkEarnH_F_&_years. = "Female worked with earnings, Hispanic/Latino,MOE, &_years_dash "
+      mPopWorkEarnA_F_&_years. = "Female worked with earnings, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
+      mPopWorkEarnIOM_F_&_years. = "Female worked with earnings, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
+      mPopWorkEarnAIOM_F_&_years. = "Female worked with earnings, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+      mPopWorkFTLT35K_F_&_years. = "Female worked full-time with earning less than $35000, total,MOE, &_years_dash "
+      mPopWorkFTLT35KB_F_&_years. = "Female worked full-time with earning less than $35000, Black/African American,MOE, &_years_dash "
+      mPopWorkFTLT35KW_F_&_years. = "Female worked full-time with earnings less than $35000, Non-Hispanic White,MOE, &_years_dash "
+      mPopWorkFTLT35KH_F_&_years. = "Female worked full-time with earnings less than $35000, Hispanic/Latino,MOE, &_years_dash "
+      mPopWorkFTLT35KA_F_&_years. = "Female worked full-time with earnings less than $35000, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
+      mPopWorkFTLT35KIOM_F_&_years. = "Female worked full-time with earnings less than $35000, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
+      mPopWorkFTLT35KAIOM_F_&_years. = "Female worked full-time with earnings less than $35000, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+      mPopWorkFTLT75K_F_&_years. = "Female worked full-time with earnings less than $75000, total,MOE, &_years_dash "
+      mPopWorkFTLT75KB_F_&_years. = "Female worked full-time with earnings less than $75000, Black/African American,MOE, &_years_dash "
+      mPopWorkFTLT75KW_F_&_years. = "Female worked full-time with earnings less than $75000, Non-Hispanic White,MOE, &_years_dash "
+      mPopWorkFTLT75KH_F_&_years. = "Female worked full-time with earnings less than $75000, Hispanic/Latino,MOE, &_years_dash "
+      mPopWorkFTLT75KA_F_&_years. = "Female worked full-time with earnings less than $75000, Asian, Native Hawaiian, and other Pacific Islander,MOE, &_years_dash "
+      mPopWorkFTLT75KIOM_F_&_years. = "Female worked full-time with earnings less than $75000, American Indian/Alaska Native, some other race, two or more races,MOE, &_years_dash "
+      mPopWorkFTLT75KAIOM_F_&_years. = "Female worked full-time with earnings less than $75000, All remaining groups other than Black, Non-Hispanic White, Hispanic,MOE, &_years_dash "
+
+
+;
 
       
 

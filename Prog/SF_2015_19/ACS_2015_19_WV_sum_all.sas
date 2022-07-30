@@ -12,7 +12,7 @@
  Modifications:
 **************************************************************************/
 
-%include "L:\SAS\Inc\StdLocal.sas";
+%include "\\sas1\DCdata\SAS\Inc\StdLocal.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
@@ -27,7 +27,7 @@
   years = 2015_19,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Update to include Regional AI variables.)
+  revisions = %str(Update to include gender breakouts for employment vars.)
 
 )
 
