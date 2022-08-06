@@ -219,7 +219,7 @@
     %let count_vars = 
 	   TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
        PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
-       PopPoor: PopInCivLaborForce: PopCivil: PopUnemployed: PopEmployed: PopWork:
+       PopPoor: PopInCivLaborFor: PopCivil: PopUnemployed: PopEmployed: PopWork:
        Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
         
        RentCostBurdenDenom: OwnerCostBurdenDenom:
