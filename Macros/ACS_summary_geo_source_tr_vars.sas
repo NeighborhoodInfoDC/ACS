@@ -1912,7 +1912,7 @@
           C23002Fe21, C23002Fe26, 
           C23002Ge21, C23002Ge26 );
 
-      PopInCivLaborForce_&_years. = sum(PopCivilianEmployed_&_years., PopUnemployed_&_years. ););
+      PopInCivLaborForce_&_years. = sum(PopCivilianEmployed_&_years., PopUnemployed_&_years. );
        PopInCivLaborForceB_&_years. = sum( PopCivilianEmployedB_&_years., PopUnemployedB_&_years. );
            PopInCivLaborForceW_&_years. = sum(PopCivilianEmployedW_&_years., PopUnemployedW_&_years. );
             PopInCivLaborForceH_&_years. = sum(PopCivilianEmployedH_&_years., PopUnemployedH_&_years. );
