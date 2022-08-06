@@ -1912,7 +1912,15 @@
           C23002Fe21, C23002Fe26, 
           C23002Ge21, C23002Ge26 );
 
-     
+      PopInCivLaborForce_&_years. = sum(PopCivilianEmployed_&_years., PopUnemployed_&_years. );
+       PopInCivLaborForceB_&_years. = sum( PopCivilianEmployedB_&_years., PopUnemployedB_&_years. );
+           PopInCivLaborForceW_&_years. = sum(PopCivilianEmployedW_&_years., PopUnemployedW_&_years. );
+            PopInCivLaborForceH_&_years. = sum(PopCivilianEmployedH_&_years., PopUnemployedH_&_years. );
+            PopInCivLaborForceA_&_years. = sum(PopCivilianEmployedA_&_years., PopUnemployedA_&_years. );
+            PopInCivLaborForceIOM_&_years. = sum(PopCivilianEmployedIOM_&_years., PopUnemployedIOM_&_years. );
+            PopInCivLaborForceAIOM_&_years. = sum(PopCivilianEmployedAIOM_&_years., PopUnemployedAIOM_&_years. );
+
+
 	
       PopInCivLaborForce_M_&_years. = sum( PopCivilEmployed_M_&_years., PopUnemployed_M_&_years. );	
       PopInCivLaborForB_M_&_years. = sum(PopCivilEmployedB_M_&_years., PopUnemployedB_M_&_years.);
@@ -2017,10 +2025,12 @@
 /*gender*/
 
 
-    Pop16_64Employed_M_&_years. = sum(B23001e5, B23001e7, B23001e12, B23001e14, B23001e19, B23001e21, B23001e26, B23001e28, 
+    Pop16_64Employed_M_&_years. = 
+     sum(B23001e5, B23001e7, B23001e12, B23001e14, B23001e19, B23001e21, B23001e26, B23001e28, 
         B23001e33, B23001e35, B23001e40, B23001e42, B23001e47, B23001e49, B23001e54, B23001e56, 
         B23001e61, B23001e63, B23001e68, B23001e70 );
-    Pop16_64Employed_F_&_years. = sum(B23001e91, B23001e93, B23001e98, B23001e100, 
+    Pop16_64Employed_F_&_years. = 
+     sum(B23001e91, B23001e93, B23001e98, B23001e100, 
         B23001e105, B23001e107, B23001e112, B23001e114, B23001e119, B23001e121, B23001e126, B23001e128, 
         B23001e133, B23001e135, B23001e140, B23001e142, B23001e147, B23001e149, B23001e154, B23001e156 );
 

@@ -27,7 +27,7 @@
   years = 2015_19,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Update to include gender breakouts for employment vars.)
+  revisions = %str(Corrections to include gender breakouts for employment vars.)
 
 )
 
