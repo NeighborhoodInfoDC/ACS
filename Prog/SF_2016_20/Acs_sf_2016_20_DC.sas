@@ -23,6 +23,9 @@
   /** State abbreviation. Ex: DC **/
   state_ab = DC,
 
+  /** Census geographies used **/
+  census_geo_year=2020
+
   /** Year range (2016_20)**/
   years = 2016_20,
   
