@@ -237,7 +237,7 @@
     set _&_out_ds_base._&geo_suffix;
 
     drop &_drop_list 
-      %if &geo = GEOBG2000 or &geo = GEOBG2010 %then %do;
+      %if &geo = GEOBG2000 or &geo = GEOBG2010 or &geo = GEOBG2020 %then %do;
         &_drop_bg_list
       %end;
     ;
