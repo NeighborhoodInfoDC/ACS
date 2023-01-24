@@ -22,7 +22,21 @@
   %let geo = %upcase( &geo );
   %let state_ab = %upcase (&state_ab );
   
-  %if &geo = GEOBG2010 %then %do;
+  %if &geo = GEOBG2020 %then %do;
+    %** Block group level **;
+    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._Tracts_Block_Groups_Only;
+    %let sum_level = 150;
+    %let geo_suffix = bg20;
+    %let geo_var = GeoBg2020;
+  %end;
+  %else %if &geo = GEO2020 %then %do;
+    %** Census tract level **;
+    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._Tracts_Block_Groups_Only;
+    %let sum_level = 140;
+    %let geo_suffix = tr20;
+    %let geo_var = Geo2020;
+  %end;
+  %else %if &geo = GEOBG2010 %then %do;
     %** Block group level **;
     %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._Tracts_Block_Groups_Only;
     %let sum_level = 150;
@@ -223,7 +237,7 @@
     set _&_out_ds_base._&geo_suffix;
 
     drop &_drop_list 
-      %if &geo = GEOBG2000 or &geo = GEOBG2010 %then %do;
+      %if &geo = GEOBG2000 or &geo = GEOBG2010 or &geo = GEOBG2020 %then %do;
         &_drop_bg_list
       %end;
     ;

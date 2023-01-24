@@ -293,9 +293,21 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
   
   **** Compile block group, tract and county files ****;
 
+  %if &census_geo_year = 2010 %then %do;
+
   %Compile_ACS( geo=geobg2010, revisions=&revisions ) 
 
   %Compile_ACS( geo=geo2010, revisions=&revisions )
+
+  %end;
+
+  %else %do;
+
+  %Compile_ACS( geo=geobg2020, revisions=&revisions ) 
+
+  %Compile_ACS( geo=geo2020, revisions=&revisions )
+
+  %end;
 
   %Compile_ACS( geo=county, revisions=&revisions )
 
