@@ -46,6 +46,20 @@
      %let source_ds = Acs_sf_&_years._&_state_ab._tr10;
      %let source_geo_label = Census tract;
   %end;
+  %else %if %upcase( &source_geo ) = BG20 %then %do;
+     %let source_geo_var = GeoBg2020;
+     %let source_geo_suffix = _bg;
+     %let source_geo_wt_file_fmt = $geobw2f.;
+     %let source_ds = Acs_sf_&_years._&_state_ab._bg20;
+     %let source_geo_label = Block group;
+  %end;
+  %else %if %upcase( &source_geo ) = TR20 %then %do;
+     %let source_geo_var = Geo2020;
+     %let source_geo_suffix = _tr;
+     %let source_geo_wt_file_fmt = $geotw2f.;
+     %let source_ds = Acs_sf_&_years._&_state_ab._tr20;
+     %let source_geo_label = Census tract;
+  %end;
   %else %if %upcase( &source_geo ) = REGCOUNTY %then %do;
      %let source_geo_var = RegCounty;
      %let source_geo_suffix = _regcnt;
@@ -80,7 +94,7 @@
     %ACS_summary_geo_source_bg_vars()
     
     %if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 or 
-        %upcase( &source_geo ) = REGCOUNTY 
+        %upcase( &source_geo ) = TR20 %upcase( &source_geo ) = REGCOUNTY 
       %then %do;
       
         ** Tract/county level variables **;
@@ -92,8 +106,10 @@
   %if &_state_ab = dc and (
     %upcase( &source_geo ) = BG00 or
     %upcase( &source_geo ) = BG10 or 
+	%upcase( &source_geo ) = BG20 or 
     %upcase( &source_geo ) = TR00 or
-    %upcase( &source_geo ) = TR10 ) %then %do; 
+	%upcase( &source_geo ) = TR10 or
+    %upcase( &source_geo ) = TR20 ) %then %do; 
 
     %** For DC, do full set of geographies **;
     
@@ -107,9 +123,11 @@
 	%ACS_summary_geo( psa2019, &source_geo )
     %ACS_summary_geo( geo2000, &source_geo )
     %ACS_summary_geo( geo2010, &source_geo )
+	%ACS_summary_geo( geo2020, &source_geo )
     %ACS_summary_geo( voterpre2012, &source_geo )
     %ACS_summary_geo( ward2002, &source_geo )
     %ACS_summary_geo( ward2012, &source_geo )
+	%ACS_summary_geo( ward2022, &source_geo )
     %ACS_summary_geo( zip, &source_geo )
     %ACS_summary_geo( cluster2000, &source_geo )
 	%ACS_summary_geo( cluster2017, &source_geo )
@@ -126,7 +144,11 @@
   %else %do;
     %** For non-DC, do census tract, council district and county summary file **;
     
-    %if %upcase( &source_geo ) = TR10 %then %do; 
+	%if %upcase( &source_geo ) = TR20 %then %do; 
+      %ACS_summary_geo( geo2020, &source_geo )
+    %ACS_summary_geo( councildist, &source_geo )
+    %end;
+    %else %if %upcase( &source_geo ) = TR10 %then %do; 
       %ACS_summary_geo( geo2010, &source_geo )
     %ACS_summary_geo( councildist, &source_geo )
     %end;
