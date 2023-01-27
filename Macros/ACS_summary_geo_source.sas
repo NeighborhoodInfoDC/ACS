@@ -94,7 +94,7 @@
     %ACS_summary_geo_source_bg_vars()
     
     %if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 or 
-        %upcase( &source_geo ) = TR20 %upcase( &source_geo ) = REGCOUNTY 
+        %upcase( &source_geo ) = TR20 or %upcase( &source_geo ) = REGCOUNTY 
       %then %do;
       
         ** Tract/county level variables **;
