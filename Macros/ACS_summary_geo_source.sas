@@ -68,7 +68,7 @@
      %let source_geo_label = Regional county;
   %end;
   %else %do;
-    %err_mput( macro= ACS_summary_geo_source, msg=Geograpy &source_geo is not supported. )
+    %err_mput( macro= ACS_summary_geo_source, msg=Geography &source_geo is not supported. )
     %goto macro_exit;
   %end;
      
