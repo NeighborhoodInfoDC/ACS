@@ -1,5 +1,5 @@
 /**************************************************************************
- Program:  ACS_2016_20_DC_sum_all.sas
+ Program:  ACS_2016_20_WV_sum_all.sas
  Library:  ACS
  Project:  Urban-Greater DC
  Author:   Elizabeth Burton
