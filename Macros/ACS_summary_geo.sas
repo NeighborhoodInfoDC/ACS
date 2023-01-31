@@ -32,7 +32,7 @@
   
   %let out_ds = ACS_&_years._&state_ab._sum&source_geo_suffix.&geo_suffix;
 
-  %if %upcase( &source_geo ) = BG00 or %upcase( &source_geo ) = BG10 %then %do;
+  %if %upcase( &source_geo ) = BG00 or %upcase( &source_geo ) = BG10 or %upcase( &source_geo ) = BG20 %then %do;
   
     %** Count and MOE variables for block group data **;
 
@@ -1108,6 +1108,7 @@
   
   %if ( &geo_name = GEO2000 and %upcase( &source_geo_var ) = GEO2000 ) or 
       ( &geo_name = GEO2010 and %upcase( &source_geo_var ) = GEO2010 ) or
+	  ( &geo_name = GEO2020 and %upcase( &source_geo_var ) = GEO2020 ) or
     ( &geo_name = COUNTY and %upcase( &source_geo_var ) = REGCOUNTY )%then %do;
 
 	    ** Census tracts from census tract source (same year): just recopy selected vars **;

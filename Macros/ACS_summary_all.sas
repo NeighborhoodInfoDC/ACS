@@ -21,7 +21,10 @@
   years = ,
   
   finalize = Y,
-  revisions = New file.
+  revisions = New file.,
+
+  /** Year for census block group/tract defs. Should be 2010 for 2011 and later ACS releases. **/
+  census_geo_year = 2010,
 
   );
 
@@ -53,15 +56,18 @@
   %end;
   
 
-  **** Create summary files from block group source ****;
+  %if &census_geo_year = 2010 %then %do;
 
   %ACS_summary_geo_source( bg10 )
-
-  **** Create summary files from census tract source ****;
-
   %ACS_summary_geo_source( tr10 )
 
-  **** Create summary files from regional county source ****;
+  %end;
+
+  %else %do;
+  %ACS_summary_geo_source( bg20 )
+  %ACS_summary_geo_source( tr20 )
+
+  %end;
 
   %ACS_summary_geo_source( regcounty )
 
