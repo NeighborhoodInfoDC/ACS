@@ -9,10 +9,10 @@
  
  Description:  Read selected tables for ACS summary files.
  
- Modifications:
+ Modifications: 12/06/23 LH Added census_geo_year parameter, Update include statement for SAS1 network location.
 **************************************************************************/
 
-%include "L:\SAS\Inc\StdLocal.sas";
+%include "\\sas1\DCdata\SAS\Inc\StdLocal.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
@@ -22,6 +22,9 @@
 
   /** State abbreviation. Ex: DC **/
   state_ab = ,
+      
+    /** Census geographies used **/
+  census_geo_year=2020,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = ,
