@@ -16,72 +16,66 @@
 
 %macro Compile_ACS_new( geo=, revisions= );
 
-  %local sum_level geo_suffix geo_var geo_label geo_length geo_format geo_vformat 
-         i v;
+  %local api_geo_prefix api_in_clause geo_suffix geo_var geo_label geo_length geo_format geo_vformat 
+         i v _table_datasets;
   
   %let geo = %upcase( &geo );
   %let state_ab = %upcase (&state_ab );
   
   %if &geo = GEOBG2020 %then %do;
     %** Block group level **;
-    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._Tracts_Block_Groups_Only;
-    %let sum_level = 150;
+    %let api_geo_prefix = 150;
     %let geo_suffix = bg20;
     %let geo_var = GeoBg2020;
   %end;
   %else %if &geo = GEO2020 %then %do;
     %** Census tract level **;
-    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._Tracts_Block_Groups_Only;
-    %let sum_level = 140;
+    %let api_geo_prefix = tract;
+    %let api_in_clause = state:&_state_fips.&in=county:*;
     %let geo_suffix = tr20;
     %let geo_var = Geo2020;
   %end;
   %else %if &geo = GEOBG2010 %then %do;
     %** Block group level **;
-    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._Tracts_Block_Groups_Only;
-    %let sum_level = 150;
+    %let api_geo_prefix = 150;
     %let geo_suffix = bg10;
     %let geo_var = GeoBg2010;
   %end;
   %else %if &geo = GEO2010 %then %do;
     %** Census tract level **;
-    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._Tracts_Block_Groups_Only;
-    %let sum_level = 140;
+    %let api_geo_prefix = tract;
+    %let api_in_clause = state:&_state_fips.&in=county:*;
     %let geo_suffix = tr10;
     %let geo_var = Geo2010;
   %end;
   %else %if &geo = GEOBG2000 %then %do;
     %** Block group level **;
-    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._Tracts_Block_Groups_Only;
-    %let sum_level = 150;
+    %let api_geo_prefix = 150;
     %let geo_suffix = bg00;
     %let geo_var = GeoBg2000;
   %end;
   %else %if &geo = GEO2000 %then %do;
     %** Census tract level **;
-    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._Tracts_Block_Groups_Only;
-    %let sum_level = 140;
+    %let api_geo_prefix = tract;
+    %let api_in_clause = state:&_state_fips.&in=county:*;
     %let geo_suffix = tr00;
     %let geo_var = Geo2000;
   %end;
   %else %if &geo = CITY %then %do;
     %** city level - use only for DC **;
-    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._All_Geographies_Not_Tracts_Block_Groups;
-    %let sum_level = 040;
+    %let api_geo_prefix = 040;
     %let geo_suffix = city;
     %let geo_var = city;
   %end;
   %else %if &geo = COUNTY %then %do;
     %** county level **;
-    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._All_Geographies_Not_Tracts_Block_Groups;
-    %let sum_level = 050;
+    %let api_geo_prefix = 050;
     %let geo_suffix = regcnt;
     %let geo_var = RegCounty;
   %end;
   %else %if &geo = PLACE %then %do;
     %** place level **;
-    %let _acs_sf_raw_path = &_acs_sf_raw_base_path\&_state_name._All_Geographies_Not_Tracts_Block_Groups;
-    %let sum_level = 160;
+    %let api_geo_prefix = 160;
     %let geo_suffix = regpl;
     %let geo_var = RegPlace;
   %end;
@@ -95,70 +89,45 @@
   %let geo_format = %sysfunc( putc( &geo, $geoafmt. ) );
   %let geo_vformat = %sysfunc( putc( &geo, $geovfmt. ) );
 
-  %push_option( msglevel )
-  
-  options msglevel=n;
-  
-  x "del /q &rootdir.*.*";
-
-  %include "&_sf_macro_file_path";
-
   **** Read tables ****;
   
-  %Read_seq_list( &_seq_list )
+  %let i = 1;
+  %let v = %scan( _table_list, &i, %str( ) );
+  %let _table_datasets = ;
 
-  %put table_file_e_list=&table_file_e_list;
-  %put table_file_m_list=&table_file_m_list;
+  %do %until ( %length( &v ) = 0 );
+
+    %Get_acs_detailed_table_api( table=&v, out=_&v_tract, year=&_last_year, sample=acs5, for=&api_geo_prefix.:*, in=&api_in_clause )
+    
+    %let _table_datasets = &_table_datasets &v;
+
+    %let i = %eval( &i + 1 );
+    %let v = %scan( _table_list, &i, %str( ) );
+
+  %end;
 
 
   **** Combine data table & margin of error files ****;
 
-  %let table_e_list = %ListChangeDelim( &_table_list, new_delim=%str(e: ), quiet=y );
-  %let table_e_list = %unquote(&table_e_list.e:);
-  %put table_e_list=&table_e_list;
-
-  %let table_m_list = %ListChangeDelim( &_table_list, new_delim=%str(m: ), quiet=y );
-  %let table_m_list = %unquote(&table_m_list.m:);
-  %put table_m_list=&table_m_list;
-
-  %pop_option( msglevel )
-
   data _&_out_ds_base._&geo_suffix;
 
     merge
-      &_geo_file 
-        (keep=logrecno sumlevel state county place tract blkgrp geoid
-         where=(sumlevel="&sum_level") 
-         in=inGeo)
 
       %let i = 1;
-      %let v = %scan( &table_file_e_list, &i, %str( ) );
+      %let v = %scan( &_table_datasets, &i, %str( ) );
 
-      %do %until ( &v = );
+      %do %until ( %length( &v ) = 0 );
 
-        &v (drop=FILEID FILETYPE STUSAB CHARITER SEQUENCE)
+        &v /**** (drop=FILEID FILETYPE STUSAB CHARITER SEQUENCE)   /**** NEW VARIABLES TO DROP? *****/
 
         %let i = %eval( &i + 1 );
-        %let v = %scan( &table_file_e_list, &i, %str( ) );
+        %let v = %scan( &_table_datasets, &i, %str( ) );
 
       %end;
 
-      %let i = 1;
-      %let v = %scan( &table_file_m_list, &i, %str( ) );
-
-      %do %until ( &v = );
-
-        &v (drop=FILEID FILETYPE STUSAB CHARITER SEQUENCE)
-
-        %let i = %eval( &i + 1 );
-        %let v = %scan( &table_file_m_list, &i, %str( ) );
-
-      %end;
-     
       ;
-    by logrecno;
-    
-    if inGeo;
+      
+    /****  by logrecno;  NO BY? OTHER VARS *******/
     
     ** Create standard geography variable **;
 
@@ -264,7 +233,7 @@
   ** Cleanup temporary data sets **;
   
   proc datasets library=WORK memtype=(data) nolist;
-    delete _&_out_ds_base._&geo_suffix &_geo_file seq_: sfe: sfm: ;
+    delete &_table_datasets;
   quit;
   run; 
   
