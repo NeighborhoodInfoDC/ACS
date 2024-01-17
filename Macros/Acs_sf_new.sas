@@ -10,7 +10,7 @@
  and tract level files for the following summary tabulations.
  Currently supports 5-year data.  
  
- NEW VERSION: Uses API calls to pull data.
+ NEW VERSION: Uses API calls to pull data. Requires SAS version 9.4M4 or later.
  
  Table	Seq	Title
  ------	----	-----
@@ -105,7 +105,7 @@
   02/22/19 PT Added B19001A. 
   12/16/20 RP Added B98001 B98002 B98003 which replace B00001 and B00002
   7/23/21 ALH added tables for Regional AI
-  1/17/24 PAT NEW VERSION: Uses API calls to pull data.
+  1/17/24 PAT NEW VERSION: Uses API calls to pull data. Requires SAS version 9.4M4 or later.
  
 **************************************************************************/
 
@@ -117,8 +117,8 @@
   finalize = Y,
   revisions = New file.,
   
-  /** Year for census block group/tract defs. Should be 2010 for 2011 and later ACS releases. **/
-  census_geo_year = 2010,
+  /** Year for census block group/tract defs. Only 2010 and 2020 supported. **/
+  census_geo_year = 2020,
   
   /** Update table_list=, drop_list=, and drop_bg_list= parameters to add new tabulations to data set **/
   
@@ -170,13 +170,15 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
 ,
   
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from all data sets **/
+/***** REMOVE 
   drop_list =
     B00001m: B00002m:
     B01002Ee: B11001Ee: B19013Ee: B25014Ee: 
     B01002Em: B11001Em: B19013Em: B25014Em: 
 	B98001m: B98002m: B98003m:
 ,
-  
+******/
+
   /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from BLOCK GROUP data sets only **/
   drop_bg_list = 
   	B01001Be: B01001Ce: B01001De: B01001Ee: B01001Fe: B01001Ge: B01001He: B01001Ie:
@@ -215,14 +217,16 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
 
   %** Global macro parameters **;
 
-  %global _acs_sf_raw_base_path _acs_sf_raw_path _state_fips _state_ab _state_name
+  %global /*_acs_sf_raw_base_path _acs_sf_raw_path*/ _state_fips _state_ab _state_name
           _years _last_year _geo_file _census_geo_year _years_dash 
-          _seq_list _table_list _drop_list _drop_bg_list
-          _sf_macro_file_path _out_ds_base _out_lib;
-          
+          /*_seq_list*/ _table_list /*_drop_list*/ _drop_bg_list
+          /*_sf_macro_file_path*/ _out_ds_base _out_lib;
+
+/*
   %global rootdir;
 
   %global table_file_e_list table_file_m_list;
+*/
 
   %** Basic ACS file parameters **;
 
@@ -231,13 +235,13 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
   %let _state_name = %sysfunc(compress(%sysfunc(stnamel(&_state_ab))));
   %let _years      = &years;
   %let _census_geo_year = &census_geo_year;
-  %let _acs_sf_raw_base_path = &_dcdata_r_path\ACS\Raw\SF_&_years.;
+/*  %let _acs_sf_raw_base_path = &_dcdata_r_path\ACS\Raw\SF_&_years.; */
   %let _years_dash = %sysfunc( translate( &_years, '-', '_' ) );
   %let _last_year = 20%scan( &_years, 2, _ );
   %let _geo_file   = g&_last_year.5&_state_ab;
   
   %let _out_ds_base = Acs_sf_&_years._&_state_ab;
-
+/*
   %if &_remote_batch_submit %then 
     %let _sf_macro_file_path = &_dcdata_r_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;
   %else
@@ -257,8 +261,8 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
   ** Location of table lookup file **;
 
   libname stubs "&_acs_sf_raw_base_path";
-
-
+*/
+/*
   %** Create list of file sequence numbers to read based on list of tables **;
   
   %push_option( quotelenmax )
@@ -275,16 +279,16 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
   %pop_option( quotelenmax )
 
   %let _seq_list = %ListNoDup( &_seq_list );
-
+*/
 
   %** Tables to read **;
 
   %let _table_list = &table_list;
-  
+/*  
   %** Variables to drop from final block group and tract files **;
 
   %let _drop_list = &drop_list;
-
+*/
   %** Additional variables to drop from block group file **;
 
   %let _drop_bg_list = &drop_bg_list;
@@ -297,24 +301,30 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
 
   %if &census_geo_year = 2010 %then %do;
 
-  %Compile_ACS( geo=geobg2010, revisions=&revisions ) 
+  %Compile_ACS_new( geo=geobg2010, revisions=&revisions ) 
 
-  %Compile_ACS( geo=geo2010, revisions=&revisions )
+  %Compile_ACS_new( geo=geo2010, revisions=&revisions )
 
   %end;
 
+  %else &census_geo_year = 2020 %then %do;
+
+  %Compile_ACS_new( geo=geobg2020, revisions=&revisions ) 
+
+  %Compile_ACS_new( geo=geo2020, revisions=&revisions )
+
+  %end;
+  
   %else %do;
-
-  %Compile_ACS( geo=geobg2020, revisions=&revisions ) 
-
-  %Compile_ACS( geo=geo2020, revisions=&revisions )
-
+  
+    %warn_mput( macro=Acs_sf_new, msg=Parameter census_geo_year=&census_geo_year not supported. )
+    
   %end;
 
-  %Compile_ACS( geo=county, revisions=&revisions )
+  %Compile_ACS_new( geo=county, revisions=&revisions )
 
 /*
-  %Compile_ACS( geo=place, revisions=&revisions )
+  %Compile_ACS_new( geo=place, revisions=&revisions )
 */
 
 
