@@ -31,7 +31,7 @@
   %else %if &geo = GEO2020 %then %do;
     %** Census tract level **;
     %let api_geo_prefix = tract;
-    %let api_in_clause = state:&_state_fips.&in=county:*;
+    %let api_in_clause = state:&_state_fips.%nrstr(&in=county:*);
     %let geo_suffix = tr20;
     %let geo_var = Geo2020;
   %end;
@@ -69,7 +69,8 @@
   %end;
   %else %if &geo = COUNTY %then %do;
     %** county level **;
-    %let api_geo_prefix = 050;
+    %let api_geo_prefix = county;
+    %let api_in_clause = state:&_state_fips;
     %let geo_suffix = regcnt;
     %let geo_var = RegCounty;
   %end;
@@ -88,24 +89,30 @@
   %let geo_length = %sysfunc( putc( &geo, $geolen. ) );
   %let geo_format = %sysfunc( putc( &geo, $geoafmt. ) );
   %let geo_vformat = %sysfunc( putc( &geo, $geovfmt. ) );
+  
+  %PUT _LOCAL_;
+  OPTIONS MPRINT SYMBOLGEN NOMLOGIC;
 
   **** Read tables ****;
   
   %let i = 1;
-  %let v = %scan( _table_list, &i, %str( ) );
+  %let v = %scan( &_table_list, &i, %str( ) );
   %let _table_datasets = ;
 
   %do %until ( %length( &v ) = 0 );
 
-    %Get_acs_detailed_table_api( table=&v, out=_&v_tract, year=&_last_year, sample=acs5, for=&api_geo_prefix.:*, in=&api_in_clause )
+    %Get_acs_detailed_table_api( table=&v, out=&v._&geo_suffix, year=&_last_year, sample=acs5, for=&api_geo_prefix.:*, in=&api_in_clause )
     
-    %let _table_datasets = &_table_datasets &v;
+    %FILE_INFO( DATA=&V._&GEO_SUFFIX )
+    
+    %let _table_datasets = &_table_datasets &v._&geo_suffix;
 
     %let i = %eval( &i + 1 );
-    %let v = %scan( _table_list, &i, %str( ) );
+    %let v = %scan( &_table_list, &i, %str( ) );
 
   %end;
 
+%MACRO SKIP;
 
   **** Combine data table & margin of error files ****;
 
@@ -236,7 +243,8 @@
     delete &_table_datasets;
   quit;
   run; 
-  
+
+%MEND SKIP;
   
   %exit_macro:
   
