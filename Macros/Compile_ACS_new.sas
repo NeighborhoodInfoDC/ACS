@@ -24,11 +24,13 @@
          i v _table_datasets;
   
   %let geo = %upcase( &geo );
-  %let state_ab = %upcase (&state_ab );
+  %let state_ab = %upcase ( &state_ab );
   
   %if &geo = GEOBG2020 %then %do;
     %** Block group level **;
-    %let api_geo_prefix = 150;
+    %let api_geo_prefix = %nrstr(block%20group);
+    %let api_in_clause = state:&_state_fips.%nrstr(%20in=county:*);
+    %let api_merge_by = state county tract blockgroup;
     %let geo_suffix = bg20;
     %let geo_var = GeoBg2020;
   %end;
@@ -42,7 +44,9 @@
   %end;
   %else %if &geo = GEOBG2010 %then %do;
     %** Block group level **;
-    %let api_geo_prefix = 150;
+    %let api_geo_prefix = %nrstr(block%20group);
+    %let api_in_clause = state:&_state_fips.%nrstr(%20in=county:*);
+    %let api_merge_by = state county tract blockgroup;
     %let geo_suffix = bg10;
     %let geo_var = GeoBg2010;
   %end;
@@ -56,7 +60,9 @@
   %end;
   %else %if &geo = GEOBG2000 %then %do;
     %** Block group level **;
-    %let api_geo_prefix = 150;
+    %let api_geo_prefix = %nrstr(block%20group);
+    %let api_in_clause = state:&_state_fips.%nrstr(%20in=county:*);
+    %let api_merge_by = state county tract blockgroup;
     %let geo_suffix = bg00;
     %let geo_var = GeoBg2000;
   %end;
@@ -70,7 +76,9 @@
   %end;
   %else %if &geo = CITY %then %do;
     %** city level - use only for DC **;
-    %let api_geo_prefix = 040;
+    %let api_geo_prefix = state;
+    %let api_in_clause = state:&_state_fips;
+    %let api_merge_by = state;
     %let geo_suffix = city;
     %let geo_var = city;
   %end;
@@ -84,7 +92,9 @@
   %end;
   %else %if &geo = PLACE %then %do;
     %** place level **;
-    %let api_geo_prefix = 160;
+    %let api_geo_prefix = place;
+    %let api_in_clause = state:&_state_fips;
+    %let api_merge_by = state place;
     %let geo_suffix = regpl;
     %let geo_var = RegPlace;
   %end;
@@ -98,9 +108,6 @@
   %let geo_format = %sysfunc( putc( &geo, $geoafmt. ) );
   %let geo_vformat = %sysfunc( putc( &geo, $geovfmt. ) );
   
-  %PUT _LOCAL_;
-  OPTIONS MPRINT SYMBOLGEN NOMLOGIC;
-
   **** Read tables ****;
   
   %let i = 1;
@@ -111,8 +118,6 @@
 
     %Get_acs_detailed_table_api( table=&v, out=&v._&geo_suffix, year=&_last_year, sample=acs5, for=&api_geo_prefix.:*, in=&api_in_clause, key=&api_key )
     
-    %FILE_INFO( DATA=&V._&GEO_SUFFIX )
-    
     %let _table_datasets = &_table_datasets &v._&geo_suffix;
 
     %let i = %eval( &i + 1 );
@@ -121,9 +126,9 @@
   %end;
 
   **** Combine data table & margin of error files ****;
+  data &_out_ds_base._&geo_suffix;
 
-  data _&_out_ds_base._&geo_suffix;
-
+%MACRO SKIP;
     merge
 
       %let i = 1;
@@ -139,63 +144,71 @@
       %end;
 
       ;
-      
+%MEND SKIP;
+
+    merge &_table_datasets;   
     by &api_merge_by;
     
     ** Create standard geography variable **;
 
-	%if &geo = CITY %then %do;
-    length &geo_var $ 1;
-  
-    &geo_var = "1";
-  
-    label &geo_var = "&geo_label";
-  
-    format &geo_var &geo_format;
-	%end;
+    %if &geo = CITY %then %do;
 
+      length &geo_var $ 1;
+    
+      &geo_var = "1";
+    
+      label &geo_var = "&geo_label";
+    
+      format &geo_var &geo_format;
+      
+    %end;
 
-	%if &geo = COUNTY %then %do;
-    length &geo_var $ 5;
-  
-    &geo_var = state || county ;
-  
-    label &geo_var = "&geo_label";
-  
-    format &geo_var &geo_format;
-	%end;
+    %if &geo = COUNTY %then %do;
+    
+      length &geo_var $ 5;
+    
+      &geo_var = state || county ;
+    
+      label &geo_var = "&geo_label";
+    
+      format &geo_var &geo_format;
+    
+    %end;
 
-	%if &geo = PLACE %then %do;
-    length &geo_var $ 7;
-  
-    &geo_var = state || place ;
-  
-    label &geo_var = "Regional places";
-  
-    format &geo_var &geo_format;
-	%end;
+    %if &geo = PLACE %then %do;
 
+      length &geo_var $ 7;
+    
+      &geo_var = state || place ;
+    
+      label &geo_var = "Regional places";
+    
+      format &geo_var &geo_format;
+
+    %end;
 
     %else %if &geo = GEO2000 or &geo = GEO2010 or &geo = GEO2020 %then %do;
-    length &geo_var $ &geo_length;
-  
-    &geo_var = left( trim( state ) || trim( county ) || trim( tract ) );
-  
-    label &geo_var = "&geo_label";
-  
-    format &geo_var &geo_format;
-	%end;
+
+      length &geo_var $ &geo_length;
+    
+      &geo_var = left( trim( state ) || trim( county ) || trim( tract ) );
+    
+      label &geo_var = "&geo_label";
+    
+      format &geo_var &geo_format;
+
+    %end;
     
     ** Check for invalid geo variable values **;
-	** RP edited to only check for DC geographies **;
+    ** RP edited to only check for DC geographies **;
 
-	%if &state_ab = DC %then %do;
+    %if &state_ab = DC %then %do;
     
     if put( &geo_var, &geo_vformat ) = '' then do;
-      %err_put( macro=Compile_ACS_new, msg="Invalid geography value: " _n_= geoid= &geo_var= );
+      %err_put( macro=Compile_ACS_new, msg="Invalid geography value: " _n_= &geo_var= );
     end;
 
-	%end;
+    %end;
 
     /*
     ** Recode margin of error = -1 to .N (not available) **;
@@ -211,8 +224,6 @@
     
   run;
   
-  %FILE_INFO( DATA=_&_out_ds_base._&geo_suffix )
-
 %MACRO SKIP;
 
   ** Drop unneeded table cells **;
@@ -229,6 +240,8 @@
       
   run;
   
+%MEND SKIP;
+  
   ** Finalize data set **;
   
   %Finalize_data_set( 
@@ -241,8 +254,8 @@
     /** Metadata parameters **/
     revisions=%str(&revisions),
     /** File info parameters **/
-    printobs=0,
-    freqvars=sumlevel,
+    printobs=20,
+    printchar=Y,
     stats=n sum mean stddev min max
   )
 
@@ -253,8 +266,6 @@
   quit;
   run; 
 
-%MEND SKIP;
-  
   %exit_macro:
   
 %mend Compile_ACS_new;
