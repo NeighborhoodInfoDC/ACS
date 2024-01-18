@@ -167,7 +167,7 @@
     
       length &geo_var $ 5;
     
-      &geo_var = state || county ;
+      &geo_var = trim( state ) || trim( county );
     
       label &geo_var = "&geo_label";
     
@@ -179,11 +179,11 @@
 
       length &geo_var $ 7;
     
-      &geo_var = state || place ;
+      &geo_var = trim( state ) || trim( place );
     
       label &geo_var = "Regional places";
     
-      format &geo_var &geo_format;
+      *** format &geo_var &geo_format;
 
     %end;
 
@@ -199,14 +199,30 @@
 
     %end;
     
+    %else %if &geo = GEOBG2000 or &geo = GEOBG2010 or &geo = GEOBG2020 %then %do;
+
+      length &geo_var $ &geo_length;
+    
+      &geo_var = left( trim( state ) || trim( county ) || trim( tract ) || trim( blockgroup ) );
+    
+      label &geo_var = "&geo_label";
+    
+      format &geo_var &geo_format;
+
+    %end;
+    
     ** Check for invalid geo variable values **;
     ** RP edited to only check for DC geographies **;
 
     %if &state_ab = DC %then %do;
     
-    if put( &geo_var, &geo_vformat ) = '' then do;
-      %err_put( macro=Compile_ACS_new, msg="Invalid geography value: " _n_= &geo_var= );
-    end;
+      %if %length( &geo_vformat ) > 0 %then %do; 
+      
+        if put( &geo_var, &geo_vformat ) = '' then do;
+          %err_put( macro=Compile_ACS_new, msg="Invalid geography value: " _n_= &geo_var= );
+        end;
+        
+      %end;
 
     %end;
 
