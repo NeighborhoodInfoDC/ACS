@@ -14,9 +14,13 @@
 
 /** Macro Compile_ACS_new - Start Definition **/
 
-%macro Compile_ACS_new( geo=, revisions= );
+%macro Compile_ACS_new( 
+  geo= , 
+  api_key = ,  /** Census API key **/  
+  revisions= ,
+  );
 
-  %local api_geo_prefix api_in_clause geo_suffix geo_var geo_label geo_length geo_format geo_vformat 
+  %local api_geo_prefix api_in_clause api_merge_by geo_suffix geo_var geo_label geo_length geo_format geo_vformat 
          i v _table_datasets;
   
   %let geo = %upcase( &geo );
@@ -32,6 +36,7 @@
     %** Census tract level **;
     %let api_geo_prefix = tract;
     %let api_in_clause = state:&_state_fips.%nrstr(&in=county:*);
+    %let api_merge_by = state county tract;
     %let geo_suffix = tr20;
     %let geo_var = Geo2020;
   %end;
@@ -45,6 +50,7 @@
     %** Census tract level **;
     %let api_geo_prefix = tract;
     %let api_in_clause = state:&_state_fips.&in=county:*;
+    %let api_merge_by = state county tract;
     %let geo_suffix = tr10;
     %let geo_var = Geo2010;
   %end;
@@ -58,6 +64,7 @@
     %** Census tract level **;
     %let api_geo_prefix = tract;
     %let api_in_clause = state:&_state_fips.&in=county:*;
+    %let api_merge_by = state county tract;
     %let geo_suffix = tr00;
     %let geo_var = Geo2000;
   %end;
@@ -71,6 +78,7 @@
     %** county level **;
     %let api_geo_prefix = county;
     %let api_in_clause = state:&_state_fips;
+    %let api_merge_by = state county;
     %let geo_suffix = regcnt;
     %let geo_var = RegCounty;
   %end;
@@ -101,7 +109,7 @@
 
   %do %until ( %length( &v ) = 0 );
 
-    %Get_acs_detailed_table_api( table=&v, out=&v._&geo_suffix, year=&_last_year, sample=acs5, for=&api_geo_prefix.:*, in=&api_in_clause )
+    %Get_acs_detailed_table_api( table=&v, out=&v._&geo_suffix, year=&_last_year, sample=acs5, for=&api_geo_prefix.:*, in=&api_in_clause, key=&api_key )
     
     %FILE_INFO( DATA=&V._&GEO_SUFFIX )
     
@@ -111,8 +119,6 @@
     %let v = %scan( &_table_list, &i, %str( ) );
 
   %end;
-
-%MACRO SKIP;
 
   **** Combine data table & margin of error files ****;
 
@@ -134,7 +140,7 @@
 
       ;
       
-    /****  by logrecno;  NO BY? OTHER VARS *******/
+    by &api_merge_by;
     
     ** Create standard geography variable **;
 
@@ -170,10 +176,10 @@
 	%end;
 
 
-    %else %do;
+    %else %if &geo = GEO2000 or &geo = GEO2010 or &geo = GEO2020 %then %do;
     length &geo_var $ &geo_length;
   
-    &geo_var = substr( left( geoid ), 8 );
+    &geo_var = left( trim( state ) || trim( county ) || trim( tract ) );
   
     label &geo_var = "&geo_label";
   
@@ -190,7 +196,8 @@
     end;
 
 	%end;
-    
+
+    /*
     ** Recode margin of error = -1 to .N (not available) **;
     
     array moe{*} &table_m_list;
@@ -200,11 +207,13 @@
       if moe{i} = -1 then moe{i} = .n;
       
     end;
+    */
     
-    keep logrecno sumlevel state county tract blkgrp &geo_var 
-         &table_e_list &table_m_list;
-
   run;
+  
+  %FILE_INFO( DATA=_&_out_ds_base._&geo_suffix )
+
+%MACRO SKIP;
 
   ** Drop unneeded table cells **;
   
