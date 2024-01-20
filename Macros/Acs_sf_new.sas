@@ -299,7 +299,7 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
   %put _user_;
   
   **** Compile block group, tract and county files ****;
-
+/****
   %if &census_geo_year = 2010 %then %do;
 
     %Compile_ACS_new( geo=geobg2010, revisions=&revisions, api_key=&api_key )
@@ -321,11 +321,11 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
     %warn_mput( macro=Acs_sf_new, msg=Parameter census_geo_year=&census_geo_year not supported. )
     
   %end;
-
+****/
   %Compile_ACS_new( geo=county, revisions=&revisions, api_key=&api_key )
-
+/****
   %Compile_ACS_new( geo=place, revisions=&revisions, api_key=&api_key )
-  
+****/  
 
 %mend Acs_sf_new;
 
