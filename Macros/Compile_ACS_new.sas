@@ -118,7 +118,8 @@
 
     %Get_acs_detailed_table_api( table=&v, out=&v._&geo_suffix, year=&_last_year, sample=acs5, for=&api_geo_prefix.:*, in=&api_in_clause, key=&api_key )
     
-    %let _table_datasets = &_table_datasets &v._&geo_suffix;
+    %if %Dataset_exists( &v._&geo_suffix ) %then     
+      %let _table_datasets = &_table_datasets &v._&geo_suffix;
 
     %let i = %eval( &i + 1 );
     %let v = %scan( &_table_list, &i, %str( ) );
