@@ -125,7 +125,6 @@
   
   /** List of tables to include in data sets **/
  table_list = 
-  	/** B00001 B00002 **/
 	B01001 B01001B B01001C B01001D B01001E B01001F B01001G B01001H B01001I
   	B01002 B01003 
 	B02001 B03001 B03002 B05002 
@@ -153,13 +152,13 @@
 	C24030 B25004 B25007 B25010 B25014 B25024 B25041
 	B25003 B25003B B25003C B25003D B25003E B25003F B25003G B25003H B25003I
 	B25043 B25044 B25049 B25052 B25061 B25062 B25063 B25065 B25070    
-    B25070 B25072 B25074 B25091 B25105 B25088 B25064 B25093 B25095
+     B25072 B25074 B25091 B25105 B25088 B25064 B25093 B25095
 	B07003
 	B07004A B07004B B07004C B07004D B07004E B07004F B07004G B07004H B07004I
 	B25079 B25080 B25082
 	B25077
 	B25106
-	B25031 B25042 B25068 B05006 B27001 B25095 B25074 B14001 B08119 B25032
+	B25031 B25042 B25068 B05006 B27001 B14001 B08119 B25032
 	B25009 B28006 B28007 B28004 B28009A B28009B B28009C B28009D B28009E B28009F B28009G B28009H B28009I
     B28001 B28002 B28003 B28005 B28008 B28011
 	B98001 B98002 B98003  
@@ -167,7 +166,7 @@
 	B08105B B08105D B08105I B08105C B08105E B08105F B08105G
 
 /*	for regional ai*/
-B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
+B18101H B18101B B18101D B18101E B18101I B18101C
 
 ,
   
@@ -283,9 +282,10 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
   %let _seq_list = %ListNoDup( &_seq_list );
 */
 
-  %** Tables to read **;
+  %** Tables to read, remove duplicate entries **;
 
-  %let _table_list = &table_list;
+  %let _table_list = %ListNoDup( &table_list );
+  
 /*  
   %** Variables to drop from final block group and tract files **;
 
@@ -295,11 +295,10 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
 
   %let _drop_bg_list = &drop_bg_list;
   
-
   %put _user_;
   
   **** Compile block group, tract and county files ****;
-/****
+
   %if &census_geo_year = 2010 %then %do;
 
     %Compile_ACS_new( geo=geobg2010, revisions=&revisions, api_key=&api_key )
@@ -321,11 +320,10 @@ B18107 B18101H B18101B B18101D B18101E B18101I B18101C B25070 B25095
     %warn_mput( macro=Acs_sf_new, msg=Parameter census_geo_year=&census_geo_year not supported. )
     
   %end;
-****/
+
   %Compile_ACS_new( geo=county, revisions=&revisions, api_key=&api_key )
-/****
+
   %Compile_ACS_new( geo=place, revisions=&revisions, api_key=&api_key )
-****/  
 
 %mend Acs_sf_new;
 
