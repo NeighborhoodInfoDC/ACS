@@ -114,8 +114,8 @@
 %macro Acs_sf_new( 
   state_ab = ,
   years = ,
-  api_key = ,  /** Census API key **/
-  finalize = Y,
+  api_key = &_dcdata_census_api_key,  /** Census API key **/
+  finalize = N,
   revisions = New file.,
   
   /** Year for census block group/tract defs. Only 2010 and 2020 supported. **/
@@ -224,17 +224,17 @@ B18101H B18101B B18101D B18101E B18101I B18101C
 
   %if &census_geo_year = 2010 %then %do;
 
-    %Compile_ACS_new( geo=geobg2010, revisions=&revisions, api_key=&api_key )
+    %Compile_ACS_new( geo=geobg2010, revisions=&revisions, api_key=&api_key, finalize=&finalize )
 
-    %Compile_ACS_new( geo=geo2010, revisions=&revisions, api_key=&api_key )
+    %Compile_ACS_new( geo=geo2010, revisions=&revisions, api_key=&api_key, finalize=&finalize )
 
   %end;
 
   %else %if &census_geo_year = 2020 %then %do;
 
-    %Compile_ACS_new( geo=geobg2020, revisions=&revisions, api_key=&api_key )
+    %Compile_ACS_new( geo=geobg2020, revisions=&revisions, api_key=&api_key, finalize=&finalize )
 
-    %Compile_ACS_new( geo=geo2020, revisions=&revisions, api_key=&api_key )
+    %Compile_ACS_new( geo=geo2020, revisions=&revisions, api_key=&api_key, finalize=&finalize )
 
   %end;
   
@@ -244,9 +244,9 @@ B18101H B18101B B18101D B18101E B18101I B18101C
     
   %end;
 
-  %Compile_ACS_new( geo=county, revisions=&revisions, api_key=&api_key )
+  %Compile_ACS_new( geo=county, revisions=&revisions, api_key=&api_key, finalize=&finalize )
 
-  %Compile_ACS_new( geo=place, revisions=&revisions, api_key=&api_key )
+  %Compile_ACS_new( geo=place, revisions=&revisions, api_key=&api_key, finalize=&finalize )
 
 %mend Acs_sf_new;
 

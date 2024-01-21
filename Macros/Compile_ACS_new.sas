@@ -18,6 +18,7 @@
   geo= , 
   api_key = ,  /** Census API key **/  
   revisions= ,
+  finalize=N
   );
 
   %local api_geo_prefix api_in_clause api_merge_by geo_suffix geo_var geo_label geo_length geo_format geo_vformat 
@@ -267,23 +268,34 @@
   run;
   
 %MEND SKIP;
+
+  %if %mparam_is_yes( &finalize ) %then %do;
   
-  ** Finalize data set **;
+    ** Finalize data set **;
+    
+    %Finalize_data_set( 
+      /** Finalize data set parameters **/
+      data=&_out_ds_base._&geo_suffix,
+      out=&_out_ds_base._&geo_suffix,
+      outlib=ACS,
+      label="ACS SF 5-year tables, &_years_dash, %upcase(&_state_ab.), &geo_label",
+      sortby=&geo_var,
+      /** Metadata parameters **/
+      revisions=%str(&revisions),
+      /** File info parameters **/
+      printobs=20,
+      printchar=Y,
+      stats=n sum mean stddev min max
+    )
   
-  %Finalize_data_set( 
-    /** Finalize data set parameters **/
-    data=&_out_ds_base._&geo_suffix,
-    out=&_out_ds_base._&geo_suffix,
-    outlib=ACS,
-    label="ACS SF 5-year tables, &_years_dash, %upcase(&_state_ab.), &geo_label",
-    sortby=&geo_var,
-    /** Metadata parameters **/
-    revisions=%str(&revisions),
-    /** File info parameters **/
-    printobs=20,
-    printchar=Y,
-    stats=n sum mean stddev min max
-  )
+  %end;
+  %else %do;
+  
+    %note_mput( macro=Compile_ACS_new, msg=Finalize=%upcase(&finalize). Data set &_out_ds_base._&geo_suffix will not be saved. )
+    
+    %File_info( data=&_out_ds_base._&geo_suffix, printobs=20, printchar=Y )
+  
+  %end;
 
   ** Cleanup temporary data sets **;
   
