@@ -170,49 +170,26 @@ B18101H B18101B B18101D B18101E B18101I B18101C
 
 ,
   
-  /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from all data sets **/
-/***** REMOVE 
-  drop_list =
-    B00001m: B00002m:
-    B01002Ee: B11001Ee: B19013Ee: B25014Ee: 
-    B01002Em: B11001Em: B19013Em: B25014Em: 
-	B98001m: B98002m: B98003m:
-,
-******/
-
-  /** List of table estimate (e:) and margin of error (m:) cells that should be excluded from BLOCK GROUP data sets only **/
+  /** List of tables to exclude from BLOCK GROUP data sets only (data suppression) **/
   drop_bg_list = 
-  	B01001Be: B01001Ce: B01001De: B01001Ee: B01001Fe: B01001Ge: B01001He: B01001Ie:
-	B01001Bm: B01001Cm: B01001Dm: B01001Em: B01001Fm: B01001Gm: B01001Hm: B01001Im:
-    B03001e: B05002e: B05003: B06002e: B06007e: B06009e: B07012e: B09001e: B11010e: B11013e: B16006e:
-    B03001m: B05002m: B05003: B06002m: B06007m: B06009m: B07012m: B09001m: B11010m: B11013m: B16006m:
-	B06004Be: B06004Ce: B06004De: B06004Ee: B06004Fe: B06004Ge: B06004He: B06004Ie: 
-	B06004Bm: B06004Cm: B06004Dm: B06004Em: B06004Fm: B06004Gm: B06004Hm: B06004Im:
-	B07003e: B07003m:
-	B07004Ae: B07004Be: B07004Ce: B07004De: B07004Ee: B07004Fe: B07004Ge: B07004He: B07004Ie: 
-	B07004Am: B07004Bm: B07004Cm: B07004Dm: B07004Em: B07004Fm: B07004Gm: B07004Hm: B07004Im: 
-	B08012:
-	C15002Be: C15002Ce: C15002De: C15002Ee: C15002Fe: C15002Ge: C15002He: C15002Ie:
-	C15002Bm: C15002Cm: C15002Dm: C15002Em: C15002Fm: C15002Gm: C15002Hm: C15002Im:
-	B17001e: B17001Be: B17001Ce: B17001De: B17001Ee: B17001Fe: B17001Ge: B17001He: B17001Ie:
-	B17001m: B17001Bm: B17001Cm: B17001Dm: B17001Em: B17001Fm: B17001Gm: B17001Hm: B17001Im:
-    B17025e: B18101e: B18102e: B18103e: B18104e: B18105e: B18106e: B19058e:
-    B17025m: B18101m: B18102m: B18103m: B18104m: B18105m: B18106m: B19058m:
-	B19001Ae: B19001Be: B19001Ce: B19001De: B19001Ee: B19001Fe: B19001Ge: B19001He: B19001Ie:
-	B19001Am: B19001Bm: B19001Cm: B19001Dm: B19001Em: B19001Fm: B19001Gm: B19001Hm: B19001Im:
-	B19101Be: B19101Ce: B19101De: B19101Ee: B19101Fe: B19101Ge: B19101He: B19101Ie:
-	B19101Bm: B19101Cm: B19101Dm: B19101Em: B19101Fm: B19101Gm: B19101Hm: B19101Im:
-      B19113e1 B19113Be1 B19113Ce1 B19113De1 B19113Ee1 B19113Fe1 B19113Ge1 B19113He1 B19113Ie1
-      B19113m1 B19113Bm1 B19113Cm1 B19113Dm1 B19113Em1 B19113Fm1 B19113Gm1 B19113Hm1 B19113Im1
-    B19131e: B23001e: B25052e: B25105e:
-    B19131m: B23001m: B25052m: B25105m:
-	B20005e: B20005Be: B20005Ce: B20005De: B20005Ee: B20005Fe: B20005Ge: B20005He: B20005Ie:
-	B20005m: B20005Bm: B20005Cm: B20005Dm: B20005Em: B20005Fm: B20005Gm: B20005Hm: B20005Im:
-	B25095e:
-	B25095m:
-	B25106e: B25106m:
-	C23002Be: C23002Ce: C23002De: C23002Ee: C23002Fe: C23002Ge: C23002He: C23002Ie:
-	C23002Bm: C23002Cm: C23002Dm: C23002Em: C23002Fm: C23002Gm: C23002Hm: C23002Im:
+    B01001B B01001C B01001D B01001E B01001F B01001G B01001H B01001I
+    B03001 B05002 B05003 B06002 
+    B06004B B06004C B06004D B06004E B06004F B06004G B06004H B06004I 
+    B06007 B06009 B07003 
+    B07004A B07004B B07004C B07004D B07004E B07004F B07004G B07004H B07004I 
+    B07012 B08012 B09001 B11010 B11013 B16006 B17001 
+    B17001B B17001C B17001D B17001E B17001F B17001G B17001H B17001I 
+    B17025 B18101 B18102 B18103 B18104 B18105 B18106 
+    B19001A B19001B B19001C B19001D B19001E B19001F B19001G B19001H B19001I 
+    B19058 
+    B19101B B19101C B19101D B19101E B19101F B19101G B19101H B19101I 
+    B19113 B19113B B19113C B19113D B19113E B19113F B19113G B19113H B19113I 
+    B19131 
+    B20005 B20005B B20005C B20005D B20005E B20005F B20005G B20005H B20005I 
+    B23001 B25052 B25095 B25105 B25106 
+    C15002B C15002C C15002D C15002E C15002F C15002G C15002H C15002I 
+    C23002B C23002C C23002D C23002E C23002F C23002G C23002H C23002I
+
 );
 
 
@@ -220,14 +197,8 @@ B18101H B18101B B18101D B18101E B18101I B18101C
 
   %global /*_acs_sf_raw_base_path _acs_sf_raw_path*/ _state_fips _state_ab _state_name
           _years _last_year _geo_file _census_geo_year _years_dash 
-          /*_seq_list*/ _table_list /*_drop_list*/ _drop_bg_list
+          /*_seq_list*/ _table_list _table_list_bg /*_drop_list*/ /*_drop_bg_list*/
           /*_sf_macro_file_path*/ _out_ds_base _out_lib;
-
-/*
-  %global rootdir;
-
-  %global table_file_e_list table_file_m_list;
-*/
 
   %** Basic ACS file parameters **;
 
@@ -236,64 +207,16 @@ B18101H B18101B B18101D B18101E B18101I B18101C
   %let _state_name = %sysfunc(compress(%sysfunc(stnamel(&_state_ab))));
   %let _years      = &years;
   %let _census_geo_year = &census_geo_year;
-/*  %let _acs_sf_raw_base_path = &_dcdata_r_path\ACS\Raw\SF_&_years.; */
   %let _years_dash = %sysfunc( translate( &_years, '-', '_' ) );
   %let _last_year = 20%scan( &_years, 2, _ );
   %let _geo_file   = g&_last_year.5&_state_ab;
   
   %let _out_ds_base = Acs_sf_&_years._&_state_ab;
-/*
-  %if &_remote_batch_submit %then 
-    %let _sf_macro_file_path = &_dcdata_r_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;
-  %else
-    %let _sf_macro_file_path = &_dcdata_l_path\ACS\Prog\SF_&_years.\SummaryFile_All_Macro.sas;
-
-  %** Rootdir global variable used in SummaryFile_All_Macro.sas (must end with \) **;
-  
-  %if &_remote_batch_submit %then 
-    %let rootdir = &_dcdata_r_path\ACS\Raw\SF_&_years.\Code\;
-  %else
-    %let rootdir = &_dcdata_l_path\ACS\Raw\SF_&_years.\Code\;
-    
-  options noxwait;
-  x "md &rootdir";
-  
-  
-  ** Location of table lookup file **;
-
-  libname stubs "&_acs_sf_raw_base_path";
-*/
-/*
-  %** Create list of file sequence numbers to read based on list of tables **;
-  
-  %push_option( quotelenmax )
-  
-  options noquotelenmax;
-  
-  proc sql noprint;
-    select seq into :_seq_list separated by ' ' from stubs.SequenceNumberTableNumberLookup
-      where cells ~= '' and indexw("%upcase(&table_list)", upcase( tblid ), ' ' )
-      order by seq;
-  quit;
-  run;
-  
-  %pop_option( quotelenmax )
-
-  %let _seq_list = %ListNoDup( &_seq_list );
-*/
 
   %** Tables to read, remove duplicate entries **;
 
-  %let _table_list = %ListNoDup( &table_list );
-  
-/*  
-  %** Variables to drop from final block group and tract files **;
-
-  %let _drop_list = &drop_list;
-*/
-  %** Additional variables to drop from block group file **;
-
-  %let _drop_bg_list = &drop_bg_list;
+  %let _table_list = %ListNoDup( %upcase( &table_list ) );
+  %let _table_list_bg = %ListDelete( &_table_list, %upcase( &drop_bg_list ) );
   
   %put _user_;
   

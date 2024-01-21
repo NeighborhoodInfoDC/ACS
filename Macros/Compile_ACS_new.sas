@@ -21,7 +21,7 @@
   );
 
   %local api_geo_prefix api_in_clause api_merge_by geo_suffix geo_var geo_label geo_length geo_format geo_vformat 
-         i v _table_datasets;
+         i v _table_datasets api_table_list;
   
   %let geo = %upcase( &geo );
   %let state_ab = %upcase ( &state_ab );
@@ -31,6 +31,7 @@
     %let api_geo_prefix = %nrstr(block%20group);
     %let api_in_clause = state:&_state_fips.%nrstr(%20in=county:*);
     %let api_merge_by = state county tract blockgroup;
+    %let api_table_list = &_table_list_bg;
     %let geo_suffix = bg20;
     %let geo_var = GeoBg2020;
   %end;
@@ -39,6 +40,7 @@
     %let api_geo_prefix = tract;
     %let api_in_clause = state:&_state_fips.%nrstr(&in=county:*);
     %let api_merge_by = state county tract;
+    %let api_table_list = &_table_list;
     %let geo_suffix = tr20;
     %let geo_var = Geo2020;
   %end;
@@ -47,6 +49,7 @@
     %let api_geo_prefix = %nrstr(block%20group);
     %let api_in_clause = state:&_state_fips.%nrstr(%20in=county:*);
     %let api_merge_by = state county tract blockgroup;
+    %let api_table_list = &_table_list_bg;
     %let geo_suffix = bg10;
     %let geo_var = GeoBg2010;
   %end;
@@ -55,6 +58,7 @@
     %let api_geo_prefix = tract;
     %let api_in_clause = state:&_state_fips.&in=county:*;
     %let api_merge_by = state county tract;
+    %let api_table_list = &_table_list;
     %let geo_suffix = tr10;
     %let geo_var = Geo2010;
   %end;
@@ -63,6 +67,7 @@
     %let api_geo_prefix = %nrstr(block%20group);
     %let api_in_clause = state:&_state_fips.%nrstr(%20in=county:*);
     %let api_merge_by = state county tract blockgroup;
+    %let api_table_list = &_table_list_bg;
     %let geo_suffix = bg00;
     %let geo_var = GeoBg2000;
   %end;
@@ -71,6 +76,7 @@
     %let api_geo_prefix = tract;
     %let api_in_clause = state:&_state_fips.&in=county:*;
     %let api_merge_by = state county tract;
+    %let api_table_list = &_table_list;
     %let geo_suffix = tr00;
     %let geo_var = Geo2000;
   %end;
@@ -79,6 +85,7 @@
     %let api_geo_prefix = state;
     %let api_in_clause = state:&_state_fips;
     %let api_merge_by = state;
+    %let api_table_list = &_table_list;
     %let geo_suffix = city;
     %let geo_var = city;
   %end;
@@ -87,6 +94,7 @@
     %let api_geo_prefix = county;
     %let api_in_clause = state:&_state_fips;
     %let api_merge_by = state county;
+    %let api_table_list = &_table_list;
     %let geo_suffix = regcnt;
     %let geo_var = RegCounty;
   %end;
@@ -95,6 +103,7 @@
     %let api_geo_prefix = place;
     %let api_in_clause = state:&_state_fips;
     %let api_merge_by = state place;
+    %let api_table_list = &_table_list;
     %let geo_suffix = regpl;
     %let geo_var = RegPlace;
   %end;
@@ -111,7 +120,7 @@
   **** Read tables ****;
   
   %let i = 1;
-  %let v = %scan( &_table_list, &i, %str( ) );
+  %let v = %scan( &api_table_list, &i, %str( ) );
   %let _table_datasets = ;
 
   %do %until ( %length( &v ) = 0 );
@@ -122,7 +131,7 @@
       %let _table_datasets = &_table_datasets &v._&geo_suffix;
 
     %let i = %eval( &i + 1 );
-    %let v = %scan( &_table_list, &i, %str( ) );
+    %let v = %scan( &api_table_list, &i, %str( ) );
 
   %end;
 
