@@ -22,7 +22,7 @@
   );
 
   %local api_geo_prefix api_in_clause api_merge_by geo_suffix geo_var geo_label geo_length geo_format geo_vformat 
-         i v _table_datasets api_table_list;
+         i v _table_datasets api_table_list api_geo_labels;
   
   %let geo = %upcase( &geo );
   %let state_ab = %upcase ( &state_ab );
@@ -33,6 +33,11 @@
     %let api_in_clause = state:&_state_fips.%nrstr(%20in=county:*);
     %let api_merge_by = state county tract blockgroup;
     %let api_table_list = &_table_list_bg;
+    %let api_geo_labels =
+      state = "State (FIPS code)" 
+      county = "County (Census code)" 
+      tract = "Census tract" 
+      blockgroup = "Census block group";
     %let geo_suffix = bg20;
     %let geo_var = GeoBg2020;
   %end;
@@ -42,6 +47,10 @@
     %let api_in_clause = state:&_state_fips.%nrstr(&in=county:*);
     %let api_merge_by = state county tract;
     %let api_table_list = &_table_list;
+    %let api_geo_labels =
+      state = "State (FIPS code)" 
+      county = "County (Census code)" 
+      tract = "Census tract";
     %let geo_suffix = tr20;
     %let geo_var = Geo2020;
   %end;
@@ -51,6 +60,11 @@
     %let api_in_clause = state:&_state_fips.%nrstr(%20in=county:*);
     %let api_merge_by = state county tract blockgroup;
     %let api_table_list = &_table_list_bg;
+    %let api_geo_labels =
+      state = "State (FIPS code)" 
+      county = "County (Census code)" 
+      tract = "Census tract" 
+      blockgroup = "Census block group";
     %let geo_suffix = bg10;
     %let geo_var = GeoBg2010;
   %end;
@@ -60,6 +74,10 @@
     %let api_in_clause = state:&_state_fips.&in=county:*;
     %let api_merge_by = state county tract;
     %let api_table_list = &_table_list;
+    %let api_geo_labels =
+      state = "State (FIPS code)" 
+      county = "County (Census code)" 
+      tract = "Census tract";
     %let geo_suffix = tr10;
     %let geo_var = Geo2010;
   %end;
@@ -69,6 +87,11 @@
     %let api_in_clause = state:&_state_fips.%nrstr(%20in=county:*);
     %let api_merge_by = state county tract blockgroup;
     %let api_table_list = &_table_list_bg;
+    %let api_geo_labels =
+      state = "State (FIPS code)" 
+      county = "County (Census code)" 
+      tract = "Census tract" 
+      blockgroup = "Census block group";
     %let geo_suffix = bg00;
     %let geo_var = GeoBg2000;
   %end;
@@ -78,6 +101,10 @@
     %let api_in_clause = state:&_state_fips.&in=county:*;
     %let api_merge_by = state county tract;
     %let api_table_list = &_table_list;
+    %let api_geo_labels =
+      state = "State (FIPS code)" 
+      county = "County (Census code)" 
+      tract = "Census tract";
     %let geo_suffix = tr00;
     %let geo_var = Geo2000;
   %end;
@@ -87,6 +114,8 @@
     %let api_in_clause = state:&_state_fips;
     %let api_merge_by = state;
     %let api_table_list = &_table_list;
+    %let api_geo_labels =
+      state = "State (FIPS code)";
     %let geo_suffix = city;
     %let geo_var = city;
   %end;
@@ -96,6 +125,9 @@
     %let api_in_clause = state:&_state_fips;
     %let api_merge_by = state county;
     %let api_table_list = &_table_list;
+    %let api_geo_labels =
+      state = "State (FIPS code)" 
+      county = "County (Census code)";
     %let geo_suffix = regcnt;
     %let geo_var = RegCounty;
   %end;
@@ -105,6 +137,9 @@
     %let api_in_clause = state:&_state_fips;
     %let api_merge_by = state place;
     %let api_table_list = &_table_list;
+    %let api_geo_labels =
+      state = "State (FIPS code)" 
+      place = "Place (Census code)";
     %let geo_suffix = regpl;
     %let geo_var = RegPlace;
   %end;
@@ -160,7 +195,11 @@
     merge &_table_datasets;   
     by &api_merge_by;
     
-    ** Create standard geography variable **;
+    ** Label Census geography variables **;
+    
+    label &api_geo_labels;
+    
+    ** Create standard geography variables **;
 
     %if &geo = CITY %then %do;
 
