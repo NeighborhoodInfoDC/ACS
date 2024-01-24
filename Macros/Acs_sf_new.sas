@@ -114,6 +114,7 @@
 %macro Acs_sf_new( 
   state_ab = ,
   years = ,
+  geo_levels = BG TRACT COUNTY PLACE,  /** List of geographic summary levels to include. Possible values=BG TRACT COUNTY PLACE. **/
   api_key = &_dcdata_census_api_key,  /** Census API key **/
   finalize = N,
   revisions = New file.,
@@ -130,14 +131,14 @@
 	B02001 B03001 B03002 B05002 
 	B05003 B05003A B05003B B05003C B05003D B05003E B05003F B05003G B05003H B05003I 
 	B06002 B06007 B06009 B07012 B09001
-    B06004B B06004C B06004D B06004E B06004F B06004G B06004H B06004I
+	B06004B B06004C B06004D B06004E B06004F B06004G B06004H B06004I
 	B08007 B08012
 	B11001 B11003 B11004 B11005 B11007 B11010 B11013 B11016 
 	B15002 C15002B C15002C C15002D C15002E C15002F C15002G C15002H C15002I
 	B15003 B16004 B16006
 	B17001 B17001B B17001C B17001D B17001E B17001F B17001G B17001H B17001I
 	B17025 B18101 B18102 B18103 B18104 B18105 B18106
-    B19013 B19050 B19056 B19057 B19058 B19059
+	B19013 B19050 B19056 B19057 B19058 B19059
 	B19001 B19001A B19001B B19001C B19001D B19001E B19001F B19001G B19001H B19001I 
 	B19025 B19025B B19025C B19025D B19025E B19025F B19025G B19025H B19025I  
 	B19101 B19101B B19101C B19101D B19101E B19101F B19101G B19101H B19101I
@@ -151,8 +152,8 @@
 	C24010 C24010B C24010C C24010D C24010E C24010F C24010G C24010H C24010I
 	C24030 B25004 B25007 B25010 B25014 B25024 B25041
 	B25003 B25003B B25003C B25003D B25003E B25003F B25003G B25003H B25003I
-	B25043 B25044 B25049 B25052 B25061 B25062 B25063 B25065 B25070    
-     B25072 B25074 B25091 B25105 B25088 B25064 B25093 B25095
+	B25043 B25044 B25049 B25052 B25061 B25062 B25063 B25065 B25070	
+	B25072 B25074 B25091 B25105 B25088 B25064 B25093 B25095
 	B07003
 	B07004A B07004B B07004C B07004D B07004E B07004F B07004G B07004H B07004I
 	B25079 B25080 B25082
@@ -160,15 +161,15 @@
 	B25106
 	B25031 B25042 B25068 B05006 B27001 B14001 B08119 B25032
 	B25009 B28006 B28007 B28004 B28009A B28009B B28009C B28009D B28009E B28009F B28009G B28009H B28009I
-    B28001 B28002 B28003 B28005 B28008 B28011
+	B28001 B28002 B28003 B28005 B28008 B28011
 	B98001 B98002 B98003  
 	B17017 B25071 B18107 B18140 B23024 B18135 C18120 B08303 B25092 C25095 B25118 B25038 B25123 B08105H
 	B08105B B08105D B08105I B08105C B08105E B08105F B08105G
 
-/*	for regional ai*/
-B18101H B18101B B18101D B18101E B18101I B18101C
+	/*	for regional ai*/
+	B18101H B18101B B18101D B18101E B18101I B18101C
 
-,
+	,
   
   /** List of tables to exclude from BLOCK GROUP data sets only (data suppression) **/
   drop_bg_list = 
@@ -217,6 +218,8 @@ B18101H B18101B B18101D B18101E B18101I B18101C
   %let _years_dash = %sysfunc( translate( &_years, '-', '_' ) );
   %let _last_year = 20%scan( &_years, 2, _ );
   %let _geo_file   = g&_last_year.5&_state_ab;
+
+  %let geo_levels = %upcase( &geo_levels );
   
   %let _out_ds_base = Acs_sf_&_years._&_state_ab;
 
@@ -227,33 +230,43 @@ B18101H B18101B B18101D B18101E B18101I B18101C
   
   %put _user_;
   
-  **** Compile block group, tract and county files ****;
+  **** Compile geographic summary level files based on geo_levels= list ****;
 
-  %if &census_geo_year = 2010 %then %do;
+  %if %length( %listintersect( BG, &geo_levels ) ) > 0 %then %do;
 
-    %Compile_ACS_new( geo=geobg2010, revisions=&revisions, api_key=&api_key, finalize=&finalize )
-
-    %Compile_ACS_new( geo=geo2010, revisions=&revisions, api_key=&api_key, finalize=&finalize )
-
-  %end;
-
-  %else %if &census_geo_year = 2020 %then %do;
-
-    %Compile_ACS_new( geo=geobg2020, revisions=&revisions, api_key=&api_key, finalize=&finalize )
-
-    %Compile_ACS_new( geo=geo2020, revisions=&revisions, api_key=&api_key, finalize=&finalize )
-
-  %end;
-  
-  %else %do;
-  
-    %warn_mput( macro=Acs_sf_new, msg=Parameter census_geo_year=&census_geo_year not supported. )
+    %if &census_geo_year = 2010 %then %do;
+      %Compile_ACS_new( geo=geobg2010, revisions=&revisions, api_key=&api_key, finalize=&finalize )
+    %end;
+    %else %if &census_geo_year = 2020 %then %do;
+      %Compile_ACS_new( geo=geobg2020, revisions=&revisions, api_key=&api_key, finalize=&finalize )
+    %end;
+    %else %do;
+      %warn_mput( macro=Acs_sf_new, msg=Parameter census_geo_year=&census_geo_year not supported. )
+    %end;
     
   %end;
 
-  %Compile_ACS_new( geo=county, revisions=&revisions, api_key=&api_key, finalize=&finalize )
+  %if %length( %listintersect( TRACT, &geo_levels ) ) > 0 %then %do;
 
-  %Compile_ACS_new( geo=place, revisions=&revisions, api_key=&api_key, finalize=&finalize )
+    %if &census_geo_year = 2010 %then %do;
+      %Compile_ACS_new( geo=geo2010, revisions=&revisions, api_key=&api_key, finalize=&finalize )
+    %end;
+    %else %if &census_geo_year = 2020 %then %do;
+      %Compile_ACS_new( geo=geo2020, revisions=&revisions, api_key=&api_key, finalize=&finalize )
+    %end;
+    %else %do;
+      %warn_mput( macro=Acs_sf_new, msg=Parameter census_geo_year=&census_geo_year not supported. )
+    %end;
+    
+  %end;
+
+  %if %length( %listintersect( COUNTY, &geo_levels ) ) > 0 %then %do;
+    %Compile_ACS_new( geo=county, revisions=&revisions, api_key=&api_key, finalize=&finalize )
+  %end;
+
+  %if %length( %listintersect( PLACE, &geo_levels ) ) > 0 %then %do;
+    %Compile_ACS_new( geo=place, revisions=&revisions, api_key=&api_key, finalize=&finalize )
+  %end;
 
 %mend Acs_sf_new;
 
