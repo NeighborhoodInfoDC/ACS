@@ -30,12 +30,12 @@
   /** State abbreviation. (DC, MD, VA, or WV) **/
   state_ab = ,
       
-  /** Census geographies used (2020 or 2010) **/
-  census_geo_year=2020,
-
   /** Year range (xxxx_yy). Ex: 2018_22 **/
   years = ,
   
+  /** Census geographies used (2020 or 2010) **/
+  census_geo_year=2020,
+
   /** List of tables to download. Use list below for testing. Comment out for final batch submit **/
   table_list = B01001 B01002 B01003,
   
