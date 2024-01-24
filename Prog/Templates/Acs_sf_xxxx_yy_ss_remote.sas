@@ -13,7 +13,7 @@
  Modifications: 
    12/06/23 LH Added census_geo_year parameter. 
                Update include statement for SAS1 network location.
-   01/24/24 PT New template for API-based code.
+   01/24/24 PT New template for API-based code on SAS1.
 **************************************************************************/
 
 %include "F:\DCData\SAS\Inc\StdRemote.sas";
