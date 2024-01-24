@@ -125,7 +125,7 @@
   /** Update table_list=, drop_list=, and drop_bg_list= parameters to add new tabulations to data set **/
   
   /** List of tables to include in data sets **/
- table_list = 
+  table_list = 
 	B01001 B01001B B01001C B01001D B01001E B01001F B01001G B01001H B01001I
   	B01002 B01003 
 	B02001 B03001 B03002 B05002 
@@ -163,7 +163,7 @@
 	B25009 B28006 B28007 B28004 B28009A B28009B B28009C B28009D B28009E B28009F B28009G B28009H B28009I
 	B28001 B28002 B28003 B28005 B28008 B28011
 	B98001 B98002 B98003  
-	B17017 B25071 B18107 B18140 B23024 B18135 C18120 B08303 B25092 C25095 B25118 B25038 B25123 B08105H
+	B17017 B25071 B18107 B18140 B23024 B18135 C18120 B08303 B25092 B25118 B25038 B25123 B08105H
 	B08105B B08105D B08105I B08105C B08105E B08105F B08105G
 
 	/*	for regional ai*/
@@ -200,13 +200,18 @@
 
 );
 
+  %** Turn off MPRINT **;
+  
+  %push_option( mprint, quiet=N )
+
+  options nomprint;
 
   %** Global macro parameters **;
 
-  %global /*_acs_sf_raw_base_path _acs_sf_raw_path*/ _state_fips _state_ab _state_name
+  %global _state_fips _state_ab _state_name
           _years _last_year _geo_file _census_geo_year _years_dash 
-          /*_seq_list*/ _table_list _table_list_bg /*_drop_list*/ /*_drop_bg_list*/
-          /*_sf_macro_file_path*/ _out_ds_base _out_lib;
+          _table_list _table_list_bg  
+          _out_ds_base _out_lib;
 
   %** Basic ACS file parameters **;
 
@@ -228,7 +233,7 @@
   %let _table_list = %ListNoDup( %upcase( &table_list ) );
   %let _table_list_bg = %ListDelete( &_table_list, %upcase( &drop_bg_list ) );
   
-  %put _user_;
+  %put _local_;
   
   **** Compile geographic summary level files based on geo_levels= list ****;
 
@@ -267,6 +272,10 @@
   %if %length( %listintersect( PLACE, &geo_levels ) ) > 0 %then %do;
     %Compile_ACS_new( geo=place, revisions=&revisions, api_key=&api_key, finalize=&finalize )
   %end;
+  
+  %** Restore MPRINT option **;
+  
+  %pop_option( mprint, quiet=N )
 
 %mend Acs_sf_new;
 

@@ -174,24 +174,6 @@
   **** Combine data table & margin of error files ****;
   data &_out_ds_base._&geo_suffix;
 
-%MACRO SKIP;
-    merge
-
-      %let i = 1;
-      %let v = %scan( &_table_datasets, &i, %str( ) );
-
-      %do %until ( %length( &v ) = 0 );
-
-        &v /**** (drop=FILEID FILETYPE STUSAB CHARITER SEQUENCE)   /**** NEW VARIABLES TO DROP? *****/
-
-        %let i = %eval( &i + 1 );
-        %let v = %scan( &_table_datasets, &i, %str( ) );
-
-      %end;
-
-      ;
-%MEND SKIP;
-
     merge &_table_datasets;   
     by &api_merge_by;
     
@@ -278,6 +260,8 @@
 
     /*
     ** Recode margin of error = -1 to .N (not available) **;
+    **** CENSUS HAS NEW CODES FOR MOE VALUES ;
+    **** CURRENTLY THOSE CODES ARE LEFT AS IS AND NOT RECODED TO SAS MISSING VALUES ;
     
     array moe{*} &table_m_list;
     
@@ -290,24 +274,6 @@
     
   run;
   
-%MACRO SKIP;
-
-  ** Drop unneeded table cells **;
-  
-  data &_out_ds_base._&geo_suffix;
-
-    set _&_out_ds_base._&geo_suffix;
-
-    drop &_drop_list 
-      %if &geo = GEOBG2000 or &geo = GEOBG2010 or &geo = GEOBG2020 %then %do;
-        &_drop_bg_list
-      %end;
-    ;
-      
-  run;
-  
-%MEND SKIP;
-
   %if %mparam_is_yes( &finalize ) %then %do;
   
     ** Finalize data set **;
