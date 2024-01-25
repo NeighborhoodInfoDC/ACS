@@ -128,8 +128,8 @@
     %let api_geo_labels =
       state = "State (FIPS code)" 
       county = "County (Census code)";
-    %let geo_suffix = regcnt;
-    %let geo_var = RegCounty;
+    %let geo_suffix = cnty;
+    %let geo_var = ucounty;
   %end;
   %else %if &geo = PLACE %then %do;
     %** place level **;
@@ -152,6 +152,11 @@
   %let geo_length = %sysfunc( putc( &geo, $geolen. ) );
   %let geo_format = %sysfunc( putc( &geo, $geoafmt. ) );
   %let geo_vformat = %sysfunc( putc( &geo, $geovfmt. ) );
+  
+  %if &geo = COUNTY %then %do;
+    %let geo_label = County;
+    %let geo_format = $cnty22allf.;
+  %end;
   
   **** Read tables ****;
   
@@ -201,7 +206,7 @@
     
       &geo_var = trim( state ) || trim( county );
     
-      label &geo_var = "&geo_label";
+      label &geo_var = "County: ssccc";
     
       format &geo_var &geo_format;
     
