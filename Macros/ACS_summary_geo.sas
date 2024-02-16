@@ -1123,7 +1123,7 @@
 	  %Finalize_data_set( 
 	  data=&out_ds.,
 	  out=&out_ds.,
-	  outlib=&_out_lib.,
+	  outlib=ACS,
 	  label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
 	  sortby=&geo_name.,
 	  restrictions=None,
@@ -1234,7 +1234,7 @@
   %Finalize_data_set( 
   data=&out_ds.,
   out=&out_ds.,
-  outlib=&_out_lib.,
+  outlib=ACS,
   label="ACS summary, &_years_dash, %upcase(&_state_ab), &source_geo_label source, &geo_label",
   sortby=&geo_name.,
   restrictions=None,

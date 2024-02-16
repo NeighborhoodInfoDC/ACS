@@ -20,7 +20,6 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = ,
   
-  finalize = Y,
   revisions = New file.,
 
   /** Year for census block group/tract defs. Should be 2010 for 2011 and later ACS releases. **/
@@ -29,7 +28,7 @@
   );
 
 
-  %global _state_ab _years _years_dash _last_year _out_lib _finalize _revisions;
+  %global _state_ab _years _years_dash _last_year _revisions;
 
   %** Program parameters **;
 
@@ -37,24 +36,8 @@
   %let _years = &years;
   %let _years_dash = %sysfunc( translate( &_years, '-', '_' ) );
   %let _last_year = 20%scan( &_years, 2, _ );
-  %let _finalize = &finalize;
   %let _revisions = &revisions;
 
-
-  %** Check if OK to run finalized data sets **;
-
-  %if %mparam_is_yes( &_finalize ) and not &_remote_batch_submit %then %do;
-    %warn_mput( macro=ACS_summary_all, msg=%str(Not a remote batch submit session. Finalize will be set to N.) )
-    %let _finalize = N;
-  %end;
-
-  %if %mparam_is_yes( &_finalize ) %then %do;
-    %let _out_lib = ACS;
-  %end;
-  %else %do;
-    %let _out_lib = WORK;
-  %end;
-  
   %if &census_geo_year = 2010 %then %do;
 
   %ACS_summary_geo_source( bg10 )
