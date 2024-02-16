@@ -1109,7 +1109,8 @@
   %if ( &geo_name = GEO2000 and %upcase( &source_geo_var ) = GEO2000 ) or 
       ( &geo_name = GEO2010 and %upcase( &source_geo_var ) = GEO2010 ) or
 	  ( &geo_name = GEO2020 and %upcase( &source_geo_var ) = GEO2020 ) or
-    ( &geo_name = COUNTY and %upcase( &source_geo_var ) = REGCOUNTY )%then %do;
+    ( &geo_name = COUNTY and %upcase( &source_geo_var ) = REGCOUNTY ) or 
+    ( &geo_name = UCOUNTY and %upcase( &source_geo_var ) = UCOUNTY ) %then %do;
 
 	    ** Census tracts from census tract source (same year): just recopy selected vars **;
 

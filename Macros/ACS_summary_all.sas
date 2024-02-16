@@ -55,7 +55,6 @@
     %let _out_lib = WORK;
   %end;
   
-
   %if &census_geo_year = 2010 %then %do;
 
   %ACS_summary_geo_source( bg10 )
@@ -69,7 +68,12 @@
 
   %end;
 
-  /** %ACS_summary_geo_source( regcounty )**/
+  %if &_last_year < 2022 %then %do;
+    %ACS_summary_geo_source( regcounty )
+  %end;
+  %else %do;
+    %ACS_summary_geo_source( ucounty )
+  %end;
 
 %mend ACS_summary_all;
 
