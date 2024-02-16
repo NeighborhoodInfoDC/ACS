@@ -69,7 +69,7 @@
 
   %end;
 
-  %ACS_summary_geo_source( regcounty )
+  /** %ACS_summary_geo_source( regcounty )**/
 
 %mend ACS_summary_all;
 
