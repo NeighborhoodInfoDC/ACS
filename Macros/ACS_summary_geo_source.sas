@@ -67,6 +67,13 @@
      %let source_ds = Acs_sf_&_years._&_state_ab._regcnt;
      %let source_geo_label = Regional county;
   %end;
+  %else %if %upcase( &source_geo ) = UCOUNTY %then %do;
+     %let source_geo_var = ucounty;
+     %let source_geo_suffix = _cnty;
+     %let source_geo_wt_file_fmt = ;  %** No weighting file needed **;
+     %let source_ds = Acs_sf_&_years._&_state_ab._cnty;
+     %let source_geo_label = County;
+  %end;
   %else %do;
     %err_mput( macro= ACS_summary_geo_source, msg=Geography &source_geo is not supported. )
     %goto macro_exit;
@@ -94,7 +101,8 @@
     %ACS_summary_geo_source_bg_vars()
     
     %if %upcase( &source_geo ) = TR00 or %upcase( &source_geo ) = TR10 or 
-        %upcase( &source_geo ) = TR20 or %upcase( &source_geo ) = REGCOUNTY 
+        %upcase( &source_geo ) = TR20 or %upcase( &source_geo ) = REGCOUNTY or 
+        %upcase( &source_geo ) = UCOUNTY
       %then %do;
       
         ** Tract/county level variables **;
@@ -168,6 +176,10 @@
   %ACS_summary_geo( County, &source_geo )
   %end;
 
+  %else  %if &_state_ab = dc and %upcase( &source_geo ) = UCOUNTY %then %do;
+  %ACS_summary_geo( ucounty, &source_geo )
+  %end;
+
   %else %do;
     %** For non-DC, do census tract, council district and county summary file **;
     
@@ -185,6 +197,10 @@
   %else %if %upcase( &source_geo ) = REGCOUNTY %then %do;
       %ACS_summary_geo( County, &source_geo )
     %end;
+  %else %if %upcase( &source_geo ) = UCOUNTY %then %do;
+      %ACS_summary_geo( ucounty, &source_geo )
+    %end;
+
 
   %end;
   
