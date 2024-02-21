@@ -166,7 +166,7 @@
 
   %do %until ( %length( &v ) = 0 );
 
-    %Get_acs_detailed_table_api( table=&v, out=&v._&geo_suffix, year=&_last_year, sample=acs5, for=&api_geo_prefix.:*, in=&api_in_clause, key=&api_key )
+    %Get_acs_detailed_table_api( table=&v, out=&v._&geo_suffix, year=&_last_year, sample=acs5, for=&api_geo_prefix.:*, in=&api_in_clause, old_var_names=y, key=&api_key )
     
     %if %Dataset_exists( &v._&geo_suffix ) %then     
       %let _table_datasets = &_table_datasets &v._&geo_suffix;
