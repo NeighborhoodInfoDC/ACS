@@ -105,17 +105,8 @@
     
     do i = 1 to dim( a );
     
-      select;
-        when ( a{i} = -222222222 ) a{i} = .b;
-        when ( a{i} = -333333333 ) a{i} = .c;
-        when ( a{i} = -555555555 ) a{i} = .e;
-        when ( a{i} = -666666666 ) a{i} = .f;
-        when ( a{i} = -888888888 ) a{i} = .h;
-        when ( a{i} = -999999999 ) a{i} = .i;
-        when ( a{i} < 0 ) a{i} = .n;
-        otherwise /** DO NOTHING **/;
-      end;
-      
+      if a{i} < 0 then a{i} = .;
+    
     end;        
     
     ** Block group level variables **;
@@ -132,6 +123,10 @@
         %ACS_summary_geo_source_tr_vars()
         
     %end;
+    
+  run;
+  
+  ** Create individual summary files **;
 
   %if &_state_ab = dc and (
     %upcase( &source_geo ) = BG00 or
