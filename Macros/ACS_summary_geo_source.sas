@@ -87,14 +87,27 @@
 
   data &source_ds_work;
 
-  %if %upcase( &source_geo ) = REGCOUNTY %then %do;
-    set ACS.&source_ds (drop=county);
-    county = RegCounty;
-    label county = "Regional county (2017)";
-  %end;
-  %else %do;
-    set ACS.&source_ds;
-  %end;
+    %if %upcase( &source_geo ) = REGCOUNTY %then %do;
+      set ACS.&source_ds (drop=county);
+      county = RegCounty;
+      label county = "Regional county (2017)";
+    %end;
+    %else %do;
+      set ACS.&source_ds;
+    %end;
+  
+    ** Recode numeric special codes to missing.
+    ** See https://www.census.gov/data/developers/data-sets/acs-1year/data-notes.html
+    ** for code explanations.
+    **;
+    
+    array a{*} _numeric_;
+    
+    do i = 1 to dim( a );
+    
+      if a{i} < 0 then a{i} = .;
+    
+    end;        
     
     ** Block group level variables **;
     
@@ -110,6 +123,10 @@
         %ACS_summary_geo_source_tr_vars()
         
     %end;
+    
+  run;
+  
+  ** Create individual summary files **;
 
   %if &_state_ab = dc and (
     %upcase( &source_geo ) = BG00 or

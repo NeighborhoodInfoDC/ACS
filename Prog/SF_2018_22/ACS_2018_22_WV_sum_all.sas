@@ -10,6 +10,7 @@
  Description:  Create all standard summary files from ACS 5-year data.
  
  Modifications: 12/06/23 LH Added census geo year parameter to template. Updated include statement.
+				02/27/24 LH Files Revised to remove special values.
 **************************************************************************/
 
 %include "\\sas1\DCdata\SAS\Inc\StdLocal.sas";
@@ -30,7 +31,7 @@
   years = 2018_22,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(New file.)
+  revisions = %str(Revised to remove special values.)
 
 )
 
