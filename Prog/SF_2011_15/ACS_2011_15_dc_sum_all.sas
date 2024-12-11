@@ -9,10 +9,11 @@
  
  Description:  Create all standard summary files from ACS 5-year data.
  
- Modifications:
+ Modifications: 12/10/24 update inslude statement for SAS1 and add 2020 geographies
 **************************************************************************/
 
-%include "L:\SAS\Inc\StdLocal.sas";
+%include "\\sas1\DCdata\SAS\Inc\StdLocal.sas";
+
 
 ** Define libraries **;
 %DCData_lib( ACS )
@@ -26,10 +27,7 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2011_15,
 
-  revisions=%str(Creates estimate and MOE vars for age of householder and household income 
-				by selected monthly costs as a percentage of income for both renters and homeowners. 
-				These vars serve as denominators for age and income cost-burden tabulations.
-				Creates all gross rent variables according to table B25063.)
+  revisions=%str(Add 2020 geographies.)
 
 )
 
