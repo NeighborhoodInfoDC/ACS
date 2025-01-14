@@ -5092,6 +5092,8 @@
 			  mNumRentCstBurden_75_99K_&_years. = %moe_sum( var=B25074m41 B25074m42);
 			  mNumRentCstBurden_GT100K_&_years. = %moe_sum( var=B25074m48 B25074m49);
 
+				
+
 	%end;
 
 	%else %do; 
@@ -5362,6 +5364,207 @@
 	      mNumOwnCstBurden_100_149_&_years. = "Owner-occupied housing units with housing cost burden and household income $100,000 to $149,000, MOE, &_years_dash  "
 	      mNumOwnCstBurden_GT150K_&_years. = "Owner-occupied housing units with housing cost burden and household income $150,000 or more, MOE, &_years_dash  "
 	    ;
+
+	%end; 
+
+	/*Rodrigo added Homeownership and Renting Indicators*/
+		***Variables Legend***
+			  Mort: Owners wirh Mortgage
+			  NoMort: Owners wirhout Mortgage
+			  AllOwn: All owners
+			  Rent: Renters
+			  CB: Cost Burdened
+			  SCB: Severely Cost Burdened
+			  CBC: Cost Burdened Calculated;
+
+	%else %do;
+
+				Mort_CB_&_years.= sum(b25140be3, b25140ie3, b25140he3, b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
+				Mort_SCB_&_years.= sum(b25140be4, b25140ie4, b25140he4, b25140ce4, b25140fe4, b25140ge4, b25140de4, b25140ee4);
+				Mort_CBC_&_years.= sum(b25140be3, b25140be4, b25140ie3, b25140ie4, b25140he3, b25140he4, b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4, b25140de3, b25140de4, b25140ee3, b25140ee4);
+				NoMort_CB_&_years.= sum(b25140be7, b25140ie7, b25140he7, b25140ce7, b25140fe7, b25140ge7, b25140de7, b25140ee7);
+				NoMort_SCB_&_years. = sum(b25140be8, b25140ie8, b25140he8, b25140ce8, b25140fe8, b25140ge8, b25140de8, b25140ee8);
+				NoMort_CBC_&_years.= sum(b25140be7, b25140be8, b25140ie7, b25140ie8, b25140he7, b25140he8, b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8, b25140de7, b25140de8, b25140ee7, b25140ee8);
+				AllOwn_CB_&_years.= sum(b25140be3, b25140be7, b25140ie3, b25140ie7, b25140he3, b25140he7, b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7, b25140de3, b25140de7, b25140ee3, b25140ee7);
+				AllOwn_SCB_&_years.= sum(b25140be4, b25140be8, b25140ie4, b25140ie8, b25140he4, b25140he8, b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8, b25140de4, b25140de8, b25140ee4, b25140ee8);
+				AllOwn_CBC_&_years.= sum(b25140be3, b25140be4, b25140be7, b25140be8, b25140ie3, b25140ie4, b25140ie7, b25140ie8, b25140he3, b25140he4, b25140he7, b25140he8, b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8, b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
+				Rent_CB_&_years.= sum(b25140be11, b25140ie11, b25140he11, b25140ce11, b25140fe11, b25140ge11, b25140de11, b25140ee11);
+				Rent_SCB_&_years.= sum(b25140be12, b25140ie12, b25140he12, b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
+				Rent_CBC_&_years.= sum(b25140be11, b25140be12, b25140ie11, b25140ie12, b25140he11, b25140he12, b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12, b25140de11, b25140de12, b25140ee11, b25140ee12);
+
+
+				NHW_Mort_CB_&_years.= b25140he3;
+				NHW_Mort_SCB_&_years.= b25140he4;
+				NHW_Mort_CBC_&_years.= sum(b25140he3, b25140he4);
+				NHW_NoMort_CB_&_years.= b25140he7;
+				NHW_NoMort_SCB_&_years. = b25140he8;
+				NHW_NoMort_CBC_&_years.= sum(b25140he7, b25140he8);
+				NHW_AllOwn_CB_&_years.= sum(b25140he3, b25140he7);
+				NHW_AllOwn_SCB_&_years.= sum(b25140he4, b25140he8);
+				NHW_AllOwn_CBC_&_years.= sum(b25140he3, b25140he4, b25140he7, b25140he8);
+				NHW_Rent_CB_&_years.= b25140he11;
+				NHW_Rent_SCB_&_years.= b25140he12;
+				NHW_Rent_CBC_&_years.= sum(b25140he11, b25140he12)
+
+				H_Mort_CB_&_years.= b25140ie3;
+				H_Mort_SCB_&_years.= b25140ie4;
+				H_Mort_CBC_&_years.= sum(b25140ie3, b25140ie4);
+				H_NoMort_CB_&_years.= b25140ie7;
+				H_NoMort_SCB_&_years. = b25140ie8;
+				H_NoMort_CBC_&_years.= sum(b25140ie7, b25140ie8);
+				H_AllOwn_CB_&_years.= sum(b25140ie3, b25140ie7);
+				H_AllOwn_SCB_&_years.= sum(b25140ie4, b25140ie8);
+				H_AllOwn_CBC_&_years.= sum(b25140ie3, b25140ie4, b25140ie7, b25140ie8);
+				H_Rent_CB_&_years.= b25140ie11;
+				H_Rent_SCB_&_years.= b25140ie12;
+				H_Rent_CBC_&_years.= sum(b25140ie11, b25140ie12)
+
+				B_Mort_CB_&_years.= b25140be3;
+				B_Mort_SCB_&_years.= b25140be4;
+				B_Mort_CBC_&_years.= sum(b25140be3, b25140be4);
+				B_NoMort_CB_&_years.= b25140be7;
+				B_NoMort_SCB_&_years. = b25140be8;
+				B_NoMort_CBC_&_years.= sum(b25140be7, b25140be8);
+				B_AllOwn_CB_&_years.= sum(b25140be3, b25140be7);
+				B_AllOwn_SCB_&_years.= sum(b25140be4, b25140be8);
+				B_AllOwn_CBC_&_years.= sum(b25140be3, b25140be4, b25140be7, b25140be8);
+				B_Rent_CB_&_years.= b25140be11;
+				B_Rent_SCB_&_years.= b25140be12;
+				B_Rent_CBC_&_years.= sum(b25140be11, b25140be12)
+
+
+				API_Mort_CB_&_years.= sum(b25140de3, b25140ee3);
+				API_Mort_SCB_&_years.= sum(b25140de4, b25140ee4);
+				API_Mort_CBC_&_years.= sum(b25140de3, b25140de4, b25140ee3, b25140ee4);
+				API_NoMort_CB_&_years.= sum(b25140de7, b25140ee7);
+				API_NoMort_SCB_&_years. = sum(b25140de8, b25140ee8);
+				API_NoMort_CBC_&_years.= sum(b25140de7, b25140de8, b25140ee7, b25140ee8);
+				API_AllOwn_CB_&_years.= sum(b25140de3, b25140de7, b25140ee3, b25140ee7);
+				API_AllOwn_SCB_&_years.= sum(b25140de4, b25140de8, b25140ee4, b25140ee8);
+				API_AllOwn_CBC_&_years.= sum(b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
+				API_Rent_CB_&_years.= sum(b25140de11, b25140ee11);
+				API_Rent_SCB_&_years.= sum(b25140de12, b25140ee12);
+				API_Rent_CBC_&_years.= sum(b25140de11, b25140de12, b25140ee11, b25140ee12)
+
+				IOM_Mort_CB_&_years.= sum(b25140ce3, b25140fe3, b25140ge3);
+				IOM_Mort_SCB_&_years.= sum(b25140ce4, b25140fe4, b25140ge4);
+				IOM_Mort_CBC_&_years.= sum(b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4);
+				IOM_NoMort_CB_&_years.= sum(b25140ce7, b25140fe7, b25140ge7);
+				IOM_NoMort_SCB_&_years. = sum(b25140ce8, b25140fe8, b25140ge8);
+				IOM_NoMort_CBC_&_years.= sum(b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8);
+				IOM_AllOwn_CB_&_years.= sum(b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7);
+				IOM_AllOwn_SCB_&_years.= sum(b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8);
+				IOM_AllOwn_CBC_&_years.= sum(b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8);
+				IOM_Rent_CB_&_years.= sum(b25140ce11, b25140fe11, b25140ge11);
+				IOM_Rent_SCB_&_years.= sum(b25140ce12, b25140fe12, b25140ge12);
+				IOM_Rent_CBC_&_years.= sum(b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12);
+
+				APIIOM_Mort_CB_&_years.= sum(b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
+				APIIOM_Mort_SCB_&_years.= sum(b25140ce4, b25140fe4, b25140ge4, b25140de4, b25140ee4);
+				APIIOM_Mort_CBC_&_years.= sum(b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4, b25140de3, b25140de4, b25140ee3, b25140ee4);
+				APIIOM_NoMort_CB_&_years.= sum(b25140ce7, b25140fe7, b25140ge7, b25140de7, b25140ee7);
+				APIIOM_NoMort_SCB_&_years. = sum(b25140ce8, b25140fe8, b25140ge8, b25140de8, b25140ee8);
+				APIIOM_NoMort_CBC_&_years.= sum(b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8, b25140de7, b25140de8, b25140ee7, b25140ee8);
+				APIIOM_AllOwn_CB_&_years.= sum(b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7, b25140de3, b25140de7, b25140ee3, b25140ee7);
+				APIIOM_AllOwn_SCB_&_years.= sum(b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8, b25140de4, b25140de8, b25140ee4, b25140ee8);
+				APIIOM_AllOwn_CBC_&_years.= sum(b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8, b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
+				APIIOM_Rent_CB_&_years.= sum(b25140ce11, b25140fe11, b25140ge11, b25140de11, b25140ee11);
+				APIIOM_Rent_SCB_&_years.= sum(b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
+				APIIOM_Rent_CBC_&_years.= sum(b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12, b25140de11, b25140de12, b25140ee11, b25140ee12);
+
+				Mort_CB_&_years.= %moe_sum( var=b25140bm3, b25140im3, b25140hm3, b25140cm3, b25140fm3, b25140gm3, b25140dm3, b25140em3);
+				Mort_SCB_&_years.= %moe_sum( var=b25140bm4, b25140im4, b25140hm4, b25140cm4, b25140fm4, b25140gm4, b25140dm4, b25140em4);
+				Mort_CBC_&_years.= %moe_sum( var=b25140bm3, b25140bm4, b25140im3, b25140im4, b25140hm3, b25140hm4, b25140cm3, b25140cm4, b25140fm3, b25140fm4, b25140gm3, b25140gm4, b25140dm3, b25140dm4, b25140em3, b25140em4);
+				NoMort_CB_&_years.= %moe_sum( var=b25140bm7, b25140im7, b25140hm7, b25140cm7, b25140fm7, b25140gm7, b25140dm7, b25140em7);
+				NoMort_SCB_&_years. = %moe_sum( var=b25140bm8, b25140im8, b25140hm8, b25140cm8, b25140fm8, b25140gm8, b25140dm8, b25140em8);
+				NoMort_CBC_&_years.= %moe_sum( var=b25140bm7, b25140bm8, b25140im7, b25140im8, b25140hm7, b25140hm8, b25140cm7, b25140cm8, b25140fm7, b25140fm8, b25140gm7, b25140gm8, b25140dm7, b25140dm8, b25140em7, b25140em8);
+				AllOwn_CB_&_years.= %moe_sum( var=b25140bm3, b25140bm7, b25140im3, b25140im7, b25140hm3, b25140hm7, b25140cm3, b25140cm7, b25140fm3, b25140fm7, b25140gm3, b25140gm7, b25140dm3, b25140dm7, b25140em3, b25140em7);
+				AllOwn_SCB_&_years.= %moe_sum( var=b25140bm4, b25140bm8, b25140im4, b25140im8, b25140hm4, b25140hm8, b25140cm4, b25140cm8, b25140fm4, b25140fm8, b25140gm4, b25140gm8, b25140dm4, b25140dm8, b25140em4, b25140em8);
+				AllOwn_CBC_&_years.= %moe_sum( var=b25140bm3, b25140bm4, b25140bm7, b25140bm8, b25140im3, b25140im4, b25140im7, b25140im8, b25140hm3, b25140hm4, b25140hm7, b25140hm8, b25140cm3, b25140cm7, b25140cm4, b25140cm8, b25140fm3, b25140fm7, b25140fm4, b25140fm8, b25140m3, b25140gm7, b25140gm4, b25140gm8, b25140dm3, b25140dm4, b25140dm7, b25140dm8, b25140em3, b25140em4, b25140em7, b25140em8);
+				Rent_CB_&_years.= %moe_sum( var=b25140bm11, b25140im11, b25140hm11, b25140cm11, b25140fm11, b25140gm11, b25140dm11, b25140em11);
+				Rent_SCB_&_years.= %moe_sum( var=b25140bm12, b25140im12, b25140hm12, b25140cm12, b25140fm12, b25140gm12, b25140dm12, b25140em12);
+				Rent_CBC_&_years.= %moe_sum( var=b25140bm11, b25140bm12, b25140im11, b25140im12, b25140hm11, b25140hm12, b25140cm11, b25140cm12, b25140fm11, b25140fm12, b25140gm11, b25140gm12, b25140dm11, b25140dm12, b25140em11, b25140em12);
+
+
+				NHW_Mort_CB_&_years.= %moe_sum( var=b25140hm3);
+				NHW_Mort_SCB_&_years.= %moe_sum( var=b25140hm4);
+				NHW_Mort_CBC_&_years.= %moe_sum( var=b25140hm3, b25140hm4);
+				NHW_NoMort_CB_&_years.= %moe_sum( var=b25140hm7);
+				NHW_NoMort_SCB_&_years. = %moe_sum( var=b25140hm8);
+				NHW_NoMort_CBC_&_years.= %moe_sum( var=b25140hm7, b25140hm8);
+				NHW_AllOwn_CB_&_years.= %moe_sum( var=b25140hm3, b25140hm7);
+				NHW_AllOwn_SCB_&_years.= %moe_sum( var=b25140hm4, b25140hm8);
+				NHW_AllOwn_CBC_&_years.= %moe_sum( var=b25140hm3, b25140hm4, b25140hm7, b25140hm8);
+				NHW_Rent_CB_&_years.= %moe_sum( var=b25140hm1);
+				NHW_Rent_SCB_&_years.= %moe_sum( var=b25140hm12);
+				NHW_Rent_CBC_&_years.= %moe_sum( var=b25140hm11, b25140hm12)
+
+				H_Mort_CB_&_years.= %moe_sum( var=b25140im3);
+				H_Mort_SCB_&_years.= %moe_sum( var=b25140im4);
+				H_Mort_CBC_&_years.= %moe_sum( var=b25140im3, b25140im4);
+				H_NoMort_CB_&_years.= %moe_sum( var=b25140im7);
+				H_NoMort_SCB_&_years. = %moe_sum( var=b25140im8);
+				H_NoMort_CBC_&_years.= %moe_sum( var=b25140im7, b25140im8);
+				H_AllOwn_CB_&_years.= %moe_sum( var=b25140im3, b25140im7);
+				H_AllOwn_SCB_&_years.= %moe_sum( var=b25140im4, b25140im8);
+				H_AllOwn_CBC_&_years.= %moe_sum( var=b25140im3, b25140im4, b25140im7, b25140im8);
+				H_Rent_CB_&_years.= %moe_sum( var=b25140im11);
+				H_Rent_SCB_&_years.= %moe_sum( var=b25140im12);
+				H_Rent_CBC_&_years.= %moe_sum( var=b25140im11, b25140im12)
+
+				B_Mort_CB_&_years.= %moe_sum( var=b25140bm3);
+				B_Mort_SCB_&_years.= %moe_sum( var=b25140bm4);
+				B_Mort_CBC_&_years.= %moe_sum( var=b25140bm3, b25140bm4);
+				B_NoMort_CB_&_years.= %moe_sum( var=b25140bm7);
+				B_NoMort_SCB_&_years. = %moe_sum( var=b25140bm8);
+				B_NoMort_CBC_&_years.= %moe_sum( var=b25140bm7, b25140bm8);
+				B_AllOwn_CB_&_years.= %moe_sum( var=b25140bm3, b25140bm7);
+				B_AllOwn_SCB_&_years.= %moe_sum( var=b25140bm4, b25140bm8);
+				B_AllOwn_CBC_&_years.= %moe_sum( var=b25140bm3, b25140bm4, b25140bm7, b25140bm8);
+				B_Rent_CB_&_years.= %moe_sum( var=b25140bm11);
+				B_Rent_SCB_&_years.= %moe_sum( var=b25140bm12);
+				B_Rent_CBC_&_years.= %moe_sum( var=b25140bm11, b25140bm12)
+
+
+				API_Mort_CB_&_years.= %moe_sum( var=b25140dm3, b25140em3);
+				API_Mort_SCB_&_years.= %moe_sum( var=b25140dm4, b25140em4);
+				API_Mort_CBC_&_years.= %moe_sum( var=b25140dm3, b25140dm4, b25140em3, b25140em4);
+				API_NoMort_CB_&_years.= %moe_sum( var=b25140dm7, b25140em7);
+				API_NoMort_SCB_&_years. = %moe_sum( var=b25140dm8, b25140em8);
+				API_NoMort_CBC_&_years.= %moe_sum( var=b25140dm7, b25140dm8, b25140em7, b25140em8);
+				API_AllOwn_CB_&_years.= %moe_sum( var=b25140dm3, b25140dm7, b25140em3, b25140em7);
+				API_AllOwn_SCB_&_years.= %moe_sum( var=b25140dm4, b25140dm8, b25140em4, b25140em8);
+				API_AllOwn_CBC_&_years.= %moe_sum( var=b25140dm3, b25140dm4, b25140dm7, b25140dm8, b25140em3, b25140em4, b25140em7, b25140em8);
+				API_Rent_CB_&_years.= %moe_sum( var=b25140dm11, b25140em11);
+				API_Rent_SCB_&_years.= %moe_sum( var=b25140dm12, b25140em12);
+				API_Rent_CBC_&_years.= %moe_sum( var=b25140dm11, b25140dm12, b25140em11, b25140em12)
+
+				IOM_Mort_CB_&_years.= %moe_sum( var=b25140cm3, b25140fm3, b25140gm3);
+				IOM_Mort_SCB_&_years.= %moe_sum( var=b25140cm4, b25140fm4, b25140gm4);
+				IOM_Mort_CBC_&_years.= %moe_sum( var=b25140cm3, b25140cm4, b25140fm3, b25140fm4, b25140gm3, b25140gm4);
+				IOM_NoMort_CB_&_years.= %moe_sum( var=b25140cm7, b25140fm7, b25140gm7);
+				IOM_NoMort_SCB_&_years. = %moe_sum( var=b25140cm8, b25140fm8, b25140gm8);
+				IOM_NoMort_CBC_&_years.= %moe_sum( var=b25140cm7, b25140cm8, b25140fm7, b25140fm8, b25140gm7, b25140gm8);
+				IOM_AllOwn_CB_&_years.= %moe_sum( var=b25140cm3, b25140cm7, b25140fm3, b25140fm7, b25140gm3, b25140gm7);
+				IOM_AllOwn_SCB_&_years.= %moe_sum( var=b25140cm4, b25140cm8, b25140fm4, b25140fm8, b25140gm4, b25140gm8);
+				IOM_AllOwn_CBC_&_years.= %moe_sum( var=b25140cm3, b25140cm7, b25140cm4, b25140cm8, b25140fm3, b25140fm7, b25140fm4, b25140fm8, b25140m3, b25140gm7, b25140gm4, b25140gm8);
+				IOM_Rent_CB_&_years.= %moe_sum( var=b25140cm11, b25140fm11, b25140gm11);
+				IOM_Rent_SCB_&_years.= %moe_sum( var=b25140cm12, b25140fm12, b25140gm12);
+				IOM_Rent_CBC_&_years.= %moe_sum( var=b25140cm11, b25140cm12, b25140fm11, b25140fm12, b25140gm11, b25140gm12);
+
+				APIIOM_Mort_CB_&_years.= %moe_sum( var=b25140cm3, b25140fm3, b25140gm3, b25140dm3, b25140em3);
+				APIIOM_Mort_SCB_&_years.= %moe_sum( var=b25140cm4, b25140fm4, b25140gm4, b25140dm4, b25140em4);
+				APIIOM_Mort_CBC_&_years.= %moe_sum( var=b25140cm3, b25140cm4, b25140fm3, b25140fm4, b25140gm3, b25140gm4, b25140dm3, b25140dm4, b25140em3, b25140em4);
+				APIIOM_NoMort_CB_&_years.= %moe_sum( var=b25140cm7, b25140fm7, b25140gm7, b25140dm7, b25140em7);
+				APIIOM_NoMort_SCB_&_years. = %moe_sum( var=b25140cm8, b25140fm8, b25140gm8, b25140dm8, b25140em8);
+				APIIOM_NoMort_CBC_&_years.= %moe_sum( var=b25140cm7, b25140cm8, b25140fm7, b25140fm8, b25140gm7, b25140gm8, b25140dm7, b25140dm8, b25140em7, b25140em8);
+				APIIOM_AllOwn_CB_&_years.= %moe_sum( var=b25140cm3, b25140cm7, b25140fm3, b25140fm7, b25140gm3, b25140gm7, b25140dm3, b25140dm7, b25140em3, b25140em7);
+				APIIOM_AllOwn_SCB_&_years.= %moe_sum( var=b25140cm4, b25140cm8, b25140fm4, b25140fm8, b25140gm4, b25140gm8, b25140dm4, b25140dm8, b25140em4, b25140em8);
+				APIIOM_AllOwn_CBC_&_years.= %moe_sum( var=b25140cm3, b25140cm7, b25140cm4, b25140cm8, b25140fm3, b25140fm7, b25140fm4, b25140fm8, b25140m3, b25140gm7, b25140gm4, b25140gm8, b25140dm3, b25140dm4, b25140dm7, b25140dm8, b25140em3, b25140em4, b25140em7, b25140em8);
+				APIIOM_Rent_CB_&_years.= %moe_sum( var=b25140cm11, b25140fm11, b25140gm11, b25140dm11, b25140em11);
+				APIIOM_Rent_SCB_&_years.= %moe_sum( var=b25140cm12, b25140fm12, b25140gm12, b25140dm12, b25140em12);
+				APIIOM_Rent_CBC_&_years.= %moe_sum( var=b25140cm11, b25140cm12, b25140fm11, b25140fm12, b25140gm11, b25140gm12, b25140dm11, b25140dm12, b25140em11, b25140em12);
+
 
 	%end; 
 
@@ -5719,6 +5922,7 @@
 	%if &_last_year. < 2017  %then %do; 
 	
 	%end; 
+
 
 	%else %if &_last_year.>= 2017 %then %do; 
 
@@ -6208,6 +6412,7 @@ label
    mNInsCov65andOverYears_&_years.= "Persons over 65 years old without health insurance coverage, Total, MOE, &_years_dash"
 
 ;
+
 
 
 

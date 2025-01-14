@@ -1086,6 +1086,20 @@
       mNumbroadband_&_years. mNumbroadbandonly_&_years. mNumsatellite_&_years. mNumsatelliteonly_&_years. mNumotheronly_&_years. 
       mNumaccesswosub_&_years. mNumnointernet_&_years. mNum1orMoreComp_&_years. mNumhhdefined_&_years. mNumwithinternet_&_years.
     ;
+	/*Rodrigo added Homeownership and Renting Indicators*/
+	%let moe2017plus = 
+		Mort_CB_&_years. Mort_SCB_&_years. Mort_CBC_&_years. NoMort_CB_&_years. NoMort_SCB_&_years. NoMort_CBC_&_years. AllOwn_CB_&_years. AllOwn_SCB_&_years. AllOwn_CBC_&_years. Rent_CB_&_years. Rent_SCB_&_years. Rent_CBC_&_years. 
+		NHW_Mort_CB_&_years. NHW_Mort_SCB_&_years. NHW_Mort_CBC_&_years. NHW_NoMort_CB_&_years. NHW_NoMort_SCB_&_years. NHW_NoMort_CBC_&_years. NHW_AllOwn_CB_&_years. NHW_AllOwn_SCB_&_years. NHW_AllOwn_CBC_&_years. NHW_Rent_CB_&_years. NHW_Rent_SCB_&_years. NHW_Rent_CBC_&_years. 
+		H_Mort_CB_&_years. H_Mort_SCB_&_years. H_Mort_CBC_&_years. H_NoMort_CB_&_years. H_NoMort_SCB_&_years. H_NoMort_CBC_&_years. H_AllOwn_CB_&_years. H_AllOwn_SCB_&_years. H_AllOwn_CBC_&_years. H_Rent_CB_&_years. H_Rent_SCB_&_years. H_Rent_CBC_&_years. 
+		B_Mort_CB_&_years. B_Mort_SCB_&_years. B_Mort_CBC_&_years. B_NoMort_CB_&_years. B_NoMort_SCB_&_years. B_NoMort_CBC_&_years. B_AllOwn_CB_&_years. B_AllOwn_SCB_&_years. B_AllOwn_CBC_&_years. B_Rent_CB_&_years. B_Rent_SCB_&_years. B_Rent_CBC_&_years. 
+		API_Mort_CB_&_years. API_Mort_SCB_&_years. API_Mort_CBC_&_years. API_NoMort_CB_&_years. API_NoMort_SCB_&_years. API_NoMort_CBC_&_years. API_AllOwn_CB_&_years. API_AllOwn_SCB_&_years. API_AllOwn_CBC_&_years. API_Rent_CB_&_years. API_Rent_SCB_&_years. API_Rent_CBC_&_years. 
+		IOM_Mort_CB_&_years. IOM_Mort_SCB_&_years. IOM_Mort_CBC_&_years. IOM_NoMort_CB_&_years. IOM_NoMort_SCB_&_years. IOM_NoMort_CBC_&_years. IOM_AllOwn_CB_&_years. IOM_AllOwn_SCB_&_years. IOM_AllOwn_CBC_&_years. IOM_Rent_CB_&_years. IOM_Rent_SCB_&_years. IOM_Rent_CBC_&_years. 
+		APIIOM_Mort_CB_&_years. APIIOM_Mort_SCB_&_years. APIIOM_Mort_CBC_&_years. APIIOM_NoMort_CB_&_years. APIIOM_NoMort_SCB_&_years. APIIOM_NoMort_CBC_&_years. APIIOM_AllOwn_CB_&_years. APIIOM_AllOwn_SCB_&_years. APIIOM_AllOwn_CBC_&_years. APIIOM_Rent_CB_&_years. APIIOM_Rent_SCB_&_years. APIIOM_Rent_CBC_&_years.
+
+	%else %if &_last_year. >=2017 %then %do;    
+      %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus.;
+    %end;
+
 
     %if &_last_year. <= 2013 %then %do; 
         %let moe_vars =&moeallyears.; 
