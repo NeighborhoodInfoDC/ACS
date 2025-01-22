@@ -41,33 +41,17 @@
 
     %if &_last_year. <=2018 %then %do;  
       %let count_vars = 
-       Unwtd: TotPop: PopUnder: Pop25: Pop65: PopAlone:
+       Unwtd: TotPop: PopUnder: Pop18: Pop25: Pop35: Pop65: PopAlone:
          PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
-         NumHshldPhone_: NumHshldCar_:  
          Num: 
-
-         PopUnder5Years_: PopUnder18Years_:
-         Pop18_34Years_: Pop35_64Years_:
-         Pop65andOverYears_:
-
-         Pop25andOverYears_: Pop25andOverWoutHS_: Pop25andOverWHS_:
-         Pop25andOverWSC_: Pop25andOverWCollege_:
          ;
     %end;
 
     %else %do;
       %let count_vars = 
-         TotPop: PopUnder: Pop25: Pop65: PopAlone:
+         TotPop: PopUnder: Pop18: Pop25: Pop35: Pop65: PopAlone:
            PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
-           NumHshldPhone_: NumHshldCar_:  
            Num: 
-
-           PopUnder5Years_: PopUnder18Years_:
-           Pop18_34Years_: Pop35_64Years_:
-           Pop65andOverYears_:
-
-           Pop25andOverYears_: Pop25andOverWoutHS_: Pop25andOverWHS_:
-           Pop25andOverWSC_: Pop25andOverWCollege_:
            ;
     %end;
              
@@ -75,7 +59,6 @@
        mTotPop_&_years. mPopUnder5Years_&_years. 
        mPopUnder18Years_&_years. mPop18_34Years_&_years.
        mPop35_64Years_&_years. mPop65andOverYears_&_years.
-       mPop25andOverYears_&_years.
 
        mNumHshlds_&_years. mNumFamilies_&_years.
 
