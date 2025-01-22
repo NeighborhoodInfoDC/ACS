@@ -1094,9 +1094,9 @@
 		B_Mort_CB_&_years. B_Mort_SCB_&_years. B_Mort_CBC_&_years. B_NoMort_CB_&_years. B_NoMort_SCB_&_years. B_NoMort_CBC_&_years. B_AllOwn_CB_&_years. B_AllOwn_SCB_&_years. B_AllOwn_CBC_&_years. B_Rent_CB_&_years. B_Rent_SCB_&_years. B_Rent_CBC_&_years. 
 		API_Mort_CB_&_years. API_Mort_SCB_&_years. API_Mort_CBC_&_years. API_NoMort_CB_&_years. API_NoMort_SCB_&_years. API_NoMort_CBC_&_years. API_AllOwn_CB_&_years. API_AllOwn_SCB_&_years. API_AllOwn_CBC_&_years. API_Rent_CB_&_years. API_Rent_SCB_&_years. API_Rent_CBC_&_years. 
 		IOM_Mort_CB_&_years. IOM_Mort_SCB_&_years. IOM_Mort_CBC_&_years. IOM_NoMort_CB_&_years. IOM_NoMort_SCB_&_years. IOM_NoMort_CBC_&_years. IOM_AllOwn_CB_&_years. IOM_AllOwn_SCB_&_years. IOM_AllOwn_CBC_&_years. IOM_Rent_CB_&_years. IOM_Rent_SCB_&_years. IOM_Rent_CBC_&_years. 
-		APIIOM_Mort_CB_&_years. APIIOM_Mort_SCB_&_years. APIIOM_Mort_CBC_&_years. APIIOM_NoMort_CB_&_years. APIIOM_NoMort_SCB_&_years. APIIOM_NoMort_CBC_&_years. APIIOM_AllOwn_CB_&_years. APIIOM_AllOwn_SCB_&_years. APIIOM_AllOwn_CBC_&_years. APIIOM_Rent_CB_&_years. APIIOM_Rent_SCB_&_years. APIIOM_Rent_CBC_&_years.
+		APIIOM_Mort_CB_&_years. APIIOM_Mort_SCB_&_years. APIIOM_Mort_CBC_&_years. APIIOM_NoMort_CB_&_years. APIIOM_NoMort_SCB_&_years. APIIOM_NoMort_CBC_&_years. APIIOM_AllOwn_CB_&_years. APIIOM_AllOwn_SCB_&_years. APIIOM_AllOwn_CBC_&_years. APIIOM_Rent_CB_&_years. APIIOM_Rent_SCB_&_years. APIIOM_Rent_CBC_&_years.;
 
-	%else %if &_last_year. >=2017 %then %do;    
+	%if &_last_year. >=2017 %then %do;    
       %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus.;
     %end;
 
