@@ -5368,289 +5368,289 @@
 
 	%end; 
 
-	/*Rodrigo added Homeownership and Renting - Cost Burden Indicators*/
+	/*Rodrigo G. added Homeownership and Renting - Cost Burden Indicators*/
 		
 
-	%if &_last_year. >= 2023  %then %do;
+%if &_last_year. >= 2023  %then %do;
 
-				nummortcstbrden_&_years.= sum(b25140be3, b25140ie3, b25140he3, b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
-				nummortsvrecstbrden_&_years.= sum(b25140be4, b25140ie4, b25140he4, b25140ce4, b25140fe4, b25140ge4, b25140de4, b25140ee4);
-				nummortcstbrdencalc_&_years.= sum(b25140be3, b25140be4, b25140ie3, b25140ie4, b25140he3, b25140he4, b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4, b25140de3, b25140de4, b25140ee3, b25140ee4);
-				numnomortcstbrden_&_years.= sum(b25140be7, b25140ie7, b25140he7, b25140ce7, b25140fe7, b25140ge7, b25140de7, b25140ee7);
-				numnomortsvrecstbrden_&_years. = sum(b25140be8, b25140ie8, b25140he8, b25140ce8, b25140fe8, b25140ge8, b25140de8, b25140ee8);
-				numnomortcstbrdencalc_&_years.= sum(b25140be7, b25140be8, b25140ie7, b25140ie8, b25140he7, b25140he8, b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8, b25140de7, b25140de8, b25140ee7, b25140ee8);
-				numallowncstbrden_&_years.= sum(b25140be3, b25140be7, b25140ie3, b25140ie7, b25140he3, b25140he7, b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7, b25140de3, b25140de7, b25140ee3, b25140ee7);
-				numallownsvrecstbrden_&_years.= sum(b25140be4, b25140be8, b25140ie4, b25140ie8, b25140he4, b25140he8, b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8, b25140de4, b25140de8, b25140ee4, b25140ee8);
-				numallowncstbrdencalc_&_years.= sum(b25140be3, b25140be4, b25140be7, b25140be8, b25140ie3, b25140ie4, b25140ie7, b25140ie8, b25140he3, b25140he4, b25140he7, b25140he8, b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8, b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
-				numrentcstbrden_&_years.= sum(b25140be11, b25140ie11, b25140he11, b25140ce11, b25140fe11, b25140ge11, b25140de11, b25140ee11);
-				numrentsvrecstbrden_&_years.= sum(b25140be12, b25140ie12, b25140he12, b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
-				numrentcstbrdencalc_&_years.= sum(b25140be11, b25140be12, b25140ie11, b25140ie12, b25140he11, b25140he12, b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12, b25140de11, b25140de12, b25140ee11, b25140ee12);
-
-
-				NummortcstbrdenW_&_years.= b25140he3;
-				NummortsvrecstbrdenW_&_years.= b25140he4;
-				NummortcstbrdencalcW_&_years.= sum(b25140he3, b25140he4);
-				NumnomortcstbrdenW_&_years.= b25140he7;
-				NumnomortsvrecstbrdenW_&_years. = b25140he8;
-				NumnomortcstbrdencalcW_&_years.= sum(b25140he7, b25140he8);
-				NumallowncstbrdenW_&_years.= sum(b25140he3, b25140he7);
-				NumallownsvrecstbrdenW_&_years.= sum(b25140he4, b25140he8);
-				NumallowncstbrdencalcW_&_years.= sum(b25140he3, b25140he4, b25140he7, b25140he8);
-				NumrentcstbrdenW_&_years.= b25140he11;
-				NumrentsvrecstbrdenW_&_years.= b25140he12;
-				NumrentcstbrdencalcW_&_years.= sum(b25140he11, b25140he12)
-
-				NummortcstbrdenH_&_years.= b25140ie3;
-				NummortsvrecstbrdenH_&_years.= b25140ie4;
-				NummortcstbrdencalcH_&_years.= sum(b25140ie3, b25140ie4);
-				NumnomortcstbrdenH_&_years.= b25140ie7;
-				NumnomortsvrecstbrdenH_&_years. = b25140ie8;
-				NumnomortcstbrdencalcH_&_years.= sum(b25140ie7, b25140ie8);
-				NumallowncstbrdenH_&_years.= sum(b25140ie3, b25140ie7);
-				NumallownsvrecstbrdenH_&_years.= sum(b25140ie4, b25140ie8);
-				NumallowncstbrdencalcH_&_years.= sum(b25140ie3, b25140ie4, b25140ie7, b25140ie8);
-				NumrentcstbrdenH_&_years.= b25140ie11;
-				NumrentsvrecstbrdenH_&_years.= b25140ie12;
-				NumrentcstbrdencalcH_&_years.= sum(b25140ie11, b25140ie12)
-
-				NummortcstbrdenB_&_years.= b25140be3;
-				NummortsvrecstbrdenB_&_years.= b25140be4;
-				NummortcstbrdencalcB_&_years.= sum(b25140be3, b25140be4);
-				NumnomortcstbrdenB_&_years.= b25140be7;
-				NumnomortsvrecstbrdenB_&_years. = b25140be8;
-				NumnomortcstbrdencalcB_&_years.= sum(b25140be7, b25140be8);
-				NumallowncstbrdenB_&_years.= sum(b25140be3, b25140be7);
-				NumallownsvrecstbrdenB_&_years.= sum(b25140be4, b25140be8);
-				NumallowncstbrdencalcB_&_years.= sum(b25140be3, b25140be4, b25140be7, b25140be8);
-				NumrentcstbrdenB_&_years.= b25140be11;
-				NumrentsvrecstbrdenB_&_years.= b25140be12;
-				NumrentcstbrdencalcB_&_years.= sum(b25140be11, b25140be12)
+				mortcstbrden_&_years.= sum(b25140be3, b25140ie3, b25140he3, b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
+				mortsvrecstbrden_&_years.= sum(b25140be4, b25140ie4, b25140he4, b25140ce4, b25140fe4, b25140ge4, b25140de4, b25140ee4);
+				mortcstbrdencalc_&_years.= sum(b25140be3, b25140be4, b25140ie3, b25140ie4, b25140he3, b25140he4, b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4, b25140de3, b25140de4, b25140ee3, b25140ee4);
+				nomortcstbrden_&_years.= sum(b25140be7, b25140ie7, b25140he7, b25140ce7, b25140fe7, b25140ge7, b25140de7, b25140ee7);
+				nomortsvrecstbrden_&_years. = sum(b25140be8, b25140ie8, b25140he8, b25140ce8, b25140fe8, b25140ge8, b25140de8, b25140ee8);
+				nomortcstbrdencalc_&_years.= sum(b25140be7, b25140be8, b25140ie7, b25140ie8, b25140he7, b25140he8, b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8, b25140de7, b25140de8, b25140ee7, b25140ee8);
+				allowncstbrden_&_years.= sum(b25140be3, b25140be7, b25140ie3, b25140ie7, b25140he3, b25140he7, b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7, b25140de3, b25140de7, b25140ee3, b25140ee7);
+				allownsvrecstbrden_&_years.= sum(b25140be4, b25140be8, b25140ie4, b25140ie8, b25140he4, b25140he8, b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8, b25140de4, b25140de8, b25140ee4, b25140ee8);
+				allowncstbrdencalc_&_years.= sum(b25140be3, b25140be4, b25140be7, b25140be8, b25140ie3, b25140ie4, b25140ie7, b25140ie8, b25140he3, b25140he4, b25140he7, b25140he8, b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8, b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
+				rentcstbrden_&_years.= sum(b25140be11, b25140ie11, b25140he11, b25140ce11, b25140fe11, b25140ge11, b25140de11, b25140ee11);
+				rentsvrecstbrden_&_years.= sum(b25140be12, b25140ie12, b25140he12, b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
+				rentcstbrdencalc_&_years.= sum(b25140be11, b25140be12, b25140ie11, b25140ie12, b25140he11, b25140he12, b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12, b25140de11, b25140de12, b25140ee11, b25140ee12);
 
 
-				NummortcstbrdenA_&_years.= sum(b25140de3, b25140ee3);
-				NummortsvrecstbrdenA_&_years.= sum(b25140de4, b25140ee4);
-				NummortcstbrdencalcA_&_years.= sum(b25140de3, b25140de4, b25140ee3, b25140ee4);
-				NumnomortcstbrdenA_&_years.= sum(b25140de7, b25140ee7);
-				NumnomortsvrecstbrdenA_&_years. = sum(b25140de8, b25140ee8);
-				NumnomortcstbrdencalcA_&_years.= sum(b25140de7, b25140de8, b25140ee7, b25140ee8);
-				NumallowncstbrdenA_&_years.= sum(b25140de3, b25140de7, b25140ee3, b25140ee7);
-				NumallownsvrecstbrdenA_&_years.= sum(b25140de4, b25140de8, b25140ee4, b25140ee8);
-				NumallowncstbrdencalcA_&_years.= sum(b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
-				NumrentcstbrdenA_&_years.= sum(b25140de11, b25140ee11);
-				NumrentsvrecstbrdenA_&_years.= sum(b25140de12, b25140ee12);
-				NumrentcstbrdencalcA_&_years.= sum(b25140de11, b25140de12, b25140ee11, b25140ee12)
+				mortcstbrdenW_&_years.= b25140he3;
+				mortsvrecstbrdenW_&_years.= b25140he4;
+				mortcstbrdencalcW_&_years.= sum(b25140he3, b25140he4);
+				nomortcstbrdenW_&_years.= b25140he7;
+				nomortsvrecstbrdenW_&_years. = b25140he8;
+				nomortcstbrdencalcW_&_years.= sum(b25140he7, b25140he8);
+				allowncstbrdenW_&_years.= sum(b25140he3, b25140he7);
+				allownsvrecstbrdenW_&_years.= sum(b25140he4, b25140he8);
+				allowncstbrdencalcW_&_years.= sum(b25140he3, b25140he4, b25140he7, b25140he8);
+				rentcstbrdenW_&_years.= b25140he11;
+				rentsvrecstbrdenW_&_years.= b25140he12;
+				rentcstbrdencalcW_&_years.= sum(b25140he11, b25140he12)
 
-				NummortcstbrdenIOM_&_years.= sum(b25140ce3, b25140fe3, b25140ge3);
-				NummortsvrecstbrdenIOM_&_years.= sum(b25140ce4, b25140fe4, b25140ge4);
-				NummortcstbrdencalcIOM_&_years.= sum(b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4);
-				NumnomortcstbrdenIOM_&_years.= sum(b25140ce7, b25140fe7, b25140ge7);
-				NumnomortsvrecstbrdenIOM_&_years. = sum(b25140ce8, b25140fe8, b25140ge8);
-				NumnomortcstbrdencalcIOM_&_years.= sum(b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8);
-				NumallowncstbrdenIOM_&_years.= sum(b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7);
-				NumallownsvrecstbrdenIOM_&_years.= sum(b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8);
-				NumallowncstbrdencalcIOM_&_years.= sum(b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8);
-				NumrentcstbrdenIOM_&_years.= sum(b25140ce11, b25140fe11, b25140ge11);
-				NumrentsvrecstbrdenIOM_&_years.= sum(b25140ce12, b25140fe12, b25140ge12);
-				NumrentcstbrdencalcIOM_&_years.= sum(b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12);
+				mortcstbrdenH_&_years.= b25140ie3;
+				mortsvrecstbrdenH_&_years.= b25140ie4;
+				mortcstbrdencalcH_&_years.= sum(b25140ie3, b25140ie4);
+				nomortcstbrdenH_&_years.= b25140ie7;
+				nomortsvrecstbrdenH_&_years. = b25140ie8;
+				nomortcstbrdencalcH_&_years.= sum(b25140ie7, b25140ie8);
+				allowncstbrdenH_&_years.= sum(b25140ie3, b25140ie7);
+				allownsvrecstbrdenH_&_years.= sum(b25140ie4, b25140ie8);
+				allowncstbrdencalcH_&_years.= sum(b25140ie3, b25140ie4, b25140ie7, b25140ie8);
+				rentcstbrdenH_&_years.= b25140ie11;
+				rentsvrecstbrdenH_&_years.= b25140ie12;
+				rentcstbrdencalcH_&_years.= sum(b25140ie11, b25140ie12)
 
-				NummortcstbrdenAIOM_&_years.= sum(b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
-				NummortsvrecstbrdenAIOM_&_years.= sum(b25140ce4, b25140fe4, b25140ge4, b25140de4, b25140ee4);
-				NummortcstbrdencalcAIOM_&_years.= sum(b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4, b25140de3, b25140de4, b25140ee3, b25140ee4);
-				NumnomortcstbrdenAIOM_&_years.= sum(b25140ce7, b25140fe7, b25140ge7, b25140de7, b25140ee7);
-				NumnomortsvrecstbrdenAIOM_&_years. = sum(b25140ce8, b25140fe8, b25140ge8, b25140de8, b25140ee8);
-				NumnomortcstbrdencalcAIOM_&_years.= sum(b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8, b25140de7, b25140de8, b25140ee7, b25140ee8);
-				NumallowncstbrdenAIOM_&_years.= sum(b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7, b25140de3, b25140de7, b25140ee3, b25140ee7);
-				NumallownsvrecstbrdenAIOM_&_years.= sum(b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8, b25140de4, b25140de8, b25140ee4, b25140ee8);
-				NumallowncstbrdencalcAIOM_&_years.= sum(b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8, b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
-				NumrentcstbrdenAIOM_&_years.= sum(b25140ce11, b25140fe11, b25140ge11, b25140de11, b25140ee11);
-				NumrentsvrecstbrdenAIOM_&_years.= sum(b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
-				NumrentcstbrdencalcAIOM_&_years.= sum(b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12, b25140de11, b25140de12, b25140ee11, b25140ee12);
-
-				Nummortcstbrden_&_years.= %moe_sum( var=b25140bm3, b25140im3, b25140hm3, b25140cm3, b25140fm3, b25140gm3, b25140dm3, b25140em3);
-				Nummortsvrecstbrden_&_years.= %moe_sum( var=b25140bm4, b25140im4, b25140hm4, b25140cm4, b25140fm4, b25140gm4, b25140dm4, b25140em4);
-				Nummortcstbrdencalc_&_years.= %moe_sum( var=b25140bm3, b25140bm4, b25140im3, b25140im4, b25140hm3, b25140hm4, b25140cm3, b25140cm4, b25140fm3, b25140fm4, b25140gm3, b25140gm4, b25140dm3, b25140dm4, b25140em3, b25140em4);
-				Numnomortcstbrden_&_years.= %moe_sum( var=b25140bm7, b25140im7, b25140hm7, b25140cm7, b25140fm7, b25140gm7, b25140dm7, b25140em7);
-				Numnomortsvrecstbrden_&_years. = %moe_sum( var=b25140bm8, b25140im8, b25140hm8, b25140cm8, b25140fm8, b25140gm8, b25140dm8, b25140em8);
-				Numnomortcstbrdencalc_&_years.= %moe_sum( var=b25140bm7, b25140bm8, b25140im7, b25140im8, b25140hm7, b25140hm8, b25140cm7, b25140cm8, b25140fm7, b25140fm8, b25140gm7, b25140gm8, b25140dm7, b25140dm8, b25140em7, b25140em8);
-				Numallowncstbrden_&_years.= %moe_sum( var=b25140bm3, b25140bm7, b25140im3, b25140im7, b25140hm3, b25140hm7, b25140cm3, b25140cm7, b25140fm3, b25140fm7, b25140gm3, b25140gm7, b25140dm3, b25140dm7, b25140em3, b25140em7);
-				Numallownsvrecstbrden_&_years.= %moe_sum( var=b25140bm4, b25140bm8, b25140im4, b25140im8, b25140hm4, b25140hm8, b25140cm4, b25140cm8, b25140fm4, b25140fm8, b25140gm4, b25140gm8, b25140dm4, b25140dm8, b25140em4, b25140em8);
-				Numallowncstbrdencalc_&_years.= %moe_sum( var=b25140bm3, b25140bm4, b25140bm7, b25140bm8, b25140im3, b25140im4, b25140im7, b25140im8, b25140hm3, b25140hm4, b25140hm7, b25140hm8, b25140cm3, b25140cm7, b25140cm4, b25140cm8, b25140fm3, b25140fm7, b25140fm4, b25140fm8, b25140m3, b25140gm7, b25140gm4, b25140gm8, b25140dm3, b25140dm4, b25140dm7, b25140dm8, b25140em3, b25140em4, b25140em7, b25140em8);
-				Numrentcstbrden_&_years.= %moe_sum( var=b25140bm11, b25140im11, b25140hm11, b25140cm11, b25140fm11, b25140gm11, b25140dm11, b25140em11);
-				Numrentsvrecstbrden_&_years.= %moe_sum( var=b25140bm12, b25140im12, b25140hm12, b25140cm12, b25140fm12, b25140gm12, b25140dm12, b25140em12);
-				Numrentcstbrdencalc_&_years.= %moe_sum( var=b25140bm11, b25140bm12, b25140im11, b25140im12, b25140hm11, b25140hm12, b25140cm11, b25140cm12, b25140fm11, b25140fm12, b25140gm11, b25140gm12, b25140dm11, b25140dm12, b25140em11, b25140em12);
+				mortcstbrdenB_&_years.= b25140be3;
+				mortsvrecstbrdenB_&_years.= b25140be4;
+				mortcstbrdencalcB_&_years.= sum(b25140be3, b25140be4);
+				nomortcstbrdenB_&_years.= b25140be7;
+				nomortsvrecstbrdenB_&_years. = b25140be8;
+				nomortcstbrdencalcB_&_years.= sum(b25140be7, b25140be8);
+				allowncstbrdenB_&_years.= sum(b25140be3, b25140be7);
+				allownsvrecstbrdenB_&_years.= sum(b25140be4, b25140be8);
+				allowncstbrdencalcB_&_years.= sum(b25140be3, b25140be4, b25140be7, b25140be8);
+				rentcstbrdenB_&_years.= b25140be11;
+				rentsvrecstbrdenB_&_years.= b25140be12;
+				rentcstbrdencalcB_&_years.= sum(b25140be11, b25140be12)
 
 
-				NummortcstbrdenW_&_years.= %moe_sum( var=b25140hm3);
-				NummortsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm4);
-				NummortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm3, b25140hm4);
-				NumnomortcstbrdenW_&_years.= %moe_sum( var=b25140hm7);
-				NumnomortsvrecstbrdenW_&_years. = %moe_sum( var=b25140hm8);
-				NumnomortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm7, b25140hm8);
-				NumallowncstbrdenW_&_years.= %moe_sum( var=b25140hm3, b25140hm7);
-				NumallownsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm4, b25140hm8);
-				NumallowncstbrdencalcW_&_years.= %moe_sum( var=b25140hm3, b25140hm4, b25140hm7, b25140hm8);
-				NumrentcstbrdenW_&_years.= %moe_sum( var=b25140hm1);
-				NumrentsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm12);
-				NumrentcstbrdencalcW_&_years.= %moe_sum( var=b25140hm11, b25140hm12)
+				mortcstbrdenA_&_years.= sum(b25140de3, b25140ee3);
+				mortsvrecstbrdenA_&_years.= sum(b25140de4, b25140ee4);
+				mortcstbrdencalcA_&_years.= sum(b25140de3, b25140de4, b25140ee3, b25140ee4);
+				nomortcstbrdenA_&_years.= sum(b25140de7, b25140ee7);
+				nomortsvrecstbrdenA_&_years. = sum(b25140de8, b25140ee8);
+				nomortcstbrdencalcA_&_years.= sum(b25140de7, b25140de8, b25140ee7, b25140ee8);
+				allowncstbrdenA_&_years.= sum(b25140de3, b25140de7, b25140ee3, b25140ee7);
+				allownsvrecstbrdenA_&_years.= sum(b25140de4, b25140de8, b25140ee4, b25140ee8);
+				allowncstbrdencalcA_&_years.= sum(b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
+				rentcstbrdenA_&_years.= sum(b25140de11, b25140ee11);
+				rentsvrecstbrdenA_&_years.= sum(b25140de12, b25140ee12);
+				rentcstbrdencalcA_&_years.= sum(b25140de11, b25140de12, b25140ee11, b25140ee12)
 
-				NummortcstbrdenH_&_years.= %moe_sum( var=b25140im3);
-				NummortsvrecstbrdenH_&_years.= %moe_sum( var=b25140im4);
-				NummortcstbrdencalcH_&_years.= %moe_sum( var=b25140im3, b25140im4);
-				NumnomortcstbrdenH_&_years.= %moe_sum( var=b25140im7);
-				NumnomortsvrecstbrdenH_&_years. = %moe_sum( var=b25140im8);
-				NumnomortcstbrdencalcH_&_years.= %moe_sum( var=b25140im7, b25140im8);
-				NumallowncstbrdenH_&_years.= %moe_sum( var=b25140im3, b25140im7);
-				NumallownsvrecstbrdenH_&_years.= %moe_sum( var=b25140im4, b25140im8);
-				NumallowncstbrdencalcH_&_years.= %moe_sum( var=b25140im3, b25140im4, b25140im7, b25140im8);
-				NumrentcstbrdenH_&_years.= %moe_sum( var=b25140im11);
-				NumrentsvrecstbrdenH_&_years.= %moe_sum( var=b25140im12);
-				NumrentcstbrdencalcH_&_years.= %moe_sum( var=b25140im11, b25140im12)
+				mortcstbrdenIOM_&_years.= sum(b25140ce3, b25140fe3, b25140ge3);
+				mortsvrecstbrdenIOM_&_years.= sum(b25140ce4, b25140fe4, b25140ge4);
+				mortcstbrdencalcIOM_&_years.= sum(b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4);
+				nomortcstbrdenIOM_&_years.= sum(b25140ce7, b25140fe7, b25140ge7);
+				nomortsvrecstbrdenIOM_&_years. = sum(b25140ce8, b25140fe8, b25140ge8);
+				nomortcstbrdencalcIOM_&_years.= sum(b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8);
+				allowncstbrdenIOM_&_years.= sum(b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7);
+				allownsvrecstbrdenIOM_&_years.= sum(b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8);
+				allowncstbrdencalcIOM_&_years.= sum(b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8);
+				rentcstbrdenIOM_&_years.= sum(b25140ce11, b25140fe11, b25140ge11);
+				rentsvrecstbrdenIOM_&_years.= sum(b25140ce12, b25140fe12, b25140ge12);
+				rentcstbrdencalcIOM_&_years.= sum(b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12);
 
-				NummortcstbrdenB_&_years.= %moe_sum( var=b25140bm3);
-				NummortsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm4);
-				NummortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm3, b25140bm4);
-				NumnomortcstbrdenB_&_years.= %moe_sum( var=b25140bm7);
-				NumnomortsvrecstbrdenB_&_years. = %moe_sum( var=b25140bm8);
-				NumnomortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm7, b25140bm8);
-				NumallowncstbrdenB_&_years.= %moe_sum( var=b25140bm3, b25140bm7);
-				NumallownsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm4, b25140bm8);
-				NumallowncstbrdencalcB_&_years.= %moe_sum( var=b25140bm3, b25140bm4, b25140bm7, b25140bm8);
-				NumrentcstbrdenB_&_years.= %moe_sum( var=b25140bm11);
-				NumrentsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm12);
-				NumrentcstbrdencalcB_&_years.= %moe_sum( var=b25140bm11, b25140bm12)
+				mortcstbrdenAIOM_&_years.= sum(b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
+				mortsvrecstbrdenAIOM_&_years.= sum(b25140ce4, b25140fe4, b25140ge4, b25140de4, b25140ee4);
+				mortcstbrdencalcAIOM_&_years.= sum(b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4, b25140de3, b25140de4, b25140ee3, b25140ee4);
+				nomortcstbrdenAIOM_&_years.= sum(b25140ce7, b25140fe7, b25140ge7, b25140de7, b25140ee7);
+				nomortsvrecstbrdenAIOM_&_years. = sum(b25140ce8, b25140fe8, b25140ge8, b25140de8, b25140ee8);
+				nomortcstbrdencalcAIOM_&_years.= sum(b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8, b25140de7, b25140de8, b25140ee7, b25140ee8);
+				allowncstbrdenAIOM_&_years.= sum(b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7, b25140de3, b25140de7, b25140ee3, b25140ee7);
+				allownsvrecstbrdenAIOM_&_years.= sum(b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8, b25140de4, b25140de8, b25140ee4, b25140ee8);
+				allowncstbrdencalcAIOM_&_years.= sum(b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8, b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
+				rentcstbrdenAIOM_&_years.= sum(b25140ce11, b25140fe11, b25140ge11, b25140de11, b25140ee11);
+				rentsvrecstbrdenAIOM_&_years.= sum(b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
+				rentcstbrdencalcAIOM_&_years.= sum(b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12, b25140de11, b25140de12, b25140ee11, b25140ee12);
+
+				mortcstbrden_&_years.= %moe_sum( var=b25140bm3 b25140im3 b25140hm3 b25140cm3 b25140fm3 b25140gm3 b25140dm3 b25140em3);
+				mortsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140im4 b25140hm4 b25140cm4 b25140fm4 b25140gm4 b25140dm4 b25140em4);
+				mortcstbrdencalc_&_years.= %moe_sum( var=b25140bm3 b25140bm4 b25140im3 b25140im4 b25140hm3 b25140hm4 b25140cm3 b25140cm4 b25140fm3 b25140fm4 b25140gm3 b25140gm4 b25140dm3 b25140dm4 b25140em3 b25140em4);
+				nomortcstbrden_&_years.= %moe_sum( var=b25140bm7 b25140im7 b25140hm7 b25140cm7 b25140fm7 b25140gm7 b25140dm7 b25140em7);
+				nomortsvrecstbrden_&_years. = %moe_sum( var=b25140bm8 b25140im8 b25140hm8 b25140cm8 b25140fm8 b25140gm8 b25140dm8 b25140em8);
+				nomortcstbrdencalc_&_years.= %moe_sum( var=b25140bm7 b25140bm8 b25140im7 b25140im8 b25140hm7 b25140hm8 b25140cm7 b25140cm8 b25140fm7 b25140fm8 b25140gm7 b25140gm8 b25140dm7 b25140dm8 b25140em7 b25140em8);
+				allowncstbrden_&_years.= %moe_sum( var=b25140bm3 b25140bm7 b25140im3 b25140im7 b25140hm3 b25140hm7 b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7 b25140dm3 b25140dm7 b25140em3 b25140em7);
+				allownsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140bm8 b25140im4 b25140im8 b25140hm4 b25140hm8 b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8 b25140dm4 b25140dm8 b25140em4 b25140em8);
+				allowncstbrdencalc_&_years.= %moe_sum( var=b25140bm3 b25140bm4 b25140bm7 b25140bm8 b25140im3 b25140im4 b25140im7 b25140im8 b25140hm3 b25140hm4 b25140hm7 b25140hm8 b25140cm3 b25140cm7 b25140cm4 b25140cm8 b25140fm3 b25140fm7 b25140fm4 b25140fm8 b25140m3 b25140gm7 b25140gm4 b25140gm8 b25140dm3 b25140dm4 b25140dm7 b25140dm8 b25140em3 b25140em4 b25140em7 b25140em8);
+				rentcstbrden_&_years.= %moe_sum( var=b25140bm11 b25140im11 b25140hm11 b25140cm11 b25140fm11 b25140gm11 b25140dm11 b25140em11);
+				rentsvrecstbrden_&_years.= %moe_sum( var=b25140bm12 b25140im12 b25140hm12 b25140cm12 b25140fm12 b25140gm12 b25140dm12 b25140em12);
+				rentcstbrdencalc_&_years.= %moe_sum( var=b25140bm11 b25140bm12 b25140im11 b25140im12 b25140hm11 b25140hm12 b25140cm11 b25140cm12 b25140fm11 b25140fm12 b25140gm11 b25140gm12 b25140dm11 b25140dm12 b25140em11 b25140em12);
 
 
-				NummortcstbrdenA_&_years.= %moe_sum( var=b25140dm3, b25140em3);
-				NummortsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm4, b25140em4);
-				NummortcstbrdencalcA_&_years.= %moe_sum( var=b25140dm3, b25140dm4, b25140em3, b25140em4);
-				NumnomortcstbrdenA_&_years.= %moe_sum( var=b25140dm7, b25140em7);
-				NumnomortsvrecstbrdenA_&_years. = %moe_sum( var=b25140dm8, b25140em8);
-				NumnomortcstbrdencalcA_&_years.= %moe_sum( var=b25140dm7, b25140dm8, b25140em7, b25140em8);
-				NumallowncstbrdenA_&_years.= %moe_sum( var=b25140dm3, b25140dm7, b25140em3, b25140em7);
-				NumallownsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm4, b25140dm8, b25140em4, b25140em8);
-				NumallowncstbrdencalcA_&_years.= %moe_sum( var=b25140dm3, b25140dm4, b25140dm7, b25140dm8, b25140em3, b25140em4, b25140em7, b25140em8);
-				NumrentcstbrdenA_&_years.= %moe_sum( var=b25140dm11, b25140em11);
-				NumrentsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm12, b25140em12);
-				NumrentcstbrdencalcA_&_years.= %moe_sum( var=b25140dm11, b25140dm12, b25140em11, b25140em12)
+				mortcstbrdenW_&_years.= %moe_sum( var=b25140hm3);
+				mortsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm4);
+				mortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm3 b25140hm4);
+				nomortcstbrdenW_&_years.= %moe_sum( var=b25140hm7);
+				nomortsvrecstbrdenW_&_years. = %moe_sum( var=b25140hm8);
+				nomortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm7 b25140hm8);
+				allowncstbrdenW_&_years.= %moe_sum( var=b25140hm3 b25140hm7);
+				allownsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm4 b25140hm8);
+				allowncstbrdencalcW_&_years.= %moe_sum( var=b25140hm3 b25140hm4 b25140hm7 b25140hm8);
+				rentcstbrdenW_&_years.= %moe_sum( var=b25140hm1);
+				rentsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm12);
+				rentcstbrdencalcW_&_years.= %moe_sum( var=b25140hm11 b25140hm12)
 
-				NummortcstbrdenIOM_&_years.= %moe_sum( var=b25140cm3, b25140fm3, b25140gm3);
-				NummortsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm4, b25140fm4, b25140gm4);
-				NummortcstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm3, b25140cm4, b25140fm3, b25140fm4, b25140gm3, b25140gm4);
-				NumnomortcstbrdenIOM_&_years.= %moe_sum( var=b25140cm7, b25140fm7, b25140gm7);
-				NumnomortsvrecstbrdenIOM_&_years. = %moe_sum( var=b25140cm8, b25140fm8, b25140gm8);
-				NumnomortcstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm7, b25140cm8, b25140fm7, b25140fm8, b25140gm7, b25140gm8);
-				NumallowncstbrdenIOM_&_years.= %moe_sum( var=b25140cm3, b25140cm7, b25140fm3, b25140fm7, b25140gm3, b25140gm7);
-				NumallownsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm4, b25140cm8, b25140fm4, b25140fm8, b25140gm4, b25140gm8);
-				NumallowncstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm3, b25140cm7, b25140cm4, b25140cm8, b25140fm3, b25140fm7, b25140fm4, b25140fm8, b25140m3, b25140gm7, b25140gm4, b25140gm8);
-				NumrentcstbrdenIOM_&_years.= %moe_sum( var=b25140cm11, b25140fm11, b25140gm11);
-				NumrentsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm12, b25140fm12, b25140gm12);
-				NumrentcstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm11, b25140cm12, b25140fm11, b25140fm12, b25140gm11, b25140gm12);
+				mortcstbrdenH_&_years.= %moe_sum( var=b25140im3);
+				mortsvrecstbrdenH_&_years.= %moe_sum( var=b25140im4);
+				mortcstbrdencalcH_&_years.= %moe_sum( var=b25140im3 b25140im4);
+				nomortcstbrdenH_&_years.= %moe_sum( var=b25140im7);
+				nomortsvrecstbrdenH_&_years. = %moe_sum( var=b25140im8);
+				nomortcstbrdencalcH_&_years.= %moe_sum( var=b25140im7 b25140im8);
+				allowncstbrdenH_&_years.= %moe_sum( var=b25140im3 b25140im7);
+				allownsvrecstbrdenH_&_years.= %moe_sum( var=b25140im4 b25140im8);
+				allowncstbrdencalcH_&_years.= %moe_sum( var=b25140im3 b25140im4 b25140im7 b25140im8);
+				rentcstbrdenH_&_years.= %moe_sum( var=b25140im11);
+				rentsvrecstbrdenH_&_years.= %moe_sum( var=b25140im12);
+				rentcstbrdencalcH_&_years.= %moe_sum( var=b25140im11 b25140im12)
 
-				NummortcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm3, b25140fm3, b25140gm3, b25140dm3, b25140em3);
-				NummortsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm4, b25140fm4, b25140gm4, b25140dm4, b25140em4);
-				NummortcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm3, b25140cm4, b25140fm3, b25140fm4, b25140gm3, b25140gm4, b25140dm3, b25140dm4, b25140em3, b25140em4);
-				NumnomortcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm7, b25140fm7, b25140gm7, b25140dm7, b25140em7);
-				NumnomortsvrecstbrdenAIOM_&_years. = %moe_sum( var=b25140cm8, b25140fm8, b25140gm8, b25140dm8, b25140em8);
-				NumnomortcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm7, b25140cm8, b25140fm7, b25140fm8, b25140gm7, b25140gm8, b25140dm7, b25140dm8, b25140em7, b25140em8);
-				NumallowncstbrdenAIOM_&_years.= %moe_sum( var=b25140cm3, b25140cm7, b25140fm3, b25140fm7, b25140gm3, b25140gm7, b25140dm3, b25140dm7, b25140em3, b25140em7);
-				NumallownsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm4, b25140cm8, b25140fm4, b25140fm8, b25140gm4, b25140gm8, b25140dm4, b25140dm8, b25140em4, b25140em8);
-				NumallowncstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm3, b25140cm7, b25140cm4, b25140cm8, b25140fm3, b25140fm7, b25140fm4, b25140fm8, b25140m3, b25140gm7, b25140gm4, b25140gm8, b25140dm3, b25140dm4, b25140dm7, b25140dm8, b25140em3, b25140em4, b25140em7, b25140em8);
-				NumrentcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm11, b25140fm11, b25140gm11, b25140dm11, b25140em11);
-				NumrentsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm12, b25140fm12, b25140gm12, b25140dm12, b25140em12);
-				NumrentcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm11, b25140cm12, b25140fm11, b25140fm12, b25140gm11, b25140gm12, b25140dm11, b25140dm12, b25140em11, b25140em12);
+				mortcstbrdenB_&_years.= %moe_sum( var=b25140bm3);
+				mortsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm4);
+				mortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm3 b25140bm4);
+				nomortcstbrdenB_&_years.= %moe_sum( var=b25140bm7);
+				nomortsvrecstbrdenB_&_years. = %moe_sum( var=b25140bm8);
+				nomortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm7 b25140bm8);
+				allowncstbrdenB_&_years.= %moe_sum( var=b25140bm3 b25140bm7);
+				allownsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm4 b25140bm8);
+				allowncstbrdencalcB_&_years.= %moe_sum( var=b25140bm3 b25140bm4 b25140bm7 b25140bm8);
+				rentcstbrdenB_&_years.= %moe_sum( var=b25140bm11);
+				rentsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm12);
+				rentcstbrdencalcB_&_years.= %moe_sum( var=b25140bm11 b25140bm12)
+
+
+				mortcstbrdenA_&_years.= %moe_sum( var=b25140dm3 b25140em3);
+				mortsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm4 b25140em4);
+				mortcstbrdencalcA_&_years.= %moe_sum( var=b25140dm3 b25140dm4 b25140em3 b25140em4);
+				nomortcstbrdenA_&_years.= %moe_sum( var=b25140dm7 b25140em7);
+				nomortsvrecstbrdenA_&_years. = %moe_sum( var=b25140dm8 b25140em8);
+				nomortcstbrdencalcA_&_years.= %moe_sum( var=b25140dm7 b25140dm8 b25140em7 b25140em8);
+				allowncstbrdenA_&_years.= %moe_sum( var=b25140dm3 b25140dm7 b25140em3 b25140em7);
+				allownsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm4 b25140dm8 b25140em4 b25140em8);
+				allowncstbrdencalcA_&_years.= %moe_sum( var=b25140dm3 b25140dm4 b25140dm7 b25140dm8 b25140em3 b25140em4 b25140em7 b25140em8);
+				rentcstbrdenA_&_years.= %moe_sum( var=b25140dm11 b25140em11);
+				rentsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm12 b25140em12);
+				rentcstbrdencalcA_&_years.= %moe_sum( var=b25140dm11 b25140dm12 b25140em11 b25140em12)
+
+				mortcstbrdenIOM_&_years.= %moe_sum( var=b25140cm3 b25140fm3 b25140gm3);
+				mortsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm4 b25140fm4 b25140gm4);
+				mortcstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm4 b25140fm3 b25140fm4 b25140gm3 b25140gm4);
+				nomortcstbrdenIOM_&_years.= %moe_sum( var=b25140cm7 b25140fm7 b25140gm7);
+				nomortsvrecstbrdenIOM_&_years. = %moe_sum( var=b25140cm8 b25140fm8 b25140gm8);
+				nomortcstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm7 b25140cm8 b25140fm7 b25140fm8 b25140gm7 b25140gm8);
+				allowncstbrdenIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7);
+				allownsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8);
+				allowncstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140cm4 b25140cm8 b25140fm3 b25140fm7 b25140fm4 b25140fm8 b25140m3 b25140gm7 b25140gm4 b25140gm8);
+				rentcstbrdenIOM_&_years.= %moe_sum( var=b25140cm11 b25140fm11 b25140gm11);
+				rentsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm12 b25140fm12 b25140gm12);
+				rentcstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm11 b25140cm12 b25140fm11 b25140fm12 b25140gm11 b25140gm12);
+
+				mortcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm3 b25140fm3 b25140gm3 b25140dm3 b25140em3);
+				mortsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm4 b25140fm4 b25140gm4 b25140dm4 b25140em4);
+				mortcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm4 b25140fm3 b25140fm4 b25140gm3 b25140gm4 b25140dm3 b25140dm4 b25140em3 b25140em4);
+				nomortcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm7 b25140fm7 b25140gm7 b25140dm7 b25140em7);
+				nomortsvrecstbrdenAIOM_&_years. = %moe_sum( var=b25140cm8 b25140fm8 b25140gm8 b25140dm8 b25140em8);
+				nomortcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm7 b25140cm8 b25140fm7 b25140fm8 b25140gm7 b25140gm8 b25140dm7 b25140dm8 b25140em7 b25140em8);
+				allowncstbrdenAIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7 b25140dm3 b25140dm7 b25140em3 b25140em7);
+				allownsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8 b25140dm4 b25140dm8 b25140em4 b25140em8);
+				allowncstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140cm4 b25140cm8 b25140fm3 b25140fm7 b25140fm4 b25140fm8 b25140m3 b25140gm7 b25140gm4 b25140gm8 b25140dm3 b25140dm4 b25140dm7 b25140dm8 b25140em3 b25140em4 b25140em7 b25140em8);
+				rentcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm11 b25140fm11 b25140gm11 b25140dm11 b25140em11);
+				rentsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm12 b25140fm12 b25140gm12 b25140dm12 b25140em12);
+				rentcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm11 b25140cm12 b25140fm11 b25140fm12 b25140gm11 b25140gm12 b25140dm11 b25140dm12 b25140em11 b25140em12);
 
 			label
-				nummortcstbrden_&_years.= " Owners with Mortgage who are cost-burdened, &_years_dash "
-				nummortsvrecstbrden_&_years.= " Owners with Mortgage who are severely-cost burdened, &_years_dash "
-				nummortcstbrdencalc_&_years.= " Owners with mortgage with cost burden calculated, &_years_dash "
-				numnomortcstbrden_&_years.= " Owners without Mortgage who are cost-burdened, &_years_dash "
-				numnomortsvrecstbrden_&_years. = " Owners without Mortgage who are severely-cost burdened, &_years_dash "
-				numnomortcstbrdencalc_&_years.= " Owners without mortgage with cost burden calculated, &_years_dash "
-				numallowncstbrden_&_years.= " All owners who are cost-burdened, &_years_dash "
-				numallownsvrecstbrden_&_years.= " All owners who are severely-cost burdened, &_years_dash "
-				numallowncstbrdencalc_&_years.= " All owners with cost burden calculated, &_years_dash "
-				numrentcstbrden_&_years.= " Renters who are cost-burdened, &_years_dash "
-				numrentsvrecstbrden_&_years.= " Renters who are severely cost-burdened, &_years_dash "
-				numrentcstbrdencalc_&_years.= " Renters with cost burden calculated, &_years_dash "
+				mortcstbrden_&_years.= " Owners with Mortgage who are cost-burdened, &_years_dash "
+				mortsvrecstbrden_&_years.= " Owners with Mortgage who are severely-cost burdened, &_years_dash "
+				mortcstbrdencalc_&_years.= " Owners with mortgage with cost burden calculated, &_years_dash "
+				nomortcstbrden_&_years.= " Owners without Mortgage who are cost-burdened, &_years_dash "
+				nomortsvrecstbrden_&_years. = " Owners without Mortgage who are severely-cost burdened, &_years_dash "
+				nomortcstbrdencalc_&_years.= " Owners without mortgage with cost burden calculated, &_years_dash "
+				allowncstbrden_&_years.= " All owners who are cost-burdened, &_years_dash "
+				allownsvrecstbrden_&_years.= " All owners who are severely-cost burdened, &_years_dash "
+				allowncstbrdencalc_&_years.= " All owners with cost burden calculated, &_years_dash "
+				rentcstbrden_&_years.= " Renters who are cost-burdened, &_years_dash "
+				rentsvrecstbrden_&_years.= " Renters who are severely cost-burdened, &_years_dash "
+				rentcstbrdencalc_&_years.= " Renters with cost burden calculated, &_years_dash "
 
-				NummortcstbrdenW_&_years.= " Owners with Mortgage who are cost-burdened, Non-Hispanic White, &_years_dash "
-				NummortsvrecstbrdenW_&_years.= " Owners with Mortgage who are severely-cost burdened, Non-Hispanic White, &_years_dash "
-				NummortcstbrdencalcW_&_years.= " Owners with mortgage with cost burden calculated, Non-Hispanic White, &_years_dash " 
-				NumnomortcstbrdenW_&_years.= " Owners without Mortgage who are cost-burdened, Non-Hispanic White, &years_dash "
-				NumnomortsvrecstbrdenW_&_years. = " Owners without Mortgage who are severely-cost burdened, Non-Hispanic White, &_years_dash "
-				NumnomortcstbrdencalcW_&_years.= " Owners without mortgage with cost burden calculated, Non-Hispanic White, &_years_dash "
-				NumallowncstbrdenW_&_years.= " All owners who are cost-burdened, Non-Hispanic White, &_years_dash "
-				NumallownsvrecstbrdenW_&_years.= " All owners who are severely-cost burdened, Non-Hispanic White , &_years_dash "
-				NumallowncstbrdencalcW_&_years.= " All owners with cost burden calculated, Non-Hispanic White, &_years_dash "
-				NumrentcstbrdenW_&_years.= " Renters who are cost-burdened, Non-Hispanic White, &_years_dash "
-				NumrentsvrecstbrdenW_&_years.= " Renters who are severely cost-burdened, Non-Hispanic White, &_years_dash "
-				NumrentcstbrdencalcW_&_years.= " Renters with cost burden calculated, Non-Hispanic White, &_years_dash "
+				mortcstbrdenW_&_years.= " Owners with Mortgage who are cost-burdened, Non-Hispanic White, &_years_dash "
+				mortsvrecstbrdenW_&_years.= " Owners with Mortgage who are severely-cost burdened, Non-Hispanic White, &_years_dash "
+				mortcstbrdencalcW_&_years.= " Owners with mortgage with cost burden calculated, Non-Hispanic White, &_years_dash " 
+				nomortcstbrdenW_&_years.= " Owners without Mortgage who are cost-burdened, Non-Hispanic White, &years_dash "
+				nomortsvrecstbrdenW_&_years. = " Owners without Mortgage who are severely-cost burdened, Non-Hispanic White, &_years_dash "
+				nomortcstbrdencalcW_&_years.= " Owners without mortgage with cost burden calculated, Non-Hispanic White, &_years_dash "
+				allowncstbrdenW_&_years.= " All owners who are cost-burdened, Non-Hispanic White, &_years_dash "
+				allownsvrecstbrdenW_&_years.= " All owners who are severely-cost burdened, Non-Hispanic White , &_years_dash "
+				allowncstbrdencalcW_&_years.= " All owners with cost burden calculated, Non-Hispanic White, &_years_dash "
+				rentcstbrdenW_&_years.= " Renters who are cost-burdened, Non-Hispanic White, &_years_dash "
+				rentsvrecstbrdenW_&_years.= " Renters who are severely cost-burdened, Non-Hispanic White, &_years_dash "
+				rentcstbrdencalcW_&_years.= " Renters with cost burden calculated, Non-Hispanic White, &_years_dash "
 
-				NummortcstbrdenH_&_years.= " Owners with Mortgage who are cost-burdened, Hispanic/Latino, &_years_dash "
-				NummortsvrecstbrdenH_&_years.= " Owners with Mortgage who are severely-cost burdened, Hispanic/Latino, &_years_dash "
-				NummortcstbrdencalcH_&_years.= " Owners with mortgage with cost burden calculated, Hispanic/Latino, &_years_dash "
-				NumnomortcstbrdenH_&_years.= " Owners without Mortgage who are cost-burdened, Hispanic/Latino, &_years_dash "
-				NumnomortsvrecstbrdenH_&_years. = " Owners without Mortgage who are severely-cost burdened, Hispanic/Latino, &_years_dash "
-				NumnomortcstbrdencalcH_&_years.= " Owners without mortgage with cost burden calculated, Hispanic/Latino, &_years_dash "
-				NumallowncstbrdenH_&_years.= " All owners who are cost-burdened, Hispanic/Latino, &_years_dash "
-				NumallownsvrecstbrdenH_&_years.= " All owners who are severely-cost burdened, Hispanic/Latino, &_years_dash "
-				NumallowncstbrdencalcH_&_years.= " All owners with cost burden calculated, Hispanic/Latino, &_years_dash "
-				NumrentcstbrdenH_&_years.= " Renters who are cost-burdened, Hispanic/Latino, &_years_dash "
-				NumrentsvrecstbrdenH_&_years.= " Renters who are severely cost-burdened, Hispanic/Latino, &_years_dash "
-				NumrentcstbrdencalcH_&_years.= " Renters with cost burden calculated, Hispanic/Latino, &_years_dash "
+				mortcstbrdenH_&_years.= " Owners with Mortgage who are cost-burdened, Hispanic/Latino, &_years_dash "
+				mortsvrecstbrdenH_&_years.= " Owners with Mortgage who are severely-cost burdened, Hispanic/Latino, &_years_dash "
+				mortcstbrdencalcH_&_years.= " Owners with mortgage with cost burden calculated, Hispanic/Latino, &_years_dash "
+				nomortcstbrdenH_&_years.= " Owners without Mortgage who are cost-burdened, Hispanic/Latino, &_years_dash "
+				nomortsvrecstbrdenH_&_years. = " Owners without Mortgage who are severely-cost burdened, Hispanic/Latino, &_years_dash "
+				nomortcstbrdencalcH_&_years.= " Owners without mortgage with cost burden calculated, Hispanic/Latino, &_years_dash "
+				allowncstbrdenH_&_years.= " All owners who are cost-burdened, Hispanic/Latino, &_years_dash "
+				allownsvrecstbrdenH_&_years.= " All owners who are severely-cost burdened, Hispanic/Latino, &_years_dash "
+				allowncstbrdencalcH_&_years.= " All owners with cost burden calculated, Hispanic/Latino, &_years_dash "
+				rentcstbrdenH_&_years.= " Renters who are cost-burdened, Hispanic/Latino, &_years_dash "
+				rentsvrecstbrdenH_&_years.= " Renters who are severely cost-burdened, Hispanic/Latino, &_years_dash "
+				rentcstbrdencalcH_&_years.= " Renters with cost burden calculated, Hispanic/Latino, &_years_dash "
 
-				NummortcstbrdenB_&_years.= " Owners with Mortgage who are cost-burdened, Black/African American, &_years_dash "
-				NummortsvrecstbrdenB_&_years.= " Owners with Mortgage who are severely-cost burdened, Black/African American, &_years_dash "
-				NummortcstbrdencalcB_&_years.= " Owners with mortgage with cost burden calculated, Black/African American, &_years_dash "
-				NumnomortcstbrdenB_&_years.= " Owners without Mortgage who are cost-burdened, Black/African American, &_years_dash "
-				NumnomortsvrecstbrdenB_&_years. = " Owners without Mortgage who are severely-cost burdened, Black/African American, &_years_dash "
-				NumnomortcstbrdencalcB_&_years.= " Owners without mortgage with cost burden calculated, Black/African American, &_years_dash "
-				NumallowncstbrdenB_&_years.= " All owners who are cost-burdened, Black/African American, &_years_dash "
-				NumallownsvrecstbrdenB_&_years.= " All owners who are severely-cost burdened, Black/African American, &_years_dash "
-				NumallowncstbrdencalcB_&_years.= " All owners with cost burden calculated, Black/African American, &_years_dash "
-				NumrentcstbrdenB_&_years.= " Renters who are cost-burdened, Black/African American, &_years_dash "
-				NumrentsvrecstbrdenB_&_years.= " Renters who are severely cost-burdened, Black/African American, &_years_dash "
-				NumrentcstbrdencalcB_&_years.= " Renters with cost burden calculated, Black/African American, &_years_dash "
+				mortcstbrdenB_&_years.= " Owners with Mortgage who are cost-burdened, Black/African American, &_years_dash "
+				mortsvrecstbrdenB_&_years.= " Owners with Mortgage who are severely-cost burdened, Black/African American, &_years_dash "
+				mortcstbrdencalcB_&_years.= " Owners with mortgage with cost burden calculated, Black/African American, &_years_dash "
+				nomortcstbrdenB_&_years.= " Owners without Mortgage who are cost-burdened, Black/African American, &_years_dash "
+				nomortsvrecstbrdenB_&_years. = " Owners without Mortgage who are severely-cost burdened, Black/African American, &_years_dash "
+				nomortcstbrdencalcB_&_years.= " Owners without mortgage with cost burden calculated, Black/African American, &_years_dash "
+				allowncstbrdenB_&_years.= " All owners who are cost-burdened, Black/African American, &_years_dash "
+				allownsvrecstbrdenB_&_years.= " All owners who are severely-cost burdened, Black/African American, &_years_dash "
+				allowncstbrdencalcB_&_years.= " All owners with cost burden calculated, Black/African American, &_years_dash "
+				rentcstbrdenB_&_years.= " Renters who are cost-burdened, Black/African American, &_years_dash "
+				rentsvrecstbrdenB_&_years.= " Renters who are severely cost-burdened, Black/African American, &_years_dash "
+				rentcstbrdencalcB_&_years.= " Renters with cost burden calculated, Black/African American, &_years_dash "
 
 
-				NummortcstbrdenA_&_years.= " Owners with Mortgage who are cost-burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NummortsvrecstbrdenA_&_years.= " Owners with Mortgage who are severely-cost burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NummortcstbrdencalcA_&_years.= " Owners with mortgage with cost burden calculated, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NumnomortcstbrdenA_&_years.= " Owners without Mortgage who are cost-burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NumnomortsvrecstbrdenA_&_years. = " Owners without Mortgage who are severely-cost burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NumnomortcstbrdencalcA_&_years.= " Owners without mortgage with cost burden calculated, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NumallowncstbrdenA_&_years.= " All owners who are cost-burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NumallownsvrecstbrdenA_&_years.= " All owners who are severely-cost burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NumallowncstbrdencalcA_&_years.= " All owners with cost burden calculated, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NumrentcstbrdenA_&_years.= " Renters who are cost-burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NumrentsvrecstbrdenA_&_years.= " Renters who are severely cost-burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
-				NumrentcstbrdencalcA_&_years.= " Renters with cost burden calculated, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				mortcstbrdenA_&_years.= " Owners with Mortgage who are cost-burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				mortsvrecstbrdenA_&_years.= " Owners with Mortgage who are severely-cost burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				mortcstbrdencalcA_&_years.= " Owners with mortgage with cost burden calculated, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				nomortcstbrdenA_&_years.= " Owners without Mortgage who are cost-burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				nomortsvrecstbrdenA_&_years. = " Owners without Mortgage who are severely-cost burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				nomortcstbrdencalcA_&_years.= " Owners without mortgage with cost burden calculated, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				allowncstbrdenA_&_years.= " All owners who are cost-burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				allownsvrecstbrdenA_&_years.= " All owners who are severely-cost burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				allowncstbrdencalcA_&_years.= " All owners with cost burden calculated, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				rentcstbrdenA_&_years.= " Renters who are cost-burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				rentsvrecstbrdenA_&_years.= " Renters who are severely cost-burdened, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
+				rentcstbrdencalcA_&_years.= " Renters with cost burden calculated, Asian, Hawaiian, and other Pacific Islander, &_years_dash "
 
-				NummortcstbrdenIOM_&_years.= " Owners with Mortgage who are cost-burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NummortsvrecstbrdenIOM_&_years.= " Owners with Mortgage who are severely-cost burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NummortcstbrdencalcIOM_&_years.= " Owners with mortgage with cost burden calculated, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NumnomortcstbrdenIOM_&_years.= " Owners without Mortgage who are cost-burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NumnomortsvrecstbrdenIOM_&_years. = " Owners without Mortgage who are severely-cost burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NumnomortcstbrdencalcIOM_&_years.= " Owners without mortgage with cost burden calculated, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NumallowncstbrdenIOM_&_years.= " All owners who are cost-burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NumallownsvrecstbrdenIOM_&_years.= " All owners who are severely-cost burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NumallowncstbrdencalcIOM_&_years.= " All owners with cost burden calculated, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NumrentcstbrdenIOM_&_years.= " Renters who are cost-burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NumrentsvrecstbrdenIOM_&_years.= " Renters who are severely cost-burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
-				NumrentcstbrdencalcIOM_&_years.= " Renters with cost burden calculated, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				mortcstbrdenIOM_&_years.= " Owners with Mortgage who are cost-burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				mortsvrecstbrdenIOM_&_years.= " Owners with Mortgage who are severely-cost burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				mortcstbrdencalcIOM_&_years.= " Owners with mortgage with cost burden calculated, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				nomortcstbrdenIOM_&_years.= " Owners without Mortgage who are cost-burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				nomortsvrecstbrdenIOM_&_years. = " Owners without Mortgage who are severely-cost burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				nomortcstbrdencalcIOM_&_years.= " Owners without mortgage with cost burden calculated, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				allowncstbrdenIOM_&_years.= " All owners who are cost-burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				allownsvrecstbrdenIOM_&_years.= " All owners who are severely-cost burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				allowncstbrdencalcIOM_&_years.= " All owners with cost burden calculated, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				rentcstbrdenIOM_&_years.= " Renters who are cost-burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				rentsvrecstbrdenIOM_&_years.= " Renters who are severely cost-burdened, American Indian/Alaska Native, other race, two or more races, &_years_dash "
+				rentcstbrdencalcIOM_&_years.= " Renters with cost burden calculated, American Indian/Alaska Native, other race, two or more races, &_years_dash "
 
-				NummortcstbrdenAIOM_&_years.= " Owners with Mortgage who are cost-burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NummortsvrecstbrdenAIOM_&_years.= " Owners with Mortgage who are severely-cost burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NummortcstbrdencalcAIOM_&_years.= " Owners with mortgage with cost burden calculated, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NumnomortcstbrdenAIOM_&_years.= " Owners without Mortgage who are cost-burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NumnomortsvrecstbrdenAIOM_&_years. = " Owners without Mortgage who are severely-cost burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NumnomortcstbrdencalcAIOM_&_years.= " Owners without mortgage with cost burden calculated, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NumallowncstbrdenAIOM_&_years.= " All owners who are cost-burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NumallownsvrecstbrdenAIOM_&_years.= " All owners who are severely-cost burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NumallowncstbrdencalcAIOM_&_years.= " All owners with cost burden calculated, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NumrentcstbrdenAIOM_&_years.= " Renters who are cost-burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NumrentsvrecstbrdenAIOM_&_years.= " Renters who are severely cost-burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
-				NumrentcstbrdencalcAIOM_&_years.= " Renters with cost burden calculated, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash ";
+				mortcstbrdenAIOM_&_years.= " Owners with Mortgage who are cost-burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				mortsvrecstbrdenAIOM_&_years.= " Owners with Mortgage who are severely-cost burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				mortcstbrdencalcAIOM_&_years.= " Owners with mortgage with cost burden calculated, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				nomortcstbrdenAIOM_&_years.= " Owners without Mortgage who are cost-burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				nomortsvrecstbrdenAIOM_&_years. = " Owners without Mortgage who are severely-cost burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				nomortcstbrdencalcAIOM_&_years.= " Owners without mortgage with cost burden calculated, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				allowncstbrdenAIOM_&_years.= " All owners who are cost-burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				allownsvrecstbrdenAIOM_&_years.= " All owners who are severely-cost burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				allowncstbrdencalcAIOM_&_years.= " All owners with cost burden calculated, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				rentcstbrdenAIOM_&_years.= " Renters who are cost-burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				rentsvrecstbrdenAIOM_&_years.= " Renters who are severely cost-burdened, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash "
+				rentcstbrdencalcAIOM_&_years.= " Renters with cost burden calculated, All remaining groups other than Black, Non-Hispanic White, Hispanic, &_years_dash ";
 
 
 	%end; 

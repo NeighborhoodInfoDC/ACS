@@ -1070,17 +1070,17 @@
       mNumaccesswosub_&_years. mNumnointernet_&_years. mNum1orMoreComp_&_years. mNumhhdefined_&_years. mNumwithinternet_&_years.
     ;
 	/*Rodrigo added Homeownership and Renting Indicators*/
-	%let moe2017plus = 
-		Mort_CB_&_years. Mort_SCB_&_years. Mort_CBC_&_years. NoMort_CB_&_years. NoMort_SCB_&_years. NoMort_CBC_&_years. AllOwn_CB_&_years. AllOwn_SCB_&_years. AllOwn_CBC_&_years. Rent_CB_&_years. Rent_SCB_&_years. Rent_CBC_&_years. 
-		NHW_Mort_CB_&_years. NHW_Mort_SCB_&_years. NHW_Mort_CBC_&_years. NHW_NoMort_CB_&_years. NHW_NoMort_SCB_&_years. NHW_NoMort_CBC_&_years. NHW_AllOwn_CB_&_years. NHW_AllOwn_SCB_&_years. NHW_AllOwn_CBC_&_years. NHW_Rent_CB_&_years. NHW_Rent_SCB_&_years. NHW_Rent_CBC_&_years. 
-		H_Mort_CB_&_years. H_Mort_SCB_&_years. H_Mort_CBC_&_years. H_NoMort_CB_&_years. H_NoMort_SCB_&_years. H_NoMort_CBC_&_years. H_AllOwn_CB_&_years. H_AllOwn_SCB_&_years. H_AllOwn_CBC_&_years. H_Rent_CB_&_years. H_Rent_SCB_&_years. H_Rent_CBC_&_years. 
-		B_Mort_CB_&_years. B_Mort_SCB_&_years. B_Mort_CBC_&_years. B_NoMort_CB_&_years. B_NoMort_SCB_&_years. B_NoMort_CBC_&_years. B_AllOwn_CB_&_years. B_AllOwn_SCB_&_years. B_AllOwn_CBC_&_years. B_Rent_CB_&_years. B_Rent_SCB_&_years. B_Rent_CBC_&_years. 
-		API_Mort_CB_&_years. API_Mort_SCB_&_years. API_Mort_CBC_&_years. API_NoMort_CB_&_years. API_NoMort_SCB_&_years. API_NoMort_CBC_&_years. API_AllOwn_CB_&_years. API_AllOwn_SCB_&_years. API_AllOwn_CBC_&_years. API_Rent_CB_&_years. API_Rent_SCB_&_years. API_Rent_CBC_&_years. 
-		IOM_Mort_CB_&_years. IOM_Mort_SCB_&_years. IOM_Mort_CBC_&_years. IOM_NoMort_CB_&_years. IOM_NoMort_SCB_&_years. IOM_NoMort_CBC_&_years. IOM_AllOwn_CB_&_years. IOM_AllOwn_SCB_&_years. IOM_AllOwn_CBC_&_years. IOM_Rent_CB_&_years. IOM_Rent_SCB_&_years. IOM_Rent_CBC_&_years. 
-		APIIOM_Mort_CB_&_years. APIIOM_Mort_SCB_&_years. APIIOM_Mort_CBC_&_years. APIIOM_NoMort_CB_&_years. APIIOM_NoMort_SCB_&_years. APIIOM_NoMort_CBC_&_years. APIIOM_AllOwn_CB_&_years. APIIOM_AllOwn_SCB_&_years. APIIOM_AllOwn_CBC_&_years. APIIOM_Rent_CB_&_years. APIIOM_Rent_SCB_&_years. APIIOM_Rent_CBC_&_years.;
+	%let moe2023plus = 
+		mortcstbrden_&_years. mortsvrecstbrden_&_years. mortcstbrdencalc_&_years. nomortcstbrden_&_years. nomortsvrecstbrden_&_years. nomortcstbrdencalc_&_years. allowncstbrden_&_years. allownsvrecstbrden_&_years. allowncstbrdencalc_&_years. rentcstbrden_&_years. rentsvrecstbrden_&_years. rentcstbrdencalc_&_years.
+		mortcstbrdenW_&_years. mortsvrecstbrdenW_&_years. mortcstbrdencalcW_&_years. nomortcstbrdenW_&_years. nomortsvrecstbrdenW_&_years. nomortcstbrdencalcW_&_years. allowncstbrdenW_&_years. allownsvrecstbrdenW_&_years. allowncstbrdencalcW_&_years. rentcstbrdenW_&_years. rentsvrecstbrdenW_&_years. rentcstbrdencalcW_&_years.
+		mortcstbrdenH_&_years. mortsvrecstbrdenH_&_years. mortcstbrdencalcH_&_years. nomortcstbrdenH_&_years. nomortsvrecstbrdenH_&_years. nomortcstbrdencalcH_&_years. allowncstbrdenH_&_years. allownsvrecstbrdenH_&_years. allowncstbrdencalcH_&_years. rentcstbrdenH_&_years. rentsvrecstbrdenH_&_years. rentcstbrdencalcH_&_years.
+		mortcstbrdenB_&_years. mortsvrecstbrdenB_&_years. mortcstbrdencalcB_&_years. nomortcstbrdenB_&_years. nomortsvrecstbrdenB_&_years. nomortcstbrdencalcB_&_years. allowncstbrdenB_&_years. allownsvrecstbrdenB_&_years. allowncstbrdencalcB_&_years. rentcstbrdenB_&_years. rentsvrecstbrdenB_&_years. rentcstbrdencalcB_&_years.
+		mortcstbrdenA_&_years. mortsvrecstbrdenA_&_years. mortcstbrdencalcA_&_years. nomortcstbrdenA_&_years. nomortsvrecstbrdenA_&_years. nomortcstbrdencalcA_&_years. allowncstbrdenA_&_years. allownsvrecstbrdenA_&_years. allowncstbrdencalcA_&_years. rentcstbrdenA_&_years. rentsvrecstbrdenA_&_years. rentcstbrdencalcA_&_years.
+		mortcstbrdenIOM_&_years. mortsvrecstbrdenIOM_&_years. mortcstbrdencalcIOM_&_years. nomortcstbrdenIOM_&_years. nomortsvrecstbrdenIOM_&_years. nomortcstbrdencalcIOM_&_years. allowncstbrdenIOM_&_years. allownsvrecstbrdenIOM_&_years. allowncstbrdencalcIOM_&_years. rentcstbrdenIOM_&_years. rentsvrecstbrdenIOM_&_years. rentcstbrdencalcIOM_&_years.
+		mortcstbrdenAIOM_&_years. mortsvrecstbrdenAIOM_&_years. mortcstbrdencalcAIOM_&_years. nomortcstbrdenAIOM_&_years. nomortsvrecstbrdenAIOM_&_years. nomortcstbrdencalcAIOM_&_years. allowncstbrdenAIOM_&_years. allownsvrecstbrdenAIOM_&_years. allowncstbrdencalcAIOM_&_years. rentcstbrdenAIOM_&_years. rentsvrecstbrdenAIOM_&_years. rentcstbrdencalcAIOM_&_years. ;
 
-	%if &_last_year. >=2017 %then %do;    
-      %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus.;
+	%if &_last_year. >=2023 %then %do;    
+      %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus.&moe2023plus;
     %end;
 
 
@@ -1099,6 +1099,7 @@
     %else %if &_last_year. >=2017 %then %do;    
       %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus.;
     %end;
+
                  
   %end;
   
