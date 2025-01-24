@@ -5398,7 +5398,7 @@
 				allowncstbrdencalcW_&_years.= sum(b25140he3, b25140he4, b25140he7, b25140he8);
 				rentcstbrdenW_&_years.= b25140he11;
 				rentsvrecstbrdenW_&_years.= b25140he12;
-				rentcstbrdencalcW_&_years.= sum(b25140he11, b25140he12)
+				rentcstbrdencalcW_&_years.= sum(b25140he11, b25140he12);
 
 				mortcstbrdenH_&_years.= b25140ie3;
 				mortsvrecstbrdenH_&_years.= b25140ie4;
@@ -5411,7 +5411,7 @@
 				allowncstbrdencalcH_&_years.= sum(b25140ie3, b25140ie4, b25140ie7, b25140ie8);
 				rentcstbrdenH_&_years.= b25140ie11;
 				rentsvrecstbrdenH_&_years.= b25140ie12;
-				rentcstbrdencalcH_&_years.= sum(b25140ie11, b25140ie12)
+				rentcstbrdencalcH_&_years.= sum(b25140ie11, b25140ie12);
 
 				mortcstbrdenB_&_years.= b25140be3;
 				mortsvrecstbrdenB_&_years.= b25140be4;
@@ -5424,7 +5424,7 @@
 				allowncstbrdencalcB_&_years.= sum(b25140be3, b25140be4, b25140be7, b25140be8);
 				rentcstbrdenB_&_years.= b25140be11;
 				rentsvrecstbrdenB_&_years.= b25140be12;
-				rentcstbrdencalcB_&_years.= sum(b25140be11, b25140be12)
+				rentcstbrdencalcB_&_years.= sum(b25140be11, b25140be12);
 
 
 				mortcstbrdenA_&_years.= sum(b25140de3, b25140ee3);
@@ -5438,7 +5438,7 @@
 				allowncstbrdencalcA_&_years.= sum(b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
 				rentcstbrdenA_&_years.= sum(b25140de11, b25140ee11);
 				rentsvrecstbrdenA_&_years.= sum(b25140de12, b25140ee12);
-				rentcstbrdencalcA_&_years.= sum(b25140de11, b25140de12, b25140ee11, b25140ee12)
+				rentcstbrdencalcA_&_years.= sum(b25140de11, b25140de12, b25140ee11, b25140ee12);
 
 				mortcstbrdenIOM_&_years.= sum(b25140ce3, b25140fe3, b25140ge3);
 				mortsvrecstbrdenIOM_&_years.= sum(b25140ce4, b25140fe4, b25140ge4);
@@ -5576,7 +5576,7 @@
 				mortcstbrdenW_&_years.= " Owners with Mortgage who are cost-burdened, Non-Hispanic White, &_years_dash "
 				mortsvrecstbrdenW_&_years.= " Owners with Mortgage who are severely-cost burdened, Non-Hispanic White, &_years_dash "
 				mortcstbrdencalcW_&_years.= " Owners with mortgage with cost burden calculated, Non-Hispanic White, &_years_dash " 
-				nomortcstbrdenW_&_years.= " Owners without Mortgage who are cost-burdened, Non-Hispanic White, &years_dash "
+				nomortcstbrdenW_&_years.= " Owners without Mortgage who are cost-burdened, Non-Hispanic White, &_years_dash "
 				nomortsvrecstbrdenW_&_years. = " Owners without Mortgage who are severely-cost burdened, Non-Hispanic White, &_years_dash "
 				nomortcstbrdencalcW_&_years.= " Owners without mortgage with cost burden calculated, Non-Hispanic White, &_years_dash "
 				allowncstbrdenW_&_years.= " All owners who are cost-burdened, Non-Hispanic White, &_years_dash "
