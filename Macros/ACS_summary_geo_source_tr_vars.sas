@@ -5373,191 +5373,192 @@
 
 %if &_last_year. >= 2023  %then %do;
 
-				mortcstbrden_&_years.= sum(b25140be3, b25140ie3, b25140he3, b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
-				mortsvrecstbrden_&_years.= sum(b25140be4, b25140ie4, b25140he4, b25140ce4, b25140fe4, b25140ge4, b25140de4, b25140ee4);
-				mortcstbrdencalc_&_years.= sum(b25140be3, b25140be4, b25140ie3, b25140ie4, b25140he3, b25140he4, b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4, b25140de3, b25140de4, b25140ee3, b25140ee4);
-				nomortcstbrden_&_years.= sum(b25140be7, b25140ie7, b25140he7, b25140ce7, b25140fe7, b25140ge7, b25140de7, b25140ee7);
-				nomortsvrecstbrden_&_years. = sum(b25140be8, b25140ie8, b25140he8, b25140ce8, b25140fe8, b25140ge8, b25140de8, b25140ee8);
-				nomortcstbrdencalc_&_years.= sum(b25140be7, b25140be8, b25140ie7, b25140ie8, b25140he7, b25140he8, b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8, b25140de7, b25140de8, b25140ee7, b25140ee8);
-				allowncstbrden_&_years.= sum(b25140be3, b25140be7, b25140ie3, b25140ie7, b25140he3, b25140he7, b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7, b25140de3, b25140de7, b25140ee3, b25140ee7);
-				allownsvrecstbrden_&_years.= sum(b25140be4, b25140be8, b25140ie4, b25140ie8, b25140he4, b25140he8, b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8, b25140de4, b25140de8, b25140ee4, b25140ee8);
-				allowncstbrdencalc_&_years.= sum(b25140be3, b25140be4, b25140be7, b25140be8, b25140ie3, b25140ie4, b25140ie7, b25140ie8, b25140he3, b25140he4, b25140he7, b25140he8, b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8, b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
-				rentcstbrden_&_years.= sum(b25140be11, b25140ie11, b25140he11, b25140ce11, b25140fe11, b25140ge11, b25140de11, b25140ee11);
-				rentsvrecstbrden_&_years.= sum(b25140be12, b25140ie12, b25140he12, b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
-				rentcstbrdencalc_&_years.= sum(b25140be11, b25140be12, b25140ie11, b25140ie12, b25140he11, b25140he12, b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12, b25140de11, b25140de12, b25140ee11, b25140ee12);
+								mortcstbrden_&_years.= sum(b25140be3, b25140ae3, b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
+				mortsvrecstbrden_&_years.= sum(b25140be4, b25140ae4, b25140ce4, b25140fe4, b25140ge4, b25140de4, b25140ee4);
+				mortcstbrdencalc_&_years.= sum(b25140ae2 - b25140ae5, b25140ce2 - b25140ce5, b25140fe2 - b25140fe5, b25140ge2 - b25140ge5, b25140de2 - b25140de5, b25140ee2);
+				nomortcstbrden_&_years.= sum(b25140be7, b25140ae7, b25140ce7, b25140fe7, b25140ge7, b25140de7, b25140ee7);
+				nomortsvrecstbrden_&_years. = sum(b25140be8, b25140ae8, b25140ce8, b25140fe8, b25140ge8, b25140de8, b25140ee8);
+				nomortcstbrdencalc_&_years.= sum( b25140be6 - b25140be9, b25140ae6 - b25140ae9, b25140ce6 - b25140ce9, b25140fe6 - b25140fe9, b25140ge6 - b25140ge9, b25140de6 - b25140de9, b25140ee6 - b25140ee9);
+				allowncstbrden_&_years.= sum(b25140be3, b25140be7, b25140ae3, b25140ae7, b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7, b25140de3, b25140de7, b25140ee3, b25140ee7);
+				allownsvrecstbrden_&_years.= sum(b25140be4, b25140be8, b25140ae4, b25140ae8, b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8, b25140de4, b25140de8, b25140ee4, b25140ee8);
+				allowncstbrdencalc_&_years.= sum( b25140be2 - b25140be5, b25140be6 - b25140be9, b25140ae2 - b25140ae5, b25140ae6 - b25140ae9, b25140ce2 - b25140ce5, b25140ce6 - b25140ce9, b25140fe2 - b25140fe5, b25140fe6 - b25140fe9, b25140ge2 - b25140ge5, b25140ge6 - b25140ge9, b25140de2 - b25140de5, b25140de6 - b25140de9, b25140ee2 - b25140ee5, b25140ee6 - b25140ee9);
+				rentcstbrden_&_years.= sum(b25140be11, b25140ae11, b25140ce11, b25140fe11, b25140ge11, b25140de11, b25140ee11);
+				rentsvrecstbrden_&_years.= sum(b25140be12, b25140ae12, b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
+				rentcstbrdencalc_&_years.= sum( b25140be10 - b25140be13, b25140ae10 - b25140ae13, b25140ce10 - b25140ce13, b25140fe10 - b25140fe13, b25140ge10 - b25140ge13, b25140de10 - b25140de13, b25140ee10 - b25140ee13);
 
 
 				mortcstbrdenW_&_years.= b25140he3;
 				mortsvrecstbrdenW_&_years.= b25140he4;
-				mortcstbrdencalcW_&_years.= sum(b25140he3, b25140he4);
+				mortcstbrdencalcW_&_years.= sum(b25140he2 - b25140he5);
 				nomortcstbrdenW_&_years.= b25140he7;
 				nomortsvrecstbrdenW_&_years. = b25140he8;
-				nomortcstbrdencalcW_&_years.= sum(b25140he7, b25140he8);
+				nomortcstbrdencalcW_&_years.= sum(b25140he6 - b25140he9);
 				allowncstbrdenW_&_years.= sum(b25140he3, b25140he7);
 				allownsvrecstbrdenW_&_years.= sum(b25140he4, b25140he8);
-				allowncstbrdencalcW_&_years.= sum(b25140he3, b25140he4, b25140he7, b25140he8);
+				allowncstbrdencalcW_&_years.= sum(b25140he2 - b25140he5, b25140he6 - b25140he9);
 				rentcstbrdenW_&_years.= b25140he11;
 				rentsvrecstbrdenW_&_years.= b25140he12;
-				rentcstbrdencalcW_&_years.= sum(b25140he11, b25140he12);
+				rentcstbrdencalcW_&_years.= sum(b25140he10 - b25140he13);
 
 				mortcstbrdenH_&_years.= b25140ie3;
 				mortsvrecstbrdenH_&_years.= b25140ie4;
-				mortcstbrdencalcH_&_years.= sum(b25140ie3, b25140ie4);
+				mortcstbrdencalcH_&_years.= sum(b25140ie2 - b25140he5);
 				nomortcstbrdenH_&_years.= b25140ie7;
 				nomortsvrecstbrdenH_&_years. = b25140ie8;
-				nomortcstbrdencalcH_&_years.= sum(b25140ie7, b25140ie8);
+				nomortcstbrdencalcH_&_years.= sum(b25140ie6 - b25140ie9);
 				allowncstbrdenH_&_years.= sum(b25140ie3, b25140ie7);
 				allownsvrecstbrdenH_&_years.= sum(b25140ie4, b25140ie8);
-				allowncstbrdencalcH_&_years.= sum(b25140ie3, b25140ie4, b25140ie7, b25140ie8);
+				allowncstbrdencalcH_&_years.= sum(b25140ie2 - b25140ie5, b25140ie6 - b25140ie9);
 				rentcstbrdenH_&_years.= b25140ie11;
 				rentsvrecstbrdenH_&_years.= b25140ie12;
-				rentcstbrdencalcH_&_years.= sum(b25140ie11, b25140ie12);
+				rentcstbrdencalcH_&_years.= sum(b25140ie10 - b25140ie13);
 
 				mortcstbrdenB_&_years.= b25140be3;
 				mortsvrecstbrdenB_&_years.= b25140be4;
-				mortcstbrdencalcB_&_years.= sum(b25140be3, b25140be4);
+				mortcstbrdencalcB_&_years.= sum(b25140be2 - b25140he5);
 				nomortcstbrdenB_&_years.= b25140be7;
 				nomortsvrecstbrdenB_&_years. = b25140be8;
-				nomortcstbrdencalcB_&_years.= sum(b25140be7, b25140be8);
+				nomortcstbrdencalcB_&_years.= sum(b25140be6 - b25140be9);
 				allowncstbrdenB_&_years.= sum(b25140be3, b25140be7);
 				allownsvrecstbrdenB_&_years.= sum(b25140be4, b25140be8);
-				allowncstbrdencalcB_&_years.= sum(b25140be3, b25140be4, b25140be7, b25140be8);
+				allowncstbrdencalcB_&_years.= sum(b25140be2 - b25140be5, b25140be6 - b25140be9);
 				rentcstbrdenB_&_years.= b25140be11;
 				rentsvrecstbrdenB_&_years.= b25140be12;
-				rentcstbrdencalcB_&_years.= sum(b25140be11, b25140be12);
+				rentcstbrdencalcB_&_years.= sum(b25140be10 - b25140be13);
 
 
 				mortcstbrdenA_&_years.= sum(b25140de3, b25140ee3);
 				mortsvrecstbrdenA_&_years.= sum(b25140de4, b25140ee4);
-				mortcstbrdencalcA_&_years.= sum(b25140de3, b25140de4, b25140ee3, b25140ee4);
+				mortcstbrdencalcA_&_years.= sum( b25140de2 - b25140de5, b25140ee2 - b25140ee5);
 				nomortcstbrdenA_&_years.= sum(b25140de7, b25140ee7);
 				nomortsvrecstbrdenA_&_years. = sum(b25140de8, b25140ee8);
-				nomortcstbrdencalcA_&_years.= sum(b25140de7, b25140de8, b25140ee7, b25140ee8);
+				nomortcstbrdencalcA_&_years.= sum( b25140de6 - b25140de9, b25140ee6 - b25140ee9);
 				allowncstbrdenA_&_years.= sum(b25140de3, b25140de7, b25140ee3, b25140ee7);
 				allownsvrecstbrdenA_&_years.= sum(b25140de4, b25140de8, b25140ee4, b25140ee8);
-				allowncstbrdencalcA_&_years.= sum(b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
+				allowncstbrdencalcA_&_years.= sum( b25140de2 - b25140de5, b25140de6 - b25140de9, b25140ee2 - b25140ee5, b25140ee6 - b25140ee9);
 				rentcstbrdenA_&_years.= sum(b25140de11, b25140ee11);
 				rentsvrecstbrdenA_&_years.= sum(b25140de12, b25140ee12);
-				rentcstbrdencalcA_&_years.= sum(b25140de11, b25140de12, b25140ee11, b25140ee12);
+				rentcstbrdencalcA_&_years.= sum( b25140de10 - b25140de13, b25140ee10 - b25140ee13);
 
 				mortcstbrdenIOM_&_years.= sum(b25140ce3, b25140fe3, b25140ge3);
 				mortsvrecstbrdenIOM_&_years.= sum(b25140ce4, b25140fe4, b25140ge4);
-				mortcstbrdencalcIOM_&_years.= sum(b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4);
+				mortcstbrdencalcIOM_&_years.= sum( b25140ce2 - b25140ce5, b25140fe2 - b25140fe5, b25140ge2 - b25140ge5);
 				nomortcstbrdenIOM_&_years.= sum(b25140ce7, b25140fe7, b25140ge7);
 				nomortsvrecstbrdenIOM_&_years. = sum(b25140ce8, b25140fe8, b25140ge8);
-				nomortcstbrdencalcIOM_&_years.= sum(b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8);
+				nomortcstbrdencalcIOM_&_years.= sum( b25140ce6 - b25140ce9, b25140fe6 - b25140fe9, b25140ge6 - b25140ge9);
 				allowncstbrdenIOM_&_years.= sum(b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7);
 				allownsvrecstbrdenIOM_&_years.= sum(b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8);
-				allowncstbrdencalcIOM_&_years.= sum(b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8);
+				allowncstbrdencalcIOM_&_years.= sum( b25140ce2 - b25140ce5, b25140ce6 - b25140ce9, b25140fe2 - b25140fe5, b25140fe6 - b25140fe9, b25140ge2 - b25140ge5, b25140ge6 - b25140ge9);
 				rentcstbrdenIOM_&_years.= sum(b25140ce11, b25140fe11, b25140ge11);
 				rentsvrecstbrdenIOM_&_years.= sum(b25140ce12, b25140fe12, b25140ge12);
-				rentcstbrdencalcIOM_&_years.= sum(b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12);
+				rentcstbrdencalcIOM_&_years.= sum( b25140ce10 - b25140ce13, b25140fe10 - b25140fe13, b25140ge10 - b25140ge13);
 
 				mortcstbrdenAIOM_&_years.= sum(b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
 				mortsvrecstbrdenAIOM_&_years.= sum(b25140ce4, b25140fe4, b25140ge4, b25140de4, b25140ee4);
-				mortcstbrdencalcAIOM_&_years.= sum(b25140ce3, b25140ce4, b25140fe3, b25140fe4, b25140ge3, b25140ge4, b25140de3, b25140de4, b25140ee3, b25140ee4);
+				mortcstbrdencalcAIOM_&_years.= sum( b25140ce2 - b25140ce5, b25140fe2 - b25140fe5, b25140ge2 - b25140ge5, b25140de2 - b25140de5, b25140ee2 - b25140ee5);
 				nomortcstbrdenAIOM_&_years.= sum(b25140ce7, b25140fe7, b25140ge7, b25140de7, b25140ee7);
 				nomortsvrecstbrdenAIOM_&_years. = sum(b25140ce8, b25140fe8, b25140ge8, b25140de8, b25140ee8);
-				nomortcstbrdencalcAIOM_&_years.= sum(b25140ce7, b25140ce8, b25140fe7, b25140fe8, b25140ge7, b25140ge8, b25140de7, b25140de8, b25140ee7, b25140ee8);
+				nomortcstbrdencalcAIOM_&_years.= sum( b25140ce6 - b25140ce9, b25140fe6 - b25140fe9, b25140ge6 - b25140ge9, b25140de6 - b25140de9, b25140ee6 - b25140ee9);
 				allowncstbrdenAIOM_&_years.= sum(b25140ce3, b25140ce7, b25140fe3, b25140fe7, b25140ge3, b25140ge7, b25140de3, b25140de7, b25140ee3, b25140ee7);
 				allownsvrecstbrdenAIOM_&_years.= sum(b25140ce4, b25140ce8, b25140fe4, b25140fe8, b25140ge4, b25140ge8, b25140de4, b25140de8, b25140ee4, b25140ee8);
-				allowncstbrdencalcAIOM_&_years.= sum(b25140ce3, b25140ce7, b25140ce4, b25140ce8, b25140fe3, b25140fe7, b25140fe4, b25140fe8, b25140e3, b25140ge7, b25140ge4, b25140ge8, b25140de3, b25140de4, b25140de7, b25140de8, b25140ee3, b25140ee4, b25140ee7, b25140ee8);
+				allowncstbrdencalcAIOM_&_years.= sum( b25140ce2 - b25140ce5, b25140ce6 - b25140ce9, b25140fe2 - b25140fe5, b25140fe6 - b25140fe9, b25140ge2 - b25140ge5, b25140ge6 - b25140ge9, b25140de2 - b25140de5, b25140de6 - b25140de9, b25140ee2 - b25140ee5, b25140ee6 - b25140ee9);
 				rentcstbrdenAIOM_&_years.= sum(b25140ce11, b25140fe11, b25140ge11, b25140de11, b25140ee11);
 				rentsvrecstbrdenAIOM_&_years.= sum(b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
-				rentcstbrdencalcAIOM_&_years.= sum(b25140ce11, b25140ce12, b25140fe11, b25140fe12, b25140ge11, b25140ge12, b25140de11, b25140de12, b25140ee11, b25140ee12);
+				rentcstbrdencalcAIOM_&_years.= sum( b25140ce10 - b25140ce13, b25140fe10 - b25140fe13, b25140ge10 - b25140ge13, b25140de10 - b25140de13, b25140ee10 - b25140ee13);
 
-				mortcstbrden_&_years.= %moe_sum( var=b25140bm3 b25140im3 b25140hm3 b25140cm3 b25140fm3 b25140gm3 b25140dm3 b25140em3);
-				mortsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140im4 b25140hm4 b25140cm4 b25140fm4 b25140gm4 b25140dm4 b25140em4);
-				mortcstbrdencalc_&_years.= %moe_sum( var=b25140bm3 b25140bm4 b25140im3 b25140im4 b25140hm3 b25140hm4 b25140cm3 b25140cm4 b25140fm3 b25140fm4 b25140gm3 b25140gm4 b25140dm3 b25140dm4 b25140em3 b25140em4);
-				nomortcstbrden_&_years.= %moe_sum( var=b25140bm7 b25140im7 b25140hm7 b25140cm7 b25140fm7 b25140gm7 b25140dm7 b25140em7);
-				nomortsvrecstbrden_&_years. = %moe_sum( var=b25140bm8 b25140im8 b25140hm8 b25140cm8 b25140fm8 b25140gm8 b25140dm8 b25140em8);
-				nomortcstbrdencalc_&_years.= %moe_sum( var=b25140bm7 b25140bm8 b25140im7 b25140im8 b25140hm7 b25140hm8 b25140cm7 b25140cm8 b25140fm7 b25140fm8 b25140gm7 b25140gm8 b25140dm7 b25140dm8 b25140em7 b25140em8);
-				allowncstbrden_&_years.= %moe_sum( var=b25140bm3 b25140bm7 b25140im3 b25140im7 b25140hm3 b25140hm7 b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7 b25140dm3 b25140dm7 b25140em3 b25140em7);
-				allownsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140bm8 b25140im4 b25140im8 b25140hm4 b25140hm8 b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8 b25140dm4 b25140dm8 b25140em4 b25140em8);
-				allowncstbrdencalc_&_years.= %moe_sum( var=b25140bm3 b25140bm4 b25140bm7 b25140bm8 b25140im3 b25140im4 b25140im7 b25140im8 b25140hm3 b25140hm4 b25140hm7 b25140hm8 b25140cm3 b25140cm7 b25140cm4 b25140cm8 b25140fm3 b25140fm7 b25140fm4 b25140fm8 b25140m3 b25140gm7 b25140gm4 b25140gm8 b25140dm3 b25140dm4 b25140dm7 b25140dm8 b25140em3 b25140em4 b25140em7 b25140em8);
-				rentcstbrden_&_years.= %moe_sum( var=b25140bm11 b25140im11 b25140hm11 b25140cm11 b25140fm11 b25140gm11 b25140dm11 b25140em11);
-				rentsvrecstbrden_&_years.= %moe_sum( var=b25140bm12 b25140im12 b25140hm12 b25140cm12 b25140fm12 b25140gm12 b25140dm12 b25140em12);
-				rentcstbrdencalc_&_years.= %moe_sum( var=b25140bm11 b25140bm12 b25140im11 b25140im12 b25140hm11 b25140hm12 b25140cm11 b25140cm12 b25140fm11 b25140fm12 b25140gm11 b25140gm12 b25140dm11 b25140dm12 b25140em11 b25140em12);
+				
+				mortcstbrden_&_years.= %moe_sum( var=b25140bm3 b25140am3 b25140cm3 b25140fm3 b25140gm3 b25140dm3 b25140em3);
+				mortsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140am4 b25140cm4 b25140fm4 b25140gm4 b25140dm4 b25140em4);
+				mortcstbrdencalc_&_years.= %moe_sum( var= b25140bm2 b25140am2 b25140cm2 b25140fm2 b25140gm2 b25140dm2 b25140em2);
+				nomortcstbrden_&_years.= %moe_sum( var=b25140bm7 b25140am7 b25140cm7 b25140fm7 b25140gm7 b25140dm7 b25140em7);
+				nomortsvrecstbrden_&_years. = %moe_sum( var=b25140bm8 b25140am8 b25140cm8 b25140fm8 b25140gm8 b25140dm8 b25140em8);
+				nomortcstbrdencalc_&_years.= %moe_sum( var= b25140bm6 b25140am6 b25140cm6 b25140fm6 b25140gm6 b25140dm6 b25140em6);
+				allowncstbrden_&_years.= %moe_sum( var=b25140bm3 b25140bm7 b25140am3 b25140am7 b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7 b25140dm3 b25140dm7 b25140em3 b25140em7);
+				allownsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140bm8 b25140am4 b25140am8 b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8 b25140dm4 b25140dm8 b25140em4 b25140em8);
+				allowncstbrdencalc_&_years.= %moe_sum( var= b25140bm2 b25140bm6 b25140am2 b25140am6 b25140cm2 b25140cm6 b25140fm2 b25140fm6 b25140gm2 b25140gm6 b25140dm2 b25140dm6 b25140em2 b25140em6);
+				rentcstbrden_&_years.= %moe_sum( var=b25140bm11 b25140am11 b25140cm11 b25140fm11 b25140gm11 b25140dm11 b25140em11);
+				rentsvrecstbrden_&_years.= %moe_sum( var=b25140bm12 b25140am12 b25140cm12 b25140fm12 b25140gm12 b25140dm12 b25140em12);
+				rentcstbrdencalc_&_years.= %moe_sum( var= b25140bm10 b25140am10 b25140cm10 b25140fm10 b25140gm10 b25140dm10 b25140em10);
 
 
 				mortcstbrdenW_&_years.= %moe_sum( var=b25140hm3);
 				mortsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm4);
-				mortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm3 b25140hm4);
+				mortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm2);
 				nomortcstbrdenW_&_years.= %moe_sum( var=b25140hm7);
 				nomortsvrecstbrdenW_&_years. = %moe_sum( var=b25140hm8);
-				nomortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm7 b25140hm8);
+				nomortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm6);
 				allowncstbrdenW_&_years.= %moe_sum( var=b25140hm3 b25140hm7);
 				allownsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm4 b25140hm8);
-				allowncstbrdencalcW_&_years.= %moe_sum( var=b25140hm3 b25140hm4 b25140hm7 b25140hm8);
-				rentcstbrdenW_&_years.= %moe_sum( var=b25140hm1);
+				allowncstbrdencalcW_&_years.= %moe_sum( var=b25140hm2 b25140hm6);
+				rentcstbrdenW_&_years.= %moe_sum( var=b25140hm11);
 				rentsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm12);
-				rentcstbrdencalcW_&_years.= %moe_sum( var=b25140hm11 b25140hm12)
+				rentcstbrdencalcW_&_years.= %moe_sum( var=b25140hm10);
 
 				mortcstbrdenH_&_years.= %moe_sum( var=b25140im3);
 				mortsvrecstbrdenH_&_years.= %moe_sum( var=b25140im4);
-				mortcstbrdencalcH_&_years.= %moe_sum( var=b25140im3 b25140im4);
+				mortcstbrdencalcH_&_years.= %moe_sum( var=b25140im2);
 				nomortcstbrdenH_&_years.= %moe_sum( var=b25140im7);
 				nomortsvrecstbrdenH_&_years. = %moe_sum( var=b25140im8);
-				nomortcstbrdencalcH_&_years.= %moe_sum( var=b25140im7 b25140im8);
+				nomortcstbrdencalcH_&_years.= %moe_sum( var=b25140im6);
 				allowncstbrdenH_&_years.= %moe_sum( var=b25140im3 b25140im7);
 				allownsvrecstbrdenH_&_years.= %moe_sum( var=b25140im4 b25140im8);
-				allowncstbrdencalcH_&_years.= %moe_sum( var=b25140im3 b25140im4 b25140im7 b25140im8);
+				allowncstbrdencalcH_&_years.= %moe_sum( var=b25140im2 b25140im6);
 				rentcstbrdenH_&_years.= %moe_sum( var=b25140im11);
 				rentsvrecstbrdenH_&_years.= %moe_sum( var=b25140im12);
-				rentcstbrdencalcH_&_years.= %moe_sum( var=b25140im11 b25140im12)
+				rentcstbrdencalcH_&_years.= %moe_sum( var=b25140im10);
 
 				mortcstbrdenB_&_years.= %moe_sum( var=b25140bm3);
 				mortsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm4);
-				mortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm3 b25140bm4);
+				mortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm2);
 				nomortcstbrdenB_&_years.= %moe_sum( var=b25140bm7);
 				nomortsvrecstbrdenB_&_years. = %moe_sum( var=b25140bm8);
-				nomortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm7 b25140bm8);
+				nomortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm6);
 				allowncstbrdenB_&_years.= %moe_sum( var=b25140bm3 b25140bm7);
 				allownsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm4 b25140bm8);
-				allowncstbrdencalcB_&_years.= %moe_sum( var=b25140bm3 b25140bm4 b25140bm7 b25140bm8);
+				allowncstbrdencalcB_&_years.= %moe_sum( var=b25140bm2 b25140bm6);
 				rentcstbrdenB_&_years.= %moe_sum( var=b25140bm11);
 				rentsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm12);
-				rentcstbrdencalcB_&_years.= %moe_sum( var=b25140bm11 b25140bm12)
+				rentcstbrdencalcB_&_years.= %moe_sum( var=b25140bm10);
 
 
 				mortcstbrdenA_&_years.= %moe_sum( var=b25140dm3 b25140em3);
 				mortsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm4 b25140em4);
-				mortcstbrdencalcA_&_years.= %moe_sum( var=b25140dm3 b25140dm4 b25140em3 b25140em4);
+				mortcstbrdencalcA_&_years.= %moe_sum( var= b25140dm2 b25140em2);
 				nomortcstbrdenA_&_years.= %moe_sum( var=b25140dm7 b25140em7);
 				nomortsvrecstbrdenA_&_years. = %moe_sum( var=b25140dm8 b25140em8);
-				nomortcstbrdencalcA_&_years.= %moe_sum( var=b25140dm7 b25140dm8 b25140em7 b25140em8);
+				nomortcstbrdencalcA_&_years.= %moe_sum( var= b25140dm6 b25140em6);
 				allowncstbrdenA_&_years.= %moe_sum( var=b25140dm3 b25140dm7 b25140em3 b25140em7);
 				allownsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm4 b25140dm8 b25140em4 b25140em8);
-				allowncstbrdencalcA_&_years.= %moe_sum( var=b25140dm3 b25140dm4 b25140dm7 b25140dm8 b25140em3 b25140em4 b25140em7 b25140em8);
+				allowncstbrdencalcA_&_years.= %moe_sum( var= b25140dm2 b25140dm6 b25140em2 b25140em6);
 				rentcstbrdenA_&_years.= %moe_sum( var=b25140dm11 b25140em11);
 				rentsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm12 b25140em12);
-				rentcstbrdencalcA_&_years.= %moe_sum( var=b25140dm11 b25140dm12 b25140em11 b25140em12)
+				rentcstbrdencalcA_&_years.= %moe_sum( var= b25140dm10 b25140em10)
 
 				mortcstbrdenIOM_&_years.= %moe_sum( var=b25140cm3 b25140fm3 b25140gm3);
 				mortsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm4 b25140fm4 b25140gm4);
-				mortcstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm4 b25140fm3 b25140fm4 b25140gm3 b25140gm4);
+				mortcstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm2 b25140fm2 b25140gm2);
 				nomortcstbrdenIOM_&_years.= %moe_sum( var=b25140cm7 b25140fm7 b25140gm7);
 				nomortsvrecstbrdenIOM_&_years. = %moe_sum( var=b25140cm8 b25140fm8 b25140gm8);
-				nomortcstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm7 b25140cm8 b25140fm7 b25140fm8 b25140gm7 b25140gm8);
+				nomortcstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm6 b25140fm6 b25140gm6);
 				allowncstbrdenIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7);
 				allownsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8);
-				allowncstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140cm4 b25140cm8 b25140fm3 b25140fm7 b25140fm4 b25140fm8 b25140m3 b25140gm7 b25140gm4 b25140gm8);
+				allowncstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm2 b25140cm6 b25140fm2 b25140fm6 b25140gm2 b25140gm6);
 				rentcstbrdenIOM_&_years.= %moe_sum( var=b25140cm11 b25140fm11 b25140gm11);
 				rentsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm12 b25140fm12 b25140gm12);
-				rentcstbrdencalcIOM_&_years.= %moe_sum( var=b25140cm11 b25140cm12 b25140fm11 b25140fm12 b25140gm11 b25140gm12);
+				rentcstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm10 b25140fm10 b25140gm10);
 
 				mortcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm3 b25140fm3 b25140gm3 b25140dm3 b25140em3);
 				mortsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm4 b25140fm4 b25140gm4 b25140dm4 b25140em4);
-				mortcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm4 b25140fm3 b25140fm4 b25140gm3 b25140gm4 b25140dm3 b25140dm4 b25140em3 b25140em4);
+				mortcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm2 b25140fm2 b25140gm2 b25140dm2 b25140em2);
 				nomortcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm7 b25140fm7 b25140gm7 b25140dm7 b25140em7);
 				nomortsvrecstbrdenAIOM_&_years. = %moe_sum( var=b25140cm8 b25140fm8 b25140gm8 b25140dm8 b25140em8);
-				nomortcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm7 b25140cm8 b25140fm7 b25140fm8 b25140gm7 b25140gm8 b25140dm7 b25140dm8 b25140em7 b25140em8);
+				nomortcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm6 b25140fm6 b25140gm6 b25140dm6 b25140em6);
 				allowncstbrdenAIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7 b25140dm3 b25140dm7 b25140em3 b25140em7);
 				allownsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8 b25140dm4 b25140dm8 b25140em4 b25140em8);
-				allowncstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140cm4 b25140cm8 b25140fm3 b25140fm7 b25140fm4 b25140fm8 b25140m3 b25140gm7 b25140gm4 b25140gm8 b25140dm3 b25140dm4 b25140dm7 b25140dm8 b25140em3 b25140em4 b25140em7 b25140em8);
+				allowncstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm2 b25140cm6 b25140fm2 b25140fm6 b25140gm2 b25140gm6 b25140dm2 b25140dm6 b25140em2 b25140em6);
 				rentcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm11 b25140fm11 b25140gm11 b25140dm11 b25140em11);
 				rentsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm12 b25140fm12 b25140gm12 b25140dm12 b25140em12);
-				rentcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm11 b25140cm12 b25140fm11 b25140fm12 b25140gm11 b25140gm12 b25140dm11 b25140dm12 b25140em11 b25140em12);
+				rentcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm10 b25140fm10 b25140gm10 b25140dm10 b25140em10);
 
 			label
 				mortcstbrden_&_years.= " Owners with Mortgage who are cost-burdened, &_years_dash "
