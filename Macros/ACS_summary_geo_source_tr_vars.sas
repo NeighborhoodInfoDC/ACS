@@ -5373,9 +5373,9 @@
 
 %if &_last_year. >= 2023  %then %do;
 
-								mortcstbrden_&_years.= sum(b25140be3, b25140ae3, b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
+				mortcstbrden_&_years.= sum(b25140be3, b25140ae3, b25140ce3, b25140fe3, b25140ge3, b25140de3, b25140ee3);
 				mortsvrecstbrden_&_years.= sum(b25140be4, b25140ae4, b25140ce4, b25140fe4, b25140ge4, b25140de4, b25140ee4);
-				mortcstbrdencalc_&_years.= sum(b25140ae2 - b25140ae5, b25140ce2 - b25140ce5, b25140fe2 - b25140fe5, b25140ge2 - b25140ge5, b25140de2 - b25140de5, b25140ee2);
+				mortcstbrdencalc_&_years.= sum(b25140be2 - b25140be5, b25140ae2 - b25140ae5, b25140ce2 - b25140ce5, b25140fe2 - b25140fe5, b25140ge2 - b25140ge5, b25140de2 - b25140de5, b25140ee2);
 				nomortcstbrden_&_years.= sum(b25140be7, b25140ae7, b25140ce7, b25140fe7, b25140ge7, b25140de7, b25140ee7);
 				nomortsvrecstbrden_&_years. = sum(b25140be8, b25140ae8, b25140ce8, b25140fe8, b25140ge8, b25140de8, b25140ee8);
 				nomortcstbrdencalc_&_years.= sum( b25140be6 - b25140be9, b25140ae6 - b25140ae9, b25140ce6 - b25140ce9, b25140fe6 - b25140fe9, b25140ge6 - b25140ge9, b25140de6 - b25140de9, b25140ee6 - b25140ee9);
