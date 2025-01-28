@@ -209,8 +209,6 @@
          PopPoor: PopInCivLaborFor: PopCivil: PopUnemployed: PopEmployed: PopWork:
          Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
           
-         RentCostBurdenDenom: OwnerCostBurdenDenom:
-
          InsCovUnder18Years: InsCov18_34Years: InsCov35_64Years: InsCov65andOverYears: 
        NInsCovUnder18Years: NInsCov18_34Years: NInsCov35_64Years: NInsCov65andOverYears:
 
@@ -222,9 +220,9 @@
        NonFamilyHH:
        
        /*for regional AI */
-       Disability: InPov: NotInPov: SingFam: Med: AvgHH: GRent:
-       IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce: Numw: MedEarnings: Disability:
-       NoDisability: Commute: RentBur: NRentBur: CostBur: NCostBur:
+       Disability: InPov: NotInPov: SingFam: AvgHH: GRent:
+       IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce: 
+       NoDisability: Commute: NRentBur: CostBur: NCostBur:
        OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
        PubTrans: Own: Rent: MOwner:
 
