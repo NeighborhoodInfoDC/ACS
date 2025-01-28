@@ -41,33 +41,17 @@
 
     %if &_last_year. <=2018 %then %do;  
       %let count_vars = 
-       Unwtd: TotPop: PopUnder: Pop25: Pop65: PopAlone:
+       Unwtd: TotPop: PopUnder: Pop18: Pop25: Pop35: Pop65: PopAlone:
          PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
-         NumHshldPhone_: NumHshldCar_:  
          Num: 
-
-         PopUnder5Years_: PopUnder18Years_:
-         Pop18_34Years_: Pop35_64Years_:
-         Pop65andOverYears_:
-
-         Pop25andOverYears_: Pop25andOverWoutHS_: Pop25andOverWHS_:
-         Pop25andOverWSC_: Pop25andOverWCollege_:
          ;
     %end;
 
     %else %do;
       %let count_vars = 
-         TotPop: PopUnder: Pop25: Pop65: PopAlone:
+         TotPop: PopUnder: Pop18: Pop25: Pop35: Pop65: PopAlone:
            PopWithRace: PopBlack: PopNative: PopWhite: PopHisp: PopAsian: PopOther: PopMulti: PopEmployed: 
-           NumHshldPhone_: NumHshldCar_:  
            Num: 
-
-           PopUnder5Years_: PopUnder18Years_:
-           Pop18_34Years_: Pop35_64Years_:
-           Pop65andOverYears_:
-
-           Pop25andOverYears_: Pop25andOverWoutHS_: Pop25andOverWHS_:
-           Pop25andOverWSC_: Pop25andOverWCollege_:
            ;
     %end;
              
@@ -75,7 +59,6 @@
        mTotPop_&_years. mPopUnder5Years_&_years. 
        mPopUnder18Years_&_years. mPop18_34Years_&_years.
        mPop35_64Years_&_years. mPop65andOverYears_&_years.
-       mPop25andOverYears_&_years.
 
        mNumHshlds_&_years. mNumFamilies_&_years.
 
@@ -197,7 +180,10 @@
   
     %** Count and MOE variables for tract data **;
 
-    %if &_last_year. <=2018 %then %do;  
+    %if &_last_year. <=2018 %then %do;
+    
+      %** 2018 and earlier **;
+      
       %let count_vars = 
        Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
          PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
@@ -218,7 +204,9 @@
          ;
     %end;
 
-    %else %do;
+    %else %if &_last_year. <= 2022 %then %do;
+    
+      %** 2019 to 2022 **;
     
       %let count_vars = 
        TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
@@ -226,8 +214,6 @@
          PopPoor: PopInCivLaborFor: PopCivil: PopUnemployed: PopEmployed: PopWork:
          Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
           
-         RentCostBurdenDenom: OwnerCostBurdenDenom:
-
          InsCovUnder18Years: InsCov18_34Years: InsCov35_64Years: InsCov65andOverYears: 
        NInsCovUnder18Years: NInsCov18_34Years: NInsCov35_64Years: NInsCov65andOverYears:
 
@@ -239,11 +225,45 @@
        NonFamilyHH:
        
        /*for regional AI */
-       Disability: InPov: NotInPov: SingFam: Med: AvgHH: GRent:
-       IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce: Numw: MedEarnings: Disability:
-       NoDisability: Commute: RentBur: NRentBur: CostBur: NCostBur:
+       Disability: InPov: NotInPov: SingFam: AvgHH: GRent:
+       IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce: 
+       NoDisability: Commute: NRentBur: CostBur: NCostBur:
        OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
-       PubTrans: Own: Rent: MOwner:
+       PubTrans: Own: Rent: 
+
+         ;
+    
+    %end;
+
+    %else %do;
+    
+      %** 2023 and later **;
+    
+      %let count_vars = 
+       TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
+         PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
+         PopPoor: PopInCivLaborFor: PopCivil: PopUnemployed: PopEmployed: PopWork:
+         Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
+          
+         InsCovUnder18Years: InsCov18_34Years: InsCov35_64Years: InsCov65andOverYears: 
+       NInsCovUnder18Years: NInsCov18_34Years: NInsCov35_64Years: NInsCov65andOverYears:
+
+         EarningUnder10K: Earning10to15K: Earning15to25K: Earning25to35K: Earning35to50K:
+       Earning50to65K: Earning65to75K: EarningOver75K:
+
+       Nonfamlivingalone: Nonfamnotlivingalone:
+
+       NonFamilyHH:
+       
+       /*for regional AI */
+       Disability: InPov: NotInPov: SingFam: AvgHH: GRent:
+       IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce: 
+       NoDisability: Commute: NRentBur: CostBur: NCostBur:
+       OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
+       PubTrans: Own: Rent: 
+       
+       /* Cost burden by race (2023 and later) */
+       Mort: NoMort: AllOwn: 
 
          ;
     
@@ -963,7 +983,7 @@
        mRentBur_&_years. 
        mNRentBur_&_years. 
 
-       mMOwnerCostsPctHHInc_&_years. 
+       mMedOwnerCostsPctHHInc_&_years. 
 
        mCostBur_&_years.
        mNCostBur_&_years. 
@@ -1086,6 +1106,17 @@
       mNumbroadband_&_years. mNumbroadbandonly_&_years. mNumsatellite_&_years. mNumsatelliteonly_&_years. mNumotheronly_&_years. 
       mNumaccesswosub_&_years. mNumnointernet_&_years. mNum1orMoreComp_&_years. mNumhhdefined_&_years. mNumwithinternet_&_years.
     ;
+	/*Rodrigo added Homeownership and Renting Indicators*/
+	%let moe2023plus = 
+
+
+		Mmortcstbrden_&_years. Mmortsvrecstbrden_&_years. Mmortcstbrdencalc_&_years. Mnomortcstbrden_&_years. Mnomortsvrecstbrden_&_years. Mnomortcstbrdencalc_&_years. Mallowncstbrden_&_years. Mallownsvrecstbrden_&_years. Mallowncstbrdencalc_&_years. Mrentcstbrden_&_years. Mrentsvrecstbrden_&_years. Mrentcstbrdencalc_&_years.
+		MmortcstbrdenW_&_years. MmortsvrecstbrdenW_&_years. MmortcstbrdencalcW_&_years. MnomortcstbrdenW_&_years. MnomortsvrecstbrdenW_&_years. MnomortcstbrdencalcW_&_years. MallowncstbrdenW_&_years. MallownsvrecstbrdenW_&_years. MallowncstbrdencalcW_&_years. MrentcstbrdenW_&_years. MrentsvrecstbrdenW_&_years. MrentcstbrdencalcW_&_years.
+		MmortcstbrdenH_&_years. MmortsvrecstbrdenH_&_years. MmortcstbrdencalcH_&_years. MnomortcstbrdenH_&_years. MnomortsvrecstbrdenH_&_years. MnomortcstbrdencalcH_&_years. MallowncstbrdenH_&_years. MallownsvrecstbrdenH_&_years. MallowncstbrdencalcH_&_years. MrentcstbrdenH_&_years. MrentsvrecstbrdenH_&_years. MrentcstbrdencalcH_&_years.
+		MmortcstbrdenB_&_years. MmortsvrecstbrdenB_&_years. MmortcstbrdencalcB_&_years. MnomortcstbrdenB_&_years. MnomortsvrecstbrdenB_&_years. MnomortcstbrdencalcB_&_years. MallowncstbrdenB_&_years. MallownsvrecstbrdenB_&_years. MallowncstbrdencalcB_&_years. MrentcstbrdenB_&_years. MrentsvrecstbrdenB_&_years. MrentcstbrdencalcB_&_years.
+		MmortcstbrdenA_&_years. MmortsvrecstbrdenA_&_years. MmortcstbrdencalcA_&_years. MnomortcstbrdenA_&_years. MnomortsvrecstbrdenA_&_years. MnomortcstbrdencalcA_&_years. MallowncstbrdenA_&_years. MallownsvrecstbrdenA_&_years. MallowncstbrdencalcA_&_years. MrentcstbrdenA_&_years. MrentsvrecstbrdenA_&_years. MrentcstbrdencalcA_&_years.
+		MmortcstbrdenIOM_&_years. MmortsvrecstbrdenIOM_&_years. MmortcstbrdencalcIOM_&_years. MnomortcstbrdenIOM_&_years. MnomortsvrecstbrdenIOM_&_years. MnomortcstbrdencalcIOM_&_years. MallowncstbrdenIOM_&_years. MallownsvrecstbrdenIOM_&_years. MallowncstbrdencalcIOM_&_years. MrentcstbrdenIOM_&_years. MrentsvrecstbrdenIOM_&_years. MrentcstbrdencalcIOM_&_years.
+		MmortcstbrdenAIOM_&_years. MmortsvrecstbrdenAIOM_&_years. MmortcstbrdencalcAIOM_&_years. MnomortcstbrdenAIOM_&_years. MnomortsvrecstbrdenAIOM_&_years. MnomortcstbrdencalcAIOM_&_years. MallowncstbrdenAIOM_&_years. MallownsvrecstbrdenAIOM_&_years. MallowncstbrdencalcAIOM_&_years. MrentcstbrdenAIOM_&_years. MrentsvrecstbrdenAIOM_&_years. MrentcstbrdencalcAIOM_&_years. ;
 
     %if &_last_year. <= 2013 %then %do; 
         %let moe_vars =&moeallyears.; 
@@ -1099,10 +1130,14 @@
       %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus.;
     %end;
 
-    %else %if &_last_year. >=2017 %then %do;    
+    %else %if &_last_year. <= 2022 %then %do;    
       %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus.;
     %end;
-                 
+
+    %else %if &_last_year. >= 2023 %then %do;    
+      %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus. &moe2023plus.;
+    %end;
+
   %end;
   
   ** Create summary data set **;
