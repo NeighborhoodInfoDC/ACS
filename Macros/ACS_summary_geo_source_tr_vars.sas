@@ -330,7 +330,7 @@
   NRentBur_&_years. = sum(B25070e7, B25070e8, B25070e9, B25070e10);
   
 
-  MOwnerCostsPctHHInc_&_years. = B25092e1;
+  MedOwnerCostsPctHHInc_&_years. = B25092e1;
 
   CostBur_&_years. = sum(B25095e3, B25095e4, B25095e5, B25095e12, B25095e13, B25095e14, B25095e21, B25095e22, B25095e23,
   B25095e30, B25095e31, B25095e32, B25095e39, B25095e40, B25095e41, B25095e48, B25095e49, B25095e50, B25095e57, B25095e58, B25095e59,
@@ -747,7 +747,7 @@
   mNRentBur_&_years. = %moe_sum(var=B25070m7 B25070m8 B25070m9 B25070m10);
   
 
-  mMOwnerCostsPctHHInc_&_years. = B25092m1;
+  mMedOwnerCostsPctHHInc_&_years. = B25092m1;
 
   mCostBur_&_years. = %moe_sum(var=B25095m3 B25095m4 B25095m5 B25095m12 B25095m13 B25095m14 B25095m21 B25095m22 B25095m23
   B25095m30 B25095m31 B25095m32 B25095m39 B25095m40 B25095m41 B25095m48 B25095m49 B25095m50 B25095m57 B25095m58 B25095m59
@@ -1210,8 +1210,8 @@
   mNRentBur_&_years. = "Renter-occ and not rent burdened, MOE, &_years_dash"
  
 
-  MOwnerCostsPctHHInc_&_years. = "Median monthly owner costs as a percentage of household income, &_years_dash"
-  mMOwnerCostsPctHHInc_&_years. = "Median monthly owner costs as a percentage of household income, MOE, &_years_dash"
+  MedOwnerCostsPctHHInc_&_years. = "Median monthly owner costs as a percentage of household income, &_years_dash"
+  mMedOwnerCostsPctHHInc_&_years. = "Median monthly owner costs as a percentage of household income, MOE, &_years_dash"
 
   CostBur_&_years. = "Owner-occ and cost burdened, &_years_dash"
   NCostBur_&_years. = "Owner-occ and not cost burdened, &_years_dash"

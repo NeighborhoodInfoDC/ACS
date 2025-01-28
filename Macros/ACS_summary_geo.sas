@@ -224,7 +224,7 @@
        IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce: 
        NoDisability: Commute: NRentBur: CostBur: NCostBur:
        OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
-       PubTrans: Own: Rent: MOwner:
+       PubTrans: Own: Rent: 
 
          ;
     
@@ -944,7 +944,7 @@
        mRentBur_&_years. 
        mNRentBur_&_years. 
 
-       mMOwnerCostsPctHHInc_&_years. 
+       mMedOwnerCostsPctHHInc_&_years. 
 
        mCostBur_&_years.
        mNCostBur_&_years. 
