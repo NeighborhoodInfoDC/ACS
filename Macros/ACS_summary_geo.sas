@@ -180,7 +180,10 @@
   
     %** Count and MOE variables for tract data **;
 
-    %if &_last_year. <=2018 %then %do;  
+    %if &_last_year. <=2018 %then %do;
+    
+      %** 2018 and earlier **;
+      
       %let count_vars = 
        Unwtd: TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
          PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
@@ -201,7 +204,9 @@
          ;
     %end;
 
-    %else %do;
+    %else %if &_last_year. <= 2022 %then %do;
+    
+      %** 2019 to 2022 **;
     
       %let count_vars = 
        TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
@@ -225,6 +230,40 @@
        NoDisability: Commute: NRentBur: CostBur: NCostBur:
        OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
        PubTrans: Own: Rent: 
+
+         ;
+    
+    %end;
+
+    %else %do;
+    
+      %** 2023 and later **;
+    
+      %let count_vars = 
+       TotPop: PopUnder: Pop5: Pop16: Pop18: Pop35: Pop25: Pop65: PopForeignBorn: PopAlone:
+         PopWithRace: PopBlack: PopWhite: PopHisp: PopAsian: PopNative: PopNon: PopOther: PopMulti: 
+         PopPoor: PopInCivLaborFor: PopCivil: PopUnemployed: PopEmployed: PopWork:
+         Persons: Children: ChildPoverty: Elderly: Num: Agg: Fam: Hshld: Med: PopMoved: GrossRent: IncmBy: AgeBy:
+          
+         InsCovUnder18Years: InsCov18_34Years: InsCov35_64Years: InsCov65andOverYears: 
+       NInsCovUnder18Years: NInsCov18_34Years: NInsCov35_64Years: NInsCov65andOverYears:
+
+         EarningUnder10K: Earning10to15K: Earning15to25K: Earning25to35K: Earning35to50K:
+       Earning50to65K: Earning65to75K: EarningOver75K:
+
+       Nonfamlivingalone: Nonfamnotlivingalone:
+
+       NonFamilyHH:
+       
+       /*for regional AI */
+       Disability: InPov: NotInPov: SingFam: AvgHH: GRent:
+       IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce: 
+       NoDisability: Commute: NRentBur: CostBur: NCostBur:
+       OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
+       PubTrans: Own: Rent: 
+       
+       /* Cost burden by race (2023 and later) */
+       Mort: NoMort: AllOwn: 
 
          ;
     
@@ -1079,11 +1118,6 @@
 		MmortcstbrdenIOM_&_years. MmortsvrecstbrdenIOM_&_years. MmortcstbrdencalcIOM_&_years. MnomortcstbrdenIOM_&_years. MnomortsvrecstbrdenIOM_&_years. MnomortcstbrdencalcIOM_&_years. MallowncstbrdenIOM_&_years. MallownsvrecstbrdenIOM_&_years. MallowncstbrdencalcIOM_&_years. MrentcstbrdenIOM_&_years. MrentsvrecstbrdenIOM_&_years. MrentcstbrdencalcIOM_&_years.
 		MmortcstbrdenAIOM_&_years. MmortsvrecstbrdenAIOM_&_years. MmortcstbrdencalcAIOM_&_years. MnomortcstbrdenAIOM_&_years. MnomortsvrecstbrdenAIOM_&_years. MnomortcstbrdencalcAIOM_&_years. MallowncstbrdenAIOM_&_years. MallownsvrecstbrdenAIOM_&_years. MallowncstbrdencalcAIOM_&_years. MrentcstbrdenAIOM_&_years. MrentsvrecstbrdenAIOM_&_years. MrentcstbrdencalcAIOM_&_years. ;
 
-	%if &_last_year. >=2023 %then %do;    
-      %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus.&moe2023plus;
-    %end;
-
-
     %if &_last_year. <= 2013 %then %do; 
         %let moe_vars =&moeallyears.; 
     %end; 
@@ -1096,11 +1130,14 @@
       %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus.;
     %end;
 
-    %else %if &_last_year. >=2017 %then %do;    
+    %else %if &_last_year. <= 2022 %then %do;    
       %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus.;
     %end;
 
-                 
+    %else %if &_last_year. >= 2023 %then %do;    
+      %let moe_vars =&moeallyears. &moe2013plus. &moe2015plus. &moe2017plus. &moe2023plus.;
+    %end;
+
   %end;
   
   ** Create summary data set **;
