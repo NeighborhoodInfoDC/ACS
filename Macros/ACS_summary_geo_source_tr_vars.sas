@@ -5402,7 +5402,7 @@
 
 				mortcstbrdenH_&_years.= b25140ie3;
 				mortsvrecstbrdenH_&_years.= b25140ie4;
-				mortcstbrdencalcH_&_years.= sum(b25140ie2 - b25140he5);
+				mortcstbrdencalcH_&_years.= sum(b25140ie2 - b25140ie5);
 				nomortcstbrdenH_&_years.= b25140ie7;
 				nomortsvrecstbrdenH_&_years. = b25140ie8;
 				nomortcstbrdencalcH_&_years.= sum(b25140ie6 - b25140ie9);
@@ -5415,7 +5415,7 @@
 
 				mortcstbrdenB_&_years.= b25140be3;
 				mortsvrecstbrdenB_&_years.= b25140be4;
-				mortcstbrdencalcB_&_years.= sum(b25140be2 - b25140he5);
+				mortcstbrdencalcB_&_years.= sum(b25140be2 - b25140be5);
 				nomortcstbrdenB_&_years.= b25140be7;
 				nomortsvrecstbrdenB_&_years. = b25140be8;
 				nomortcstbrdencalcB_&_years.= sum(b25140be6 - b25140be9);
@@ -5466,99 +5466,99 @@
 				rentsvrecstbrdenAIOM_&_years.= sum(b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
 				rentcstbrdencalcAIOM_&_years.= sum( b25140ce10 - b25140ce13, b25140fe10 - b25140fe13, b25140ge10 - b25140ge13, b25140de10 - b25140de13, b25140ee10 - b25140ee13);
 
-				
+		
 				Mmortcstbrden_&_years.= %moe_sum( var=b25140bm3 b25140am3 b25140cm3 b25140fm3 b25140gm3 b25140dm3 b25140em3);
 				Mmortsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140am4 b25140cm4 b25140fm4 b25140gm4 b25140dm4 b25140em4);
-				Mmortcstbrdencalc_&_years.= %moe_sum( var= b25140bm2 b25140am2 b25140cm2 b25140fm2 b25140gm2 b25140dm2 b25140em2);
+				Mmortcstbrdencalc_&_years.= %moe_sum( var=b25140bm2 -b25140bm5 b25140am2 -b25140am5 b25140cm2 -b25140cm5 b25140fm2 -b25140fm5 b25140gm2 -b25140gm5 b25140dm2 -b25140dm5 b25140em2 -b25140em5);
 				Mnomortcstbrden_&_years.= %moe_sum( var=b25140bm7 b25140am7 b25140cm7 b25140fm7 b25140gm7 b25140dm7 b25140em7);
 				Mnomortsvrecstbrden_&_years. = %moe_sum( var=b25140bm8 b25140am8 b25140cm8 b25140fm8 b25140gm8 b25140dm8 b25140em8);
-				Mnomortcstbrdencalc_&_years.= %moe_sum( var= b25140bm6 b25140am6 b25140cm6 b25140fm6 b25140gm6 b25140dm6 b25140em6);
+				Mnomortcstbrdencalc_&_years.= %moe_sum( var=b25140bm6 -b25140bm9B b25140am6 -b25140am9 b25140cm6 -b25140cm9 b25140fm6 -b25140fm9 b25140gm6 -b25140gm9 b25140dm6 -b25140dm9 b25140em6 -b25140em9);
 				Mallowncstbrden_&_years.= %moe_sum( var=b25140bm3 b25140bm7 b25140am3 b25140am7 b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7 b25140dm3 b25140dm7 b25140em3 b25140em7);
 				Mallownsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140bm8 b25140am4 b25140am8 b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8 b25140dm4 b25140dm8 b25140em4 b25140em8);
-				Mallowncstbrdencalc_&_years.= %moe_sum( var= b25140bm2 b25140bm6 b25140am2 b25140am6 b25140cm2 b25140cm6 b25140fm2 b25140fm6 b25140gm2 b25140gm6 b25140dm2 b25140dm6 b25140em2 b25140em6);
+				Mallowncstbrdencalc_&_years.= %moe_sum( var=b25140bm2 -b25140bm5 b25140bm6 -b25140bm9 b25140am2 -b25140am5 b25140am6 -b25140am9 b25140cm2 -b25140cm5 b25140cm6 -b25140cm9 b25140fm2 -b25140fm5 b25140fm6 -b25140fm9 b25140gm2 -b25140gm5 b25140gm6 -b25140gm9 b25140dm2 -b25140dm5 b25140dm6 -b25140dm9 b25140em2 -b25140em5 b25140em6 -b25140em9);
 				Mrentcstbrden_&_years.= %moe_sum( var=b25140bm11 b25140am11 b25140cm11 b25140fm11 b25140gm11 b25140dm11 b25140em11);
 				Mrentsvrecstbrden_&_years.= %moe_sum( var=b25140bm12 b25140am12 b25140cm12 b25140fm12 b25140gm12 b25140dm12 b25140em12);
-				Mrentcstbrdencalc_&_years.= %moe_sum( var= b25140bm10 b25140am10 b25140cm10 b25140fm10 b25140gm10 b25140dm10 b25140em10);
+				Mrentcstbrdencalc_&_years.= %moe_sum( var=b25140bm10 -b25140bm13 b25140am10 -b25140am13 b25140cm10 -b25140cm13 b25140fm10 -b25140fm13 b25140gm10 -b25140gm13 b25140dm10 -b25140dm13 b25140em10 -b25140em13);
 
 
 				MmortcstbrdenW_&_years.= %moe_sum( var=b25140hm3);
 				MmortsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm4);
-				MmortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm2);
+				MmortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm2 -b25140hm5);
 				MnomortcstbrdenW_&_years.= %moe_sum( var=b25140hm7);
 				MnomortsvrecstbrdenW_&_years. = %moe_sum( var=b25140hm8);
-				MnomortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm6);
+				MnomortcstbrdencalcW_&_years.= %moe_sum( var=b25140hm6 -b25140hm9);
 				MallowncstbrdenW_&_years.= %moe_sum( var=b25140hm3 b25140hm7);
 				MallownsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm4 b25140hm8);
-				MallowncstbrdencalcW_&_years.= %moe_sum( var=b25140hm2 b25140hm6);
+				MallowncstbrdencalcW_&_years.= %moe_sum( var=b25140hm2 -b25140hm5 b25140hm6 -b25140hm9);
 				MrentcstbrdenW_&_years.= %moe_sum( var=b25140hm11);
 				MrentsvrecstbrdenW_&_years.= %moe_sum( var=b25140hm12);
-				MrentcstbrdencalcW_&_years.= %moe_sum( var=b25140hm10);
+				MrentcstbrdencalcW_&_years.= %moe_sum( var=b25140hm10 -b25140hm13);
 
 				MmortcstbrdenH_&_years.= %moe_sum( var=b25140im3);
 				MmortsvrecstbrdenH_&_years.= %moe_sum( var=b25140im4);
-				MmortcstbrdencalcH_&_years.= %moe_sum( var=b25140im2);
+				MmortcstbrdencalcH_&_years.= %moe_sum( var=b25140im2 -b25140im5);
 				MnomortcstbrdenH_&_years.= %moe_sum( var=b25140im7);
 				MnomortsvrecstbrdenH_&_years. = %moe_sum( var=b25140im8);
-				MnomortcstbrdencalcH_&_years.= %moe_sum( var=b25140im6);
+				MnomortcstbrdencalcH_&_years.= %moe_sum( var=b25140im6 -b25140im9);
 				MallowncstbrdenH_&_years.= %moe_sum( var=b25140im3 b25140im7);
 				MallownsvrecstbrdenH_&_years.= %moe_sum( var=b25140im4 b25140im8);
-				MallowncstbrdencalcH_&_years.= %moe_sum( var=b25140im2 b25140im6);
+				MallowncstbrdencalcH_&_years.= %moe_sum( var=b25140im2 -b25140im5 b25140im6 -b25140im9);
 				MrentcstbrdenH_&_years.= %moe_sum( var=b25140im11);
 				MrentsvrecstbrdenH_&_years.= %moe_sum( var=b25140im12);
-				MrentcstbrdencalcH_&_years.= %moe_sum( var=b25140im10);
+				MrentcstbrdencalcH_&_years.= %moe_sum( var=b25140im10 -b25140im13);
 
 				MmortcstbrdenB_&_years.= %moe_sum( var=b25140bm3);
 				MmortsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm4);
-				MmortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm2);
+				MmortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm2 -b25140bm5);
 				MnomortcstbrdenB_&_years.= %moe_sum( var=b25140bm7);
 				MnomortsvrecstbrdenB_&_years. = %moe_sum( var=b25140bm8);
-				MnomortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm6);
+				MnomortcstbrdencalcB_&_years.= %moe_sum( var=b25140bm6 -b25140bm9);
 				MallowncstbrdenB_&_years.= %moe_sum( var=b25140bm3 b25140bm7);
 				MallownsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm4 b25140bm8);
-				MallowncstbrdencalcB_&_years.= %moe_sum( var=b25140bm2 b25140bm6);
+				MallowncstbrdencalcB_&_years.= %moe_sum( var=b25140bm2 -b25140bm5 b25140bm6 -b25140bm9);
 				MrentcstbrdenB_&_years.= %moe_sum( var=b25140bm11);
 				MrentsvrecstbrdenB_&_years.= %moe_sum( var=b25140bm12);
-				MrentcstbrdencalcB_&_years.= %moe_sum( var=b25140bm10);
+				MrentcstbrdencalcB_&_years.= %moe_sum( var=b25140bm10 -b25140bm13);
 
 
 				MmortcstbrdenA_&_years.= %moe_sum( var=b25140dm3 b25140em3);
 				MmortsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm4 b25140em4);
-				MmortcstbrdencalcA_&_years.= %moe_sum( var= b25140dm2 b25140em2);
+				MmortcstbrdencalcA_&_years.= %moe_sum( var= b25140dm2 -b25140dm5 b25140em2 -b25140em5);
 				MnomortcstbrdenA_&_years.= %moe_sum( var=b25140dm7 b25140em7);
 				MnomortsvrecstbrdenA_&_years. = %moe_sum( var=b25140dm8 b25140em8);
-				MnomortcstbrdencalcA_&_years.= %moe_sum( var= b25140dm6 b25140em6);
+				MnomortcstbrdencalcA_&_years.= %moe_sum( var= b25140dm6 -b25140dm9 b25140em6 -b25140em9);
 				MallowncstbrdenA_&_years.= %moe_sum( var=b25140dm3 b25140dm7 b25140em3 b25140em7);
 				MallownsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm4 b25140dm8 b25140em4 b25140em8);
-				MallowncstbrdencalcA_&_years.= %moe_sum( var= b25140dm2 b25140dm6 b25140em2 b25140em6);
+				MallowncstbrdencalcA_&_years.= %moe_sum( var= b25140dm2 -b25140dm5 b25140dm6 -b25140dm9 b25140em2 -b25140em5 b25140em6 -b25140em9);
 				MrentcstbrdenA_&_years.= %moe_sum( var=b25140dm11 b25140em11);
 				MrentsvrecstbrdenA_&_years.= %moe_sum( var=b25140dm12 b25140em12);
-				MrentcstbrdencalcA_&_years.= %moe_sum( var= b25140dm10 b25140em10);
+				MrentcstbrdencalcA_&_years.= %moe_sum( var= b25140dm10 -b25140dm13 b25140em10 -b25140em13);
 
 				MmortcstbrdenIOM_&_years.= %moe_sum( var=b25140cm3 b25140fm3 b25140gm3);
 				MmortsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm4 b25140fm4 b25140gm4);
-				MmortcstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm2 b25140fm2 b25140gm2);
+				MmortcstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm2 -b25140cm5 b25140fm2 -b25140fm5 b25140gm2 -b25140gm5);
 				MnomortcstbrdenIOM_&_years.= %moe_sum( var=b25140cm7 b25140fm7 b25140gm7);
 				MnomortsvrecstbrdenIOM_&_years. = %moe_sum( var=b25140cm8 b25140fm8 b25140gm8);
-				MnomortcstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm6 b25140fm6 b25140gm6);
+				MnomortcstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm6 -b25140cm9 b25140fm6 -b25140fm9 b25140gm6 -b25140gm9);
 				MallowncstbrdenIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7);
 				MallownsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8);
-				MallowncstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm2 b25140cm6 b25140fm2 b25140fm6 b25140gm2 b25140gm6);
+				MallowncstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm2 -b25140cm5 b25140cm6 -b25140cm9 b25140fm2 -b25140fm5 b25140fm6 -b25140fm9 b25140gm2 -b25140gm5 b25140gm6 -b25140gm9);
 				MrentcstbrdenIOM_&_years.= %moe_sum( var=b25140cm11 b25140fm11 b25140gm11);
 				MrentsvrecstbrdenIOM_&_years.= %moe_sum( var=b25140cm12 b25140fm12 b25140gm12);
-				MrentcstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm10 b25140fm10 b25140gm10);
+				MrentcstbrdencalcIOM_&_years.= %moe_sum( var= b25140cm10 -b25140cm13 b25140fm10 -b25140fm13 b25140gm10 -b25140gm13);
 
 				MmortcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm3 b25140fm3 b25140gm3 b25140dm3 b25140em3);
 				MmortsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm4 b25140fm4 b25140gm4 b25140dm4 b25140em4);
-				MmortcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm2 b25140fm2 b25140gm2 b25140dm2 b25140em2);
+				MmortcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm2 -b25140cm5 b25140fm2 -b25140fm5 b25140gm2 -b25140gm5  b25140dm2 -b25140dm5 b25140em2 -b25140em5);
 				MnomortcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm7 b25140fm7 b25140gm7 b25140dm7 b25140em7);
 				MnomortsvrecstbrdenAIOM_&_years. = %moe_sum( var=b25140cm8 b25140fm8 b25140gm8 b25140dm8 b25140em8);
-				MnomortcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm6 b25140fm6 b25140gm6 b25140dm6 b25140em6);
+				MnomortcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm6 -b25140cm9 b25140fm6 -b25140fm9 b25140gm6 -b25140gm9  b25140dm6 -b25140dm9 b25140em6 -b25140em9);
 				MallowncstbrdenAIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7 b25140dm3 b25140dm7 b25140em3 b25140em7);
 				MallownsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8 b25140dm4 b25140dm8 b25140em4 b25140em8);
-				MallowncstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm2 b25140cm6 b25140fm2 b25140fm6 b25140gm2 b25140gm6 b25140dm2 b25140dm6 b25140em2 b25140em6);
+				MallowncstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm2 -b25140cm5 b25140cm6 -b25140cm9 b25140fm2 -b25140fm5 b25140fm6 -b25140fm9 b25140gm2 -b25140gm5 b25140gm6 -b25140gm9  b25140dm2 -b25140dm5 b25140dm6 -b25140dm9 b25140em2 -b25140em5 b25140em6 -b25140em9);
 				MrentcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm11 b25140fm11 b25140gm11 b25140dm11 b25140em11);
 				MrentsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm12 b25140fm12 b25140gm12 b25140dm12 b25140em12);
-				MrentcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm10 b25140fm10 b25140gm10 b25140dm10 b25140em10);
+				MrentcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm10 -b25140cm13 b25140fm10 -b25140fm13 b25140gm10 -b25140gm13 b25140dm10 -b25140dm13 b25140em10 -b25140em13);
 
 			label
 				mortcstbrden_&_years.= "Owners with Mortgage who are cost-burdened, &_years_dash "
