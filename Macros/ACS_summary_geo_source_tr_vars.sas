@@ -5466,7 +5466,7 @@
 				rentsvrecstbrdenAIOM_&_years.= sum(b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
 				rentcstbrdencalcAIOM_&_years.= sum( b25140ce10 - b25140ce13, b25140fe10 - b25140fe13, b25140ge10 - b25140ge13, b25140de10 - b25140de13, b25140ee10 - b25140ee13);
 
-				*note - using total of group instead of total minus not calculated for MOE calc as macro won't take negative numbers);
+				/*note - using total of group instead of total minus not calculated for MOE calc as macro won't take negative numbers)*/
 				Mmortcstbrden_&_years.= %moe_sum( var=b25140bm3 b25140am3 b25140cm3 b25140fm3 b25140gm3 b25140dm3 b25140em3);
 				Mmortsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140am4 b25140cm4 b25140fm4 b25140gm4 b25140dm4 b25140em4);
 				Mmortcstbrdencalc_&_years.= %moe_sum( var=b25140bm2 b25140am2 b25140cm2 b25140fm2 b25140gm2 b25140dm2 b25140em2);

@@ -30,7 +30,7 @@
   years = 2019_23,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(New file.)
+  revisions = %str(Correct two Cost-burden indicators.)
 
 )
 
