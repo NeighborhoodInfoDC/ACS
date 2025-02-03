@@ -5402,7 +5402,7 @@
 
 				mortcstbrdenH_&_years.= b25140ie3;
 				mortsvrecstbrdenH_&_years.= b25140ie4;
-				mortcstbrdencalcH_&_years.= sum(b25140ie2 - b25140he5);
+				mortcstbrdencalcH_&_years.= sum(b25140ie2 - b25140ie5);
 				nomortcstbrdenH_&_years.= b25140ie7;
 				nomortsvrecstbrdenH_&_years. = b25140ie8;
 				nomortcstbrdencalcH_&_years.= sum(b25140ie6 - b25140ie9);
@@ -5415,7 +5415,7 @@
 
 				mortcstbrdenB_&_years.= b25140be3;
 				mortsvrecstbrdenB_&_years.= b25140be4;
-				mortcstbrdencalcB_&_years.= sum(b25140be2 - b25140he5);
+				mortcstbrdencalcB_&_years.= sum(b25140be2 - b25140be5);
 				nomortcstbrdenB_&_years.= b25140be7;
 				nomortsvrecstbrdenB_&_years. = b25140be8;
 				nomortcstbrdencalcB_&_years.= sum(b25140be6 - b25140be9);
@@ -5466,19 +5466,19 @@
 				rentsvrecstbrdenAIOM_&_years.= sum(b25140ce12, b25140fe12, b25140ge12, b25140de12, b25140ee12);
 				rentcstbrdencalcAIOM_&_years.= sum( b25140ce10 - b25140ce13, b25140fe10 - b25140fe13, b25140ge10 - b25140ge13, b25140de10 - b25140de13, b25140ee10 - b25140ee13);
 
-				
+				/*note - using total of group instead of total minus not calculated for MOE calc as macro won't take negative numbers)*/
 				Mmortcstbrden_&_years.= %moe_sum( var=b25140bm3 b25140am3 b25140cm3 b25140fm3 b25140gm3 b25140dm3 b25140em3);
 				Mmortsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140am4 b25140cm4 b25140fm4 b25140gm4 b25140dm4 b25140em4);
-				Mmortcstbrdencalc_&_years.= %moe_sum( var= b25140bm2 b25140am2 b25140cm2 b25140fm2 b25140gm2 b25140dm2 b25140em2);
+				Mmortcstbrdencalc_&_years.= %moe_sum( var=b25140bm2 b25140am2 b25140cm2 b25140fm2 b25140gm2 b25140dm2 b25140em2);
 				Mnomortcstbrden_&_years.= %moe_sum( var=b25140bm7 b25140am7 b25140cm7 b25140fm7 b25140gm7 b25140dm7 b25140em7);
 				Mnomortsvrecstbrden_&_years. = %moe_sum( var=b25140bm8 b25140am8 b25140cm8 b25140fm8 b25140gm8 b25140dm8 b25140em8);
-				Mnomortcstbrdencalc_&_years.= %moe_sum( var= b25140bm6 b25140am6 b25140cm6 b25140fm6 b25140gm6 b25140dm6 b25140em6);
+				Mnomortcstbrdencalc_&_years.= %moe_sum( var=b25140bm6 b25140am6 b25140cm6 b25140fm6 b25140gm6 b25140dm6 b25140em6);
 				Mallowncstbrden_&_years.= %moe_sum( var=b25140bm3 b25140bm7 b25140am3 b25140am7 b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7 b25140dm3 b25140dm7 b25140em3 b25140em7);
 				Mallownsvrecstbrden_&_years.= %moe_sum( var=b25140bm4 b25140bm8 b25140am4 b25140am8 b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8 b25140dm4 b25140dm8 b25140em4 b25140em8);
-				Mallowncstbrdencalc_&_years.= %moe_sum( var= b25140bm2 b25140bm6 b25140am2 b25140am6 b25140cm2 b25140cm6 b25140fm2 b25140fm6 b25140gm2 b25140gm6 b25140dm2 b25140dm6 b25140em2 b25140em6);
+				Mallowncstbrdencalc_&_years.= %moe_sum( var=b25140bm2 b25140bm6 b25140am2 b25140am6 b25140cm2 b25140cm6 b25140fm2 b25140fm6 b25140gm2 b25140gm6 b25140dm2 b25140dm6 b25140em2 b25140em6);
 				Mrentcstbrden_&_years.= %moe_sum( var=b25140bm11 b25140am11 b25140cm11 b25140fm11 b25140gm11 b25140dm11 b25140em11);
 				Mrentsvrecstbrden_&_years.= %moe_sum( var=b25140bm12 b25140am12 b25140cm12 b25140fm12 b25140gm12 b25140dm12 b25140em12);
-				Mrentcstbrdencalc_&_years.= %moe_sum( var= b25140bm10 b25140am10 b25140cm10 b25140fm10 b25140gm10 b25140dm10 b25140em10);
+				Mrentcstbrdencalc_&_years.= %moe_sum( var=b25140bm10 b25140am10 b25140cm10 b25140fm10 b25140gm10 b25140dm10 b25140em10);
 
 
 				MmortcstbrdenW_&_years.= %moe_sum( var=b25140hm3);
@@ -5549,13 +5549,13 @@
 
 				MmortcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm3 b25140fm3 b25140gm3 b25140dm3 b25140em3);
 				MmortsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm4 b25140fm4 b25140gm4 b25140dm4 b25140em4);
-				MmortcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm2 b25140fm2 b25140gm2 b25140dm2 b25140em2);
+				MmortcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm2 b25140fm2 b25140gm2 b25140dm2 b25140em2 );
 				MnomortcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm7 b25140fm7 b25140gm7 b25140dm7 b25140em7);
 				MnomortsvrecstbrdenAIOM_&_years. = %moe_sum( var=b25140cm8 b25140fm8 b25140gm8 b25140dm8 b25140em8);
-				MnomortcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm6 b25140fm6 b25140gm6 b25140dm6 b25140em6);
+				MnomortcstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm6 b25140fm6 b25140gm6 b25140dm6 b25140em6);
 				MallowncstbrdenAIOM_&_years.= %moe_sum( var=b25140cm3 b25140cm7 b25140fm3 b25140fm7 b25140gm3 b25140gm7 b25140dm3 b25140dm7 b25140em3 b25140em7);
 				MallownsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm4 b25140cm8 b25140fm4 b25140fm8 b25140gm4 b25140gm8 b25140dm4 b25140dm8 b25140em4 b25140em8);
-				MallowncstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm2 b25140cm6 b25140fm2 b25140fm6 b25140gm2 b25140gm6 b25140dm2 b25140dm6 b25140em2 b25140em6);
+				MallowncstbrdencalcAIOM_&_years.= %moe_sum( var=b25140cm2 b25140cm6 b25140fm2 b25140fm6 b25140gm2 b25140gm6 b25140dm2 b25140dm6 b25140em2 b25140em6);
 				MrentcstbrdenAIOM_&_years.= %moe_sum( var=b25140cm11 b25140fm11 b25140gm11 b25140dm11 b25140em11);
 				MrentsvrecstbrdenAIOM_&_years.= %moe_sum( var=b25140cm12 b25140fm12 b25140gm12 b25140dm12 b25140em12);
 				MrentcstbrdencalcAIOM_&_years.= %moe_sum( var= b25140cm10 b25140fm10 b25140gm10 b25140dm10 b25140em10);
