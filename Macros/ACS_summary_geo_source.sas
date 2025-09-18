@@ -139,6 +139,7 @@
 
 	    %ACS_summary_geo( anc2002, &source_geo )
 	    %ACS_summary_geo( anc2012, &source_geo )
+		%ACS_summary_geo( anc2023, &source_geo )
 	    %ACS_summary_geo( city, &source_geo )
 	    %ACS_summary_geo( cluster_tr2000, &source_geo )
 	    %ACS_summary_geo( eor, &source_geo )
@@ -170,6 +171,7 @@
 
 	    %ACS_summary_geo( anc2002, &source_geo )
 	    %ACS_summary_geo( anc2012, &source_geo )
+		%ACS_summary_geo( anc2023, &source_geo )
 	    %ACS_summary_geo( city, &source_geo )
 	    %ACS_summary_geo( cluster_tr2000, &source_geo )
 	    %ACS_summary_geo( psa2004, &source_geo )

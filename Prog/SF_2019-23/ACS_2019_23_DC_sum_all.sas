@@ -3,13 +3,13 @@
  Library:  ACS
  Project:  Urban-Greater DC
  Author:   Rodrigo Garcia
- Created:  1-7-23
+ Created:  1-7-25
  Version:  SAS 9.4
  Environment:  Local Windows session (desktop)
  
  Description:  Create all standard summary files from ACS 5-year data.
  
- Modifications: 12/06/23 LH Added census geo year parameter to template. Updated include statement.
+ Modifications: 08-19-23 LH Add ANC2023 geography.
 **************************************************************************/
 
 %include "\\sas1\DCdata\SAS\Inc\StdLocal.sas";
@@ -30,7 +30,7 @@
   years = 2019_23,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Correct two Cost-burden indicators.)
+  revisions = %str(Add summary file for ANC2023.)
 
 )
 
