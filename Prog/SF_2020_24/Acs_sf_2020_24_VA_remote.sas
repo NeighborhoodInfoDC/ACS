@@ -25,7 +25,7 @@
 %Acs_sf_new(
 
   /** Finalize data sets (N for testing, Y for final batch submit) **/
-  finalize = N,
+  finalize = Y,
   
   /** State abbreviation. (DC, MD, VA, or WV) **/
   state_ab = VA,
