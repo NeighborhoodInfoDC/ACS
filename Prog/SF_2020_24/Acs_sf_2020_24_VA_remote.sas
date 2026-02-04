@@ -37,7 +37,7 @@
   census_geo_year=2020,
 
   /** List of tables to download. Use list below for testing. Comment out for final batch submit **/
-  table_list = B01001 B01002 B01003,
+  /** table_list = B01001 B01002 B01003, **/
   
   /** List of geographic summary levels to download. Possible values=BG TRACT COUNTY PLACE. **/
   geo_levels = BG TRACT COUNTY PLACE,
