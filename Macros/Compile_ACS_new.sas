@@ -285,6 +285,7 @@
     
     %Finalize_data_set( 
       /** Finalize data set parameters **/
+      finalize=&finalize,
       data=&_out_ds_base._&geo_suffix,
       out=&_out_ds_base._&geo_suffix,
       outlib=ACS,
