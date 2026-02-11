@@ -227,7 +227,7 @@
        /*for regional AI */
        Disability: InPov: NotInPov: SingFam: AvgHH: GRent:
        IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce: 
-       NoDisability: Commute: NRentBur: CostBur: NCostBur:
+       NoDisability: Commute: 
        OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
        PubTrans: Own: Rent: 
 
@@ -258,7 +258,7 @@
        /*for regional AI */
        Disability: InPov: NotInPov: SingFam: AvgHH: GRent:
        IncInt: TotalCivHHPop: InLaborForce: NotInLaborForce: 
-       NoDisability: Commute: NRentBur: CostBur: NCostBur:
+       NoDisability: Commute: 
        OneSubstCond: TwoSubstCond: ThreeSubstCond: FourSubstCond: NoSubstCond:
        PubTrans: Own: Rent: 
        
@@ -980,14 +980,8 @@
        mCommute60_89_&_years. 
        mCommunity90M_&_years. 
 
-       mRentBur_&_years. 
-       mNRentBur_&_years. 
-
        mMedOwnerCostsPctHHInc_&_years. 
-
-       mCostBur_&_years.
-       mNCostBur_&_years. 
-       
+	             
        mOwnOccHHIncL5K_&_years. 
        mOwnOccHHInc5999K_&_years.
        mOwnOccHHInc101499K_&_years.
