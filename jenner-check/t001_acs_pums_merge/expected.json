@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-06-17T19:30:10+07:00",
+  "_captured_run_id": "r_019ed58f53d176528331ed6d3addee7f",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "Wrote Acs_pums_2005_was (3 rows, 13 columns).",
+    "Wrote Acs_pums_2005_comp (4 rows, 13 columns).",
+    "PROC FREQ"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

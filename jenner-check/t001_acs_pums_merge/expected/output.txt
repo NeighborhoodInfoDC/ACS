@@ -1,0 +1,17 @@
+                                    ACS PUMS 2005 - Washington region (DC/MD/VA/WV)                                     
+
+  Obs  Year   Userialno  Statecd    Upuma  Uplacefp  agep
+    1  2005  1100000100  11       1100102  1150000     35
+    2  2005  1100000100  11       1100102  1150000      5
+    3  2005  2400000200  24       2401002  2404000     40
+
+                                      ACS PUMS 2005 - comparison-city place codes                                       
+
+                                                   The FREQ Procedure
+
+                                                              Cumulative    Cumulative
+Unique FIPS place code (ssppppp)    Frequency    Percent     Frequency      Percent
+-----------------------------------------------------------------------------------------
+1150000                                     2     50.00            2        50.00
+2404000                                     1     25.00            3        75.00
+2622000                                     1     25.00            4       100.00

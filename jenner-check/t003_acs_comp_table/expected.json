@@ -1,0 +1,12 @@
+{
+  "_captured_at": "2026-06-17T19:41:07+07:00",
+  "_captured_run_id": "r_019ed59960ca7162ac0ca9d6d671280c",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "PROC FORMAT library=WORK",
+    "PROC TABULATE"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR", "panicked"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

@@ -1,0 +1,8 @@
+{
+  "bundle": "t004_macro_read_seq_list",
+  "source_file": "Macros/Read_seq_list.sas",
+  "source_blob_sha": "ee5a46616b64808d72e481c30c08a1132e06a3dc",
+  "source_commit": "1921d40523961ca3d6d0bfa2b8df87784713c8cc",
+  "tier": "real_macro_caller",
+  "notes": "Exercises the library's Read_seq_list macro (verbatim) over a list of ACS summary-file sequence numbers. Read_seq is provided as a list-accumulating substitute matching Read_seq.sas semantics, minus the external per-sequence %include of raw Census extracts not shipped in the repo."
+}

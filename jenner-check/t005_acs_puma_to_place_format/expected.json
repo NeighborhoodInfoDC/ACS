@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-06-17T19:22:59+07:00",
+  "_captured_run_id": "r_019ed588bc657b80a135693b0307f0ea",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "DATA geocorr",
+    "PROC FORMAT",
+    "DATA demo"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

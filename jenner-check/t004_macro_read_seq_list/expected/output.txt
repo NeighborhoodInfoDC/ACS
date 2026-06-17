@@ -1,0 +1,6 @@
+                                     ACS summary-file table names by sequence list                                      
+
+list_type                               table_files
+estimates   SFe0001dc SFe0002dc SFe0003dc SFe0119dc
+margins     SFm0001dc SFm0002dc SFm0003dc SFm0119dc
+

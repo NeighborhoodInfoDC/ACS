@@ -1,0 +1,20 @@
+                                         Selected PUMA-to-place crosswalk rows                                          
+
+  Obs   upuma5  uplacefp       placenm
+    1  1100102  1150000   Washington
+    2  2401002  2404000   Baltimore
+    3  2503301  2507000   Boston
+    4  2603201  2622000   Detroit
+    5  3901901  3916000   Cleveland
+    6  4204101  4260000   Philadelphia
+    7  5505301  5553000   Milwaukee
+    8  5105101  5101000   Alexandria
+
+                                    PUMA code translated to FIPS place via $pum0fpl                                     
+
+ upuma5    place
+1100102  1150000
+2401002  2404000
+2603201  2622000
+4204101  4260000
+

@@ -1,0 +1,8 @@
+{
+  "bundle": "t002_acs_children_hh",
+  "source_file": "Prog/Acs_comp_table_dat.sas",
+  "source_blob_sha": "0d0c3ca0a5b78995987d142eb741a3f0519b47fa",
+  "source_commit": "1921d40523961ca3d6d0bfa2b8df87784713c8cc",
+  "tier": "real_data_substituted",
+  "notes": "Exercises the program's household accumulator for children under 3: WHERE comparison-city filter, SELECT/WHEN comp_city assignment, FIRST./LAST. BY-group accumulation with RETAIN, person/household dual OUTPUT, and household-level indicators. Acs_pums_2005_comp is a small inline comparison-city extract; input/output librefs are WORK. The output keep= lists name the household-summary variables explicitly rather than by num_:/hh_:/hhh_:/is_: name prefixes."
+}

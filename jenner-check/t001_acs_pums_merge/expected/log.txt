@@ -1,0 +1,64 @@
+Jenner 0.1.0 (Unlicensed - limited to 100 observations)
+Get a license at https://jenneranalytics.com/license
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA _pum0fpl
+
+NOTE: Processing inline DATALINES (7 lines)
+
+NOTE: Read 7 rows from DATALINES.
+NOTE: Wrote _pum0fpl (7 rows, 4 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC FORMAT library=WORK
+
+NOTE: CNTLIN: Loaded 7 format entries from _pum0fpl
+NOTE: DATA population
+
+NOTE: Processing inline DATALINES (5 lines)
+
+NOTE: Read 5 rows from DATALINES.
+NOTE: Wrote population (5 rows, 9 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA housing
+
+NOTE: Processing inline DATALINES (4 lines)
+
+NOTE: Read 4 rows from DATALINES.
+NOTE: Wrote housing (4 rows, 7 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SORT data=population
+
+NOTE: Unlicensed mode - input limited to 100 observations.
+NOTE: Read 5 rows from population.
+NOTE: Wrote population (5 rows, 9 columns).
+NOTE: PROC SORT statement used.
+NOTE: PROC SORT data=housing
+
+NOTE: Unlicensed mode - input limited to 100 observations.
+NOTE: Read 4 rows from housing.
+NOTE: Wrote housing (4 rows, 7 columns).
+NOTE: PROC SORT statement used.
+NOTE: DATA Acs_pums_2005_was Acs_pums_2005_comp
+
+NOTE: Multi-output DATA step splits stream into: Acs_pums_2005_was Acs_pums_2005_comp
+NOTE: Stream 1 processed 5 rows, max BY-group size: 2 (O(1) memory verified)
+NOTE: Stream 2 processed 4 rows, max BY-group size: 1 (O(1) memory verified)
+
+NOTE: Wrote Acs_pums_2005_was (3 rows, 13 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+
+NOTE: Wrote Acs_pums_2005_comp (4 rows, 13 columns).
+NOTE: PROC PRINT data=Acs_pums_2005_was
+
+NOTE: PROC PRINT completed: 3 observations printed, 6 variables
+NOTE: PROC FREQ
+NOTE: ODS plot written: freq_uplacefp.spec.json
+NOTE: PROC FREQ statement used.

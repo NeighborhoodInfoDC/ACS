@@ -1,0 +1,8 @@
+{
+  "bundle": "t003_acs_comp_table",
+  "source_file": "Prog/Acs_comp_table.sas",
+  "source_blob_sha": "cd996a51c6e627e38bae96d48f5e7492fe0d23e2",
+  "source_commit": "1921d40523961ca3d6d0bfa2b8df87784713c8cc",
+  "tier": "real_data_substituted",
+  "notes": "Exercises the program's comparison-city report: PROC FORMAT value/picture definitions (city, $hht, agep, educ, $cit, pov) and the PROC TABULATE class/var/weight/table specification (sum, mean, median, colpctsum) classifying children under 3 by city, household type, head age/education/citizenship, and poverty. Acs_comp_table is a small inline household-level work set; %fdate is a no-op; output is the default listing rather than the RTF destination."
+}

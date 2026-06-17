@@ -1,0 +1,40 @@
+-----------------------------------------------------------------------------------------------------
+|                                                        | Washington, DC | Baltimore  |   Boston   |
+|--------------------------------------------------------+----------------+------------+------------|
+|                                      |        |        |           150.0|       155.0|        70.0|
+|Number of HHs w/children < 3 years old|        |        |           150.0|       155.0|        70.0|
+|Avg. HH size                          |        |        |             2.6|         3.0|         3.0|
+|Avg. num. adults/HH                   |        |        |             1.6|         1.5|         1.0|
+|% Children by household type          |        |        |                |            |            |
+|Married-couple family                 |        |        |            50.0|       100.0|         0.0|
+|Female-headed family                  |        |        |            50.0|         0.0|       100.0|
+|% Children by age of HH head          |        |        |                |            |            |
+|Under 65                              |        |        |             0.0|        50.0|         0.0|
+|                                      |        |        |            50.0|         0.0|         0.0|
+|                                      |        |        |             0.0|         0.0|       100.0|
+|                                      |        |        |            50.0|         0.0|         0.0|
+|                                      |        |        |             0.0|        50.0|         0.0|
+|% Children by education of HH head    |        |        |                |            |            |
+|HS graduate                           |        |        |            50.0|         0.0|         0.0|
+|Some college                          |        |        |             0.0|        50.0|       100.0|
+|Bachelors degree                      |        |        |            50.0|         0.0|         0.0|
+|Advanced degree                       |        |        |             0.0|        50.0|         0.0|
+|% Children by citizenship of HH head  |        |        |                |            |            |
+|Native born citizen                   |        |        |            50.0|       100.0|         0.0|
+|Naturalized citizen                   |        |        |            50.0|         0.0|         0.0|
+|Not a US citizen                      |        |        |             0.0|         0.0|       100.0|
+|Avg. num. working adults/HH           |        |        |             1.6|         1.5|         1.0|
+|Avg. num. FT working adults/HH        |        |        |             1.6|         1.0|         0.0|
+|Median HH income ($)                  |        |        |        59,000.0|    56,500.0|    22,000.0|
+|Median HH earnings ($)                |        |        |        56,500.0|    54,500.0|         0.0|
+|% HHs w/earnings                      |        |        |           100.0|       100.0|         0.0|
+|% HHs w/pub. assistance               |        |        |             0.0|        51.6|       100.0|
+|% HHs w/SSI                           |        |        |            40.0|         0.0|         0.0|
+|% Children by poverty status          |        |        |                |            |            |
+|100-199% poverty                      |        |        |            50.0|         0.0|         0.0|
+|                                      |        |        |            50.0|         0.0|         0.0|
+|200% poverty or higher                |        |        |             0.0|        50.0|         0.0|
+|50-99% poverty                        |        |        |             0.0|         0.0|       100.0|
+|                                      |        |        |             0.0|        50.0|         0.0|
+-----------------------------------------------------------------------------------------------------
+

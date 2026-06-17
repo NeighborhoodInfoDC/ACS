@@ -1,0 +1,8 @@
+{
+  "bundle": "t001_acs_pums_merge",
+  "source_file": "Prog/Acs_pums_2005.sas",
+  "source_blob_sha": "42d15d3cea55b2e1c12f6b4ba3e838451acb5941",
+  "source_commit": "1921d40523961ca3d6d0bfa2b8df87784713c8cc",
+  "tier": "real_data_substituted",
+  "notes": "Exercises the program's PUMS population x housing MERGE: unique-key (z2 state || z8 serial) and unique-PUMA (state || z5 puma) construction, $pum0fpl place lookup, region (DC/MD/VA/WV) and comparison-city dual OUTPUT split, rename/label. population and housing are small inline psam_p/psam_h-shaped work sets standing in for the zipped Census libraries; output libref is WORK (ACS library is external); the framework non-match diagnostic is written as a plain PUT."
+}

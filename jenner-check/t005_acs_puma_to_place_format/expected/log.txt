@@ -1,0 +1,45 @@
+Jenner 0.1.0 (Unlicensed - limited to 100 observations)
+Get a license at https://jenneranalytics.com/license
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA geocorr
+
+NOTE: Processing inline DATALINES (10 lines)
+
+NOTE: Read 10 rows from DATALINES.
+NOTE: Wrote geocorr (8 rows, 9 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC PRINT data=geocorr
+
+NOTE: PROC PRINT completed: 8 observations printed, 3 variables
+NOTE: DATA pum0fpl_cntlin
+
+
+NOTE: Read 8 rows from geocorr.
+NOTE: Wrote pum0fpl_cntlin (8 rows, 4 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SORT data=pum0fpl_cntlin
+
+NOTE: Unlicensed mode - input limited to 100 observations.
+NOTE: Read 8 rows from pum0fpl_cntlin.
+NOTE: Wrote pum0fpl_cntlin (8 rows, 4 columns).
+NOTE: PROC SORT statement used.
+NOTE: PROC FORMAT library=WORK
+
+NOTE: CNTLIN: Loaded 8 format entries from pum0fpl_cntlin
+NOTE: DATA demo
+
+NOTE: Processing inline DATALINES (4 lines)
+
+NOTE: Read 4 rows from DATALINES.
+NOTE: Wrote demo (4 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC PRINT data=demo
+
+NOTE: PROC PRINT completed: 4 observations printed, 2 variables

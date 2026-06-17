@@ -1,0 +1,8 @@
+{
+  "bundle": "t005_acs_puma_to_place_format",
+  "source_file": "Prog/Puma_to_city_formats.sas",
+  "source_blob_sha": "d32ce7f3193e54c2a25f6478f10f2aae21fe19fc",
+  "source_commit": "1921d40523961ca3d6d0bfa2b8df87784713c8cc",
+  "tier": "real_data_substituted",
+  "notes": "Builds the program's $pum0fpl PUMA-to-FIPS-place correspondence format. City-selection list, unique-key construction (statecd||z5 PUMA, statecd||z5 place) and place codes are the program's own. Crosswalk rows are inline DATALINES (10 rows, 8 selected cities) standing in for the geocorr2k raw CSV; %Data_to_format replaced by the equivalent PROC FORMAT CNTLIN= it generates."
+}

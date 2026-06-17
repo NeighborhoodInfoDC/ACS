@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-06-17T19:20:22+07:00",
+  "_captured_run_id": "r_019ed58643257b028bac44d8b63244be",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "table_file_e_list = SFe0001dc SFe0002dc SFe0003dc SFe0119dc",
+    "table_file_m_list = SFm0001dc SFm0002dc SFm0003dc SFm0119dc",
+    "Wrote seq_lists (2 rows, 2 columns)."
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}
