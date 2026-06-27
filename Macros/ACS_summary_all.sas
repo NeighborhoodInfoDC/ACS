@@ -22,7 +22,7 @@
   
   revisions = New file.,
 
-  /** Year for census block group/tract defs. Should be 2010 for 2011 and later ACS releases. **/
+  /** Year for census block group/tract defs. **/
   census_geo_year = 2010,
 
   );

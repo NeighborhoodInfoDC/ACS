@@ -12,7 +12,7 @@
  Modifications: 
 **************************************************************************/
 
-%include "L:\SAS\Inc\StdLocal.sas";
+%include "F:\DCDATA\SAS\Inc\StdRemote.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
@@ -26,8 +26,10 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2014_18 ,
   
-  /** Description of latest file revisions for metadata **/
-  revisions = %str(New file.)
+  /** Year for census block group/tract defs. **/  
+  census_geo_year = 2010,
+
+  revisions = %str(Update with latest DC geos.)
 
 )
 
