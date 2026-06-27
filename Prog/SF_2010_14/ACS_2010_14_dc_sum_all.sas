@@ -20,13 +20,16 @@
 
 %ACS_summary_all( 
 
-  revisions = %str(Re-submit to add the _regcnt geography),
-
   /** State abbreviation. Ex: DC **/
   state_ab = DC,
 
   /** Year range (xxxx_yy). Ex: 2005_09 **/
-  years = 2010_14
+  years = 2010_14,
+  
+  /** Year for census block group/tract defs. **/  
+  census_geo_year = 2010,
+
+  revisions = %str(Update with latest DC geos.)
 
 )
 

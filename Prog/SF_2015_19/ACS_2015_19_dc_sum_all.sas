@@ -26,8 +26,9 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2015_19,
   
-  /** Description of latest file revisions for metadata **/
-  revisions = %str(Corrections gender breakouts for employment vars.)
+  /** Year for census block group/tract defs. **/  
+  census_geo_year = 2010,
+
+  revisions = %str(Update with latest DC geos.)
 
 )
-
