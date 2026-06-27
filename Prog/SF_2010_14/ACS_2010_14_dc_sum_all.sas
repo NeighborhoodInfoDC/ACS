@@ -12,7 +12,7 @@
  Modifications:
 **************************************************************************/
 
-%include "\\sas1\DCDATA\SAS\Inc\StdLocal.sas";
+%include "F:\DCDATA\SAS\Inc\StdRemote.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
