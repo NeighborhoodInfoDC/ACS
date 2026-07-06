@@ -175,6 +175,7 @@
     %end;
     %else %if %upcase( &source_geo ) = TR10 %then %do; 
       %ACS_summary_geo( geo2010, &source_geo )
+      %ACS_summary_geo( geo2020, &source_geo )
       %ACS_summary_geo( councildist, &source_geo )
     %end;
     %else %if %upcase( &source_geo ) = TR00 %then %do;
