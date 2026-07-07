@@ -1231,6 +1231,7 @@
         keep_nonmatch=N,
         show_warnings=10,
         print_diag=Y,
+        max_diff=0.0001,
         full_diag=N,
         mprint=Y
       )
@@ -1259,6 +1260,7 @@
         keep_nonmatch=N,
         show_warnings=10,
         print_diag=Y,
+        max_diff=0.0001,
         full_diag=N,
         mprint=Y
       )

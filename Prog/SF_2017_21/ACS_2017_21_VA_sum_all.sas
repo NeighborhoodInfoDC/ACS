@@ -12,7 +12,7 @@
  Modifications: 12/06/23 LH Added census geo year parameter to template. Updated include statement.
 **************************************************************************/
 
-%include "\\sas1\DCdata\SAS\Inc\StdLocal.sas";
+%include "F:\DCDATA\SAS\Inc\StdRemote.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
@@ -30,7 +30,8 @@
   years = 2017_21,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(New file.)
+  revisions = %str(Create ANC2023 summary data sets.)
+
 
 )
 

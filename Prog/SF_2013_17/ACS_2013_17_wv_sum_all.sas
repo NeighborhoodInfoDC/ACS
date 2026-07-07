@@ -16,7 +16,7 @@
            03/27/19 YS add rows from table B28002
 **************************************************************************/
 
-%include "L:\SAS\Inc\StdLocal.sas";
+%include "F:\DCDATA\SAS\Inc\StdRemote.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
@@ -30,8 +30,12 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2013_17 ,
   
+  /** Year for census block group/tract defs. **/  
+  census_geo_year = 2010,
+
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Add rows from table B28002)
+  revisions = %str(Create Geo2020 summary data sets.)
+
 
 )
 

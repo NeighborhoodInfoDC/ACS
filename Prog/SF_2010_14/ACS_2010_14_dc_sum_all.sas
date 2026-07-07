@@ -29,7 +29,8 @@
   /** Year for census block group/tract defs. **/  
   census_geo_year = 2010,
 
-  revisions = %str(Update with latest DC geos.)
+  /** Description of latest file revisions for metadata **/
+  revisions = %str(Create Geo2020 summary data sets.)
 
 )
 

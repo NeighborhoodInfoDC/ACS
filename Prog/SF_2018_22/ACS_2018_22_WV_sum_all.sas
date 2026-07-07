@@ -13,7 +13,7 @@
 				02/27/24 LH Files Revised to remove special values.
 **************************************************************************/
 
-%include "\\sas1\DCdata\SAS\Inc\StdLocal.sas";
+%include "F:\DCDATA\SAS\Inc\StdRemote.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
@@ -31,7 +31,8 @@
   years = 2018_22,
   
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Revised to remove special values.)
+  revisions = %str(Create ANC2023 summary data sets.)
+
 
 )
 

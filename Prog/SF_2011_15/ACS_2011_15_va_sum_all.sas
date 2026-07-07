@@ -12,7 +12,7 @@
  Modifications:
 **************************************************************************/
 
-%include "L:\SAS\Inc\StdLocal.sas";
+%include "F:\DCDATA\SAS\Inc\StdRemote.sas";
 
 ** Define libraries **;
 %DCData_lib( ACS )
@@ -26,10 +26,11 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2011_15,
 
-  revisions=%str(Creates estimate and MOE vars for age of householder and household income 
-				by selected monthly costs as a percentage of income for both renters and homeowners. 
-				These vars serve as denominators for age and income cost-burden tabulations.
-				Creates all gross rent variables according to table B25063.)
+  /** Year for census block group/tract defs. **/  
+  census_geo_year = 2010,
+
+  /** Description of latest file revisions for metadata **/
+  revisions = %str(Create Geo2020 summary data sets.)
 
 )
 

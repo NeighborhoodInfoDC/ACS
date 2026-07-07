@@ -128,20 +128,25 @@
   
   ** Create individual summary files **;
 
-  %if &_state_ab = dc and (
-    %upcase( &source_geo ) = BG00 or
-    %upcase( &source_geo ) = BG10 or 
-    %upcase( &source_geo ) = TR00 or
-	%upcase( &source_geo ) = TR10 ) %then %do; 
+  %if &_state_ab = dc and %upcase( &source_geo ) = REGCOUNTY %then %do;
+    ** DC County level only (COUNTY) **;
+    %ACS_summary_geo( County, &source_geo )
+  %end;
 
+  %else  %if &_state_ab = dc and %upcase( &source_geo ) = UCOUNTY %then %do;
+    ** DC County level only (UCOUNTY) **;
+    %ACS_summary_geo( ucounty, &source_geo )
+  %end;
+
+  %else %if &_state_ab = dc %then %do; 
 	
-  %** For DC, do full set of geographies **;
+    ** DC full set of geographies **;
+    ** Note: %ACS_summary_geo will automatically skip geographies where no weighting exists **;
 
 	    %ACS_summary_geo( anc2002, &source_geo )
 	    %ACS_summary_geo( anc2012, &source_geo )
-		%ACS_summary_geo( anc2023, &source_geo )
+      %ACS_summary_geo( anc2023, &source_geo )
 	    %ACS_summary_geo( city, &source_geo )
-	    %ACS_summary_geo( cluster_tr2000, &source_geo )
 	    %ACS_summary_geo( eor, &source_geo )
 	    %ACS_summary_geo( psa2004, &source_geo )
 	    %ACS_summary_geo( psa2012, &source_geo )
@@ -155,50 +160,12 @@
 	    %ACS_summary_geo( ward2022, &source_geo )
 	    %ACS_summary_geo( zip, &source_geo )
 	    %ACS_summary_geo( cluster2000, &source_geo )
-	    %ACS_summary_geo( cluster2017, &source_geo )
-	    %ACS_summary_geo( bridgepk, &source_geo )
-	    %ACS_summary_geo( stantoncommons, &source_geo )
-	    %ACS_summary_geo( npa2019, &source_geo )
-
- 	 %end;
-	
-	
-    %else %if &_state_ab = dc and (
-    %upcase( &source_geo ) = BG20 or  
-    %upcase( &source_geo ) = TR20 ) %then %do; 
-
-    %** For DC, do full set of geographies **;
-
-	    %ACS_summary_geo( anc2002, &source_geo )
-	    %ACS_summary_geo( anc2012, &source_geo )
-		%ACS_summary_geo( anc2023, &source_geo )
-	    %ACS_summary_geo( city, &source_geo )
 	    %ACS_summary_geo( cluster_tr2000, &source_geo )
-	    %ACS_summary_geo( psa2004, &source_geo )
-	    %ACS_summary_geo( psa2012, &source_geo )
-	    %ACS_summary_geo( psa2019, &source_geo )
-	    %ACS_summary_geo( geo2020, &source_geo )
-	    %ACS_summary_geo( voterpre2012, &source_geo )
-	    %ACS_summary_geo( ward2002, &source_geo )
-	    %ACS_summary_geo( ward2012, &source_geo )
-	    %ACS_summary_geo( ward2022, &source_geo )
-	    %ACS_summary_geo( zip, &source_geo )
-	    %ACS_summary_geo( cluster2000, &source_geo )
 	    %ACS_summary_geo( cluster2017, &source_geo )
-	    %ACS_summary_geo( bridgepk, &source_geo )
-	    %ACS_summary_geo( stantoncommons, &source_geo )
 	    %ACS_summary_geo( npa2019, &source_geo )
 
- 	 %end;
-
-  %else  %if &_state_ab = dc and %upcase( &source_geo ) = REGCOUNTY %then %do;
-  %ACS_summary_geo( County, &source_geo )
-  %end;
-
-  %else  %if &_state_ab = dc and %upcase( &source_geo ) = UCOUNTY %then %do;
-  %ACS_summary_geo( ucounty, &source_geo )
-  %end;
-
+ 	%end;
+		
   %else %do;
     %** For non-DC, do census tract, council district and county summary file **;
     
@@ -208,6 +175,7 @@
     %end;
     %else %if %upcase( &source_geo ) = TR10 %then %do; 
       %ACS_summary_geo( geo2010, &source_geo )
+      %ACS_summary_geo( geo2020, &source_geo )
       %ACS_summary_geo( councildist, &source_geo )
     %end;
     %else %if %upcase( &source_geo ) = TR00 %then %do;
@@ -219,7 +187,6 @@
   %else %if %upcase( &source_geo ) = UCOUNTY %then %do;
       %ACS_summary_geo( ucounty, &source_geo )
     %end;
-
 
   %end;
   
