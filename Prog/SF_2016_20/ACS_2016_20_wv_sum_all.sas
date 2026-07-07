@@ -33,7 +33,7 @@
   census_geo_year = 2010,
 
   /** Description of latest file revisions for metadata **/
-  revisions = %str(Create Geo2020 summary data sets.)
+  revisions = %str(Create ANC2023 summary data sets.)
 
 
 )
