@@ -29,9 +29,6 @@
   /** Year range (xxxx_yy). Ex: 2005_09 **/
   years = 2016_20,
   
-  /** Year for census block group/tract defs. **/  
-  census_geo_year = 2010,
-
   /** Description of latest file revisions for metadata **/
   revisions = %str(Create ANC2023 summary data sets.)
 
